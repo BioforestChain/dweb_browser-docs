@@ -1,6 +1,7 @@
 
 import { defaultTheme } from '@vuepress/theme-default'
 module.exports = {
+  base: "/plaoc-docs/",
   title: 'plaoc Documentation',
   description: 'BFChain Plaoc',
   theme: defaultTheme({
