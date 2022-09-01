@@ -17,7 +17,23 @@ module.exports = {
       },
       {
         text: 'Top Bar',
-        children: ['/plugin/topBar/', '/plugin/topBar/'],
+        link: '/plugin/topBar/',
+      },
+      {
+        text: 'status Bar',
+        link: '/plugin/statusBar/',
+      },
+      {
+        text: 'icon',
+        link: '/plugin/icon/',
+      },
+      {
+        text: 'keyboard',
+        link: '/plugin/keyboard/',
+      },
+      {
+        text: 'dialogs',
+        link: '/plugin/dialogs/',
       }
     ]
   }),

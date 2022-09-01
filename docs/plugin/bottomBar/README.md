@@ -75,10 +75,10 @@ android源码强制覆盖了`indicatorColor`来控制是否选中，所以这个
 
 ### `indicator-color`
 
-控制选中指示器的颜色。
+控制选中指示器的颜色。如上图4号标记。
 
 ::: warning
-Android无法设置透明度。即RBGA的A无效，原因是被系统劫持,来控制是否选中。
+Android Navigation bar indicatorColor无法设置透明度。即RBGA的A无效，原因是被系统劫持,来控制是否选中。
 :::
 
 ## dweb-bottom-bar-icon
@@ -91,7 +91,7 @@ Android无法设置透明度。即RBGA的A无效，原因是被系统劫持,来�
 
 ### `source`
 
-必传属性，建议传递svg格式图片，此属性存放选中显示的图片。
+必传属性，建议传递svg格式图片，此属性存放选中显示的图片。如上图2号标记。
 
 ### `un-source`
 
@@ -103,7 +103,7 @@ Android无法设置透明度。即RBGA的A无效，原因是被系统劫持,来�
 
 ### `value`
 
-设置bottom bar的文字。
+设置bottom bar的文字。如上图3号标记。
 
 ### `color`
 
