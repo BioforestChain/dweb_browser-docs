@@ -98,7 +98,7 @@ Android无法设置透明度。即RBGA的A无效，原因是被系统劫持,来�
 
 ## dweb-bottom-bar-text
 
-包含属性：`value`,`color`, `selected-color`。
+包含属性：`value`,`color`, `selected-color`, ` hide-value`。
 
 ### `value`
 
@@ -111,3 +111,7 @@ Android无法设置透明度。即RBGA的A无效，原因是被系统劫持,来�
 ### `selected-color`
 
 选中的文字颜色。
+
+### `hide-value`
+
+如果指定此值，则只有选中的时候才会显示文字。
