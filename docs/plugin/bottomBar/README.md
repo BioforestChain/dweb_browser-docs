@@ -46,7 +46,8 @@ bottombar内容的首选颜色。默认为 `background-color` 的匹配内容颜
 默认值：1 , 也就是不透明。
 
 ::: warning
-android是用rgba控制指示器颜色的，因此如果要使用此属性，需要禁掉`indicator-color`。
+android是用rgba控制指示器颜色的，因此如果要使用此属性，需要禁掉`indicator-color`，但是！！
+android源码强制覆盖了`indicatorColor`来控制是否选中，所以这个属性是有问题的，期待解决，[how-do-hide-navigationbar-indicatorcolor](https://stackoverflow.com/questions/73566582/how-do-hide-navigationbar-indicatorcolor)。
 :::
 ![indicator](./indicator-color.png)
 

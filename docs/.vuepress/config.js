@@ -13,11 +13,11 @@ module.exports = {
     sidebar: [
       {
         text: 'Navigation Bar',
-        link: '/plugin/bottomBar/README.md',
+        link: '/plugin/bottomBar/',
       },
       {
         text: 'Top Bar',
-        children: ['/plugin/topBar/README.md', '/plugin/topBar/README.md'],
+        children: ['/plugin/topBar/', '/plugin/topBar/'],
       }
     ]
   }),
