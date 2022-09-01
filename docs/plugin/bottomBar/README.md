@@ -7,7 +7,7 @@
 > 以vue3 为例
 
 ```vue
-       <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70" hidden="false" >
+       <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70" hidden="false"  overlay="0.2" >
         <dweb-bottom-bar-button id="ddd" selected  indicator-color="#D0BCFF"  >
             <dweb-bottom-bar-icon source="https://objectjson.waterbang.top/test-vue3/land.svg" un-source="https://objectjson.waterbang.top/test-vue3/land-not.svg"  type="AssetIcon"   ></dweb-bottom-bar-icon>
             <dweb-bottom-bar-text color="#938F99" selected-color="#1C1B1F"  value="土地"></dweb-bottom-bar-text>
@@ -42,8 +42,8 @@ bottombar内容的首选颜色。默认为 `background-color` 的匹配内容颜
 
 ### `overlay`
 
-是否开启bottombar遮罩,也就是背景变透明。
-默认值：false。
+是否开启bottombar遮罩,也就是背景变透明，建议传递值`0~1`之间。
+默认值：1 , 也就是不透明。
 
 ::: warning
 android是用rgba控制指示器颜色的，因此如果要使用此属性，需要禁掉`indicator-color`。
