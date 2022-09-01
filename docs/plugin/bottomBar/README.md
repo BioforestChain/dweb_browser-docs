@@ -45,7 +45,9 @@ bottombar内容的首选颜色。默认为 `background-color` 的匹配内容颜
 是否开启bottombar遮罩,也就是背景变透明。
 默认值：false。
 
-:warning: android是用rgba控制指示器颜色的，因此如果要使用此属性，需要禁掉`indicator-color`。
+::: warning
+android是用rgba控制指示器颜色的，因此如果要使用此属性，需要禁掉`indicator-color`。
+:::
 ![indicator](./indicator-color.png)
 
 
@@ -74,6 +76,10 @@ bottombar内容的首选颜色。默认为 `background-color` 的匹配内容颜
 
 控制选中指示器的颜色。
 
+::: warning
+Android无法设置透明度。即RBGA的A无效，原因是被系统劫持,来控制是否选中。
+:::
+
 ## dweb-bottom-bar-icon
 
 包含属性：`type`, `description`, `size`, `source`,`un-source`, `color`, `selected-color`。
@@ -93,3 +99,15 @@ bottombar内容的首选颜色。默认为 `background-color` 的匹配内容颜
 ## dweb-bottom-bar-text
 
 包含属性：`value`,`color`, `selected-color`。
+
+### `value`
+
+设置bottom bar的文字。
+
+### `color`
+
+未选中的文字颜色。
+
+### `selected-color`
+
+选中的文字颜色。
