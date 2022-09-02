@@ -6,7 +6,7 @@
 
 > 以vue3 为例
 
-```vue
+```html
        <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70" hidden="false"  overlay="0.2" >
         <dweb-bottom-bar-button id="ddd" selected  indicator-color="#D0BCFF"  >
             <dweb-bottom-bar-icon source="https://objectjson.waterbang.top/test-vue3/land.svg" un-source="https://objectjson.waterbang.top/test-vue3/land-not.svg"  type="AssetIcon"   ></dweb-bottom-bar-icon>
@@ -34,6 +34,10 @@
 ### `foreground-color`
 
 bottombar内容的首选颜色。默认为 `background-color` 的匹配内容颜色。
+
+::: warning
+一个诡异的属性暂无效果。
+:::
 
 ### `hidden`
 
@@ -85,6 +89,14 @@ Android Navigation bar indicatorColor无法设置透明度。即RBGA的A无效�
 
 包含属性：`type`, `description`, `size`, `source`,`un-source`, `color`, `selected-color`。
 
+### `type`
+
+设置icon的类型，如果要传递自定义图片，`Android`需要指定 `type="AssetIcon"`。
+
+### `description`
+
+无障碍服务用来描述这个图标代表什么的文本。(⚠️ 未测试)
+
 ### `size`
 
 控制图标大小。
@@ -97,9 +109,13 @@ Android Navigation bar indicatorColor无法设置透明度。即RBGA的A无效�
 
 建议传递svg格式图片,此属性存放未选中显示的图片，如果未传递则选未选中都使用`source`图片。
 
+### `color`, `selected-color`
+
+控制选中或者未选中的`icon`颜色,自定义图片无效。
+
 ## dweb-bottom-bar-text
 
-包含属性：`value`,`color`, `selected-color`, ` hide-value`。
+包含属性：`value`,`color`, `selected-color`, `hide-value`。
 
 ### `value`
 
