@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-d3c80b76","path":"/plugin/keyboard/","title":"keyBoard","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1662369919000,"contributors":[{"name":"kingsword09","email":"kingsword09@gmail.com","commits":1}]},"filePathRelative":"plugin/keyboard/README.md"}');export{e as data};
