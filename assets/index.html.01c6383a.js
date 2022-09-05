@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7fca5eb2","path":"/plugin/dialogs/","title":"dialogs","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1662369919000,"contributors":[{"name":"kingsword09","email":"kingsword09@gmail.com","commits":1}]},"filePathRelative":"plugin/dialogs/README.md"}');export{e as data};
