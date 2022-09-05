@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-7fca5eb2","path":"/plugin/dialogs/","title":"dialogs","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1662370633000,"contributors":[{"name":"waterbang","email":"38105714+waterbang@users.noreply.github.com","commits":1}]},"filePathRelative":"plugin/dialogs/README.md"}');export{e as data};

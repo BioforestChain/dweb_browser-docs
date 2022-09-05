@@ -1,1 +1,0 @@
-import{_ as t,o as a,c as s,b as e,e as r}from"./app.6343bec8.js";const c={},n=e("h1",{id:"statusbar",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#statusbar","aria-hidden":"true"},"#"),r(" statusBar")],-1),o=[n];function _(d,i){return a(),s("div",null,o)}const l=t(c,[["render",_],["__file","index.html.vue"]]);export{l as default};
