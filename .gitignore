@@ -4,3 +4,5 @@ dist
 .cache
 .temp
 .DS_Store
+
+!.temp/styles
