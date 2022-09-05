@@ -5,4 +5,3 @@ dist
 .temp
 .DS_Store
 
-!.temp/styles
