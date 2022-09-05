@@ -2,7 +2,7 @@ import { defineUserConfig, defaultTheme } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
 
 export default defineUserConfig({
-  base: "/",
+  base: "/plaoc-docs/",
   title: "plaoc Documentation",
   description: "BFChain Plaoc",
   theme: defaultTheme({
