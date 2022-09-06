@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-f42b97de","path":"/plugin/statusBar/","title":"statusBar","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1662371168000,"contributors":[{"name":"kingsword09","email":"kingsword09@gmail.com","commits":1}]},"filePathRelative":"plugin/statusBar/README.md"}');export{t as data};
