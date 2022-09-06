@@ -13,29 +13,45 @@ export default defineUserConfig({
     docsDir: "docs",
     sidebar: [
       {
-        text: "Navigation Bar",
-        link: "/plugin/bottomBar/",
+        text: 'Components',   // 必要的
+        link: '/plugin/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
+        children: [
+          {
+            text: "Navigation Bar",
+            link: "/plugin/bottomBar/",
+          },
+          {
+            text: "Top Bar",
+            link: "/plugin/topBar/",
+          },
+          {
+            text: "status Bar",
+            link: "/plugin/statusBar/",
+          },
+          {
+            text: "icon",
+            link: "/plugin/icon/",
+          },
+          {
+            text: "keyboard",
+            link: "/plugin/keyboard/",
+          },
+          {
+            text: "dialogs",
+            link: "/plugin/dialogs/",
+          },
+        ]
       },
       {
-        text: "Top Bar",
-        link: "/plugin/topBar/",
-      },
-      {
-        text: "status Bar",
-        link: "/plugin/statusBar/",
-      },
-      {
-        text: "icon",
-        link: "/plugin/icon/",
-      },
-      {
-        text: "keyboard",
-        link: "/plugin/keyboard/",
-      },
-      {
-        text: "dialogs",
-        link: "/plugin/dialogs/",
-      },
+        text: "service",
+        link: "/service/",
+        children: [
+           {
+            text: "SSR",
+            link: "/service/ssr/",
+          },
+        ]
+      }
     ],
   }),
   plugins: [searchPlugin],

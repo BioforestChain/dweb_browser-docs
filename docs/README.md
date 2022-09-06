@@ -1,22 +1,3 @@
-# Plaoc 文档
+# plaoc
 
-## 快速上手
-
-### 前端(Vue/React/Angular)
-
-在入口页面引用Plugin。
-> 以vue3为例：
-
-```typescript
-import { createApp } from "vue";
-import '@bfsx/plugin';   // +++++++++++
-import "./style.css";
-import App from "./App.vue";
-createApp(App).mount("#app");
-```
-
-#### 按需引入
-
-这个没得
-
-## 配置参考
+> icp备案中： <docs.plaoc.com>

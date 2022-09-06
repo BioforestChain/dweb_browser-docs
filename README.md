@@ -4,7 +4,9 @@ plaoc 前后端开发文档,构建符合开发者直觉的 API。
 
 文档站点：[地址](https://bioforestchain.github.io/plaoc-docs/)
 
-> 有写文档的都是测试过的，大哥们多多看看 API 合不合理，尽量向 element-ui 的风格靠拢，让开发者无缝衔接.
+icp备案中： <docs.plaoc.com>
+
+> 有写文档的都是测试过的，大哥们多多看看API合不合理，尽量向前端ui库的风格靠拢，让开发者无缝衔接.
 
 ## 快速启动
 
