@@ -1,10 +1,12 @@
-# Navigation Bar
+# Bottom Bar
 
-![navigation-bar](./navigation-bar.png)
+<p align="center">
+  <img src="./navigation-bar.png" width="800" alt="navigation-bar">
+</p>
 
 ## 组件示例
 
-> 以vue3 为例
+> 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
 
 ```html
        <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70" hidden="false"  overlay="0.2" >

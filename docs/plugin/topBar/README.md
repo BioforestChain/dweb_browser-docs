@@ -1,11 +1,12 @@
 # Top Bar
 
-<div style="margin: 0 130px">
-
-![top-bar](./top-bar.png)
-</div>
+<p align="center">
+  <img src="./top-bar.png" width="800" alt="top-bar">
+</p>
 
 ## 组件示例
+
+> 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
 
 ```html
    <dweb-top-bar id="topbar" title="Ar 扫雷" background-color="#eeee" foreground-color="#000"  overlay="0.4" >

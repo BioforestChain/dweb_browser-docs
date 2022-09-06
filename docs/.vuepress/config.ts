@@ -17,7 +17,7 @@ export default defineUserConfig({
         link: '/plugin/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
         children: [
           {
-            text: "Navigation Bar",
+            text: "Bottom Bar",
             link: "/plugin/bottomBar/",
           },
           {
