@@ -11,7 +11,7 @@
 ```html
        <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70" hidden="false"  overlay="0.2" >
         <dweb-bottom-bar-button id="ddd" selected  indicator-color="#D0BCFF"  >
-            <dweb-bottom-bar-icon source="https://objectjson.waterbang.top/test-vue3/land.svg" un-source="https://objectjson.waterbang.top/test-vue3/land-not.svg"  type="AssetIcon"   ></dweb-bottom-bar-icon>
+            <dweb-bottom-bar-icon source="https://objectjson.waterbang.top/test-vue3/land.svg" type="AssetIcon"   ></dweb-bottom-bar-icon>
             <dweb-bottom-bar-text color="#938F99" selected-color="#1C1B1F"  value="土地"></dweb-bottom-bar-text>
         </dweb-bottom-bar-button>
         <dweb-bottom-bar-button id="eee"  @click="openScanner" diSelectable>
@@ -19,7 +19,7 @@
             <dweb-bottom-bar-text  value="扫码"></dweb-bottom-bar-text>
         </dweb-bottom-bar-button>
         <dweb-bottom-bar-button id="fff" indicator-color="#D0BCFF" >
-            <dweb-bottom-bar-icon source="https://objectjson.waterbang.top/test-vue3/home.svg" un-source="https://objectjson.waterbang.top/test-vue3/home-not.svg" type="AssetIcon"  ></dweb-bottom-bar-icon>
+            <dweb-bottom-bar-icon source="https://objectjson.waterbang.top/test-vue3/home.svg"  type="AssetIcon"  ></dweb-bottom-bar-icon>
             <dweb-bottom-bar-text color="#938F99" selected-color="#1C1B1F" value="个人空间"></dweb-bottom-bar-text>
         </dweb-bottom-bar-button>
     </dweb-bottom-bar>
@@ -89,7 +89,7 @@ Android Navigation bar indicatorColor无法设置透明度。即RBGA的A无效�
 
 ## dweb-bottom-bar-icon
 
-包含属性：`type`, `description`, `size`, `source`,`un-source`, `color`, `selected-color`。
+包含属性：`type`, `description`, `size`, `source`, `color`, `selected-color`。
 
 ### `type`
 
@@ -107,9 +107,6 @@ Android Navigation bar indicatorColor无法设置透明度。即RBGA的A无效�
 
 必传属性，建议传递svg格式图片，此属性存放选中显示的图片。如上图2号标记。
 
-### `un-source`
-
-建议传递svg格式图片,此属性存放未选中显示的图片，如果未传递则选未选中都使用`source`图片。
 
 ### `color`, `selected-color`
 
