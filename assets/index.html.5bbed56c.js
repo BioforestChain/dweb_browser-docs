@@ -1,1 +1,0 @@
-import{_ as a,o as t,c as o,a as e,b as r}from"./app.d20fc489.js";const c={},d=e("h1",{id:"keyboard",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#keyboard","aria-hidden":"true"},"#"),r(" keyBoard")],-1),n=[d];function s(_,i){return t(),o("div",null,n)}const l=a(c,[["render",s],["__file","index.html.vue"]]);export{l as default};
