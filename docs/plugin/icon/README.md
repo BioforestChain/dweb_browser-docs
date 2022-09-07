@@ -20,6 +20,12 @@
 
 ### `type`
 
+枚举类型，可取值：`NamedIcon` | `AssetIcon`,默认类型`NamedIcon`。
+
+如果是系统资源使用：`NamedIcon`.
+
+用户自定义资源使用：`AssetIcon`.
+
 ### `description`
 
 无障碍提示内容。
@@ -29,3 +35,9 @@
 控制图标大小，
 
 ### `source`
+
+矢量图标资源地址。
+
+## 系统图标展示
+
+

@@ -25,28 +25,32 @@ export default defineUserConfig({
             link: "/plugin/topBar/",
           },
           {
-            text: "status Bar",
-            link: "/plugin/statusBar/",
+            text: "dialogs",
+            link: "/plugin/dialogs/",
           },
           {
-            text: "icon",
-            link: "/plugin/icon/",
+            text: "status Bar",
+            link: "/plugin/statusBar/",
           },
           {
             text: "keyboard",
             link: "/plugin/keyboard/",
           },
           {
-            text: "dialogs",
-            link: "/plugin/dialogs/",
+            text: "navigationBar",
+            link: "/plugin/navigationBar/",
           },
+          {
+            text: "android/ios-API",
+            link: "/plugin/system/",
+          }
         ]
       },
       {
         text: "service",
         link: "/service/",
         children: [
-           {
+          {
             text: "SSR",
             link: "/service/ssr/",
           },

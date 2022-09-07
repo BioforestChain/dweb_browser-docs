@@ -4,7 +4,7 @@
   <img src="./dialogs.png" width="800" alt="dialogs">
 </p>
 
-## 代码示例
+## example
 
 > 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
 

@@ -4,7 +4,7 @@
   <img src="./navigation-bar.png" width="800" alt="navigation-bar">
 </p>
 
-## 组件示例
+## example
 
 > 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
 
@@ -106,6 +106,56 @@ Android Navigation bar indicatorColor无法设置透明度。即RBGA的A无效�
 ### `source`
 
 必传属性，建议传递svg格式图片，此属性存放选中显示的图片。如上图2号标记。
+
+如果需要选中图片明暗效果，可以这样写：
+
+
+<CodeGroup>
+  <CodeGroupItem title="typescript" active>
+
+```typescript
+<script setup lang="ts">
+    const bottomBarImg = reactive({
+    one: "https://objectjson.waterbang.top/test-vue3/land.svg",
+    two: "https://objectjson.waterbang.top/test-vue3/scanner.svg",
+    three: "https://objectjson.waterbang.top/test-vue3/home-not.svg"
+    })
+    function onBottomBar(serial:string) {
+        bottomBarImg.one = 'https://objectjson.waterbang.top/test-vue3/land-not.svg'
+        bottomBarImg.three = 'https://objectjson.waterbang.top/test-vue3/home-not.svg'
+        if (serial=== 'one') {
+            bottomBarImg[serial] = "https://objectjson.waterbang.top/test-vue3/land.svg"
+        }
+        if (serial=== 'three') {
+            bottomBarImg[serial] = "https://objectjson.waterbang.top/test-vue3/home.svg"
+        }
+    }
+</script>
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="vue3" >
+
+```html
+ <dweb-bottom-bar id="bottombar" background-color="#D0BCFF" foreground-color="#1C1B1F" height="70" overlay="0.2">
+    <dweb-bottom-bar-button id="ddd" selected @click="onBottomBar('one')">
+      <dweb-bottom-bar-icon :source="bottomBarImg.one" type="AssetIcon"></dweb-bottom-bar-icon>
+      <dweb-bottom-bar-text color="#938F99" selected-color="#1C1B1F" value="土地"></dweb-bottom-bar-text>
+    </dweb-bottom-bar-button>
+    <dweb-bottom-bar-button id="eee" @click="openScanner" diSelectable>
+      <dweb-bottom-bar-icon :source="bottomBarImg.two" type="AssetIcon"></dweb-bottom-bar-icon>
+      <dweb-bottom-bar-text value="扫码"></dweb-bottom-bar-text>
+    </dweb-bottom-bar-button>
+    <dweb-bottom-bar-button id="fff" @click="onBottomBar('three')">
+      <dweb-bottom-bar-icon :source="bottomBarImg.three" type="AssetIcon"></dweb-bottom-bar-icon>
+      <dweb-bottom-bar-text color="#938F99" selected-color="#1C1B1F" value="个人空间"></dweb-bottom-bar-text>
+    </dweb-bottom-bar-button>
+  </dweb-bottom-bar>
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 
 ### `color`, `selected-color`

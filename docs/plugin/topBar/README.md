@@ -4,7 +4,7 @@
   <img src="./top-bar.png" width="800" alt="top-bar">
 </p>
 
-## 组件示例
+## example
 
 > 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
 
