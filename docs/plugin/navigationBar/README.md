@@ -20,20 +20,25 @@ function hideNavigation() {
 }
 async function getNavigationVisible() {
   console.log("getNavigationBarVisible=>",await nav.getNavigationBarVisible())
+  console.log("getNavigationBarOverlay=>",await nav.getNavigationBarOverlay())
 }
 function setNavigationBarColor() {
-  nav.setNavigationBarColor("#ffddb3",false)
+  nav.setNavigationBarColor("#ffb94f",true,false)
+}
+function setNavigationBarOverlay() {
+  nav.setNavigationBarOverlay(true)
 }
 </script>
 <template>
   <button @click="hideNavigation">点我隐藏系统navigation</button>
   <button  @click="getNavigationVisible">获取navigation颜色</button>
+   <button  @click="setNavigationBarOverlay">设置navigation透明</button>
   <button  @click="setNavigationBarColor">设置系统navigation颜色</button>
 <dweb-view></dweb-view>
 </template>
 
 ```
-
+## Methods​ 
 ### setNavigationBarVisible
 
 设置系统导航栏的可见性。默认值false为隐藏导航栏。

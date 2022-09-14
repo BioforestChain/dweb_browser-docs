@@ -8,7 +8,7 @@
   <CodeGroupItem title="vue3" active>
 
   ```vue
-  <dweb-keyboard id="key_board" overlay hidden="true"></dweb-keyboard>
+  <dweb-keyboard id="key_board" overlay hidden></dweb-keyboard>
   <ion-button expand="full" fill="outline" @click="onShowKeyboard">点击开启虚拟键盘</ion-button>
   ```
 
@@ -42,7 +42,7 @@
 
 布尔值，传递false为显示，true为隐藏。
 
-## 暴露的API
+## Methods​
 
 | API                   | return:Promise                                              | 解释                           |
 |-----------------------|-------------------------------------------------------------|------------------------------|
