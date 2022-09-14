@@ -40,7 +40,7 @@
 
 ### `hidden`
 
-布尔值，传递false为显示，true为隐藏。
+布尔值，有写就是true，没写就是隐藏。
 
 ## Methods​
 

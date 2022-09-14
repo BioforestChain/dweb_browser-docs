@@ -9,7 +9,7 @@
 > 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
 
 ```html
-       <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70" hidden="false"  overlay="0.2" >
+       <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70"  overlay="0.2" >
         <dweb-bottom-bar-button id="ddd" selected  indicator-color="#D0BCFF"  >
             <dweb-bottom-bar-icon source="https://objectjson.waterbang.top/test-vue3/land.svg" type="AssetIcon"   ></dweb-bottom-bar-icon>
             <dweb-bottom-bar-text color="#938F99" selected-color="#1C1B1F"  value="土地"></dweb-bottom-bar-text>
@@ -44,7 +44,7 @@ bottombar内容的首选颜色。默认为 `background-color` 的匹配内容颜
 ### `hidden`
 
 是否隐藏bottombar。
-默认值：false。
+有写就是true，没写就是隐藏。
 
 ### `overlay`
 
