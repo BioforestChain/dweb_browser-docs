@@ -54,6 +54,14 @@ export default defineUserConfig({
             text: "SSR",
             link: "/service/ssr/",
           },
+          {
+            text: "TUI",
+            link: "/service/tui/",
+          },
+          {
+            text: "GUI",
+            link: "/service/gui/",
+          },
         ],
       },
     ],
