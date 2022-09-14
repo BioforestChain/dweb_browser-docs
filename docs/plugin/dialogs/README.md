@@ -1,4 +1,4 @@
-# dialogs
+# Dialogs
 
 <p align="center">
   <img src="./dialogs.png" width="800" alt="dialogs">

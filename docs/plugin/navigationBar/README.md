@@ -1,4 +1,4 @@
-# navigationBar
+# NavigationBar
 
 控制系统底部导航栏。
 
@@ -34,7 +34,7 @@ function setNavigationBarColor() {
 
 ```
 
-### SetNavigationBarVisible
+### setNavigationBarVisible
 
 设置系统导航栏的可见性。默认值false为隐藏导航栏。
 
@@ -42,11 +42,11 @@ function setNavigationBarColor() {
 |----------|--------|---------------------------|
 | boolean  | false  | 传递true为显示，false为隐藏。 |
 
-### GetNavigationBarVisible
+### getNavigationBarVisible
 
 获取导航栏是显示还是隐藏，返回false为隐藏，true为显示。
 
-### SetNavigationBarColor
+### setNavigationBarColor
 
 设置系统导航栏的颜色。
 

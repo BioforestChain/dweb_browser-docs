@@ -1,4 +1,4 @@
-# statusBar
+# StatusBar
 
 控制系统状态栏。
 

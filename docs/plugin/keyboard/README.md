@@ -1,4 +1,4 @@
-# keyBoard
+# Keyboard
 
 控制虚拟键盘。
 
@@ -30,7 +30,7 @@
   </CodeGroupItem>
 </CodeGroup>
 
-## dweb-keyBoard
+## dweb-keyboard
 
 包含属性： `overlay`, `hidden`.
 
