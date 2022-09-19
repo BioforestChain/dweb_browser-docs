@@ -64,6 +64,24 @@ export default defineUserConfig({
           },
         ],
       },
+      {
+        text: "systemApp",
+        link: "/systemApp/",
+        children: [
+          {
+            text: "BNRTC",
+            link: "/systemApp/bnrtc/",
+          },
+          {
+            text: "DATABASE",
+            link: "/systemApp/database/",
+          },
+          {
+            text: "installctionTool",
+            link: "/systemApp/installApplication/",
+          },
+        ],
+      },
     ],
   }),
   plugins: [searchPlugin],
