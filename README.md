@@ -2,11 +2,7 @@
 
 plaoc 前后端开发文档,构建符合开发者直觉的 API。
 
-文档站点：[地址](https://bioforestchain.github.io/plaoc-docs/)
-
-icp备案中： <docs.plaoc.com>
-
-> 有写文档的都是测试过的，大哥们多多看看API合不合理，尽量向前端ui库的风格靠拢，让开发者无缝衔接.
+文档站点：[地址（国外）](https://bioforestchain.github.io/plaoc-docs/)，[国内](http://docs.plaoc.com)
 
 ## 快速启动
 
