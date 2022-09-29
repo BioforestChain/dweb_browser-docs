@@ -31,10 +31,12 @@ jobs:
           BRANCH: gh-pages # 部署到 gh-pages 分支，因为 main 分支存放的一般是源码，而 gh-pages 分支则用来存放生成的静态文件
           FOLDER: docs/.vuepress/dist # vuepress 生成的静态文件存放的地方
 
-      - name: ftp deploy file to server
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           ftp-server: ${{ secrets.SERVER_IP }}
           ftp-username: plaoc
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: docs/.vuepress/dist
+          protocol: ftp
+          port: 21
