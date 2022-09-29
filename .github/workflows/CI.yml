@@ -27,7 +27,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.SERVER_IP }}
-          username: plaoc
+          username: docs.plaoc.com
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: docs/.vuepress/dist/
           port: 21
