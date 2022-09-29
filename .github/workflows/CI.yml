@@ -31,7 +31,6 @@ jobs:
           username: plaoc
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: docs/.vuepress/dist/
-          protocol: sftp
           port: 21
           
          # 部署到 GitHub Pages
