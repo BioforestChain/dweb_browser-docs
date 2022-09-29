@@ -34,9 +34,9 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          ftp-server: ${{ secrets.SERVER_IP }}
-          ftp-username: plaoc
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: docs/.vuepress/dist
+          server: ${{ secrets.SERVER_IP }}
+          username: plaoc
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: docs/.vuepress/dist/
           protocol: ftp
           port: 21
