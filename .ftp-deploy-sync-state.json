@@ -1,0 +1,451 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1664450446221,
+    "data": [
+        {
+            "type": "file",
+            "name": "404.html",
+            "size": 3875,
+            "hash": "9f5138eed42c65cc7e45eed99b3824d13ffe1d2e2f90b5f9aab6628f84eed7af"
+        },
+        {
+            "type": "folder",
+            "name": "assets"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 11516,
+            "hash": "2bfb12ce59827f3e7b5d5e7d056fadcac82b2645040de635d341edf2b031c6d3"
+        },
+        {
+            "type": "folder",
+            "name": "plugin"
+        },
+        {
+            "type": "folder",
+            "name": "service"
+        },
+        {
+            "type": "folder",
+            "name": "systemApp"
+        },
+        {
+            "type": "file",
+            "name": "assets/404.html.bf2530ad.js",
+            "size": 175,
+            "hash": "6d9179dbaee41a49d2d27f8423c15aad4f01516eecdb195ba6dc30fb4fe92344"
+        },
+        {
+            "type": "file",
+            "name": "assets/404.html.d2dc3323.js",
+            "size": 202,
+            "hash": "d686f185c049381db85277c1afedeecaec3c3e4c6b3469ce94f26a6faa08f66f"
+        },
+        {
+            "type": "file",
+            "name": "assets/app.9224d110.js",
+            "size": 156635,
+            "hash": "860b8ecadff89555d71b8a187e5ad0c58c463d1b5ef2c1f64967c5fd6cd7e104"
+        },
+        {
+            "type": "file",
+            "name": "assets/back-to-top.8efcbe56.svg",
+            "size": 291,
+            "hash": "8efcbe56d8408a7fba626da9852ec2346c627dc7471eef9e5b1f8cc09238c28e"
+        },
+        {
+            "type": "file",
+            "name": "assets/dialogs.a76616d9.png",
+            "size": 47324,
+            "hash": "a76616d94e64e560a54e1ad800d77d35b7e34db06d62825d7968b853c9edf41b"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.06cc7e7f.js",
+            "size": 11556,
+            "hash": "b6c0e9792fe0940a433e31666a40db8fe7944da117d6156a8950634045a0ecb3"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.0f6334cc.js",
+            "size": 17696,
+            "hash": "1302bac4fa227d900ac1c07acea9f55cb7efe8c248ffdfbc98b23ded43d4b044"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.197c3084.js",
+            "size": 1027,
+            "hash": "4a3e88bbeaaa5625253912ec3b9c4a336c673234d79975576225903d6fee87bd"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.1b46b736.js",
+            "size": 340,
+            "hash": "7900dd8b473f25daeb3d69d1f1411c106838e668ec05b93fc4bd29328280e8be"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.1e1e17a1.js",
+            "size": 398,
+            "hash": "15fb9623f40de145ebd9b4f49b22e93cc9c54236175e11374d92c072dc82308a"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.278433e1.js",
+            "size": 3580,
+            "hash": "f6296c975bf8a928265e933037059db93c78d0285b513f00dbf3ff8e284e3f81"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.2f528d99.js",
+            "size": 32210,
+            "hash": "4bded39f4bff5a94b84bb8d2606c7964a3df520a0a36e5737b0c00c8ae21266c"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.2f94609d.js",
+            "size": 337,
+            "hash": "e5c1ad21e5dfc3d77e28dc89fbc4639dce615d4840002af9e7a507a6652d9c23"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.3fc1df66.js",
+            "size": 917,
+            "hash": "31395fa7ddc8748244b1180a9fe00ce1d163b6c55c8293409085cc0c3ce2efd2"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.49415b23.js",
+            "size": 2268,
+            "hash": "4db37bc0d6828fd42354328bad161de7799d1cdc7d44c26ada57c9ae14ee37f0"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.494e1099.js",
+            "size": 394,
+            "hash": "3f4670e30f8e76eb25d0308dedbbb1cd883e82646140f1b2e0fffb98ad9a953d"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.526ea052.js",
+            "size": 340,
+            "hash": "156217050bc0bdf5ee223c51c161671165bf26ade572a3505882b3cf05577ea2"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.557213c9.js",
+            "size": 6528,
+            "hash": "be47991704e56146d099b3ae7dfd6a3476cac5664dff7f1addee2127255aef68"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.564eedf7.js",
+            "size": 4604,
+            "hash": "b04175eb95722733d2d5d4139cbcb55072d873b06e984a64dc78a0afcc404952"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.65e66fe0.js",
+            "size": 882,
+            "hash": "8b1a6d904cb49d6f945c53b050fab1f74645422048cdb9a6bf6ff0a70e19992e"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.671c7846.js",
+            "size": 317,
+            "hash": "dedf57dc9aab250b789c5316beb81928c75e76de89c14a95407f1c0717f93122"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.6bc21e8d.js",
+            "size": 396,
+            "hash": "f245d6a0fde7e3ab97524211e1ff270a757947d2a7bb0bec34bd3e8e03efba0a"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.72443b04.js",
+            "size": 359,
+            "hash": "a91a65258cad860f3d16fdeb52e6c24b24ad82b32a4a1d8bb4ddf3498d1b0bfc"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.84803def.js",
+            "size": 1350,
+            "hash": "0ab219361dccbcde0b2712ae4756f136a7617fd2559d7f0c1df604b829cb2790"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.84d54542.js",
+            "size": 569,
+            "hash": "05ff81d02478a3ed8dca4f4f8a39902485a55be8dfeb2deb73abb73caa736ad1"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.8c4b74ee.js",
+            "size": 647,
+            "hash": "b8d4b3f951e2e33b1cf1505e2150668b10fa8b8960e5478fa4143b77e5d9a1a5"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.9c867e54.js",
+            "size": 1470,
+            "hash": "b52b1faccf1f705866bace64c18469e79c77843ee983cd2a23f2f62a2a266fcc"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.aa81a47d.js",
+            "size": 779,
+            "hash": "edb2d2b9a1c83e2769624a6976efd60919a9ec488effe01dd59c712db4ff35f6"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.aab9483f.js",
+            "size": 2711,
+            "hash": "dba5af1bf5092912b84ae9ccd1d0c07587fd504cf3700c50e3457afd46cc96af"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.b490b5e3.js",
+            "size": 385,
+            "hash": "d1f612d7819b62520952488356710b1bc324e1f61ea10981c2b11a5cfd26c501"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.bacf27d8.js",
+            "size": 2458,
+            "hash": "b1e951e1ea1980398fd62b4208a1def1977ce45be92f07c120e731221d1ca208"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.bc9ce151.js",
+            "size": 8814,
+            "hash": "cce20c4b3cc5d386d4d465381d98910d47ef16f9736148c731de734df1756fa4"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.bfb0ae27.js",
+            "size": 318,
+            "hash": "bfcd8756719945e0645bfe30e4f95cc4da985ad0f23da881e104f96fc72c39ac"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.c209021d.js",
+            "size": 12289,
+            "hash": "8663ff122755dc8fab65a0451dbddd8b3f76ac1d0b642b613b562a84fca2c639"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.c301013d.js",
+            "size": 367,
+            "hash": "edd1652ac6a86ce4d7e7ba3f117cb12bac73e49849e483d5ea47b8f0c1bc9af8"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.d35bf2c9.js",
+            "size": 369,
+            "hash": "42ab969fe2b991d48e83234f969f31a9ad7699fac77058c1c36e69c4863a272e"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.e0dfda22.js",
+            "size": 9813,
+            "hash": "142aeb676c5be2515f9168e3436e67a75abb9fe535cb67895c4d01795073107c"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.ea2a4a69.js",
+            "size": 776,
+            "hash": "2d03b8f9b16f5cc3b486b981e2b5f743169537aa85b6743ee7bc13dc366db162"
+        },
+        {
+            "type": "file",
+            "name": "assets/index.html.fff0dd69.js",
+            "size": 317,
+            "hash": "396001e7fb9cac07a7443168afcb1470d4ce1b66e0622a66048f9e58ce211fcd"
+        },
+        {
+            "type": "file",
+            "name": "assets/indicator-color.10656a6b.png",
+            "size": 27544,
+            "hash": "10656a6b38fb280955bb10a2d5f03504866f795f5b201c9a16a07a8ade833766"
+        },
+        {
+            "type": "file",
+            "name": "assets/navigation-bar.457da0f2.png",
+            "size": 48634,
+            "hash": "457da0f282de08125e26e9c13ba30c7935834426e86171daf06e3b3e2562bf44"
+        },
+        {
+            "type": "file",
+            "name": "assets/search.0782d0d1.svg",
+            "size": 216,
+            "hash": "0782d0d13e1607145649c302d726d8ba084319d94ba28d3de94ee5adb6d9b574"
+        },
+        {
+            "type": "file",
+            "name": "assets/style.80624b5a.css",
+            "size": 34613,
+            "hash": "01601c551a7debed6823bb298c74b598d3c987be8fb793a278afa12826910204"
+        },
+        {
+            "type": "file",
+            "name": "assets/top-bar.f1c43a9c.png",
+            "size": 43834,
+            "hash": "f1c43a9c819557c1f6685f835c74780e59c5222b3e56eae88bddae29d725c900"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/bottomBar"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/dialogs"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/icon"
+        },
+        {
+            "type": "file",
+            "name": "plugin/index.html",
+            "size": 13797,
+            "hash": "466a775714de116fc10a11de8e4b51bd9bbf3376e778002bf563e068342c2aac"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/keyboard"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/navigationBar"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/statusBar"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/system"
+        },
+        {
+            "type": "folder",
+            "name": "plugin/topBar"
+        },
+        {
+            "type": "folder",
+            "name": "service/gui"
+        },
+        {
+            "type": "file",
+            "name": "service/index.html",
+            "size": 22672,
+            "hash": "c45ecaa99d631256b8081e0b4cd103c7dfd1471cc40758b85591fd507062e0bf"
+        },
+        {
+            "type": "folder",
+            "name": "service/ssr"
+        },
+        {
+            "type": "folder",
+            "name": "service/tui"
+        },
+        {
+            "type": "folder",
+            "name": "systemApp/bnrtc"
+        },
+        {
+            "type": "folder",
+            "name": "systemApp/database"
+        },
+        {
+            "type": "folder",
+            "name": "systemApp/installApplication"
+        },
+        {
+            "type": "file",
+            "name": "plugin/bottomBar/index.html",
+            "size": 48173,
+            "hash": "b9ff83740d1cbcea605d1e48822c2319e36e1ae0e202ffb292c2a3ed119dff38"
+        },
+        {
+            "type": "file",
+            "name": "plugin/dialogs/index.html",
+            "size": 32911,
+            "hash": "317536d7477de6469e56f244fd692285f22b3c9332743b2430a9ae575870161b"
+        },
+        {
+            "type": "file",
+            "name": "plugin/icon/index.html",
+            "size": 15700,
+            "hash": "59df5c55244c704de038b5d7ec5b824b1bc264c2c3dd70d766a95be29193b6f6"
+        },
+        {
+            "type": "file",
+            "name": "plugin/keyboard/index.html",
+            "size": 18959,
+            "hash": "cbafb36ce7302f73b4de911b0ae39d0e797a3a19f961047e9bdf36b4a099823b"
+        },
+        {
+            "type": "file",
+            "name": "plugin/navigationBar/index.html",
+            "size": 23922,
+            "hash": "431902afee1c68f7dd2136aed79feed70a15b1070b8466db71034ce03b38e924"
+        },
+        {
+            "type": "file",
+            "name": "plugin/statusBar/index.html",
+            "size": 16100,
+            "hash": "7e27da584a94e67b6760e12365f3cc6d1ebbf5ed9f1bd334e4027eaa314f7a49"
+        },
+        {
+            "type": "file",
+            "name": "plugin/system/index.html",
+            "size": 23939,
+            "hash": "6f82a2d5062fa80c42c8e0b96ce1bdcc8245ab4e29115ce954b00a4393e5800b"
+        },
+        {
+            "type": "file",
+            "name": "plugin/topBar/index.html",
+            "size": 23095,
+            "hash": "a094e5dd759a5a7d7ee1e3393997645b74fb70c612ab7a812c0f9dfe77bac7b7"
+        },
+        {
+            "type": "file",
+            "name": "service/gui/index.html",
+            "size": 11624,
+            "hash": "6a307e5520633a98d538266c5fc1d9b8225ce2a744aaeb467e275424e382052b"
+        },
+        {
+            "type": "file",
+            "name": "service/ssr/index.html",
+            "size": 11672,
+            "hash": "369ad098cbb7e10ea3046e7bd0e570af3beb199ef135c12e8b6eddba29e8b312"
+        },
+        {
+            "type": "file",
+            "name": "service/tui/index.html",
+            "size": 11745,
+            "hash": "229c96a1b4f6d69539a0854e96bbe7d18fe0495751896c8bace09a1b26e83e18"
+        },
+        {
+            "type": "file",
+            "name": "systemApp/bnrtc/index.html",
+            "size": 11729,
+            "hash": "f32c18e91f747b4df90437b7fe70b7c27ac880b81773595da72ccb29c419caa8"
+        },
+        {
+            "type": "file",
+            "name": "systemApp/database/index.html",
+            "size": 11823,
+            "hash": "c7d3dfc7ba20509d1c81171dec9887fd35cd3fbbc336baff1cae237a2e5f5c5b"
+        },
+        {
+            "type": "file",
+            "name": "systemApp/installApplication/index.html",
+            "size": 11749,
+            "hash": "343f6980a9e13c884534730c8e26c90fb5400cf87041fec2d0a10b3c638fae2b"
+        }
+    ]
+}
