@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-4e8a3a1e","path":"/systemApp/database/","title":"Database","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1664447490000,"contributors":[{"name":"waterbang","email":"38105714+waterbang@users.noreply.github.com","commits":1}]},"filePathRelative":"systemApp/database/README.md"}');export{e as data};
