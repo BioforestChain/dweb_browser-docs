@@ -2,7 +2,7 @@ import { defineUserConfig, defaultTheme } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
 
 export default defineUserConfig({
-  base: "/plaoc-docs/",
+  base: "/",
   title: "plaoc Documentation",
   description: "BFChain Plaoc",
   theme: defaultTheme({
@@ -47,7 +47,7 @@ export default defineUserConfig({
         ],
       },
       {
-        text: "service",
+        text: "Service",
         link: "/service/",
         children: [
           {
@@ -65,7 +65,7 @@ export default defineUserConfig({
         ],
       },
       {
-        text: "systemApp",
+        text: "SystemApp",
         link: "/systemApp/",
         children: [
           {
@@ -77,8 +77,8 @@ export default defineUserConfig({
             link: "/systemApp/database/",
           },
           {
-            text: "installctionTool",
-            link: "/systemApp/installApplication/",
+            text: "bundle",
+            link: "/systemApp/bundle/",
           },
         ],
       },

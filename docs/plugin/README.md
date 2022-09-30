@@ -17,6 +17,8 @@ createApp(App).mount("#app");
 
 #### 按需引入
 
-这个没得
+```typescript
+import { BfcsKeyboard, Navigation, BfcsStatusBar } from '@bfsx/plugin';
+```
 
 ## 配置参考
