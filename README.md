@@ -2,7 +2,9 @@
 
 plaoc 前后端开发文档,构建符合开发者直觉的 API。
 
-文档站点：[地址（国外）](https://bioforestchain.github.io/plaoc-docs/)，[国内](http://docs.plaoc.com)
+文档站点：[docs.plaoc.com](https://docs.plaoc.com)
+
+DAPP商城地址：[shop.plaoc.com](https://shop.plaoc.com)
 
 ## 快速启动
 
