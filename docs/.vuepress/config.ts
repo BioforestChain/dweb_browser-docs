@@ -78,8 +78,18 @@ export default defineUserConfig({
             link: "/systemApp/database/",
           },
           {
+            text: "NOTIFICATION",
+            link: "/systemApp/notification/",
+          },
+        ],
+      },
+      {
+        text: "Tools",
+        link: "/tools/",
+        children: [
+          {
             text: "bundle",
-            link: "/systemApp/bundle/",
+            link: "/tools/bundle/",
           },
         ],
       },

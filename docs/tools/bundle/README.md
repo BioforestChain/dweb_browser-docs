@@ -9,15 +9,15 @@ plaoc前后端打包工具，把您开发的包打包成`.bfsa`形式。
 
 ---------------------------
 
-### @bfsx/install
+### @bfsx/bundle
 
 ```
  全局安装指令
  # npm方式
-   npm i @bfsx/install -g
+   npm i @bfsx/bundle -g
 
  # yarn方式
-   yarn global add @bfsx/install
+   yarn global add @bfsx/bundle
 ```
 
 #### 使用
