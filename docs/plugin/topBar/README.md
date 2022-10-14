@@ -71,3 +71,24 @@
 ### `size`
 
 控制图标大小。
+
+
+## Methods​
+
+> platform为空就是同时支持ios/android/dasktop 平台
+
+| API                                     | platform | return:         | 解释                       |
+|-----------------------------------------|----------|-----------------|--------------------------|
+| topBarNavigationBack()                  |          | Promise:boolean | 返回上一级                 |
+| setTopBarShow(isShow: boolean)          |          | Promise:boolean | 设置topbar隐藏或显示       |
+| getTopBarShow()                         |          | Promise:boolean | 获取topbar隐藏或显示的状态 |
+| getTopBarTitle()                        |          | Promise:string  | 获取标题名称               |
+| setTopBarTitle(title: string)           |          | Promise:boolean | 设置标题名称               |
+| hasTopBarTitle()                        |          | Promise:boolean | 查看是否设置了标题         |
+| getTopBarAlpha()                        |          | Promise:number  | 获取状态栏的透明度         |
+| setTopBarAlpha(alpha: string)()         |          | Promise:boolean | 设置状态栏的透明度         |
+| getTopBarHeight()                       |          | Promise:number  | 获取状态栏高度             |
+| getTopBarBackgroundColor()              |          | Promise:string  | 获取状态栏背景颜色         |
+| setTopBarBackgroundColor(color: string) |          | Promise:boolean | 设置状态栏背景颜色         |
+| getTopBarForegroundColor()              |          | Promise:string  | 获取状态栏文字和图标颜色   |
+| setTopBarForegroundColor(color: string) |          | Promise:boolean | 设置状态栏文字和图标颜色   |
