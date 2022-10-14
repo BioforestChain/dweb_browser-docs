@@ -44,11 +44,13 @@
 
 ## Methods​
 
-| API                   | return:Promise                                              | 解释                           |
-|-----------------------|-------------------------------------------------------------|------------------------------|
-| showKeyboard          | null                                                        | 显示键盘                       |
-| hideKeyboard          | null                                                        | 隐藏键盘                       |
-| getKeyboardSafeArea   | {"bottom":number,"left":number,"right":number,"top":number} | 键盘位置                       |
-| getKeyboardHeight     | number                                                      | 获取键盘高度                   |
-| getKeyboardOverlay    | booblean                                                    | 看看是否指定覆盖               |
-| toggleKeyboardOverlay | null                                                        | 在覆盖内容和不覆盖内容之间切换 |
+> platform为空就是同时支持ios/android/dasktop 平台
+
+| API                                    | platform | return:Promise                                              | 解释                   |
+|----------------------------------------|----------|-------------------------------------------------------------|----------------------|
+| getKeyboardSafeArea()                  |          | {"bottom":number,"left":number,"right":number,"top":number} | 键盘位置               |
+| getKeyboardHeight()                    |          | number                                                      | 获取键盘高度           |
+| setKeyboardOverlay(isOverlay: boolean) |          | boolean                                                     | 设置键盘是否覆盖了内容 |
+| getKeyboardOverlay()                   |          | boolean                                                     | 获取键盘是否覆盖了内容 |
+| showKeyboard()                         | android  | boolean                                                     | 显示键盘               |
+| hideKeyboard()                         |          | boolean                                                     | 隐藏键盘               |

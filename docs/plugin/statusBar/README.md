@@ -40,11 +40,11 @@
 
 > platform为空就是同时支持ios/android/dasktop 平台
 
-| API                                 | platform | return:                              | 解释                               |
-|-------------------------------------|----------|--------------------------------------|----------------------------------|
-| getStatusBarColor()                 |          | Promise:string                       | 获取状态栏颜色                     |
-| getStatusBarVisible()               |          | Promise:boolean                      | 查看状态栏是否可见                 |
-| setStatusBarVisible(isVer = true)   |          | Promise:boolean                      | 设置状态栏是否可见                 |
-| getStatusBarOverlay()               |          | Promise:boolean                      | 查看状态栏是否覆盖内容             |
-| setStatusBarOverlay(isOver = false) |          | Promise:boolean                      | 设置状态栏是否覆盖内容             |
-| getStatusBarIsDark()                |          | Promise:{dark-content,light-content} | 获取状态栏是否更偏向于使用黑色效果 |
+| API                                 | platform | return:Promise               | 解释                               |
+|-------------------------------------|----------|------------------------------|----------------------------------|
+| getStatusBarColor()                 |          | string                       | 获取状态栏颜色                     |
+| getStatusBarVisible()               |          | boolean                      | 查看状态栏是否可见                 |
+| setStatusBarVisible(isVer = true)   |          | boolean                      | 设置状态栏是否可见                 |
+| getStatusBarOverlay()               |          | boolean                      | 查看状态栏是否覆盖内容             |
+| setStatusBarOverlay(isOver = false) |          | boolean                      | 设置状态栏是否覆盖内容             |
+| getStatusBarIsDark()                |          | {dark-content,light-content} | 获取状态栏是否更偏向于使用黑色效果 |
