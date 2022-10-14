@@ -35,3 +35,16 @@
 ### `background-color`
 
 设置状态栏背景颜色，如果设置`overlay`,则需要传递透明值。
+
+## Methods​
+
+> platform为空就是同时支持ios/android/dasktop 平台
+
+| API                                 | platform | return:                              | 解释                               |
+|-------------------------------------|----------|--------------------------------------|----------------------------------|
+| getStatusBarColor()                 |          | Promise:string                       | 获取状态栏颜色                     |
+| getStatusBarVisible()               |          | Promise:boolean                      | 查看状态栏是否可见                 |
+| setStatusBarVisible(isVer = true)   |          | Promise:boolean                      | 设置状态栏是否可见                 |
+| getStatusBarOverlay()               |          | Promise:boolean                      | 查看状态栏是否覆盖内容             |
+| setStatusBarOverlay(isOver = false) |          | Promise:boolean                      | 设置状态栏是否覆盖内容             |
+| getStatusBarIsDark()                |          | Promise:{dark-content,light-content} | 获取状态栏是否更偏向于使用黑色效果 |
