@@ -29,7 +29,7 @@ jobs:
           server: ${{ secrets.SERVER_IP }}
           username: docs.plaoc.com
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: docs/.vuepress/dist/
+          local-dir: src/.vuepress/dist/
           port: 21
 
           # 部署到 GitHub Pages
