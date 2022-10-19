@@ -7,12 +7,12 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Plaoc Docs",
+      title: "Plaoc",
       description: "plaoc system Runtime documentation",
     },
     "/zh/": {
       lang: "zh-CN",
-      title: "Plaoc 文档",
+      title: "Plaoc",
       description: "plaoc 系统运行时文档",
     },
   },
