@@ -20,20 +20,25 @@ actions:
     link: /tools/
 
 features:
-  - title: Markdown 增强
-    icon: markdown
-    details: 新增文字对齐、上下角标、脚注、标记、任务列表、数学公式、流程图、图表与幻灯片支持
-    link: https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/
+  - title: APP 链上认证
+    icon: lock
+    details: 为APP上链申请的DAPPID,方便对APP进行认证和溯源。
+    link: https://docs.plaoc.com/systemApp/bundle/index.html
 
-  - title: 幻灯片页面
+  - title: APP配置
+    icon: config
+    details: 自由配置规则，您的后端根目录创建一个`bfsa-metadata.ts`的配置文件，具体查看后端配置。
+    link: https://docs.plaoc.com/service/index.html
+
+  - title: 打包配置
     icon: slides
-    details: 添加幻灯片页面以显示你喜欢的内容
-    link: https://vuepress-theme-hope.github.io/v2/zh/guide/layout/slides.html
+    details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.bfsa`文件，然后上传到应用商城。
+    link: https://docs.plaoc.com/systemApp/bundle/index.html
 
-  - title: 布局增强
+  - title: 一次打包，多平台使用
     icon: layout
-    details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
-    link: https://vuepress-theme-hope.github.io/v2/zh/guide/layout/
+    details: 提供android,ios,desktop三端部署。
+    link: https://docs.plaoc.com/systemApp/bundle/index.html
 
 copyright: 闽ICP备18009949号-4
 footer: MIT Licensed | Copyright © 2021-present BNRTC
