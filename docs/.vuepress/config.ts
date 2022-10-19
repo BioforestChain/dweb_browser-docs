@@ -4,7 +4,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 export default defineUserConfig({
   base: "/",
   // base: "/plaoc-docs/",
-  title: "plaoc Documentation",
+  title: "Plaoc",
   description: "BFChain Plaoc",
   theme: defaultTheme({
     // 默认主题配置
@@ -51,6 +51,10 @@ export default defineUserConfig({
         text: "Service",
         link: "/service/",
         children: [
+          {
+            text: "VFS",
+            link: "/service/vfs/",
+          },
           {
             text: "SSR",
             link: "/service/ssr/",
