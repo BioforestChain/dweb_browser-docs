@@ -28,17 +28,17 @@ plaoc前后端打包工具，把您开发的包打包成`.bfsa`形式。
 
 #### 使用
 > bfsa -V
-```shell
+```bash
 0.0.3
 ```
 ---------------------------
 
 > bfsa help
 
-```shell
+```bash
 Usage: bfsa [options] [command]
 
-.bfsa application install service.
+.bfsa application bundle service.
 
 Options:
   -V, --version     output the version number
@@ -46,13 +46,14 @@ Options:
 
 Commands:
   bundle [options]  bfsa bundle project to .bfsa
+  interactive       bfsa bundle project to .bfsa by interactive command line
   help [command]    display help for command
 ```
 --------------------------
 
 > bfsa bundle -h
 
-```shell
+```bash
 Usage: bfsa bundle [options]
 
 bfsa bundle project to .bfsa
