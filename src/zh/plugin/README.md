@@ -21,4 +21,7 @@ createApp(App).mount("#app");
 import { BfcsKeyboard, Navigation, BfcsStatusBar } from '@bfsx/plugin';
 ```
 
+### 组件类型安全提示
+> 可以查看[bfsa-plugin-typed](https://github.com/BioforestChain/bfsa-plugin-typed)
+
 ## 配置参考
