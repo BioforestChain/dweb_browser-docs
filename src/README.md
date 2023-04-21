@@ -50,11 +50,6 @@ features:
     details: Add author, writing date, reading time, word count and other information to your article
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/page-info.html
 
-  - title: Blog support
-    icon: blog
-    details: Listing your articles with their dates, tags and categories with some awesome layouts
-    link: https://vuepress-theme-hope.github.io/v2/guide/blog/
-
   - title: Custom theme color
     icon: palette
     details: Supports custom theme colors and allows users to switch between preset theme colors

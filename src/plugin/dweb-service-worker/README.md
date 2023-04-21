@@ -3,7 +3,7 @@ title: DwebServiceWorker
 category:
   - Plugin
 tag:
-  - WebComponent
+  - Plugin
 ---
 
 模拟 ServiceWorker 并且提供应用升级控制器和应用控制功能。
@@ -11,6 +11,12 @@ tag:
 > 以 vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/dweb_browser/tree/main/plugins/demo)
 
 ## dweb-service-worker
+
+导入
+
+```ts
+import { dwebServiceWorker as sw } from "@bfex/plugin";
+```
 
 ### 包含监听事件`updatefound`,`fetch`,`onFetch`。
 

@@ -2,26 +2,39 @@
 
 ## 快速上手
 
-### 前端(Vue/React/Angular)
+### 在页面引用 Plugin
 
-在入口页面引用Plugin。
-> 以vue3为例：
-
-```typescript
-import { createApp } from "vue";
-import '@bfex/plugin';   // +++++++++++
-import "./style.css";
-import App from "./App.vue";
-createApp(App).mount("#app");
-```
-
-#### 按需引入
+> 以 vue3 为例：
 
 ```typescript
-import { BfcsKeyboard, Navigation, BfcsStatusBar } from '@bfsx/plugin';
+import { barcodeScannerPlugin } from "@bfex/plugin";
 ```
 
-### 组件类型安全提示
-> 可以查看[bfsa-plugin-typed](https://github.com/BioforestChain/bfsa-plugin-typed)
+### 在页面使用 webComponent
+
+> 以 vue3 为例
+
+```vue
+<script setup lang="ts">
+import { HTMLDwebBarcodeScanningElement } from "@bfex/plugin";
+
+const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
+let barcodeScanner: HTMLDwebBarcodeScanningElement;
+onMounted(() => {
+  // 这里就拿到了webComponent 对象
+  barcodeScanner = $barcodeScannerPlugin.value!;
+});
+
+// 调用扫码
+const taskPshoto = async () => {
+  await barcodeScanner.startScanning();
+};
+</script>
+
+<template>
+  <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
+  <button @click="taskPhoto">scanner</button>
+</template>
+```
 
 ## 配置参考
