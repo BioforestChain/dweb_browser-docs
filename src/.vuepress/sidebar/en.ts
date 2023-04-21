@@ -14,6 +14,10 @@ export const enSidebar = sidebar({
           link: "/plugin/bottomBar/",
         },
         {
+          text: "Barcode Scanning",
+          link: "/plugin/barcodeScanning/"
+        },
+        {
           text: "Top Bar",
           link: "/plugin/topBar/",
         },
@@ -37,6 +41,10 @@ export const enSidebar = sidebar({
           text: "Android/iOS-API",
           link: "/plugin/system/",
         },
+        {
+          text: "Data Type",
+          link: "/plugin/dataType/"
+        }
       ],
     },
     {

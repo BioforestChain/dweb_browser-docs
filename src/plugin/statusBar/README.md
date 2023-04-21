@@ -11,46 +11,201 @@ tag:
 ## example
 
 ```html
- <dweb-status-bar id="status_bar" background-color="rgba(100,100,100,0.5)" overlay bar-style="default"></dweb-status-bar>
+ <dweb-status-bar></dweb-status-bar>
 ```
 
-## dweb-status-bar
-
-包含属性：`overlay`, `hidden`, `bar-style`, `background-color`。
+## Attribute
 
 
-### `overlay`
+## Event
 
-设置状态栏透明，如果设置了`overlay`又设置了`background-color`那么，`background-color`需要使用rgba形式。
+### statechange
+  - 事件类型
 
-### `hidden`
-
-隐藏状态栏。有的手机会直接变黑色不好看，谨慎使用。
-
-### `bar-style`
-
-设置状态栏文字背景样式，枚举类型：
-
-  `default`:	默认的样式（IOS 为白底黑字、Android 为黑底白字、Desktop-dev同Android）
+    CustomEvent
   
-  `light-content`:	黑底白字
-  
-  `dark-content`:	白底黑字（需要 Android API>=23）
+  - 触发时机
 
+    当状态发生变化的时候触发
+      
+## Property
 
-### `background-color`
+### state
+  - 作用：
+    
+    访问 HTMLDwebStatusBarElement 的状态对象
 
-设置状态栏背景颜色，如果设置`overlay`,则需要传递透明值。
+  - 数据类型
 
-## Methods​
+    `Object`
 
-> platform为空就是同时支持ios/android/dasktop 平台
+    ```typescript
+      {
+        /**
+         * Whether the bar is visible or not.
+         */
+        visible: boolean;
 
-| API                                 | platform | return:Promise             | 解释                               |
-|-------------------------------------|----------|----------------------------|----------------------------------|
-| getStatusBarColor()                 |          | string                     | 获取状态栏颜色                     |
-| getStatusBarVisible()               |          | boolean                    | 查看状态栏是否可见                 |
-| setStatusBarVisible(isVer = true)   |          | boolean                    | 设置状态栏是否可见                 |
-| getStatusBarOverlay()               |          | boolean                    | 查看状态栏是否覆盖内容             |
-| setStatusBarOverlay(isOver = false) |          | boolean                    | 设置状态栏是否覆盖内容             |
-| getStatusBarIsDark()                |          | dark-content,light-content | 获取状态栏是否更偏向于使用黑色效果 |
+        /**
+         * The current bar style.
+         */
+        style: BAR_STYLE;
+
+        /**
+         * The current bar color.
+         *
+         * This option is only supported on Android.
+         */
+        color: $AgbaColor;
+
+        /**
+         * Whether the bar is overlaid or not.
+         *
+         * This option is only supported on Android.
+         */
+        overlay: boolean;
+        insets: $Insets;
+      }
+
+    ```
+    [BAR_STYLE](../dataType/#bar-style)
+
+    [$AgbaColor](../dataType/#agbacolor)
+
+    [$Insets](../dataType/#insets)
+
+## Method
+
+### setColor
+
+  - 作用：
+
+    设置背景色
+
+  - 调用签名：
+
+    ```typescript
+      async setColor(color: string): Promise<string>
+    ```
+  - 参数说明：
+
+    十六进制背景色的值 
+
+### getColor
+
+  - 作用
+
+    获取背景色
+
+  - 调用签名
+
+    ```typescript
+      async getColor(): Promise<string>
+    ```
+
+### setStyle
+
+  - 作用
+
+    设置风格
+
+  - 调用签名
+    
+    ```typescript
+      setStyle(style: BAR_STYLE): Promise<unknown>
+
+    ```
+
+  - 数据类型说明：
+
+    [BAR_STYLE](../dataType/#bar-style)
+
+### getStyle
+
+  - 作用
+
+    获取当前风格
+
+  - 调用签名
+
+    ```typescript
+      async getStyle(): Promise<BAR_STYLE>
+
+    ```
+
+  - 数据类型说明：
+
+    [BAR_STYLE](../dataType/#bar-style)
+
+### show
+
+  - 作用
+
+    显示
+
+  - 调用签名
+
+    ```typescript
+      async show(): Promise<unknown>
+    ```
+
+### hide
+
+  - 作用
+
+    隐藏
+
+  - 调用签名
+
+    ```typescript
+      async hide(): Promise<unknown>
+    ```
+
+### setVisible
+
+  - 作用
+
+    设置 显示/隐藏
+
+  - 调用签名
+
+    ```typescript
+      async setVisible(visible: boolean): Promise<unknown>
+
+    ```
+### getVisible
+
+  - 作用
+
+    获取是否显示
+
+  - 调用签名
+
+    ```typescript
+      async getVisible(): Promise<boolan>
+
+    ```
+
+### setOverlay
+
+  - 作用
+
+    设置 遮盖
+
+  - 调用签名
+
+    ```typescript
+      setOverlay(overlay: boolean): Promise<unknown>
+    ```
+
+### getOverlay
+
+  - 作用
+
+    获取 遮盖状态
+
+  - 调用签名
+     
+     ```typescript
+      async getOverlay(): Promise<boolan>
+     ```
