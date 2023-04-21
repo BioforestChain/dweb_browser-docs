@@ -7,13 +7,13 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Plaoc",
-      description: "plaoc system Runtime documentation",
+      title: "DwebBrowser",
+      description: "DwebBrowser documentation",
     },
     "/zh/": {
       lang: "zh-CN",
-      title: "Plaoc",
-      description: "plaoc 系统运行时文档",
+      title: "DwebBrowser",
+      description: "DwebBrowser 文档",
     },
   },
 

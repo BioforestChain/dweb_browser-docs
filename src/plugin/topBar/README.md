@@ -12,7 +12,7 @@ tag:
 
 ## example
 
-> 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
+> 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/dweb_browser/tree/main/plugins/demo)
 
 ```html
    <dweb-top-bar id="topbar" title="Ar 扫雷" background-color="#eeee" foreground-color="#000"  overlay="0.4" >

@@ -14,7 +14,7 @@ export default hopeTheme({
 
   logo: "/logo.svg",
 
-  repo: "https://github.com/BioforestChain/plaoc",
+  repo: "https://github.com/BioforestChain/dweb_browser",
 
   docsDir: "demo/theme-docs/src",
 

@@ -1,7 +1,7 @@
 {
-  "name": "plaoc",
+  "name": "dweb-browser",
   "version": "1.0.0",
-  "description": "bfs 操作系统运行时",
+  "description": "dweb-browser",
   "license": "MIT",
   "type": "module",
   "scripts": {

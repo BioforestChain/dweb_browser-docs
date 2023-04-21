@@ -1,4 +1,4 @@
-# Plaoc系统内置APP
+# DwebBrowser系统内置APP
 
 系统APP天然拥有在TUI运行的能力。
 

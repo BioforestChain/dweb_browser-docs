@@ -30,8 +30,8 @@ export const enNavbar = navbar([
     ],
   },
   {
-    text: "Plaoc Docs",
+    text: "dweb browser Docs",
     icon: "note",
-    link: "https://github.com/BioforestChain/plaoc-docs",
+    link: "https://github.com/BioforestChain/dweb_browser-docs",
   },
 ]);

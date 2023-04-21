@@ -1,4 +1,4 @@
-# Plaoc 前端开发文档
+# DwebBrowser 前端开发文档
 
 ## 快速上手
 
@@ -9,7 +9,7 @@
 
 ```typescript
 import { createApp } from "vue";
-import '@bfsx/plugin';   // +++++++++++
+import '@bfex/plugin';   // +++++++++++
 import "./style.css";
 import App from "./App.vue";
 createApp(App).mount("#app");

@@ -1,6 +1,6 @@
-# plaoc-docs
+# Dweb-browser-docs
 
-plaoc 前后端开发文档,构建符合开发者直觉的 API。
+Dweb-browser 前后端开发文档,构建符合开发者直觉的 API。
 
 文档站点：[docs.plaoc.com](https://docs.plaoc.com)
 

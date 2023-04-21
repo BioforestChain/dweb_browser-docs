@@ -1,10 +1,10 @@
 ---
 home: true
 icon: home
-title: Plaoc
+title: DwebBrowser
 heroImage: /logo.svg
-heroText: Plaoc
-tagline: 这是一个操作系统运行时，BFS资产，体现在native是浏览器的形式。主要服务于 SPA 开发者。
+heroText: DwebBrowser
+tagline: 一个提供分布式网络|应用附着的浏览器。
 actions:
   - text: 前端插件 💡
     link: /plugin/

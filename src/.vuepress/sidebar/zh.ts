@@ -10,12 +10,12 @@ export const zhSidebar = sidebar({
       link: "plugin/README.md",
       children: [
         {
-          text: "Bottom Bar",
-          link: "/plugin/bottomBar/",
+          text: "dweb-service-worker",
+          link: "/plugin/dweb-service-worker/",
         },
         {
-          text: "Barcode Scanning",
-          link: "/plugin/barcodeScanning/"
+          text: "barcode-scanning",
+          link: "/plugin/barcode-scanning/"
         },
         {
           text: "Top Bar",

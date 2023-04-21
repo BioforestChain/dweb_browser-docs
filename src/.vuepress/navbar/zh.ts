@@ -30,8 +30,8 @@ export const zhNavbar = navbar([
     ],
   },
   {
-    text: "Plaoc 文档",
+    text: "dweb browser 文档",
     icon: "note",
-    link: "https://github.com/BioforestChain/plaoc-docs",
+    link: "https://github.com/BioforestChain/dweb_browser-docs",
   },
 ]);

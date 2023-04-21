@@ -1,5 +1,5 @@
 ---
-title: Bottom Bar
+title: DwebServiceWorker
 category:
   - Plugin
 tag:
@@ -12,7 +12,7 @@ tag:
 
 ## example
 
-> 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/plaoc/tree/main/test-vue3)
+> 以vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/dweb_browser/tree/main/plugins/demo)
 
 ```html
        <dweb-bottom-bar id="bottom_bar" background-color="#D0BCFF"  height="70"  overlay="0.2" >
