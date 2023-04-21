@@ -8,19 +8,15 @@ tag:
 
 模拟 ServiceWorker 并且提供应用升级控制器和应用控制功能。
 
-> 以 vue3 为例,完整代码查看:[test-vue3](https://github.com/BioforestChain/dweb_browser/tree/main/plugins/demo)
+> 以 vue3 为例,完整代码查看:[DwebServiceWorker](https://github.com/BioforestChain/dweb_browser/blob/main/plugins/demo/src/pages/DwebServiceWorker.vue)
 
 ## dweb-service-worker
 
-导入
-
-```ts
-import { dwebServiceWorker as sw } from "@bfex/plugin";
-```
+提供 app 的控制和 api 的拦截。
 
 ### 包含监听事件`updatefound`,`fetch`,`onFetch`。
 
-#### `updatefound`
+#### `updatefound`（暂未开放）
 
 - 作用：
 
@@ -34,7 +30,7 @@ sw.addEventListener("updatefound", (event) => {
 });
 ```
 
-#### `fetch`
+#### `fetch` （暂未开放）
 
 - 作用：
 
@@ -51,7 +47,7 @@ sw.addEventListener("fetch", async (event) => {
 });
 ```
 
-#### `onFetch`
+#### `onFetch` （暂未开放）
 
 - 作用：
 
