@@ -42,6 +42,10 @@ export const enSidebar = sidebar({
           link: "/plugin/system/",
         },
         {
+          text: "safe-area",
+          link: "/plugin/safe-area"
+        },
+        {
           text: "Data Type",
           link: "/plugin/dataType/"
         }

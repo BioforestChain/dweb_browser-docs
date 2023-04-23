@@ -38,6 +38,10 @@ export const zhSidebar = sidebar({
           link: "/plugin/navigationBar/",
         },
         {
+          text: "safe-area",
+          link: "/plugin/safe-area"
+        },
+        {
           text: "Android/iOS-API",
           link: "/plugin/system/",
         },

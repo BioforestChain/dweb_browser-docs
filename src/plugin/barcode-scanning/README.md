@@ -9,7 +9,7 @@ tag:
 
 提供扫码功能。
 
-> 具体查看示例代码： [Barcode Scanning](https://github.com/BioforestChain/dweb_browser/blob/main/plugins/demo/src/pages/BarcodeScanning.vue)
+> 具体查看示例代码： [Barcode Scanning](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/BarcodeScanning.vue)
 
 ## HTMLDwebBarcodeScanningElement
 

@@ -1,5 +1,5 @@
 ---
-title: StatusBar
+title: Status Bar
 category:
   - Plugin
 tag:
@@ -8,73 +8,36 @@ tag:
 
 控制系统状态栏。
 
-## example
-
-```html
- <dweb-status-bar></dweb-status-bar>
-```
-
-## Attribute
+> 具体查看示例代码： [Status Bar](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/StatusBar.vue)
 
 
-## Event
+## HTMLDwebBarcodeScanningElement
 
-### statechange
-  - 事件类型
+  声明 html 标签样式
 
-    CustomEvent
-  
-  - 触发时机
+  ```html
+    <dweb-barcode-scanning></dweb-barcode-scanning>
+  ```
 
-    当状态发生变化的时候触发
-      
-## Property
+  继承值 class HTMLStateObserverElement<$StatusBarRawState, $StatusBarState>
 
-### state
+  - 数据类型说明：
+
+    [class HTMLStateObserverElement](../dataType/#class-htmlstateobserverelement)
+
+    [$StatusBarRawState](../dataType/#statusbarrawstate)
+
+    [$StatusBarState](../dataType/#statusbarstate)
+
+### plugin
+
   - 作用：
-    
-    访问 HTMLDwebStatusBarElement 的状态对象
 
-  - 数据类型
+    访问插件对象,是 class StatusbarPlugin 的实例;
 
-    `Object`
+  - 数据类型：
 
-    ```typescript
-      {
-        /**
-         * Whether the bar is visible or not.
-         */
-        visible: boolean;
-
-        /**
-         * The current bar style.
-         */
-        style: BAR_STYLE;
-
-        /**
-         * The current bar color.
-         *
-         * This option is only supported on Android.
-         */
-        color: $AgbaColor;
-
-        /**
-         * Whether the bar is overlaid or not.
-         *
-         * This option is only supported on Android.
-         */
-        overlay: boolean;
-        insets: $Insets;
-      }
-
-    ```
-    [BAR_STYLE](../dataType/#bar-style)
-
-    [$AgbaColor](../dataType/#agbacolor)
-
-    [$Insets](../dataType/#insets)
-
-## Method
+    [class StatusBarPlugin](#class-statusbarplugin)
 
 ### setColor
 
@@ -190,7 +153,7 @@ tag:
 
   - 作用
 
-    设置 遮盖
+    设置 是否遮盖
 
   - 调用签名
 
@@ -209,3 +172,117 @@ tag:
      ```typescript
       async getOverlay(): Promise<boolan>
      ```
+
+## class StatusBarPlugin
+
+  控制系统状态栏，对外提供的插件功能。
+
+  导入
+
+  ```typescript
+    import { statusBarPlugin } from "@bfex/plugin"
+  ```
+
+  可以获取到插件的实例对象；
+
+  继承自 class BarPlugin <$StatusBarRawState,$StatusBarState, $StatusBarWritableState> 
+
+  - 数据类型说明
+
+    [class BarPlugin](../dataType/#class-barplugin)
+    
+    [$StatusBarRawState](../dataType/#statusbarrawstate)
+
+    [$StatusBarState](../dataType/#statusbarstate)
+
+    [$StatusBarWritableState](../dataType/#statusbarwritablestate)
+
+### tagName
+
+  - 作用：
+
+    插件匹配的 webComponent 的标签名称
+
+  - 数据类型
+
+  "dweb-status-bar"
+### coder
+
+  - 作用:
+
+    编解码器
+
+  - 数据类型:
+
+    \$Coder<$StatusBarRawState, $StatusBarState>
+  
+  - 数据类型说明：
+
+    [\$Coder](../dataType/#coder)
+
+    [$StatusBarRawState](../dataType/#statusbarstate)
+
+    [$StatusBarState](../dataType/#statusbarrawstate)
+
+### setState
+
+  - 作用
+
+    - 设置状态
+
+  - 调用签名
+
+    ```typescript
+    setState(state: Partial<$StatusBarWritableState>):Promise<void>
+
+    ```
+
+  - 参数说明
+
+    state 状态的值
+
+  - 数据类型说明：
+
+    [$StatusBarWritableState](../dataType/#statusbarwritablestate)
+
+
+### setStateByKey
+  - 作用
+    
+    单独设置某一项状态
+
+  - 调用签名
+
+  ```typescript
+    setStateByKey<K extends keyof $StatusBarWritableState>(key: K, value: $StatusBarWritableState[key]): Promise<void>
+  ```
+  - 参数说明：
+
+    key: 需要设置状态属性名称
+
+    value: 属性的值
+
+  - 数据类型说明：
+
+    [$StatusBarWritableState](../dataType/#statusbarwritablestate)
+
+### getState()
+
+  - 作用 
+
+    获取状态
+
+  - 调用签名
+
+    ```ts
+      async getState(force_update?: boolean) => Promise<$BarState>
+    ```
+  
+    - 参数说明：
+
+      force_update 是否强制更新
+
+  - 数据类型说明：
+
+    [$BarState](../dataType/#barstate)
+
