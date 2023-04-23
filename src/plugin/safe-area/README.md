@@ -22,7 +22,7 @@ tag:
 
   - 数据类型说明：
 
-    [class HTMLStateObserverElement](../dataType/#class htmlstateobserverelement)
+    [class HTMLStateObserverElement](../dataType/#class-htmlstateobserverelement )
 
     [#SafeAreaRawState](../dataType/#safearearawstate)
 
@@ -129,11 +129,11 @@ tag:
 
     [class InsetsPlugin](../dataType/#class-insetsplugin)
 
-    [$SafeAreaRawState]()
+    [$SafeAreaRawState](../dataType/#safearearawstate)
 
-    [$SafeAreaState]()
+    [$SafeAreaState](../dataType/#safeareastate)
 
-    [$SafeAreaWritableState]()
+    [$SafeAreaWritableState](../dataType/#safeareawritablestate)
 
 ### tagName
 
@@ -203,7 +203,7 @@ tag:
 
     - 数据类型说明：
 
-      [$SafeAreaWritableState]()
+      [$SafeAreaWritableState](../dataType/#safeareawritablestate)
 
 ### getState()
 
@@ -224,7 +224,7 @@ tag:
 
   - 数据类型说明：
 
-    [$SafeAreaState]()
+    [$SafeAreaState](../dataType/safefareastate)
 
 ### setOverlay()
 
