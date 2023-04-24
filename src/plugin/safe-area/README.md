@@ -10,7 +10,7 @@ tag:
 
 > 具体查看示例代码：[SafeArea](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/SafeArea.vue)
 
-## HTMLDwebSafeAreaElement WebComponent API
+## SafeArea WebComponent API
 
   首先需要声明的 html 标签样式，该组件挂载了 statechange 方法，当有状态改变时会触发。
 
@@ -61,10 +61,10 @@ tag:
       async setState<K extends "overlay">(key: K, value: $SafeAreaWritableState[K]): Promise<void>
     ```
 
-  | Param       | Type                                                                            | Description          |
-  | ----------- | ------------------------------------------------------------------------------- | -------------------- |
-  | **`key`**   | <code>"overlay"</code>                                                          | 设置安全区域属性的名称   |
-  | **`value`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState[key]</a></code>   | 设置安全区域属性的值     |
+    | Param       | Type                                                                            | Description          |
+    | ----------- | ------------------------------------------------------------------------------- | -------------------- |
+    | **`key`**   | <code>"overlay"</code>                                                          | 设置安全区域属性的名称   |
+    | **`value`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState[key]</a></code>   | 设置安全区域属性的值     |
 
 ### setOverlay
 

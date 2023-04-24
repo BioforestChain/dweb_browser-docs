@@ -1,5 +1,5 @@
 ---
-title: Barcode Scanning
+title: BarcodeScanning
 category:
   - Plugin
 tag:
@@ -9,7 +9,7 @@ tag:
 
 提供扫码功能。
 
-> 具体查看示例代码： [Barcode Scanning](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/BarcodeScanning.vue)
+> 具体查看示例代码： [BarcodeScanning](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/BarcodeScanning.vue)
 
 ## BarcodeScanning WebComponent API
 

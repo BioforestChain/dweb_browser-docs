@@ -1,5 +1,5 @@
 ---
-title: Status Bar
+title: StatusBar
 category:
   - Plugin
 tag:
