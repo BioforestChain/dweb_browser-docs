@@ -13,7 +13,7 @@ tag:
 
 ## BarcodeScanning WebComponent API
 
-声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，以 vue3 为示例：
+首先需要声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，以 vue3 为示例：
 
 ```ts
 <script setup lang="ts">
@@ -37,9 +37,7 @@ const startScanner = () => {
 
 ### startScanning
 
-- 作用：
-
-  启动摄像头扫描， 解析成功后关闭摄像头；
+启动摄像头扫描， 解析成功后关闭摄像头；
 
 - 调用签名：
 
@@ -49,9 +47,7 @@ const startScanner = () => {
 
 ### stopScanning
 
-- 作用：
-
-  停止扫描；会关闭摄像头;
+停止扫描；会关闭摄像头;
 
 - 调用签名：
 
@@ -61,9 +57,7 @@ const startScanner = () => {
 
 ### getView
 
-- 作用:
-
-  获取 video 的容器元素,开发者根据这个 DOM 用户可以自定义样式.
+获取 video 的容器元素,开发者根据这个 DOM 用户可以自定义样式.
 
 - 调用签名：
 
@@ -73,9 +67,7 @@ getView: HTMLElement | null;
 
 ### toggleTorch
 
-- 作用：
-
-  打开/关闭手电筒
+打开/关闭手电筒
 
 - 调用签名：
 
@@ -85,9 +77,7 @@ getView: HTMLElement | null;
 
 ### getTorchState
 
-- 作用：
-
-  手电筒状态
+手电筒状态
 
 - 调用签名：
 
@@ -97,9 +87,7 @@ getView: HTMLElement | null;
 
 ### hasMedia
 
-- 作用：
-
-  判断是否支持扫描功能
+判断是否支持扫描功能
 
 - 调用签名：
 
@@ -130,9 +118,7 @@ const onFileChanged = ($event: Event) => {
 
 ### process
 
-- 作用：
-
-  解析二维码图片,没有识别到二维码时，返回空数组。
+解析二维码图片,没有识别到二维码时，返回空数组。
 
 - 调用签名：
 
@@ -140,17 +126,15 @@ const onFileChanged = ($event: Event) => {
   async process(blob: Blob, rotation = 0, formats = SupportedFormat.QR_CODE): Promise<string[]>
 ```
 
-| Prop           | Type                                                        | Description                            | Since |
-| -------------- | ----------------------------------------------------------- | -------------------------------------- | ----- |
-| **`blob`**     | <code>Blob</code>                                           | 需要解析的图片数据                     | 1.0.0 |
-| **`rotation`** | <code>number</code>                                         | 图片偏转角度                           | 1.0.0 |
-| **`formats`**  | <code><a href="#supportedformat">SupportedFormat</a></code> | 解析的数据类型，比如解析二维码，条形码 | 1.0.0 |
+| Param          | Type                                                        | Description                            |
+| -------------- | ----------------------------------------------------------- | -------------------------------------- |
+| **`blob`**     | <code>Blob</code>                                           | 需要解析的图片数据                     |
+| **`rotation`** | <code>number</code>                                         | 图片偏转角度                           |
+| **`formats`**  | <code><a href="#supportedformat">SupportedFormat</a></code> | 解析的数据类型，比如解析二维码，条形码 |
 
 ### stop
 
-- 作用：
-
-  停止解析二维码图片
+停止解析二维码图片
 
 - 调用签名
 

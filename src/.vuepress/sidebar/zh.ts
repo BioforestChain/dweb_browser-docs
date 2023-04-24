@@ -17,14 +17,14 @@ export const zhSidebar = sidebar({
           text: "barcode-scanning",
           link: "/plugin/barcode-scanning/"
         },
-        {
-          text: "Top Bar",
-          link: "/plugin/topBar/",
-        },
-        {
-          text: "Dialogs",
-          link: "/plugin/dialogs/",
-        },
+        // {
+        //   text: "Top Bar",
+        //   link: "/plugin/topBar/",
+        // },
+        // {
+        //   text: "Dialogs",
+        //   link: "/plugin/dialogs/",
+        // },
         {
           text: "Status Bar",
           link: "/plugin/statusBar/",
@@ -41,14 +41,14 @@ export const zhSidebar = sidebar({
           text: "safe-area",
           link: "/plugin/safe-area"
         },
-        {
-          text: "Android/iOS-API",
-          link: "/plugin/system/",
-        },
-        {
-          text: "Data Type",
-          link: "/plugin/dataType/"
-        }
+        // {
+        //   text: "Android/iOS-API",
+        //   link: "/plugin/system/",
+        // },
+        // {
+        //   text: "Data Type",
+        //   link: "/plugin/dataType/"
+        // }
       ],
     },
     {

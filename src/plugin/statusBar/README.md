@@ -10,279 +10,223 @@ tag:
 
 > 具体查看示例代码： [Status Bar](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/StatusBar.vue)
 
+## StatusBar WebComponent API
 
-## HTMLDwebBarcodeScanningElement
+首先需要声明的 html 标签样式，该组件挂载了 statechange 方法，当有状态改变时会触发。
 
-  声明 html 标签样式
+```ts
+<script setup lang="ts">
+import { HTMLDwebStatusBarElement,$StatusBarState } from '@bfex/plugin';
+const $statusBar = ref<HTMLDwebStatusBarElement>();
 
-  ```html
-    <dweb-barcode-scanning></dweb-barcode-scanning>
-  ```
-
-  继承值 class HTMLStateObserverElement<$StatusBarRawState, $StatusBarState>
-
-  - 数据类型说明：
-
-    [class HTMLStateObserverElement](../dataType/#class-htmlstateobserverelement)
-
-    [$StatusBarRawState](../dataType/#statusbarrawstate)
-
-    [$StatusBarState](../dataType/#statusbarstate)
-
-### plugin
-
-  - 作用：
-
-    访问插件对象,是 class StatusbarPlugin 的实例;
-
-  - 数据类型：
-
-    [class StatusBarPlugin](#class-statusbarplugin)
+let statusBar: HTMLDwebStatusBarElement;
+onMounted(async () => {
+  statusBar = $statusBar.value!;
+  // 初始化赋值
+  onStatusBarChange(await statusBar.getState(), "init");
+});
+// 伴随着状态改变而触发
+const onStatusBarChange = (info: $StatusBarState, type: string) => {
+  // color.value = info.color;
+  // style.value = info.style;
+  // overlay.value = info.overlay;
+  // visible.value = info.visible;
+  console.log(type, info);
+};
+<script>
+<template>
+   <dweb-status-bar ref="$statusBar" @statechange="onStatusBarChange($event.detail, 'change')"></dweb-status-bar>
+</template>
+```
 
 ### setColor
 
-  - 作用：
+设置状态栏背景色
 
-    设置背景色
+- 调用签名：
 
-  - 调用签名：
+  ```ts
+    async setColor(color: string): Promise<string>
+  ```
 
-    ```typescript
-      async setColor(color: string): Promise<string>
-    ```
-  - 参数说明：
-
-    十六进制背景色的值 
+  | Param       | Type                | Description                        |
+  | ----------- | ------------------- | ---------------------------------- |
+  | **`color`** | <code>string</code> | 十六进制背景色的值,如`#3C5D65B6`。 |
 
 ### getColor
 
-  - 作用
+获取状态栏背景色。
 
-    获取背景色
+- 调用签名
 
-  - 调用签名
-
-    ```typescript
-      async getColor(): Promise<string>
-    ```
+  ```ts
+    async getColor(): Promise<string>
+  ```
 
 ### setStyle
 
-  - 作用
+设置状态栏的风格，是需要亮色调还是暗色调。
 
-    设置风格
+- 调用签名
 
-  - 调用签名
-    
-    ```typescript
-      setStyle(style: BAR_STYLE): Promise<unknown>
+  ```ts
+    setStyle(style: BAR_STYLE): Promise<unknown>
+  ```
 
-    ```
-
-  - 数据类型说明：
-
-    [BAR_STYLE](../dataType/#bar-style)
+| Param       | Type                                            | Description        |
+| ----------- | ----------------------------------------------- | ------------------ |
+| **`style`** | <code><a href="#bar-style">BAR_STYLE</a></code> | 设置状态栏的风格。 |
 
 ### getStyle
 
-  - 作用
+获取当前状态栏风格。
 
-    获取当前风格
+- 调用签名
 
-  - 调用签名
+  ```ts
+    async getStyle(): Promise<BAR_STYLE>
+  ```
 
-    ```typescript
-      async getStyle(): Promise<BAR_STYLE>
-
-    ```
-
-  - 数据类型说明：
-
-    [BAR_STYLE](../dataType/#bar-style)
+  **Returns:** <code>Promise&lt;<a href="#bar-style">BAR_STYLE</a>&gt;</code>
 
 ### show
 
-  - 作用
+显示状态栏。
 
-    显示
+- 调用签名
 
-  - 调用签名
-
-    ```typescript
-      async show(): Promise<unknown>
-    ```
+  ```ts
+    async show(): Promise<unknown>
+  ```
 
 ### hide
 
-  - 作用
+隐藏状态栏。
 
-    隐藏
+- 调用签名
 
-  - 调用签名
-
-    ```typescript
-      async hide(): Promise<unknown>
-    ```
+  ```ts
+    async hide(): Promise<unknown>
+  ```
 
 ### setVisible
 
-  - 作用
+设置 状态栏 显示/隐藏
 
-    设置 显示/隐藏
+- 调用签名
 
-  - 调用签名
+  ```ts
+    async setVisible(visible: boolean): Promise<unknown>
+  ```
 
-    ```typescript
-      async setVisible(visible: boolean): Promise<unknown>
-
-    ```
 ### getVisible
 
-  - 作用
+获取状态栏是否显示
 
-    获取是否显示
+- 调用签名
 
-  - 调用签名
-
-    ```typescript
-      async getVisible(): Promise<boolan>
-
-    ```
+  ```ts
+    async getVisible(): Promise<boolan>
+  ```
 
 ### setOverlay
 
-  - 作用
+设置状态栏 是否遮盖内容
 
-    设置 是否遮盖
+- 调用签名
 
-  - 调用签名
-
-    ```typescript
-      setOverlay(overlay: boolean): Promise<unknown>
-    ```
+  ```ts
+    setOverlay(overlay: boolean): Promise<unknown>
+  ```
 
 ### getOverlay
 
-  - 作用
+获取状态栏 遮盖状态
 
-    获取 遮盖状态
-
-  - 调用签名
-     
-     ```typescript
-      async getOverlay(): Promise<boolan>
-     ```
-
-## class StatusBarPlugin
-
-  控制系统状态栏，对外提供的插件功能。
-
-  导入
-
-  ```typescript
-    import { statusBarPlugin } from "@bfex/plugin"
+- 调用签名
+  ```ts
+   async getOverlay(): Promise<boolan>
   ```
 
-  可以获取到插件的实例对象；
+## StatusBar Plugin API
 
-  继承自 class BarPlugin <$StatusBarRawState,$StatusBarState, $StatusBarWritableState> 
+控制系统状态栏，对外提供的插件功能。WebComponent 的功能本质由 Plugin 提供，因此，Plugin 包含 WebComponent 所有 API。
+用户也可以依据 Plugin 开发自己定制化的 WebComponent。
 
-  - 数据类型说明
+导入
 
-    [class BarPlugin](../dataType/#class-barplugin)
-    
-    [$StatusBarRawState](../dataType/#statusbarrawstate)
-
-    [$StatusBarState](../dataType/#statusbarstate)
-
-    [$StatusBarWritableState](../dataType/#statusbarwritablestate)
-
-### tagName
-
-  - 作用：
-
-    插件匹配的 webComponent 的标签名称
-
-  - 数据类型
-
-  "dweb-status-bar"
-### coder
-
-  - 作用:
-
-    编解码器
-
-  - 数据类型:
-
-    \$Coder<$StatusBarRawState, $StatusBarState>
-  
-  - 数据类型说明：
-
-    [\$Coder](../dataType/#coder)
-
-    [$StatusBarRawState](../dataType/#statusbarstate)
-
-    [$StatusBarState](../dataType/#statusbarrawstate)
+```ts
+import { statusBarPlugin } from "@bfex/plugin";
+```
 
 ### setState
 
-  - 作用
+设置系统状态栏状态。
 
-    - 设置状态
+- 调用签名
 
-  - 调用签名
+  ```ts
+  setState(state: Partial<$StatusBarWritableState>):Promise<void>
+  ```
 
-    ```typescript
-    setState(state: Partial<$StatusBarWritableState>):Promise<void>
+  | Param       | Type                                                                       | Description        |
+  | ----------- | -------------------------------------------------------------------------- | ------------------ |
+  | **`state`** | <code><a href="#statusbarwritablestate">$StatusBarWritableState</a></code> | 设置状态栏的风格。 |
 
-    ```
-
-  - 参数说明
-
-    state 状态的值
-
-  - 数据类型说明：
-
-    [$StatusBarWritableState](../dataType/#statusbarwritablestate)
-
+> `Partial<Type>` 构造一个类型，其中 Type 的所有属性都设置为可选。该实用程序将返回一个表示给定类型的所有子集的类型。
 
 ### setStateByKey
-  - 作用
-    
-    单独设置某一项状态
 
-  - 调用签名
+单独设置某一项状态
 
-  ```typescript
-    setStateByKey<K extends keyof $StatusBarWritableState>(key: K, value: $StatusBarWritableState[key]): Promise<void>
-  ```
-  - 参数说明：
+- 调用签名
 
-    key: 需要设置状态属性名称
+```ts
+  setStateByKey<K extends keyof $StatusBarWritableState>(key: K, value: $StatusBarWritableState[key]): Promise<void>
+```
 
-    value: 属性的值
-
-  - 数据类型说明：
-
-    [$StatusBarWritableState](../dataType/#statusbarwritablestate)
+| Param       | Type                                                                            | Description            |
+| ----------- | ------------------------------------------------------------------------------- | ---------------------- |
+| **`key`**   | <code><a href="#statusbarwritablestate">string</a></code>                       | 设置状态栏的某一个值。 |
+| **`value`** | <code><a href="#statusbarwritablestate">$StatusBarWritableState[key]</a></code> | 设置状态栏的风格值。   |
 
 ### getState()
 
-  - 作用 
+获取状态
 
-    获取状态
+- 调用签名
 
-  - 调用签名
+  ```ts
+    async getState(force_update?: boolean) => Promise<$BarState>
+  ```
 
-    ```ts
-      async getState(force_update?: boolean) => Promise<$BarState>
-    ```
-  
-    - 参数说明：
+  - 参数说明：
 
-      force_update 是否强制更新
+    force_update 是否强制更新
 
-  - 数据类型说明：
+  **Returns:** <code>Promise&lt;<a href="#barstate">$BarState</a>&gt;</code>
 
-    [$BarState](../dataType/#barstate)
+## Interfaces
 
+### BAR_STYLE
+
+状态栏的风格类型约束，Light 代表文字为黑色，Dark 代表文字为白色。
+
+Default：如果设备使用深色模式，条形文字将变亮。如果设备使用浅色模式，条形文字将变暗。在 Android 上，默认将是启动应用程序的那个风格。
+
+| Prop          | Type                 | Description        | Since |
+| ------------- | -------------------- | ------------------ | ----- |
+| **`Dark`**    | <code>DARK</code>    | 深色背景的浅色文本 | 1.0.0 |
+| **`Light`**   | <code>LIGHT</code>   | 浅色背景的深色文字 | 1.0.0 |
+| **`Default`** | <code>DEFAULT</code> | 样式基于设备改变   | 1.0.0 |
+
+### $BarState
+
+#### $StatusBarWritableState
+
+| Prop          | Type                                            | Description    | Since |
+| ------------- | ----------------------------------------------- | -------------- | ----- |
+| **`color`**   | <code>string</code>                             | 背景颜色       | 1.0.0 |
+| **`style`**   | <code><a href="#bar-style">BAR_STYLE</a></code> | 整体风格       | 1.0.0 |
+| **`overlay`** | <code>boolean</code>                            | 是否覆盖内容   | 1.0.0 |
+| **`visible`** | <code>boolean</code>                            | 是否显示状态栏 | 1.0.0 |

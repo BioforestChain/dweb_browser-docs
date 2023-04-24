@@ -18,9 +18,7 @@ tag:
 
 #### `pause`
 
-- 作用：
-
-  应用暂停会触发的事件。
+应用暂停会触发的事件。
 
 - 调用例子：
 
@@ -32,9 +30,7 @@ dwebServiceWorker.addEventListener("pause", (event) => {
 
 #### `resume`
 
-- 作用：
-
-  应用恢复到前台会触发的事件。
+应用恢复到前台会触发的事件。
 
 - 调用例子：
 
@@ -46,9 +42,7 @@ dwebServiceWorker.addEventListener("resume", (event) => {
 
 #### `updatefound`（暂未开放）
 
-- 作用：
-
-  应用更新会触发的事件。
+应用更新会触发的事件。
 
 - 调用例子：
 
@@ -60,9 +54,7 @@ dwebServiceWorker.addEventListener("updatefound", (event) => {
 
 #### `fetch` （暂未开放）
 
-- 作用：
-
-  跟 ServiceWorker 的 fetch 事件一致，提供网络拦截功能。
+跟 ServiceWorker 的 fetch 事件一致，提供网络拦截功能。
 
 - 调用例子：
 
@@ -77,9 +69,7 @@ dwebServiceWorker.addEventListener("fetch", async (event) => {
 
 #### `onFetch` （暂未开放）
 
-- 作用：
-
-  别人发送给 app 的请求会触发这个事件。
+别人发送给 app 的请求会触发这个事件。
 
 - 调用例子：
 
@@ -97,9 +87,7 @@ sw.addEventListener("onFetch", (event: OnFetchEvent) => {
 
 #### `update`
 
-- 作用：
-
-  拿到升级控制器。
+开发者调用该函数，拿到升级控制器，进行下一步的升级控制等事件操作。
 
 - 调用签名：
 
@@ -111,9 +99,7 @@ update(): UpdateControllerPlugin
 
 #### `close`
 
-- 作用：
-
-  控制 APP 的关闭，仅关闭前端。
+控制 APP 的关闭，仅关闭前端。
 
 - 调用签名：
 
@@ -123,9 +109,7 @@ update(): UpdateControllerPlugin
 
 #### `restart`
 
-- 作用：
-
-  控制 APP 的重启，这个操作会伴随着前后端的重启。
+控制 APP 的重启，这个操作会伴随着前后端的重启。
 
 - 调用签名：
 
@@ -141,8 +125,6 @@ update(): UpdateControllerPlugin
 
 #### `start`
 
-- 作用：
-
 下载开始时触发。
 
 - 调用例子：
@@ -155,9 +137,7 @@ updateContoller.addEventListener("end", (event: Event) => {
 
 #### `end`
 
-- 作用：
-
-  下载结束时触发。
+下载结束时触发。
 
 - 调用例子：
 
@@ -169,9 +149,7 @@ updateContoller.addEventListener("end", (event: Event) => {
 
 #### `progress`
 
-- 作用：
-
-  下载事件的进度条回调，返回值范围为 0 ~ 100。
+下载事件的进度条回调，返回值范围为 0 ~ 100。
 
 - 调用例子：
 
@@ -189,9 +167,7 @@ updateContoller.addEventListener("progress", (progressRate: string) => {
 
 #### `cancel`
 
-- 作用：
-
-  取消下载时触发。
+取消下载时触发。
 
 - 调用例子：
 
@@ -207,9 +183,7 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 #### `pause`
 
-- 作用：
-
-  暂停下载操作。
+暂停下载操作。
 
 - 调用签名：
 
@@ -219,9 +193,7 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 #### `resume`
 
-- 作用：
-
-  恢复下载和重下的控制函数，
+恢复下载和重下的控制函数，
 
 - 调用签名：
 
@@ -231,9 +203,7 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 #### `cancel`
 
-- 作用：
-
-  取消下载
+取消下载
 
 - 调用签名：
 
@@ -243,9 +213,7 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 #### `download`
 
-- 作用：
-
-  触发自更新功能。
+触发自更新功能。
 
 - 调用签名：
 
@@ -253,19 +221,11 @@ updateContoller.addEventListener("cancel", (event: Event) => {
   async download(metadataUrl: string): Promise<BFSMetaData>
 ```
 
+| Param             | Type                | Description                                                                                |
+| ----------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| **`metadataUrl`** | <code>string</code> | bfs-metadata.json 的 url 地址,类似[bfs-metadata](https://shop.plaoc.com/bfs-metadata.json) |
+
 **Returns:** <code>Promise&lt;<a href="#bfsmetadata">BFSMetaData</a>&gt;</code>
-
-- 参数说明：
-
-  - metadataUrl
-
-    - 数据类型
-
-      `string`
-
-    - 参数的作用：
-
-      bfs-metadata.json 的 url 地址,类似[bfs-metadata](https://shop.plaoc.com/bfs-metadata.json)
 
 ## Interfaces
 

@@ -17,14 +17,14 @@ export const enSidebar = sidebar({
           text: "barcode-scanning",
           link: "/plugin/barcode-scanning/"
         },
-        {
-          text: "Top Bar",
-          link: "/plugin/topBar/",
-        },
-        {
-          text: "Dialogs",
-          link: "/plugin/dialogs/",
-        },
+        // {
+        //   text: "Top Bar",
+        //   link: "/plugin/topBar/",
+        // },
+        // {
+        //   text: "Dialogs",
+        //   link: "/plugin/dialogs/",
+        // },
         {
           text: "Status Bar",
           link: "/plugin/statusBar/",
@@ -37,18 +37,18 @@ export const enSidebar = sidebar({
           text: "NavigationBar",
           link: "/plugin/navigationBar/",
         },
-        {
-          text: "Android/iOS-API",
-          link: "/plugin/system/",
-        },
+        // {
+        //   text: "Android/iOS-API",
+        //   link: "/plugin/system/",
+        // },
         {
           text: "safe-area",
           link: "/plugin/safe-area"
         },
-        {
-          text: "Data Type",
-          link: "/plugin/dataType/"
-        }
+        // {
+        //   text: "Data Type",
+        //   link: "/plugin/dataType/"
+        // }
       ],
     },
     {
