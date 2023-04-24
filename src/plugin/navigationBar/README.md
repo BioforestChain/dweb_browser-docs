@@ -173,7 +173,6 @@ tag:
     | **`state`** | <code><a href="#navigationbarwritablestate">$NavigationBarWritableState</a></code> | 设置状态栏的风格。 |
 
     > `Partial<Type>` 构造一个类型，其中 Type 的所有属性都设置为可选。该实用程序将返回一个表示给定类型的所有子集的类型。
-  
 
 ### setStateByKey()
   单独设置某一项状态
@@ -204,8 +203,6 @@ tag:
     | **`force_update`**    | <code>string</code>   | 是否强制更新 |
 
     **Returns:** <code>Promise&lt;<a href="#barstate">$BarState</a>&gt;</code>
-
-  
 
 ## Interfaces
   ### BAR_STYLE
