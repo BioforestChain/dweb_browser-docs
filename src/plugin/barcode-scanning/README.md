@@ -42,8 +42,10 @@ const startScanner = () => {
 - 调用签名：
 
 ```ts
-  async startScanning(): Promise<string[]>
+  async startScanning(): Promise<ScanResult>
 ```
+
+**Returns:** <code>Promise&lt;<a href="#scanresult">ScanResult</a>&gt;</code>
 
 ### stopScanning
 
@@ -143,6 +145,26 @@ const onFileChanged = ($event: Event) => {
 ```
 
 ## Interfaces
+
+### ScanResult
+
+扫码返回的结果。
+
+| Prop             | Type                                                                          | Description                                  | Since |
+| ---------------- | ----------------------------------------------------------------------------- | -------------------------------------------- | ----- |
+| **`hasContent`** | <code>boolean</code>                                                          | 是否有识别到内容                             | 1.0.0 |
+| **`content`**    | <code>string[]</code>                                                         | 扫码具体内容，是字符串数组                   | 1.0.0 |
+| **`permission`** | <code><a href="#barcodescannerpermission">BarcodeScannerPermission</a></code> | 权限结果返回，用来判断用户是否对权限申请拒绝 | 1.0.0 |
+
+#### BarcodeScannerPermission
+
+对用户的权限返回进行标识。
+
+| Prop             | Type                    | Description                  | Since |
+| ---------------- | ----------------------- | ---------------------------- | ----- |
+| **`UserReject`** | <code>UserReject</code> | 用户拒绝                     | 1.0.0 |
+| **`UserAgree`**  | <code>UserAgree</code>  | 用户同意                     | 1.0.0 |
+| **`UserError`**  | <code>UserError</code>  | 用户手机版本太低，不支持扫码 | 1.0.0 |
 
 ### SupportedFormat
 
