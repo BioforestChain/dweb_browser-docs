@@ -10,7 +10,7 @@ tag:
 
 > 具体查看示例代码： [NavigationBar](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/NavigationBar.vue)
 
-## HTMLDwebStatusBarElement WebComponent
+## NavigationBar WebComponent
 
   声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，以 vue3 为示例：
 
@@ -106,7 +106,7 @@ tag:
 
     ```ts
       async hide(): Promise<unknown>
-  ```
+    ```
 
 ### setVisible
 
@@ -217,8 +217,8 @@ tag:
   | **`Light`**   | <code>LIGHT</code>   | 浅色背景的深色文字 | 1.0.0 |
   | **`Default`** | <code>DEFAULT</code> | 样式基于设备改变   | 1.0.0 |
 
-  ### $NavigationBarWritableState
-  #### $BarState
+  ### $BarState
+  #### $NavigationBarWritableState
 
   | Prop          | Type                                            | Description    | Since |
   | ------------- | ----------------------------------------------- | -------------- | ----- |

@@ -10,23 +10,22 @@ tag:
 
 > 具体查看示例代码：[safe-area](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/SafeArea.vue)
 
-## HTMLDwebSafeAreaElement
+## HTMLDwebSafeAreaElement WebComponent API
 
-  声明 html 标签
+  首先需要声明的 html 标签样式，该组件挂载了 statechange 方法，当有状态改变时会触发。
+
+  ```ts
+
 
   ```
-    <dweb-safe-area></dweb-safe-area>
-  ```
 
-  继承于 class HTMLStateObserverElement<$SafeAreaRawState, $SafeAreaState> 
+ 
+ 
 
-  - 数据类型说明：
 
-    [class HTMLStateObserverElement](../dataType/#class-htmlstateobserverelement )
 
-    [#SafeAreaRawState](../dataType/#safearearawstate)
 
-    [#SafeAreaState](../dataType/#safeareastate)
+
 
 ### plugin
 
