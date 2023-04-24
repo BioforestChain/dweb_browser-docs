@@ -10,11 +10,11 @@ export const zhSidebar = sidebar({
       link: "plugin/README.md",
       children: [
         {
-          text: "dweb-service-worker",
+          text: "DwebServiceWorker",
           link: "/plugin/dweb-service-worker/",
         },
         {
-          text: "barcode-scanning",
+          text: "BarcodeScanning",
           link: "/plugin/barcode-scanning/"
         },
         // {
@@ -26,8 +26,8 @@ export const zhSidebar = sidebar({
         //   link: "/plugin/dialogs/",
         // },
         {
-          text: "Status Bar",
-          link: "/plugin/statusBar/",
+          text: "StatusBar",
+          link: "/plugin/status-bar/",
         },
         {
           text: "VirtualKeyboard",
@@ -35,10 +35,10 @@ export const zhSidebar = sidebar({
         },
         {
           text: "NavigationBar",
-          link: "/plugin/navigationBar/",
+          link: "/plugin/navigation-bar/",
         },
         {
-          text: "safe-area",
+          text: "SafeArea",
           link: "/plugin/safe-area"
         },
         // {
