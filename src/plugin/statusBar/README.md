@@ -51,7 +51,7 @@ const onStatusBarChange = (info: $StatusBarState, type: string) => {
 
   | Param       | Type                | Description                        |
   | ----------- | ------------------- | ---------------------------------- |
-  | **`color`** | <code>string</code> | 十六进制背景色的值,如`#3C5D65B6`。 |
+  | **`color`** | <code>string</code> | 十六进制背景色的值,如`#3C5D65B6`。     |
 
 ### getColor
 
@@ -190,19 +190,19 @@ import { statusBarPlugin } from "@bfex/plugin";
 | **`key`**   | <code><a href="#statusbarwritablestate">string</a></code>                       | 设置状态栏的某一个值。 |
 | **`value`** | <code><a href="#statusbarwritablestate">$StatusBarWritableState[key]</a></code> | 设置状态栏的风格值。   |
 
-### getState()
+### getState
 
 获取状态
 
 - 调用签名
 
   ```ts
-    async getState(force_update?: boolean) => Promise<$BarState>
+    async getState(force_update?: boolean): Promise<$BarState>
   ```
 
-  - 参数说明：
-
-    force_update 是否强制更新
+  | Param              | Type                 | Description       |
+  | ------------------ | -------------------- | ----------------- |
+  | **`force_update`** | <code>boolean</code> | 是否需要强制更新     |
 
   **Returns:** <code>Promise&lt;<a href="#barstate">$BarState</a>&gt;</code>
 

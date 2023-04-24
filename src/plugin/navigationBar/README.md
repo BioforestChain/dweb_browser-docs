@@ -16,9 +16,9 @@ tag:
 
   ```ts
     <script setup lang="ts">
-      import { HTMLDwebStatusBarElement } from "@bfex/plugin";
-      const $navigationBar = ref<HTMLDwebStatusBarElement>();
-      let navigationBar: HTMLDwebStatusBarElement;
+      import { HTMLDwebNavigationBarElement, $NavigationBarState } from "@bfex/plugin";
+      const $navigationBar = ref<HTMLDwebNavigationBarElement>();
+      let navigationBar: HTMLDwebNavigationBarElement;
 
       onMounted(async () => {
         navigationBar = $navigationBar.value;
@@ -174,7 +174,7 @@ tag:
 
     > `Partial<Type>` 构造一个类型，其中 Type 的所有属性都设置为可选。该实用程序将返回一个表示给定类型的所有子集的类型。
 
-### setStateByKey()
+### setStateByKey
   单独设置某一项状态
 
   - 调用签名
@@ -188,19 +188,19 @@ tag:
     | **`key`**   | <code><a href="#navigationbarwritablestate">string</a></code>                       | 设置状态栏的某一个值。 |
     | **`value`** | <code><a href="#navigationbarwritablestate">$NavigationBarWritableState[key]</a></code> | 设置状态栏的风格值。   |
 
-### getState()
+### getState
 
   获取状态
 
   - 调用签名
 
     ```ts
-      async getState(force_update?: boolean) => Promise<$BarState>
+      async getState(force_update?: boolean): Promise<$BarState>
     ```
 
-    | Param                 | Type                  | Description|
-    | ----------------------| ----------------------| ---------- |
-    | **`force_update`**    | <code>string</code>   | 是否强制更新 |
+    | Param              | Type                 | Description       |
+    | ------------------ | -------------------- | ----------------- |
+    | **`force_update`** | <code>boolean</code> | 是否需要强制更新     |
 
     **Returns:** <code>Promise&lt;<a href="#barstate">$BarState</a>&gt;</code>
 
