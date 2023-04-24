@@ -30,8 +30,8 @@ export const zhSidebar = sidebar({
           link: "/plugin/statusBar/",
         },
         {
-          text: "Keyboard",
-          link: "/plugin/keyboard/",
+          text: "VirtualKeyboard",
+          link: "/plugin/virtual-keyboard/",
         },
         {
           text: "NavigationBar",
