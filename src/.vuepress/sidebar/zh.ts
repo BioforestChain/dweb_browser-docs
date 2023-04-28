@@ -17,10 +17,10 @@ export const zhSidebar = sidebar({
           text: "BarcodeScanning",
           link: "/plugin/barcode-scanning/"
         },
-        // {
-        //   text: "Top Bar",
-        //   link: "/plugin/topBar/",
-        // },
+        {
+          text: "Biometrics",
+          link: "/plugin/biometrics/",
+        },
         // {
         //   text: "Dialogs",
         //   link: "/plugin/dialogs/",

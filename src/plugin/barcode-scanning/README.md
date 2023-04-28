@@ -13,7 +13,8 @@ tag:
 
 ## BarcodeScanning WebComponent API
 
-首先需要声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，以 vue3 为示例：
+需要声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，然后调用api。
+以 vue3 为示例：
 
 ```ts
 <script setup lang="ts">

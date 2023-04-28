@@ -16,6 +16,10 @@ tag:
 
 ### Event `pause`,`resume`,`updatefound`,`fetch`,`onFetch`
 
+::: warning
+这些事件如果要保证全局触发，需要在 app 的入口引入事件监听。
+:::
+
 #### `pause`
 
 应用暂停会触发的事件。
@@ -52,7 +56,7 @@ dwebServiceWorker.addEventListener("updatefound", (event) => {
 });
 ```
 
-#### `fetch` （暂未开放）
+#### `fetch`
 
 跟 ServiceWorker 的 fetch 事件一致，提供网络拦截功能。
 
@@ -67,7 +71,7 @@ dwebServiceWorker.addEventListener("fetch", async (event) => {
 });
 ```
 
-#### `onFetch` （暂未开放）
+#### `onFetch`
 
 别人发送给 app 的请求会触发这个事件。
 
