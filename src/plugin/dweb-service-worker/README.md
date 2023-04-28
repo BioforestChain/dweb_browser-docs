@@ -63,7 +63,7 @@ dwebServiceWorker.addEventListener("updatefound", (event) => {
 - 调用例子：
 
 ```ts
-dwebServiceWorker.addEventListener("fetch", async (event) => {
+dwebServiceWorker.addEventListener("fetch", async (event: FetchEvent) => {
   console.log("Dweb Service Worker fetch!", event.clientId);
   const response = await fetch(event.request);
   console.log("Dweb Service Worker fetch response=>", response);
@@ -78,12 +78,12 @@ dwebServiceWorker.addEventListener("fetch", async (event) => {
 - 调用例子：
 
 ```ts
-sw.addEventListener("onFetch", (event: OnFetchEvent) => {
+sw.addEventListener("onFetch", (event: FetchEvent) => {
   console.log("Dweb Service Worker onFetch!", event);
 });
 ```
 
-**Callback Parameter:** <code><a href="#onfetchevent">OnFetchEvent</a></code>
+**Callback Parameter:** <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/FetchEvent" target="_blank">FetchEvent</a></code>
 
 ---
 
@@ -299,9 +299,3 @@ app 主服务配置项，主要配置应用如果文件地址。
 | Prop      | Type                | Description        | Since |
 | --------- | ------------------- | ------------------ | ----- |
 | **`url`** | <code>string</code> | 需要打开的网页地址 | 1.0.0 |
-
-### OnFetchEvent
-
-施工中 🚧
-
-[OnFetchEvent](https://github.com/BioforestChain/dweb_browser/blob/main/plugins/src/components/dweb-service-worker/FetchEvent.ts)

@@ -18,14 +18,6 @@ export const enSidebar = sidebar({
           link: "/plugin/barcode-scanning/"
         },
         {
-          text: "Biometrics",
-          link: "/plugin/biometrics/",
-        },
-        // {
-        //   text: "Dialogs",
-        //   link: "/plugin/dialogs/",
-        // },
-        {
           text: "StatusBar",
           link: "/plugin/status-bar/",
         },
@@ -37,13 +29,17 @@ export const enSidebar = sidebar({
           text: "NavigationBar",
           link: "/plugin/navigation-bar/",
         },
-        // {
-        //   text: "Android/iOS-API",
-        //   link: "/plugin/system/",
-        // },
         {
           text: "SafeArea",
           link: "/plugin/safe-area"
+        },
+        {
+          text: "Biometrics",
+          link: "/plugin/biometrics/",
+        },
+        {
+          text: "CloseWatcher",
+          link: "/plugin/close-watcher/",
         },
         // {
         //   text: "Data Type",
