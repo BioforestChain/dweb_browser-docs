@@ -41,10 +41,10 @@ export const enSidebar = sidebar({
           text: "CloseWatcher",
           link: "/plugin/close-watcher/",
         },
-        // {
-        //   text: "Data Type",
-        //   link: "/plugin/dataType/"
-        // }
+        {
+          text: "Haptics",
+          link: "/plugin/haptics/"
+        },
       ],
     },
     {

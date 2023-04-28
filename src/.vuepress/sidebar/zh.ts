@@ -41,10 +41,10 @@ export const zhSidebar = sidebar({
           text: "CloseWatcher",
           link: "/plugin/close-watcher/",
         },
-        // {
-        //   text: "Android/iOS-API",
-        //   link: "/plugin/system/",
-        // },
+        {
+          text: "Haptics",
+          link: "/plugin/haptics/"
+        },
         // {
         //   text: "Data Type",
         //   link: "/plugin/dataType/"

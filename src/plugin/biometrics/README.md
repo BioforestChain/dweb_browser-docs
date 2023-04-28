@@ -27,11 +27,11 @@ onMounted(async () => {
   biometrics = $biometricsPlugin.value!;
 })
 // 检查设备是否可以生物识别
-const check = () => {
+const check = async () => {
   await biometrics.check()
 }
 // 调用生物识别
-const fingerprint = () => {
+const fingerprint = async () => {
   await biometrics.biometrics()
 }
 <script>
