@@ -45,10 +45,10 @@ export const zhSidebar = sidebar({
           text: "Haptics",
           link: "/plugin/haptics/"
         },
-        // {
-        //   text: "Data Type",
-        //   link: "/plugin/dataType/"
-        // }
+        {
+          text: "Network",
+          link: "/plugin/network/"
+        },
       ],
     },
     {

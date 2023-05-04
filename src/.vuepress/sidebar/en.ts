@@ -45,6 +45,10 @@ export const enSidebar = sidebar({
           text: "Haptics",
           link: "/plugin/haptics/"
         },
+        {
+          text: "Network",
+          link: "/plugin/network/"
+        },
       ],
     },
     {
