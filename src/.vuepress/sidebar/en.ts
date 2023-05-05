@@ -61,6 +61,10 @@ export const enSidebar = sidebar({
           text: "Toast",
           link: "/plugin/toast/"
         },
+        {
+          text: "Torch",
+          link: "/plugin/torch/"
+        },
       ],
     },
     {

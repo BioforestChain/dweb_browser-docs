@@ -61,6 +61,10 @@ export const zhSidebar = sidebar({
           text: "Toast",
           link: "/plugin/toast/"
         },
+        {
+          text: "Torch",
+          link: "/plugin/torch/"
+        },
       ],
     },
     {
