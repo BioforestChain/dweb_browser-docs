@@ -53,6 +53,14 @@ export const enSidebar = sidebar({
           text: "Share",
           link: "/plugin/share/"
         },
+        {
+          text: "SplashScreen",
+          link: "/plugin/splash-screen/"
+        },
+        {
+          text: "Toast",
+          link: "/plugin/toast/"
+        },
       ],
     },
     {
