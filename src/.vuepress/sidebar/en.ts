@@ -49,6 +49,10 @@ export const enSidebar = sidebar({
           text: "Network",
           link: "/plugin/network/"
         },
+        {
+          text: "Share",
+          link: "/plugin/share/"
+        },
       ],
     },
     {

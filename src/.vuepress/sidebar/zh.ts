@@ -49,6 +49,10 @@ export const zhSidebar = sidebar({
           text: "Network",
           link: "/plugin/network/"
         },
+        {
+          text: "Share",
+          link: "/plugin/share/"
+        },
       ],
     },
     {
