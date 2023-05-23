@@ -23,27 +23,27 @@ features:
   - title: APP 链上认证
     icon: lock
     details: 为APP上链申请的DAPPID,方便对APP进行认证和溯源。
-    link: https://docs.plaoc.com/systemApp/bundle/index.html
+    link: /tools/bundle/
 
   - title: APP配置
     icon: config
-    details: 自由配置规则，您的后端根目录创建一个`bfsa-metadata.ts`的配置文件，具体查看后端配置。
-    link: https://docs.plaoc.com/service/index.html
+    details: 自由配置规则，您的后端根目录创建一个`bfs-metadata.ts`的配置文件，具体查看后端配置。
+    link: /plugin/
 
   - title: 打包配置
     icon: slides
     details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.bfsa`文件，然后上传到应用商城。
-    link: https://docs.plaoc.com/systemApp/bundle/index.html
+    link: /tools/bundle/
 
   - title: 一次打包，多平台使用
     icon: layout
     details: 提供android,ios,desktop三端部署。
-    link: https://docs.plaoc.com/systemApp/bundle/index.html
+    link: /tools/bundle/
 
-  - title: Pageviews and comments
-    icon: comment
-    details: Start pageview statistics and comment support with Waline
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/comment.html
+  - title: 应用互联
+    icon: link
+    details: 本地app通过自定义dwebServiceWorker通信。
+    link: /plugin/dweb-service-worker/
 
   - title: Article information
     icon: info

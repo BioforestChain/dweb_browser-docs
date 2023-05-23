@@ -14,7 +14,71 @@ tag:
 
 提供 app 的控制和 api 的拦截。
 
-### Event `pause`,`resume`,`updatefound`,`fetch`,`onFetch`
+### 应用间相互通信
+
+这是一个纯粹的 Web 应用相互通讯的机制，可以实现本地不同 app 之间，消息的收发。
+
+#### `externalFetch`
+
+通过该方法发送消息。
+
+- 调用例子：
+
+```ts
+const sayHi = async () => {
+  const result = await sw.externalFetch(`desktop.dweb.waterbang.top.dweb`, {
+    pathname: "/say/hi",
+    search: {
+      message: "今晚吃螃🦀️蟹吗？",
+    },
+  });
+  console.log("sayHi return => ", await result.text());
+};
+```
+
+- 调用签名：
+
+```ts
+async externalFetch(hostname: $MMID,init:$ExterRequestWithBaseInit):Promise<response>
+```
+
+| Param          | Type                                                                           | Description                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| **`hostname`** | <code><a href="#mmid">$MMID</a></code>                                         | app 的 id，又称为 MMID                                                                                                |
+| **`init`**     | <code><a href="#exterrequestwithbaseinit">$ExterRequestWithBaseInit</a></code> | 继承于[RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request),并且添加了`pathname`,`search`等 |
+
+#### `fetch`
+
+该事件负责处理别人发送来的消息，然后通过 respondWith 返回数据回去。
+在这里可以通过匹配路由，去提供不同的功能给别的 app，形成互联。
+
+- 调用例子：
+
+```ts
+dwebServiceWorker.addEventListener("fetch", async (event: FetchEvent) => {
+  const url = new URL(event.request.url);
+  if (url.pathname.endsWith("/say/hi")) {
+    const hiMessage = url.searchParams.get("message");
+    console.log(`收到:${hiMessage}`);
+    if (hiMessage) {
+      message.value = hiMessage;
+    }
+    // 发送消息回去
+    return event.respondWith(`吃，再来两斤二锅头。`);
+  }
+  return event.respondWith("Not match any routes");
+});
+```
+
+- 调用签名：
+
+```ts
+async respondWith(response: Blob | ReadableStream<Uint8Array> | string):Promise<response>
+```
+
+---
+
+### Event `pause`,`resume`
 
 ::: warning
 这些事件如果要保证全局触发，需要在 app 的入口引入事件监听。
@@ -44,7 +108,7 @@ dwebServiceWorker.addEventListener("resume", (event) => {
 });
 ```
 
-#### `updatefound`（暂未开放）
+<!-- #### `updatefound`（暂未开放）
 
 应用更新会触发的事件。
 
@@ -54,36 +118,7 @@ dwebServiceWorker.addEventListener("resume", (event) => {
 dwebServiceWorker.addEventListener("updatefound", (event) => {
   console.log("Dweb Service Worker update found!", event);
 });
-```
-
-#### `fetch`
-
-跟 ServiceWorker 的 fetch 事件一致，提供网络拦截功能。
-
-- 调用例子：
-
-```ts
-dwebServiceWorker.addEventListener("fetch", async (event: FetchEvent) => {
-  console.log("Dweb Service Worker fetch!", event.clientId);
-  const response = await fetch(event.request);
-  console.log("Dweb Service Worker fetch response=>", response);
-  return event.respondWith(response);
-});
-```
-
-#### `onFetch`
-
-别人发送给 app 的请求会触发这个事件。
-
-- 调用例子：
-
-```ts
-sw.addEventListener("onFetch", (event: FetchEvent) => {
-  console.log("Dweb Service Worker onFetch!", event);
-});
-```
-
-**Callback Parameter:** <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/FetchEvent" target="_blank">FetchEvent</a></code>
+``` -->
 
 ---
 
@@ -233,6 +268,19 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 ## Interfaces
 
+### $MMID
+
+| Prop        | Type                        | Description                                                         | Since |
+| ----------- | --------------------------- | ------------------------------------------------------------------- | ----- |
+| **`$MMID`** | <code>${string}.dweb</code> | 应用的 id,是以.dweb 结尾的字符串，类似<code>_${string}_.dweb</code> | 1.0.0 |
+
+### $ExterRequestWithBaseInit
+
+| Prop           | Type                | Description              | Since |
+| -------------- | ------------------- | ------------------------ | ----- |
+| **`pathname`** | <code>string</code> | 应用请求的路径           | 1.0.0 |
+| **`search`**   | <code>object</code> | 等同于 URL 对象的 search 用来传递get参数 | 1.0.0 |
+
 ### BFSMetaData
 
 FBS APP 的数据格式，类似类似[bfs-metadata](https://shop.plaoc.com/bfs-metadata.json)。规定了一个 app 的所有配置信息。
@@ -242,7 +290,7 @@ FBS APP 的数据格式，类似类似[bfs-metadata](https://shop.plaoc.com/bfs-
 
 | Prop                   | Type                                                          | Description                                                         | Since |
 | ---------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------- | ----- |
-| **`id`**               | <code>string</code>                                           | 应用的 id,是以.dweb 结尾的字符串，类似<code>_${string}_.dweb</code> | 1.0.0 |
+| **`id`**               | <code><a href="#mmid">$MMID</a></code>                        | 应用的 id,是以.dweb 结尾的字符串，类似<code>_${string}_.dweb</code> | 1.0.0 |
 | **`server`**           | <code><a href="#mainserver">MainServer</a></code>             | 打开应用地址                                                        | 1.0.0 |
 | **`title`**            | <code>string</code>                                           | 应用名称                                                            | 1.0.0 |
 | **`subtitle`**         | <code>string</code>                                           | 应用副标题                                                          | 1.0.0 |
