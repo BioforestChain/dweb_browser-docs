@@ -6,7 +6,7 @@ tag:
   - Service APP
 ---
 
-DwebBrowser前后端打包工具，把您开发的包打包成`.bfsa`形式。
+DwebBrowser前后端打包工具，把您开发的包打包成`.plaoc`形式。
 
 附加的功能：
 
@@ -28,35 +28,34 @@ DwebBrowser前后端打包工具，把您开发的包打包成`.bfsa`形式。
 
 #### 使用
 > bfsa -V
-```bash
+```shell
 0.0.3
 ```
 ---------------------------
 
 > bfsa help
 
-```bash
+```shell
 Usage: bfsa [options] [command]
 
-.bfsa application bundle service.
+.plaoc application install service.
 
 Options:
   -V, --version     output the version number
   -h, --help        display help for command
 
 Commands:
-  bundle [options]  bfsa bundle project to .bfsa
-  interactive       bfsa bundle project to .bfsa by interactive command line
+  bundle [options]  bfsa bundle project to .plaoc
   help [command]    display help for command
 ```
 --------------------------
 
 > bfsa bundle -h
 
-```bash
+```shell
 Usage: bfsa bundle [options]
 
-bfsa bundle project to .bfsa
+bfsa bundle project to .plaoc
 
 Options:
   -f, --front-path <string>  frontend application path.

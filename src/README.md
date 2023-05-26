@@ -6,18 +6,19 @@ heroImage: /logo.svg
 heroText: DwebBrowser
 tagline: 一个提供分布式网络|应用附着的浏览器。
 actions:
-  - text: 前端插件 💡
-    link: /plugin/
+
+  - text: 介绍 💡
+    link: /app/
     type: primary
 
-  - text: 服务端API
+  - text: Plaoc API
+    link: /plaoc/
+
+  - text: 服务端API 
     link: /service/
 
   - text: 系统APP
     link: /systemAPP/
-
-  - text: 系统工具
-    link: /tools/
 
 features:
   - title: APP 链上认证
@@ -32,7 +33,7 @@ features:
 
   - title: 打包配置
     icon: slides
-    details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.bfsa`文件，然后上传到应用商城。
+    details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.plaoc`文件，然后上传到应用商城。
     link: /tools/bundle/
 
   - title: 一次打包，多平台使用

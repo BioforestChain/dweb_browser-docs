@@ -2,7 +2,12 @@ import { navbar } from "vuepress-theme-hope";
 
 export const zhNavbar = navbar([
   "/zh/",
-  { text: "前端插件", icon: "discover", link: "/plugin/" },
+  {
+    text: "介绍",
+    icon: "note",
+    link: "/app",
+  },
+  { text: "前端插件", icon: "discover", link: "/plaoc/" },
   { text: "服务", icon: "discover", link: "/service/" },
   {
     text: "系统APP",
@@ -28,10 +33,5 @@ export const zhNavbar = navbar([
         link: "database/"
       },
     ],
-  },
-  {
-    text: "dweb browser 文档",
-    icon: "note",
-    link: "https://github.com/BioforestChain/dweb_browser-docs",
   },
 ]);

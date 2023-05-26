@@ -2,7 +2,12 @@ import { navbar } from "vuepress-theme-hope";
 
 export const enNavbar = navbar([
   "/",
-  { text: "plugin", icon: "discover", link: "/plugin/" },
+  {
+    text: "introduction",
+    icon: "note",
+    link: "/app",
+  },
+  { text: "plaoc", icon: "discover", link: "/plaoc/" },
   { text: "service", icon: "discover", link: "/service/" },
   {
     text: "systemApp",
@@ -28,10 +33,5 @@ export const enNavbar = navbar([
         link: "database/"
       },
     ],
-  },
-  {
-    text: "dweb browser Docs",
-    icon: "note",
-    link: "https://github.com/BioforestChain/dweb_browser-docs",
   },
 ]);

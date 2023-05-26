@@ -4,66 +4,82 @@ export const zhSidebar = sidebar({
   "/zh/": [
     "",
     {
+      text: "Plaoc APP",
+      icon: "app",
+      prefix: "app/",
+      link: "app",
+      children: [
+        {
+          text: "BUNDLE",
+          link: "/app/bundle/",
+        },
+        {
+          text: "Bfs-Metadata",
+          link: "/app/bfs-metadata/",
+        },
+      ]
+    },
+    {
       icon: "discover",
-      text: "Plugin",
-      prefix: "/plugin/",
-      link: "plugin/README.md",
+      text: "Plaoc",
+      prefix: "/plaoc/",
+      link: "plaoc/README.md",
       children: [
         {
           text: "DwebServiceWorker",
-          link: "/plugin/dweb-service-worker/",
+          link: "/plaoc/dweb-service-worker/",
         },
         {
           text: "BarcodeScanning",
-          link: "/plugin/barcode-scanning/"
+          link: "/plaoc/barcode-scanning/"
         },
         {
           text: "StatusBar",
-          link: "/plugin/status-bar/",
+          link: "/plaoc/status-bar/",
         },
         {
           text: "VirtualKeyboard",
-          link: "/plugin/virtual-keyboard/",
+          link: "/plaoc/virtual-keyboard/",
         },
         {
           text: "NavigationBar",
-          link: "/plugin/navigation-bar/",
+          link: "/plaoc/navigation-bar/",
         },
         {
           text: "SafeArea",
-          link: "/plugin/safe-area"
+          link: "/plaoc/safe-area"
         },
         {
           text: "Biometrics",
-          link: "/plugin/biometrics/",
+          link: "/plaoc/biometrics/",
         },
         {
           text: "CloseWatcher",
-          link: "/plugin/close-watcher/",
+          link: "/plaoc/close-watcher/",
         },
         {
           text: "Haptics",
-          link: "/plugin/haptics/"
+          link: "/plaoc/haptics/"
         },
         {
           text: "Network",
-          link: "/plugin/network/"
+          link: "/plaoc/network/"
         },
         {
           text: "Share",
-          link: "/plugin/share/"
+          link: "/plaoc/share/"
         },
         {
           text: "SplashScreen",
-          link: "/plugin/splash-screen/"
+          link: "/plaoc/splash-screen/"
         },
         {
           text: "Toast",
-          link: "/plugin/toast/"
+          link: "/plaoc/toast/"
         },
         {
           text: "Torch",
-          link: "/plugin/torch/"
+          link: "/plaoc/torch/"
         },
       ],
     },
@@ -71,7 +87,7 @@ export const zhSidebar = sidebar({
       text: "Service",
       icon: "note",
       prefix: "service/README.md",
-      link: "plugin/README.md",
+      link: "service/README.md",
       children: [
         {
           text: "VFS",
@@ -110,17 +126,6 @@ export const zhSidebar = sidebar({
           link: "/systemApp/notification/",
         },
       ],
-    }, {
-      text: "Tools",
-      icon: "note",
-      prefix: "tools/",
-      link: "tools",
-      children: [
-        {
-          text: "BUNDLE",
-          link: "/tools/bundle/",
-        },
-      ]
     },
   ],
 });
