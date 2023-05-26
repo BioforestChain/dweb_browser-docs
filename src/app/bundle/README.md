@@ -6,7 +6,7 @@ tag:
   - Service APP
 ---
 
-DwebBrowser前后端打包工具，把您开发的包打包成`.plaoc`形式。
+DwebBrowser前后端打包工具，把您开发的包打包成`.jmm`形式。
 
 
 

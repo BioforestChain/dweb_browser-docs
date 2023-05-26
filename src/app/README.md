@@ -3,9 +3,9 @@
 ## 开始
 
 我们定义运行于`dweb_browser`浏览器上面的应用，统一称为`Plaoc App`。
-那么首先我们需要了解如何我们的应用打包成一个`.plaoc`文件。
+那么首先我们需要了解如何我们的应用打包成一个`.jmm`文件。
 
-### 1. 定义配置文件 `bfs-plaoc.json`
+### 1. 定义配置文件 `bfs-jmm.json`
 
 这个配置文件将在用户安装 App 的时候展示，我们直接给出配置文件的示例，以下字段增加 ❗️ 为必填。
 
@@ -21,7 +21,7 @@
     "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
     "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
   ],
-  "downloadUrl": "https://dweb.waterbang.top/game.dweb.waterbang.top.dweb.plaoc", //应用目录❗️
+  "downloadUrl": "https://dweb.waterbang.top/game.dweb.waterbang.top.dweb.jmm", //应用目录❗️
   "author": ["bfs", "bfs@bfs.com"], // 开发者❗️
   "version": "1.0.0", // 版本信息❗️
   "newFeature": "新添加了一键弹弹弹的功能！", // 版本新特性❗️
@@ -40,11 +40,11 @@
 
 创建完成配置文件之后，我们下一步就需要打包文件。
 
-### 2. 打包 Ploac App
+### 2. 打包 Plaoc App
 
 我们需要借助打包工具[@bfex/dweb-jmm-bundler](./bundle)来打包我们的 App，它是纯交互式命令的形式，安装完成后只需要运行`jmm`,即可开启打包。
 
-打包完成之后就会生成两个文件一个是我们的源码文件`game.dweb.waterbang.top.dweb.plaoc`和我们的配置文件`bfs-metadata.json`。
+打包完成之后就会生成两个文件一个是我们的源码文件`game.dweb.waterbang.top.dweb.jmm`和我们的配置文件`bfs-metadata.json`。
 
 源码文件需要放到我们 downloadUrl 对应的位置，而`bfs-metadata.json`可以放到任意位置，
 比如放到`https://dweb.waterbang.top/bfs-metadata.json`，在 app 自更新的时候访问这个链接就可以了。

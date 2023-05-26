@@ -6,7 +6,7 @@ tag:
   - Service APP
 ---
 
-DwebBrowser前后端打包工具，把您开发的包打包成`.plaoc`形式。
+DwebBrowser前后端打包工具，把您开发的包打包成`.jmm`形式。
 
 附加的功能：
 
@@ -38,14 +38,14 @@ DwebBrowser前后端打包工具，把您开发的包打包成`.plaoc`形式。
 ```shell
 Usage: bfsa [options] [command]
 
-.plaoc application install service.
+.jmm application install service.
 
 Options:
   -V, --version     output the version number
   -h, --help        display help for command
 
 Commands:
-  bundle [options]  bfsa bundle project to .plaoc
+  bundle [options]  bfsa bundle project to .jmm
   help [command]    display help for command
 ```
 --------------------------
@@ -55,7 +55,7 @@ Commands:
 ```shell
 Usage: bfsa bundle [options]
 
-bfsa bundle project to .plaoc
+bfsa bundle project to .jmm
 
 Options:
   -f, --front-path <string>  frontend application path.

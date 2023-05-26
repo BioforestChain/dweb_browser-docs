@@ -33,7 +33,7 @@ features:
 
   - title: 打包配置
     icon: slides
-    details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.plaoc`文件，然后上传到应用商城。
+    details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.jmm`文件，然后上传到应用商城。
     link: /tools/bundle/
 
   - title: 一次打包，多平台使用
