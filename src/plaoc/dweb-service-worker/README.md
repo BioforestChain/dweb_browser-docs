@@ -276,10 +276,10 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 ### $ExterRequestWithBaseInit
 
-| Prop           | Type                | Description              | Since |
-| -------------- | ------------------- | ------------------------ | ----- |
-| **`pathname`** | <code>string</code> | 应用请求的路径           | 1.0.0 |
-| **`search`**   | <code>object</code> | 等同于 URL 对象的 search 用来传递get参数 | 1.0.0 |
+| Prop           | Type                | Description                                | Since |
+| -------------- | ------------------- | ------------------------------------------ | ----- |
+| **`pathname`** | <code>string</code> | 应用请求的路径                             | 1.0.0 |
+| **`search`**   | <code>object</code> | 等同于 URL 对象的 search 用来传递 get 参数 | 1.0.0 |
 
 ### BFSMetaData
 
@@ -288,28 +288,26 @@ FBS APP 的数据格式，类似类似[bfs-metadata](https://shop.plaoc.com/bfs-
 > - BFSMetaData 返回值也是 bfs-metadata.json 的内容。想改成 boolean 值。
 > - 未来的方案可能是在 dns.sys.dweb 中提供一个 /membership-broadcast 服务，用来做 类似 UDP 的局域广播，目的是将各种模块之间的协作抽象成某种协议，再通过 membership 这层来广播这些协议数据
 
-| Prop                   | Type                                                          | Description                                                         | Since |
-| ---------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------- | ----- |
-| **`id`**               | <code><a href="#mmid">$MMID</a></code>                        | 应用的 id,是以.dweb 结尾的字符串，类似<code>_${string}_.dweb</code> | 1.0.0 |
-| **`server`**           | <code><a href="#mainserver">MainServer</a></code>             | 打开应用地址                                                        | 1.0.0 |
-| **`title`**            | <code>string</code>                                           | 应用名称                                                            | 1.0.0 |
-| **`subtitle`**         | <code>string</code>                                           | 应用副标题                                                          | 1.0.0 |
-| **`icon`**             | <code>string</code>                                           | 应用图标                                                            | 1.0.0 |
-| **`downloadUrl`**      | <code>string</code>                                           | 下载应用地址                                                        | 1.0.0 |
-| **`images`**           | <code>string</code>                                           | 应用截图,会展示在下载界面。                                         | 1.0.0 |
-| **`introduction`**     | <code>string</code>                                           | 应用描述，会出现在下载界面                                          | 1.0.0 |
-| **`splashScreen`**     | <code><a href="#splashscreen">SplashScreen</a></code>         | 开屏动画配置                                                        | 1.0.0 |
-| **`author`**           | <code>string[]</code>                                         | 开发者，作者                                                        | 1.0.0 |
-| **`version`**          | <code>string</code>                                           | 应用版本                                                            | 1.0.0 |
-| **`keywords`**         | <code>string[]</code>                                         | 关键词                                                              | 1.0.0 |
-| **`home`**             | <code>string</code>                                           | 首页地址                                                            | 1.0.0 |
-| **`size`**             | <code>string</code>                                           | 应用大小                                                            | 1.0.0 |
-| **`fileHash`**         | <code>string</code>                                           | 应用文件 hash                                                       | 1.0.0 |
-| **`permissions`**      | <code>string[]</code>                                         | 权限列表                                                            | 1.0.0 |
-| **`plugins`**          | <code>string[]</code>                                         | 使用的插件                                                          | 1.0.0 |
-| **`releaseDate`**      | <code>string</code>                                           | 发布时间                                                            | 1.0.0 |
-| **`staticWebServers`** | <code><a href="#staticwebserver">StaticWebServer[]</a></code> | 静态网络服务                                                        | 1.0.0 |
-| **`openWebViewList`**  | <code><a href="#openwebview">OpenWebView[]</a></code>         | 应用启动时会打开的网页                                              | 1.0.0 |
+| Prop               | Type                                              | Description                                                         | Since |
+| ------------------ | ------------------------------------------------- | ------------------------------------------------------------------- | ----- |
+| **`id`**           | <code><a href="#mmid">$MMID</a></code>            | 应用的 id,是以.dweb 结尾的字符串，类似<code>_${string}_.dweb</code> | 1.0.0 |
+| **`server`**       | <code><a href="#mainserver">MainServer</a></code> | 打开应用地址                                                        | 1.0.0 |
+| **`title`**        | <code>string</code>                               | 应用名称                                                            | 1.0.0 |
+| **`subtitle`**     | <code>string</code>                               | 应用副标题                                                          | 1.0.0 |
+| **`icon`**         | <code>string</code>                               | 应用图标                                                            | 1.0.0 |
+| **`downloadUrl`**  | <code>string</code>                               | 下载应用地址                                                        | 1.0.0 |
+| **`images`**       | <code>string</code>                               | 应用截图,会展示在下载界面。                                         | 1.0.0 |
+| **`introduction`** | <code>string</code>                               | 应用描述，会出现在下载界面                                          | 1.0.0 |
+| **`author`**       | <code>string[]</code>                             | 开发者，作者                                                        | 1.0.0 |
+| **`version`**      | <code>string</code>                               | 应用版本                                                            | 1.0.0 |
+| **`newFeature`**   | <code>string</code>                               | 新功能，新特性                                                      | 1.0.0 |
+| **`keywords`**     | <code>string[]</code>                             | 关键词                                                              | 1.0.0 |
+| **`home`**         | <code>string</code>                               | 首页地址                                                            | 1.0.0 |
+| **`size`**         | <code>string</code>                               | 应用大小                                                            | 1.0.0 |
+| **`fileHash`**     | <code>string</code>                               | 应用文件 hash                                                       | 1.0.0 |
+| **`permissions`**  | <code>string[]</code>                             | 权限列表                                                            | 1.0.0 |
+| **`plugins`**      | <code>string[]</code>                             | 使用的插件                                                          | 1.0.0 |
+| **`releaseDate`**  | <code>string</code>                               | 发布时间                                                            | 1.0.0 |
 
 #### MainServer
 
@@ -319,31 +317,3 @@ app 主服务配置项，主要配置应用如果文件地址。
 | ----------- | ------------------- | ----------------------------------- | ----- |
 | **`root`**  | <code>string</code> | 应用文件夹的目录，相对于 app 根目录 | 1.0.0 |
 | **`entry`** | <code>string</code> | 应用入口文件地址，相对于 app 根目录 | 1.0.0 |
-
-#### SplashScreen
-
-启动屏配置项。
-
-| Prop        | Type                | Description                                   | Since |
-| ----------- | ------------------- | --------------------------------------------- | ----- |
-| **`entry`** | <code>string</code> | 启动屏页面地址，相对于 app 根目录或者远程地址 | 1.0.0 |
-
-#### StaticWebServer
-
-| Prop            | Type                | Description                         | Since |
-| --------------- | ------------------- | ----------------------------------- | ----- |
-| **`root`**      | <code>string</code> | 应用文件夹的目录，相对于 app 根目录 | 1.0.0 |
-| **`entry`**     | <code>string</code> | 静态入口文件地址，相对于 app 根目录 | 1.0.0 |
-| **`subdomain`** | <code>string</code> | 静态服务子域                        | 1.0.0 |
-| **`port`**      | <code>number</code> | 静态服务端口                        | 1.0.0 |
-
-#### OpenWebView
-
-应用启动时会打开的网页要求 http/https 协议。它们会依此打开，越往后的层级越高
-
-> TODO httpNMM 网关那边，遇到未知的请求，会等待一段时间，如果这段时间内这个域名被监听了，那么会将请求分发过去,
-> 所以如果是 staticWebServers 定义的链接，那么自然而然地，页面会等到 staticWebServer 启动后得到响应，不会错过请求。
-
-| Prop      | Type                | Description        | Since |
-| --------- | ------------------- | ------------------ | ----- |
-| **`url`** | <code>string</code> | 需要打开的网页地址 | 1.0.0 |

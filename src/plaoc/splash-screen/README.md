@@ -13,6 +13,14 @@ tag:
 
 ## SplashScreen WebComponent API
 
+<!-- #### SplashScreen
+
+启动屏配置项。
+
+| Prop        | Type                | Description                                   | Since |
+| ----------- | ------------------- | --------------------------------------------- | ----- |
+| **`entry`** | <code>string</code> | 启动屏页面地址，相对于 app 根目录或者远程地址 | 1.0.0 | -->
+
 <!--
 先挂载 DOM 节点，然后就能调用相应 API。
 以 vue3 为示例：

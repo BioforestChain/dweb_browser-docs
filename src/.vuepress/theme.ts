@@ -136,39 +136,39 @@ export default hopeTheme({
     },
 
     pwa: {
-      favicon: "/favicon.ico",
+      favicon: "/logo.svg",
       cacheHTML: true,
       cachePic: true,
       appendBase: true,
       apple: {
-        icon: "/assets/icon/apple-icon-152.png",
+        icon: "/logo.svg",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/assets/icon/ms-icon-144.png",
+        image: "/logo.svg",
         color: "#ffffff",
       },
       manifest: {
         icons: [
           {
-            src: "/assets/icon/chrome-mask-512.png",
+            src: "/logo.svg",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-mask-192.png",
+            src: "/logo.svg",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-512.png",
+            src: "/logo.svg",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-192.png",
+            src: "/logo.svg",
             sizes: "192x192",
             type: "image/png",
           },
@@ -180,13 +180,13 @@ export default hopeTheme({
             url: "/demo/",
             icons: [
               {
-                src: "/assets/icon/guide-maskable.png",
+                src: "/logo.svg",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/assets/icon/guide-monochrome.png",
+                src: "/logo.svg",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

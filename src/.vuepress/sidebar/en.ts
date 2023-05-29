@@ -13,10 +13,10 @@ export const enSidebar = sidebar({
           text: "Bundler App",
           link: "/app/bundle/",
         },
-        {
-          text: "Bfs-Metadata",
-          link: "/app/bfs-metadata/",
-        },
+        // {
+        //   text: "Bfs-Metadata",
+        //   link: "/app/bfs-metadata/",
+        // },
       ]
     },
     {

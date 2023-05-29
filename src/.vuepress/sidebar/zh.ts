@@ -13,10 +13,10 @@ export const zhSidebar = sidebar({
           text: "BUNDLE",
           link: "/app/bundle/",
         },
-        {
-          text: "Bfs-Metadata",
-          link: "/app/bfs-metadata/",
-        },
+        // {
+        //   text: "Bfs-Metadata",
+        //   link: "/app/bfs-metadata/",
+        // },
       ]
     },
     {
