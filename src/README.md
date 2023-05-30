@@ -188,7 +188,7 @@ dweb-browser 是一个遵循 Dweb 标准构建起来的浏览器平台，并将�
 
 和浏览器相关的一些系统标准也在 dweb-browser 上被实现。
 
-## 什么是 placo
+## 什么是 plaoc
 
 plaoc 是基于 dweb-browser 平台的一个对标 Cordova、Capacitor、Tauri 的“跨平台 Web 应用”开发工具包
 
