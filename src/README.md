@@ -120,22 +120,36 @@ dweb 共识标准由几个部分联合组成：
 
 - `file.sys.dweb`
 - `os.sys.dweb`
+- `network.sys.dweb`
+- `geolocation.sys.dweb`
 - `camera.sys.dweb`
-  - `camera.harmonyos-sys.dweb`
-  - `camera.android-sys.dweb`
-  - `camera.ios-sys.dweb`
-  - `camera.windows-sys.dweb`
-- `status-bar.sys.dweb`
-  - `status-bar.android-sys.dweb`
-  - `status-bar.ios-sys.dweb`
 - `toast.sys.dweb`
 - `share.sys.dweb`
 - `http.sys.dweb`
 - `https.sys.dweb`
 - `http3.sys.dweb`
 - `permission.sys.dweb`
-- `process.sys.dweb`
-- `account.sys.dweb`
+- `usb.sys.dweb`
+- `nn.sys.dweb`
+- `gpu.sys.dweb`
+- `xr.sys.dweb`
+- `alarms.sys.dweb`
+- `locks.sys.dweb`
+- `screen.sys.dweb`
+- `bluetooth.sys.dweb`
+- `hid.sys.dweb`
+- `serial.sys.dweb`
+- `ink.sys.dweb`
+- `keyboard.sys.dweb`
+- `virtual-keyboard.sys.dweb`
+- `system-bar.sys.dweb`
+  > 不同平台不同设备对一组接口有不同的设计与定义，此时可以调用针对性的平台接口来做针对性开发
+  - `system-bar.harmonyos-sys.dweb`
+  - `system-bar.android-sys.dweb`
+  - `system-bar.ios-sys.dweb`
+  - `system-bar.windows-sys.dweb`
+  - `system-bar.linux-sys.dweb`
+  - `system-bar.macos-sys.dweb`
 - _等等_
 
 这些 `*sys.dweb` 的标准属于行业共识，我们不会去篡改它，只会随着原生系统的更新去跟进它，因此它是长期稳定的，会被作为应用开发的标准库被使用。
@@ -168,25 +182,25 @@ dweb 模块可以通过“路由标准”进行互联，那么相对应的，就
 dweb-browser 是一个遵循 Dweb 标准构建起来的浏览器平台，并将浏览器的能力、以及浏览器相关的系统原生系统能力通过各种 dweb 模块暴露出来。目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持。
 它包含一下这些核心模块：
 
-### `js.browser.dweb`
+1. `js.browser.dweb`
 
-它是一个 javascript-runtime，使用的是 WebWorker 作为底层实现。因此 WebWorker 中的各种标准都可以开箱即用。
+   它是一个 javascript-runtime，使用的是 WebWorker 作为底层实现。因此 WebWorker 中的各种标准都可以开箱即用。
 
-### `jmm.browser.dweb`
+1. `jmm.browser.dweb`
 
-它是一个动态 dweb 模块管理器，基于此可以实现类似 PWA 的应用功能
+   它是一个动态 dweb 模块管理器，基于此可以实现类似 PWA 的应用功能
 
-### `mwebview.browser.dweb`
+1. `mwebview.browser.dweb`
 
-它的全称是 mutil-webview（多 web 视图）的渲染器，可以使用这个渲染器同时渲染多个 Web 视图。比如说可以用它实现一个网页浏览器。
+   它的全称是 mutil-webview（多 web 视图）的渲染器，可以使用这个渲染器同时渲染多个 Web 视图。比如说可以用它实现一个网页浏览器。
 
-### `nativeui.browser.dweb`
+1. `nativeui.browser.dweb`
 
-它是一个 dweb-browser 自己定义的窗口标准，它被集成到 mwebview 中，因此可以让 mwebview 的视图获得窗口管理的能力。
+   它是一个 dweb-browser 自己定义的窗口标准，它被集成到 mwebview 中，因此可以让 mwebview 的视图获得窗口管理的能力。
 
-### `*.sys.dweb`
+1. `*.sys.dweb`
 
-和浏览器相关的一些系统标准也在 dweb-browser 上被实现。
+   和浏览器相关的一些系统标准也在 dweb-browser 上被实现。
 
 ## 什么是 plaoc
 
@@ -205,3 +219,39 @@ plaoc 是基于 dweb-browser 平台的一个对标 Cordova、Capacitor、Tauri �
    ```bash
    dweb-browser-dev install --url http://172.30.90.240:8080/usr/metadata.json
    ```
+
+## 什么是 bfs
+
+bfs 是基于 dweb-browser 平台构建的一系列应用群，目的是给人与人之间提供要素流动的工具。
+它完全基于分布式、开源开放的理念，没有平台能够桎梏您的数据。
+基于共识，您可以私有化部署 dweb 直接相关的一切软件，事实上，它也是如此这般在您的设备上工作。
+
+它包含当不仅限于以下共识与应用：
+
+1. `authn.bfs.dweb`
+   《身份验证》共识
+1. `chain.bfs.dweb`
+   《生物链林》共识
+   1. `bfm.chain.bfs.dweb`
+   1. `ccc.chain.bfs.dweb`
+   1. `bft.chain.bfs.dweb`
+1. `matrix.bfs.dweb`
+   《去中心化的网络服务》共识
+1. `cloud.bfs.dweb`
+   《去中心化的存储服务》共识
+1. `pay.bfs.dweb`
+   《点对点转移》共识
+1. `wallet.bfs.dweb`
+   《连接 web3 与生物链林 的钱包》共识
+   1. `cot.wallet.bfs.dweb` COT 钱包
+1. `dp.bfs.dweb`
+   《点对点数字化产品交易》共识
+1. `blog.bfs.dweb`
+   《分布式图文媒体》共识
+1. `chat.bfs.dweb`
+   《分布式实时通讯》共识
+1. `finance.bfs.dweb`
+   《分布式金融》共识
+1. `office.bfs.dweb`
+   《分布式办公协作》共识
+   1. `ark.office.bfs.dweb` 方舟
