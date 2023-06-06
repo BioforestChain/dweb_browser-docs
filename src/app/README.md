@@ -1,53 +1,94 @@
 # Plaoc APP
 
-## 开始
+## Getting Started
 
-我们定义运行于`dweb_browser`浏览器上面的应用，统一称为`Plaoc App`。
-那么首先我们需要了解如何我们的应用打包成一个`.jmm`文件。
+We define applications running on the `dweb_browser` browser as "Plaoc Apps". First, let's understand how to package our application into a `.zip` file.
 
-### 1. 定义配置文件 `bfs-jmm.json`
+### 1. Define the configuration file `manifest.json`
 
-这个配置文件将在用户安装 App 的时候展示，我们直接给出配置文件的示例，以下字段增加 ❗️ 为必填。
+This configuration file follows the [manifest standard](https://developer.mozilla.org/en-US/docs/Web/Manifest) by W3C. However, it omits some complex image configurations, such as `icon`. Therefore, we recommend directly passing an SVG file.
+
+This configuration file will be displayed when the user installs the app. Here is an example of the configuration file, with ❗️ indicating required fields.
 
 ```json
 {
-  "name": "game", // app名称❗️
-  "subName": "vue3-game", // app子名称❗️
-  "introduction": "这是一个实例应用，包含了dweb_plugins全部组件的实例。", // app 介绍❗️
-  "icon": "https://www.bfmeta.info/imgs/logo3.webp", // app的图标❗️
+  "id": "game.dweb.waterbang.top.dweb", // ❗️ App ID (must be unique)
+  "name": "game", // ❗️ App name
+  "short_name": "vue3-game", // ❗️ App subname
+  "description": "This is a sample application that includes instances of all dweb_plugins components.", // ❗️ App description
+  "icon": "https://www.bfmeta.info/imgs/logo3.webp", // ❗️ App icon
   "images": [
-    // 下载页面的❗️
+    // ❗️ Images for the download page
     "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
     "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
     "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
   ],
-  "downloadUrl": "https://dweb.waterbang.top/game.dweb.waterbang.top.dweb.jmm", //应用目录❗️
-  "author": ["bfs", "bfs@bfs.com"], // 开发者❗️
-  "version": "1.0.0", // 版本信息❗️
-  "newFeature": "新添加了一键弹弹弹的功能！", // 版本新特性❗️
-  "home": "https://dweb.waterbang.top", // app 主域名❗️
-  "keywords": ["demo", "vue3"] // 关键字，在下载页面推荐相同种类的app使用
+  "author": ["bfs", "bfs@bfs.com"], // ❗️ Developers
+  "version": "1.0.0", // ❗️ Version information
+  "new_feature": "Added a new feature of shooting bubbles with a single click!", // ❗️ New feature in this version
+  "home": "https://dweb.waterbang.top", // ❗️ App's main domain
+  "categories": ["games"] // Category
 }
 ```
 
-需要注意的是`downloadUrl`，因为我们当前的 app 还没打包，但是提前配置了打包完的路径，
-所以我们需要确保上传文件的路径跟我们填写到`downloadUrl`的一致。
+- `id`: As you can see, according to the current configuration, the ID follows the format `${name}.${host}.dweb`. Please adhere to this format. The above ID is `game.dweb.waterbang.top.dweb`, and the ID corresponds to the host of the domain filled in the "home" field. Each app has a unique ID, and multiple apps can be hosted on the same domain.
 
-可以看到我们依据当前的配置，我们的 appId 为`game.dweb.waterbang.top.dweb`,appId 对应着`home`的填写的域名。
-每个 app 都有一个唯一的 appId,每个域名可以挂载多个 App。
+- `categories`: App category, please follow the [W3C standard](https://github.com/w3c/manifest/wiki/Categories).
 
-> appId 在打包完之后生成 bfs-metadata.json 文件内可以看到。AppId 都被规定为以`.dweb`后缀结尾的字符串。
+Once the configuration file is created, the next step is to package the files.
 
-创建完成配置文件之后，我们下一步就需要打包文件。
+### 2. Packaging Plaoc App
 
-### 2. 打包 Plaoc App
+We need to use the packaging tool [plaoc cli](./bundle) to package our app.
 
-我们需要借助打包工具[@bfex/dweb-jmm-bundler](./bundle)来打包我们的 App，它是纯交互式命令的形式，安装完成后只需要运行`jmm`,即可开启打包。
+After packaging, two files will be generated: the source code file `game.dweb.waterbang.top.dweb.zip` and the configuration file `metadata.json`.
 
-打包完成之后就会生成两个文件一个是我们的源码文件`game.dweb.waterbang.top.dweb.jmm`和我们的配置文件`bfs-metadata.json`。
+The source code file needs to be placed in the corresponding location of `bundle_url`, and `metadata.json` can be placed anywhere. 
 
-源码文件需要放到我们 downloadUrl 对应的位置，而`bfs-metadata.json`可以放到任意位置，
-比如放到`https://dweb.waterbang.top/bfs-metadata.json`，在 app 自更新的时候访问这个链接就可以了。
-为了方便用户安装也可以将上述连接转化成二维码，通过`dweb_browser`二维码识别，进入安装页面。
+For example, it can be placed at `https://dweb.waterbang.top/metadata.json`. 
 
-这样我们的app就安装到``
+When the app self-updates, you can access this link. To facilitate user installation, you can also convert the above link into a QR code and use the `dweb_browser` QR code recognition to enter the installation page.
+
+This way, our app is installed on the `dweb_browser`.
+
+### Put it on the official website for downloading
+
+If you want to put it on your official website for downloading, you can write a `dweb_deeplink` link on your website and open it in the `dweb_browser`. This will take the user to the download page.
+
+#### Example
+
+> Note: Please do not use fetch.
+
+```html
+<body>
+    <div class="container">
+        <h1>dweb-game！</h1>
+        <h3>welcome come dweb.waterbang.top</h3>
+        <ul>
+            <li><a href="https://github.com/BioforestChain/dweb_bundle">dweb_bundle</a></li>
+             <li><a href="https://github.com/BioforestChain/dweb_browser">dweb_browser</a></li>
+        </ul>
+        <!--<a href="dweb:install?url=https://dweb.waterbang.top/metadata.json">点击下载</a>-->
+        <button onclick="getBfsMeta()">download click</button>
+    </div>
+    <script>
+    function getBfsMeta() {
+        fetchLocal("dweb:install?url=https://dweb.waterbang.top/metadata.json")
+	}
+	function fetchLocal(url) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest
+        xhr.onload = function () {
+            resolve(new Response(xhr.response, { status: xhr.status }))
+        }
+        xhr.onerror = function () {
+            reject(new TypeError('Local request failed'))
+        }
+        xhr.open('GET', url)
+        xhr.responseType = "arraybuffer";
+        xhr.send(null)
+    })
+};
+</script>
+</body>
+```

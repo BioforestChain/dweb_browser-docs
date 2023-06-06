@@ -260,9 +260,9 @@ updateContoller.addEventListener("cancel", (event: Event) => {
   async download(metadataUrl: string): Promise<BFSMetaData>
 ```
 
-| Param             | Type                | Description                                                                                |
-| ----------------- | ------------------- | ------------------------------------------------------------------------------------------ |
-| **`metadataUrl`** | <code>string</code> | bfs-metadata.json 的 url 地址,类似[bfs-metadata](https://shop.plaoc.com/bfs-metadata.json) |
+| Param             | Type                | Description                                                                        |
+| ----------------- | ------------------- | ---------------------------------------------------------------------------------- |
+| **`metadataUrl`** | <code>string</code> | metadata.json 的 url 地址,类似[bfs-metadata](https://shop.plaoc.com/metadata.json) |
 
 **Returns:** <code>Promise&lt;<a href="#bfsmetadata">BFSMetaData</a>&gt;</code>
 
@@ -283,28 +283,28 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 ### BFSMetaData
 
-FBS APP 的数据格式，类似类似[bfs-metadata](https://shop.plaoc.com/bfs-metadata.json)。规定了一个 app 的所有配置信息。
+FBS APP 的数据格式，类似类似[bfs-metadata](https://shop.plaoc.com/metadata.json)。规定了一个 app 的所有配置信息。
 
-> - BFSMetaData 返回值也是 bfs-metadata.json 的内容。想改成 boolean 值。
+> - BFSMetaData 返回值也是 metadata.json 的内容。想改成 boolean 值。
 > - 未来的方案可能是在 dns.sys.dweb 中提供一个 /membership-broadcast 服务，用来做 类似 UDP 的局域广播，目的是将各种模块之间的协作抽象成某种协议，再通过 membership 这层来广播这些协议数据
 
 | Prop               | Type                                              | Description                                                         | Since |
 | ------------------ | ------------------------------------------------- | ------------------------------------------------------------------- | ----- |
 | **`id`**           | <code><a href="#mmid">$MMID</a></code>            | 应用的 id,是以.dweb 结尾的字符串，类似<code>_${string}_.dweb</code> | 1.0.0 |
 | **`server`**       | <code><a href="#mainserver">MainServer</a></code> | 打开应用地址                                                        | 1.0.0 |
-| **`title`**        | <code>string</code>                               | 应用名称                                                            | 1.0.0 |
-| **`subtitle`**     | <code>string</code>                               | 应用副标题                                                          | 1.0.0 |
+| **`name`**         | <code>string</code>                               | 应用名称                                                            | 1.0.0 |
+| **`short_name`**   | <code>string</code>                               | 应用副标题                                                          | 1.0.0 |
 | **`icon`**         | <code>string</code>                               | 应用图标                                                            | 1.0.0 |
-| **`downloadUrl`**  | <code>string</code>                               | 下载应用地址                                                        | 1.0.0 |
 | **`images`**       | <code>string</code>                               | 应用截图,会展示在下载界面。                                         | 1.0.0 |
 | **`introduction`** | <code>string</code>                               | 应用描述，会出现在下载界面                                          | 1.0.0 |
 | **`author`**       | <code>string[]</code>                             | 开发者，作者                                                        | 1.0.0 |
 | **`version`**      | <code>string</code>                               | 应用版本                                                            | 1.0.0 |
-| **`newFeature`**   | <code>string</code>                               | 新功能，新特性                                                      | 1.0.0 |
+| **`new_feature`**  | <code>string</code>                               | 新功能，新特性                                                      | 1.0.0 |
 | **`keywords`**     | <code>string[]</code>                             | 关键词                                                              | 1.0.0 |
 | **`home`**         | <code>string</code>                               | 首页地址                                                            | 1.0.0 |
-| **`size`**         | <code>string</code>                               | 应用大小                                                            | 1.0.0 |
-| **`fileHash`**     | <code>string</code>                               | 应用文件 hash                                                       | 1.0.0 |
+| **`bundle_size`**  | <code>string</code>                               | 应用大小                                                            | 1.0.0 |
+| **`bundle_url`**   | <code>string</code>                               | 下载应用地址                                                        | 1.0.0 |
+| **`bundle_hash`**  | <code>string</code>                               | 应用文件 hash                                                       | 1.0.0 |
 | **`permissions`**  | <code>string[]</code>                             | 权限列表                                                            | 1.0.0 |
 | **`plugins`**      | <code>string[]</code>                             | 使用的插件                                                          | 1.0.0 |
 | **`releaseDate`**  | <code>string</code>                               | 发布时间                                                            | 1.0.0 |

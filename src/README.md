@@ -4,119 +4,118 @@ icon: home
 title: DwebBrowser
 heroImage: /logo.svg
 heroText: DwebBrowser
-tagline: 一个提供分布式网络|应用附着的浏览器。
+tagline: A browser that provides distributed network and application attachment.
 actions:
-  - text: 介绍 💡
+  - text: Introduction 💡
     link: /app/
     type: primary
 
   - text: Plaoc API
     link: /plaoc/
 
-  - text: 服务端API
+  - text: Server API
     link: /service/
 
-  - text: 系统APP
+  - text: System APP
     link: /systemAPP/
 
 features:
-  - title: APP 链上认证
+  - title: APP Chain Authentication
     icon: lock
-    details: 为APP上链申请的DAPPID,方便对APP进行认证和溯源。
+    details: For DAPPID applied for on-chain by the app, it facilitates the authentication and traceability of the app.
     link: /tools/bundle/
 
-  - title: APP配置
+  - title: APP Configuration
     icon: config
-    details: 自由配置规则，您的后端根目录创建一个`bfs-metadata.ts`的配置文件，具体查看后端配置。
+    details: Configure rules freely. Create a `bfs-metadata.ts` configuration file in your backend root directory. For more details, refer to the backend configuration.
     link: /plugin/
 
-  - title: 打包配置
+  - title: Packaging Configuration
     icon: slides
-    details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.jmm`文件，然后上传到应用商城。
+    details: After developing the application, you need to package your frontend and backend applications into a `xxxx.zip` file and upload it anywhere.
     link: /tools/bundle/
 
-  - title: 一次打包，多平台使用
+  - title: One Packaging for Multiple Platform Usage
     icon: workingDirectory
-    details: 提供android,ios,desktop三端部署。
+    details: Support deployment on Android, iOS, and desktop platforms.
     link: /tools/bundle/
 
-  - title: 应用互联
+  - title: Application Interconnection
     icon: link
-    details: 本地app通过自定义dwebServiceWorker通信。
+    details: Local apps communicate through custom dwebServiceWorker.
     link: /plugin/dweb-service-worker/
 
-  - title: 遵循web开发规范
+  - title: Follow Web Development Standards
     icon: api
-    details: 所有的api符合web开发人员的开发直觉，遵循web标准。
+    details: All APIs conform to the development intuition of web developers and adhere to web standards.
     link: /plugin/
 
-  - title: 协作共享
+  - title: Collaboration and Sharing
     icon: group
-    details: 标签添加了分享声明<html is="dweb-html">那么整个html页面就被进入共享模式。
+    details: If a tag adds a sharing declaration <html is="dweb-html">, the entire HTML page enters the sharing mode.
     link: /plugin/
 
-  - title: npm支持
+  - title: npm Support
     icon: npm
-    details: 所有的包上传到npm平台提供支持。
+    details: Upload all packages to the npm platform for support.
     link: https://www.npmjs.com/settings/bfex/packages
 
-  - title: Deno api风格
+  - title: Deno API Style
     icon: support
-    details: 后端基于Deno风格提供一系列api。
+    details: Provide a series of APIs based on the Deno style on the backend.
     link: /service/
 
-  - title: 代码开源
+  - title: Open Source Code
     icon: github
-    details: 所有代码属于社区，开源处理。
+    details: All code belongs to the community and is open source.
     link: https://github.com/BioforestChain/dweb_browser
 
-  - title: 高自由度
+  - title: High Degree of Freedom
     icon: strong
-    details: 前后端都可编程，提供高度的编码自由度。
+    details: Both frontend and backend are programmable, providing a high degree of coding freedom.
     link: /
 
-  - title: 分布式网络
+  - title: Distributed Network
     icon: network
-    details: 提供分布式网络的能力提供互联。
+    details: Provide the capability of a distributed network for interconnection.
     link: /systemApp/
 
-  - title: 存储功能
+  - title: Storage Functionality
     icon: storage
-    details: 提供存储功能API,数据之间相互隔离。
+    details: Provide storage functionality APIs, with data isolation between them.
     link: /systemApp/
 
-  - title: 版本自更新
+  - title: Version Self-Update
     icon: async
-    details: 拥有特色的版本自更新服务。
+    details: Have a distinctive version self-update service.
     link: /service/
 
-  - title: 进程独立
+  - title: Independent Processes
     icon: process
-    details: 后端进程相互独立互不干扰。
+    details: Backend processes are independent of each other and do not interfere with each other.
     link: /service/
 
 copyright: 闽ICP备18009949号-4
 footer: MIT Licensed | Copyright © 2021-present BFCHAIN
 ---
 
-## 什么是 dweb？
+## What is dweb?
 
-Dweb 是一种去中心化的 Web 共识标准。它直接体现在您的域名上，如： `example.dweb`
-然而正是因为 dweb 这个跟域名并不在互联网上真实存在，也就意味着它不归属于任何组织，也就是说，如何解释`example.dweb`这个域名，完全由您自己（的设备）执行决策。
-dweb 共识标准由几个部分联合组成：
+Dweb is a decentralized web consensus standard. It is directly reflected in your domain name, such as `example.dweb`. However, because the dweb domain does not exist on the internet, it means that it does not belong to any organization. In other words, how to interpret the `example.dweb` domain is entirely determined by your own device.
 
-### 通讯标准
+The dweb consensus standard is composed of several parts:
 
-借鉴于 http 协议，我们使用 JSON 与 CBOR 这种 web 数据格式定义了两个模块的通讯标准，而遵循这种给予消息的通讯的模块，我们将其称为 dweb-micro-module（中文：“dweb 模块”）。
-这种通讯标准，我们使用`file:`协议头配合`.dweb`跟域名来进行定义它的 URL，比如说：`file://dns.sys.dweb/`。
+### Communication Standard
 
-### 路由标准
+Inspired by the HTTP protocol, we use JSON and CBOR as web data formats to define the communication standard for two modules. We refer to these modules that follow the message-based communication as "dweb micro-modules." The URL for these modules is defined using the `file:` protocol header along with the `.dweb` domain. For example: `file://dns.sys.dweb/`.
 
-`dns.sys.dweb` 是 dweb 的共识标准的核心部分，它定义了两个 dweb 模块 的 互联、注册、查询 等功能，是 dweb 模块接入到 dweb 世界的标准。
+### Routing Standard
 
-### 系统标准
+`dns.sys.dweb` is the core part of the dweb consensus standard. It defines the interconnection, registration, and querying functions of two dweb modules. It serves as the standard for dweb module integration into the dweb world.
 
-这里涵盖了常见操作系统模块的一些标准，包含各个平台独立的标准与统一抽象的标准：
+### System Standard
+
+This encompasses the standards for common operating system modules, including platform-specific standards and unified abstract standards:
 
 - `file.sys.dweb`
 - `os.sys.dweb`
@@ -150,108 +149,124 @@ dweb 共识标准由几个部分联合组成：
   - `system-bar.windows-sys.dweb`
   - `system-bar.linux-sys.dweb`
   - `system-bar.macos-sys.dweb`
-- _等等_
+- _and more_
 
-这些 `*sys.dweb` 的标准属于行业共识，我们不会去篡改它，只会随着原生系统的更新去跟进它，因此它是长期稳定的，会被作为应用开发的标准库被使用。
+These `*sys.dweb` standards represent industry consensus. We do not modify them but rather keep them up-to-date with updates to native systems. Therefore, they are long-term stable and serve as standard libraries for application development.
 
-### 深度链接标准
+### Deep Linking Standard
 
-`dweb-deeplink` 是一种以 `dweb:{domain}/pathname?search` 为格式的链接，它为 dweb 模块之间提供了一种定义共识的平台，比如说模块之间可以依赖共识而不是依赖实际的 dweb 模块。
-举个具体的例子，比如说实现分享功能：我可以在我的分享按钮中绑定：`dweb:share?title=hello_world&files=http...`，那么 dweb 内核就会去寻找哪个模块声明了该`dweb:share`的实现，并将请求路由到该模块去。如果共识被多个模块同时实现，那么在不同的平台上会通过平台标准的交互来进行偏好选择。
+`dweb-deeplink` is a type of link format with the structure `dweb:{domain}/pathname?search`. It provides a platform for defining consensus among dweb modules. Modules can rely on consensus rather than specific dweb modules. For example, for implementing a sharing feature, I can bind it to my share button as `dweb:share?title=hello_world&files=http...`. The dweb kernel will then look for the module that declares the implementation of `dweb:share` and route the request to that module. If multiple modules implement the consensus, preference selection will be done through platform-specific interactions on different platforms.
 
-在有命令行的环境里，`dweb-deeplink` 还可以通过命令行来进行访问：`dweb-browser install app --url=xx`会被解析成：`dweb:install/app?url=xx`
+In a command-line environment, `dweb-deeplink` can also be accessed via the command line. `dweb-browser install app --url=xx` would be parsed as `dweb:install/app?url=xx`.
 
-> 注意：这里的 `dweb-browser` 只是一个实现 dweb 协议的软件，社区中可能会有其它实现。
+> Note: `dweb-browser` here is just one implementation of a software that follows the dweb protocol. There may be other implementations in the community.
 
-### 生命周期标准
+### Lifecycle Standard
 
-dweb 模块可以通过“路由标准”进行互联，那么相对应的，就有两个基本的生命周期：
+Dweb modules can connect with each other through the "Routing Standard," and consequently, there are two basic lifecycles:
 
-1. `onConnect` 模块之间达成连接时触发，可以是别人连自己，也可以是自己连别人，都会触发该生命周期，因为模块之间是对等的、全双工的。
-1. `onActivity` 模块接受到特定的消息：`activity-event`，那么就会触发该生命周期，该生命周期通常被用于执行一些特定的任务，比如激活窗口。
+1. `onConnect`: Triggered when modules establish a connection. It can be someone connecting to you or you connecting to someone else. This lifecycle is triggered because modules are peer-to-peer and full-duplex.
+2. `onActivity`: Triggered when a module receives a specific message: `activity-event`. This lifecycle is
 
-> 更多的生命周期，会在不同平台不同场景所被定义，但那些生命周期属于上层应用标准，不再属于 dweb 核心标准。
-> 两个应用之间如果想要了解对方应用实现了哪些标准，可以使用查询对方的 dweb-deeplink 来实现
+ commonly used to perform specific tasks, such as activating a window.
 
-### 小结
+> Additional lifecycles are defined in different platforms and scenarios, but those lifecycles belong to the upper-level application standard and are no longer part of the core dweb standard. If two applications want to know which standards the other application has implemented, they can use querying via dweb-deeplink.
 
-可以看得出来，相比于传统的 web-api 设计，dweb 更加的自由。核心原因是因为 dweb 模块之间完全使用消息通讯，这就给 dweb 模块带来的部署带来了无限了可能。你可以使用沙盒模块来保护隐私，甚至可以使用网络的来将来其它设备的模块部署到本地使用。
+### Summary
 
-## 什么是 dweb-browser
+As seen, compared to traditional web API design, dweb offers more freedom. The core reason is that dweb modules communicate entirely using message-based communication. This opens up endless possibilities for deploying dweb modules. You can use sandbox modules to protect privacy or even deploy modules from other devices using the network.
 
-dweb-browser 是一个遵循 Dweb 标准构建起来的浏览器平台，并将浏览器的能力、以及浏览器相关的系统原生系统能力通过各种 dweb 模块暴露出来。目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持。
-它包含一下这些核心模块：
+## What is dweb-browser
+
+dweb-browser is a browser platform built following the Dweb standard. It exposes the capabilities of a browser and native system capabilities related to the browser through various dweb modules. Currently, we have implemented support for mainstream platforms such as Android, iOS, MacOS, Windows, and Linux. It includes the following core modules:
 
 1. `js.browser.dweb`
 
-   它是一个 javascript-runtime，使用的是 WebWorker 作为底层实现。因此 WebWorker 中的各种标准都可以开箱即用。
+   It is a JavaScript runtime that uses WebWorker as its underlying implementation. Therefore, various standards in WebWorker can be used out of the box.
 
-1. `jmm.browser.dweb`
+2. `jmm.browser.dweb`
 
-   它是一个动态 dweb 模块管理器，基于此可以实现类似 PWA 的应用功能
+   It is a dynamic dweb module manager, which can be used to implement application functionalities similar to PWA (Progressive Web Apps).
 
-1. `mwebview.browser.dweb`
+3. `mwebview.browser.dweb`
 
-   它的全称是 mutil-webview（多 web 视图）的渲染器，可以使用这个渲染器同时渲染多个 Web 视图。比如说可以用它实现一个网页浏览器。
+   It stands for mutil-webview (multiple web views) renderer, which allows simultaneous rendering of multiple web views. For example, it can be used to implement a web browser.
 
-1. `nativeui.browser.dweb`
+4. `nativeui.browser.dweb`
 
-   它是一个 dweb-browser 自己定义的窗口标准，它被集成到 mwebview 中，因此可以让 mwebview 的视图获得窗口管理的能力。
+   It is a window standard defined by the dweb-browser itself. It is integrated into mwebview, enabling window management capabilities for mwebview's views.
 
-1. `*.sys.dweb`
+5. `*.sys.dweb`
 
-   和浏览器相关的一些系统标准也在 dweb-browser 上被实现。
+   Some browser-related system standards are also implemented in dweb-browser.
 
-## 什么是 plaoc
+## What is plaoc
 
-plaoc 是基于 dweb-browser 平台的一个对标 Cordova、Capacitor、Tauri 的“跨平台 Web 应用”开发工具包
+plaoc is a "cross-platform web application" development toolkit based on the dweb-browser platform, comparable to Cordova, Capacitor, and Tauri.
 
-### cli
 
-1. `deno install -A https://deno.land/x/plaoc@0.0.1/cli.ts`
+What is BFS?
 
-1. `plaoc bundle ./dir`
-   会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `plaoc.metadata.json`
+BFS stands for "Basic File System." It is a series of applications built on the dweb-browser platform, aimed at providing tools for element flow between individuals.
+It is based on the principles of distributed, open-source, and open platforms, ensuring that your data is not bound to any particular platform.
+Based on consensus, you can deploy privately all the software related to dweb, which will work on your device accordingly.
 
-1. `plaoc preview http://localhost:1231` 或者 `plaoc preview ./dir`
-   > 会将该 url 放在一个 iframe 中被预览
-   > 该命令会输出一行命令：
-   ```bash
-   dweb-browser-dev install --url http://172.30.90.240:8080/usr/metadata.json
-   ```
-
-## 什么是 bfs
-
-bfs 是基于 dweb-browser 平台构建的一系列应用群，目的是给人与人之间提供要素流动的工具。
-它完全基于分布式、开源开放的理念，没有平台能够桎梏您的数据。
-基于共识，您可以私有化部署 dweb 直接相关的一切软件，事实上，它也是如此这般在您的设备上工作。
-
-它包含当不仅限于以下共识与应用：
+It includes, but is not limited to, the following consensus and applications:
 
 1. `authn.bfs.dweb`
-   《身份验证》共识
+   Consensus for "Authentication"
 1. `chain.bfs.dweb`
-   《生物链林》共识
+   Consensus for "Biological Chain Forest"
    1. `bfm.chain.bfs.dweb`
    1. `ccc.chain.bfs.dweb`
    1. `bft.chain.bfs.dweb`
 1. `matrix.bfs.dweb`
-   《去中心化的网络服务》共识
+   Consensus for "Decentralized Network Services"
 1. `cloud.bfs.dweb`
-   《去中心化的存储服务》共识
+   Consensus for "Decentralized Storage Services"
 1. `pay.bfs.dweb`
-   《点对点转移》共识
+   Consensus for "Peer-to-Peer Transfer"
 1. `wallet.bfs.dweb`
-   《连接 web3 与生物链林 的钱包》共识
-   1. `cot.wallet.bfs.dweb` COT 钱包
+   Consensus for "Wallet Connecting Web3 and Biological Chain Forest"
+   1. `cot.wallet.bfs.dweb` COT Wallet
 1. `dp.bfs.dweb`
-   《点对点数字化产品交易》共识
+   Consensus for "Peer-to-Peer Digital Product Trading"
 1. `blog.bfs.dweb`
-   《分布式图文媒体》共识
+   Consensus for "Distributed Graphic and Text Media"
 1. `chat.bfs.dweb`
-   《分布式实时通讯》共识
+   Consensus for "Distributed Real-time Communication"
 1. `finance.bfs.dweb`
-   《分布式金融》共识
+   Consensus for "Distributed Finance"
 1. `office.bfs.dweb`
-   《分布式办公协作》共识
-   1. `ark.office.bfs.dweb` 方舟
+   Consensus for "Distributed Office Collaboration"
+   1. `ark.office.bfs.dweb` Ark
+
+
+### cli
+
+- Installation
+
+`deno install -A https://deno.land/x/plaoc/cli/plaoc.ts`
+
+- Packaging as an app
+
+`plaoc bundle ./dir`
+
+It will package the directory structure as follows and output a compressed `.zip` file and a `metadata.json`. For more details, please refer to the [plaoc lic](./app/bundle/README.md) for the detailed documentation.
+
+- Developer mode
+
+`plaoc preview http://localhost:1231` or `plaoc preview ./dir`
+
+This command will output the following commands:
+
+```bash
+metadata:       http://127.0.0.1:8096/metadata.json
+metadata:       http://172.30.90.207:8096/metadata.json
+```
+
+- Development using developer tools
+
+```bash
+dweb-browser-dev install --url http://127.0.0.1:8096/metadata.json
+```

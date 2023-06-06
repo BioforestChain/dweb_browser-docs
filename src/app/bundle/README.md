@@ -1,52 +1,62 @@
 ---
 title: DwebBrowser bundle
 category:
-  - Service APP
+  - Service 
 tag:
-  - Service APP
+  - Service 
 ---
 
-DwebBrowser 前后端打包工具，把您开发的包打包成`.jmm`形式。
+plaoc frontend and backend packaging tool.
 
-## @bfex/dweb-jmm-bundler
-
-```
- 全局安装指令
- # npm方式
-   npm i @bfex/dweb-jmm-bundler -g
-
- # yarn方式
-   yarn global add @bfex/dweb-jmm-bundler
-
- # pnpm
-   pnpm add -g @bfex/dweb-jmm-bundler
-```
-
-### 使用
+## Installation
 
 ```bash
-jmm -i
+deno install -A https://deno.land/x/plaoc/cli/plaoc.ts
 ```
 
-### 选项
+## Bundle app (bundle/build)
 
-- `-h, --help`：显示帮助信息。
-- `-V, --version`：显示程序版本号。
-- `-d, --dest-path <string>`：前端应用程序路径。（必需）
-- `-b, --front-build-path <string>`：frontBuildPath：打包的前端源代码地址。（必需）
-- `-t, --app-type [appType]`：应用程序类型为[静态]和[动态]。（值：'static'，'dynamic'）
-- `-i, --interact [interact]`：是否启用交互模式。（默认值：false）
+```bash
+plaoc bundle ./dir
+```
+The command will create the following folder structure and output a compressed file `.zip` and a `metadata.json`. For more details, please refer to the documentation below.
 
-### 示例
+- bundle
+  - appId.version.zip
+  - metadata.json
 
-- 在项目目录中：`jmm -d ./ -b dist`
-- 静态项目：`jmm -d ../dweb_browser/plaoc/demo -b dist -t static`
-- 交互模式 jmm -i
+### Options
 
+- `--out`: Specify the output directory name for the bundle. Default is `bundle`.
+- `--version`: Specify the version of the app, which can override the configuration in `manifest.json`.
+- `--id`: Specify the ID of the app, which can override the configuration in `manifest.json`.
+- `--dir`: Specify the development directory, i.e., the root directory where you create `manifest.json`.
 
-<!-- 附加的功能：
+### Example
 
-1. 链上APPID认证申请。
-2. 上传到DwebBrowser DAPP 商城。
+```bash
+plaoc bundle ./plaoc/demo/dist --dir ./plaoc/demo --version 0.0.2
+```
 
---------------------------- -->
+## Developer Mode (serve/preview)
+
+This mode requires the use of developer tools and serves as a preview mode for the app.
+
+```bash
+plaoc serve ./dir
+```
+
+### Options
+
+- `--dir`: Specify the development directory, i.e., the root directory where you create `manifest.json`.
+- `--port`: Specify the server port to start.
+- `--mode`: Service handling mode, can be `www`, `live`, or `prod`.
+  - `--mode www`: Start the folder as read-only files in `usr/www`.
+  - `--mode live`: Start the local folder using a dynamic server, with `index.html` in `usr/www` for redirection.
+  - `--mode prod`: Directly serve the packaged files.
+
+### Example
+
+```bash
+plaoc preview ./plaoc/demo/dist --dir ./plaoc/demo --mode www
+```
