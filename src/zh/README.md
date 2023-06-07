@@ -10,13 +10,13 @@ actions:
     link: /app/
     type: primary
 
-  - text: Plaoc API
+  - text: Plaoc
     link: /plaoc/
 
-  - text: 服务端API
+  - text: 服务端(测试中)
     link: /service/
 
-  - text: 系统APP
+  - text: 系统(测试中)
     link: /systemAPP/
 
 features:

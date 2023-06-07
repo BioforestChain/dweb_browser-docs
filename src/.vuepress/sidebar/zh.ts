@@ -10,13 +10,13 @@ export const zhSidebar = sidebar({
       link: "app",
       children: [
         {
-          text: "BUNDLE",
+          text: "命令行打包工具",
           link: "/app/bundle/",
         },
-        // {
-        //   text: "Bfs-Metadata",
-        //   link: "/app/bfs-metadata/",
-        // },
+        {
+          text: "开发者工具",
+          link: "/app/developer-tool/",
+        },
       ]
     },
     {
@@ -83,49 +83,49 @@ export const zhSidebar = sidebar({
         },
       ],
     },
-    {
-      text: "Service",
-      icon: "note",
-      prefix: "service/README.md",
-      link: "service/README.md",
-      children: [
-        {
-          text: "VFS",
-          link: "/service/vfs/",
-        },
-        {
-          text: "SSR",
-          link: "/service/ssr/",
-        },
-        {
-          text: "TUI",
-          link: "/service/tui/",
-        },
-        {
-          text: "GUI",
-          link: "/service/gui/",
-        },
-      ],
-    },
-    {
-      text: "SystemApp",
-      icon: "note",
-      prefix: "systemApp",
-      link: "systemApp/README.md",
-      children: [
-        {
-          text: "BNRTC",
-          link: "/systemApp/bnrtc/",
-        },
-        {
-          text: "DATABASE",
-          link: "/systemApp/database/",
-        },
-        {
-          text: "NOTIFICATION",
-          link: "/systemApp/notification/",
-        },
-      ],
-    },
+    // {
+    //   text: "Service",
+    //   icon: "note",
+    //   prefix: "service/README.md",
+    //   link: "service/README.md",
+    //   children: [
+    //     {
+    //       text: "VFS",
+    //       link: "/service/vfs/",
+    //     },
+    //     {
+    //       text: "SSR",
+    //       link: "/service/ssr/",
+    //     },
+    //     {
+    //       text: "TUI",
+    //       link: "/service/tui/",
+    //     },
+    //     {
+    //       text: "GUI",
+    //       link: "/service/gui/",
+    //     },
+    //   ],
+    // },
+    // {
+    //   text: "SystemApp",
+    //   icon: "note",
+    //   prefix: "systemApp",
+    //   link: "systemApp/README.md",
+    //   children: [
+    //     {
+    //       text: "BNRTC",
+    //       link: "/systemApp/bnrtc/",
+    //     },
+    //     {
+    //       text: "DATABASE",
+    //       link: "/systemApp/database/",
+    //     },
+    //     {
+    //       text: "NOTIFICATION",
+    //       link: "/systemApp/notification/",
+    //     },
+    //   ],
+    // },
   ],
 });

@@ -4,19 +4,19 @@ export const enSidebar = sidebar({
   "/": [
     "",
     {
-      text: "Plaoc APP",
+      text: "Plaoc",
       icon: "app",
       prefix: "app/",
       link: "app",
       children: [
         {
-          text: "Bundler App",
+          text: "cli tool",
           link: "/app/bundle/",
         },
-        // {
-        //   text: "Bfs-Metadata",
-        //   link: "/app/bfs-metadata/",
-        // },
+        {
+          text: "Developer tool",
+          link: "/app/developer-tool/",
+        },
       ]
     },
     {
@@ -83,49 +83,49 @@ export const enSidebar = sidebar({
         },
       ],
     },
-    {
-      text: "Service",
-      icon: "note",
-      prefix: "service/README.md",
-      link: "service/README.md",
-      children: [
-        {
-          text: "VFS",
-          link: "/service/vfs/",
-        },
-        {
-          text: "SSR",
-          link: "/service/ssr/",
-        },
-        {
-          text: "TUI",
-          link: "/service/tui/",
-        },
-        {
-          text: "GUI",
-          link: "/service/gui/",
-        },
-      ],
-    },
-    {
-      text: "SystemApp",
-      icon: "note",
-      prefix: "systemApp",
-      link: "systemApp/README.md",
-      children: [
-        {
-          text: "BNRTC",
-          link: "/systemApp/bnrtc/",
-        },
-        {
-          text: "DATABASE",
-          link: "/systemApp/database/",
-        },
-        {
-          text: "NOTIFICATION",
-          link: "/systemApp/notification/",
-        },
-      ],
-    },
+    // {
+    //   text: "Service",
+    //   icon: "note",
+    //   prefix: "service/README.md",
+    //   link: "service/README.md",
+    //   children: [
+    //     {
+    //       text: "VFS",
+    //       link: "/service/vfs/",
+    //     },
+    //     {
+    //       text: "SSR",
+    //       link: "/service/ssr/",
+    //     },
+    //     {
+    //       text: "TUI",
+    //       link: "/service/tui/",
+    //     },
+    //     {
+    //       text: "GUI",
+    //       link: "/service/gui/",
+    //     },
+    //   ],
+    // },
+    // {
+    //   text: "SystemApp",
+    //   icon: "note",
+    //   prefix: "systemApp",
+    //   link: "systemApp/README.md",
+    //   children: [
+    //     {
+    //       text: "BNRTC",
+    //       link: "/systemApp/bnrtc/",
+    //     },
+    //     {
+    //       text: "DATABASE",
+    //       link: "/systemApp/database/",
+    //     },
+    //     {
+    //       text: "NOTIFICATION",
+    //       link: "/systemApp/notification/",
+    //     },
+    //   ],
+    // },
   ],
 });

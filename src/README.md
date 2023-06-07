@@ -10,13 +10,13 @@ actions:
     link: /app/
     type: primary
 
-  - text: Plaoc API
+  - text: Plaoc
     link: /plaoc/
 
-  - text: Server API
+  - text: Server(testing)
     link: /service/
 
-  - text: System APP
+  - text: System(testing)
     link: /systemAPP/
 
 features:
