@@ -142,7 +142,7 @@ This encompasses the standards for common operating system modules, including pl
 - `keyboard.sys.dweb`
 - `virtual-keyboard.sys.dweb`
 - `system-bar.sys.dweb`
-  > 不同平台不同设备对一组接口有不同的设计与定义，此时可以调用针对性的平台接口来做针对性开发
+  > Different platforms and different devices have different designs and definitions for a set of interfaces. At this time, you can call targeted platform interfaces for targeted development
   - `system-bar.harmonyos-sys.dweb`
   - `system-bar.android-sys.dweb`
   - `system-bar.ios-sys.dweb`
