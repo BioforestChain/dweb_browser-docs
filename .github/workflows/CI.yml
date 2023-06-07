@@ -23,14 +23,26 @@ jobs:
       - name: Build
         run: npm install && npm run build
 
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DWEBUSER_SSHKEY }}
         with:
           server: ${{ secrets.SERVER_IP }}
-          username: docs.plaoc.com
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: src/.vuepress/dist/
-          port: 21
+          username: dwebuser
+          port: 18879
+          localPath:  src/.vuepress/dist/  # VuePress 生成的静态文件目录
+          remotePath: /data/Web/dweb-browser  # 服务器上的目标目录
+
+      # - name: 📂Deploy to Server
+      #   uses: easingthemes/ssh-deploy@v2
+      #   with:
+      #     server: ${{ secrets.SERVER_IP }}
+      #     username: docs.plaoc.com
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: src/.vuepress/dist/
+      #     port: 21
 
           # 部署到 GitHub Pages
       # - name: Deploy GitHub Pages
