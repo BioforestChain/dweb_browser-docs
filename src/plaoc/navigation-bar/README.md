@@ -8,7 +8,7 @@ tag:
 
 控制系统底部导航栏。
 
-> 具体查看示例代码： [NavigationBar](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/NavigationBar.vue)
+> 具体查看示例代码： [NavigationBar](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/NavigationBar.vue)
 
 ## NavigationBar WebComponent API
 

@@ -9,7 +9,7 @@ tag:
 
 提供系统分享的能力。
 
-> 具体查看示例代码： [Share](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/Share.vue)
+> 具体查看示例代码： [Share](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Share.vue)
 
 ## Share WebComponent API
 

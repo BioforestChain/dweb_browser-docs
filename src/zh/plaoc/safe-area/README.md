@@ -8,7 +8,7 @@ tag:
 
 控制安全区域。
 
-> 具体查看示例代码：[SafeArea](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/SafeArea.vue)
+> 具体查看示例代码：[SafeArea](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/SafeArea.vue)
 
 ## SafeArea WebComponent API
 

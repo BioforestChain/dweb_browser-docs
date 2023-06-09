@@ -9,7 +9,7 @@ tag:
 
 手电筒控制插件。
 
-> 具体查看示例代码： [Torch](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/Torch.vue)
+> 具体查看示例代码： [Torch](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Torch.vue)
 
 ## Torch WebComponent API
 

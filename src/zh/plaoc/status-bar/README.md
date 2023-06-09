@@ -8,7 +8,7 @@ tag:
 
 控制系统状态栏。
 
-> 具体查看示例代码： [Status Bar](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/StatusBar.vue)
+> 具体查看示例代码： [Status Bar](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/StatusBar.vue)
 
 ## StatusBar WebComponent API
 

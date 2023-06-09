@@ -9,7 +9,7 @@ tag:
 
 提供启动屏功能。
 
-> 具体查看示例代码： [SplashScreen](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/SplashScreen.vue)
+> 具体查看示例代码： [SplashScreen](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/SplashScreen.vue)
 
 ## SplashScreen WebComponent API
 

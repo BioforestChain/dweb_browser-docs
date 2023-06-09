@@ -8,7 +8,7 @@ tag:
 
 控制虚拟键盘
 
-> 具体查看示例代码：[VirtualKeyboard](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/VirtualKeyboard.vue)
+> 具体查看示例代码：[VirtualKeyboard](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/VirtualKeyboard.vue)
 
 
 ## VirtualKeyboard WebComponent API

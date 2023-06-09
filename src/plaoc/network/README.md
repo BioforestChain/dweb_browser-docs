@@ -9,7 +9,7 @@ tag:
 
 该插件能提供获取设备网络状态的能力。
 
-> 具体查看示例代码： [Network](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/Network.vue)
+> 具体查看示例代码： [Network](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Network.vue)
 
 ## Network WebComponent API
 

@@ -9,7 +9,7 @@ tag:
 
 生物识别，包含指纹和人脸识别认证。
 
-> 具体查看示例代码： [Biometrics](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/Biometrics.vue)
+> 具体查看示例代码： [Biometrics](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Biometrics.vue)
 
 ## Biometrics WebComponent API
 

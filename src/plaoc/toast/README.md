@@ -9,7 +9,7 @@ tag:
 
 Toast,一个小的弹窗信息，在一段时间后消失。
 
-> 具体查看示例代码： [Toast](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/Toast.vue)
+> 具体查看示例代码： [Toast](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Toast.vue)
 
 ## Toast WebComponent API
 

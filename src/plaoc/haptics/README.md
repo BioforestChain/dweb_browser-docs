@@ -9,7 +9,7 @@ tag:
 
 设备的振动反馈 API。
 
-> 具体查看示例代码： [Haptics](https://github.com/BioforestChain/dweb_browser/blob/main/example/vue3/src/pages/Haptics.vue)
+> 具体查看示例代码： [Haptics](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Haptics.vue)
 
 ## Haptics WebComponent API
 
