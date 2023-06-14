@@ -2,15 +2,24 @@
 
 ## 快速上手
 
-### 在页面引用 Plugin
+安装项目：
 
-> 以 vue3 为例：
+```bash
+npm install @dweb-browser/plaoc
+```
+
+### 如何以插件形式使用 
 
 ```typescript
 import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
+
+// 调用扫码
+const taskPshoto = async () => {
+  await barcodeScannerPlugin.startScanning();
+};
 ```
 
-### 在页面使用 webComponent
+### 如何以 webComponent 形式使用
 
 > 以 vue3 为例
 
@@ -37,4 +46,5 @@ const taskPshoto = async () => {
 </template>
 ```
 
-## 配置参考
+所有的API调用都遵循简洁，方便的原则，并且所有的权限申请，已经对开发者进行隐藏。
+开发者不再需要在调用的时候，对权限另外耗费心力。
