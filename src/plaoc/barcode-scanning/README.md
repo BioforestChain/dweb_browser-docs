@@ -18,7 +18,7 @@ tag:
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebBarcodeScanningElement } from '@bfex/plugin';
+import { HTMLDwebBarcodeScanningElement } from '@dweb-browser/plaoc';
 const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
 
 let barcodeScanner: HTMLDwebBarcodeScanningElement;
@@ -104,7 +104,7 @@ getView: HTMLElement | null;
 
 ```ts
 <script setup lang="ts">
-import { barcodeScannerPlugin } from "@bfex/plugin";
+import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
 const onFileChanged = ($event: Event) => {
   const target = $event.target as HTMLInputElement;
   if (target && target.files?.[0]) {

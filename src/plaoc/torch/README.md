@@ -18,7 +18,7 @@ tag:
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebTorchElement } from '@bfex/plugin';
+import { HTMLDwebTorchElement } from '@dweb-browser/plaoc';
 const $torchPlugin = ref<HTMLDwebTorchElement>();
 
 let toast: HTMLDwebTorchElement;
@@ -65,7 +65,7 @@ const getTorchState = async () => {
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { torchPlugin } from "@bfex/plugin";
+import { torchPlugin } from "@dweb-browser/plaoc";
 
 // 获取手电筒状态
 torchPlugin.getTorchState();

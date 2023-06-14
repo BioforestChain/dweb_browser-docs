@@ -18,7 +18,7 @@ Toast,一个小的弹窗信息，在一段时间后消失。
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebToastElement,ToastDuration } from '@bfex/plugin';
+import { HTMLDwebToastElement,ToastDuration } from '@dweb-browser/plaoc';
 const $toastPlugin = ref<HTMLDwebToastElement>();
 
 let toast: HTMLDwebToastElement;
@@ -58,7 +58,7 @@ const showToast = async () => {
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { toastPlugin } from "@bfex/plugin";
+import { toastPlugin } from "@dweb-browser/plaoc";
 
 toastPlugin.show({ text: "我是toast🍉", duration: "short", position: "top" });
 ```

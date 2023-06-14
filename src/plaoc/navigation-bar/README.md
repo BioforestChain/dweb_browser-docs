@@ -16,7 +16,7 @@ tag:
 
   ```ts
     <script setup lang="ts">
-      import { HTMLDwebNavigationBarElement, $NavigationBarState } from "@bfex/plugin";
+      import { HTMLDwebNavigationBarElement, $NavigationBarState } from "@dweb-browser/plaoc";
       const $navigationBar = ref<HTMLDwebNavigationBarElement>();
       let navigationBar: HTMLDwebNavigationBarElement;
 

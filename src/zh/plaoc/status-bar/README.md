@@ -16,7 +16,7 @@ tag:
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebStatusBarElement,$StatusBarState } from '@bfex/plugin';
+import { HTMLDwebStatusBarElement,$StatusBarState } from '@dweb-browser/plaoc';
 const $statusBar = ref<HTMLDwebStatusBarElement>();
 
 let statusBar: HTMLDwebStatusBarElement;
@@ -156,7 +156,7 @@ const onStatusBarChange = (info: $StatusBarState, type: string) => {
 导入
 
 ```ts
-import { statusBarPlugin } from "@bfex/plugin";
+import { statusBarPlugin } from "@dweb-browser/plaoc";
 ```
 
 ### setState

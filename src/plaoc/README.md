@@ -11,7 +11,7 @@
 ```vue
 /// APP.vue
 <script setup lang="ts">
-import "@bfex/plugin";
+import "@dweb-browser/plaoc";
 </script>
 
 <template>
@@ -30,7 +30,7 @@ import "@bfex/plugin";
 ```vue
 /// APP.vue
 <script setup lang="ts">
-import "@bfex/plugin";
+import "@dweb-browser/plaoc";
 
 const apiUrl = "https://api.dweb.waterbang.top.dweb/index.html?X-Dweb-Host=api.cotdemo.bfs.dweb:443#/"
 </script>
@@ -46,7 +46,7 @@ const apiUrl = "https://api.dweb.waterbang.top.dweb/index.html?X-Dweb-Host=api.c
 > 以 vue3 为例：
 
 ```typescript
-import { barcodeScannerPlugin } from "@bfex/plugin";
+import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
 ```
 
 ### 在页面使用 webComponent
@@ -55,7 +55,7 @@ import { barcodeScannerPlugin } from "@bfex/plugin";
 
 ```vue
 <script setup lang="ts">
-import { HTMLDwebBarcodeScanningElement } from "@bfex/plugin";
+import { HTMLDwebBarcodeScanningElement } from "@dweb-browser/plaoc";
 
 const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
 let barcodeScanner: HTMLDwebBarcodeScanningElement;

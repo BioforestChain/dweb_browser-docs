@@ -18,7 +18,7 @@ tag:
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebNetworkElement } from '@bfex/plugin';
+import { HTMLDwebNetworkElement } from '@dweb-browser/plaoc';
 const $networkPlugin = ref<HTMLDwebNetworkElement>();
 
 let network: HTMLDwebNetworkElement;
@@ -67,7 +67,7 @@ const onLine = async () => {
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { networkPlugin } from "@bfex/plugin";
+import { networkPlugin } from "@dweb-browser/plaoc";
 
 // 获取网络状态
 networkPlugin.getStatus();

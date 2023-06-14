@@ -18,7 +18,7 @@ tag:
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebHapticsElement } from '@bfex/plugin';
+import { HTMLDwebHapticsElement } from '@dweb-browser/plaoc';
 const $hapticsPlugin = ref<HTMLDwebHapticsElement>();
 
 let haptics: HTMLDwebHapticsElement;
@@ -140,7 +140,7 @@ const notification = async () => {
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { hapticsPlugin } from "@bfex/plugin";
+import { hapticsPlugin } from "@dweb-browser/plaoc";
 
 // 单击手势的反馈振动
 biometricsPlugin.vibrateClick();

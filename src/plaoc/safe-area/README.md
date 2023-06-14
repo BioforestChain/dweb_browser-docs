@@ -16,7 +16,7 @@ tag:
 
   ```ts
     <script setup lang="ts">
-      import { HTMLDwebSafeAreaElement, $SafeAreaState } from "@bfex/plugin";
+      import { HTMLDwebSafeAreaElement, $SafeAreaState } from "@dweb-browser/plaoc";
       const $safeArea = ref<HTMLDwebSafeAreaElement>()
       let safeArea: HTMLDwebSafeAreaElement;
 
@@ -93,7 +93,7 @@ tag:
 
   导入
   ```ts
-    import { safeAreaPlugin } from "@bfex/plugin";
+    import { safeAreaPlugin } from "@dweb-browser/plaoc";
   ```
     
 ### setState

@@ -17,7 +17,7 @@ tag:
 
 ```ts
   <script setup lang="ts">
-    import { HTMLDwebVirtualKeyboardElement, $VirtualKeyboardState } from "@bfex/plugin";
+    import { HTMLDwebVirtualKeyboardElement, $VirtualKeyboardState } from "@dweb-browser/plaoc";
     const $virtualKeyboard = ref<HTMLDwebVirtualKeyboardElement>;
     let virtualKeyboard: HTMLDwebVirtualKeyboardElement;
 
@@ -99,7 +99,7 @@ tag:
   导入
 
   ```ts
-    import { virtualKeyboardPlugin } from "@bfex/plugin";
+    import { virtualKeyboardPlugin } from "@dweb-browser/plaoc";
   ```
 
 ### setState

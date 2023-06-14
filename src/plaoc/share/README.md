@@ -18,7 +18,7 @@ tag:
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebShareElement } from '@bfex/plugin';
+import { HTMLDwebShareElement } from '@dweb-browser/plaoc';
 const $sharePlugin = ref<HTMLDwebShareElement>();
 
 let share: HTMLDwebShareElement;
@@ -75,7 +75,7 @@ const shareHandle = async () => {
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { sharePlugin } from "@bfex/plugin";
+import { sharePlugin } from "@dweb-browser/plaoc";
 
 // 直接调用分享
 sharePlugin.share(shareData); // 假装有数据
