@@ -1,4 +1,3 @@
----
 title: BarcodeScanning
 category:
   - Plugin
@@ -7,40 +6,35 @@ tag:
   - Plugin
 ---
 
-提供扫码功能。
+Provides barcode scanning functionality.
 
-> 具体查看示例代码： [BarcodeScanning](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/BarcodeScanning.vue)
+> Check out the example code: [BarcodeScanning](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/BarcodeScanning.vue)
 
 ## BarcodeScanning WebComponent API
 
-需要声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，然后调用api。
-以 vue3 为示例：
+To use this functionality, you need to declare the HTML tag style, mount it to the DOM, and then call the API.
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebBarcodeScanningElement } from '@dweb-browser/plaoc';
-const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
-
-let barcodeScanner: HTMLDwebBarcodeScanningElement;
-onMounted(() => {
-// 挂载上去
-  barcodeScanner = $barcodeScannerPlugin.value!;
-});
-// 就可以调用扫码了
-const startScanner = () => {
-  await barcodeScanner.startScanning()
-}
-<script>
-<template>
-  <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
-</template>
+```html
+<body>
+  <dweb-barcode-scanning></dweb-barcode-scanning>
+  <button @click="taskPhoto()">scanner</button>
+  <script type="module">
+    import "@dweb-browser/plaoc"
+    const barcodeScanner = document.querySelector("dweb-barcode-scanning")!
+    // Call barcode scanning
+    async function taskPhoto() {
+      await barcodeScanner.startScanning();
+    }
+    Object.assign(globalThis,{ taskPhoto })
+  </script>
+</body>
 ```
 
 ### startScanning
 
-启动摄像头扫描， 解析成功后关闭摄像头；
+Starts the camera scanning and closes it after a successful scan.
 
-- 调用签名：
+- Method Signature:
 
 ```ts
   async startScanning(): Promise<ScanResult>
@@ -50,9 +44,9 @@ const startScanner = () => {
 
 ### stopScanning
 
-停止扫描；会关闭摄像头;
+Stops the scanning process and closes the camera.
 
-- 调用签名：
+- Method Signature:
 
 ```ts
   stopScanning(): void;
@@ -60,39 +54,19 @@ const startScanner = () => {
 
 ### getView
 
-获取 video 的容器元素,开发者根据这个 DOM 用户可以自定义样式.
+Gets the container element for the video. Developers can customize the style using this DOM element.
 
-- 调用签名：
+- Method Signature:
 
 ```ts
 getView: HTMLElement | null;
 ```
 
-### toggleTorch
-
-打开/关闭手电筒
-
-- 调用签名：
-
-```ts
-   async toggleTorch(): Promise<boolean>
-```
-
-### getTorchState
-
-手电筒状态
-
-- 调用签名：
-
-```ts
-  async getTorchState(): Promise<boolean>
-```
-
 ### hasMedia
 
-判断是否支持扫描功能
+Checks if scanning functionality is supported.
 
-- 调用签名：
+- Method Signature:
 
 ```ts
   hasMedia(): boolean;
@@ -100,30 +74,35 @@ getView: HTMLElement | null;
 
 ## BarcodeScanner Plugin API
 
-扫码功能对外提供的插件功能,在单独使用 plugin 功能的时候，不用声明组件。
+This API provides barcode scanning functionality as a plugin. When using only the plugin functionality, there is no need to declare the component.
 
-```ts
-<script setup lang="ts">
-import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
-const onFileChanged = ($event: Event) => {
-  const target = $event.target as HTMLInputElement;
-  if (target && target.files?.[0]) {
-    const img = target.files[0];
-    console.info("photo ==> ", img.name, img.type, img.size);
-    result.value = await barcodeScannerPlugin.process(img);
-  }
-};
-<script>
-<template>
-<input type="file" @change="onFileChanged($event)" accept="image/*" capture>
-</template>
+```html
+<body>
+  <input
+    type="file"
+    onchange="onFileChanged($event)"
+    accept="image/*"
+    capture
+  />
+  <script type="module">
+    import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
+    const onFileChanged = async ($event: Event) => {
+      const target = $event.target as HTMLInputElement;
+      if (target && target.files?.[0]) {
+        const img = target.files[0];
+        alert(await barcodeScannerPlugin.process(img))
+      }
+    };
+    Object.assign(globalThis,{ onFileChanged })
+  </script>
+</body>
 ```
 
 ### process
 
-解析二维码图片,没有识别到二维码时，返回空数组。
+Processes a QR code image and returns the decoded content as an array of strings. When no QR code is recognized, an empty array is returned.
 
-- 调用签名：
+- Method Signature:
 
 ```ts
   async process(blob: Blob, rotation = 0, formats = SupportedFormat.QR_CODE): Promise<string[]>
@@ -131,15 +110,15 @@ const onFileChanged = ($event: Event) => {
 
 | Param          | Type                                                        | Description                            |
 | -------------- | ----------------------------------------------------------- | -------------------------------------- |
-| **`blob`**     | <code>Blob</code>                                           | 需要解析的图片数据                     |
-| **`rotation`** | <code>number</code>                                         | 图片偏转角度                           |
-| **`formats`**  | <code><a href="#supportedformat">SupportedFormat</a></code> | 解析的数据类型，比如解析二维码，条形码 |
+| **`blob`**     | <code>Blob</code>                                           | The image data to be decoded.          |
+| **`rotation`** | <code>number</code>                                         | The rotation angle of the image.       |
+| **`formats`**  | <code><a href="#supportedformat">SupportedFormat</a></code> | The type of data to decode, e.g., QR code, barcode. |
 
 ### stop
 
-停止解析二维码图片
+Stops the process of decoding QR code images.
 
-- 调用签名
+- Method Signature:
 
 ```ts
   async stop(): Promise<boolean>
@@ -149,7 +128,7 @@ const onFileChanged = ($event: Event) => {
 
 ### ScanResult
 
-扫码返回的结果。
+The result of a barcode scan.
 
 | Prop             | Type                                                                          | Description                                  | Since |
 | ---------------- | ----------------------------------------------------------------------------- | -------------------------------------------- | ----- |

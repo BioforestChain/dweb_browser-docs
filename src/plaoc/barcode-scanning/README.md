@@ -13,27 +13,22 @@ tag:
 
 ## BarcodeScanning WebComponent API
 
-需要声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，然后调用api。
-以 vue3 为示例：
+需要声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，然后调用 api。
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebBarcodeScanningElement } from '@dweb-browser/plaoc';
-const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
-
-let barcodeScanner: HTMLDwebBarcodeScanningElement;
-onMounted(() => {
-// 挂载上去
-  barcodeScanner = $barcodeScannerPlugin.value!;
-});
-// 就可以调用扫码了
-const startScanner = () => {
-  await barcodeScanner.startScanning()
-}
-<script>
-<template>
-  <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
-</template>
+```html
+<body>
+  <dweb-barcode-scanning></dweb-barcode-scanning>
+  <button @click="taskPhoto()">scanner</button>
+  <script type="module">
+    import "@dweb-browser/plaoc"
+    const barcodeScanner = document.querySelector("dweb-barcode-scanning")!
+    // Call barcode scanning
+    async function taskPhoto() {
+      await barcodeScanner.startScanning();
+    }
+    Object.assign(globalThis,{ taskPhoto })
+  </script>
+</body>
 ```
 
 ### startScanning
@@ -68,26 +63,6 @@ const startScanner = () => {
 getView: HTMLElement | null;
 ```
 
-### toggleTorch
-
-打开/关闭手电筒
-
-- 调用签名：
-
-```ts
-   async toggleTorch(): Promise<boolean>
-```
-
-### getTorchState
-
-手电筒状态
-
-- 调用签名：
-
-```ts
-  async getTorchState(): Promise<boolean>
-```
-
 ### hasMedia
 
 判断是否支持扫描功能
@@ -102,21 +77,26 @@ getView: HTMLElement | null;
 
 扫码功能对外提供的插件功能,在单独使用 plugin 功能的时候，不用声明组件。
 
-```ts
-<script setup lang="ts">
-import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
-const onFileChanged = ($event: Event) => {
-  const target = $event.target as HTMLInputElement;
-  if (target && target.files?.[0]) {
-    const img = target.files[0];
-    console.info("photo ==> ", img.name, img.type, img.size);
-    result.value = await barcodeScannerPlugin.process(img);
-  }
-};
-<script>
-<template>
-<input type="file" @change="onFileChanged($event)" accept="image/*" capture>
-</template>
+```html
+<body>
+  <input
+    type="file"
+    onchange="onFileChanged($event)"
+    accept="image/*"
+    capture
+  />
+  <script type="module">
+    import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
+    const onFileChanged = async ($event: Event) => {
+      const target = $event.target as HTMLInputElement;
+      if (target && target.files?.[0]) {
+        const img = target.files[0];
+        alert(await barcodeScannerPlugin.process(img))
+      }
+    };
+    Object.assign(globalThis,{ onFileChanged })
+  </script>
+</body>
 ```
 
 ### process

@@ -6,57 +6,56 @@ tag:
   - Service 
 ---
 
-plaoc frontend and backend packaging tool.
+plaoc 前后端打包工具。
 
-## Installation
+## 安装
 
 ```bash
 deno install -A https://deno.land/x/plaoc/cli/plaoc.ts
 ```
 
-## Bundle app (bundle/build)
+## 打包app (bundle/build)
 
 ```bash
 plaoc bundle ./dir
 ```
-The command will create the following folder structure and output a compressed file `.zip` and a `metadata.json`. For more details, please refer to the documentation below.
+会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请查看下面文档详情。
 
 - bundle
   - appId.version.zip
   - metadata.json
 
-### Options
+### 选项
 
-- `--out`: Specify the output directory name for the bundle. Default is `bundle`.
-- `--version`: Specify the version of the app, which can override the configuration in `manifest.json`.
-- `--id`: Specify the ID of the app, which can override the configuration in `manifest.json`.
-- `--dir`: Specify the development directory, i.e., the root directory where you create `manifest.json`.
-
-### Example
+- `--out`: 指定打包完的目录名称，默认为`bundle`。
+- `--version`: 指定app的版本，能覆盖`manifest.json`里面的配置。
+- `--id`: 指定app的id，能覆盖`manifest.json`里面的配置。
+- `--dir`：用来指定开发目录，即指定您创建`manifest.json`的根目录。
+### 示例
 
 ```bash
-plaoc bundle ./plaoc/demo/dist --dir ./plaoc/demo --version 0.0.2
+plaoc bundle  ./plaoc/demo/dist --dir ./plaoc/demo --version 0.0.2
 ```
 
-## Developer Mode (serve/preview)
+## 开发者模式 （serve/preview）
 
-This mode requires the use of developer tools and serves as a preview mode for the app.
+需要搭配开发者工具使用，这也是一个app的预览模式。
 
 ```bash
 plaoc serve ./dir
 ```
 
-### Options
+### 选项
 
-- `--dir`: Specify the development directory, i.e., the root directory where you create `manifest.json`.
-- `--port`: Specify the server port to start.
-- `--mode`: Service handling mode, can be `www`, `live`, or `prod`.
-  - `--mode www`: Start the folder as read-only files in `usr/www`.
-  - `--mode live`: Start the local folder using a dynamic server, with `index.html` in `usr/www` for redirection.
-  - `--mode prod`: Directly serve the packaged files.
+- `--dir`：用来指定开发目录，即指定您创建`manifest.json`的根目录。
+- `--port`: 用来指定启动的服务端口。
+- `--mode`: 服务的处理模式，可以输入`www`,`live`,`prod`。
+  - `--mode www`: 将文件夹作为 usr/www 的只读文件进行启动。
+  - `--mode live`: 将本地文件夹使用动态服务器进行启, usr/www 会存在一个 index.html 中来进行跳转。
+  - `--mode prod`: 对将打包后的文件直接进行服务启动。
 
-### Example
+### 示例
 
 ```bash
-plaoc preview ./plaoc/demo/dist --dir ./plaoc/demo --mode www
+plaoc preview  ./plaoc/demo/dist --dir ./plaoc/demo --mode www 
 ```

@@ -1,24 +1,24 @@
-# DwebBrowser 前端开发文档
+# DwebBrowser Plaoc Development Doc
 
-## 快速上手
+## Getting Started
 
-安装项目：
+Install the project:
 
 ```bash
 npm install @dweb-browser/plaoc
 ```
 
-### 如何以插件形式使用 
+### How to Use as a Plugin
 
 ```typescript
 import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
-// 调用扫码
-const taskPshoto = async () => {
+// Call barcode scanning
+const taskPhoto = async () => {
   await barcodeScannerPlugin.startScanning();
 };
 ```
 
-### 如何以 webComponent 形式使用
+### How to Use as a webComponent
 
 ```html
 <body>
@@ -36,5 +36,4 @@ Object.assign(globalThis,{ taskPhoto })
 </body>
 ```
 
-所有的API调用都遵循简洁，方便的原则，并且所有的权限申请，已经对开发者进行隐藏。
-开发者不再需要在调用的时候，对权限另外耗费心力。
+All API calls follow a concise and convenient principle, and all permission requests have been hidden from developers. Developers no longer need to worry about permissions when making calls.

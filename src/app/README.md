@@ -1,21 +1,22 @@
 # Plaoc APP
 
-## Getting Started
+## 开始
 
-We define applications running on the `dweb_browser` browser as "Plaoc Apps". First, let's understand how to package our application into a `.zip` file.
+我们定义运行于`dweb_browser`浏览器上面的应用，统一称为`Plaoc App`。
+那么首先我们需要了解如何我们的应用打包成一个`.zip`文件。
 
-### 1. Define the configuration file `manifest.json`
+### 1. 定义配置文件 `manifest.json`
 
-This configuration file follows the [manifest standard](https://developer.mozilla.org/en-US/docs/Web/Manifest) by W3C. However, it omits some complex image configurations, such as `icon`. Therefore, we recommend directly passing an SVG file.
+本配置文件遵循 w3c 的[manifest 标准](https://developer.mozilla.org/en-US/docs/Web/Manifest)。但是忽略了一些繁杂的图片配置，比如`icon`,因此建议直接传递 svg 格式的文件。
 
-This configuration file will be displayed when the user installs the app. Here is an example of the configuration file, with ❗️ indicating required fields.
+这个配置文件将在用户安装 App 的时候展示，我们直接给出配置文件的示例，以下字段增加 ❗️ 为必填。
 
 ```json
 {
   "id": "game.dweb.waterbang.top.dweb",
   "name": "game",
   "short_name": "vue3-game",
-  "description": "This is a sample application that includes instances of all dweb_plugins components.",
+  "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
   "icon": "https://www.bfmeta.info/imgs/logo3.webp",
   "images": [
     "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
@@ -24,47 +25,47 @@ This configuration file will be displayed when the user installs the app. Here i
   ],
   "author": ["bfs", "bfs@bfs.com"],
   "version": "1.0.0",
-  "new_feature": "Added a new feature of shooting bubbles with a single click!",
+  "new_feature": "新添加了一键弹弹弹的功能！",
   "home": "https://dweb.waterbang.top",
   "categories": ["games"]
 }
 ```
 
-- `❗️id`: You can see that based on the current configuration, the format for the `id` is `${name}.${host}.dweb`. Please follow the current format when filling in the `id`. The provided `id` is `game.dweb.waterbang.top.dweb`, and the `id` corresponds to the host of the domain filled in for the home. Each app has a unique `id`, and multiple apps can be mounted on a single domain.
-- `❗️name`: The name of the app.
-- `❗️short_name`: The short name of the app, which will be displayed on the browser's home page.
-- `❗️description`: Here, you can provide a brief description of the app, which will be shown to users on the download page and detail page.
-- `❗️icon`: The icon of the app. It is recommended to use a vector image. In this case, we simplified the PWA declaration with a single `icon` instead of declaring multiple icons of different sizes.
-- `❗️images`: Images for the download page display.
-- `❗️author`: The developer(s) of the app, provided in an array format. The first developer is considered the app's copyright owner.
-- `❗️version`: The version number of the app.
-- `❗️new_feature`: New features introduced in the version. Whenever there is an update, it should be synchronized with the version number.
-- `❗️home`: The main domain of the app. It should match the domain mounted with the `id`.
-- `categories`: Categories of the app, following the [W3C standard](https://github.com/w3c/manifest/wiki/Categories).
+- `❗️id` 可以看到我们依据当前的配置，id的规范是`${name}.${host}.dweb`格式，请遵循当前格式。
+上面的 id 为`game.dweb.waterbang.top.dweb`,id 对应着home的填写的域名的host。
+每个 app 都有一个唯一的 id,每个域名可以挂载多个 App。
+- `❗️name` app名称
+- `❗️short_name` app的简称，将会展示到browser主页。
+- `❗️description` 这里可以填写一些app的简介，将会在下载页面和详情页面呈现给用户。
+- `❗️icon` app的图标，建议使用矢量图，这里简化了 pwa 声明多个不同大小的 `icon` 。
+- `❗️images` 下载页面的图片展示。
+- `❗️author`  开发者，数组形式传递，第一个开发者为app版权所有者。
+- `❗️version` 版本号。
+- `❗️new_feature` 版本新特性，每次更新的时候，可以跟着 版本版本号同步更新。
+- `❗️home` app 主域名，跟 `id` 挂载的域名需要相同。
+- `categories` : app 类别，请遵循[w3c 标准](https://github.com/w3c/manifest/wiki/Categories)。
 
-Once the configuration file is created, the next step is to package the files.
+创建完成配置文件之后，我们下一步就需要打包文件。
 
-### 2. Packaging Plaoc App
+### 2. 打包 Plaoc App
 
-We need to use the packaging tool [plaoc cli](./bundle) to package our app.
+我们需要借助打包工具[plaoc cli](./bundle)来打包我们的 App。
 
-After packaging, two files will be generated: the source code file `game.dweb.waterbang.top.dweb.zip` and the configuration file `metadata.json`.
+打包完成之后就会生成两个文件一个是我们的源码文件`game.dweb.waterbang.top.dweb.zip`和我们的配置文件`metadata.json`。
 
-The source code file needs to be placed in the corresponding location of `bundle_url`, and `metadata.json` can be placed anywhere. 
+源码文件需要放到我们 bundle_url 对应的位置，而`metadata.json`可以放到任意位置，
+比如放到`https://dweb.waterbang.top/metadata.json`，在 app 自更新的时候访问这个链接就可以了。
+为了方便用户安装也可以将上述连接转化成二维码，通过`dweb_browser`二维码识别，进入安装页面。
 
-For example, it can be placed at `https://dweb.waterbang.top/metadata.json`. 
+这样我们的 app 就安装到`dweb_browser`上了。
 
-When the app self-updates, you can access this link. To facilitate user installation, you can also convert the above link into a QR code and use the `dweb_browser` QR code recognition to enter the installation page.
+### 放到官网下载
 
-This way, our app is installed on the `dweb_browser`.
+如果您需要放到您的官网进行下载,您可以在您的官网写dweb_deeplink链接，然后到dweb_browser打开，就能进入下载页面。
 
-### Put it on the official website for downloading
+#### 示例
 
-If you want to put it on your official website for downloading, you can write a `dweb_deeplink` link on your website and open it in the `dweb_browser`. This will take the user to the download page.
-
-#### Example
-
-> Note: Please do not use fetch.
+>注意：请不要使用fetch。
 
 ```html
 <body>
