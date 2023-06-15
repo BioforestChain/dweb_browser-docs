@@ -12,28 +12,35 @@ This configuration file will be displayed when the user installs the app. Here i
 
 ```json
 {
-  "id": "game.dweb.waterbang.top.dweb", // ❗️ App ID (must be unique)
-  "name": "game", // ❗️ App name
-  "short_name": "vue3-game", // ❗️ App subname
-  "description": "This is a sample application that includes instances of all dweb_plugins components.", // ❗️ App description
-  "icon": "https://www.bfmeta.info/imgs/logo3.webp", // ❗️ App icon
+  "id": "game.dweb.waterbang.top.dweb",
+  "name": "game",
+  "short_name": "vue3-game",
+  "description": "This is a sample application that includes instances of all dweb_plugins components.",
+  "icon": "https://www.bfmeta.info/imgs/logo3.webp",
   "images": [
-    // ❗️ Images for the download page
     "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
     "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
     "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
   ],
-  "author": ["bfs", "bfs@bfs.com"], // ❗️ Developers
-  "version": "1.0.0", // ❗️ Version information
-  "new_feature": "Added a new feature of shooting bubbles with a single click!", // ❗️ New feature in this version
-  "home": "https://dweb.waterbang.top", // ❗️ App's main domain
-  "categories": ["games"] // Category
+  "author": ["bfs", "bfs@bfs.com"],
+  "version": "1.0.0",
+  "new_feature": "Added a new feature of shooting bubbles with a single click!",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["games"]
 }
 ```
 
-- `id`: As you can see, according to the current configuration, the ID follows the format `${name}.${host}.dweb`. Please adhere to this format. The above ID is `game.dweb.waterbang.top.dweb`, and the ID corresponds to the host of the domain filled in the "home" field. Each app has a unique ID, and multiple apps can be hosted on the same domain.
-
-- `categories`: App category, please follow the [W3C standard](https://github.com/w3c/manifest/wiki/Categories).
+- `❗️id`: You can see that based on the current configuration, the format for the `id` is `${name}.${host}.dweb`. Please follow the current format when filling in the `id`. The provided `id` is `game.dweb.waterbang.top.dweb`, and the `id` corresponds to the host of the domain filled in for the home. Each app has a unique `id`, and multiple apps can be mounted on a single domain.
+- `❗️name`: The name of the app.
+- `❗️short_name`: The short name of the app, which will be displayed on the browser's home page.
+- `❗️description`: Here, you can provide a brief description of the app, which will be shown to users on the download page and detail page.
+- `❗️icon`: The icon of the app. It is recommended to use a vector image. In this case, we simplified the PWA declaration with a single `icon` instead of declaring multiple icons of different sizes.
+- `❗️images`: Images for the download page display.
+- `❗️author`: The developer(s) of the app, provided in an array format. The first developer is considered the app's copyright owner.
+- `❗️version`: The version number of the app.
+- `❗️new_feature`: New features introduced in the version. Whenever there is an update, it should be synchronized with the version number.
+- `❗️home`: The main domain of the app. It should match the domain mounted with the `id`.
+- `categories`: Categories of the app, following the [W3C standard](https://github.com/w3c/manifest/wiki/Categories).
 
 Once the configuration file is created, the next step is to package the files.
 

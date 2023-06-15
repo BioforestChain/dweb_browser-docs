@@ -13,29 +13,36 @@
 
 ```json
 {
-  "id": "game.dweb.waterbang.top.dweb", // appId❗️ 唯一性
-  "name": "game", // app名称❗️
-  "short_name": "vue3-game", // app子名称❗️
-  "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。", // app 介绍❗️
-  "icon": "https://www.bfmeta.info/imgs/logo3.webp", // app的图标❗️
+  "id": "game.dweb.waterbang.top.dweb",
+  "name": "game",
+  "short_name": "vue3-game",
+  "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
+  "icon": "https://www.bfmeta.info/imgs/logo3.webp",
   "images": [
-    // 下载页面的❗️
     "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
     "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
     "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
   ],
-  "author": ["bfs", "bfs@bfs.com"], // 开发者❗️
-  "version": "1.0.0", // 版本信息❗️
-  "new_feature": "新添加了一键弹弹弹的功能！", // 版本新特性❗️
-  "home": "https://dweb.waterbang.top", // app 主域名❗️
-  "categories": ["games"] // 类别
+  "author": ["bfs", "bfs@bfs.com"],
+  "version": "1.0.0",
+  "new_feature": "新添加了一键弹弹弹的功能！",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["games"]
 }
 ```
 
-- `id` 可以看到我们依据当前的配置，id的规范是`${name}.${host}.dweb`格式，请遵循当前格式。
+- `❗️id` 可以看到我们依据当前的配置，id的规范是`${name}.${host}.dweb`格式，请遵循当前格式。
 上面的 id 为`game.dweb.waterbang.top.dweb`,id 对应着home的填写的域名的host。
 每个 app 都有一个唯一的 id,每个域名可以挂载多个 App。
-
+- `❗️name` app名称
+- `❗️short_name` app的简称，将会展示到browser主页。
+- `❗️description` 这里可以填写一些app的简介，将会在下载页面和详情页面呈现给用户。
+- `❗️icon` app的图标，建议使用矢量图，这里简化了 pwa 声明多个不同大小的 `icon` 。
+- `❗️images` 下载页面的图片展示。
+- `❗️author`  开发者，数组形式传递，第一个开发者为app版权所有者。
+- `❗️version` 版本号。
+- `❗️new_feature` 版本新特性，每次更新的时候，可以跟着 版本版本号同步更新。
+- `❗️home` app 主域名，跟 `id` 挂载的域名需要相同。
 - `categories` : app 类别，请遵循[w3c 标准](https://github.com/w3c/manifest/wiki/Categories)。
 
 创建完成配置文件之后，我们下一步就需要打包文件。
