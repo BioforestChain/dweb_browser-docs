@@ -193,13 +193,11 @@ updateContoller.addEventListener("end", (event: Event) => {
 - 调用例子：
 
 ```ts
-const progress = ref(0);
 updateContoller.addEventListener("progress", (progressRate: string) => {
-  progress.value = parseFloat(progressRate);
+ const progress = parseFloat(progressRate);
   console.log(
     "Dweb Service Worker updateContoller progress =>",
-    progressRate,
-    parseFloat(progressRate)
+    progress
   );
 });
 ```
@@ -262,7 +260,7 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 | Param             | Type                | Description                                                                        |
 | ----------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| **`metadataUrl`** | <code>string</code> | metadata.json 的 url 地址,类似[bfs-metadata](https://shop.plaoc.com/metadata.json) |
+| **`metadataUrl`** | <code>string</code> | metadata.json 的 url 地址,类似[metadata](https://shop.plaoc.com/metadata.json) |
 
 **Returns:** <code>Promise&lt;<a href="#bfsmetadata">BFSMetaData</a>&gt;</code>
 
@@ -283,7 +281,7 @@ updateContoller.addEventListener("cancel", (event: Event) => {
 
 ### BFSMetaData
 
-FBS APP 的数据格式，类似类似[bfs-metadata](https://shop.plaoc.com/metadata.json)。规定了一个 app 的所有配置信息。
+Plaoc APP 的数据格式，类似类似[metadata](https://shop.plaoc.com/metadata.json)。规定了一个 app 的所有配置信息。
 
 > - BFSMetaData 返回值也是 metadata.json 的内容。想改成 boolean 值。
 > - 未来的方案可能是在 dns.sys.dweb 中提供一个 /membership-broadcast 服务，用来做 类似 UDP 的局域广播，目的是将各种模块之间的协作抽象成某种协议，再通过 membership 这层来广播这些协议数据

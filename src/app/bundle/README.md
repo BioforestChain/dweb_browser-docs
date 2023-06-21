@@ -17,7 +17,7 @@ deno install -A https://deno.land/x/plaoc/cli/plaoc.ts
 ## 打包app (bundle/build)
 
 ```bash
-plaoc bundle ./dir
+plaoc bundle ./dist
 ```
 会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请查看下面文档详情。
 
@@ -34,15 +34,35 @@ plaoc bundle ./dir
 ### 示例
 
 ```bash
-plaoc bundle  ./plaoc/demo/dist --dir ./plaoc/demo --version 0.0.2
+plaoc bundle  ./dist --dir ./ --version 0.0.2
 ```
 
 ## 开发者模式 （serve/preview）
 
-需要搭配开发者工具使用，这也是一个app的预览模式。
+需要搭配开发者工具使用，这也是一个app的预览模式。(dist是我们编译完成的源码目录)
 
 ```bash
-plaoc serve ./dir
+plaoc serve ./dist
+```
+
+它也可以指定一个编译完的url，比如使用vite生成的url:
+
+```bash
+npx vite --host
+```
+
+输出如下信息：
+
+```bash
+  VITE v4.3.9  ready in 76 ms
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://172.30.90.207:5173/
+```
+
+那么我就可以直接执行以下命令进行开发预览。
+
+```bash
+plaoc serve  http://172.30.90.207:5173/
 ```
 
 ### 选项

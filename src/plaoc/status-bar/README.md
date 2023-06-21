@@ -14,29 +14,21 @@ tag:
 
 首先需要声明的 html 标签样式，该组件挂载了 statechange 方法，当有状态改变时会触发。
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebStatusBarElement,$StatusBarState } from '@dweb-browser/plaoc';
-const $statusBar = ref<HTMLDwebStatusBarElement>();
-
-let statusBar: HTMLDwebStatusBarElement;
-onMounted(async () => {
-  statusBar = $statusBar.value!;
-  // 初始化赋值
-  onStatusBarChange(await statusBar.getState(), "init");
-});
-// 伴随着状态改变而触发
-const onStatusBarChange = (info: $StatusBarState, type: string) => {
-  // color.value = info.color;
-  // style.value = info.style;
-  // overlay.value = info.overlay;
-  // visible.value = info.visible;
-  console.log(type, info);
-};
-<script>
-<template>
-   <dweb-status-bar ref="$statusBar" @statechange="onStatusBarChange($event.detail, 'change')"></dweb-status-bar>
-</template>
+```html
+<body>
+   <dweb-status-bar></dweb-status-bar>
+  <script type="module">
+  import "@dweb-browser/plaoc";
+  const statusBar = document.querySelector("dweb-status-bar")!
+   async function hideStatusBar() {
+    await statusBar.hide()
+  }
+  // 伴随着状态改变而触发
+  statusBar.addEventListener("statechange",(event)=> {
+    console.log("statechange=>",event)
+  })
+  </script>
+</body>
 ```
 
 ### setColor

@@ -1,3 +1,4 @@
+---
 title: BarcodeScanning
 category:
   - Plugin
@@ -6,13 +7,13 @@ tag:
   - Plugin
 ---
 
-Provides barcode scanning functionality.
+Provide barcode scanning functionality.
 
-> Check out the example code: [BarcodeScanning](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/BarcodeScanning.vue)
+> See example code: [BarcodeScanning](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/BarcodeScanning.vue)
 
 ## BarcodeScanning WebComponent API
 
-To use this functionality, you need to declare the HTML tag style, mount it to the DOM, and then call the API.
+The required HTML tag style needs to be declared. When using it, it needs to be mounted to the DOM first, and then the API can be called.
 
 ```html
 <body>
@@ -32,9 +33,9 @@ To use this functionality, you need to declare the HTML tag style, mount it to t
 
 ### startScanning
 
-Starts the camera scanning and closes it after a successful scan.
+Start scanning with the camera and close it after successful parsing.
 
-- Method Signature:
+- Method signature:
 
 ```ts
   async startScanning(): Promise<ScanResult>
@@ -44,9 +45,9 @@ Starts the camera scanning and closes it after a successful scan.
 
 ### stopScanning
 
-Stops the scanning process and closes the camera.
+Stop scanning and close the camera.
 
-- Method Signature:
+- Method signature:
 
 ```ts
   stopScanning(): void;
@@ -54,9 +55,9 @@ Stops the scanning process and closes the camera.
 
 ### getView
 
-Gets the container element for the video. Developers can customize the style using this DOM element.
+Get the container element of the video. Developers can customize the style based on this DOM.
 
-- Method Signature:
+- Method signature:
 
 ```ts
 getView: HTMLElement | null;
@@ -64,9 +65,9 @@ getView: HTMLElement | null;
 
 ### hasMedia
 
-Checks if scanning functionality is supported.
+Check if scanning functionality is supported.
 
-- Method Signature:
+- Method signature:
 
 ```ts
   hasMedia(): boolean;
@@ -74,7 +75,7 @@ Checks if scanning functionality is supported.
 
 ## BarcodeScanner Plugin API
 
-This API provides barcode scanning functionality as a plugin. When using only the plugin functionality, there is no need to declare the component.
+The plugin API provided by barcode scanning can be used separately without declaring the component.
 
 ```html
 <body>
@@ -100,25 +101,25 @@ This API provides barcode scanning functionality as a plugin. When using only th
 
 ### process
 
-Processes a QR code image and returns the decoded content as an array of strings. When no QR code is recognized, an empty array is returned.
+Parse the QR code image. When no QR code is recognized, an empty array is returned.
 
-- Method Signature:
+- Method signature:
 
 ```ts
   async process(blob: Blob, rotation = 0, formats = SupportedFormat.QR_CODE): Promise<string[]>
 ```
 
-| Param          | Type                                                        | Description                            |
-| -------------- | ----------------------------------------------------------- | -------------------------------------- |
-| **`blob`**     | <code>Blob</code>                                           | The image data to be decoded.          |
-| **`rotation`** | <code>number</code>                                         | The rotation angle of the image.       |
-| **`formats`**  | <code><a href="#supportedformat">SupportedFormat</a></code> | The type of data to decode, e.g., QR code, barcode. |
+| Param          | Type                                                        | Description                  |
+| -------------- | ----------------------------------------------------------- | ---------------------------- |
+| **`blob`**     | <code>Blob</code>                                           | The image data to be parsed  |
+| **`rotation`** | <code>number</code>                                         | Image rotation angle         |
+| **`formats`**  | <code><a href="#supportedformat">SupportedFormat</a></code> | The data type to be parsed, such as QR code, barcode |
 
 ### stop
 
-Stops the process of decoding QR code images.
+Stop parsing the QR code image.
 
-- Method Signature:
+- Method signature:
 
 ```ts
   async stop(): Promise<boolean>
@@ -128,27 +129,29 @@ Stops the process of decoding QR code images.
 
 ### ScanResult
 
-The result of a barcode scan.
+The result returned by the barcode scanning.
 
-| Prop             | Type                                                                          | Description                                  | Since |
-| ---------------- | ----------------------------------------------------------------------------- | -------------------------------------------- | ----- |
-| **`hasContent`** | <code>boolean</code>                                                          | 是否有识别到内容                             | 1.0.0 |
-| **`content`**    | <code>string[]</code>                                                         | 扫码具体内容，是字符串数组                   | 1.0.0 |
-| **`permission`** | <code><a href="#barcodescannerpermission">BarcodeScannerPermission</a></code> | 权限结果返回，用来判断用户是否对权限申请拒绝 | 1.0.0 |
+| Prop             | Type                                                                          | Description                          | Since |
+| ---------------- | ----------------------------------------------------------------------------- | ------------------------------------ | ----- |
+| **`hasContent`** | <code>boolean</code>                                                          | Whether content is recognized        | 1.0.0 |
+| **`content`**    | <code>string[]</code>                                                         |
+
+ The specific content of the barcode  | 1.0.0 |
+| **`permission`** | <code><a href="#barcodescannerpermission">BarcodeScannerPermission</a></code> | Permission result for user's decision| 1.0.0 |
 
 #### BarcodeScannerPermission
 
-对用户的权限返回进行标识。
+Identification of the user's permission result.
 
-| Prop             | Type                    | Description                  | Since |
-| ---------------- | ----------------------- | ---------------------------- | ----- |
-| **`UserReject`** | <code>UserReject</code> | 用户拒绝                     | 1.0.0 |
-| **`UserAgree`**  | <code>UserAgree</code>  | 用户同意                     | 1.0.0 |
-| **`UserError`**  | <code>UserError</code>  | 用户手机版本太低，不支持扫码 | 1.0.0 |
+| Prop             | Type                    | Description                          | Since |
+| ---------------- | ----------------------- | ------------------------------------ | ----- |
+| **`UserReject`** | <code>UserReject</code> | User rejected permission             | 1.0.0 |
+| **`UserAgree`**  | <code>UserAgree</code>  | User agreed permission               | 1.0.0 |
+| **`UserError`**  | <code>UserError</code>  | User's phone version is too low      | 1.0.0 |
 
 ### SupportedFormat
 
-扫码识别支持的格式
+Supported formats for barcode recognition.
 
 | Prop              | Type                | Platform     | Description |
 | ----------------- | ------------------- | ------------ | ----------- |
