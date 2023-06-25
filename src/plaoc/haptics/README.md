@@ -16,30 +16,23 @@ tag:
 使用 WebComponent 需要先挂载 DOM 节点，然后就能调用相应 API。
 以 vue3 为示例：
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebHapticsElement } from '@dweb-browser/plaoc';
-const $hapticsPlugin = ref<HTMLDwebHapticsElement>();
-
-let haptics: HTMLDwebHapticsElement;
-
-onMounted(async () => {
-  haptics = $hapticsPlugin.value!;
-})
-// 触碰轻质量物体
-const impactStyle = ref<ImpactStyle>("HEAVY" as never)
-const impactLight = async () => {
-  await haptics.impactLight({ style: impactStyle.value })
-}
-// 振动通知
-const notificationStyle = ref<NotificationType>("SUCCESS" as never)
-const notification = async () => {
-  await  haptics.notification({ type: notificationStyle.value })
-}
-<script>
-<template>
-   <dweb-haptics ref="$hapticsPlugin"></dweb-haptics>
-</template>
+```html
+<body>
+  <dweb-haptics></dweb-haptics>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    import { ImpactStyle,NotificationType } from "@dweb-browser/plaoc";
+    const haptics = document.querySelector("dweb-haptics")!
+    // 触碰轻质量物体
+    const impactLight = async () => {
+      await haptics.impactLight({ style: ImpactStyle.Heavy })
+    }
+    // 振动通知
+    const notification = async () => {
+      await  haptics.notification({ type: NotificationType.Success})
+    }
+  </script>
+</body>
 ```
 
 ### impactLight

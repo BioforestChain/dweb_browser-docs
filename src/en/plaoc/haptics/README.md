@@ -7,74 +7,67 @@ tag:
   - Plugin
 ---
 
-设备的振动反馈 API。
+Device haptic feedback API.
 
-> 具体查看示例代码： [Haptics](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Haptics.vue)
+> For specific example code, see: [Haptics](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Haptics.vue)
 
 ## Haptics WebComponent API
 
-使用 WebComponent 需要先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
+To use the WebComponent, you need to mount the DOM node and then call the corresponding API.
+Using Vue 3 as an example:
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebHapticsElement } from '@dweb-browser/plaoc';
-const $hapticsPlugin = ref<HTMLDwebHapticsElement>();
-
-let haptics: HTMLDwebHapticsElement;
-
-onMounted(async () => {
-  haptics = $hapticsPlugin.value!;
-})
-// 触碰轻质量物体
-const impactStyle = ref<ImpactStyle>("HEAVY" as never)
-const impactLight = async () => {
-  await haptics.impactLight({ style: impactStyle.value })
-}
-// 振动通知
-const notificationStyle = ref<NotificationType>("SUCCESS" as never)
-const notification = async () => {
-  await  haptics.notification({ type: notificationStyle.value })
-}
-<script>
-<template>
-   <dweb-haptics ref="$hapticsPlugin"></dweb-haptics>
-</template>
+```html
+<body>
+  <dweb-haptics></dweb-haptics>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    import { ImpactStyle, NotificationType } from "@dweb-browser/plaoc";
+    const haptics = document.querySelector("dweb-haptics")!
+    // Trigger light impact on a lightweight object
+    const impactLight = async () => {
+      await haptics.impactLight({ style: ImpactStyle.Heavy })
+    }
+    // Vibrate notification
+    const notification = async () => {
+      await haptics.notification({ type: NotificationType.Success })
+    }
+  </script>
+</body>
 ```
 
 ### impactLight
 
-触碰轻质量物体。
+Trigger light impact on a lightweight object.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async impactLight(options: ImpactOptions): Promise<void>
 ```
 
-| Param         | Type                                                    | Description    |
-| ------------- | ------------------------------------------------------- | -------------- |
-| **`options`** | <code><a href="#impactoptions">ImpactOptions</a></code> | 振动的反馈风格 |
+| Param         | Type                                                    | Description           |
+| ------------- | ------------------------------------------------------- | --------------------- |
+| **`options`** | <code><a href="#impactoptions">ImpactOptions</a></code> | Haptic feedback style |
 
 ### notification
 
-振动通知。
+Vibrate for notification.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async notification(options: NotificationOptions): Promise<void>
 ```
 
-| Param         | Type                                                                | Description    |
-| ------------- | ------------------------------------------------------------------- | -------------- |
-| **`options`** | <code><a href="#notificationoptions">NotificationOptions</a></code> | 振动的反馈风格 |
+| Param         | Type                                                                | Description           |
+| ------------- | ------------------------------------------------------------------- | --------------------- |
+| **`options`** | <code><a href="#notificationoptions">NotificationOptions</a></code> | Haptic feedback style |
 
 ### vibrateClick
 
-单击手势的反馈振动。
+Haptic feedback vibration for a click gesture.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async vibrateClick(): Promise<void>
@@ -82,10 +75,9 @@ const notification = async () => {
 
 ### vibrateDisabled
 
-禁用手势的反馈振动。一段抖动特效, 前面抖动增强然后衰退，
-这里只针对抖动增强阶段提供同步的振动反馈。
+Haptic feedback vibration for a disabled gesture. It consists of a shake effect that starts with an increase in intensity and then decays. Here, only the enhanced shaking phase provides synchronous haptic feedback.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async vibrateDisabled(): Promise<void>
@@ -93,9 +85,9 @@ const notification = async () => {
 
 ### vibrateDoubleClick
 
-双击手势的反馈振动。
+Haptic feedback vibration for a double-click gesture.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async vibrateDoubleClick(): Promise<void>
@@ -103,9 +95,9 @@ const notification = async () => {
 
 ### vibrateHeavyClick
 
-重击手势的反馈振动, 比如菜单键/惨案/3Dtouch。
+Haptic feedback vibration for a heavy-click gesture, such as a menu key or force touch.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async vibrateHeavyClick(): Promise<void>
@@ -113,9 +105,9 @@ const notification = async () => {
 
 ### vibrateTick
 
-滴答的反馈振动。
+Haptic feedback vibration for a tick.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async vibrateTick(): Promise<void>
@@ -123,63 +115,65 @@ const notification = async () => {
 
 ### vibrate
 
-自定义振动效果。
+Custom haptic vibration effect.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async vibrate(options: VibrateOptions): Promise<void>
 ```
 
-| Param         | Type                                                      | Description                  |
-| ------------- | --------------------------------------------------------- | ---------------------------- |
-| **`options`** | <code><a href="#vibrateoptions">VibrateOptions</a></code> | 振动持续时间（以毫秒为单位） |
+| Param         | Type                                                      | Description                             |
+| ------------- | --------------------------------------------------------- | --------------------------------------- |
+| **`options`** | <code><a href="#vibrateoptions">VibrateOptions</a></code> | Duration of vibration (in milliseconds) |
 
 ## Haptics Plugin API
 
-WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
+The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
 import { hapticsPlugin } from "@dweb-browser/plaoc";
 
-// 单击手势的反馈振动
-biometricsPlugin.vibrateClick();
-// 双击手势的反馈振动
-biometricsPlugin.vibrateDoubleClick();
+// Haptic feedback vibration for a click gesture
+hapticsPlugin.vibrateClick();
+// Haptic
+
+ feedback vibration for a double-click gesture
+hapticsPlugin.vibrateDoubleClick();
 ```
 
 ## Interfaces
 
 ### ImpactOptions
 
-| Prop        | Type                                                | Description    | Since |
-| ----------- | --------------------------------------------------- | -------------- | ----- |
-| **`style`** | <code><a href="#impactstyle">ImpactStyle</a></code> | 振动的反馈风格 | 1.0.0 |
+| Prop        | Type                                                | Description           | Since |
+| ----------- | --------------------------------------------------- | --------------------- | ----- |
+| **`style`** | <code><a href="#impactstyle">ImpactStyle</a></code> | Haptic feedback style | 1.0.0 |
 
 #### ImpactStyle
 
-| Prop         | Type                | Description                      | Since |
-| ------------ | ------------------- | -------------------------------- | ----- |
-| **`Heavy`**  | <code>HEAVY</code>  | 大而重的用户界面元素之间的碰撞   | 1.0.0 |
-| **`Medium`** | <code>MEDIUM</code> | 中等大小的用户界面元素之间的冲突 | 1.0.0 |
-| **`Light`**  | <code>LIGHT</code>  | 小而轻的用户界面元素之间的碰撞   | 1.0.0 |
+| Prop         | Type                | Description                                   | Since |
+| ------------ | ------------------- | --------------------------------------------- | ----- |
+| **`Heavy`**  | <code>HEAVY</code>  | Collision between large and heavy UI elements | 1.0.0 |
+| **`Medium`** | <code>MEDIUM</code> | Collision between medium-sized UI elements    | 1.0.0 |
+| **`Light`**  | <code>LIGHT</code>  | Collision between small and light UI elements | 1.0.0 |
 
 ### NotificationOptions
 
-| Prop       | Type                          | Description  | Since |
-| ---------- | ----------------------------- | ------------ | ----- |
-| **`type`** | <code>NotificationType</code> | 通知反馈类型 | 1.0.0 |
+| Prop       | Type                          | Description                | Since |
+| ---------- | ----------------------------- | -------------------------- | ----- |
+| **`type`** | <code>NotificationType</code> | Notification feedback type | 1.0.0 |
 
 ### NotificationType
 
-| Prop          | Type                 | Description                      | Since |
-| ------------- | -------------------- | -------------------------------- | ----- |
-| **`Success`** | <code>SUCCESS</code> | 表示任务已成功完成的通知反馈类型 | 1.0.0 |
-| **`Warning`** | <code>WARNING</code> | 指示任务已产生警告的通知反馈类型 | 1.0.0 |
-| **`Error`**   | <code>ERROR</code>   | 任务失败的通知反馈类型           | 1.0.0 |
+| Prop          | Type                 | Description                                 | Since |
+| ------------- | -------------------- | ------------------------------------------- | ----- |
+| **`Success`** | <code>SUCCESS</code> | Notification feedback type for task success | 1.0.0 |
+| **`Warning`** | <code>WARNING</code> | Notification feedback type for warning      | 1.0.0 |
+| **`Error`**   | <code>ERROR</code>   | Notification feedback type for task failure | 1.0.0 |
 
 ### VibrateOptions
 
-| Prop           | Type                | Description                  | Since |
-| -------------- | ------------------- | ---------------------------- | ----- |
-| **`duration`** | <code>number</code> | 振动持续时间（以毫秒为单位） | 1.0.0 |
+| Prop           | Type                | Description                             | Since |
+| -------------- | ------------------- | --------------------------------------- | ----- |
+| **`duration`** | <code>number</code> | Duration of vibration (in milliseconds) | 1.0.0 |

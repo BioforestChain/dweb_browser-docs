@@ -7,44 +7,38 @@ tag:
   - Plugin
 ---
 
-生物识别，包含指纹和人脸识别认证。
+Biometrics, including fingerprint and face recognition authentication.
 
-> 具体查看示例代码： [Biometrics](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Biometrics.vue)
+> For specific example code, see: [Biometrics](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Biometrics.vue)
 
 ## Biometrics WebComponent API
 
-先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
+First, mount the DOM node, then you can call the corresponding API.
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebBiometricsElement } from '@dweb-browser/plaoc';
-const $biometricsPlugin = ref<HTMLDwebBiometricsElement>();
-
-let biometrics: HTMLDwebBiometricsElement;
-
-onMounted(async () => {
-  biometrics = $biometricsPlugin.value!;
-})
-// 检查设备是否可以生物识别
-const check = async () => {
-  await biometrics.check()
-}
-// 调用生物识别
-const fingerprint = async () => {
-  await biometrics.biometrics()
-}
-<script>
-<template>
-  <dweb-biometrics ref="$biometricsPlugin"></dweb-biometrics>
-</template>
+```html
+<body>
+  <dweb-biometrics></dweb-biometrics>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const biometrics = document.querySelector("dweb-biometrics")!
+    // Check if the device supports biometrics
+    const check = async () => {
+      await biometrics.check()
+    }
+    // Call biometrics
+    const biometrics = async () => {
+      await biometrics.biometrics()
+    }
+    Object.assign(globalThis,{check,biometrics})
+  </script>
+</body>
 ```
 
 ### check
 
-检查是否支持生物识别。
+Check if biometrics is supported.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async check():Promise<boolean>
@@ -52,9 +46,9 @@ const fingerprint = async () => {
 
 ### biometrics
 
-调用生物识别。
+Call biometrics.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async biometrics(): Promise<BioetricsResult>
@@ -64,14 +58,14 @@ const fingerprint = async () => {
 
 ## Biometrics Plugin API
 
-WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
+The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
 import { biometricsPlugin } from "@dweb-browser/plaoc";
 
-// 调用生物识别
+// Call biometrics
 biometricsPlugin.biometrics();
-// 检查是否支持生物识别
+// Check if biometrics is supported
 biometricsPlugin.check();
 ```
 
@@ -79,7 +73,7 @@ biometricsPlugin.check();
 
 ### BioetricsResult
 
-| Prop          | Type                 | Description                      | Since |
-| ------------- | -------------------- | -------------------------------- | ----- |
-| **`success`** | <code>boolean</code> | 返回设备是否通过生物识别         | 1.0.0 |
-| **`message`** | <code>string</code>  | 体现有关用户授权信息和报错返回值 | 1.0.0 |
+| Prop          | Type                 | Description                                | Since |
+| ------------- | -------------------- | ------------------------------------------ | ----- |
+| **`success`** | <code>boolean</code> | Indicates if the device passed biometrics. | 1.0.0 |
+| **`message`** | <code>string</code>  | Contains user authorization information and error return values. | 1.0.0 |

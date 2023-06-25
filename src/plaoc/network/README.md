@@ -16,28 +16,22 @@ tag:
 先挂载 DOM 节点，然后就能调用相应 API。
 以 vue3 为示例：
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebNetworkElement } from '@dweb-browser/plaoc';
-const $networkPlugin = ref<HTMLDwebNetworkElement>();
-
-let network: HTMLDwebNetworkElement;
-
-onMounted(async () => {
-  network = $networkPlugin.value!;
-})
-// 查看网络状态
-const getStatus = async () => {
-  await network.getStatus()
-}
-// 查看网络是否在线
-const onLine = async () => {
-  await network.onLine()
-}
-<script>
-<template>
-   <dweb-network ref="$networkPlugin"></dweb-network>
-</template>
+```html
+<body>
+  <dweb-network></dweb-network>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const network = document.querySelector("dweb-network")!
+    // 查看网络状态
+    const getStatus = async () => {
+      await network.getStatus()
+    }
+    // 查看网络是否在线
+    const onLine = async () => {
+      await network.onLine()
+    }
+  </script>
+</body>
 ```
 
 ### onLine

@@ -7,54 +7,48 @@ tag:
   - Plugin
 ---
 
-该插件能提供获取设备网络状态的能力。
+This plugin provides the ability to access device network status.
 
-> 具体查看示例代码： [Network](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Network.vue)
+> For specific example code, see: [Network](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Network.vue)
 
 ## Network WebComponent API
 
-先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
+To use the WebComponent, you need to mount the DOM node and then call the corresponding API.
+Using Vue 3 as an example:
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebNetworkElement } from '@dweb-browser/plaoc';
-const $networkPlugin = ref<HTMLDwebNetworkElement>();
-
-let network: HTMLDwebNetworkElement;
-
-onMounted(async () => {
-  network = $networkPlugin.value!;
-})
-// 查看网络状态
-const getStatus = async () => {
-  await network.getStatus()
-}
-// 查看网络是否在线
-const onLine = async () => {
-  await network.onLine()
-}
-<script>
-<template>
-   <dweb-network ref="$networkPlugin"></dweb-network>
-</template>
+```html
+<body>
+  <dweb-network></dweb-network>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const network = document.querySelector("dweb-network")!
+    // Check network status
+    const getStatus = async () => {
+      await network.getStatus()
+    }
+    // Check if network is online
+    const onLine = async () => {
+      await network.onLine()
+    }
+  </script>
+</body>
 ```
 
 ### onLine
 
-查看网络是否在线。
+Check if the network is online.
 
-- 调用签名：
+- Method signature:
 
 ```ts
-  async onLine():Promise<boolean>
+  async onLine(): Promise<boolean>
 ```
 
 ### getStatus
 
-获取网络状态。
+Get the network status.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async getStatus(): Promise<ConnectionStatus>
@@ -64,14 +58,14 @@ const onLine = async () => {
 
 ## Network Plugin API
 
-WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
+The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
 import { networkPlugin } from "@dweb-browser/plaoc";
 
-// 获取网络状态
+// Get the network status
 networkPlugin.getStatus();
-// 查看网络是否在线
+// Check if the network is online
 networkPlugin.onLine();
 ```
 
@@ -79,21 +73,21 @@ networkPlugin.onLine();
 
 ### ConnectionStatus
 
-| Prop                 | Type                                                      | Description            | Since |
-| -------------------- | --------------------------------------------------------- | ---------------------- | ----- |
-| **`connected`**      | <code>boolean</code>                                      | 是否存在网络连接       | 1.0.0 |
-| **`connectionType`** | <code><a href="#connectiontype">ConnectionType</a></code> | 当前使用的网络连接类型 | 1.0.0 |
+| Prop                 | Type                                                      | Description                                     | Since |
+| -------------------- | --------------------------------------------------------- | ----------------------------------------------- | ----- |
+| **`connected`**      | <code>boolean</code>                                      | Indicates network connectivity                  | 1.0.0 |
+| **`connectionType`** | <code><a href="#connectiontype">ConnectionType</a></code> | The type of network connection currently in use | 1.0.0 |
 
 #### ConnectionType
 
-| Prop           | Type                | Description                    |
-| -------------- | ------------------- | ------------------------------ |
-| **`wifi`**     | <code>string</code> |                                |
-| **`cellular`** | <code>string</code> | 蜂窝网络                       |
-| **`2g`**       | <code>string</code> |                                |
-| **`3g`**       | <code>string</code> |                                |
-| **`4g`**       | <code>string</code> |                                |
-| **`5g`**       | <code>string</code> |                                |
-| **`6g`**       | <code>string</code> |                                |
-| **`none`**     | <code>string</code> | 没有活动的网络连接时的网络状态 |
-| **`unknown`**  | <code>string</code> |                                |
+| Prop           | Type                | Description                                               |
+| -------------- | ------------------- | --------------------------------------------------------- |
+| **`wifi`**     | <code>string</code> |                                                           |
+| **`cellular`** | <code>string</code> | Cellular network                                          |
+| **`2g`**       | <code>string</code> |                                                           |
+| **`3g`**       | <code>string</code> |                                                           |
+| **`4g`**       | <code>string</code> |                                                           |
+| **`5g`**       | <code>string</code> |                                                           |
+| **`6g`**       | <code>string</code> |                                                           |
+| **`none`**     | <code>string</code> | Network status when there is no active network connection |
+| **`unknown`**  | <code>string</code> |                                                           |

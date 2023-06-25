@@ -14,34 +14,24 @@ tag:
 ## Share WebComponent API
 
 先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebShareElement } from '@dweb-browser/plaoc';
-const $sharePlugin = ref<HTMLDwebShareElement>();
-
-let share: HTMLDwebShareElement;
-
-const shareData = reactive({
-  title: "分享标题🍉",
-  text: "分享文字分享文字",
-  url: "https://gpt.waterbang.top",
-  files: null as any
-})
-
-onMounted(async () => {
-  share = $sharePlugin.value!;
-})
-
-// 分享
-const shareHandle = async () => {
- await share.share(shareData)
-}
-<script>
-<template>
- <dweb-share ref="$sharePlugin"></dweb-share>
-</template>
+```html
+<body>
+  <dweb-share></dweb-share>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const share = document.querySelector("dweb-share")!
+    // 分享
+    const shareHandle = async () => {
+      return await share.share({
+        title: "分享标题🍉",
+        text: "分享文字分享文字",
+        url: "https://gpt.waterbang.top",
+        files: undefined,
+      });
+    };
+  </script>
+</body>
 ```
 
 ### canShare（desktop Only）

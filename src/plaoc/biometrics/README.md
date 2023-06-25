@@ -14,30 +14,24 @@ tag:
 ## Biometrics WebComponent API
 
 先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebBiometricsElement } from '@dweb-browser/plaoc';
-const $biometricsPlugin = ref<HTMLDwebBiometricsElement>();
-
-let biometrics: HTMLDwebBiometricsElement;
-
-onMounted(async () => {
-  biometrics = $biometricsPlugin.value!;
-})
-// 检查设备是否可以生物识别
-const check = async () => {
-  await biometrics.check()
-}
-// 调用生物识别
-const fingerprint = async () => {
-  await biometrics.biometrics()
-}
-<script>
-<template>
-  <dweb-biometrics ref="$biometricsPlugin"></dweb-biometrics>
-</template>
+```html
+<body>
+  <dweb-biometrics></dweb-biometrics>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const biometrics = document.querySelector("dweb-biometrics")!
+    // 检查设备是否可以生物识别
+    const check = async () => {
+      await biometrics.check()
+    }
+    // 调用生物识别
+    const biometrics = async () => {
+      await biometrics.biometrics()
+    }
+    Object.assign(globalThis,{check,biometrics})
+  </script>
+</body>
 ```
 
 ### check

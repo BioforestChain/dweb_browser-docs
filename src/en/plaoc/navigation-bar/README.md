@@ -6,57 +6,50 @@ tag:
   - WebComponent
 ---
 
-控制系统底部导航栏。
+Controls the system's bottom navigation bar.
 
-> 具体查看示例代码： [NavigationBar](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/NavigationBar.vue)
+> For specific example code, see: [NavigationBar](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/NavigationBar.vue)
 
 ## NavigationBar WebComponent API
 
-  声明的 html 标签样式，使用的时候需要先挂载到 DOM 上，以 vue3 为示例：
+Declares the HTML tag style. When using it, you need to mount it to the DOM first:
 
-  ```ts
-    <script setup lang="ts">
-      import { HTMLDwebNavigationBarElement, $NavigationBarState } from "@dweb-browser/plaoc";
-      const $navigationBar = ref<HTMLDwebNavigationBarElement>();
-      let navigationBar: HTMLDwebNavigationBarElement;
-
-      onMounted(async () => {
-        navigationBar = $navigationBar.value;
-        onNavigationBarChange(await navigationBar.getState(), 'init)
-      })
-
-      // 状态改变的事件处理器
-      const onNavigationBarChange = (info: $NavigationBarState, type: string) =>{
-        // ...
-      }
-    </script>
-    <template>
-      <dweb-navigation-bar
-        ref="$navigationBar"
-        @statechange="onNavigationBarChange($event.detail, 'change')"
-      ></dweb-navigation-bar>
-    </template>
-  ```
+```html
+<body>
+  <dweb-navigation-bar></dweb-navigation-bar>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const navigationBar = document.querySelector("dweb-navigation-bar")!;
+    async function getState() {
+     console.log(await navigationBar.getState());
+    }
+    // Triggered with state changes
+    navigationBar.addEventListener("statechange",(event)=> {
+      console.log("statechange=>",event)
+    })
+  </script>
+</body>
+```
 
 ### setColor
 
-  设置背景色
+Set the background color.
 
-  - 调用签名：
+- Method signature:
 
-    ```typescript
-      async setColor(color: string): Promise<string>
-    ```
+  ```typescript
+    async setColor(color: string): Promise<string>
+  ```
 
-    | Param       | Type                | Description                        |
-    | ----------- | ------------------- | ---------------------------------- |
-    | **`color`** | <code>string</code> | 十六进制背景色的值,如`#3C5D65B6`。     |
+  | Param       | Type                | Description                                                       |
+  | ----------- | ------------------- | ----------------------------------------------------------------- |
+  | **`color`** | <code>string</code> | The hexadecimal value of the background color, e.g., `#3C5D65B6`. |
 
 ### getColor
 
-获取状态栏背景色。
+Get the background color of the navigation bar.
 
-- 调用签名
+- Method signature:
 
   ```ts
     async getColor(): Promise<string>
@@ -64,165 +57,168 @@ tag:
 
 ### setStyle
 
-  设置状态栏的风格，是需要亮色调还是暗色调。
+Set the style of the navigation bar, whether it should have a light or dark appearance.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      setStyle(style: BAR_STYLE): Promise<unknown>
-    ```
+  ```ts
+    setStyle(style: BAR_STYLE): Promise<unknown>
+  ```
 
-    | Param       | Type                                            | Description        |
-    | ----------- | ----------------------------------------------- | ------------------ |
-    | **`style`** | <code><a href="#bar-style">BAR_STYLE</a></code> | 设置状态栏的风格。 |
+  | Param       | Type                                            | Description                      |
+  | ----------- | ----------------------------------------------- | -------------------------------- |
+  | **`style`** | <code><a href="#bar-style">BAR_STYLE</a></code> | The style of the navigation bar. |
 
 ### getStyle
 
-  获取当前状态栏风格。
+Get the current style of the navigation bar.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async getStyle(): Promise<BAR_STYLE>
-    ```
+  ```ts
+    async getStyle(): Promise<BAR_STYLE>
+  ```
 
-    **Returns:** <code>Promise&lt;<a href="#bar-style">BAR_STYLE</a>&gt;</code>
+  **Returns:** <code>Promise&lt;<a href="#bar-style">BAR_STYLE</a>&gt;</code>
 
 ### show
 
-  显示状态栏。
+Show the navigation bar.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async show(): Promise<unknown>
-    ```
+  ```ts
+    async show(): Promise<unknown>
+  ```
 
 ### hide
 
-  隐藏状态栏。
+Hide the navigation bar.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async hide(): Promise<unknown>
-    ```
+  ```ts
+    async hide(): Promise<unknown>
+  ```
 
 ### setVisible
 
-  设置 状态栏 显示/隐藏
+Set the visibility of the navigation bar.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async setVisible(visible: boolean): Promise<unknown>
-    ```
+  ```ts
+    async setVisible(visible: boolean): Promise<unknown>
+  ```
 
 ### getVisible
 
-  获取状态栏是否显示
+Get whether the navigation bar is visible.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async getVisible(): Promise<boolan>
-    ```
+  ```ts
+    async getVisible(): Promise<boolean>
+  ```
 
 ### setOverlay
 
-  设置状态栏 是否遮盖内容
+Set whether the navigation bar overlays the content.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      setOverlay(overlay: boolean): Promise<unknown>
-    ```
+  ```ts
+    setOverlay(overlay: boolean): Promise<unknown>
+  ```
 
 ### getOverlay
 
-  获取状态栏 遮盖状态
+Get the overlay state of the navigation bar.
 
-  - 调用签名
-    ```ts
-    async getOverlay(): Promise<boolan>
-    ```
+- Method signature:
+
+  ```ts
+  async getOverlay(): Promise<boolean>
+  ```
 
 ## NavigationBar Plugin API
 
-  控制导航栏，对外提供的插件功 WebComponent 的功能本质由 Plugin 提供， 因此 Plugin 包含了 WebComponent 所有的 API.
-  用户也可以根据 Plugin 开发自己定制化的 WebComponent
+Controls the navigation bar and provides plugin functionality to the outside. The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes all the APIs of the WebComponent. Users can also develop their own customized WebComponent based on the Plugin.
 
-  导入
+Import:
 
-  ```ts
-    import { navigationBarPlugin } from "@bfx/plugin"
-  ```
- 
+```ts
+import { navigationBarPlugin } from "@dweb-browser/plaoc";
+```
+
 ### setState
-  
-  设置导航栏状态
 
-  - 调用签名
+Set the state of the navigation bar.
 
-    ```typescript
-      async setState(state: Partial<$NavigationBarWritableState>):Promise<void>
-    ```
+- Method signature:
 
-    | Param       | Type                                                                       | Description        |
-    | ----------- | -------------------------------------------------------------------------- | ------------------ |
-    | **`state`** | <code><a href="#navigationbarwritablestate">$NavigationBarWritableState</a></code> | 设置状态栏的风格。 |
+  ```typescript
+  async setState(state: Partial<$NavigationBarWritableState>):Promise<void
+  ```
 
-    > `Partial<Type>` 构造一个类型，其中 Type 的所有属性都设置为可选。该实用程序将返回一个表示给定类型的所有子集的类型。
+| Param       | Type                                                                               | Description                      |
+| ----------- | ---------------------------------------------------------------------------------- | -------------------------------- |
+| **`state`** | <code><a href="#navigationbarwritablestate">$NavigationBarWritableState</a></code> | The state of the navigation bar. |
+
+> `Partial<Type>` constructs a type with all properties of Type set to optional. The utility will return a type that represents all subsets of a given type.
 
 ### setStateByKey
-  单独设置某一项状态
 
-  - 调用签名
+Set a specific state item individually.
 
-    ```ts
-      setStateByKey<K extends keyof $NavigationBarWritableState>(key: K, value: $NavigationBarWritableState[key]): Promise<void>
-    ```
+- Method signature:
 
-    | Param       | Type                                                                            | Description            |
-    | ----------- | ------------------------------------------------------------------------------- | ---------------------- |
-    | **`key`**   | <code><a href="#navigationbarwritablestate">string</a></code>                       | 设置状态栏的某一个值。 |
-    | **`value`** | <code><a href="#navigationbarwritablestate">$NavigationBarWritableState[key]</a></code> | 设置状态栏的风格值。   |
+```ts
+setStateByKey<K extends keyof $NavigationBarWritableState>(key: K, value: $NavigationBarWritableState[key]): Promise<void>
+```
+
+| Param       | Type                                                                                    | Description                                        |
+| ----------- | --------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| **`key`**   | <code><a href="#navigationbarwritablestate">string</a></code>                           | The key of the state item in the navigation bar.   |
+| **`value`** | <code><a href="#navigationbarwritablestate">$NavigationBarWritableState[key]</a></code> | The value of the state item in the navigation bar. |
 
 ### getState
 
-  获取状态
+Get the state.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async getState(force_update?: boolean): Promise<$BarState>
-    ```
+  ```ts
+  async getState(force_update?: boolean): Promise<$BarState>
+  ```
 
-    | Param              | Type                 | Description       |
-    | ------------------ | -------------------- | ----------------- |
-    | **`force_update`** | <code>boolean</code> | 是否需要强制更新     |
+  | Param              | Type                 | Description                              |
+  | ------------------ | -------------------- | ---------------------------------------- |
+  | **`force_update`** | <code>boolean</code> | Indicates if a force update is required. |
 
-    **Returns:** <code>Promise&lt;<a href="#barstate">$BarState</a>&gt;</code>
+  **Returns:** <code>Promise&lt;<a href="#barstate">$BarState</a>&gt;</code>
 
 ## Interfaces
-  ### BAR_STYLE
 
-  导航栏的风格类型约束，Light 代表文字为黑色，Dark 代表文字为白色。
+### BAR_STYLE
 
-  Default：如果设备使用深色模式，条形文字将变亮。如果设备使用浅色模式，条形文字将变暗。在 Android 上，默认将是启动应用程序的那个风格。
+Constraints the style types of the navigation bar. "Dark" represents light text on a dark background, while "Light" represents dark text on a light background.
 
-  | Prop          | Type                 | Description        | Since |
-  | ------------- | -------------------- | ------------------ | ----- |
-  | **`Dark`**    | <code>DARK</code>    | 深色背景的浅色文本 | 1.0.0 |
-  | **`Light`**   | <code>LIGHT</code>   | 浅色背景的深色文字 | 1.0.0 |
-  | **`Default`** | <code>DEFAULT</code> | 样式基于设备改变   | 1.0.0 |
+Default: If the device uses a dark mode, the bar text will become light. If the device uses a light mode, the bar text will become dark. On Android, the default style will be the one used when launching the application.
 
-  ### $BarState
-  #### $NavigationBarWritableState
+| Prop          | Type                 | Description                   | Since |
+| ------------- | -------------------- | ----------------------------- | ----- |
+| **`Dark`**    | <code>DARK</code>    | Light text on dark background | 1.0.0 |
+| **`Light`**   | <code>LIGHT</code>   | Dark text on light background | 1.0.0 |
+| **`Default`** | <code>DEFAULT</code> | Style based on device changes | 1.0.0 |
 
-  | Prop          | Type                                            | Description    | Since |
-  | ------------- | ----------------------------------------------- | -------------- | ----- |
-  | **`color`**   | <code>string</code>                             | 背景颜色         | 1.0.0 |
-  | **`style`**   | <code><a href="#bar-style">BAR_STYLE</a></code> | 整体风格         | 1.0.0 |
-  | **`overlay`** | <code>boolean</code>                            | 是否覆盖内容     | 1.0.0 |
-  | **`visible`** | <code>boolean</code>                            | 是否显示导航栏    | 1.0.0 |
+### $BarState
+
+#### $NavigationBarWritableState
+
+| Prop          | Type                                            | Description                | Since |
+| ------------- | ----------------------------------------------- | -------------------------- | ----- |
+| **`color`**   | <code>string</code>                             | Background color           | 1.0.0 |
+| **`style`**   | <code><a href="#bar-style">BAR_STYLE</a></code> | Overall style              | 1.0.0 |
+| **`overlay`** | <code>boolean</code>                            | Whether it overlays        | 1.0.0 |
+| **`visible`** | <code>boolean</code>                            | Whether the bar is visible | 1.0.0 |

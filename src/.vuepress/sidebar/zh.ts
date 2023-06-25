@@ -69,10 +69,10 @@ export const zhSidebar = sidebar({
           text: "Share",
           link: "/plaoc/share/"
         },
-        {
-          text: "SplashScreen",
-          link: "/plaoc/splash-screen/"
-        },
+        // {
+        //   text: "SplashScreen",
+        //   link: "/plaoc/splash-screen/"
+        // },
         {
           text: "Toast",
           link: "/plaoc/toast/"

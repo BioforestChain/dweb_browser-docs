@@ -7,48 +7,38 @@ tag:
   - Plugin
 ---
 
-提供系统分享的能力。
+Provides the ability to share content through the system.
 
-> 具体查看示例代码： [Share](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Share.vue)
+> For specific example code, see: [Share](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Share.vue)
 
 ## Share WebComponent API
 
-先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
+To use the WebComponent, you need to mount the DOM node and then call the corresponding API.
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebShareElement } from '@dweb-browser/plaoc';
-const $sharePlugin = ref<HTMLDwebShareElement>();
-
-let share: HTMLDwebShareElement;
-
-const shareData = reactive({
-  title: "分享标题🍉",
-  text: "分享文字分享文字",
-  url: "https://gpt.waterbang.top",
-  files: null as any
-})
-
-onMounted(async () => {
-  share = $sharePlugin.value!;
-})
-
-// 分享
-const shareHandle = async () => {
- await share.share(shareData)
-}
-<script>
-<template>
- <dweb-share ref="$sharePlugin"></dweb-share>
-</template>
+```html
+<body>
+  <dweb-share></dweb-share>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const share = document.querySelector("dweb-share")!
+    // Share content
+    const shareHandle = async () => {
+      return await share.share({
+        title: "Share Title🍉",
+        text: "Share text",
+        url: "https://gpt.waterbang.top",
+        files: undefined,
+      });
+    };
+  </script>
+</body>
 ```
 
-### canShare（desktop Only）
+### canShare (Desktop Only)
 
-判断是否能分享。
+Checks if sharing is supported.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async canShare(): Promise<boolean>
@@ -56,47 +46,47 @@ const shareHandle = async () => {
 
 ### share
 
-提供分享功能，在分享文件的时候，可以不传递其他参数。
+Shares content. When sharing files, other parameters can be omitted.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async share(options: ShareOptions): Promise<ShareResult>
 ```
 
-| Param         | Type                                                  | Description |
-| ------------- | ----------------------------------------------------- | ----------- |
-| **`options`** | <code><a href="#shareoptions">ShareOptions</a></code> | 分享参数    |
+| Param         | Type                                                  | Description   |
+| ------------- | ----------------------------------------------------- | ------------- |
+| **`options`** | <code><a href="#shareoptions">ShareOptions</a></code> | Share options |
 
 **Returns:** <code>Promise&lt;<a href="#shareresult">ShareResult</a>&gt;</code>
 
 ## Share Plugin API
 
-WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
+The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
 import { sharePlugin } from "@dweb-browser/plaoc";
 
-// 直接调用分享
-sharePlugin.share(shareData); // 假装有数据
+// Directly call the share function
+sharePlugin.share(shareData); // Pretend there is data
 ```
 
 ## Interfaces
 
 ### ShareOptions
 
-如果要分享文件，那么 url 的分享将不生效，也就是说，分享文件的权重更高。
+If sharing files, the URL sharing will not take effect, which means sharing files has a higher priority.
 
-| Prop        | Type                                           | Description                                           | Since |
-| ----------- | ---------------------------------------------- | ----------------------------------------------------- | ----- |
-| **`title`** | <code>boolean</code>                           | 为消息设置标题                                        | 1.0.0 |
-| **`text`**  | <code>string</code>                            | 设置文字分享                                          | 1.0.0 |
-| **`url`**   | <code>string</code>                            | 设置要分享的 URL，可以是 http、https 或 file:// URL   | 1.0.0 |
-| **`files`** | <code><a href="#shareresult">File[]</a></code> | 要共享的文件的 file:// URL 数组 仅支持 iOS 和 Android | 1.0.0 |
+| Prop        | Type                                           | Description                                         | Since |
+| ----------- | ---------------------------------------------- | --------------------------------------------------- | ----- |
+| **`title`** | <code>boolean</code>                           | Sets the title of the message                       | 1.0.0 |
+| **`text`**  | <code>string</code>                            | Sets the text to be shared                          | 1.0.0 |
+| **`url`**   | <code>string</code>                            | Sets the URL to be shared (http, https, or file://) | 1.0.0 |
+| **`files`** | <code><a href="#shareresult">File[]</a></code> | Array of file:// URLs of files to be shared         | 1.0.0 |
 
 ### ShareResult
 
-| Prop          | Type                 | Description                        | Since |
-| ------------- | -------------------- | ---------------------------------- | ----- |
-| **`success`** | <code>boolean</code> | 是否分享成功                       | 1.0.0 |
-| **`message`** | <code>string</code>  | 分享完成的一些提示，可能是错误提示 | 1.0.0 |
+| Prop          | Type                 | Description                                                   | Since |
+| ------------- | -------------------- | ------------------------------------------------------------- | ----- |
+| **`success`** | <code>boolean</code> | Indicates whether the sharing was successful                  | 1.0.0 |
+| **`message`** | <code>string</code>  | Additional message upon completion, possibly an error message | 1.0.0 |

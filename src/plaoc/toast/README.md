@@ -14,29 +14,19 @@ Toast,一个小的弹窗信息，在一段时间后消失。
 ## Toast WebComponent API
 
 先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebToastElement,ToastDuration } from '@dweb-browser/plaoc';
-const $toastPlugin = ref<HTMLDwebToastElement>();
-
-let toast: HTMLDwebToastElement;
-
-onMounted(async () => {
-  toast = $toastPlugin.value!;
-})
-const toast_message = ref("我是toast🍓");
-const toast_duration = ref<ToastDuration>("short");
-// 显示
-const showToast = async () => {
-  await toast.show({ text: toast_message.value, duration: toast_duration.value })
-}
-
-<script>
-<template>
-   <dweb-toast ref="$toastPlugin"></dweb-toast>
-</template>
+```html
+<body>
+  <dweb-toast></dweb-toast>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const toast = document.querySelector("dweb-toast")!
+    // 显示
+    const showToast = async () => {
+      await toast.show({ text: "我是toast🍓", duration: "short" })
+    }
+  </script>
+</body>
 ```
 
 ### show

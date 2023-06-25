@@ -7,44 +7,37 @@ tag:
   - Plugin
 ---
 
-手电筒控制插件。
+Torch, a plugin for controlling the flashlight.
 
-> 具体查看示例代码： [Torch](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Torch.vue)
+> For specific example code, see: [Torch](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/Torch.vue)
 
 ## Torch WebComponent API
 
-先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
+To use the Torch WebComponent, you need to mount the DOM node and then call the corresponding API.
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebTorchElement } from '@dweb-browser/plaoc';
-const $torchPlugin = ref<HTMLDwebTorchElement>();
-
-let toast: HTMLDwebTorchElement;
-
-onMounted(async () => {
-  toast = $torchPlugin.value!;
-})
-// 打开/关闭手电筒
-const toggleTorch = async () => {
-  await toast.toggleTorch()
-}
-// 手电筒状态
-const getTorchState = async () => {
-  await toast.getTorchState()
-}
-<script>
-<template>
-  <dweb-torch ref="$torchPlugin"></dweb-torch>
-</template>
+```html
+<body>
+  <dweb-torch></dweb-torch>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const torch = document.querySelector("dweb-torch")!
+    // Toggle the torch on/off
+    const toggleTorch = async () => {
+      await torch.toggleTorch()
+    }
+    // Get the torch state
+    const getTorchState = async () => {
+      await torch.getTorchState()
+    }
+  </script>
+</body>
 ```
 
 ### toggleTorch
 
-控制打开/关闭手电筒。
+Controls the flashlight by toggling it on/off.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async toggleTorch(): Promise<boolean>
@@ -52,9 +45,9 @@ const getTorchState = async () => {
 
 ### getTorchState
 
-手电筒状态，返回`true`是开。
+Gets the current state of the flashlight. Returns `true` if it is on.
 
-- 调用签名：
+- Method signature:
 
 ```ts
   async getTorchState(): Promise<boolean>
@@ -62,11 +55,11 @@ const getTorchState = async () => {
 
 ## Torch Plugin API
 
-WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
+The functionality of the Torch WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
 import { torchPlugin } from "@dweb-browser/plaoc";
 
-// 获取手电筒状态
+// Get the torch state
 torchPlugin.getTorchState();
 ```

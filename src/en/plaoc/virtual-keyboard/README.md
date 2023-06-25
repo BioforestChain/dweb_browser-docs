@@ -6,193 +6,176 @@ tag:
   - WebComponent
 ---
 
-控制虚拟键盘
+Controls the state and visibility of a virtual keyboard.
 
-> 具体查看示例代码：[VirtualKeyboard](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/VirtualKeyboard.vue)
-
+> For specific example code, see: [VirtualKeyboard](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/VirtualKeyboard.vue)
 
 ## VirtualKeyboard WebComponent API
 
-首先需要声明的 html 标签样式，该组件挂载了 statechange 方法，当有状态改变时会触发。
+First, you need to declare the HTML tag style. The component mounts the `statechange` method, which triggers when there is a state change.
 
-```ts
-  <script setup lang="ts">
-    import { HTMLDwebVirtualKeyboardElement, $VirtualKeyboardState } from "@dweb-browser/plaoc";
-    const $virtualKeyboard = ref<HTMLDwebVirtualKeyboardElement>;
-    let virtualKeyboard: HTMLDwebVirtualKeyboardElement;
-
-    onMounted(async () => {
-      virtualKeyboard = $virtualKeyboard.value!;
-      onVirtualKeyboardChange(await virtualKeyboard.getState(), "init");
+```html
+<body>
+  <dweb-virtual-keyboard></dweb-virtual-keyboard>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const virtualKeyBoard = document.querySelector("dweb-virtual-keyboard")!
+    // Listen for state changes
+    virtualKeyBoard.addEventListener("statechange",(event)=> {
+      console.log("virtualKeyBoard#statechange=>",event)
     })
-
-    // 状态变化事件处理器
-    const onVirtualKeyboardChange = (info: $VirtualKeyboardState, type: string) => {
-      // ...
-    };
   </script>
-  <template>
-    <dweb-virtual-keyboard
-      ref="$virtualKeyboard"
-      @statechange="onVirtualKeyboardChange($event.detail, 'change')"
-    ></dweb-virtual-keyboard>
-  </template>
+</body>
 ```
 
 ### getState
 
-  获取状态
+Get the state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async getState(force_update?: boolean): Promise<$VirtualKeyboardState>
-    ```
+  ```ts
+    async getState(force_update?: boolean): Promise<$VirtualKeyboardState>
+  ```
 
-    | Param              | Type                 | Description       |
-    | ------------------ | -------------------- | ----------------- |
-    | **`force_update`** | <code>boolean</code> | 是否需要强制更新     |
+  | Param              | Type                 | Description                              |
+  | ------------------ | -------------------- | ---------------------------------------- |
+  | **`force_update`** | <code>boolean</code> | Indicates if a force update is required. |
 
-    **Returns:** <code>Promise&lt;<a href="#virtualkeyboardstate">$VirtualKeyboardState</a>&gt;</code>
+  **Returns:** <code>Promise&lt;<a href="#virtualkeyboardstate">$VirtualKeyboardState</a>&gt;</code>
 
 ### setState
 
-  设置状态
+Set the state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async setState<K extends "overlay">(key: K, value: $VirtualKeyboardWritableState[K]): Promise<void>;
-    ```
+  ```ts
+    async setState<K extends "overlay">(key: K, value: $VirtualKeyboardWritableState[K]): Promise<void>;
+  ```
 
-    | Param       | Type                 | Description       |
-    | ----------- | -------------------- | ----------------- |
-    | **`key`**   | <code>"overlay"</code> | 设置虚拟键盘状态的属性名称     |
-    | **`value`** | <code><a href="#virtualkeyboardwritablestate">$VirtualKeyboardWritableState[key]</a></code> | 设置虚拟键盘状态的属性名称的属性值     |
+  | Param       | Type                                                                                        | Description                                              |
+  | ----------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+  | **`key`**   | <code>"overlay"</code>                                                                      | The name of the attribute that sets the keyboard state.  |
+  | **`value`** | <code><a href="#virtualkeyboardwritablestate">$VirtualKeyboardWritableState[key]</a></code> | The value of the attribute that sets the keyboard state. |
 
 ### setOverlay
 
-  设置是否遮盖
+Set whether to overlay.
 
-  - 调用签名:
+- Method signature:
 
-    ```ts
-      async setOverlay(overlay: boolean): Promise<void>
-    ```
+  ```ts
+    async setOverlay(overlay: boolean): Promise<void>
+  ```
 
 ### getOverlay
 
-  获取是否遮盖
+Get whether it overlays.
 
-  - 调用签名：
-
-    ```ts
-      async getOverlay(): Promise<boolean>
-    ```
-
-
-## VirtualKeybard Plugin API
-
-  控制虚拟键盘，对外提供的插件功能；WebComponent 的功能本质由 Plugin 提供，因此，Plugin 包含 WebComponent 所有 API。
-  用户也可以依据 Plugin 开发自己定制化的 WebComponent。
-
-  导入
+- Method signature:
 
   ```ts
-    import { virtualKeyboardPlugin } from "@dweb-browser/plaoc";
+    async getOverlay(): Promise<boolean>
   ```
+
+## VirtualKeyboard Plugin API
+
+Controls the virtual keyboard and provides plugin functionality to the outside. The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes all the APIs of the WebComponent. Users can also develop their own customized WebComponent based on the Plugin.
+
+Import:
+
+```ts
+import { virtualKeyboardPlugin } from "@dweb-browser/plaoc";
+```
 
 ### setState
 
-  设置状态
+Set the state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async setState(state: Partial<$VirtualKeyboardWritableState>): Promise<void>
-    ```
+  ```ts
+    async setState(state: Partial<$VirtualKeyboardWritableState>): Promise<void>
+  ```
 
-    | Param       | Type                                                                                   | Description       |
-    | ----------- | -------------------------------------------------------------------------------------- | ----------------- |
-    | **`state`** | <code><a href="#virtualkeyboardwritablestate">$VirtualKeyboardWritableState</a></code> | 设置虚拟键盘的状态值 |
+  | Param       | Type                                                                                   | Description                              |
+  | ----------- | -------------------------------------------------------------------------------------- | ---------------------------------------- |
+  | **`state`** | <code><a href="#virtualkeyboardwritablestate">$VirtualKeyboardWritableState</a></code> | The state value of the virtual keyboard. |
 
-    > `Partial<Type>` 构造一个类型，其中 Type 的所有属性都设置为可选。该实用程序将返回一个表示给定类型的所有子集的类型。
+  > `Partial<Type>` constructs a type with all properties of Type set to optional. This utility will return a type that represents all subsets of a given type.
 
 ### setStateByKey
 
-  设置某一项的状态
+Set the state of a specific item.
 
-  - 调用签名:
+- Method signature:
 
-    ```ts
-      async setStateByKey<K extends "overlay">(key: K, value: $VirtualKeyboardWritableState[K]): Promise<void>
-    ```
+  ```ts
+    async setStateByKey<K extends "overlay">(key: K, value: $VirtualKeyboardWritableState[K]): Promise<void>
+  ```
 
-    | Param       | Type                                                                            | Description            |
-    | ----------- | ------------------------------------------------------------------------------- | ---------------------- |
-    | **`key`**   | <code>"overlay"</code>                                                                      | 设置状态的属性名称 |
-    | **`value`** | <code><a href="#virtualkeyboardwritablestate">$VirtualKeyboardWritableState[key]</a></code> | 设置状态的属性值   |
+| Param       | Type                                                                                        | Description                                 |
+| ----------- | ------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| **`key`**   | <code>"overlay"</code>                                                                      | The name of the property to set the state.  |
+| **`value`** | <code><a href="#virtualkeyboardwritablestate">$VirtualKeyboardWritableState[key]</a></code> | The value of the property to set the state. |
 
 ### getState
 
-  获取状态
+Get the state.
 
-  - 调用签名:
+- Method signature:
 
-    ```ts
-      async getState(force_update?: boolean): Promise<$VirtualKeyboardState>
-    ```
+  ```ts
+    async getState(force_update?: boolean): Promise<$VirtualKeyboardState>
+  ```
 
-    | Param              | Type                 | Description       |
-    | ------------------ | -------------------- | ----------------- |
-    | **`force_update`** | <code>boolean</code> | 是否需要强制更新     |
+  | Param              | Type                 | Description                              |
+  | ------------------ | -------------------- | ---------------------------------------- |
+  | **`force_update`** | <code>boolean</code> | Indicates if a force update is required. |
 
-    **Returns:** <code>Promise&lt;<a href="#virtualkeyboardstate">$VirtualKeyboardState</a>&gt;</code>
-
+  **Returns:** <code>Promise&lt;<a href="#virtualkeyboardstate">$VirtualKeyboardState</a>&gt;</code>
 
 ### setOverlay
 
-  设置是否遮盖
+Set whether to overlay.
 
-  - 调用签名:
+- Method signature:
 
-    ```ts
-      async setOverlay(overlay: boolean): Promise<void>
-    ```
+  ```ts
+    async setOverlay(overlay: boolean): Promise<void>
+  ```
 
 ### getOverlay
 
-  获取是否遮盖
+Get whether it overlays.
 
-  - 调用签名:
+- Method signature:
 
-    ```ts
-      async getOverlay(): Promise<boolean>
-    ```
+  ```ts
+    async getOverlay(): Promise<boolean>
+  ```
 
 ## Interfaces
 
-  ### $VirtualKeyboardState
+### $VirtualKeyboardState
 
-  | Prop          | Type                                             | Description        | Since |
-  | ------------- | ------------------------------------------------ | ------------------ | ----- |
-  | **`overlay`** | <code>boolean</code>                             | 是否遮盖            | 1.0.0 |
-  | **`insets`**  | <code><a href="#dominsets">DOMInsets</a></code>  | 插入区域的尺寸数据    | 1.0.0 |
-
+| Prop          | Type                                            | Description                  | Since |
+| ------------- | ----------------------------------------------- | ---------------------------- | ----- |
+| **`overlay`** | <code>boolean</code>                            | Indicates if it overlays.    | 1.0.0 |
+| **`insets`**  | <code><a href="#dominsets">DOMInsets</a></code> | Size data of the insets area | 1.0.0 |
 
 ### $VirtualKeyboardWritableState
 
-  | Prop          | Type                                             | Description        | Since |
-  | ------------- | ------------------------------------------------ | ------------------ | ----- |
-  | **`overlay`** | <code>boolean</code>                             | 是否遮盖            | 1.0.0 |
- 
+| Prop          | Type                 | Description               | Since |
+| ------------- | -------------------- | ------------------------- | ----- |
+| **`overlay`** | <code>boolean</code> | Indicates if it overlays. | 1.0.0 |
+
 ### DOMInsets
 
-  | Prop                | Type                                            | Description           | Since |
-  | ------------------- | ----------------------------------------------- | --------------------- | ----- |
-  | **`top`**           | <code>number</code>                             | 顶部插入的尺寸数据       | 1.0.0 |
-  | **`right`**         | <code>number</code>                             | 右侧插入的尺寸数据       | 1.0.0 |
-  | **`bottom`**        | <code>number</code>                             | 底部插入的尺寸数据       | 1.0.0 |
-  | **`left`**          | <code>number</code>                             | 左侧插入的尺寸数据       | 1.0.0 |
-
- 
+| Prop         | Type                | Description                   | Since |
+| ------------ | ------------------- | ----------------------------- | ----- |
+| **`top`**    | <code>number</code> | Size data of the top inset    | 1.0.0 |
+| **`right`**  | <code>number</code> | Size data of the right inset  | 1.0.0 |
+| **`bottom`** | <code>number</code> | Size data of the bottom inset | 1.0.0 |
+| **`left`**   | <code>number</code> | Size data of the left inset   | 1.0.0 |

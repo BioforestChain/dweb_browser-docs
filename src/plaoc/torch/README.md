@@ -14,30 +14,23 @@ tag:
 ## Torch WebComponent API
 
 先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
 
-```ts
-<script setup lang="ts">
-import { HTMLDwebTorchElement } from '@dweb-browser/plaoc';
-const $torchPlugin = ref<HTMLDwebTorchElement>();
-
-let toast: HTMLDwebTorchElement;
-
-onMounted(async () => {
-  toast = $torchPlugin.value!;
-})
-// 打开/关闭手电筒
-const toggleTorch = async () => {
-  await toast.toggleTorch()
-}
-// 手电筒状态
-const getTorchState = async () => {
-  await toast.getTorchState()
-}
-<script>
-<template>
-  <dweb-torch ref="$torchPlugin"></dweb-torch>
-</template>
+```html
+<body>
+  <dweb-torch></dweb-torch>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const torch = document.querySelector("dweb-torch")!
+    // 打开/关闭手电筒
+    const toggleTorch = async () => {
+      await toast.toggleTorch()
+    }
+    // 手电筒状态
+    const getTorchState = async () => {
+      await toast.getTorchState()
+    }
+  </script>
+</body>
 ```
 
 ### toggleTorch

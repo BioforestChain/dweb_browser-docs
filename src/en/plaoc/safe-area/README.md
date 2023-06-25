@@ -6,190 +6,181 @@ tag:
   - WebComponent
 ---
 
-控制安全区域。
+Controls the safe area.
 
-> 具体查看示例代码：[SafeArea](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/SafeArea.vue)
+> For specific example code, see: [SafeArea](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/SafeArea.vue)
 
 ## SafeArea WebComponent API
 
-  首先需要声明的 html 标签样式，该组件挂载了 statechange 方法，当有状态改变时会触发。
+First, you need to declare the HTML tag style. When using this component, it mounts the `statechange` method, which is triggered when there is a state change.
 
-  ```ts
-    <script setup lang="ts">
-      import { HTMLDwebSafeAreaElement, $SafeAreaState } from "@dweb-browser/plaoc";
-      const $safeArea = ref<HTMLDwebSafeAreaElement>()
-      let safeArea: HTMLDwebSafeAreaElement;
-
-      onMounted(async () => {
-        safeArea = $safeArea.value;
-        onSafeAreaChange(await safeArea.getState(), "init");
-      });
-
-      // 状态发生变化的时候触发
-      const onSafeAreaChange = (info: $SafeAreaState, type: string) => {
-        // ...
-      };
-    </script>
-    <template>
-      <dweb-safe-area ref="$safeArea" @statechange="onSafeAreaChange($event.detail, 'change')"></dweb-safe-area>
-    </template>
-  ```
+```html
+<body>
+  <dweb-safe-area></dweb-safe-area>
+  <script type="module">
+    import "@dweb-browser/plaoc";
+    const safeArea = document.querySelector("dweb-safe-area")!
+    async function getOverlay() {
+      return await safeArea.getOverlay();
+    }
+      // Listen for state changes
+    safeArea.addEventListener("statechange",(event)=> {
+      console.log("safeArea#statechange=>",event)
+    })
+  </script>
+</body>
+```
 
 ### getState
 
-  获取当前状态
+Get the current state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async getState(force_update?: boolean): Promise<$SafeAreaState>
-    ```
+  ```ts
+    async getState(force_update?: boolean): Promise<$SafeAreaState>
+  ```
 
-    | Param              | Type                 | Description       |
-    | ------------------ | -------------------- | ----------------- |
-    | **`force_update`** | <code>boolean</code> | 是否需要强制更新     |
+  | Param              | Type                 | Description                              |
+  | ------------------ | -------------------- | ---------------------------------------- |
+  | **`force_update`** | <code>boolean</code> | Indicates if a force update is required. |
 
-    **Returns:** <code>Promise&lt;<a href="#safeareastate">$SafeAreaState</a>&gt;</code>
+  **Returns:** <code>Promise&lt;<a href="#safeareastate">$SafeAreaState</a>&gt;</code>
 
 ### setState
 
-  设置状态
+Set the state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async setState<K extends "overlay">(key: K, value: $SafeAreaWritableState[K]): Promise<void>
-    ```
+  ```ts
+    async setState<K extends "overlay">(key: K, value: $SafeAreaWritableState[K]): Promise<void>
+  ```
 
-    | Param       | Type                                                                            | Description          |
-    | ----------- | ------------------------------------------------------------------------------- | -------------------- |
-    | **`key`**   | <code>"overlay"</code>                                                          | 设置安全区域属性的名称   |
-    | **`value`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState[key]</a></code>   | 设置安全区域属性的值     |
+  | Param       | Type                                                                          | Description                                 |
+  | ----------- | ----------------------------------------------------------------------------- | ------------------------------------------- |
+  | **`key`**   | <code>"overlay"</code>                                                        | The name of the safe area property to set.  |
+  | **`value`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState[key]</a></code> | The value of the safe area property to set. |
 
 ### setOverlay
 
-  设置是否遮盖
+Set whether to overlay.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async setOverlay(overlay: boolean): Promise<void>
-    ```
+  ```ts
+    async setOverlay(overlay: boolean): Promise<void>
+  ```
 
 ### getOverlay
 
-  获取遮盖状态
+Get the overlay state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async getOverlay(): Promise<boolean>
-    ```
+  ```ts
+    async getOverlay(): Promise<boolean>
+  ```
 
 ## SafeArea Plugin API
 
-  控制安全区域，对外提供的插件功能。WebComponent 的功能本质由 Plugin 提供，因此，Plugin 包含 WebComponent 所有 API。
-  用户也可以依据 Plugin 开发自己定制化的 WebComponent。
+Controls the safe area and provides plugin functionality to the outside. The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes all the APIs of the WebComponent. Users can also develop their own customized WebComponent based on the Plugin.
 
-  导入
-  ```ts
-    import { safeAreaPlugin } from "@dweb-browser/plaoc";
-  ```
-    
+Import:
+
+```ts
+import { safeAreaPlugin } from "@dweb-browser/plaoc";
+```
+
 ### setState
 
-  设置状态
+Set the state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async setState(state: Partial<$SafeAreaWritableState>): Promise<void>
-    ```
-  
-    | Param       | Type                                                                       | Description        |
-    | ----------- | -------------------------------------------------------------------------- | ------------------ |
-    | **`state`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState</a></code> | 设置状态栏的风格。 |
+  ```ts
+    async setState(state: Partial<$SafeAreaWritableState>): Promise<void>
+  ```
 
-    > `Partial<Type>` 构造一个类型，其中 Type 的所有属性都设置为可选。该实用程序将返回一个表示给定类型的所有子集的类型。
+  | Param       | Type                                                                     | Description                  |
+  | ----------- | ------------------------------------------------------------------------ | ---------------------------- |
+  | **`state`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState</a></code> | The style of the status bar. |
 
-
+  > `Partial<Type>` constructs a type with all properties of Type set to optional. The utility will return a type that represents all subsets of a given type.
 
 ### setStateByKey
 
-  单独设置某一项状态
+Set a specific state item individually.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async setStateByKey<K extends "overlay">(key: K, value: $SafeAreaWritableState[K]): Promise<void>
-    ```
-    
-    | Param       | Type                                                                            | Description          |
-    | ----------- | ------------------------------------------------------------------------------- | -------------------- |
-    | **`key`**   | <code>"overlay"</code>                                                          | 设置安全区域属性的名称   |
-    | **`value`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState[key]</a></code>   | 设置安全区域属性的值     |
+  ```ts
+    async setStateByKey<K extends "overlay">(key: K, value: $SafeAreaWritableState[K]): Promise<void>
+  ```
+
+  | Param       | Type                                                                          | Description                                 |
+  | ----------- | ----------------------------------------------------------------------------- | ------------------------------------------- |
+  | **`key`**   | <code>"overlay"</code>                                                        | The name of the safe area property to set.  |
+  | **`value`** | <code><a href="#safeareawritablestate">$SafeAreaWritableState[key]</a></code> | The value of the safe area property to set. |
 
 ### getState
 
-  获取当前状态
+Get the current state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async getState(force_update?: boolean): Promise<$SafeAreaState>
-    ```
+  ```ts
+    async getState(force_update?: boolean): Promise<$SafeAreaState>
+  ```
 
-    | Param              | Type                 | Description       |
-    | ------------------ | -------------------- | ----------------- |
-    | **`force_update`** | <code>boolean</code> | 是否需要强制更新     |
+  | Param              | Type                 | Description                              |
+  | ------------------ | -------------------- | ---------------------------------------- |
+  | **`force_update`** | <code>boolean</code> | Indicates if a force update is required. |
 
-    **Returns:** <code>Promise&lt;<a href="#safeareastate">$SafeAreaState</a>&gt;</code>
+  **Returns:** <code>Promise&lt;<a href="#safeareastate">$SafeAreaState</a>&gt;</code>
 
 ### setOverlay
 
-  设置是否遮盖
+Set whether to overlay.
 
-  - 调用签名
+- Method signature:
 
-    ```ts
-      async setOverlay(overlay: boolean): Promise<void>
-    ```
+  ```ts
+    async setOverlay(overlay: boolean): Promise<void>
+  ```
 
 ### getOverlay
 
-  获取遮盖状态
+Get the overlay state.
 
-  - 调用签名：
+- Method signature:
 
-    ```ts
-      async getOverlay(): Promise<boolean>
-    ```
+  ```ts
+    async getOverlay(): Promise<boolean>
+  ```
 
 ## Interfaces
 
 ### $SafeAreaState
 
-  | Prop              | Type                                              | Description           | Since |
-  | ------------------- | ----------------------------------------------- | --------------------- | ----- |
-  | **`cutoutInsets`**  | <code><a href="#dominsets">DOMInsets</a></code> | 切口插入的区域数据       | 1.0.0 |
-  | **`outerInsets`**   | <code><a href="#dominsets">DOMInsets</a></code> | app内容之外插入的区域数据 | 1.0.0 |
-  | **`insets`**        | <code><a href="#dominsets">DOMInsets</a></code> | app内容插入的区域数据    | 1.0.0 |
-  | **`overlay`**       | <code>boolean</code>                            | 是否遮盖内容            | 1.0.0 |
+| Prop               | Type                                            | Description                             | Since |
+| ------------------ | ----------------------------------------------- | --------------------------------------- | ----- |
+| **`cutoutInsets`** | <code><a href="#dominsets">DOMInsets</a></code> | The inset data for cutouts.             | 1.0.0 |
+| **`outerInsets`**  | <code><a href="#dominsets">DOMInsets</a></code> | The inset data outside the app content. | 1.0.0 |
+| **`insets`**       | <code><a href="#dominsets">DOMInsets</a></code> | The inset data for app content.         | 1.0.0 |
+| **`overlay`**      | <code>boolean</code>                            | Whether it overlays content.            | 1.0.0 |
 
 ### $SafeAreaWritableState
 
-  | Prop                | Type                                            | Description           | Since |
-  | ------------------- | ----------------------------------------------- | --------------------- | ----- |
-  | **`overlay`**       | <code>boolean</code>                            | 是否遮盖内容            | 1.0.0 |
+| Prop          | Type                 | Description                  | Since |
+| ------------- | -------------------- | ---------------------------- | ----- |
+| **`overlay`** | <code>boolean</code> | Whether it overlays content. | 1.0.0 |
 
 ### DOMInsets
 
-  | Prop                | Type                                            | Description           | Since |
-  | ------------------- | ----------------------------------------------- | --------------------- | ----- |
-  | **`top`**           | <code>number</code>                             | 顶部插入的尺寸数据       | 1.0.0 |
-  | **`right`**         | <code>number</code>                             | 右侧插入的尺寸数据       | 1.0.0 |
-  | **`bottom`**        | <code>number</code>                             | 底部插入的尺寸数据       | 1.0.0 |
-  | **`left`**          | <code>number</code>                             | 左侧插入的尺寸数据       | 1.0.0 |
-
-
-
+| Prop         | Type                | Description                 | Since |
+| ------------ | ------------------- | --------------------------- | ----- |
+| **`top`**    | <code>number</code> | The top inset size data.    | 1.0.0 |
+| **`right`**  | <code>number</code> | The right inset size data.  | 1.0.0 |
+| **`bottom`** | <code>number</code> | The bottom inset size data. | 1.0.0 |
+| **`left`**   | <code>number</code> | The left inset size data.   | 1.0.0 |
