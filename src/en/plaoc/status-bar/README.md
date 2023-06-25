@@ -6,7 +6,6 @@ tag:
   - WebComponent
 ---
 
-
 Control the system status bar.
 
 > See example code: [Status Bar](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/StatusBar.vue)
@@ -99,7 +98,7 @@ Hide the status bar.
 - Method signature:
 
   ```ts
-    async hide(): Promise<unknown>
+  async hide(): Promise<unknown>
   ```
 
 ### setVisible
@@ -175,7 +174,7 @@ Set a specific state item individually.
 - Method signature:
 
 ```ts
-setStateByKey<K extends keyof $StatusBarWritableState>(key: K, value: $StatusBarWritableState[key]): Promise<void>
+  setStateByKey<K extends keyof $StatusBarWritableState>(key: K, value: $StatusBarWritableState[key]): Promise<void>
 ```
 
 | Param       | Type                                                                            | Description                       |

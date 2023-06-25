@@ -83,11 +83,11 @@ export const zhSidebar = sidebar({
         },
       ],
     },
-    // {
-    //   text: "Service",
-    //   icon: "note",
-    //   prefix: "service/README.md",
-    //   link: "service/README.md",
+    {
+      text: "Service",
+      icon: "note",
+      prefix: "service/README.md",
+      link: "service/README.md",
     //   children: [
     //     {
     //       text: "VFS",
@@ -106,7 +106,7 @@ export const zhSidebar = sidebar({
     //       link: "/service/gui/",
     //     },
     //   ],
-    // },
+    },
     // {
     //   text: "SystemApp",
     //   icon: "note",

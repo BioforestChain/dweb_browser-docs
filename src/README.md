@@ -23,42 +23,42 @@ features:
   - title: APP 链上认证
     icon: lock
     details: 为APP上链申请的DAPPID,方便对APP进行认证和溯源。
-    link: /tools/bundle/
+    link: /app/bundle/
 
   - title: APP配置
     icon: config
     details: 自由配置规则，您的后端根目录创建一个`bfs-metadata.ts`的配置文件，具体查看后端配置。
-    link: /plugin/
+    link: /plaoc/
 
   - title: 打包配置
     icon: slides
     details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.zip`文件，然后上传到任何地方。
-    link: /tools/bundle/
+    link: /app/bundle/
 
   - title: 一次打包，多平台使用
     icon: workingDirectory
     details: 提供android,ios,desktop三端部署。
-    link: /tools/bundle/
+    link: /app/bundle/
 
   - title: 应用互联
     icon: link
     details: 本地app通过自定义dwebServiceWorker通信。
-    link: /plugin/dweb-service-worker/
+    link: /plaoc/dweb-service-worker/
 
   - title: 遵循web开发规范
     icon: api
     details: 所有的api符合web开发人员的开发直觉，遵循web标准。
-    link: /plugin/
+    link: /plaoc/
 
   - title: 协作共享
     icon: group
     details: 标签添加了分享声明<html is="dweb-html">那么整个html页面就被进入共享模式。
-    link: /plugin/
+    link: /plaoc/
 
   - title: npm支持
     icon: npm
     details: 所有的包上传到npm平台提供支持。
-    link: https://www.npmjs.com/settings/bfex/packages
+    link: https://www.npmjs.com/package/@dweb-browser/plaoc
 
   - title: Deno api风格
     icon: support
