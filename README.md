@@ -2,7 +2,7 @@
 
 Dweb-browser 前后端开发文档,构建符合开发者直觉的 API。
 
-文档站点：[docs.dweb-browser.org/](docs.dweb-browser.org/)
+文档站点：[docs.dweb-browser.org](https://docs.dweb-browser.org)
 
 ## 快速启动
 
