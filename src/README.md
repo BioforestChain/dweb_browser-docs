@@ -233,7 +233,9 @@ bfs 是基于 dweb-browser 平台构建的一系列应用群，目的是给人�
 
 - 安装
 
-`deno install -A https://deno.land/x/plaoc/cli/plaoc.ts`
+```bash
+npm install -g @plaoc/cli
+```
 
 - 打包成app
 

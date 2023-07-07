@@ -246,7 +246,9 @@ It includes, but is not limited to, the following consensus and applications:
 
 - Installation
 
-`deno install -A https://deno.land/x/plaoc/cli/plaoc.ts`
+```bash
+npm install -g @plaoc/cli
+```
 
 - Packaging as an app
 
