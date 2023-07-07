@@ -17,7 +17,7 @@ tag:
 点击系统后退触发该事件。
 
 ```ts
-import { CloseWatcher } from "@dweb-browser/plaoc";
+import { CloseWatcher } from "@plaoc/plugins";
 const closer = new CloseWatcher();
 closer.addEventListener("close", (event) => {
   console.log("CloseWatcher close", event.isTrusted, event.timeStamp);

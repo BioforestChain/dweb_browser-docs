@@ -19,7 +19,7 @@ To use the WebComponent, you need to mount the DOM node and then call the corres
 <body>
   <dweb-share></dweb-share>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const share = document.querySelector("dweb-share")!
     // Share content
     const shareHandle = async () => {
@@ -65,7 +65,7 @@ Shares content. When sharing files, other parameters can be omitted.
 The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
-import { sharePlugin } from "@dweb-browser/plaoc";
+import { sharePlugin } from "@plaoc/plugins";
 
 // Directly call the share function
 sharePlugin.share(shareData); // Pretend there is data

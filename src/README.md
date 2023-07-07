@@ -58,7 +58,7 @@ features:
   - title: npm支持
     icon: npm
     details: 所有的包上传到npm平台提供支持。
-    link: https://www.npmjs.com/package/@dweb-browser/plaoc
+    link: https://www.npmjs.com/package/@plaoc/plugins
 
   - title: Deno api风格
     icon: support

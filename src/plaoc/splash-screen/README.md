@@ -27,7 +27,7 @@ tag:
 
 ```ts
 <script setup lang="ts">
-import { HTMLDwebBiometricsElement } from '@dweb-browser/plaoc';
+import { HTMLDwebBiometricsElement } from '@plaoc/plugins';
 const $biometricsPlugin = ref<HTMLDwebBiometricsElement>();
 
 let biometrics: HTMLDwebBiometricsElement;
@@ -76,7 +76,7 @@ const fingerprint = async () => {
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { biometricsPlugin } from "@dweb-browser/plaoc";
+import { biometricsPlugin } from "@plaoc/plugins";
 
 // 调用生物识别
 biometricsPlugin.biometrics();

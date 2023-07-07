@@ -5,13 +5,13 @@
 Install the project:
 
 ```bash
-npm install @dweb-browser/plaoc
+npm install @plaoc/plugins
 ```
 
 ### How to Use as a Plugin
 
 ```typescript
-import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 // Call barcode scanning
 const taskPhoto = async () => {
   await barcodeScannerPlugin.startScanning();
@@ -25,7 +25,7 @@ const taskPhoto = async () => {
   <dweb-barcode-scanning></dweb-barcode-scanning>
   <button @click="taskPhoto()">scanner</button>
 <script type="module">
-import "@dweb-browser/plaoc"
+import "@plaoc/plugins"
 const barcodeScanner = document.querySelector("dweb-barcode-scanning")!
 // Call barcode scanning
 async function taskPhoto() {

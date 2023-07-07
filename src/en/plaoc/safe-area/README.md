@@ -18,7 +18,7 @@ First, you need to declare the HTML tag style. When using this component, it mou
 <body>
   <dweb-safe-area></dweb-safe-area>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const safeArea = document.querySelector("dweb-safe-area")!
     async function getOverlay() {
       return await safeArea.getOverlay();
@@ -89,7 +89,7 @@ Controls the safe area and provides plugin functionality to the outside. The fun
 Import:
 
 ```ts
-import { safeAreaPlugin } from "@dweb-browser/plaoc";
+import { safeAreaPlugin } from "@plaoc/plugins";
 ```
 
 ### setState

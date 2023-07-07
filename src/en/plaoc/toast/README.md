@@ -19,7 +19,7 @@ To use the Toast WebComponent, you need to mount the DOM node and then call the 
 <body>
   <dweb-toast></dweb-toast>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const toast = document.querySelector("dweb-toast")!
     // Show the toast
     const showToast = async () => {
@@ -48,7 +48,7 @@ Displays the toast.
 The functionality of the Toast WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
-import { toastPlugin } from "@dweb-browser/plaoc";
+import { toastPlugin } from "@plaoc/plugins";
 
 toastPlugin.show({ text: "I'm a toast🍉", duration: "short", position: "top" });
 ```

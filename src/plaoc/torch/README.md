@@ -19,7 +19,7 @@ tag:
 <body>
   <dweb-torch></dweb-torch>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const torch = document.querySelector("dweb-torch")!
     // 打开/关闭手电筒
     const toggleTorch = async () => {
@@ -58,7 +58,7 @@ tag:
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { torchPlugin } from "@dweb-browser/plaoc";
+import { torchPlugin } from "@plaoc/plugins";
 
 // 获取手电筒状态
 torchPlugin.getTorchState();

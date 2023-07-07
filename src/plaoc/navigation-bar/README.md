@@ -18,7 +18,7 @@ tag:
 <body>
   <dweb-navigation-bar></dweb-navigation-bar>
   <script type="module">
-    mport "@dweb-browser/plaoc";
+    mport "@plaoc/plugins";
     const navigationBar = document.querySelector("dweb-navigation-bar")!
     async function getState() {
      console.log(await navigationBar.getState());

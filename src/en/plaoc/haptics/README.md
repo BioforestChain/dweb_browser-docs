@@ -20,8 +20,8 @@ Using Vue 3 as an example:
 <body>
   <dweb-haptics></dweb-haptics>
   <script type="module">
-    import "@dweb-browser/plaoc";
-    import { ImpactStyle, NotificationType } from "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
+    import { ImpactStyle, NotificationType } from "@plaoc/plugins";
     const haptics = document.querySelector("dweb-haptics")!
     // Trigger light impact on a lightweight object
     const impactLight = async () => {
@@ -132,7 +132,7 @@ Custom haptic vibration effect.
 The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
-import { hapticsPlugin } from "@dweb-browser/plaoc";
+import { hapticsPlugin } from "@plaoc/plugins";
 
 // Haptic feedback vibration for a click gesture
 hapticsPlugin.vibrateClick();

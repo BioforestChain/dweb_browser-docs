@@ -19,7 +19,7 @@ First, mount the DOM node, then you can call the corresponding API.
 <body>
   <dweb-biometrics></dweb-biometrics>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const biometrics = document.querySelector("dweb-biometrics")!
     // Check if the device supports biometrics
     const check = async () => {
@@ -61,7 +61,7 @@ Call biometrics.
 The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
-import { biometricsPlugin } from "@dweb-browser/plaoc";
+import { biometricsPlugin } from "@plaoc/plugins";
 
 // Call biometrics
 biometricsPlugin.biometrics();

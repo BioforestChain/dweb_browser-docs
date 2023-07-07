@@ -19,7 +19,7 @@ To use the Torch WebComponent, you need to mount the DOM node and then call the 
 <body>
   <dweb-torch></dweb-torch>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const torch = document.querySelector("dweb-torch")!
     // Toggle the torch on/off
     const toggleTorch = async () => {
@@ -58,7 +58,7 @@ Gets the current state of the flashlight. Returns `true` if it is on.
 The functionality of the Torch WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
-import { torchPlugin } from "@dweb-browser/plaoc";
+import { torchPlugin } from "@plaoc/plugins";
 
 // Get the torch state
 torchPlugin.getTorchState();

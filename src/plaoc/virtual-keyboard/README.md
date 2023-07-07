@@ -18,7 +18,7 @@ tag:
 <body>
   <dweb-virtual-keyboard></dweb-virtual-keyboard>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const virtualKeyBoard = document.querySelector("dweb-virtual-keyboard")!
     // 监听状态变化
     virtualKeyBoard.addEventListener("statechange",(event)=> {
@@ -87,7 +87,7 @@ tag:
 导入
 
 ```ts
-import { virtualKeyboardPlugin } from "@dweb-browser/plaoc";
+import { virtualKeyboardPlugin } from "@plaoc/plugins";
 ```
 
 ### setState

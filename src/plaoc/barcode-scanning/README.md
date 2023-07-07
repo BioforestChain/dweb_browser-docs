@@ -20,7 +20,7 @@ tag:
   <dweb-barcode-scanning></dweb-barcode-scanning>
   <button @click="taskPhoto()">scanner</button>
   <script type="module">
-    import "@dweb-browser/plaoc"
+    import "@plaoc/plugins"
     const barcodeScanner = document.querySelector("dweb-barcode-scanning")!
     // Call barcode scanning
     async function taskPhoto() {
@@ -86,7 +86,7 @@ getView: HTMLElement | null;
     capture
   />
   <script type="module">
-    import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
+    import { barcodeScannerPlugin } from "@plaoc/plugins";
     const onFileChanged = async ($event: Event) => {
       const target = $event.target as HTMLInputElement;
       if (target && target.files?.[0]) {

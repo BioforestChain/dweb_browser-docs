@@ -20,7 +20,7 @@ tag:
 <body>
   <dweb-network></dweb-network>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const network = document.querySelector("dweb-network")!
     // 查看网络状态
     const getStatus = async () => {
@@ -61,7 +61,7 @@ tag:
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { networkPlugin } from "@dweb-browser/plaoc";
+import { networkPlugin } from "@plaoc/plugins";
 
 // 获取网络状态
 networkPlugin.getStatus();

@@ -19,7 +19,7 @@ tag:
 <body>
   <dweb-share></dweb-share>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const share = document.querySelector("dweb-share")!
     // 分享
     const shareHandle = async () => {
@@ -65,7 +65,7 @@ tag:
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { sharePlugin } from "@dweb-browser/plaoc";
+import { sharePlugin } from "@plaoc/plugins";
 
 // 直接调用分享
 sharePlugin.share(shareData); // 假装有数据

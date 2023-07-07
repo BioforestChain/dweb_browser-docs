@@ -20,7 +20,7 @@ Using Vue 3 as an example:
 <body>
   <dweb-network></dweb-network>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const network = document.querySelector("dweb-network")!
     // Check network status
     const getStatus = async () => {
@@ -61,7 +61,7 @@ Get the network status.
 The functionality of the WebComponent is essentially provided by the Plugin. Therefore, the Plugin includes the same API as the WebComponent.
 
 ```ts
-import { networkPlugin } from "@dweb-browser/plaoc";
+import { networkPlugin } from "@plaoc/plugins";
 
 // Get the network status
 networkPlugin.getStatus();

@@ -18,7 +18,7 @@ Declares the HTML tag style. When using it, you need to mount it to the DOM firs
 <body>
   <dweb-navigation-bar></dweb-navigation-bar>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const navigationBar = document.querySelector("dweb-navigation-bar")!;
     async function getState() {
      console.log(await navigationBar.getState());
@@ -148,7 +148,7 @@ Controls the navigation bar and provides plugin functionality to the outside. Th
 Import:
 
 ```ts
-import { navigationBarPlugin } from "@dweb-browser/plaoc";
+import { navigationBarPlugin } from "@plaoc/plugins";
 ```
 
 ### setState

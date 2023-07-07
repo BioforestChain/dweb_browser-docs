@@ -19,7 +19,7 @@ tag:
 <body>
   <dweb-biometrics></dweb-biometrics>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const biometrics = document.querySelector("dweb-biometrics")!
     // 检查设备是否可以生物识别
     const check = async () => {
@@ -61,7 +61,7 @@ tag:
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { biometricsPlugin } from "@dweb-browser/plaoc";
+import { biometricsPlugin } from "@plaoc/plugins";
 
 // 调用生物识别
 biometricsPlugin.biometrics();

@@ -18,7 +18,7 @@ First, you need to declare the HTML tag style. The component mounts the `statech
 <body>
   <dweb-virtual-keyboard></dweb-virtual-keyboard>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const virtualKeyBoard = document.querySelector("dweb-virtual-keyboard")!
     // Listen for state changes
     virtualKeyBoard.addEventListener("statechange",(event)=> {
@@ -86,7 +86,7 @@ Controls the virtual keyboard and provides plugin functionality to the outside. 
 Import:
 
 ```ts
-import { virtualKeyboardPlugin } from "@dweb-browser/plaoc";
+import { virtualKeyboardPlugin } from "@plaoc/plugins";
 ```
 
 ### setState

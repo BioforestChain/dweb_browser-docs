@@ -58,7 +58,7 @@ features:
   - title: npm Support
     icon: npm
     details: Upload all packages to the npm platform for support.
-    link: https://www.npmjs.com/package/@dweb-browser/plaoc
+    link: https://www.npmjs.com/package/@plaoc/plugins
 
   - title: Deno API Style
     icon: support

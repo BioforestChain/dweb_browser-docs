@@ -5,13 +5,13 @@
 安装项目：
 
 ```bash
-npm install @dweb-browser/plaoc
+npm install @plaoc/plugins
 ```
 
 ### 如何以插件形式使用 
 
 ```typescript
-import { barcodeScannerPlugin } from "@dweb-browser/plaoc";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 // 调用扫码
 const taskPshoto = async () => {
   await barcodeScannerPlugin.startScanning();
@@ -25,7 +25,7 @@ const taskPshoto = async () => {
   <dweb-barcode-scanning></dweb-barcode-scanning>
   <button @click="taskPhoto()">scanner</button>
 <script type="module">
-import "@dweb-browser/plaoc"
+import "@plaoc/plugins"
 const barcodeScanner = document.querySelector("dweb-barcode-scanning")!
 // Call barcode scanning
 async function taskPhoto() {

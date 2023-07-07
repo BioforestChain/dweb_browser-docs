@@ -19,7 +19,7 @@ Toast,一个小的弹窗信息，在一段时间后消失。
 <body>
   <dweb-toast></dweb-toast>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const toast = document.querySelector("dweb-toast")!
     // 显示
     const showToast = async () => {
@@ -48,7 +48,7 @@ Toast,一个小的弹窗信息，在一段时间后消失。
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { toastPlugin } from "@dweb-browser/plaoc";
+import { toastPlugin } from "@plaoc/plugins";
 
 toastPlugin.show({ text: "我是toast🍉", duration: "short", position: "top" });
 ```

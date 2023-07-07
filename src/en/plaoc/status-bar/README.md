@@ -18,7 +18,7 @@ First, you need to declare the HTML tag style. This component mounts the `statec
 <body>
   <dweb-status-bar></dweb-status-bar>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const statusBar = document.querySelector("dweb-status-bar")!
      async function hideStatusBar() {
       await statusBar.hide()
@@ -148,7 +148,7 @@ Control the system status bar and provide plugin functionality. The functionalit
 Import
 
 ```ts
-import { statusBarPlugin } from "@dweb-browser/plaoc";
+import { statusBarPlugin } from "@plaoc/plugins";
 ```
 
 ### setState

@@ -20,8 +20,8 @@ tag:
 <body>
   <dweb-haptics></dweb-haptics>
   <script type="module">
-    import "@dweb-browser/plaoc";
-    import { ImpactStyle,NotificationType } from "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
+    import { ImpactStyle,NotificationType } from "@plaoc/plugins";
     const haptics = document.querySelector("dweb-haptics")!
     // 触碰轻质量物体
     const impactLight = async () => {
@@ -133,7 +133,7 @@ tag:
 WebComponent 的功能本质上由 Plugin 提供，因此 Plugin 的 API 同 WebComponent。
 
 ```ts
-import { hapticsPlugin } from "@dweb-browser/plaoc";
+import { hapticsPlugin } from "@plaoc/plugins";
 
 // 单击手势的反馈振动
 biometricsPlugin.vibrateClick();

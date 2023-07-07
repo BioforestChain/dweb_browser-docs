@@ -18,7 +18,7 @@ tag:
 <body>
   <dweb-safe-area></dweb-safe-area>
   <script type="module">
-    import "@dweb-browser/plaoc";
+    import "@plaoc/plugins";
     const safeArea = document.querySelector("dweb-safe-area")!
     async function getOverlay() {
       return await safeArea.getOverlay();
@@ -90,7 +90,7 @@ tag:
 使用
 
 ```ts
-import { safeAreaPlugin } from "@dweb-browser/plaoc";
+import { safeAreaPlugin } from "@plaoc/plugins";
 ```
 
 ### setState
