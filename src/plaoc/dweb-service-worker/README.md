@@ -25,8 +25,9 @@ tag:
 - 调用例子：
 
 ```ts
+import { dwebServiceWorker } from "@plaoc/plugins"
 const sayHi = async () => {
-  const result = await sw.externalFetch(`desktop.dweb.waterbang.top.dweb`, {
+  const result = await dwebServiceWorker.externalFetch(`desktop.dweb.waterbang.top.dweb`, {
     pathname: "/say/hi",
     search: {
       message: "今晚吃螃🦀️蟹吗？",

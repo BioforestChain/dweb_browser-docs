@@ -149,6 +149,10 @@ tag:
 
 ```ts
 import { statusBarPlugin } from "@plaoc/plugins";
+statusBarPlugin.state.onChange((state) => {
+  console.log(state.color)
+})
+statusBarPlugin.setColor("#fffffff")
 ```
 
 ### setState

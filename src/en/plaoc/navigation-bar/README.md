@@ -149,6 +149,10 @@ Import:
 
 ```ts
 import { navigationBarPlugin } from "@plaoc/plugins";
+navigationBarPlugin.state.onChange((state) => {
+  console.log(state.color)
+})
+navigationBarPlugin.setColor("#fffffff")
 ```
 
 ### setState

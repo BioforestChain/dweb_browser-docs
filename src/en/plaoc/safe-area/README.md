@@ -90,6 +90,9 @@ Import:
 
 ```ts
 import { safeAreaPlugin } from "@plaoc/plugins";
+safeAreaPlugin.state.onChange((state) => {
+  console.log(state)
+})
 ```
 
 ### setState

@@ -87,6 +87,10 @@ Import:
 
 ```ts
 import { virtualKeyboardPlugin } from "@plaoc/plugins";
+virtualKeyboardPlugin.state.onChange((state) => {
+  console.log(state.overlay)
+})
+virtualKeyboardPlugin.getOverlay()
 ```
 
 ### setState
