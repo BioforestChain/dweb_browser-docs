@@ -169,7 +169,7 @@ update(): UpdateControllerPlugin
 - 调用例子：
 
 ```ts
-updateContoller.addEventListener("end", (event: Event) => {
+updateContoller.addEventListener("start", (event: Event) => {
   console.log("Dweb Service Worker updateContoller end =>", event);
 });
 ```

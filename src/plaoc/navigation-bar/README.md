@@ -148,7 +148,7 @@ tag:
 导入
 
 ```ts
-import { navigationBarPlugin } from "@bfx/plugin";
+import { navigationBarPlugin } from "@plaoc/plugins";
 ```
 
 ### setState
