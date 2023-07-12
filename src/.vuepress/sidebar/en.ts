@@ -81,6 +81,14 @@ export const enSidebar = sidebar({
           text: "Torch",
           link: "/plaoc/torch/"
         },
+        {
+          text: "Device",
+          link: "/plaoc/device/"
+        },
+        {
+          text: "MWebView",
+          link: "/plaoc/mwebview/"
+        },
       ],
     },
     {

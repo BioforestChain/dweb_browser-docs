@@ -14,7 +14,6 @@ tag:
 ## Network WebComponent API
 
 先挂载 DOM 节点，然后就能调用相应 API。
-以 vue3 为示例：
 
 ```html
 <body>
