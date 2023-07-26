@@ -1,4 +1,6 @@
-# DwebBrowser 前端开发文档
+# Plaoc 
+
+一个提供跨平台的访问系统功能的前端插件；
 
 ## 快速上手
 
@@ -8,7 +10,7 @@
 npm install @plaoc/plugins
 ```
 
-### 如何以插件形式使用 
+### 以 插件的形式 使用
 
 ```typescript
 import { barcodeScannerPlugin } from "@plaoc/plugins";
@@ -18,7 +20,7 @@ const taskPshoto = async () => {
 };
 ```
 
-### 如何以 webComponent 形式使用
+### 以 webComponent 形式使用
 
 ```html
 <body>

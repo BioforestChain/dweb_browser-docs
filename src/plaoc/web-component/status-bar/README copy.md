@@ -1,12 +1,50 @@
 ---
-title: StatusBar
+title: HTMLDwebStatusBarElement
 category:
   - Plugin
 tag:
   - WebComponent
 ---
 
-控制系统状态栏。
+HTMLDwebStatusBarElement 接口用来表示系统状态栏元素, 并提供访问系统状态栏的属性和方法
+
+
+
+## 属性
+- 无
+
+
+## 方法
+- HTMLDwebStatusBarElement.setColor()
+
+  设置系统状态栏的颜色;
+
+- HTMLDwebStatusBarElement.getColor()
+
+  获取系统状态栏的颜色；
+
+- HTMLDwebStatusBarElement.setStyle()
+
+  设置系统状态栏的风格;
+
+- HTMLDwebStatusBarElement.getStyle()
+
+  获取系统状态栏的风格;
+
+
+## 事件
+
+使用 addEventlistener() 实现事件的添加
+
+- statechange
+
+  当系统状态栏的状态发生改变的时候触发
+
+
+
+## 平台支持
+
+
 
 > 具体查看示例代码： [Status Bar](https://github.com/BioforestChain/dweb_browser/blob/main/plaoc/demo/src/pages/StatusBar.vue)
 
@@ -38,12 +76,18 @@ tag:
 - 调用签名：
 
   ```ts
-    async setColor(color: string): Promise<string>
+    async setColor(color: string): Promise<null>
   ```
+#### 参数:
+
 
   | Param       | Type                | Description                        |
   | ----------- | ------------------- | ---------------------------------- |
   | **`color`** | <code>string</code> | 十六进制背景色的值,如`#3C5D65B6`。     |
+
+#### 返回值:
+    一个 Promise 对象， resolve 时回传 Null 对象
+
 
 ### getColor
 
@@ -54,6 +98,7 @@ tag:
   ```ts
     async getColor(): Promise<string>
   ```
+  -  返回 `16进制颜色的字符串表示` `#DD131380`
 
 ### setStyle
 
@@ -62,7 +107,7 @@ tag:
 - 调用签名
 
   ```ts
-    setStyle(style: BAR_STYLE): Promise<unknown>
+    setStyle(style: BAR_STYLE): Promise<null>
   ```
 
 | Param       | Type                                            | Description        |
