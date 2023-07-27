@@ -27,32 +27,31 @@ export const zhSidebar = sidebar({
       link: "plaoc/README.md",
       children: [
         {
+          text: "Plugin",
+          icon: "plugin",
+          prefix: "/plaoc/plugin",
+          link: "/plaoc/plugin/index.md",
+        },
+        {
           text: "WebComponent",
           icon: "discover",
           prefix: "/plaoc/webcomponent",
           link: "/plaoc/web-component/index.md",
-          children: [
-            {
-              text: "HTMLDwebStatusBarElement",
-              icon: "discover",
-              prefix: "/plaoc/webcomponent/status-bar",
-              link: "/plaoc/web-component/status-bar/index.md",
-            }
-          ]
+          // children: [
+          //   {
+          //     text: "HTMLDwebStatusBarElement",
+          //     icon: "discover",
+          //     prefix: "/plaoc/webcomponent/status-bar",
+          //     link: "/plaoc/web-component/status-bar/index.md",
+          //   }
+          // ]
         },
+
         {
-          text: "Plugin",
-          icon: "discover",
-          prefix: "/plaoc/plugin",
-          link: "/plaoc/plugin/index.md",
-          children: [
-            {
-              text: "StatusBarPlugin",
-              icon: "discover",
-              prefix: "/plaoc/plugin/status-bar",
-              link: "/plaoc/plugin/status-bar/index.md",
-            }
-          ]
+          text: "Interface",
+          icon: "object",
+          prefix: "/plaoc/interface",
+          link: "interface/",
         },
 
         // {
@@ -166,4 +165,45 @@ export const zhSidebar = sidebar({
     //   ],
     // },
   ],
+  "/plaoc/plugin/":[
+    "",
+    {
+      text: "StatusBarPlugin",
+      icon: "plugin",
+      prefix: "/plaoc/plugin/status-bar",
+      link: "status-bar/",
+    },
+    {
+      text: "NavigationBarPlugin",
+      icon: "plugin",
+      prefix: "/plaoc/plugin/navigation-bar",
+      link: "navigation-bar/",
+    },
+  ],
+  "/plaoc/interface/":[
+    {
+      text: "Ploac",
+      prefix: "/plaoc/",
+      link: "/plaoc/",
+    },
+    "",
+    {
+      icon: "object",
+      text: "DOMInsets",
+      link: "dom-insets/",
+    },
+    {
+      icon: "object",
+      text: "RGBAColor",
+      link: "rgba-color/",
+    },
+    {
+      icon: "object",
+      text: "StateObserver",
+      link: "state-observer/",
+    }
+  ],
+  
 });
+
+ 

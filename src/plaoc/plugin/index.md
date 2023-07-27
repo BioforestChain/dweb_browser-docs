@@ -18,4 +18,6 @@ const taskPshoto = async () => {
 ```
 
 ## 相关链接
-[Plaoc WebComponent](../web-component/index.md)
+[Plaoc](../)
+
+[WebComponent](../web-component/index.md)
