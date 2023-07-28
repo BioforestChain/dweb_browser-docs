@@ -1,16 +1,16 @@
 ---
-title: NavigationBarPlugin.setState()
+title: VirtualKeyboardPlugin.setState()
 category:
   - Plugin
 tag:
-  - NavigationBarPlugin
+  - VirtualKeyboardPlugin
   - setState 
 ---
 
-设置系统导航栏状态
+设置虚拟键盘的状态
 
 ```js
-NavigationBarPlugin.setState(state)
+VirtualKeyboardPlugin.setState(state)
 ```
 
 ## 参数
@@ -18,7 +18,7 @@ NavigationBarPlugin.setState(state)
   - state
 
     实现了部分[State](../../interface/state/index.md)接口的对象；
-    合法的属性列表包括:`[overlay, visible, color, style]`
+    合法的属性列表包括:`[overlay]`
 
 ## 返回值
 
@@ -26,8 +26,8 @@ NavigationBarPlugin.setState(state)
 
 ## 示例
 ```js
-import { NavigationBarPlugin } from "@plaoc/plugins";
-const value = NavigationBarPlugin.setState({color:"#FFFFFFFF"})
+import { virtualKeyboardPlugin } from "@plaoc/plugins";
+const value = virtualKeyboardPlugin.setState({overlay: true})
 ```
 
 
@@ -39,6 +39,6 @@ const value = NavigationBarPlugin.setState({color:"#FFFFFFFF"})
 
 ## 相关链接
 
-[NavigationBarPlugin](./index.md)
+[VirtualKeyboardPlugin](./index.md)
 
 

@@ -1,209 +1,78 @@
 import { sidebar } from "vuepress-theme-hope";
+import zhApp from "./zh-app";
+import zhPlaocInterface from "./zh-plaoc-interface";
+import zhPlaocPluginBarcodeScanner from "./zh-plaoc-plugin-barcode-scanner";
+import zhPlaocPluginBiometrics from "./zh-plaoc-plugin-biometrics";
+import zhPlaocPluginNavigationBar from "./zh-plaoc-plugin-navigation-bar";
+import zhPlaocPluginSafeArea from "./zh-plaoc-plugin-safe-area";
+import zhPlaocPluginStatusBar from "./zh-plaoc-plugin-status-bar";
+import zhPlaocPluginVirtualKeyboard from "./zh-plaoc-plugin-virtual-keyboard";
+import zhPlaocPlugin from "./zh-plaoc-plugin"
+import zhPlaoc from "./zh-plaoc"
+
 
 
 export const zhSidebar = sidebar({
-  "/": [
-    "",
-    {
-      text: "Plaoc APP",
-      icon: "app",
-      prefix: "app/",
-      link: "app",
-      children: [
-        {
-          text: "命令行打包工具",
-          link: "/app/bundle/",
-        },
-        {
-          text: "开发者工具",
-          link: "/app/developer-tool/",
-        },
-      ]
-    },
-    {
-      icon: "discover",
-      text: "Plaoc",
-      prefix: "/plaoc/",
-      link: "plaoc/README.md",
-      children: [
-        {
-          text: "Plugin",
-          icon: "plugin",
-          prefix: "/plaoc/plugin",
-          link: "/plaoc/plugin/index.md",
-        },
-        {
-          text: "WebComponent",
-          icon: "discover",
-          prefix: "/plaoc/webcomponent",
-          link: "/plaoc/web-component/index.md",
-          // children: [
-          //   {
-          //     text: "HTMLDwebStatusBarElement",
-          //     icon: "discover",
-          //     prefix: "/plaoc/webcomponent/status-bar",
-          //     link: "/plaoc/web-component/status-bar/index.md",
-          //   }
-          // ]
-        },
+  // "/": [
+  //   "",
+  //   {
+  //     text: "Plaoc APP",
+  //     icon: "app",
+  //     prefix: "app/",
+  //     link: "app/",
+  //     children: [
+  //       {
+  //         text: "命令行打包工具",
+  //         link: "/app/bundle/",
+  //       },
+  //       {
+  //         text: "开发者工具",
+  //         link: "/app/developer-tool/",
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     icon: "discover",
+  //     text: "Plaoc",
+  //     prefix: "/plaoc/",
+  //     link: "plaoc/README.md",
+  //   },
+  //   {
+  //     text: "Service",
+  //     icon: "note",
+  //     prefix: "service/README.md",
+  //     link: "service/README.md",
+  //   //   children: [
+  //   //     {
+  //   //       text: "VFS",
+  //   //       link: "/service/vfs/",
+  //   //     },
+  //   //     {
+  //   //       text: "SSR",
+  //   //       link: "/service/ssr/",
+  //   //     },
+  //   //     {
+  //   //       text: "TUI",
+  //   //       link: "/service/tui/",
+  //   //     },
+  //   //     {
+  //   //       text: "GUI",
+  //   //       link: "/service/gui/",
+  //   //     },
+  //   //   ],
+  //   },
+  // ],
+  "/app/": zhApp,
+  "/plaoc/": zhPlaoc,
+  "/plaoc/plugin/": zhPlaocPlugin,
+  "/plaoc/plugin/status-bar/": zhPlaocPluginStatusBar,
+  "/plaoc/plugin/navigation-bar/": zhPlaocPluginNavigationBar,
+  "/plaoc/plugin/safe-area/": zhPlaocPluginSafeArea,
+  "/plaoc/plugin/virtual-keyboard/": zhPlaocPluginVirtualKeyboard,
+  "/plaoc/plugin/barcode-scanner/": zhPlaocPluginBarcodeScanner,
+  "/plaoc/plugin/biometrics/": zhPlaocPluginBiometrics,
+  "/plaoc/interface/": zhPlaocInterface,
 
-        {
-          text: "Interface",
-          icon: "object",
-          prefix: "/plaoc/interface",
-          link: "interface/",
-        },
-
-        // {
-        //   text: "DwebServiceWorker",
-        //   link: "/plaoc/dweb-service-worker/",
-        // },
-        // {
-        //   text: "BarcodeScanning",
-        //   link: "/plaoc/barcode-scanning/"
-        // },
-        // {
-        //   text: "HTMLDwebStatusBarElement",
-        //   link: "/plaoc/status-bar/",
-        // },
-        // {
-        //   text: "VirtualKeyboard",
-        //   link: "/plaoc/virtual-keyboard/",
-        // },
-        // {
-        //   text: "NavigationBar",
-        //   link: "/plaoc/navigation-bar/",
-        // },
-        // {
-        //   text: "SafeArea",
-        //   link: "/plaoc/safe-area"
-        // },
-        // {
-        //   text: "Biometrics",
-        //   link: "/plaoc/biometrics/",
-        // },
-        // {
-        //   text: "CloseWatcher",
-        //   link: "/plaoc/close-watcher/",
-        // },
-        // {
-        //   text: "Haptics",
-        //   link: "/plaoc/haptics/"
-        // },
-        // {
-        //   text: "Network",
-        //   link: "/plaoc/network/"
-        // },
-        // {
-        //   text: "Share",
-        //   link: "/plaoc/share/"
-        // },
-        // // {
-        // //   text: "SplashScreen",
-        // //   link: "/plaoc/splash-screen/"
-        // // },
-        // {
-        //   text: "Toast",
-        //   link: "/plaoc/toast/"
-        // },
-        // {
-        //   text: "Torch",
-        //   link: "/plaoc/torch/"
-        // },
-        // {
-        //   text: "Device",
-        //   link: "/plaoc/device/"
-        // },
-        // {
-        //   text: "MWebView",
-        //   link: "/plaoc/mwebview/"
-        // },
-      ],
-    },
-    {
-      text: "Service",
-      icon: "note",
-      prefix: "service/README.md",
-      link: "service/README.md",
-    //   children: [
-    //     {
-    //       text: "VFS",
-    //       link: "/service/vfs/",
-    //     },
-    //     {
-    //       text: "SSR",
-    //       link: "/service/ssr/",
-    //     },
-    //     {
-    //       text: "TUI",
-    //       link: "/service/tui/",
-    //     },
-    //     {
-    //       text: "GUI",
-    //       link: "/service/gui/",
-    //     },
-    //   ],
-    },
-    // {
-    //   text: "SystemApp",
-    //   icon: "note",
-    //   prefix: "systemApp",
-    //   link: "systemApp/README.md",
-    //   children: [
-    //     {
-    //       text: "BNRTC",
-    //       link: "/systemApp/bnrtc/",
-    //     },
-    //     {
-    //       text: "DATABASE",
-    //       link: "/systemApp/database/",
-    //     },
-    //     {
-    //       text: "NOTIFICATION",
-    //       link: "/systemApp/notification/",
-    //     },
-    //   ],
-    // },
-  ],
-  "/plaoc/plugin/":[
-    "",
-    {
-      text: "StatusBarPlugin",
-      icon: "plugin",
-      prefix: "/plaoc/plugin/status-bar",
-      link: "status-bar/",
-    },
-    {
-      text: "NavigationBarPlugin",
-      icon: "plugin",
-      prefix: "/plaoc/plugin/navigation-bar",
-      link: "navigation-bar/",
-    },
-  ],
-  "/plaoc/interface/":[
-    {
-      text: "Ploac",
-      prefix: "/plaoc/",
-      link: "/plaoc/",
-    },
-    "",
-    {
-      icon: "object",
-      text: "DOMInsets",
-      link: "dom-insets/",
-    },
-    {
-      icon: "object",
-      text: "RGBAColor",
-      link: "rgba-color/",
-    },
-    {
-      icon: "object",
-      text: "StateObserver",
-      link: "state-observer/",
-    }
-  ],
-  
 });
 
- 
+

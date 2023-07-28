@@ -24,7 +24,7 @@ NavigationBarPlugin.getOverlay()
 ## 示例
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
-const value = NavigationBarPlugin.getOverlay("#FFFFFFFF")
+const value = NavigationBarPlugin.getOverlay()
 ```
 
 

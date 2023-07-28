@@ -24,7 +24,7 @@ StatusBarPlugin.getOverlay()
 ## 示例
 ```js
 import { statusBarPlugin } from "@plaoc/plugins";
-const value = statusBarPlugin.getOverlay("#FFFFFFFF")
+const value = statusBarPlugin.getOverlay()
 ```
 
 

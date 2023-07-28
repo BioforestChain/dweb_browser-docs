@@ -18,7 +18,7 @@ NavigationBarPlugin.setStateByKey(key, value)
   - key
 
     字符串，需要设置的状态属性名称
-    合法的属性名称范围参考[NavigationBarPlugin.state](./index.md)属性的键名；
+    合法的属性列表包括:`[overlay, visible, color, style]`
 
   - value
     需要设置的状态属性的值；

@@ -7,7 +7,7 @@ tag:
   - setOverlay 
 ---
 
-设置系统状态栏的风格；
+设置系统状态栏的是否遮盖App的内容
 
 ```js
 StatusBarPlugin.setOverlay(b)

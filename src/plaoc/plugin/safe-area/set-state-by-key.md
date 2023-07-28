@@ -1,16 +1,16 @@
 ---
-title: StatusBarPlugin.setStateByKey()
+title: SafeAreaPlugin.setStateByKey()
 category:
   - Plugin
 tag:
-  - StatusBarPlugin
+  - SafeAreaPlugin
   - setStateByKey 
 ---
 
-设置系统状态栏状态某一属性的值
+设置某一属性的值
 
 ```js
-StatusBarPlugin.setStateByKey(key, value)
+SafeAreaPlugin.setStateByKey(key, value)
 ```
 
 ## 参数
@@ -18,11 +18,11 @@ StatusBarPlugin.setStateByKey(key, value)
   - key
 
     字符串，需要设置的状态属性名称
-    合法的属性列表包括:`[overlay, visible, color, style]`
+    合法的属性列表包括:`[overlay]`
 
   - value
     需要设置的状态属性的值；
-    合法的属性名称范围参考[StatusBarPlugin.state](./index.md)属性的值；
+    合法的属性值范围参考[SafeAreaPlugin.state](./index.md)属性的值；
 
 ## 返回值
 
@@ -30,8 +30,8 @@ StatusBarPlugin.setStateByKey(key, value)
 
 ## 示例
 ```js
-import { statusBarPlugin } from "@plaoc/plugins";
-const value = statusBarPlugin.setStateByKey("color", "#FFFFFFFF")
+import { SafeAreaPlugin } from "@plaoc/plugins";
+const value = SafeAreaPlugin.setStateByKey("overlay", true)
 ```
 
 
@@ -43,6 +43,6 @@ const value = statusBarPlugin.setStateByKey("color", "#FFFFFFFF")
 
 ## 相关链接
 
-[StatusBarPlugin](./index.md)
+[SafeAreaPlugin](./index.md)
 
 

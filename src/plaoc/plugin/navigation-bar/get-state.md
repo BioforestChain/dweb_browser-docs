@@ -24,7 +24,7 @@ NavigationBarPlugin.getState([force_update])
 
 ## 返回值
 
-  - 一个Promise对象， resolve兑现一个实现了部分[State](../state/index.md)接口的对象；
+  - 一个Promise对象， resolve兑现一个实现了部分[State](../state/index.md)接口的对象；详情参考[NavigationBarPlugin.state](./index.md)属性的值；
 
 ## 示例
 ```js

@@ -1,16 +1,16 @@
 ---
-title: StatusBarPlugin.getState()
+title: VirtualKeyboardPlugin.getState()
 category:
   - Plugin
 tag:
-  - StatusBarPlugin
+  - VirtualKeyboardPlugin
   - getState 
 ---
 
-获取插件的状态值
+获取虚拟键盘的状态；
 
 ```js
-StatusBarPlugin.getState([force_update])
+VirtualKeyboardPlugin.getState([force_update])
 ```
 
 ## 参数
@@ -24,12 +24,13 @@ StatusBarPlugin.getState([force_update])
 
 ## 返回值
 
-  - 一个Promise对象， resolve兑现一个实现了部分[State](../state/index.md)接口的对象；详情参考[StatusBarPlugin.state](./index.md)属性的值；
+  - 一个Promise对象， resolve兑现一个实现了部分[State](../state/index.md)接口的对象；详情参考[VirtualKeyboardPlugin.state](./index.md)属性的值；
+
 
 ## 示例
 ```js
-import { statusBarPlugin } from "@plaoc/plugins";
-const value = statusBarPlugin.getState(true)
+import { virtualKeyboardPlugin } from "@plaoc/plugins";
+const value = virtualKeyboardPlugin.getState(true)
 ```
 
 
@@ -41,6 +42,6 @@ const value = statusBarPlugin.getState(true)
 
 ## 相关链接
 
-[StatusBarPlugin](./index.md)
+[VirtualKeyboardPlugin](./index.md)
 
 

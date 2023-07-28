@@ -1,16 +1,18 @@
 ---
-title: NavigationBarPlugin.setOverlay()
+title: VirtualKeyboardPlugin.setOverlay()
 category:
   - Plugin
 tag:
-  - NavigationBarPlugin
+  - VirtualKeyboardPlugin
   - setOverlay 
 ---
 
-设置系统导航栏的是否遮盖App的内容；
+设置遮盖状态；
+如果设置为true;
+表示虚拟键盘展开后会遮盖App的部分内容；
 
 ```js
-NavigationBarPlugin.setOverlay(b)
+VirtualKeyboardPlugin.setOverlay(b)
 ```
 
 ## 参数
@@ -26,8 +28,8 @@ NavigationBarPlugin.setOverlay(b)
 
 ## 示例
 ```js
-import { NavigationBarPlugin } from "@plaoc/plugins";
-const value = NavigationBarPlugin.setOverlay(true)
+import { virtualKeyboardPlugin } from "@plaoc/plugins";
+const value = virtualKeyboardPlugin.setOverlay(true)
 ```
 
 
@@ -39,6 +41,6 @@ const value = NavigationBarPlugin.setOverlay(true)
 
 ## 相关链接
 
-[NavigationBarPlugin](./index.md)
+[VirtualKeyboardPlugin](./index.md)
 
 

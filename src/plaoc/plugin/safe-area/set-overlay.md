@@ -1,16 +1,19 @@
 ---
-title: NavigationBarPlugin.setOverlay()
+title: SafeAreaPlugin.setOverlay()
 category:
   - Plugin
 tag:
-  - NavigationBarPlugin
+  - SafeAreaPlugin
   - setOverlay 
 ---
 
-设置系统导航栏的是否遮盖App的内容；
+设置遮盖状态；
+如果设置为true;
+表示安全区域中App的内容会被系统栏遮盖部分内容；
+这个设置会同时修改系统栏的状态；
 
 ```js
-NavigationBarPlugin.setOverlay(b)
+SafeAreaPlugin.setOverlay(b)
 ```
 
 ## 参数
@@ -26,8 +29,8 @@ NavigationBarPlugin.setOverlay(b)
 
 ## 示例
 ```js
-import { NavigationBarPlugin } from "@plaoc/plugins";
-const value = NavigationBarPlugin.setOverlay(true)
+import { SafeAreaPlugin } from "@plaoc/plugins";
+const value = SafeAreaPlugin.setOverlay(true)
 ```
 
 
@@ -39,6 +42,6 @@ const value = NavigationBarPlugin.setOverlay(true)
 
 ## 相关链接
 
-[NavigationBarPlugin](./index.md)
+[SafeAreaPlugin](./index.md)
 
 

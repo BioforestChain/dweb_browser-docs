@@ -17,9 +17,8 @@ StatusBarPlugin.setState(state)
 
   - state
 
-    实现了部分[State](../../interface//state/index.md)接口的对象；
-    合法的属性范围参考[StatusBarPlugin.state](./index.md)属性；
-    可以包含全部的属性也可以包含部分部分属性
+    实现了部分[State](../../interface/state/index.md)接口的对象；
+    合法的属性列表包括:`[overlay, visible, color, style]`
 
 ## 返回值
 
@@ -28,7 +27,7 @@ StatusBarPlugin.setState(state)
 ## 示例
 ```js
 import { statusBarPlugin } from "@plaoc/plugins";
-const value = statusBarPlugin.setState({color:"#FFFFFFFF"})
+const value = statusBarPlugin.setState({overlay:true})
 ```
 
 
