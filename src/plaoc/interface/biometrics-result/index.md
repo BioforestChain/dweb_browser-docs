@@ -6,7 +6,7 @@ tag:
 
 ---
 
-BiometricsResult 是一个用来描述生物识别结构的接口；
+BiometricsResult 是一个用来描述生物识别返回结果的接口；
 
 
 ## 属性
@@ -25,12 +25,14 @@ BiometricsResult 是一个用来描述生物识别结构的接口；
 
 ## 事件
 
+  - 无
+
 ## 平台兼容性
 
 | 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
 |:------------:|:-------:|:---:|:-----------:|:-------:|
-| success      | ✅      | ✅  | ✅          | X      |
-| message      | ✅      | ✅  | ✅          | X      |
+| success      | ✅      | ✅  | ✅           | X       |
+| message      | ✅      | ✅  | ✅           | X       |
 
 ## 相关链接
 

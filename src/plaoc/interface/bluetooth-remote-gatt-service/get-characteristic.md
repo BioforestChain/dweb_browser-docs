@@ -22,7 +22,7 @@ BluetoothRemoteGATTService.getCharacteristic(uuid)
 
 ## 返回值
 
-  返回一个Promise,resolve兑现一个 [BluetoothRemoteGATTCharacteristic]()对象 
+  返回一个Promise,resolve兑现一个 [BluetoothRemoteGATTCharacteristic](../bluetooth-remote-gatt-characteristic/index.md)对象 
 
 ## 示例
 

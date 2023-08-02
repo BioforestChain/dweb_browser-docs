@@ -39,6 +39,21 @@ export default [
             icon: "plugin",
             link: "biometrics/"
           },
+          {
+            text: "BluetoothPlugin",
+            icon: "plugin",
+            link: "bluetooth/"
+          },
+          {
+            text: "CameraPlugin",
+            icon: "plugin",
+            link: "camera/"
+          },
+          {
+            text: "ClipboardPlugin",
+            icon: "plugin",
+            link: "clipboard/"
+          }
         ]
       },
     ]

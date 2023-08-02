@@ -35,27 +35,25 @@ bluetooth.open()
 
 ## 事件
 
+  - 无
+
 
 ## 示例
 ```js 
 import { bluetoothPlugin } from "@plaoc/plugin";
-
-;(async () => {
-  let res = bluetooth.open();
-})();
-
-
-
+bluetooth.open();
 ```
 
 
 ## 平台兼容性
 
 
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| check        | ✅      | ✅  | ✅          | X       |
-| biometrics   | ✅      | ✅  | ✅          | X       |
+| 属性/方法/事件            | Android | IOS | Desktop-Dev | Desktop |
+|:-----------------------:|:-------:|:---:|:-----------:|:-------:|
+| open                    | ✅      | ✅  | ✅          | X       |
+| close                   | ✅      | ✅  | ✅          | X       |
+| requestAndConnectDevice | ✅      | ✅  | ✅          | X       |
+ 
 
 
 ## 相关链接

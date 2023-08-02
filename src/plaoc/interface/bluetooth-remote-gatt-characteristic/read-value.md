@@ -19,7 +19,7 @@ BluetoothRemoteGATTCharacteristic.readValue()
 
 ## 返回值
 
-  返回一个ePromis, resolve对象一个DataView对象
+  返回一个Promise, resolve对象一个DataView对象
 
 ## 示例
 

@@ -34,20 +34,18 @@ tag:
 
   - [BluetoothDevice.watchAdvertisements()](./watch-advertisements.md)
 
-    监听当前蓝牙设备发出的广告消息；
-
-  - [BluetoothDevice.addEventListener()](./add-event-listener.md)
-
-    添加监听器
-
-  - [BluetoothDevice.removeEventListener()](./remove-event-listener.md)
-
-    移除监听器
+    开始监听当前蓝牙设备发出的广告消息；
 
 ## 事件
 
-  - 无
+  - [gattserverdisconnected](./event-gattserverdisconnected.md)
 
+    当蓝牙设备的服务器断开连接的时候触发；
+     
+  - [advertisementreceived](./event-advertisementreceived.md)
+
+    当蓝牙设备的服务接受到广告消息的时候触发；
+    
 ## 示例
 ```js
   import { bluetoothPlugin } from "@plaoc/plugin";
@@ -86,8 +84,8 @@ tag:
 | watchingAdvertisements  | ✅      | ✅   | ✅          | X      |
 | forget                  | ✅      | ✅   | ✅          | X      |
 | watchAdvertisements     | ✅      | ✅   | ✅          | X      |
-| addEventListener        | ✅      | ✅   | ✅          | X      |
-| removeEventListener     | ✅      | ✅   | ✅          | X      |
+| gattserverdisconnected  | ✅      | ✅   | ✅          | X      |
+| advertisementreceived   | ✅      | ✅   | ✅          | X      |
 
 ## 相关链接
 [BluetoothPlugin](../../plugin/bluetooth/index.md)

@@ -6,12 +6,12 @@ tag:
   - BluetoothRemoteGATTCharacteristic 
 ---
 
-BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接口；
-BluetoothRemoteGATTCharacteristic 是内置对象，只能够通过 BluetoothRemoteGATTService.getCharacteristic() 返回
+BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接口，属于是内置对象，只能够通过 BluetoothRemoteGATTService.getCharacteristic()才能够获取到；
 
 ```js
 ;(async () => {
-  const bluetoothRemoteGATTCharacteristic = await BluetoothRemoteGATTService.getCharacteristic(uuid)
+  const bluetoothRemoteGATTCharacteristic 
+    = await BluetoothRemoteGATTService.getCharacteristic(uuid)
 })();
 ```
 
@@ -44,7 +44,7 @@ BluetoothRemoteGATTCharacteristic 是内置对象，只能够通过 BluetoothRem
 
 ## 事件
 
-  - characteristicvaluechanged
+  - [characteristicvaluechanged](./event-characteristic-value-changed.md)
 
     当特征的值发生变化的是否触发；
 

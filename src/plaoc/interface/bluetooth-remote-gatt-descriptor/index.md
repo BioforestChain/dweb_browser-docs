@@ -36,13 +36,58 @@ tag:
 
   - 无
 
+## 示例
+```js
+  import { bluetoothPlugin } from "@plaoc/plugin";
+
+  bluetoothPlugin
+  .open()
+  .then(res => {
+    if(res.success){
+      const options = {
+        acceptAllDevices: true,
+        optionalServices: ["00003802-0000-1000-8000-00805f9b34fb"],
+      }
+      return bluetoothPlugin.requestAndConnectDevice(options)
+    }
+  })
+  .then(res => {
+    if(res.success){
+      // 成功的查询和连接了蓝牙设备；
+      const bluetoothRemoteGATTServer = res.data;
+      return bluetoothRemoteGATTServer
+      .getPrimaryService("00003802-0000-1000-8000-00805f9b34fb")
+    }
+  })
+  .then(res => {
+    if(res.success){
+      const bluetoothRemoteGATTService = res.data;
+      bluetoothRemoteGATTService.getCharacteristic("00004a02-0000-1000-8000-00805f9b34fb")
+    }
+  })
+  .then(res => {
+    if(res.success){
+      const bluetoothRemoteGATTCharacteristic = res.data;
+      return bluetoothRemoteGATTCharacteristic.getDescriptor()
+      // 获取了 特征的 标识符；
+    }
+  })
+  .catch(err => console.error(err))
+```
+
 ## 平台兼容性
 
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| setColor()   | ✅      | ✅  | ✅          | X      |
+| 属性/方法/事件     | Android | IOS | Desktop-Dev | Desktop |
+|:----------------:|:-------:|:---:|:-----------:|:-------:|
+| characteristic   | ✅      | ✅  | ✅           | X       |
+| uuid             | ✅      | ✅  | ✅           | X       |
+| readValue        | ✅      | ✅  | ✅           | X       |
+| writeValue       | ✅      | ✅  | ✅           | X       |
 
 ## 相关链接
-[]()
 
+[BluetoothPlugin](../../plugin/bluetooth/index.md)
+
+
+[BluetoothRemoteGATTService](../bluetooth-remote-gatt-service/index.md);
 
