@@ -15,6 +15,10 @@ import zhPlaocPluginVirtualKeyboard from "./zh-plaoc-plugin-virtual-keyboard";
 import zhPlaocPluginBluetooth from "./zh-plaoc-plugin-bluetooth"
 import zhPlaocPluginCamera from "./zh-plaoc-plugin-camera"
 import zhPlaocPluginClipboard from "./zh-plaoc-plugin-clipboard"
+import zhPlaocPluginConfig from "./zh-plaoc-plugin-config"
+import zhPlaocPluginDevice from "./zh-plaoc-device"
+import zhPlaocPluginUpdateController from "./zh-plaoc-plugin-update-controller"
+import zhPlaocPluginDwebServiceWorker from "./zh-plaoc-plugin-dweb-service-worker"
 import zhPlaocPlugin from "./zh-plaoc-plugin"
 import zhPlaoc from "./zh-plaoc"
 
@@ -33,13 +37,16 @@ export const zhSidebar = sidebar({
   "/plaoc/plugin/bluetooth/": zhPlaocPluginBluetooth, 
   "/plaoc/plugin/camera/": zhPlaocPluginCamera,
   "/plaoc/plugin/clipboard/": zhPlaocPluginClipboard,
+  "/plaoc/plugin/config/": zhPlaocPluginConfig,
+  "/plaoc/plugin/device/": zhPlaocPluginDevice,
+  "/plaoc/plugin/update-controller/": zhPlaocPluginUpdateController,
+  "/plaoc/plugin/dweb-service-worker/": zhPlaocPluginDwebServiceWorker,
   "/plaoc/interface/": zhPlaocInterface,
   "/plaoc/interface/bluetooth-device/": zhPlaocInterfaceBluetoothDevice,
   "/plaoc/interface/bluetooth-remote-gatt-characteristic/": zhPlaocInterfaceBluetoothRemoteGATTCharacteristic,
   "/plaoc/interface/bluetooth-remote-gatt-descriptor/": zhPlaocInterfaceBluetoothRemoteGATTDescriptor,
   "/plaoc/interface/bluetooth-remote-gatt-server/": zhPlaocInterfaceBluetoothRemoteGATTServer,
   "/plaoc/interface/bluetooth-remote-gatt-service/": zhPlaocInterfaceBluetoothRemoteGATTService,
-
 });
 
 

@@ -53,6 +53,26 @@ export default [
             text: "ClipboardPlugin",
             icon: "plugin",
             link: "clipboard/"
+          },
+          {
+            text: "ConfigPlugin",
+            icon: "plugin",
+            link: "config/"
+          },
+          {
+            text: "DevicePlugin",
+            icon: "plugin",
+            link: "device/"
+          },
+          {
+            text: "UpdateControllerPlugin",
+            icon: "plugin",
+            link: "update-controller/"
+          },
+          {
+            text: "DwebServiceWorkerPlugin",
+            icon: "plugin",
+            link: "dweb-service-worker/"
           }
         ]
       },

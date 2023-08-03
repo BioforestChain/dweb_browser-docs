@@ -11,6 +11,11 @@ export default [
         children: [
           {
             icon: "object",
+            text: "BFSMetaData",
+            link: "bfs-meta-data/",
+          },
+          {
+            icon: "object",
             text: "BiometricsResult",
             link: "biometrics-result/",
           },
@@ -94,12 +99,25 @@ export default [
             text: "BluetoothWatchAdvertisementsResponse",
             link: "bluetooth-watch-advertisements-response/",
           },
-
-          
           {
             icon: "object",
-            text: "DOMInsets",
-            link: "dom-insets/",
+            text: "BodyInit",
+            link: "body-init/",
+          },
+          {
+            icon: "object",
+            text: "BufferSource",
+            link: "buffer-source/",
+          },
+          {
+            icon: "object",
+            text: "$BuildRequestInit",
+            link: "build-request-init/",
+          },
+          {
+            icon: "object",
+            text: "$BuildRequestWithBaseInit",
+            link: "build-request-with-base-init/",
           },
           {
             icon: "object",
@@ -108,13 +126,53 @@ export default [
           },
           {
             icon: "object",
+            text: "DOMInsets",
+            link: "dom-insets/",
+          },
+          {
+            icon: "object",
+            text: "$ExterRequestWithBaseInit",
+            link: "exter-request-with-base-init/",
+          },
+          {
+            icon: "object",
+            text: "HeadersInit",
+            link: "headers-init/",
+          },
+          {
+            icon: "object",
             text: "ImageOptions",
             link: "image-options/",
           },
           {
             icon: "object",
+            text: "MainServer",
+            link: "main-server/",
+          },
+          {
+            icon: "object",
+            text: "$MMID",
+            link: "mmid/",
+          },
+          {
+            icon: "object",
             text: "ReadResult",
             link: "read-result/",
+          },
+          {
+            icon: "object",
+            text: "RequestInit",
+            link: "request-init/",
+          },
+          {
+            icon: "object",
+            text: "RequestMode",
+            link: "request-mode/",
+          },
+          {
+            icon: "object",
+            text: "$ResponseUUIDData",
+            link: "response-uuid-data/"
           },
           {
             icon: "object",
@@ -133,8 +191,8 @@ export default [
           },
           {
             icon: "object",
-            text: "BiometricsResult",
-            link: "biometrics-result/",
+            text: "XMLHttpRequestBodyInit",
+            link: "xml-http-request-body-init/",
           },
         ]
       }
