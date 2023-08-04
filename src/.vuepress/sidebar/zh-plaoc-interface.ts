@@ -126,13 +126,43 @@ export default [
           },
           {
             icon: "object",
+            text: "ConnectionStatus",
+            link: "connection-status/",
+          },
+          {
+            icon: "object",
+            text: "ConnectionType",
+            link: "connection-type/",
+          },
+          {
+            icon: "object",
+            text: "Directory",
+            link: "directory/",
+          },
+          {
+            icon: "object",
             text: "DOMInsets",
             link: "dom-insets/",
           },
           {
             icon: "object",
+            text: "Encoding",
+            link: "encoding/",
+          },
+          {
+            icon: "object",
             text: "$ExterRequestWithBaseInit",
             link: "exter-request-with-base-init/",
+          },
+          {
+            icon: "object",
+            text: "GetUriOptions",
+            link: "get-uri-options/",
+          },
+          {
+            icon: "object",
+            text: "GetUriResult",
+            link: "get-uri-result/",
           },
           {
             icon: "object",
@@ -146,6 +176,11 @@ export default [
           },
           {
             icon: "object",
+            text: "ImpactOptions",
+            link: "impact-options/",
+          },
+          {
+            icon: "object",
             text: "MainServer",
             link: "main-server/",
           },
@@ -153,6 +188,16 @@ export default [
             icon: "object",
             text: "$MMID",
             link: "mmid/",
+          },
+          {
+            icon: "object",
+            text: "NotificationOptions",
+            link: "notification-options/",
+          },
+          {
+            icon: "object",
+            text: "NotificationType",
+            link: "notification-type/",
           },
           {
             icon: "object",
@@ -188,6 +233,36 @@ export default [
             icon: "object",
             text: "StateObserver",
             link: "state-observer/",
+          },
+          {
+            icon: "object",
+            text: "Tkit",
+            link: "tkit/",
+          },
+          {
+            icon: "object",
+            text: "VibrateOptions",
+            link: "vibrate-options/",
+          },
+          {
+            icon: "object",
+            text: "WebViewItem",
+            link: "webview-item/",
+          },
+          {
+            icon: "object",
+            text: "WindowListenerHandle",
+            link: "window-listener-handle/",
+          },
+          {
+            icon: "object",
+            text: "WriteFileOptions",
+            link: "write-file-options/",
+          },
+          {
+            icon: "object",
+            text: "WriteFileResult",
+            link: "write-file-result/",
           },
           {
             icon: "object",

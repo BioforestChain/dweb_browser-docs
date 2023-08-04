@@ -19,6 +19,10 @@ import zhPlaocPluginConfig from "./zh-plaoc-plugin-config"
 import zhPlaocPluginDevice from "./zh-plaoc-device"
 import zhPlaocPluginUpdateController from "./zh-plaoc-plugin-update-controller"
 import zhPlaocPluginDwebServiceWorker from "./zh-plaoc-plugin-dweb-service-worker"
+import zhPlaocPluginFileSystem from "./zh-plaoc-plugin-file-system"
+import zhPlaocPluginHaptics from "./zh-plaoc-plugin-haptics";
+import zhPlaocPluginMWebview from "./zh-plaoc-plugin-m-webview";
+import zhPlaocPluginNetwork from "./zh-plaoc-plugin-network";
 import zhPlaocPlugin from "./zh-plaoc-plugin"
 import zhPlaoc from "./zh-plaoc"
 
@@ -34,13 +38,17 @@ export const zhSidebar = sidebar({
   "/plaoc/plugin/virtual-keyboard/": zhPlaocPluginVirtualKeyboard,
   "/plaoc/plugin/barcode-scanner/": zhPlaocPluginBarcodeScanner,
   "/plaoc/plugin/biometrics/": zhPlaocPluginBiometrics,
-  "/plaoc/plugin/bluetooth/": zhPlaocPluginBluetooth, 
+  "/plaoc/plugin/bluetooth/": zhPlaocPluginBluetooth,
   "/plaoc/plugin/camera/": zhPlaocPluginCamera,
   "/plaoc/plugin/clipboard/": zhPlaocPluginClipboard,
   "/plaoc/plugin/config/": zhPlaocPluginConfig,
   "/plaoc/plugin/device/": zhPlaocPluginDevice,
   "/plaoc/plugin/update-controller/": zhPlaocPluginUpdateController,
   "/plaoc/plugin/dweb-service-worker/": zhPlaocPluginDwebServiceWorker,
+  "/plaoc/plugin/file-system/": zhPlaocPluginFileSystem,
+  "/plaoc/plugin/haptics/": zhPlaocPluginHaptics,
+  "/plaoc/plugin/m-webview/": zhPlaocPluginMWebview,
+  "/plaoc/plugin/network/": zhPlaocPluginNetwork,
   "/plaoc/interface/": zhPlaocInterface,
   "/plaoc/interface/bluetooth-device/": zhPlaocInterfaceBluetoothDevice,
   "/plaoc/interface/bluetooth-remote-gatt-characteristic/": zhPlaocInterfaceBluetoothRemoteGATTCharacteristic,

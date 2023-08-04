@@ -73,6 +73,26 @@ export default [
             text: "DwebServiceWorkerPlugin",
             icon: "plugin",
             link: "dweb-service-worker/"
+          },
+          {
+            text: "FileSystemPlugin",
+            icon: "plugin",
+            link: "file-system/"
+          },
+          {
+            text: "HapticsPlugin",
+            icon: "plugin",
+            link: "haptics/"
+          },
+          {
+            text: "MWebviewPlugin",
+            icon: "plugin",
+            link: "m-webview/"
+          },
+          {
+            text: "NetworkPlugin",
+            icon: "plugin",
+            link: "network/"
           }
         ]
       },
