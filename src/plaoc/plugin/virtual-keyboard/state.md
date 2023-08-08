@@ -59,6 +59,7 @@ tag:
 | getState     | ✅      | ✅  | ✅          | X       |
 
 ## 相关链接
+
 [StatusBarPlugin](./index.md)
 
 

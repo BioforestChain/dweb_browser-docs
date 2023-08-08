@@ -20,9 +20,15 @@ BarcodeScannerPlugin.stop()
 
 ## 返回值
 
-  - 一个Promise对象，resolve兑现boolean；
+  一个Promise对象，resolve兑现boolean；
 
 ## 示例
+```js
+import { barcodeScannerPlugin } from "@plaoc/plugins";
+;(async () => {
+  const res = await barcodeScannerPlugin.stop();
+})();
+```
 
 ## 平台兼容性
 

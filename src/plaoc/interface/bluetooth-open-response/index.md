@@ -33,7 +33,7 @@ BluetoothOpenResponse 是一个Bluetooth.open() 方法返回的promise，resolve
 
 ## 事件
 
-  - 
+  - 无
 
 ## 平台兼容性
 

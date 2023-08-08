@@ -30,9 +30,9 @@ BluetoothDevice.addEventListener(
 
 ## 平台兼容性
 
-| 属性/方法/事件            | Android | IOS | Desktop-Dev | Desktop |
-|:-----------------------:|:-------:|:---:|:-----------:|:-------:|
-| gattserverdisconnected  | ✅      | ✅   | ✅          | X       |
+| 属性/方法/事件                  | Android | IOS | Desktop-Dev | Desktop |
+|:-----------------------------:|:-------:|:---:|:-----------:|:-------:|
+| event gattserverdisconnected  | ✅      | ✅   | ✅          | X       |
 
 
 ## 相关链接

@@ -50,9 +50,13 @@ import { networkPlugin } from "@plaoc/plugin";
 
 ## 平台兼容性
 
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| setColor     | ✅      | ✅  | ✅           | X       |
+| 属性/方法/事件         | Android | IOS | Desktop-Dev | Desktop |
+|:--------------------:|:-------:|:---:|:-----------:|:-------:|
+| onLine               | ✅      | ✅  | ✅          | X       |
+| getStatus            | ✅      | ✅  | ✅          | X       |
+| event onLine         | ✅      | ✅  | ✅          | X       |
+| event offLine        | ✅      | ✅  | ✅          | X       |
+| event change         | ✅      | ✅  | ✅          | X       |
 
 ## 相关链接
 

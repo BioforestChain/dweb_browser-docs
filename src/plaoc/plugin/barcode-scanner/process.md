@@ -31,9 +31,16 @@ BarcodeScannerPlugin.process(blob, rotation, formats)
 
 ## 返回值
 
-  - 一个Promise对象，resolve兑现一个数组，数组内是解析出来的字符串；
+  一个Promise对象，resolve兑现一个数组，数组内是解析出来的字符串；
 
 ## 示例
+```js
+import { barcodeScannerPlugin } from "@plaoc/plugins";
+;(async () => {
+  const blob = new Blob() 
+  const res = await barcodeScannerPlugin.process(blob);
+})();
+```
 
 ## 平台兼容性
 

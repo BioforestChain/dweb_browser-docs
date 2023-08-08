@@ -21,9 +21,15 @@ BarcodeScannerPlugin.getSupportedFormats()
 
 ## 返回值
 
-  - 一个Promise对象，resolve兑现一个数组；数组项是支持解析的类型名称；
+  一个Promise对象，resolve兑现一个数组；数组项是支持解析的类型名称；
 
 ## 示例
+```js
+import { barcodeScannerPlugin } from "@plaoc/plugin";
+;(async () => {
+  const res = await barcodeScannerPlugin.getSupportedFormats()
+})();
+```
 
 ## 平台兼容性
 

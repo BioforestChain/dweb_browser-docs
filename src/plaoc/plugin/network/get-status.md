@@ -33,9 +33,11 @@ const status = networkPlugin.getStatus();
 
 | 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
 |:------------:|:-------:|:---:|:-----------:|:-------:|
-| setColor     | ✅       | ✅  | ✅          | X       |
+| getStatus    | ✅       | ✅  | ✅          | X       |
 
 ## 相关链接
-[]()
+
+
+[NetworkPlugin](./index.md)
 
 

@@ -21,12 +21,13 @@ SafeAreaPlugin.setStateByKey(key, value)
     合法的属性列表包括:`[overlay]`
 
   - value
+
     需要设置的状态属性的值；
     合法的属性值范围参考[SafeAreaPlugin.state](./index.md)属性的值；
 
 ## 返回值
 
-  - 一个Promise对象， resolve兑现Nnull
+  - 一个Promise对象， resolve兑现null
 
 ## 示例
 ```js

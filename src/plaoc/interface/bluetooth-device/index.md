@@ -84,8 +84,8 @@ tag:
 | watchingAdvertisements  | ✅      | ✅   | ✅          | X      |
 | forget                  | ✅      | ✅   | ✅          | X      |
 | watchAdvertisements     | ✅      | ✅   | ✅          | X      |
-| gattserverdisconnected  | ✅      | ✅   | ✅          | X      |
-| advertisementreceived   | ✅      | ✅   | ✅          | X      |
+| event gattserverdisconnected  | ✅      | ✅   | ✅          | X      |
+| event advertisementreceived   | ✅      | ✅   | ✅          | X      |
 
 ## 相关链接
 [BluetoothPlugin](../../plugin/bluetooth/index.md)

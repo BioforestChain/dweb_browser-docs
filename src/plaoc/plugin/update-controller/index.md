@@ -7,7 +7,7 @@ tag:
 ---
 
 更新App的控制插件;但是这个插件不能直接访问；
-在[DwebServiceWorkerPlugin]()插件中会访问UpdateControllerPlugin插件；
+在[DwebServiceWorkerPlugin](../dweb-service-worker/index.md)插件中会访问UpdateControllerPlugin插件；
 
 ```js
 import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
@@ -38,6 +38,8 @@ const updateControllerPlugin = dwebServiceWorkerPlugin.updateController
     取消下载
 
 ## 事件
+
+  - 无
 
 ## 平台兼容性
 

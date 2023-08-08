@@ -8,7 +8,7 @@ tag:
 
 app元数据接口；
 这个是内部接口，无法直接访问；
-只有通过 UpdateController.download() 返回的Promise，resolve对线这个接口；
+只有通过 [UpdateController.download()](../../plugin/update-controller/download.md) 返回的Promise，resolve对线这个接口；
 
  
 ## 属性

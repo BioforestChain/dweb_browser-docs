@@ -25,6 +25,10 @@ ClipboardPlugin.write(data);
   返回换一个Promise;
 
 ## 示例
+```js
+import { clipboardPlugin } from "@plaoc/plugin";
+clipboardPlugin.write({string: "test"});
+```
 
 ## 平台兼容性
 

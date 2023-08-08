@@ -33,7 +33,7 @@ BluetoothDataViewResponse接口继承与[BluetoothResponse](../bluetooth-respons
 
 ## 事件
 
-  - 
+  - 无
 
 ## 平台兼容性
 

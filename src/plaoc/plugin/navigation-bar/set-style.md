@@ -24,7 +24,7 @@ NavigationBarPlugin.setStyle(style)
 
 ## 返回值
 
-  - 一个Promise对象， resolve兑现Nnull
+  - 一个Promise对象， resolve兑现null
 
 ## 示例
 ```js

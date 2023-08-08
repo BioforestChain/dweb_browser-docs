@@ -33,7 +33,7 @@ BluetoothForgetResponse 是一个BluetoothDevice.forget()() 方法返回的Promi
 
 ## 事件
 
-  - 
+  - 无
 
 ## 平台兼容性
 

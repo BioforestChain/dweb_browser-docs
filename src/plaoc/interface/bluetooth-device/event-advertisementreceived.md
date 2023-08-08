@@ -29,9 +29,9 @@ BluetoothDevice.addEventListener(
 
 ## 平台兼容性
 
-| 属性/方法/事件            | Android | IOS | Desktop-Dev | Desktop |
-|:-----------------------:|:-------:|:---:|:-----------:|:-------:|
-| advertisementreceived  | ✅      | ✅   | ✅          | X       |
+| 属性/方法/事件                 | Android | IOS | Desktop-Dev | Desktop |
+|:----------------------------:|:-------:|:---:|:-----------:|:-------:|
+| event advertisementreceived  | ✅      | ✅   | ✅          | X       |
 
 
 ## 相关链接
