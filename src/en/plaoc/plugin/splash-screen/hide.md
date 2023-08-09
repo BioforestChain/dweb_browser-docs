@@ -1,45 +1,44 @@
 ---
 title: SplashScreenPlugin.hide()
-category:
+category: 
   - Interface
 tag:
   - SplashScreenPlugin
   - hide
 ---
 
-hide startup page;
+Hide splash screen
 
 ```js
 SplashScreenPlugin.hide(options)
 ```
 
-## parameters
+## Parameters
 
   - options
 
-    option parameter;
-    The parameter value is a [SplashScreenHideOptions]() object;
+    Option parameters; 
+    The value is a [SplashScreenHideOptions]() object
 
-## return value
+## Return Value
 
-  Return a Promise, resolve to fulfill a boolean;
+  Returns a Promise that resolves to a boolean
 
 ## Example
 ```js
 import { splashScreenPlugin } from "@plaoc/plugin";
-;(async () => {
+
+(async () => {
   splashScreenPlugin.hide({})
 })();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
 |:------------:|:-------:|:---:|:-----------:|:-------:|
-| hide         | ✅       | ✅  | ✅          | X       |
+| hide         | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [SplashScreenPlugin](./index.md)
-
-

@@ -7,35 +7,34 @@ tag:
   - vibrateClick
 ---
 
-The effect of clicking feedback;
+Click feedback effect.
 
 ```js
 HapticsPlugin.vibrateClick()
-```
+```  
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns
 
-  returns a Promise;;
-  
+A Promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
-hapticsPlugin.vibrateClick()
+
+hapticsPlugin.vibrateClick();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| vibrateClick         | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| vibrateClick          | ✅      | ✅  | ✅          | X       |  
 
-## Related Links
+## See Also
 
 [HapticsPlugin](./index.md)
-
-

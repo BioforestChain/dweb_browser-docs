@@ -1,26 +1,26 @@
 ---
-title: StatusBarPlugin.getStyle()
+title: StatusBarPlugin.getStyle()  
 category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - getStyle 
+  - getStyle
 ---
 
-Query the style of the system status bar foreground color;
+Get the style [foreground color] of the system status bar
 
 ```js
 StatusBarPlugin.getStyle()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return Value
 
-  A Promise object, resolve to fulfill the string;
-  Possible values for string are:
+  - A Promise object that resolves to a string; 
+  Possible string values:
   `"DARK"` `"LIGHT"` `"DEFAULT"`
 
 ## Example
@@ -32,12 +32,10 @@ const value = statusBarPlugin.getStyle()
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getStyle             | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getStyle     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

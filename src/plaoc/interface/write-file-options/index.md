@@ -49,6 +49,8 @@ tag:
 
 ## 事件
 
+  - 无
+
 ## 平台兼容性
 
 | 属性/方法/事件 | Android | IOS | Desktop-Dev  | Desktop |

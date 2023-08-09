@@ -7,44 +7,44 @@ tag:
   - share
 ---
 
-way to share;
+Method for sharing 
 
 ```js
- SharePlugin.share(options)
+SharePlugin.share(options)
 ```
 
-## parameters
+## Parameters
 
   - options
 
-    Shared options object;
-    The parameter value is the [ShareOptions](../../interface/share-options/index.md) object;
+    Share options object;
+    The value is a [ShareOptions](../../interface/share-options/index.md) object
 
-## return value
+## Return Value
 
-  Return a Promise,and resolve fulfills a [ShareResult](../../interface/share-result/index.md) object;
+  Returns a Promise that resolves to a [ShareResult](../../interface/share-result/index.md) object
 
 ## Example
 ```js
 import { sharePlugin } from "@plaoc/plugin";
-;(async() => {
+
+(async() => {
   const b = await sharePlugin.canShare()
-  if(!b)return;
-  const res = await sharePlugin.show({
-    title: "title"，
-    text: "content"
+  if(!b) return;
+  
+  const res = await sharePlugin.share({
+    title: "Title",
+    text: "Text content" 
   })
 })();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| share                | ✅       | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| share        | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [SharePlugin](./index.md)
-
-

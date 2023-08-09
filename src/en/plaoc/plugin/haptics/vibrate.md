@@ -7,38 +7,34 @@ tag:
   - vibrate
 ---
 
-The effect of customizing feedback;
+Custom vibration feedback effect.
 
-```js
+```js 
 HapticsPlugin.vibrate(options)
 ```
 
-## parameters
+## Parameters  
 
-  - options
+- options: Options parameter with value [VibrateOptions](../../interface/vibrate-options/index.md) object.
 
-    The value of the option parameter is a [VibrateOptions](../../interface/vibrate-options/index.md) object;
+## Returns
 
-    
-## return value
-
-  returns a Promise;;
-  
+A Promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
-hapticsPlugin.vibrate({duration: [1000, 100]})
+
+hapticsPlugin.vibrate({duration: [1000, 100]});
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| vibrate              | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|  
+| vibrate               | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [HapticsPlugin](./index.md)
-
-

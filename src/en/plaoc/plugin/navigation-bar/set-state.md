@@ -4,41 +4,40 @@ category:
   - Plugin
 tag:
   - NavigationBarPlugin
-  - setState 
+  - setState
 ---
 
-Set the system navigation bar state
+Set the state of the system navigation bar
 
 ```js
-NavigationBarPlugin.setState(state)
+NavigationBarPlugin.setState(state) 
 ```
 
-## parameters
+## Parameters
 
   - state
 
-    Objects that implement part of the [State](../../interface/state/index.md) interface;
-    The list of valid attributes includes: `[overlay, visible, color, style]`
+    An object implementing part of the [State](../../interface/state/index.md) interface; 
+    Valid properties include: `[overlay, visible, color, style]`
 
-## return value
+## Return
 
-  A Promise object that resolves to null
+  - A Promise object that resolves to null
+  
+## Example  
 
-## Example
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
 const value = NavigationBarPlugin.setState({color:"#FFFFFFFF"})
 ```
 
 
-## Platform Compatibility
+## Platform Support
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setState             | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop | 
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setState     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NavigationBarPlugin](./index.md)
-
-

@@ -1,11 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
 import zhApp from "./zh-app";
-import zhPlaocInterfaceBluetoothDevice from "./zh-plaoc-interface-bluetooth-device"
-import zhPlaocInterfaceBluetoothRemoteGATTCharacteristic from "./zh-plaoc-interface-bluetooth-remote-gatt-characteristic"
-import zhPlaocInterfaceBluetoothRemoteGATTDescriptor from "./zh-plaoc-interface-bluetooth-remote-gatt-descriptor"
-import zhPlaocInterfaceBluetoothRemoteGATTServer from "./zh-plaoc-interface-bluetooth-remote-gatt-server"
-import zhPlaocInterfaceBluetoothRemoteGATTService from "./zh-plaoc-interface-bluetooth-remote-gatt-service"
-import zhPlaocInterface from "./zh-plaoc-interface";
+import zhPlaoc from "./zh-plaoc"
+import zhPlaocPlugin from "./zh-plaoc-plugin"
 import zhPlaocPluginBarcodeScanner from "./zh-plaoc-plugin-barcode-scanner";
 import zhPlaocPluginBiometrics from "./zh-plaoc-plugin-biometrics";
 import zhPlaocPluginNavigationBar from "./zh-plaoc-plugin-navigation-bar";
@@ -28,9 +24,14 @@ import zhPlaocPluginSplashScreen from "./zh-plaoc-plugin-splash-screen";
 import zhPlaocPluginToast from "./zh-plaoc-plugin-toast"
 import zhPlaocPluginTorch from "./zh-plaoc-plugin-torch";
 
-import zhPlaocPlugin from "./zh-plaoc-plugin"
-import zhPlaoc from "./zh-plaoc"
-
+import zhPlaocInterface from "./zh-plaoc-interface";
+import zhPlaocInterfaceBluetoothDevice from "./zh-plaoc-interface-bluetooth-device"
+import zhPlaocInterfaceBluetoothRemoteGATTCharacteristic from "./zh-plaoc-interface-bluetooth-remote-gatt-characteristic"
+import zhPlaocInterfaceBluetoothRemoteGATTDescriptor from "./zh-plaoc-interface-bluetooth-remote-gatt-descriptor"
+import zhPlaocInterfaceBluetoothRemoteGATTServer from "./zh-plaoc-interface-bluetooth-remote-gatt-server"
+import zhPlaocInterfaceBluetoothRemoteGATTService from "./zh-plaoc-interface-bluetooth-remote-gatt-service"
+import zhPlaocInterfaceStateObserver from "./zh-plaoc-interface-state-observer"
+import zhPlaocInterfaceWindowListenerHandle from "./zh-plaoc-interface-window-listener-handle";
 
 
 export const zhSidebar = sidebar({
@@ -64,6 +65,8 @@ export const zhSidebar = sidebar({
   "/plaoc/interface/bluetooth-remote-gatt-descriptor/": zhPlaocInterfaceBluetoothRemoteGATTDescriptor,
   "/plaoc/interface/bluetooth-remote-gatt-server/": zhPlaocInterfaceBluetoothRemoteGATTServer,
   "/plaoc/interface/bluetooth-remote-gatt-service/": zhPlaocInterfaceBluetoothRemoteGATTService,
+  "/plaoc/interface/state-observer/": zhPlaocInterfaceStateObserver,
+  "/plaoc/interface/window-listener-handle/": zhPlaocInterfaceWindowListenerHandle,
 });
 
 

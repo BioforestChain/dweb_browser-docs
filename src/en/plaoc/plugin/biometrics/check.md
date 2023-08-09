@@ -2,40 +2,38 @@
 title: BiometricsPlugin.check()
 category:
   - Plugin
-tag:
+tag: 
   - BiometricsPlugin
-  - check 
+  - check
 ---
 
-Query whether the current platform supports biometrics
+Checks if biometrics authentication is supported on the current platform.
 
 ```js
 BiometricsPlugin.check()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns
 
-  A Promise object that resolves to a boolean
+- A Promise that resolves to a boolean.
 
 ## Example
+
 ```js
 import { biometricsPlugin } from "@plaoc/plugins";
-const value = biometricsPlugin.check()
+const value = biometricsPlugin.check();
 ```
 
+## Platform Compatibility 
 
-## Platform Compatibility
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|  
 | check                | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [BiometricsPlugin](./index.md)
-
-

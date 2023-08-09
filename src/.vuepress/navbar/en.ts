@@ -5,33 +5,7 @@ export const enNavbar = navbar([
   {
     text: "introduction",
     icon: "note",
-    link: "/app",
+    link: "/en/app/",
   },
-  { text: "plaoc", icon: "discover", link: "/plaoc/" },
-  // { text: "service", icon: "discover", link: "/service/" },
-  // {
-  //   text: "systemApp",
-  //   icon: "creative",
-  //   prefix: "/systemApp/",
-  //   children: [
-  //     {
-  //       text: "notification",
-  //       icon: "creative",
-  //       prefix: "notification/",
-  //       link: "notification/"
-  //     },
-  //     {
-  //       text: "bnrtc",
-  //       icon: "config",
-  //       prefix: "bnrtc/",
-  //       link: "bnrtc/"
-  //     },
-  //     {
-  //       text: "database",
-  //       icon: "config",
-  //       prefix: "database/",
-  //       link: "database/"
-  //     },
-  //   ],
-  // },
+  { text: "plaoc", icon: "discover", link: "/en/plaoc/" },
 ]);

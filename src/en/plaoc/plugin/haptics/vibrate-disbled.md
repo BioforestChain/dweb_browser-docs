@@ -1,40 +1,40 @@
 ---
 title: HapticsPlugin.vibrateDisabled()
 category:
-  - Plugin 
+  - Plugin
 tag:
   - HapticsPlugin
-  - vibrateDisabled
+  - vibrateDisabled  
 ---
 
-Disable feedback vibration for gestures
+Disabled gesture feedback vibration.
 
 ```js
 HapticsPlugin.vibrateDisabled()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns  
 
-  a Promise;
+A Promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
-hapticsPlugin.vibrateDisabled()
+
+hapticsPlugin.vibrateDisabled();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event | Android | IOS | Desktop-Dev | Desktop |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
 |:---------------------:|:-------:|:---:|:-----------:|:-------:|
-| vibrateDisabled       | ✅       | ✅  | ✅         | X       |
+| vibrateDisabled       | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [HapticsPlugin](./index.md)
-
-

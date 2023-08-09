@@ -6,7 +6,7 @@ tag:
   - BluetoothRemoteGATTCharacteristic 
 ---
 
-BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接口，属于是内置对象，只能够通过 BluetoothRemoteGATTService.getCharacteristic()才能够获取到；
+BluetoothRemoteGATTCharacteristic describes the interface of a certain service of the Bluetooth device, which is a built-in object and can only be obtained through BluetoothRemoteGATTService.getCharacteristic();
 
 ```js
 ;(async () => {
@@ -19,34 +19,34 @@ BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接�
 
   - service
 
-    属性描述的当前特征所属的服务；
-    属性的值是类型是 [BluetoothRemoteGATTService](../bluetooth-remote-gatt-service/index.md);
+    The service to which the current characteristic described by the attribute belongs;
+    The value of the attribute is of type [BluetoothRemoteGATTService](../bluetooth-remote-gatt-service/index.md);
 
   
   - uuid
 
-    当前特征的标识符；属性值的类型是一个字符串；
+    The identifier of the current feature; the type of the attribute value is a string;
  
 
 ## Method
 
   - [BluetoothRemoteGATTCharacteristic.readValue()](./read-value.md)
 
-    读取当前特征的值；
+    read the value of the current characteristic;
 
   - [BluetoothRemoteGATTCharacteristic.writeValue()](./write-value.md)
 
-    向当前特征写入值；
+    Write a value to the current feature;
   
   - [BluetoothRemoteGATTCharacteristic.getDescriptor()](./get-descriptor.md)
 
-    获取当前特征的描述;
+    Get the description of the current feature;;
 
 ## Event
 
   - [characteristicvaluechanged](./event-characteristic-value-changed.md)
 
-    当特征的值发生变化的是否触发；
+    Whether to trigger when the value of the feature changes;
 
 ## Example
 ```js
@@ -65,7 +65,6 @@ BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接�
   })
   .then(res => {
     if(res.success){
-      // 成功的查询和连接了蓝牙设备；
       const bluetoothRemoteGATTServer = res.data;
       return bluetoothRemoteGATTServer
       .getPrimaryService("00003802-0000-1000-8000-00805f9b34fb")
@@ -81,7 +80,6 @@ BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接�
     if(res.success){
       const bluetoothRemoteGATTCharacteristic = res.data;
       const uuid = bluetoothRemoteGATTCharacteristic.service
-      // 获取了 特征的 标识符；
     }
   })
   .catch(err => console.error(err))
@@ -89,13 +87,14 @@ BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接�
 
 ## Platform Compatibility
 
-| Property/Method/Event  | Android | IOS | Desktop-Dev | Desktop |
-|:--------------:|:-------:|:---:|:-----------:|:-------:|
-| service        | ✅      | ✅  | ✅          | X      |
-| uuid           | ✅      | ✅  | ✅          | X      |
-| readValue      | ✅      | ✅  | ✅          | X      |
-| writeValue     | ✅      | ✅  | ✅          | X      |
-| getDescriptor  | ✅      | ✅  | ✅          | X      |
+| Property/Method/Event             | Android | IOS | Desktop-Dev | Desktop |
+|:---------------------------------:|:-------:|:---:|:-----------:|:-------:|
+| service                           | ✅      | ✅  | ✅          | X      |
+| uuid                              | ✅      | ✅  | ✅          | X      |
+| readValue                         | ✅      | ✅  | ✅          | X      |
+| writeValue                        | ✅      | ✅  | ✅          | X      |
+| getDescriptor                     | ✅      | ✅  | ✅          | X      |
+| event characteristicvaluechanged  | ✅      | ✅  | ✅          | X      |
 
 ## Related Links
 

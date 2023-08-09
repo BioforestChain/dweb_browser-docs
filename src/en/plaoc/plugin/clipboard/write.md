@@ -1,42 +1,42 @@
 ---
 title: ClipboardPlugin.write()
 category:
-  - Plugin 
+  - Plugin
 tag:
   - ClipboardPlugin
-  - write
+  - write  
 ---
 
-Read the data on the clipboard;
+Writes data to the clipboard.
 
 ```js
 ClipboardPlugin.write(data);
 ```
 
-## parameters
+## Parameters
 
-  - data
+- data: 
 
-    The data to be written; the value of the parameter is the [ClipboardWriteOptions](../../interface/clipboard-write-options/) object;
+  The data to write, passed as a [ClipboardWriteOptions](../../interface/clipboard-write-options/) object.
 
-## return value
+## Returns
 
-  returns a Promise;
+A Promise.
 
 ## Example
+
 ```js
 import { clipboardPlugin } from "@plaoc/plugin";
-clipboardPlugin.write({string: "test"});
+
+clipboardPlugin.write({string: "test"}); 
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| write         | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| write                 | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [ClipboardPlugin](./index.md)
-
-

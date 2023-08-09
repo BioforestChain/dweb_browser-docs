@@ -33,7 +33,7 @@ BluetoothRequestAndConnectDeviceResponse 是一个Bluetooth.requestAndConnectDev
 
 ## 事件
 
-  - 
+  - 无
 
 ## 平台兼容性
 

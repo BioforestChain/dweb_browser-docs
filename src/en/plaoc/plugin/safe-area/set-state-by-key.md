@@ -4,30 +4,30 @@ category:
   - Plugin
 tag:
   - SafeAreaPlugin
-  - setStateByKey 
+  - setStateByKey
 ---
 
-set the value of a property
+Set the value of a state property
 
 ```js
 SafeAreaPlugin.setStateByKey(key, value)
 ```
 
-## parameters
+## Parameters
 
   - key
 
-    String, the name of the state property to be set
-    The list of valid attributes includes: `[overlay]`
+    String, the name of the state property to set  
+    Valid properties include: `[overlay]`
 
   - value
-    
-    The value of the state property that needs to be set;
-    The legal attribute value range refers to the value of [SafeAreaPlugin.state](./index.md) attribute;
 
-## return value
+    The value to set for the state property;
+    Valid values range refer to [SafeAreaPlugin.state](./index.md) property value;
 
-  A Promise object that resolves to null;
+## Return Value
+
+  - A Promise object that resolves to null
 
 ## Example
 ```js
@@ -38,12 +38,10 @@ const value = SafeAreaPlugin.setStateByKey("overlay", true)
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setStateByKey        | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setStateByKey | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [SafeAreaPlugin](./index.md)
-
-

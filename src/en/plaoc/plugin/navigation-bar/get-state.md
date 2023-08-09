@@ -4,43 +4,40 @@ category:
   - Plugin
 tag:
   - NavigationBarPlugin
-  - getState 
+  - getState
 ---
 
-Get the status value of the plugin
+Get the plugin state value
 
-```js
+```js  
 NavigationBarPlugin.getState([force_update])
 ```
 
-## parameters
+## Parameters
 
-  - force_update
+- force_update
 
-    The parameter accepts a boolean type of data; whether it is necessary to force the status to be updated;
-    force_update === true will re-read status updates from the system;
-    force_update === false will return the last cached state data;
+  Accepts a boolean; whether to force update the state;
+  force_update === true will re-read the state from the system; 
+  force_update === false will return the cached state data;
 
-
-## return value
-
-  A Promise object, resolve fulfills an object that implements part of the [State](../state/index.md) interface; for details, refer to the value of the [NavigationBarPlugin.state](./index.md) property;
+## Return
+  
+  - A Promise object that resolves to an object implementing part of the [State](../state/index.md) interface; see [NavigationBarPlugin.state](./index.md) for details.
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
 const value = NavigationBarPlugin.getState(true)
 ```
 
+## Platform Support
 
-## Platform Compatibility
+| API/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getState     | ✅      | ✅  | ✅          | X       |
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getState             | ✅      | ✅  | ✅          | X       |
-
-## Related Links
+## Related Links  
 
 [NavigationBarPlugin](./index.md)
-
-

@@ -4,22 +4,22 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - getOverlay 
+  - getOverlay
 ---
 
-Query whether the system status bar convers the APP content;
+Check if the system status bar overlaps the APP content
 
-```js
+```js 
 StatusBarPlugin.getOverlay()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return Value
 
-  Return a promise, resolve to fulfill a boolean;
+  - A Promise object that resolves to a boolean;
 
 ## Example
 ```js
@@ -30,12 +30,10 @@ const value = statusBarPlugin.getOverlay()
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getOverlay           | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getOverlay     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

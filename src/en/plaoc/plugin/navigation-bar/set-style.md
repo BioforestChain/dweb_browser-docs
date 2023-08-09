@@ -4,42 +4,42 @@ category:
   - Plugin
 tag:
   - NavigationBarPlugin
-  - setStyle 
+  - setStyle
 ---
 
-Set the style of the system navigation bar \[foreground color\]
+Set the style [foreground color] of the system navigation bar
 
 ```js
 NavigationBarPlugin.setStyle(style)
-```
+``` 
 
-## parameters
+## Parameters
 
   - style
 
-    The parameter accepts a string; possible values for the string are:
-    `"DARK"` `"LIGHT"` `"DEFAULT`
-    See the properties of [State.style](../../interface/state/index.md) for details;
+    Accepts a string; Possible values:
+    `"DARK"` `"LIGHT"` `"DEFAULT"`
+    See [State.style](../../interface/state/index.md) for details.
 
-## return value
 
-  A Promise object that resolves to null
+## Return
+
+  - A Promise object that resolves to null
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
 const value = NavigationBarPlugin.setStyle("DEFAULT")
 ```
 
 
-## Platform Compatibility
+## Platform Support
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setStyle             | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setStyle     | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## Related Links  
 
 [NavigationBarPlugin](./index.md)
-
-

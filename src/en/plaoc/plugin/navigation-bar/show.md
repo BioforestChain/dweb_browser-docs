@@ -7,7 +7,7 @@ tag:
   - show 
 ---
 
-Show system navigation bar
+Show the system navigation bar
 
 ```js
 NavigationBarPlugin.show()

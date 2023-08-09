@@ -1,44 +1,40 @@
 ---
-title: ConfigPlugin.setPublicUrl()
+title: ConfigPlugin.setInternalUrl()
 category:
   - Plugin
 tag:
   - ConfigPlugin
-  - setPublicUrl
+  - setInternalUrl
 ---
 
-Set the public Url;
+Sets the internal URL.
 
 ```js
-configPlugin.setPublicUrl(url)
+configPlugin.setInternalUrl(url)
 ```
 
-## parameters
+## Parameters
 
-  - url
+- url: The new URL as a string.
 
-    The parameter is the new url;
-    The type of the parameter is string;
+## Returns
 
-
-## return value
-  
-  Return a Url of a public address;
+The internal URL.  
 
 ## Example
+
 ```js
 import { configPlugin } from "@plaoc/plugin";
-configPlugin.setPublicUrl("http://xxx")
+
+configPlugin.setInternalUrl("http://xxx");
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event    | Android | IOS | Desktop-Dev | Desktop |
-|:------------------------:|:-------:|:---:|:-----------:|:-------:|
-| setPublicUrl             | ✅      | ✅   | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| setInternalUrl        | ✅      | ✅  | ✅          | X       |  
 
-## Related Links
+## See Also
 
 [ConfigPlugin](./index.md)
-
-

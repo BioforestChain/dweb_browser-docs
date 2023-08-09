@@ -1,25 +1,25 @@
 ---
 title: StatusBarPlugin.hide()
 category:
-  - Plugin
+  - Plugin  
 tag:
   - StatusBarPlugin
-  - hide 
+  - hide
 ---
 
-hide system status bar;
+Hide the system status bar
 
 ```js
-StatusBarPlugin.hide()
+StatusBarPlugin.hide() 
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return Value
 
-  Retrun a Promise object, resolve fulfill null;
+  - A Promise object that resolves to null
 
 ## Example
 ```js
@@ -30,12 +30,10 @@ const value = statusBarPlugin.hide()
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| hide                 | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| hide     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

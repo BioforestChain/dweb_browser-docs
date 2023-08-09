@@ -6,57 +6,51 @@ tag:
   - BluetoothPlugin
 ---
 
-BletoothPlugin is a plugin to access Bluetooth functionality
+BluetoothPlugin provides access to Bluetooth functionality.
 
 ```javascript
 import { bluetoothPlugin } from "@plaoc/bluetooth";
 
-bluetooth.open()
+bluetooth.open();
 ```
 
+## Properties
 
-## Property
-  - none
+- None
 
+## Methods
 
-## Method
   - [BluetoothPlugin.open()](./open.md)
 
-    Turn on the Bluetooth device;
-
+    Opens the Bluetooth adapter.
+  
   - [BluetoothPlugin.close()](./close.md)
-
-    turn off bluetooth device
-
+  
+    Closes the Bluetooth adapter.
 
   - [BluetoothPlugin.requestAndConnectDevice()](./request-and-connect-device.md)
+  
+    Requests and connects to a Bluetooth device.
 
-    Query and connect Bluetooth devices;
+## Events  
 
-## Event
-
-  - none
-
+- None
 
 ## Example
-```js 
+
+```js
 import { bluetoothPlugin } from "@plaoc/plugin";
 bluetooth.open();
 ```
 
-
 ## Platform Compatibility
 
+| Property/Method/Event            | Android | iOS | Desktop-Dev | Desktop |
+|:-------------------------------:|:-------:|:---:|:-----------:|:-------:|  
+| open                            | ✅      | ✅  | ✅          | X       |
+| close                           | ✅      | ✅  | ✅          | X       |
+| requestAndConnectDevice         | ✅      | ✅  | ✅          | X       |
 
-| Property/Method/Event   | Android | IOS | Desktop-Dev | Desktop |
-|:-----------------------:|:-------:|:---:|:-----------:|:-------:|
-| open                    | ✅       | ✅  | ✅          | X       |
-| close                   | ✅       | ✅  | ✅          | X       |
-| requestAndConnectDevice | ✅       | ✅  | ✅          | X       |
- 
-
-
-## Related Links
+## See Also
 
 [Plaoc](../)
-

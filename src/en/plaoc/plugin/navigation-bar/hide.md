@@ -4,38 +4,36 @@ category:
   - Plugin
 tag:
   - NavigationBarPlugin
-  - hide 
+  - hide
 ---
 
-Hide system navigation bar
+Hide the system navigation bar  
 
 ```js
 NavigationBarPlugin.hide()
 ```
 
-## parameters
+## Parameters  
 
-  - none
+  - None
 
-## return value
+## Return
 
-  A Promise object that resolves to null
+  - A Promise object that resolves to null
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
 const value = NavigationBarPlugin.hide()
 ```
 
+## Platform Support
 
-## Platform Compatibility
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| hide                 | ✅      | ✅  | ✅          | X       |
+| API/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|  
+| hide         | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NavigationBarPlugin](./index.md)
-
-

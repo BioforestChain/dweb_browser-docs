@@ -6,49 +6,48 @@ tag:
   - ConfigPlugin
 ---
 
-configure plugin
+Configuration plugin.
 
 ```js
 import { configPlugin } from "@plaoc/plugin";
-configPlugin.getInternalUrl()
+
+configPlugin.getInternalUrl();
 ```
 
-## Property
+## Properties
 
-  - public_url
+- public_url
 
-    The attribute defines the public url;
-    The value of the property is a string or a promise that resolve fulfills a string;
+  Defines the public URL.
+  Its value is a string or a Promise that resolves to a string.
 
-## Method
+## Methods  
 
-  - [ConfigPlugin.getInternalUrl()]()
+- [ConfigPlugin.getInternalUrl()]()
 
-    Get the internal Url;
+  Gets the internal URL.
 
-  - [ConfigPlugin.setInternalUrl()]()
+- [ConfigPlugin.setInternalUrl()]()
 
-    Set the internal Url;;
+  Sets the internal URL.
 
-  - [ConfigPlugin.setPublicUrl()]()
+- [ConfigPlugin.setPublicUrl()]()
 
-    Set public Url;
+  Sets the public URL.
 
-## Event
+## Events  
 
-  - none
-
+- None
 
 ## Platform Compatibility
 
-| Property/Method/Event   | Android | IOS | Desktop-Dev | Desktop |
-|:-----------------------:|:-------:|:---:|:-----------:|:-------:|
-| public_url              | ✅      | ✅   | ✅          | X       |
-| getInternalUrl          | ✅      | ✅   | ✅          | X       |
-| setInternalUrl          | ✅      | ✅   | ✅          | X       |
-| setPublicUrl            | ✅      | ✅   | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| public_url           | ✅      | ✅  | ✅          | X       |  
+| getInternalUrl       | ✅      | ✅  | ✅          | X       |
+| setInternalUrl       | ✅      | ✅  | ✅          | X       |
+| setPublicUrl         | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
+
 [Plaoc](../index.md)
-
-

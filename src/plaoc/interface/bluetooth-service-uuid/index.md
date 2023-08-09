@@ -25,8 +25,9 @@ BluetoothServiceUUID是蓝牙设备的某一个主服务的标识符；
 
 ## 平台兼容性
 
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
+| 属性/方法/事件           | Android | IOS | Desktop-Dev | Desktop |
+|:----------------------:|:-------:|:---:|:-----------:|:-------:|
+| BluetoothServiceUUID   | ✅      | ✅  | ✅          | X       |
 
 
 ## 相关链接

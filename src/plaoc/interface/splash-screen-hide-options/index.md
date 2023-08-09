@@ -6,7 +6,7 @@ tag:
   - SplashScreenHideOptions
 ---
 
-作为 作为 [SplashScreenPlugin.hide()](../../plugin/splash-screen/hide.md)方法的参数接口；
+作为 [SplashScreenPlugin.hide()](../../plugin/splash-screen/hide.md)方法的参数接口；
 
 
 ## 属性
@@ -23,6 +23,8 @@ tag:
   - 无
 
 ## 事件
+
+  - 无
 
 ## 平台兼容性
 

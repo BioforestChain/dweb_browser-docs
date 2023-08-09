@@ -4,28 +4,28 @@ category:
   - Plugin
 tag:
   - SafeAreaPlugin
-  - setState 
+  - setState
 ---
 
-Set safe zone state
+Set safe area state
 
 ```js
 SafeAreaPlugin.setState(state)
 ```
 
-## parameters
+## Parameters
 
   - state
 
-    Objects that implement part of the [State](../../interface/state/index.md) interface;
-    The list of valid attributes includes: `[overlay]`
+    An object implementing partial [State](../../interface/state/index.md) interface;
+    Valid properties include: `[overlay]`
 
-## return value
+## Return Value
 
-  A Promise object that resolves to null;
+  - A Promise object that resolves to null
 
 ## Example
-```js
+```js 
 import { SafeAreaPlugin } from "@plaoc/plugins";
 const value = SafeAreaPlugin.setState({overlay: true})
 ```
@@ -33,12 +33,10 @@ const value = SafeAreaPlugin.setState({overlay: true})
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setState             | ✅       | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setState     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [SafeAreaPlugin](./index.md)
-
-

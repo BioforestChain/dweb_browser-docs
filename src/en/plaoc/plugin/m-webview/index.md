@@ -3,53 +3,50 @@ title: MWebviewPlugin
 category:
   - Plugin
 tag:
-  - MWebviewPlugin
+  - MWebviewPlugin 
 ---
 
-Multiple webview plugins;
+Multi webview plugin.
 
 ```js
 import { mwebviewPlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
-  - none
+- None
 
-## Method
+## Methods
 
   - [MWebviewPlugin.open()](./open.md)
 
-    Open a new webview
-
+    Opens a new webview
 
   - [MWebviewPlugin.close()](./close.md)
 
-    Destroy the specified webview
-
+    Destroys the specified webview
 
   - [MWebviewPlugin.activate()](./activate.md)
-
-    activate webview
-
+  
+    Activates the webview
 
   - [MWebviewPlugin.closeApp()](./close-app.md)
 
-    Close the entire application, command to close the front end, and the service will not be closed
+    Closes the entire app frontend
 
-## Event
+## Events
 
-## Platform Compatibility
+- None
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| open                 | ✅      | ✅  | ✅          | X       |
-| close                | ✅      | ✅  | ✅          | X       |
-| activate             | ✅      | ✅  | ✅          | X       |
-| closeApp             | ✅      | ✅  | ✅          | X       |
+## Platform Compatibility  
 
-## Related Links
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| open                  | ✅      | ✅  | ✅          | X       |
+| close                 | ✅      | ✅  | ✅          | X       |  
+| activate              | ✅      | ✅  | ✅          | X       |
+| closeApp              | ✅      | ✅  | ✅          | X       |
+
+## See Also
 
 [Plaoc](../index.md)
-
-

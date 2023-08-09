@@ -1,44 +1,45 @@
+Here is the English translation:
+
 ---
 title: NavigationBarPlugin.setColor()
 category:
-  - Plugin
+  - Plugin  
 tag:
   - NavigationBarPlugin
-  - setColor 
+  - setColor
 ---
 
-Set the color of the system navigation bar \[background color\]
+Set the color [background color] of the system navigation bar
 
-```js
+```js 
 NavigationBarPlugin.setColor(color)
 ```
 
-## parameters
+## Parameters
 
   - color
 
-    The parameter accepts a string representing the hexadecimal color; for example: `#FFFFFFFF`
+    Accepts a string representing a hexadecimal color code, e.g. `#FFFFFFFF`
 
 
-## return value
+## Return
 
-  A Promise object that resolves to null;
+  - A Promise object that resolves to null  
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
-const value = NavigationBarPlugin.setColor("#FFFFFFFF")
+const value = NavigationBarPlugin.setColor("#FFFFFFFF") 
 ```
 
 
-## Platform Compatibility
+## Platform Support
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setColor             | ✅      | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setColor     | ✅      | ✅  | ✅          | X       |  
 
 ## Related Links
 
 [NavigationBarPlugin](./index.md)
-
-

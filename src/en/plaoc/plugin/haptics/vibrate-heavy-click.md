@@ -7,35 +7,34 @@ tag:
   - vibrateHeavyClick
 ---
 
-Effect of swipe gesture feedback;
+Heavy click gesture feedback effect.
 
 ```js
 HapticsPlugin.vibrateHeavyClick()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None  
 
-## return value
+## Returns
 
-  returns a Promise;;
-  
+A Promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
-hapticsPlugin.vibrateHeavyClick()
+
+hapticsPlugin.vibrateHeavyClick();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| vibrateHeavyClick    | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event    | Android | iOS | Desktop-Dev | Desktop |
+|:------------------------:|:-------:|:---:|:-----------:|:-------:|
+| vibrateHeavyClick        | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [HapticsPlugin](./index.md)
-
-

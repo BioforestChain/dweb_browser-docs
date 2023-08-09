@@ -7,40 +7,36 @@ tag:
   - impactLight
 ---
 
-Used to simulate the mass of objects in collision;
-
+Simulates a light impact between virtual objects.
 
 ```js
 HapticsPlugin.impactLight(options)
 ```
 
-## parameters
+## Parameters
 
-  - options
+- options: Options of type [ImpactOptions](../../interface/impact-options/index.md).
 
-    The parameter value is a [ImpactOptions](../../interface/impact-options/index.md) type;
-    
+## Returns
 
-## return value
-
-  returns a Promise;
+A Promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
+
 hapticsPlugin.impactLight({
   style: "HEAVY"
-})
+});
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| options              | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| impactLight           | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [HapticsPlugin](../index.md)
-
-

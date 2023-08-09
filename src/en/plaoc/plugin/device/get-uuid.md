@@ -1,40 +1,40 @@
 ---
-title: DevicePlugin. getUUID()
+title: DevicePlugin.getUUID()
 category:
-   - Plugins
+  - Plugin
 tag:
-   - DevicePlugin
-   - getUUID
+  - DevicePlugin
+  - getUUID
 ---
 
-Get the identifier of the device
+Gets the device identifier.
 
 ```js
 import { devicePlugin } from "@plaoc/plugin";
-devicePlugin. getUUID()
+devicePlugin.getUUID() 
 ```
 
-## parameters
+## Parameters
 
-   - none
+- None
 
-## return value
+## Returns
 
-  Return a Promise, resolve to fulfill a [$ResponseUUIDData](../../interface/response-uuid-data/index.md) object
+A Promise that resolves to a [ResponseUUIDData](../../interface/response-uuid-data/index.md) object.
 
 ## Example
 
 ```js
 import { devicePlugin } from "@plaoc/plugin";
-devicePlugin. getUUID()
+devicePlugin.getUUID();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:--- ----:|
-| getUUID              | ✅ | ✅ | ✅ | X |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| getUUID               | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [DevicePlugin](./index.md)

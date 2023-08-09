@@ -1,6 +1,6 @@
 # Plaoc Interface
 
-Plaoc 内部的接口约束说明；
+Interface constraint specification inside Plaoc;
 
 ## Related Links
 

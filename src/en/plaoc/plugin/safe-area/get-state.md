@@ -4,45 +4,42 @@ category:
   - Plugin
 tag:
   - SafeAreaPlugin
-  - getState 
+  - getState
 ---
 
-Get the status of the safe zone;;
+Get the state of the safe area;
 
 ```js
-SafeAreaPlugin.getState([force_update])
+SafeAreaPlugin.getState([force_update]) 
 ```
 
-## parameters
+## Parameters
 
   - force_update
 
-    The parameter accepts a boolean type of data; whether it is necessary to force the status to be updated;
-    force_update === true will re-read status updates from the system;
-    force_update === false wil
+    Accepts a boolean data; whether to force update the state;
+    force_update === true will read the state from the system again; 
+    force_update === false will return the cached state data last time;
 
 
-## return value
+## Return Value
 
-  A Promise object, resolve fulfills an object that implements part of the [State](../state/index.md) interface; for details, refer to the value of the [SafeAreaPlugin.state](./index.md) property;
+  - A Promise object that resolves to an object implementing partial [State](../state/index.md) interface; see details in [SafeAreaPlugin.state](./index.md) attribute value;
 
-  
 
 ## Example
+
 ```js
 import { SafeAreaPlugin } from "@plaoc/plugins";
-const value = SafeAreaPlugin.getState(true)
+const value = SafeAreaPlugin.getState(true) 
 ```
-
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getState             | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |  
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getState     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
-
+  
 [SafeAreaPlugin](./index.md)
-
-

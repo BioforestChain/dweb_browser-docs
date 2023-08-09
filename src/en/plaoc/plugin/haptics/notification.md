@@ -7,35 +7,35 @@ tag:
   - notification
 ---
 
-vibration notification effect
+Notification vibration effect.
 
 ```js
 HapticsPlugin.notification(options)
 ```
 
-## parameters
+## Parameters
 
-  The options parameter is a [NotificationOptions](../../interface/notification-options/index.md) object;
+Options parameter is a [NotificationOptions](../../interface/notification-options/index.md) object.
 
-## return value
+## Returns
 
-  returns a promise
+A promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
+
 hapticsPlugin.notification({
-  type: "SUCCESS"
-})
+  type: "SUCCESS" 
+});
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| notification         | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| notification          | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 [HapticsPlugin](./index.md)
-
-

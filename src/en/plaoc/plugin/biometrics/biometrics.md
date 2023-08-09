@@ -4,38 +4,36 @@ category:
   - Plugin
 tag:
   - BiometricsPlugin
-  - biometrics 
+  - biometrics
 ---
 
-Turn on biometrics
+Initiate biometrics authentication.
 
 ```js
 BiometricsPlugin.biometrics()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns
 
-  A Promise object, resolve fulfills a [BiometricsResult](../../interface/biometrics-result/index.md) object;
+- A Promise that resolves to a [BiometricsResult](../../interface/biometrics-result/index.md) object.
 
 ## Example
+
 ```js
 import { biometricsPlugin } from "@plaoc/plugins";
-const value = biometricsPlugin.biometrics()
+const value = biometricsPlugin.biometrics();
 ```
-
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| biometrics           | ✅      | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop | 
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| biometrics            | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [BiometricsPlugin](./index.md)
-
-

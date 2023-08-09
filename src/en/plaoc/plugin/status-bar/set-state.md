@@ -4,25 +4,25 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - setState 
+  - setState
 ---
 
-Set the status of the system status bar
+Set system status bar state  
 
 ```js
 StatusBarPlugin.setState(state)
 ```
 
-## parameters
+## Parameters
 
   - state
 
-    Objects that implement part of the [State](../../interface/state/index.md) interface;
-    The list of valid attributes includes: `[overlay, visible, color, style]`
+    An object implementing partial [State](../../interface/state/index.md) interface;
+    Valid properties include: `[overlay, visible, color, style]`
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfill null;
+  - A Promise object that resolves to null
 
 ## Example
 ```js
@@ -33,12 +33,10 @@ const value = statusBarPlugin.setState({overlay:true})
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setState             | ✅       | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setState     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

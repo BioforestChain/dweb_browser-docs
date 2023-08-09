@@ -1,40 +1,43 @@
 ---
 title: BarcodeScannerPlugin.stop()
 category:
-   - Plugins
+  - Plugin
 tag:
-   - BarcodeScannerPlugin
-   - stop
+  - BarcodeScannerPlugin
+  - stop
 ---
 
-The method to stop parsing the barcode data;
+Stops barcode decoding.
 
 ```js
-BarcodeScannerPlugin.stop()
+BarcodeScannerPlugin.stop() 
 ```
 
-## parameters
+## Parameters
 
-   - none
+- None
 
-## return value
+## Returns 
 
-   A Promise object, resolve fulfills boolean;
+A Promise that resolves to a boolean.
 
 ## Example
+
 ```js
 import { barcodeScannerPlugin } from "@plaoc/plugins";
-;(async () => {
-  const res = await barcodeScannerPlugin.stop();
+
+(async () => {
+  const res = await barcodeScannerPlugin.stop(); 
 })();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:--- ----:|
-| stop | ✅ | ✅ | ✅ | ✅ |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| stop                  | ✅      | ✅  | ✅          | ✅      |
 
-## Related Links
+## See Also
+
 [BarcodeScannerPlugin](./index.md)
 

@@ -4,41 +4,39 @@ category:
   - Plugin
 tag:
   - NavigationBarPlugin
-  - setVisible 
+  - setVisible
 ---
 
-Set whether the system navigation bar is visible
+Set whether the system navigation bar is visible  
 
 ```js
 NavigationBarPlugin.setVisible(b)
 ```
 
-## parameters
+## Parameters
 
   - b
 
-    The parameter accepts a boolean;
+    Accepts a boolean
 
+## Return
 
-## return value
-
-  A Promise object that resolves to null
+  - A Promise object that resolves to null
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
-const value = NavigationBarPlugin.setVisible(true)
+const value = NavigationBarPlugin.setVisible(true) 
 ```
 
 
-## Platform Compatibility
+## Platform Support
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setVisible           | ✅      | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setVisible   | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NavigationBarPlugin](./index.md)
-
-

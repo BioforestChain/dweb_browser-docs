@@ -14,12 +14,13 @@ StateObserver.jsonlines()
 ```
 
 ## 参数
-- 无
+
+  - 无
 
 
 ## 返回值
-- 一个迭代器 
 
+  一个迭代器 
   每次迭代返回值是一个实现了部分[State](../state/index.md)接口的对象；
 
 

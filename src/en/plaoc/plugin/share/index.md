@@ -3,42 +3,40 @@ title: SharePlugin
 category:
   - Plugin
 tag:
-  - SharePlugin
+  - SharePlugin  
 ---
 
-plugin for sharing
+Plugin for sharing
 
 ```js
 import { sharePlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
-  - none
+  - None
 
-## Method
+## Methods
 
   - [SharePlugin.canShare()](./can-share.md)
 
-    whether it can be shared;
+    Check if sharing is available;
 
   - [SharePlugin.share()](./share.md)
+  
+    Share
 
-    share
+## Events
 
-## Event
-
-  - none
+  - None
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| canShare             | ✅      | ✅  | ✅           | X       |
-| share                | ✅      | ✅  | ✅           | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop | 
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| canShare     | ✅      | ✅  | ✅          | X       |
+| share        | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [Plaoc](../index.md)
-
-

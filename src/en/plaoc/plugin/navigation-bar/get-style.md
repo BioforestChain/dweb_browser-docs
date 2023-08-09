@@ -4,40 +4,38 @@ category:
   - Plugin
 tag:
   - NavigationBarPlugin
-  - getStyle 
+  - getStyle
 ---
 
-Query the style of the system navigation bar \[foreground color\]
+Get the style [foreground color] of the system navigation bar  
 
 ```js
 NavigationBarPlugin.getStyle()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return
 
-  A Promise object, resolve to fulfill the string;
-  Possible values for string are:
-  `"DARK"` `"LIGHT"` `"DEFAULT"`
+  - A Promise object that resolves to a string
+  - Possible values:
+    `"DARK"` `"LIGHT"` `"DEFAULT"`  
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
 const value = NavigationBarPlugin.getStyle()
 ```
 
+## Platform Support  
 
-## Platform Compatibility
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getStyle             | ✅      | ✅  | ✅          | X       |
+| API/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getStyle     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NavigationBarPlugin](./index.md)
-
-

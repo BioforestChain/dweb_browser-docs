@@ -101,6 +101,16 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
     Last update time;
     The attribute is just a string;
 
+  - bundle_signature
+
+     Package App to generate signature;
+     The type of the attribute value is a string;
+
+  - public_key_url
+
+    Used to verify the identity of the app holder;
+    The attribute value is a string;
+
 ## Method
 
   - none

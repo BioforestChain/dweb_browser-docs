@@ -7,34 +7,34 @@ tag:
   - getInternalUrl
 ---
 
-Get the internal Url;
+Gets the internal URL.
 
 ```js
 configPlugin.getInternalUrl()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
-  
-  Return a Url of an internal address;
+## Returns
+
+The internal URL.
 
 ## Example
+
 ```js
 import { configPlugin } from "@plaoc/plugin";
-configPlugin.getInternalUrl()
+
+configPlugin.getInternalUrl();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event    | Android | IOS | Desktop-Dev | Desktop |
-|:------------------------:|:-------:|:---:|:-----------:|:-------:|
-| getInternalUrl           | ✅      | ✅   | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| getInternalUrl        | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [ConfigPlugin](./index.md)
-
-

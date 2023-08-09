@@ -6,45 +6,48 @@ tag:
   - barcode-scanner
 ---
 
-BarcodeScannerPlugin is a barcode decoding interface;
+BarcodeScannerPlugin is a plugin that implements barcode scanning interfaces.
 
 ```javascript
 import { barcodeScannerPlugin } from "@plaoc/plugins";
-barcodeScannerPlugin.process(blob)
+barcodeScannerPlugin.process(blob); 
 ```
 
-## Property
-  - none
+## Properties
 
- 
-## Method
+- None
 
-  - [BarcodeScannerPlugin.process()](./process.md)
+## Methods
 
-    The method of parsing the barcode;
-
-  - [BarcodeScannerPlugin.stop()](./stop.md)
-
-    Stop parsing the barcode;
+- [BarcodeScannerPlugin.process()](./process.md)
   
-  - [BarcodeScannerPlugin.getSupportedFormats()](./get-supported-formats.md)
+  Decodes barcode data.
 
-## Event
-  - none
+- [BarcodeScannerPlugin.stop()](./stop.md)
 
+  Stops barcode decoding.
+
+- [BarcodeScannerPlugin.getSupportedFormats()](./get-supported-formats.md)
+
+## Events
+
+- None
 
 ## Platform Compatibility
 
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| process               | ✅      | ✅  | ✅          | ✅      |  
+| stop                  | ✅      | ✅  | ✅          | ✅      |
+| getSupportedFormats   | ✅      | ✅  | ✅          | ✅      |
 
-| Property/Method/Event           | Android | IOS | Desktop-Dev | Desktop |
-|:-----------------------:|:-------:|:---:|:-----------:|:-------:|
-| process                 | ✅      | ✅  | ✅          | ✅        |
-| stop                    | ✅      | ✅  | ✅          | ✅        |
-| getSupportedFormats     | ✅      | ✅  | ✅          | ✅        |
+## See Also 
+
+[Plaoc](../index.md)
 
 
-## Related Links
 
-[Plaoc](../)
+
+ 
 
 

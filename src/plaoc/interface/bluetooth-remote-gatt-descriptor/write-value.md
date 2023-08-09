@@ -22,7 +22,7 @@ BluetoothRemoteGATTDescriptor.writeValue(data)
 
 ## 返回值
 
-  返回一个Promise, resolve兑现一个[BluetoothDataViewResponse]();
+  返回一个Promise, resolve兑现一个[BluetoothDataViewResponse](../bluetooth-dataview-response/index.md);
   
 
 ## 示例
@@ -64,7 +64,7 @@ BluetoothRemoteGATTDescriptor.writeValue(data)
   .then(async (res) => {
     if(res.success){
       const bluetoothRemoteGATTDescriptor = res.data;
-      const value = await bluetoothRemoteGATTDescriptor.writeValue()
+      const value = await bluetoothRemoteGATTDescriptor.writeValue(new ArrayBuffer(8))
     }
   })
   .catch(err => console.error(err))

@@ -1,16 +1,16 @@
 ---
-title: ConfigPlugin.setPublicUrl()
+title: ConfigPlugin.setInternalUrl()
 category:
   - Plugin
 tag:
   - ConfigPlugin
-  - setPublicUrl
+  - setInternalUrl
 ---
 
-设置公共的Url;
+设置内部的Url;
 
 ```js
-configPlugin.setPublicUrl(url)
+configPlugin.setInternalUrl(url)
 ```
 
 ## 参数
@@ -23,19 +23,19 @@ configPlugin.setPublicUrl(url)
 
 ## 返回值
   
-  返回一个公共地址的Url;
+  返回一个内部地址的Url;
 
 ## 示例
 ```js
 import { configPlugin } from "@plaoc/plugin";
-configPlugin.setPublicUrl("http://xxx")
+configPlugin.setInternalUrl("http://xxx")
 ```
 
 ## 平台兼容性
 
 | 属性/方法/事件     | Android | IOS | Desktop-Dev | Desktop |
 |:----------------:|:-------:|:---:|:-----------:|:-------:|
-| setPublicUrl   | ✅      | ✅   | ✅          | X       |
+| setInternalUrl   | ✅      | ✅   | ✅          | X       |
 
 ## 相关链接
 

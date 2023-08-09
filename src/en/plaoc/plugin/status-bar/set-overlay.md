@@ -4,41 +4,39 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - setOverlay 
+  - setOverlay
 ---
 
-Set whether to conver the content of the App in the system status bar;
+Set whether the system status bar overlaps the APP content  
 
 ```js
 StatusBarPlugin.setOverlay(b)
 ```
 
-## parameters
+## Parameters
 
   - b
 
-    The parameter accepts a boolean;
+    Accepts a boolean;
 
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfill null;
+  - A Promise object that resolves to null
 
 ## Example
 ```js
 import { statusBarPlugin } from "@plaoc/plugins";
-const value = statusBarPlugin.setOverlay(true)
+const value = statusBarPlugin.setOverlay(true) 
 ```
 
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setOverlay           | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setOverlay   | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## Related Links  
 
 [StatusBarPlugin](./index.md)
-
-

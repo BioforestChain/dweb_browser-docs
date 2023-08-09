@@ -1,65 +1,59 @@
 ---
-title: NetworkPlugin
+title: NetworkPlugin  
 category:
   - Plugin
 tag:
   - NetworkPlugin
 ---
 
-Network-related plug-ins;
-Interface inheritance and [BaseEvent]()
+Network related plugin;
+The interface inherits from [BaseEvent]().
 
-```js
+```js 
 import { networkPlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
   - app_kit
 
-    Attributes are used to save listener-related objects;
-    The type of attribute value is [Tkit](../../interface/tkit/index.md) object;
+    Property used to store listener related objects; 
+    The type of the value is a [Tkit](../../interface/tkit/index.md) object.
 
-## Method
+## Methods
 
   - [NetworkPlugin.onLine()](./on-line.md)
 
-    Query whether the network is online;
-
+    Check if network is online;
 
   - [NetworkPlugin.getStatus()](./get-status.md)
 
-    
-    Get the status of the network;
+    Get the network status;
+  
+## Events
 
-    
-
-## Event
-
-  - onLine
+  - onLine  
 
     Triggered when the browser can access the network;
 
   - offLine
 
-    Triggered when the browser loses the network
-
+    Triggered when the browser loses network;
+  
   - change
 
-    Triggered when the current browser can access the network and lose the network;
+    Triggered when the browser gains/loses network access; 
 
-## Platform Compatibility
+## Platform Support
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop | 
 |:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| onLine               | ✅      | ✅  | ✅          | X       |
+| onLine               | ✅      | ✅  | ✅          | X       |  
 | getStatus            | ✅      | ✅  | ✅          | X       |
 | event onLine         | ✅      | ✅  | ✅          | X       |
 | event offLine        | ✅      | ✅  | ✅          | X       |
 | event change         | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## Related Links  
 
 [Plaoc](../index.md)
-
-

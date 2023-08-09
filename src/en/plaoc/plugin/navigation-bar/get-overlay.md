@@ -2,40 +2,38 @@
 title: NavigationBarPlugin.getOverlay()
 category:
   - Plugin
-tag:
+tag: 
   - NavigationBarPlugin
-  - getOverlay 
+  - getOverlay
 ---
 
-query whether the system navigation bar covers the content of the APP
+Check if the system navigation bar overlays the app content
 
 ```js
-NavigationBarPlugin.getOverlay()
+NavigationBarPlugin.getOverlay() 
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return
 
-  a Promise object, resolve fulfills boolean;
+  - A Promise object that resolves to a boolean
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
 const value = NavigationBarPlugin.getOverlay()
 ```
 
+## Platform Support 
 
-## Platform Compatibility
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getOverlay           | ✅      | ✅  | ✅          | X       |
+| API/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getOverlay     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NavigationBarPlugin](./index.md)
-
-

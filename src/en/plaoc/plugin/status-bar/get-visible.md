@@ -4,38 +4,36 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - getVisible 
+  - getVisible
 ---
 
-Query whether the system status bar is visible
+Check if the system status bar is visible
 
 ```js
 StatusBarPlugin.getVisible()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfills boolean;
+  - A Promise object that resolves to a boolean;
 
 ## Example
 ```js
 import { statusBarPlugin } from "@plaoc/plugins";
-const value = statusBarPlugin.getVisible()
+const value = statusBarPlugin.getVisible() 
 ```
 
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getVisible           | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getVisible    | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

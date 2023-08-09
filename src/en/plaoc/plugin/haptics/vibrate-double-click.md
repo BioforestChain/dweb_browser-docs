@@ -7,35 +7,34 @@ tag:
   - vibrateDoubleClick
 ---
 
-The effect of double-click feedback;
+Double click feedback effect.
 
-```js
+```js  
 HapticsPlugin.vibrateDoubleClick()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns
 
-  returns a Promise;;
-  
+A Promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
-hapticsPlugin.vibrateDoubleClick()
+
+hapticsPlugin.vibrateDoubleClick();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| vibrateDoubleClick   | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event      | Android | iOS | Desktop-Dev | Desktop | 
+|:--------------------------:|:-------:|:---:|:-----------:|:-------:|
+| vibrateDoubleClick         | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [HapticsPlugin](./index.md)
-
-

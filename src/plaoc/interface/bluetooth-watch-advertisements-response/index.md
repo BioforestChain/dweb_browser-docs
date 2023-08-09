@@ -33,7 +33,7 @@ BluetoothWatchAdvertisementsResponse 是一个BluetoothDevice.watchAdvertisments
 
 ## 事件
 
-  - 
+  - 无
 
 ## 平台兼容性
 

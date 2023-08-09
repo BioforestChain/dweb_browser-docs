@@ -1,3 +1,5 @@
+Here is the English translation:
+
 ---
 title: StatusBarPlugin
 category:
@@ -6,45 +8,44 @@ tag:
   - status-bar
 ---
 
-The StatusBarPlugin interface is used to represent the system status bar element, and provides properties and methods for accessing the system status bar
+The StatusBarPlugin interface represents the system status bar element and provides access to the properties and methods of the system status bar
 
 ```javascript
 import { statusBarPlugin } from "@plaoc/plugins";
 
-// 设置状态栏的颜色
+// Set status bar color
 statusBarPlugin.setColor("#FF0000FF")
- 
 ```
 
-## Property
+## Properties
 
 - [StatusBarPlugin.state](./state.md)
 
-  The status object of the system status bar;
-  The attribute value is an object that implements the [StateObserver](../../interface/state-observer/index.md) interface;
+  The state object of the system status bar;
+  The property value is an object implementing the [StateObserver](../../interface/state-observer/index.md) interface;
 
-## Method
+## Methods
 
 - [StatusBarPlugin.getColor()](./get-color.md)
 
-  Query the color of the system status bar \[background color\];
+  Get the color [background color] of the system status bar;
 
 - [StatusBarPlugin.getOverlay()](./get-overlay.md)
 
-  Query whether the system status bar covers the content of the App;
+  Check if the system status bar overlaps the APP content;
 
 - [StatusBarPlugin.getState([force_update])](./get-state.md)
 
-  Query the status of the system status bar;
+  Get the state of the system status bar;  
 
 - [StatusBarPlugin.getStyle()](./get-style.md)
 
-  Query the style of the system status bar;
+  Get the style [foreground color] of the system status bar;
 
 - [StatusBarPlugin.getVisible()](./get-visible.md)
 
-  Query whether the system status bar is displayed;
-  Returns a Promise object; resolve fulfills a boolean
+  Check if the system status bar is visible;
+  Returns a Promise object that resolves to a boolean;
 
 - [StatusBarPlugin.hide()](./hide.md)
 
@@ -52,11 +53,11 @@ statusBarPlugin.setColor("#FF0000FF")
 
 - [StatusBarPlugin.setColor()](./set-color.md)
 
-  Set the color of the system status bar;;
+  Set the color of the system status bar;
 
 - [StatusBarPlugin.setOverlay()](./set-overlay.md)
 
-  Set whether the system status bar covers the App;
+  Set whether the system status bar overlaps the APP;  
 
 - [StatusBarPlugin.setState()](./set-state.md)
 
@@ -68,7 +69,7 @@ statusBarPlugin.setColor("#FF0000FF")
 
 - [StatusBarPlugin.setStyle()](./set-style.md)
 
-  Set the style of the system status bar;;
+  Set the style of the system status bar;
 
 - [StatusBarPlugin.setVisible()](./set-visible.md)
   
@@ -76,37 +77,36 @@ statusBarPlugin.setColor("#FF0000FF")
 
 - [StatusBarPlugin.show()](./show.md)
 
-  Display the system status bar;
+  Show the system status bar;
 
 
 
-## Event
-- none
+## Events
+
+- None
 
 
 ## Platform Compatibility
 
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| state                | ✅      | ✅  | ✅          | X       |
-| getColor             | ✅      | ✅  | ✅          | X       |
-| getOverlay           | ✅      | ✅  | ✅          | X       |
-| getState             | ✅      | ✅  | ✅          | X       |
-| getStyle             | ✅      | ✅  | ✅          | X       |
-| getVisible           | ✅      | ✅  | ✅          | X       |
-| hide                 | ✅      | ✅  | ✅          | X       |
-| setColor             | ✅      | ✅  | ✅          | X       |
-| setOverlay           | ✅      | ✅  | ✅          | X       |
-| setState             | ✅      | ✅  | ✅          | X       |
-| setStateByKey        | ✅      | ✅  | ✅          | X       |
-| setStyle             | ✅      | ✅  | ✅          | X       |
-| setVisible           | ✅      | ✅  | ✅          | X       |
-| show                 | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| state        | ✅      | ✅  | ✅          | X       |
+| getColor     | ✅      | ✅  | ✅          | X       |
+| getOverlay   | ✅      | ✅  | ✅          | X       |
+| getState     | ✅      | ✅  | ✅          | X       |
+| getStyle     | ✅      | ✅  | ✅          | X       |
+| getVisible   | ✅      | ✅  | ✅          | X       |
+| hide         | ✅      | ✅  | ✅          | X       |  
+| setColor     | ✅      | ✅  | ✅          | X       |
+| setOverlay   | ✅      | ✅  | ✅          | X       |
+| setState     | ✅      | ✅  | ✅          | X       |
+| setStateByKey| ✅      | ✅  | ✅          | X       |
+| setStyle     | ✅      | ✅  | ✅          | X       |
+| setVisible   | ✅      | ✅  | ✅          | X       |
+| show         | ✅      | ✅  | ✅          | X       |
 
 
-## Related Links
+## Related Links  
 
 [Plaoc](../)
-
-

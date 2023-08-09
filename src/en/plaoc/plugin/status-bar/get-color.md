@@ -4,23 +4,22 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - getColor 
+  - getColor
 ---
 
-Query the color of the system status bar background color;
+Get the color [background color] of the system status bar  
 
 ```js
 StatusBarPlugin.getColor()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return Value
 
-  Return a promise, resolve to a string representing the hexadecimal color; 
-  eg： `#FFFFFFFF`
+  - A Promise object that resolves to a string representing a hexadecimal color; e.g. `#FFFFFFFF`
 
 ## Example
 ```js
@@ -31,12 +30,10 @@ const value = statusBarPlugin.getColor("#FFFFFFFF")
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getColor             | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getColor     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

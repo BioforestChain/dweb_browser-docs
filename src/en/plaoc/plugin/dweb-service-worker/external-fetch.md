@@ -1,53 +1,52 @@
 ---
 title: DwebServiceWorkerPlugin.externalFetch()
 category:
-  - Plugins
+  - Plugin
 tag:
   - DwebServiceWorkerPlugin
   - externalFetch
 ---
 
-A way to communicate with other apps;
+Method for communicating with other apps.
 
 ```js
-DwebServiceWorkerPlugin. externalFetch(mmid, init)
+DwebServiceWorkerPlugin.externalFetch(mmid, init)
 ```
 
-## parameters
+## Parameters
 
-   - mmid
+- mmid
 
-    Identifiers of other apps;
-    The parameter value is an object of type [$MMID](../../interface/mmid/index.md);
+  Identifier of the other app. 
+  Should be a [MMID](../../interface/mmid/index.md) object.
 
-   - init
+- init
 
-    is the initialization data;
-    The parameter value is a [$ExterRequestWithBaseInit](../../interface/exter-request-with-base-init/index.md) object;
-    
+  Initialization data.
+  Should be a [ExterRequestWithBaseInit](../../interface/exter-request-with-base-init/index.md) object.
 
-## return value
+## Returns
 
-  Return a Promise, and resolve fulfills a Response;
+A Promise that resolves to a Response.
 
 ## Example
+
 ```js
 import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
-dwebServiceWorkerPlugin
-.externalFetch(
-   `xxx.dweb`,
-   {
-     pathname: "xxxx",
-   }
-)
-```
 
+dwebServiceWorkerPlugin.externalFetch(
+  `xxx.dweb`,
+  {
+    pathname: "xxxx",
+  }  
+);
+```
 
 ## Platform Compatibility
 
-| Property/Method/Event | Android | IOS | Desktop-Dev| Desktop |
-|:---------------------:|:-------:|:---:|:--------- :|:-------:|
-| externalFetch         | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| externalFetch         | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 [DwebServiceWorkerPlugin](../index.md)

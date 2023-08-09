@@ -1,5 +1,5 @@
 ---
-title: MWebviewPlugin.close()
+title: MWebviewPlugin.close()  
 category:
   - Plugin
 tag:
@@ -7,44 +7,45 @@ tag:
   - close
 ---
 
-Destroy the specified webview
+Destroys the specified webview.
 
 ```js
 MWebviewPlugin.close(webview_id)
 ```
 
-## parameters
+## Parameters
 
-  - webview_id
+- webview_id: The webview identifier. String value.
 
-    webview identifier
-    The type of the parameter value is string;
+## Returns
 
-## return value
-
-  Return a Promise, and resolve fulfills a boolen;
-  If the destruction is successful, it is true, and if the destruction is failed, it is false;
+A Promise that resolves to a boolean. 
+Resolves to true if destroyed successfully, false if failed.
 
 ## Example
+
 ```js
 import { mwebviewPlugin } from "@plaoc/plugin";
-;(() => {
+
+(async () => {
   const { webview_id } = await mwebviewPlugin.open("http://xxx");
-  const b = mwebviewPlugin.close(webview_id);
-  b
-  ? console.log("success")
-  : console.log("failure");
+  
+  const success = await mwebviewPlugin.close(webview_id);
+
+  if (success) {
+    console.log("Success");
+  } else {
+    console.log("Failed");
+  }  
 })();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| close               | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| close                 | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [MWebviewPlugin](./index.md)
-
-

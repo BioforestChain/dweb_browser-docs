@@ -1,139 +1,70 @@
 import { sidebar } from "vuepress-theme-hope";
+import enApp from "./en-app"
+import enPlaoc from "./en-plaoc"
+import enPlaocPlugin from "./en-plaoc-plugin"
+import enPlaocPluginBarcodeScanner from "./en-plaoc-plugin-barcode-scanner";
+import enPlaocPluginBiometrics from "./en-plaoc-plugin-biometrics";
+import enPlaocPluginNavigationBar from "./en-plaoc-plugin-navigation-bar";
+import enPlaocPluginSafeArea from "./en-plaoc-plugin-safe-area";
+import enPlaocPluginStatusBar from "./en-plaoc-plugin-status-bar";
+import enPlaocPluginVirtualKeyboard from "./en-plaoc-plugin-virtual-keyboard";
+import enPlaocPluginBluetooth from "./en-plaoc-plugin-bluetooth"
+import enPlaocPluginCamera from "./en-plaoc-plugin-camera"
+import enPlaocPluginClipboard from "./en-plaoc-plugin-clipboard"
+import enPlaocPluginConfig from "./en-plaoc-plugin-config"
+import enPlaocPluginDevice from "./en-plaoc-device"
+import enPlaocPluginUpdateController from "./en-plaoc-plugin-update-controller"
+import enPlaocPluginDwebServiceWorker from "./en-plaoc-plugin-dweb-service-worker"
+import enPlaocPluginFileSystem from "./en-plaoc-plugin-file-system"
+import enPlaocPluginHaptics from "./en-plaoc-plugin-haptics";
+import enPlaocPluginMWebview from "./en-plaoc-plugin-m-webview";
+import enPlaocPluginNetwork from "./en-plaoc-plugin-network";
+import enPlaocPluginShare from "./en-plaoc-plugin-share";
+import enPlaocPluginSplashScreen from "./en-plaoc-plugin-splash-screen";
+import enPlaocPluginToast from "./en-plaoc-plugin-toast"
+import enPlaocPluginTorch from "./en-plaoc-plugin-torch";
+
+import enPlaocInterface from "./en-plaoc-interface";
+import enPlaocInterfaceBluetoothDevice from "./en-plaoc-interface-bluetooth-device"
+import enPlaocInterfaceBluetoothRemoteGATTCharacteristic from "./en-plaoc-interface-bluetooth-remote-gatt-characteristic"
+import enPlaocInterfaceBluetoothRemoteGATTDescriptor from "./en-plaoc-interface-bluetooth-remote-gatt-descriptor"
+import enPlaocInterfaceBluetoothRemoteGATTServer from "./en-plaoc-interface-bluetooth-remote-gatt-server"
+import enPlaocInterfaceBluetoothRemoteGATTService from "./en-plaoc-interface-bluetooth-remote-gatt-service"
+import enPlaocInterfaceStateObserver from "./en-plaoc-interface-state-observer"
+import enPlaocInterfaceWindowListenerHandle from "./en-plaoc-interface-window-listener-handle";
+
 
 export const enSidebar = sidebar({
-  "/en/": [
-    "",
-    {
-      text: "Plaoc",
-      icon: "app",
-      prefix: "app/",
-      link: "app",
-      children: [
-        {
-          text: "cli tool",
-          link: "/app/bundle/",
-        },
-        {
-          text: "Developer tool",
-          link: "/app/developer-tool/",
-        },
-      ]
-    },
-    {
-      icon: "discover",
-      text: "Plaoc",
-      prefix: "/plaoc/",
-      link: "plaoc/README.md",
-      children: [
-        {
-          text: "DwebServiceWorker",
-          link: "/plaoc/dweb-service-worker/",
-        },
-        {
-          text: "BarcodeScanning",
-          link: "/plaoc/barcode-scanning/"
-        },
-        {
-          text: "StatusBar",
-          link: "/plaoc/status-bar/",
-        },
-        {
-          text: "VirtualKeyboard",
-          link: "/plaoc/virtual-keyboard/",
-        },
-        {
-          text: "NavigationBar",
-          link: "/plaoc/navigation-bar/",
-        },
-        {
-          text: "SafeArea",
-          link: "/plaoc/safe-area"
-        },
-        {
-          text: "Biometrics",
-          link: "/plaoc/biometrics/",
-        },
-        {
-          text: "CloseWatcher",
-          link: "/plaoc/close-watcher/",
-        },
-        {
-          text: "Haptics",
-          link: "/plaoc/haptics/"
-        },
-        {
-          text: "Network",
-          link: "/plaoc/network/"
-        },
-        {
-          text: "Share",
-          link: "/plaoc/share/"
-        },
-        // {
-        //   text: "SplashScreen",
-        //   link: "/plaoc/splash-screen/"
-        // },
-        {
-          text: "Toast",
-          link: "/plaoc/toast/"
-        },
-        {
-          text: "Torch",
-          link: "/plaoc/torch/"
-        },
-        {
-          text: "Device",
-          link: "/plaoc/device/"
-        },
-        {
-          text: "MWebView",
-          link: "/plaoc/mwebview/"
-        },
-      ],
-    },
-    {
-      text: "Service",
-      icon: "note",
-      prefix: "service/README.md",
-      link: "service/README.md",
-    //   children: [
-    //     {
-    //       text: "VFS",
-    //       link: "/service/vfs/",
-    //     },
-    //     {
-    //       text: "SSR",
-    //       link: "/service/ssr/",
-    //     },
-    //     {
-    //       text: "TUI",
-    //       link: "/service/tui/",
-    //     },
-    //     {
-    //       text: "GUI",
-    //       link: "/service/gui/",
-    //     },
-    //   ],
-    },
-    // {
-    //   text: "SystemApp",
-    //   icon: "note",
-    //   prefix: "systemApp",
-    //   link: "systemApp/README.md",
-    //   children: [
-    //     {
-    //       text: "BNRTC",
-    //       link: "/systemApp/bnrtc/",
-    //     },
-    //     {
-    //       text: "DATABASE",
-    //       link: "/systemApp/database/",
-    //     },
-    //     {
-    //       text: "NOTIFICATION",
-    //       link: "/systemApp/notification/",
-    //     },
-    //   ],
-    // },
-  ],
+  "/en/app/": enApp,
+  "/en/plaoc/": enPlaoc,
+  "/en/plaoc/plugin/": enPlaocPlugin,
+  "/en/plaoc/plugin/status-bar/": enPlaocPluginStatusBar,
+  "/en/plaoc/plugin/navigation-bar/": enPlaocPluginNavigationBar,
+  "/en/plaoc/plugin/safe-area/": enPlaocPluginSafeArea,
+  "/en/plaoc/plugin/virtual-keyboard/": enPlaocPluginVirtualKeyboard,
+  "/en/plaoc/plugin/barcode-scanner/": enPlaocPluginBarcodeScanner,
+  "/en/plaoc/plugin/biometrics/": enPlaocPluginBiometrics,
+  "/en/plaoc/plugin/bluetooth/": enPlaocPluginBluetooth,
+  "/en/plaoc/plugin/camera/": enPlaocPluginCamera,
+  "/en/plaoc/plugin/clipboard/": enPlaocPluginClipboard,
+  "/en/plaoc/plugin/config/": enPlaocPluginConfig,
+  "/en/plaoc/plugin/device/": enPlaocPluginDevice,
+  "/en/plaoc/plugin/update-controller/": enPlaocPluginUpdateController,
+  "/en/plaoc/plugin/dweb-service-worker/": enPlaocPluginDwebServiceWorker,
+  "/en/plaoc/plugin/file-system/": enPlaocPluginFileSystem,
+  "/en/plaoc/plugin/haptics/": enPlaocPluginHaptics,
+  "/en/plaoc/plugin/m-webview/": enPlaocPluginMWebview,
+  "/en/plaoc/plugin/network/": enPlaocPluginNetwork,
+  "/en/plaoc/plugin/share/": enPlaocPluginShare,
+  "/en/plaoc/plugin/splash-screen/": enPlaocPluginSplashScreen,
+  "/en/plaoc/plugin/toast/": enPlaocPluginToast,
+  "/en/plaoc/plugin/torch/": enPlaocPluginTorch,
+  "/en/plaoc/interface/": enPlaocInterface,
+  "/en/plaoc/interface/bluetooth-device/": enPlaocInterfaceBluetoothDevice,
+  "/en/plaoc/interface/bluetooth-remote-gatt-characteristic/": enPlaocInterfaceBluetoothRemoteGATTCharacteristic,
+  "/en/plaoc/interface/bluetooth-remote-gatt-descriptor/": enPlaocInterfaceBluetoothRemoteGATTDescriptor,
+  "/en/plaoc/interface/bluetooth-remote-gatt-server/": enPlaocInterfaceBluetoothRemoteGATTServer,
+  "/en/plaoc/interface/bluetooth-remote-gatt-service/": enPlaocInterfaceBluetoothRemoteGATTService,
+  "/en/plaoc/interface/state-observer/": enPlaocInterfaceStateObserver,
+  "/en/plaoc/interface/window-listener-handle/": enPlaocInterfaceWindowListenerHandle,
 });

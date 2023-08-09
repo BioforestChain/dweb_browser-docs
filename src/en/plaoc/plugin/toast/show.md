@@ -1,5 +1,5 @@
 ---
-title: ToastPlugin.show()
+title: ToastPlugin.show()  
 category:
   - Plugin
 tag:
@@ -7,22 +7,22 @@ tag:
   - show
 ---
 
-show message;
+Show toast
 
 ```js
 ToastPlugin.show(options)
 ```
 
-## parameters
+## Parameters
 
   - options
 
-    options parameter object;
-    The parameter value is a [ToastShowOptions](../../interface/toast-show-options/index.md) object;
+    Option parameter object;
+    The value is a [ToastShowOptions](../../interface/toast-show-options/index.md) object;
 
-## return value
+## Return Value
 
-  Return a Promise object;
+  Returns a Promise that resolves to void;
 
 ## Example
 ```js
@@ -32,12 +32,10 @@ toastPlugin.show({text: "test"})
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| show                 | ✅       | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| show         | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [ToastPlugin](./index.md)
-
-

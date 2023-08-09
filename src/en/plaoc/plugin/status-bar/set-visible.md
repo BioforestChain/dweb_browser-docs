@@ -4,7 +4,7 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - setVisible 
+  - setVisible
 ---
 
 Set whether the system status bar is visible
@@ -13,16 +13,16 @@ Set whether the system status bar is visible
 StatusBarPlugin.setVisible(b)
 ```
 
-## parameters
+## Parameters
 
   - b
 
-    The parameter accepts a boolean;
+    Accepts a boolean;
 
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfill null;
+  - A Promise object that resolves to null
 
 ## Example
 ```js
@@ -33,12 +33,10 @@ const value = statusBarPlugin.setVisible(true)
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setVisible           | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setVisible   | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

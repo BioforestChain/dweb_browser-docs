@@ -3,41 +3,39 @@ title: SharePlugin.canShare()
 category:
   - Plugin
 tag:
-  - SahrePlugin
+  - SharePlugin  
   - canShare
 ---
 
-can share;
+Check if sharing is available
 
 ```js
 SharePlugin.canShare()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return Value
 
-  Return a Promise,resolve to fulfill a boolean;
+  Returns a Promise that resolves to a boolean;
 
 ## Example
 ```js
 import { sharePlugin } from "@plaoc/plugin";
-;(async() => {
-  const b = await sharePlugin.canShare()
-})();
 
+(async() => {
+  const b = await sharePlugin.canShare() 
+})();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| canShare             | ✅       | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| canShare     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
-
+  
 [SharePlugin](./index.md)
-
-

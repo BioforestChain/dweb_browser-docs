@@ -3,40 +3,39 @@ title: MWebviewPlugin.closeApp()
 category:
   - Plugin
 tag:
-  - MWebviewPlugin
+  - MWebviewPlugin 
   - closeApp
 ---
 
-Close the entire application, command to close the front end, and the service will not be closed
+Closes the entire app frontend but keeps services running.
 
 ```js
-MWebviewPlugin.closeApp()
+MWebviewPlugin.closeApp()  
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns  
 
-  Return a Promise, and resolve fulfills a boolean;
-  Activation successfully fulfilled true;
-  Activation failed to honor false;
+A Promise that resolves to a boolean.
+Resolves to true if closed successfully, false if failed.
 
 ## Example
+
 ```js
 import { mwebviewPlugin } from "@plaoc/plugin";
-mwebviewPlugin.closeApp()
+
+mwebviewPlugin.closeApp();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| closeApp             | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| closeApp              | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [MWebviewPlugin](./index.md)
-
-

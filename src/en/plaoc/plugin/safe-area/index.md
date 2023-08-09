@@ -2,72 +2,70 @@
 title: SafeAreaPlugin
 category:
   - Plugin
-tag:
+tag: 
   - status-bar
 ---
 
-The SafeAreaPlugin interface is used to represent the safe area of the screen;
-The security area is strongly associated with the system bar and hardware;
+The SafeAreaPlugin interface represents the safe area of the screen;
+The safe area is strongly associated with system bars and hardware;
 
 ```javascript
 import { safeAreaPlugin } from "@plaoc/plugins";
 safeAreaPlugin.setOverlay(true)
 ```
 
-## Property
+## Properties
 
 - [SafeAreaPlugin.state](./state.md)
 
-  the state object of the security area;
-  The attribute value is an object that implements the [StateObserver](../../interface/state-observer/index.md) interface;
+  The state object of the safe area;
+  The property value is an object implementing the [StateObserver](../../interface/state-observer/index.md) interface;
+  
 
-## Method
+## Methods
 
-  - [SafeAreaPlugin.getOverlay()](./get-overlay.md)
+  - [SafeAreaPlugin.getOverlay()](./get-overlay.md)  
 
-    Query the masking status;
-    If the returned Promise object, resolve is true;
-    Indicates that the content of the app in the safe area will be partially covered by the system bar;
+    Query the overlay status;
+    If the resolved Promise object is true;
+    It indicates the content in the safe area will be overlapped by system bars;
 
   - [SafeAreaPlugin.getState([force_update])](./get-state.md)
 
-    Query the status of the security zone;;
+    Get the state of the safe area;
 
   - [SafeAreaPlugin.setOverlay()](./set-overlay.md)
 
-    Set the cover state;
-    if set to true;
-    Indicates that the content of the app in the safe area will be partially covered by the system bar;
+    Set the overlay status;
+    If set to true;
+    It indicates the content in the safe area will be overlapped by system bars;
 
   - [SafeAreaPlugin.setState()](./set-state.md)
 
-    Set the state of the safe zone;
+    Set the state of the safe area;
 
   - [SafeAreaPlugin.setStateByKey()](./set-state-by-key.md)
 
-    Set the value of a certain state in the security area;
+    Set the value of a state in the safe area;
 
 
-## Event
- 
-  - none
+## Events
+
+- None
 
 
 ## Platform Compatibility
 
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| state                | ✅      | ✅  | ✅          | X       |
-| getOverlay           | ✅      | ✅  | ✅          | X       |
-| getState             | ✅      | ✅  | ✅          | X       |
-| setOverlay           | ✅      | ✅  | ✅          | X       |
-| setState             | ✅      | ✅  | ✅          | X       |
-| setStateByKey        | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| state        | ✅      | ✅  | ✅          | X       |
+| getOverlay   | ✅      | ✅  | ✅          | X       |  
+| getState     | ✅      | ✅  | ✅          | X       |
+| setOverlay   | ✅      | ✅  | ✅          | X       |
+| setState     | ✅      | ✅  | ✅          | X       |
+| setStateByKey| ✅      | ✅  | ✅          | X       |
 
 
 ## Related Links
 
 [Plaoc](../)
-
-

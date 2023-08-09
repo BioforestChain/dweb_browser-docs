@@ -4,41 +4,38 @@ category:
   - Plugin
 tag:
   - NavigationBarPlugin
-  - setOverlay 
+  - setOverlay
 ---
 
-Set whether to cover the content of the App in the system navigation bar;
+Set whether the system navigation bar overlays the app content
 
 ```js
-NavigationBarPlugin.setOverlay(b)
+NavigationBarPlugin.setOverlay(b) 
 ```
 
-## parameters
+## Parameters
 
   - b
 
-    The parameter accepts a boolean;
+    Accepts a boolean
 
+## Return
 
-## return value
-
-  A Promise object that resolves to null
+  - A Promise object that resolves to null
 
 ## Example
+
 ```js
 import { NavigationBarPlugin } from "@plaoc/plugins";
 const value = NavigationBarPlugin.setOverlay(true)
 ```
 
+## Platform Support
 
-## Platform Compatibility
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setOverlay   | ✅      | ✅  | ✅          | X       |
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setOverlay           | ✅      | ✅  | ✅          | X       |
-
-## Related Links
+## Related Links  
 
 [NavigationBarPlugin](./index.md)
-
-

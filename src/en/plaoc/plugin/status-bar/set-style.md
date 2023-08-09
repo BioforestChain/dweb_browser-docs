@@ -1,30 +1,30 @@
 ---
 title: StatusBarPlugin.setStyle()
 category:
-  - Plugin
+  - Plugin 
 tag:
   - StatusBarPlugin
-  - setStyle 
+  - setStyle
 ---
 
-Set the style of the system status bar foreground color
+Set the style [foreground color] of the system status bar
 
 ```js
 StatusBarPlugin.setStyle(style)
 ```
 
-## parameters
+## Parameters
 
   - style
 
-    The parameter accepts a string; possible values for the string are:
-    `"DARK"` `"LIGHT"` `"DEFAULT`
-    See the properties of [State.style](../../interface/state/index.md) for details;
+    Accepts a string; Possible string values: 
+    `"DARK"` `"LIGHT"` `"DEFAULT"`
+    See [State.style](../../interface/state/index.md) property for details;
 
 
-## return value
-  
-  Return a Promise object, resolve fulfill null;
+## Return Value
+
+  - A Promise object that resolves to null
 
 ## Example
 ```js
@@ -35,12 +35,10 @@ const value = statusBarPlugin.setStyle("DEFAULT")
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setStyle             | ✅      | ✅   | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setStyle     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

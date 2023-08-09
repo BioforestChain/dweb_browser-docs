@@ -1,5 +1,5 @@
 ---
-title: fileSystemPlugin,getUri()
+title: fileSystemPlugin.getUri()
 category:
   - Plugin
 tag:
@@ -7,41 +7,37 @@ tag:
   - getUri
 ---
 
-look for the address
+Get URI 
 
 ```js
 import { fileSystemPlugin } from "@plaoc/plugin";
 fileSystemPlugin.getUri(options)
 ```
 
-## parameters
+## Parameters
 
-  - options
+- options: Query options. The data type is [GetUriOptions](../../interface/get-uri-options/index.md) object.
 
-    Query parameter options;
-    The data type of the parameter is [GetUriOptions](../../interface/get-uri-options/index.md) object;
+## Returns
 
-## return value
-
-  Return a Promise, resolve to fulfill a [GetUriResult](../../interface/get-uri-result/index.md) object
+A Promise that resolves to a [GetUriResult](../../interface/get-uri-result/index.md) object.
 
 ## Example
+
 ```js
 import { fileSystemPlugin } from "@plaoc/plugin";
 fileSystemPlugin.getUri({
   path: "/path",
-  directory: "DOCUMENTS"
+  directory: "DOCUMENTS" 
 })
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getUri               | ✅       | ✅  | ✅         | X      |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| getUri                | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [FileSystemPlugin](../index.md)
-
-

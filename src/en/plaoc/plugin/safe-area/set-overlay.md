@@ -1,31 +1,31 @@
 ---
 title: SafeAreaPlugin.setOverlay()
-category:
+category: 
   - Plugin
 tag:
   - SafeAreaPlugin
-  - setOverlay 
+  - setOverlay
 ---
 
-Set the cover state;
-if set to true;
-Indicates that the content of the app in the safe area will be partially covered by the system bar;
-This setting will also modify the state of the system bar;
+Set the overlay status;
+If set to true;  
+It indicates the content in the safe area will be overlapped by system bars;
+This setting will also modify the state of system bars;
 
 ```js
-SafeAreaPlugin.setOverlay(b)
+SafeAreaPlugin.setOverlay(b) 
 ```
 
-## parameters
+## Parameters
 
   - b
 
-    The parameter accepts a boolean;
+    Accepts a boolean;
 
 
-## return value
+## Return Value
 
-  A Promise object that resolves to null
+  - A Promise object that resolves to null
 
 ## Example
 ```js
@@ -36,12 +36,10 @@ const value = SafeAreaPlugin.setOverlay(true)
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setOverlay           | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:| 
+| setOverlay   | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [SafeAreaPlugin](./index.md)
-
-

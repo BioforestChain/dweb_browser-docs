@@ -3,29 +3,28 @@ title: StatusBarPlugin.getState()
 category:
   - Plugin
 tag:
-  - StatusBarPlugin
-  - getState 
+  - StatusBarPlugin 
+  - getState
 ---
 
-Get the status value of the plugin;
+Get the plugin state value
 
 ```js
-StatusBarPlugin.getState([force_update])
+StatusBarPlugin.getState([force_update]) 
 ```
 
-## parameters
+## Parameters
 
   - force_update
 
-    The parameter accepts a boolean type of data;
-    whether it is necessary to force the status to be updated;
-    force_update === true will re-read status updates from the system;
-    force_update === false will return the last cached state data;
+    Accepts a boolean data; whether to force update the state;
+    force_update === true will read the state from the system again;
+    force_update === false will return the cached state data last time;
 
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfills an object that implements part of the [State](../state/index.md) interface; for details, refer to the value of the [StatusBarPlugin.state](./index.md) property;
+  - A Promise object that resolves to an object implementing partial [State](../state/index.md) interface; see details in [StatusBarPlugin.state](./index.md) attribute value;  
 
 ## Example
 ```js
@@ -36,12 +35,10 @@ const value = statusBarPlugin.getState(true)
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getState             | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:| 
+| getState     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

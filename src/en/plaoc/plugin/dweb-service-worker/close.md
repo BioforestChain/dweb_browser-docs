@@ -1,38 +1,39 @@
 ---
-title: DwebServiceWorkerPlugin. close()
+title: DwebServiceWorkerPlugin.close()
 category:
-  - Plugins
+  - Plugin
 tag:
   - DwebServiceWorkerPlugin
   - close
 ---
 
-Close the front end of the application
+Closes the frontend of the app.
 
 ```js
-DwebServiceWorkerPlugin. close()
+DwebServiceWorkerPlugin.close()
 ```
 
-## parameters
+## Parameters
 
-   - none
+- None
 
-## return value
+## Returns
 
-  Return a Promise, resolve to fulfill a boolean;
+A Promise that resolves to a boolean.
 
 ## Example
-```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
-dwebServiceWorkerPlugin. close()
-```
 
+```js  
+import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
+
+dwebServiceWorkerPlugin.close();
+```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| close                | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| close                 | ✅      | ✅  | ✅          | X       |  
 
-## Related Links
+## See Also
 [DwebServiceWorkerPlugin](../index.md)

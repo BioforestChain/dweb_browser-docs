@@ -1,45 +1,42 @@
 ---
 title: SplashScreenPlugin
 category:
-  - Plugin 
+  - Plugin
 tag:
   - SplashScreenPlugin
 ---
 
-splash screen plugin;
+Splash screen plugin;
 
 ```js
 import { splashScreenPlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
-  - none
+  - None
      
-
-## Method
+## Methods
 
   - [SplashScreenPlugin.show()]()
 
-    show startup page;
+    Show splash screen
 
 
   - [SplashScreenPlugin.hide()]()
 
-    hide startup page;
+    Hide splash screen
 
 
-## Event
+## Events  
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| show                 | ✅      | ✅  | ✅           | X       |
-| hide                 | ✅      | ✅  | ✅           | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|  
+| show         | ✅      | ✅  | ✅          | X       |
+| hide         | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [Plaoc](../index.md)
-
-

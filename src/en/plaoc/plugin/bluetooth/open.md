@@ -7,43 +7,42 @@ tag:
   - open
 ---
 
-Turn on the Bluetooth device;
-Turning on the Bluetooth device is the prerequisite for accessing the Bluetooth device;
+Opens the Bluetooth adapter.
+Opening the Bluetooth adapter is required before accessing any Bluetooth devices.  
 
 ```js
 Bluetooth.open()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns
 
-  A Promise object, resolve fulfills the [BluetoohOpenResponse](../../interface/bluetooth-open-response/index.md) object
-
+- A Promise that resolves to a [BluetoohOpenResponse](../../interface/bluetooth-open-response/index.md) object.
 
 ## Example
+
 ```js
 import { bluetooth } from "@plaoc/plugins";
+
 bluetooth.open()
-.then(
-  res => {
-    if(res. success){
-       // turn on bluetooth successfully
-     }else{
-       // Failed to open bluetooth;
-     }
-  }
-)
+.then(res => {
+  if(res.success) {
+    // Bluetooth opened successfully
+  } else {
+    // Failed to open Bluetooth
+  }  
+})
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| open                 | ✅      | ✅   | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| open                  | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [Bluetooth](./index.md)

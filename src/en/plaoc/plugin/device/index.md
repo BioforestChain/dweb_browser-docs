@@ -6,35 +6,33 @@ tag:
   - DevicePlugin
 ---
 
-Device plugin
+Device plugin.
 
 ```js
 import { devicePlugin } from "@plaoc/plugin";
-devicePlugin.getUUID()
+devicePlugin.getUUID(); 
 ```
 
-## Property
+## Properties
 
-  - none
+- None
 
-## Method
+## Methods
 
-  - [DevicePlugin.getUUID()](./get-uuid.md)
+- [DevicePlugin.getUUID()](./get-uuid.md)
 
-    Get device identifier;
+  Gets the device identifier.
 
-## Event
+## Events
 
-  - none
+- None
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getUUID              | ✅      | ✅   | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| getUUID               | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [Plaoc](../index.md)
-
-

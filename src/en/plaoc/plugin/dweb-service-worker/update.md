@@ -7,35 +7,34 @@ tag:
   - update
 ---
 
-获取app更新控制器
+Gets the app update controller.
 
 ```js
 DwebServiceWorkerPlugin.update()
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns
 
-  返回一个 [UpdateControllerPlugin](../update-controller/index.md);  
+An [UpdateControllerPlugin](../update-controller/index.md) object.
 
 ## Example
+
 ```js
 import { DwebServiceWorkerPlugin } from "@plaoc/plugin";
+
 const updateControllerPlugin = DwebServiceWorkerPlugin.update();
 ```
 
-
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| update     | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| update                | ✅      | ✅  | ✅          | X       |  
 
-## Related Links
+## See Also
 
 [DwebServiceWorkerPlugin](../dweb-service-worker/index.md)
-
-

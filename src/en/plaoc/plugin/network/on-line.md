@@ -1,26 +1,26 @@
 ---
 title: NetworkPlugin.onLine()
-category:
+category: 
   - Plugin
 tag:
   - NetworkPlugin
   - onLine
 ---
 
-Query whether the network is online;
+Check if the network is online;
 
 ```js
- NetworkPlugin.onLine()
+NetworkPlugin.onLine() 
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return
 
-  Returns a boolean; returns true if access to the network is possible;
-  false if network connection lost;
+Returns a boolean; true if the network is accessible, 
+false if network connection is lost.
 
 ## Example
 ```js
@@ -28,14 +28,12 @@ import { networkPlugin } from "@plaoc/plugin";
 const isOnline = networkPlugin.onLine();
 ```
 
-## Platform Compatibility
+## Platform Support
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| onLine               | ✅      | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| onLine       | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NetworkPlugin](./index.md)
-
-

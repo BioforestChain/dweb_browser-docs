@@ -4,25 +4,25 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - setColor 
+  - setColor
 ---
 
-Set the color of the system status bar background color
+Set the color [background color] of the system status bar  
 
 ```js
 StatusBarPlugin.setColor(color)
 ```
 
-## parameters
+## Parameters
 
   - color
 
-    The parameter accepts a string representing the hexadecimal color; for example: `#FFFFFFFF`
+    Accepts a string representing a hexadecimal color; e.g. `#FFFFFFFF`
 
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfill null;
+  - A Promise object that resolves to null  
 
 ## Example
 ```js
@@ -33,12 +33,10 @@ const value = statusBarPlugin.setColor("#FFFFFFFF")
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setColor             | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| setColor     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

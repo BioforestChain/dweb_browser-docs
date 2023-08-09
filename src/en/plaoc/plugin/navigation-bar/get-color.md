@@ -3,39 +3,37 @@ title: NavigationBarPlugin.getColor()
 category:
   - Plugin
 tag:
-  - NavigationBarPlugin
-  - getColor 
+  - NavigationBarPlugin 
+  - getColor
 ---
 
-Query the color of the system navigation bar \[background color\]
+Get the color [background color] of the system navigation bar  
 
 ```js
 NavigationBarPlugin.getColor()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return
 
-  A Promise that resolves to a string representing the hexadecimal color; eg: `#FFFFFFFF`
+  - A Promise object that resolves to a string representing a hexadecimal color code, e.g. `#FFFFFFFF`
 
 ## Example
-```js
+```js  
 import { NavigationBarPlugin } from "@plaoc/plugins";
-const value = NavigationBarPlugin.getColor("#FFFFFFFF")
+const value = NavigationBarPlugin.getColor("#FFFFFFFF") 
 ```
 
 
-## Platform Compatibility
+## Platform Support
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getColor             | ✅      | ✅  | ✅          | X       |
+| API/Method/Event | Android | iOS | Desktop-Dev | Desktop | 
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| getColor     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NavigationBarPlugin](./index.md)
-
-

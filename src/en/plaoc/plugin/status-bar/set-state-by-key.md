@@ -1,33 +1,33 @@
 ---
 title: StatusBarPlugin.setStateByKey()
 category:
-  - Plugin
+  - Plugin  
 tag:
   - StatusBarPlugin
-  - setStateByKey 
+  - setStateByKey
 ---
 
-Set the value of a property of the system status bar status
+Set the value of a state property in the system status bar
 
 ```js
 StatusBarPlugin.setStateByKey(key, value)
 ```
 
-## parameters
+## Parameters
 
   - key
 
-    String, the name of the state property to be set
-    The list of valid attributes includes: `[overlay, visible, color, style]`
+    String, the name of the state property to set
+    Valid properties include: `[overlay, visible, color, style]`
 
   - value
 
-    The value of the state property that needs to be set;
-    The legal attribute name range refers to the value of [StatusBarPlugin.state](./index.md) attribute;；
+    The value to set for the state property; 
+    Valid values range refer to [StatusBarPlugin.state](./index.md) property value;
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfill null;
+  - A Promise object that resolves to null
 
 ## Example
 ```js
@@ -38,12 +38,10 @@ const value = statusBarPlugin.setStateByKey("color", "#FFFFFFFF")
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| setStateByKey        | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:| 
+| setStateByKey | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

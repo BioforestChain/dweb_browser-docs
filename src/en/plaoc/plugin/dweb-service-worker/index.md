@@ -1,57 +1,56 @@
 ---
 title: DwebServiceWorkerPlugin
 category:
-  - Plugins
+  - Plugin
 tag:
   - DwebServiceWorkerPlugin
 ---
 
-Plugins that provide application-level services
+Plugin that provides app-level services.
 
 ```js
 import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
-  - updateController
+- updateController
 
-    Access the properties of [UpdateControllerPlugin](../update-controller/index.md);
-    The property value is an [UpdateControllerPlugin](../update-controller/index.md) object;
+  Accesses properties of the [UpdateControllerPlugin](../update-controller/index.md).
+  Its value is an [UpdateControllerPlugin](../update-controller/index.md) object.
 
-## Method
+## Methods
 
   - [DwebServiceWorkerPlugin.update()](./update.md)
 
-    Get app update controller
-
+    Gets the app update controller.
+  
   - [DwebServiceWorkerPlugin.close()](./close.md)
-
-    Close the front-end UI
+  
+    Closes the frontend UI.
 
   - [DwebServiceWorkerPlugin.restart()](./restart.md)
 
-    Restart the front-end and back-end services;
-
+    Restarts the frontend and backend services.
+    
   - [DwebServiceWorkerPlugin.externalFetch()](./external-fetch.md)
 
-    A way to communicate with other apps;
+    Method for communicating with other apps.
 
+## Events  
 
-## Event
-
-   - none
+- None
 
 ## Platform Compatibility
 
-| Property/Method/Event | Android | IOS | Desktop-Dev | Desktop  |
-|:---------------------:|:-------:|:---:|:-----------: |:-------:|
-| updateController      | ✅      | ✅   | ✅           | X       |
-| update                | ✅      | ✅   | ✅           | X       |
-| close                 | ✅      | ✅   | ✅           | X       |
-| restart               | ✅      | ✅   | ✅           | X       |
-| externalFetch         | ✅      | ✅   | ✅           | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| updateController      | ✅      | ✅  | ✅          | X       |
+| update                | ✅      | ✅  | ✅          | X       |
+| close                 | ✅      | ✅  | ✅          | X       |
+| restart               | ✅      | ✅  | ✅          | X       |
+| externalFetch         | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [Plaoc](../index.md)

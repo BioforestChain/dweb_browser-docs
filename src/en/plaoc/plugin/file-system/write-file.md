@@ -7,41 +7,40 @@ tag:
   - writeFile
 ---
 
-write content
+Write content.
 
 ```js
 import { fileSystemPlugin } from "@plaoc/plugin";
 fileSystemPlugin.writeFile(options)
 ```
 
-## parameters
-  
-  - options
+## Parameters
 
-  Option parameters to write to the file;
-  The parameter value is the [WriteFileOptions](../../interface/write-file-options/index.md) object;
+- options: Options for writing the file. The value is a [WriteFileOptions](../../interface/write-file-options/index.md) object.
 
-## return value
+## Returns
 
-  Return a Promise, and resolve fulfills a [WriteFileResult](../../interface/write-file-result/index.md) object;
+A Promise that resolves to a [WriteFileResult](../../interface/write-file-result/index.md) object.
 
 ## Example
+
 ```js
 import { fileSystemPlugin } from "@plaoc/plugin";
-const path = "xxx"
-const data = "内容"
+
+const path = "xxx";
+const data = "content";
+
 fileSystemPlugin.writeFile({
-  path, data
-})
+  path, 
+  data
+});
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| writeFile            | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| writeFile             | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 [FileSystemPlugin](../index.md)
-
-

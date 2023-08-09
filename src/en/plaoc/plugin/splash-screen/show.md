@@ -1,31 +1,30 @@
 ---
 title: SplashScreenPlugin.show()
 category:
-  - Plugin 
+  - Plugin
 tag:
   - SplashScreenPlugin
   - show
- 
+
 ---
 
-
-show startup page;
+Show splash screen  
 
 ```js
 SplashScreenPlugin.show(options)
 ```
 
-## parameters
+## Parameters
 
   - options
 
-    Display the optio parameters of the startup page;
-    The value of the pareameter is a [SplashScreenShowOptions](../../interface/splash-screen-show-options/index.md) object;
+    Options for showing splash screen; 
+    The value is a [SplashScreenShowOptions](../../interface/splash-screen-show-options/index.md) object
 
 
-## return value
+## Return Value
 
-  Return a Promise, resolve to fulfill a boolean;
+  Returns a Promise that resolves to a boolean;
 
 ## Example
 ```js
@@ -35,13 +34,10 @@ splashScreenPlugin.show({})
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| show                 | ✅       | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| show         | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [SplashScreenPlugin](../index.md)
-
-
-

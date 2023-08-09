@@ -4,22 +4,22 @@ category:
   - Plugin
 tag:
   - StatusBarPlugin
-  - show 
+  - show
 ---
 
-show system status bar;
+Show the system status bar  
 
-```js
+```js  
 StatusBarPlugin.show()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return Value
 
-  Return a Promise object, resolve fulfill null;
+  - A Promise object that resolves to null  
 
 ## Example
 ```js
@@ -30,12 +30,10 @@ const value = statusBarPlugin.show()
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| show                 | ✅      | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| show     | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [StatusBarPlugin](./index.md)
-
-

@@ -6,35 +6,33 @@ tag:
   - CameraPlugin
 ---
 
-Camera related plug-ins
+Camera related plugin.
 
-```js
+```js 
 import { cameraPlugin } from "@plaoc/plugin";
-cameraPlugin.getPhoto()
+cameraPlugin.getPhoto();
 ```
 
-## Property
+## Properties
 
-  - none
+- None
 
-## Method
+## Methods
 
-  - [CameraPlugin.getPhoto()](./get-photo.md)
+- [CameraPlugin.getPhoto()](./get-photo.md)
 
-    Get pictures locally;
+  Gets a photo from the local device.
 
-## Event
+## Events
 
-  - none
+- None
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getPhoto             | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| getPhoto              | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [Plaoc](../index.md)
-
-

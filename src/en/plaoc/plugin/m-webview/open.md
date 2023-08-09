@@ -4,40 +4,37 @@ category:
   - Plugin
 tag:
   - MWebviewPlugin
-  - open
+  - open  
 ---
 
-Open a new webview
+Opens a new webview.
 
 ```js
 MWebviewPlugin.open(url)
 ```
 
-## parameters
+## Parameters
 
-  - url
+- url: The URL to load. String value.
 
-    The address to be loaded;
-    The parameter value is a string;
+## Returns  
 
-## return value
-
-  Return a Promise, and resolve fulfills a [WebViewItem](../../interface/webview-item/index.md) object;
+A Promise that resolves to a [WebViewItem](../../interface/webview-item/index.md) object.
 
 ## Example
+
 ```js
 import { mwebviewPlugin } from "@plaoc/plugin";
-mwebviewPlugin.open(`http://xxx`)
+
+mwebviewPlugin.open(`http://xxx`); 
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| open                 | ✅       | ✅  | ✅         | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| open                  | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [MWebviewPlugin](./index.md)
-
-

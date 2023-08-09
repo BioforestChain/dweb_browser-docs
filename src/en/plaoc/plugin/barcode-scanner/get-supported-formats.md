@@ -8,37 +8,36 @@ tag:
  
 ---
 
-A method for parsing barcode data;
+Gets the supported barcode formats.
 
 ```js
 BarcodeScannerPlugin.getSupportedFormats()
 ```
 
-## parameters
+## Parameters
 
-  - none
-    
+- None
 
-## return value
+## Returns
 
-  A Promise object, resolve fulfills an array; the array item is the name of the type that supports resolution;
+A Promise that resolves to an array of supported format names.
 
 ## Example
+
 ```js
 import { barcodeScannerPlugin } from "@plaoc/plugin";
-;(async () => {
-  const res = await barcodeScannerPlugin.getSupportedFormats()
+
+(async () => {
+  const res = await barcodeScannerPlugin.getSupportedFormats();
 })();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event           | Android | IOS | Desktop-Dev | Desktop |
-|:-------------------------------:|:-------:|:---:|:-----------:|:-------:|
-|getSupportedFormats              | ✅      | ✅  | ✅          | ✅      |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| getSupportedFormats   | ✅      | ✅  | ✅          | ✅      |
 
-## Related Links
+## See Also
 
 [BarcodeScannerPlugin](./index.md)
-
-

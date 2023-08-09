@@ -6,75 +6,73 @@ tag:
   - HapticsPlugin
 ---
 
-HapticsPlugin gives users physical feedback of vibration through touch;
-Visually implement feedback through messages in the Desktop-dev environment;
+HapticsPlugin provides physical feedback through vibrations to the user. 
+On Desktop-dev it provides visual feedback through messages.
 
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
-  - isIOSDWebBrowser
+- isIOSDWebBrowser
 
-    static property;
-    Determine whether it is an IOS browser environment;
-    The attribute value is a boolean;
+  Static property. 
+  Checks if environment is iOS browser.
+  Boolean value.
 
 
-## Method
+## Methods
 
   - [HapticsPlugin.impactLight()](./impact-light.md)
 
-    touch light objects
+    Simulates a light impact.
   
   - [HapticsPlugin.notification()](./notification.md)
 
-    vibration notification effect
+    Notification vibration effect.
   
   - [HapticsPlugin.vibrateClick()](./vibrate-click.md)
 
-    click effect
+    Click effect.
   
-  - [HapticsPlugin.vibrateDisabled()](./vibrate-disbled.md)
+  - [HapticsPlugin.vibrateDisabled()](./vibrate-disabled.md)
 
-    Disable feedback vibration for gestures
+    Disabled gesture feedback.
   
   - [HapticsPlugin.vibrateDoubleClick()](./vibrate-double-click.md)
 
-    double click effect
+    Double click effect.
 
   - [HapticsPlugin.vibrateHeavyClick](./vibrate-heavy-click.md)
 
-    The effect of the swipe gesture
+    Heavy click gesture effect.
   
   - [HapticsPlugin.vibrateTick()](./vibrate-tick.md)
 
-    tick effect
+    Tick effect.
   
   - [HapticsPlugin.vibrate()](./vibrate.md)
 
-    Set custom effects
+    Custom vibration effect.
 
-## Event
+## Events  
 
-  - 无
+- None
 
 ## Platform Compatibility
 
-| Property/Method/Event      | Android | IOS | Desktop-Dev | Desktop |
-|:--------------------------:|:-------:|:---:|:-----------:|:-------:|
-| impactLight                | ✅      | ✅  | ✅          | X       |
-| notification               | ✅      | ✅  | ✅          | X       |
-| vibrateClick               | ✅      | ✅  | ✅          | X       |
-| vibrateDisabled            | ✅      | ✅  | ✅          | X       |
-| vibrateDoubleClick         | ✅      | ✅  | ✅          | X       |
-| vibrateHeavyClick          | ✅      | ✅  | ✅          | X       |
-| vibrateTick                | ✅      | ✅  | ✅          | X       |
-| vibrate                    | ✅      | ✅  | ✅          | X       |
+| Property/Method/Event    | Android | iOS | Desktop-Dev | Desktop |
+|:------------------------:|:-------:|:---:|:-----------:|:-------:|
+| impactLight              | ✅      | ✅  | ✅          | X       |
+| notification             | ✅      | ✅  | ✅          | X       |
+| vibrateClick             | ✅      | ✅  | ✅          | X       |
+| vibrateDisabled          | ✅      | ✅  | ✅          | X       |
+| vibrateDoubleClick       | ✅      | ✅  | ✅          | X       |
+| vibrateHeavyClick        | ✅      | ✅  | ✅          | X       |  
+| vibrateTick              | ✅      | ✅  | ✅          | X       |
+| vibrate                  | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [Plaoc](../index.md)
-
-

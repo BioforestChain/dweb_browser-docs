@@ -1,39 +1,37 @@
 ---
-title: ToastPlugin
+title: ToastPlugin  
 category:
   - Plugin
 tag:
   - ToashtPlugin
 ---
 
-message plugin;
+Toast plugin;
 
 ```js
 import { toastPlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
-  - none
+  - None
 
-## Method
+## Methods
 
   - [ToastPlugin.show()](./show.md)
 
-    show message
+    Show toast  
 
-## Event
+## Events
 
-  - none
-
+  - None
+  
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| show                 | ✅      | ✅  | ✅           | X       |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |  
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| show         | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [Plaoc](../index.md)
-
-

@@ -7,35 +7,34 @@ tag:
   - vibrateTick
 ---
 
-The effect of tick effect feedback;
+Tick feedback effect.
 
 ```js
-HapticsPlugin.vibrateTick()
+HapticsPlugin.vibrateTick() 
 ```
 
-## parameters
+## Parameters
 
-  - none
+- None
 
-## return value
+## Returns
 
-  returns a Promise;
-  
+A Promise.
 
 ## Example
+
 ```js
 import { hapticsPlugin } from "@plaoc/plugin";
-hapticsPlugin.vibrateTick()
+
+hapticsPlugin.vibrateTick();
 ```
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| vibrateTick          | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| vibrateTick           | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [HapticsPlugin](./index.md)
-
-

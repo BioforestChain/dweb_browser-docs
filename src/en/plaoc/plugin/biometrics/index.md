@@ -3,48 +3,42 @@ title: BiometricsPlugin
 category:
   - Plugin
 tag:
-  - BiometricsPlugin
+  - BiometricsPlugin  
 ---
 
-BiometricsPlugin is an interface for implementing biometrics;
+BiometricsPlugin is a plugin that implements biometrics authentication interfaces.
 
 ```javascript
 import { biometricsPlugin } from "@plaoc/plugins";
-biometricsPlugin.check()
+biometricsPlugin.check();
 ```
 
-## Property
+## Properties
 
-- none
-   
+- None
 
-## Method
+## Methods  
 
-  - [BiometricsPlugin.check()](./check.md)
-    
-    Check if the current platform supports biometrics
+- [BiometricsPlugin.check()](./check.md)
 
-  - [BiometricsPlugin.biometrics()](./biometrics.md)
+  Checks if biometrics authentication is supported.
 
-    Turn on biometrics;
+- [BiometricsPlugin.biometrics()](./biometrics.md)
 
+  Initiates biometrics authentication.
 
-## Event
+## Events
 
-  - none
-
+- None
 
 ## Platform Compatibility
 
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
 | check                | ✅      | ✅  | ✅          | X       |
 | biometrics           | ✅      | ✅  | ✅          | X       |
 
 
-## Related Links
+## See Also
 
 [Plaoc](../)
-
-

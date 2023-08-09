@@ -1,46 +1,42 @@
 ---
 title: FileSystemPlugin
 category:
-  - Interface
+  - Interface  
 tag:
   - FileSystemPlugin
 ---
 
-filesystem plugin
+File system plugin.
 
 ```js
 import { fileSystemPlugin } from "@plaoc/plugin";
 ```
 
-## Property
+## Properties
 
-  - none
+- None
 
-## Method
+## Methods
 
-  - [fileSystemPlugin.writeFile()](./write-file.md)
+- [fileSystemPlugin.writeFile()](./write-file.md)
 
-    write content
+  Write content.
 
-  - [fileSystemPlugin,getUri()](./get-uri.md)
+- [fileSystemPlugin.getUri()](./get-uri.md)
 
-    get uri;
+  Get URI.
 
-## Event
+## Events
 
-  - none
+- None
 
+## Platform Compatibility  
 
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| writeFile             | ✅      | ✅  | ✅          | X       |
+| getUri                | ✅      | ✅  | ✅          | X       |
 
-## Platform Compatibility
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| writeFile            | ✅      | ✅  | ✅          | X       |
-| getUri               | ✅      | ✅  | ✅          | X       |
-
-## Related Links
+## See Also
 
 [Plaoc](../index.md)
-
-

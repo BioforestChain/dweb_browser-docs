@@ -14,8 +14,6 @@ tag:
 
     当前描述付所属的特征；属性值是一个 [BluetoothRemoteGATTCharacteristic](../bluetooth-remote-gatt-characteristic/index.md) 对象；
 
-    属性值是一个什么数据；概述
-
   
   - uuid
 

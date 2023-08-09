@@ -6,28 +6,28 @@ tag:
   - ClipboardPlugin
 ---
 
-Clipboard plugin; implements access to the system clipboard;
+Clipboard plugin that provides access to the system clipboard.
 
-## Property
+## Properties
 
-  - none
+- None
 
+## Methods
 
-## Method
+- [ClipboardPlugin.read()](./read.md)
 
-  - [ClipboardPlugin.read()](./read.md)
+  Reads data from the clipboard.
 
-    Read the data on the clipboard;
+- [ClipboardPlugin.write()](./write.md)
 
-  - [ClipboardPlugin.write()](./write.md)
+  Writes data to the clipboard.
 
-    Write data to the clipboard
+## Events
 
-## Event
-
-  - none
+- None  
 
 ## Example
+
 ```js
 import { clipboardPlugin } from "@plaoc/plugin";
 clipboardPlugin.read();
@@ -35,12 +35,11 @@ clipboardPlugin.read();
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| read                 | ✅      | ✅   | ✅          | X      |
-| write                | ✅      | ✅   | ✅          | X      |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| read                  | ✅      | ✅  | ✅          | X       |
+| write                 | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
+
 []()
-
-

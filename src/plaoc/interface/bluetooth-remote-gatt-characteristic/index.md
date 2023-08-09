@@ -89,13 +89,15 @@ BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接�
 
 ## 平台兼容性
 
-| 属性/方法/事件   | Android | IOS | Desktop-Dev | Desktop |
-|:--------------:|:-------:|:---:|:-----------:|:-------:|
-| service        | ✅      | ✅  | ✅          | X      |
-| uuid           | ✅      | ✅  | ✅          | X      |
-| readValue      | ✅      | ✅  | ✅          | X      |
-| writeValue     | ✅      | ✅  | ✅          | X      |
-| getDescriptor  | ✅      | ✅  | ✅          | X      |
+| 属性/方法/事件                      | Android | IOS | Desktop-Dev | Desktop |
+|:---------------------------------:|:-------:|:---:|:-----------:|:-------:|
+| service                           | ✅      | ✅   | ✅          | X       |
+| uuid                              | ✅      | ✅   | ✅          | X       |
+| readValue                         | ✅      | ✅   | ✅          | X       |
+| writeValue                        | ✅      | ✅   | ✅          | X       |
+| getDescriptor                     | ✅      | ✅   | ✅          | X       |
+| event characteristicvaluechanged  | ✅      | ✅   | ✅          | X       |
+
 
 ## 相关链接
 

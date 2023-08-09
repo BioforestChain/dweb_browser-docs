@@ -4,50 +4,44 @@ category:
   - Plugin
 tag:
   - Bluetooth
-  - open
+  - close
 ---
 
-Turn off the Bluetooth device;
+Closes the Bluetooth adapter.
 
 ```js
-Bluetooth.close()
+Bluetooth.close()  
 ```
 
+## Parameters
 
-## parameters
+- None
 
-  - none
+## Returns
 
-
-## return value
-
-  A Promise object, resolve fulfills a [BluetoothCloseResponse](../../interface/bluetooth-close-response.md) object;
+- A Promise that resolves to a [BluetoothCloseResponse](../../interface/bluetooth-close-response.md) object.  
 
 ## Example
 
 ```js
 import { bluetooth } from "@plaoc/plugins";
+
 bluetooth.close()
-.then(
-  res => {
-    if(res. success){
-       // turn off bluetooth successfully
-     }else{
-       // Failed to turn off Bluetooth;
-     }
+.then(res => {
+  if(res.success) {
+    // Bluetooth closed successfully
+  } else {
+    // Failed to close Bluetooth
   }
-)
-
+})
 ```
-
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| open                 | ✅      | ✅   | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| close                 | ✅      | ✅  | ✅          | X       |  
 
-## Related Links
+## See Also
 
 [Bluetooth](./index.md)
-

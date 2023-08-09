@@ -101,6 +101,18 @@ app元数据接口；
     最后更新时间；
     属性只是一个string;
 
+  - bundle_signature
+
+    打包App生成签名；
+    属性值的类型是一个 string;
+
+  - public_key_url
+
+    用来验证app持有者的身份;
+    属性值是一个 string;
+
+
+
 ## 方法
 
   - 无
@@ -134,5 +146,4 @@ app元数据接口；
 ## 相关链接
 
 [UpdateControllerPlugin](../../plugin/update-controller/index.md)
-
 

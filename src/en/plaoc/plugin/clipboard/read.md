@@ -1,35 +1,41 @@
 ---
 title: ClipboardPlugin.read()
 category:
-  - Plugin 
+  - Plugin
 tag:
   - ClipboardPlugin
   - read
 ---
 
-Read the data on the clipboard;
+Reads data from the clipboard.
 
 ```js
 ClipboardPlugin.read();
 ```
 
-## parameters
-  - none
+## Parameters
 
-## return value
+- None
 
-  Return to change a Promise, and resolve to fulfill a [ReadResult](../../interface/read-result/index.md) object
+## Returns
+
+A Promise that resolves to a [ReadResult](../../interface/read-result/index.md) object.
 
 ## Example
 
+```js
+clipboardPlugin.read()
+.then(result => {
+  // Handle read result
+});
+```
+
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| read                 | ✅       | ✅  | ✅          | X       |
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |  
+|:---------------------:|:-------:|:---:|:-----------:|:-------:|
+| read                  | ✅      | ✅  | ✅          | X       |
 
-## Related Links
+## See Also
 
 [ClipboardPlugin](./index.md)
-
-

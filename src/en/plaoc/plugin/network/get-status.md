@@ -4,40 +4,36 @@ category:
   - Plugin
 tag:
   - NetworkPlugin
-  - getStatus
+  - getStatus  
 ---
 
-Get the status of the network;
+Get the network status;
 
 ```js
 NetworkPlugin.getStatus()
 ```
 
-## parameters
+## Parameters
 
-  - none
+  - None
 
-## return value
+## Return
 
-  Return a Promise, and resolve fulfills the [ConnectionStatus](../../interface/connection-status/index.md) object;
+Returns a Promise that resolves with a [ConnectionStatus](../../interface/connection-status/index.md) object.
 
 ## Example
-```js
+```js  
 import { networkPlugin } from "@plaoc/plugin";
 const status = networkPlugin.getStatus();
 ```
 
 
+## Platform Support
 
-## Platform Compatibility
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| getStatus            | ✅      | ✅  | ✅          | X       |
-
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|   
+| getStatus    | ✅      | ✅  | ✅          | X       |
 
 ## Related Links
 
 [NetworkPlugin](./index.md)
-
-
