@@ -1,17 +1,17 @@
 ---
-title: Bluetooth.open()
+title: BluetoothPlugin.open()
 category:
   - Plugin
 tag:
-  - Bluetooth
+  - BluetoothPlugin
   - open
 ---
 
-Opens the Bluetooth adapter.
-Opening the Bluetooth adapter is required before accessing any Bluetooth devices.  
+Opens the BluetoothPlugin adapter.
+Opening the BluetoothPlugin adapter is required before accessing any Bluetooth devices.  
 
 ```js
-Bluetooth.open()
+BluetoothPlugin.open()
 ```
 
 ## Parameters
@@ -25,9 +25,9 @@ Bluetooth.open()
 ## Example
 
 ```js
-import { bluetooth } from "@plaoc/plugins";
+import { bluetoothPlugin } from "@plaoc/plugins";
 
-bluetooth.open()
+bluetoothPlugin.open()
 .then(res => {
   if(res.success) {
     // Bluetooth opened successfully
@@ -45,4 +45,4 @@ bluetooth.open()
 
 ## See Also
 
-[Bluetooth](./index.md)
+[BluetoothPlugin](./index.md)

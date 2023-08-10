@@ -1,16 +1,16 @@
 ---
-title: Bluetooth.close()
+title: BluetoothPlugin.close()
 category:
   - Plugin
 tag:
-  - Bluetooth
+  - BluetoothPlugin
   - close
 ---
 
-Closes the Bluetooth adapter.
+Closes the BluetoothPlugin adapter.
 
 ```js
-Bluetooth.close()  
+BluetoothPlugin.close()  
 ```
 
 ## Parameters
@@ -24,9 +24,9 @@ Bluetooth.close()
 ## Example
 
 ```js
-import { bluetooth } from "@plaoc/plugins";
+import { bluetoothPlugin } from "@plaoc/plugins";
 
-bluetooth.close()
+bluetoothPlugin.close()
 .then(res => {
   if(res.success) {
     // Bluetooth closed successfully
@@ -44,4 +44,4 @@ bluetooth.close()
 
 ## See Also
 
-[Bluetooth](./index.md)
+[BluetoothPlugin](./index.md)

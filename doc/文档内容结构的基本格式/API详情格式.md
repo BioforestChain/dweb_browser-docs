@@ -4,8 +4,7 @@ category:
   - Plugin | WebComponent 定义是输入 插件类目还是HTML标签类目
 tag:
   - HTMLDwebStatusBarElement
-  - 标签列表项 2 
-  - 标签列表项 1
+  - 标签列表项 
 ---
 
 概述

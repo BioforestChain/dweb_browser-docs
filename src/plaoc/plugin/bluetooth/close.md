@@ -1,16 +1,16 @@
 ---
-title: Bluetooth.close()
+title: BluetoothPlugin.close()
 category:
   - Plugin
 tag:
-  - Bluetooth
+  - BluetoothPlugin
   - open
 ---
 
 关闭蓝牙设备；
 
 ```js
-Bluetooth.close()
+BluetoothPlugin.close()
 ```
 
 
@@ -26,8 +26,8 @@ Bluetooth.close()
 ## 示例
 
 ```js
-import { bluetooth } from "@plaoc/plugins";
-bluetooth.close()
+import { bluetoothPlugin } from "@plaoc/plugins";
+bluetoothPlugin.close()
 .then(
   res => {
     if(res.success){
@@ -49,5 +49,5 @@ bluetooth.close()
 
 ## 相关链接
 
-[Bluetooth](./index.md)
+[BluetoothPlugin](./index.md)
 

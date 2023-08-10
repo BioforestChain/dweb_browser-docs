@@ -25,6 +25,7 @@ import enPlaocPluginToast from "./en-plaoc-plugin-toast"
 import enPlaocPluginTorch from "./en-plaoc-plugin-torch";
 
 import enPlaocInterface from "./en-plaoc-interface";
+import enPlaocInterfaceFetchEvent from "./en-plaoc-interface-fetch-event";
 import enPlaocInterfaceBluetoothDevice from "./en-plaoc-interface-bluetooth-device"
 import enPlaocInterfaceBluetoothRemoteGATTCharacteristic from "./en-plaoc-interface-bluetooth-remote-gatt-characteristic"
 import enPlaocInterfaceBluetoothRemoteGATTDescriptor from "./en-plaoc-interface-bluetooth-remote-gatt-descriptor"
@@ -32,6 +33,14 @@ import enPlaocInterfaceBluetoothRemoteGATTServer from "./en-plaoc-interface-blue
 import enPlaocInterfaceBluetoothRemoteGATTService from "./en-plaoc-interface-bluetooth-remote-gatt-service"
 import enPlaocInterfaceStateObserver from "./en-plaoc-interface-state-observer"
 import enPlaocInterfaceWindowListenerHandle from "./en-plaoc-interface-window-listener-handle";
+
+import enPlaocWebComponent from "./en-plaoc-web-component";
+import enPlaocWebComponentBarcodeScanning from "./en-plaoc-web-component-barcode-scanning"
+import enPlaocWebComponentBluetooth from "./en-plaoc-web-component-bluetooth";
+
+import enPlaocShim from "./en-plaoc-shim";
+import enPlaocShimDwebServiceWorker from "./en-plaoc-shim-dweb-service-worker";
+
 
 
 export const enSidebar = sidebar({
@@ -59,7 +68,9 @@ export const enSidebar = sidebar({
   "/en/plaoc/plugin/splash-screen/": enPlaocPluginSplashScreen,
   "/en/plaoc/plugin/toast/": enPlaocPluginToast,
   "/en/plaoc/plugin/torch/": enPlaocPluginTorch,
+
   "/en/plaoc/interface/": enPlaocInterface,
+  "/en/plaoc/interface/fetch-event": enPlaocInterfaceFetchEvent,
   "/en/plaoc/interface/bluetooth-device/": enPlaocInterfaceBluetoothDevice,
   "/en/plaoc/interface/bluetooth-remote-gatt-characteristic/": enPlaocInterfaceBluetoothRemoteGATTCharacteristic,
   "/en/plaoc/interface/bluetooth-remote-gatt-descriptor/": enPlaocInterfaceBluetoothRemoteGATTDescriptor,
@@ -67,4 +78,10 @@ export const enSidebar = sidebar({
   "/en/plaoc/interface/bluetooth-remote-gatt-service/": enPlaocInterfaceBluetoothRemoteGATTService,
   "/en/plaoc/interface/state-observer/": enPlaocInterfaceStateObserver,
   "/en/plaoc/interface/window-listener-handle/": enPlaocInterfaceWindowListenerHandle,
+  "/en/plaoc/web-component/": enPlaocWebComponent,
+  "/en/plaoc/web-component/barcode-scanning/": enPlaocWebComponentBarcodeScanning,
+  "/en/plaoc/web-component/bluetooth/": enPlaocWebComponentBluetooth,
+
+  "/en/plaoc/shim/": enPlaocShim,
+  "/en/plaoc/shim/dweb-service-worker/": enPlaocShimDwebServiceWorker
 });

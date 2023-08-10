@@ -1,16 +1,16 @@
 ---
-title: Bluetooth.requestAndConnectDevice()
+title: BluetoothPlugin.requestAndConnectDevice()
 category:
   - Plugin
 tag:
-  - Bluetooth
+  - BluetoothPlugin
   - requestAndConnectDevice
 ---
 
-Requests and connects to a Bluetooth device. This must be called after [Bluetooth.open()](./open.md) and before [Bluetooth.close()](./close.md).
+Requests and connects to a Bluetooth device. This must be called after [BluetoothPlugin.open()](./open.md) and before [BluetoothPlugin.close()](./close.md).
 
 ```js
-Bluetooth.requestAndConnectDevice(options)
+BluetoothPlugin.requestAndConnectDevice(options)
 ```
 
 ## Parameters

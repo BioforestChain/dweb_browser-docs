@@ -9,7 +9,7 @@ npm install @plaoc/plugins
 
 ## 示例
 
-```typescript
+```js
 import { barcodeScannerPlugin } from "@plaoc/plugins";
 // 调用扫码
 const taskPshoto = async () => {

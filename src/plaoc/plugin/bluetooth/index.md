@@ -41,7 +41,7 @@ bluetooth.open()
 ## 示例
 ```js 
 import { bluetoothPlugin } from "@plaoc/plugin";
-bluetooth.open();
+bluetoothPlugin.open();
 ```
 
 

@@ -1,9 +1,9 @@
 ---
-title: Bluetooth.open()
+title: BluetoothPlugin.open()
 category:
   - Plugin
 tag:
-  - Bluetooth
+  - BluetoothPlugin
   - open
 ---
 
@@ -11,7 +11,7 @@ tag:
 打开蓝牙设备是访问蓝牙设备的前提；
 
 ```js
-Bluetooth.open()
+BluetoothPlugin.open()
 ```
 
 ## 参数
@@ -25,8 +25,8 @@ Bluetooth.open()
 
 ## 示例
 ```js
-import { bluetooth } from "@plaoc/plugins";
-bluetooth.open()
+import { bluetoothPlugin } from "@plaoc/plugins";
+bluetoothPlugin.open()
 .then(
   res => {
     if(res.success){
@@ -46,4 +46,4 @@ bluetooth.open()
 
 ## 相关链接
 
-[Bluetooth](./index.md)
+[BluetoothPlugin](./index.md)

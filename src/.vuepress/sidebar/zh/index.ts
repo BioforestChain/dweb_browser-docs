@@ -25,6 +25,7 @@ import zhPlaocPluginToast from "./zh-plaoc-plugin-toast"
 import zhPlaocPluginTorch from "./zh-plaoc-plugin-torch";
 
 import zhPlaocInterface from "./zh-plaoc-interface";
+import zhPlaocInterfaceFetchEvent from "./zh-plaoc-interface-fetch-event";
 import zhPlaocInterfaceBluetoothDevice from "./zh-plaoc-interface-bluetooth-device"
 import zhPlaocInterfaceBluetoothRemoteGATTCharacteristic from "./zh-plaoc-interface-bluetooth-remote-gatt-characteristic"
 import zhPlaocInterfaceBluetoothRemoteGATTDescriptor from "./zh-plaoc-interface-bluetooth-remote-gatt-descriptor"
@@ -32,6 +33,13 @@ import zhPlaocInterfaceBluetoothRemoteGATTServer from "./zh-plaoc-interface-blue
 import zhPlaocInterfaceBluetoothRemoteGATTService from "./zh-plaoc-interface-bluetooth-remote-gatt-service"
 import zhPlaocInterfaceStateObserver from "./zh-plaoc-interface-state-observer"
 import zhPlaocInterfaceWindowListenerHandle from "./zh-plaoc-interface-window-listener-handle";
+
+import zhPlaocWebComponent from "./zh-plaoc-web-component";
+import zhPlaocWebComponentBarcodeScanning from "./zh-plaoc-web-component-barcode-scanning"
+import zhPlaocWebComponentBluetooth from "./zh-plaoc-web-component-bluetooth";
+
+import zhPlaocShim from "./zh-plaoc-shim";
+import zhPlaocShimDwebServiceWorker from "./zh-plaoc-shim-dweb-service-worker";
 
 
 export const zhSidebar = sidebar({
@@ -59,7 +67,9 @@ export const zhSidebar = sidebar({
   "/plaoc/plugin/splash-screen/": zhPlaocPluginSplashScreen,
   "/plaoc/plugin/toast/": zhPlaocPluginToast,
   "/plaoc/plugin/torch/": zhPlaocPluginTorch,
+
   "/plaoc/interface/": zhPlaocInterface,
+  "/plaoc/interface/fetch-event": zhPlaocInterfaceFetchEvent,
   "/plaoc/interface/bluetooth-device/": zhPlaocInterfaceBluetoothDevice,
   "/plaoc/interface/bluetooth-remote-gatt-characteristic/": zhPlaocInterfaceBluetoothRemoteGATTCharacteristic,
   "/plaoc/interface/bluetooth-remote-gatt-descriptor/": zhPlaocInterfaceBluetoothRemoteGATTDescriptor,
@@ -67,6 +77,14 @@ export const zhSidebar = sidebar({
   "/plaoc/interface/bluetooth-remote-gatt-service/": zhPlaocInterfaceBluetoothRemoteGATTService,
   "/plaoc/interface/state-observer/": zhPlaocInterfaceStateObserver,
   "/plaoc/interface/window-listener-handle/": zhPlaocInterfaceWindowListenerHandle,
+
+  "/plaoc/web-component/": zhPlaocWebComponent,
+  "/plaoc/web-component/barcode-scanning/": zhPlaocWebComponentBarcodeScanning,
+  "/plaoc/web-component/bluetooth/": zhPlaocWebComponentBluetooth,
+  
+  "/plaoc/shim/": zhPlaocShim,
+  "/plaoc/shim/dweb-service-worker/": zhPlaocShimDwebServiceWorker
+
 });
 
 

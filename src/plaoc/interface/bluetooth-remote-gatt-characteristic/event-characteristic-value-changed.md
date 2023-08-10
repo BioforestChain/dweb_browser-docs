@@ -16,7 +16,7 @@ BluetoothRemoteGATTCharacteristic.addEventListener(
 ```
 
 
-## 事件类型
+## 事件
 
   `characteristicvaluechanged`
 

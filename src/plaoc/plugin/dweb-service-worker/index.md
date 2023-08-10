@@ -6,7 +6,7 @@ tag:
   - DwebServiceWorkerPlugin
 ---
 
-提供应用层级服务的插件
+模拟 ServiceWorker 并且提供应用升级控制器和应用控制功能插件。
 
 ```js
 import  { dwebServiceWorkerPlugin } from "@plaoc/plugin";

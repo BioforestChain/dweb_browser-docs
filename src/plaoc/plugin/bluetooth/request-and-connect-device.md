@@ -1,16 +1,16 @@
 ---
-title: Bluetooth.requestAndConnectDevice()
+title: BluetoothPlugin.requestAndConnectDevice()
 category:
   - Plugin
 tag:
-  - Bluetooth
+  - BluetoothPlugin
   - requestAndConnectDevice
 ---
 
-Bluetooth.requestAndConnectDevice()是一个实现了对蓝牙设备的查询和连接的接口；这个请求必须在[Bluetooth.open()](./open.md)之后[Bluetooth.close()](./close.md)之前执行;
+BluetoothPlugin.requestAndConnectDevice()是一个实现了对蓝牙设备的查询和连接的接口；这个请求必须在[Bluetooth.open()](./open.md)之后[Bluetooth.close()](./close.md)之前执行;
 
 ```js
-Bluetooth.requestAndConnectDevice(options)
+BluetoothPlugin.requestAndConnectDevice(options)
 
 ```
 

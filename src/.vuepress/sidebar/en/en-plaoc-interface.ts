@@ -11,6 +11,11 @@ export default [
         children: [
           {
             icon: "object",
+            text: "BaseEvent",
+            link: "base-event/",
+          },
+          {
+            icon: "object",
             text: "BFSMetaData",
             link: "bfs-meta-data/",
           },
@@ -153,6 +158,11 @@ export default [
             icon: "object",
             text: "$ExterRequestWithBaseInit",
             link: "exter-request-with-base-init/",
+          },
+          {
+            icon: "object",
+            text: "FetchEvent",
+            link: "fetch-event/"
           },
           {
             icon: "object",

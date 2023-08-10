@@ -7,7 +7,7 @@ tag:
 ---
 
 网络相关的插件；
-接口继承与[BaseEvent]()
+接口继承与[BaseEvent](../../interface/base-event/index.md)
 
 ```js
 import { networkPlugin } from "@plaoc/plugin";
