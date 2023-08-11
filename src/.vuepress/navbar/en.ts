@@ -3,7 +3,7 @@ import { navbar } from "vuepress-theme-hope";
 export const enNavbar = navbar([
   "/en/",
   {
-    text: "introduction",
+    text: "PlaocApp",
     icon: "note",
     link: "/en/app/",
   },

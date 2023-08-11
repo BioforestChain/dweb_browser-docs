@@ -6,143 +6,155 @@ tag:
   - BFSMetaData
 ---
 
-app metadata interface;
-This is an internal interface and cannot be accessed directly;
+App metadata interface;
+This is an internal interface, cannot be accessed directly;
 Only the Promise returned by [UpdateController.download()](../../plugin/update-controller/download.md) resolves to this interface;
 
  
-## Property
+## Properties
 
-  - id
+  Here are the updates to mark required fields in [manifest.json](../../../app/index.md):
 
-    identifier;
-    The attribute value is a string;
+  - id ❗️
+
+    Identifier; 
+    
+    The property value is a string; format is `${name}.${host}.dweb`;
+    
+    For example: "game.dweb.waterbang.top.dweb"
+    
+    Each app has a unique id, and each domain can mount multiple apps.
 
   - server
 
-    The address of the application's entry service file;
-    The property value is a [MainServer](../main-server/index.md) object;
+    The app's entry service file address;
+    The property value is a [MainServer](../main-server/index.md) object; 
 
-  - name
+  - name ❗️
 
-    application name
-    The attribute value is a string;
+    The app name
+    The property value is a string;
 
-  - short_name
 
-    Application subtitle
-    The value of the attribute is a string;
+  - short_name ❗️
 
-  - icon
+    The app subtitle
+    The property value is a string;
+    Will be displayed on the browser homepage
 
-    app icon
-    The value of the attribute is a string;
+  - icon ❗️
+
+    The app icon
+    The property value is a string;
+    App icon, vector graphics are recommended, here the multiple icon sizes in PWA manifests are simplified;
 
 
   - downloadUrl
 
-    App download address
-    The value of the attribute is a string;
+    The app download address
+    The property value is a string;
 
 
- - images
+  - images ❗️
 
-    List of screenshots of the application;
-    The attribute value is an Array, and the index value is string;
+    List of app screenshots;
+    The property value is an Array, index values are strings;
 
-  - description
+  - description ❗️
 
-    App description
-    The attribute value is a string;
+    The app description
+    The property value is a string;
+    Will be displayed on the download page and details page for users;
 
-  - author
+  - author ❗️
 
-    the author of the application;
-    The value of the attribute is a string;
+    The app author;
+    Developers, passed as an array, the first developer is the app copyright owner.
 
-  - version
+  - version ❗️
 
-    the version of the application;
-    The value of the attribute is a string;
+    The app version;
+    The property value is a string;
 
-  -categories
+  - categories
 
-    keywords
-    The value of the attribute is a string, and the index value is a string;
+    [APP Categories](https://github.com/w3c/manifest/wiki/Categories).
+    The property value is an array, index values are strings;
 
-  - home
+  - home ❗️
 
-    home page address;
-    The attribute value is a string;
-
+    App main domain, must be the same as the domain mounted by id
 
   - size
 
-    App size
-    The attribute value is a string;
+    The app size
+    The property value is a string;
 
   - fileHash
 
-    Hash value of the file
-    The attribute value is a string;
+    The file Hash value
+    The property value is a string;
 
-  -permissions
+  - permissions
 
-    the license type applied;
-    The attribute value is an Array, and the index value is a string;
+    The app license type;
+    The property value is an Array, index values are strings;
 
   - plugins
 
-    A list of plugins used by the application;
-    The attribute value is an Array, and the index value is a string;
+    List of plugins used by the app;
+    The property value is an Array, index values are strings;
 
   - release_date
 
     Last update time;
-    The attribute is just a string;
+    The property is just a string;
 
   - bundle_signature
 
-     Package App to generate signature;
-     The type of the attribute value is a string;
+    Signature generated when packing the app;
+    The property value type is a string;
 
   - public_key_url
 
-    Used to verify the identity of the app holder;
-    The attribute value is a string;
+    Used to verify the identity of the app owner;
+    The property value is a string;
 
-## Method
+  - new_feature ❗️
 
-  - none
+    New features for each version, can be updated along with the version number on each update
 
-## Event
 
-  - none
+## Methods
+
+  - None
+
+## Events
+
+  - None 
 
 ## Platform Compatibility
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| id                   | ✅      | ✅  | ✅          | X      |
-| server               | ✅      | ✅  | ✅          | X      |
-| name                 | ✅      | ✅  | ✅          | X      |
-| short_name           | ✅      | ✅  | ✅          | X      |
-| icon                 | ✅      | ✅  | ✅          | X      |
-| downloadUrl          | ✅      | ✅  | ✅          | X      |
-| images               | ✅      | ✅  | ✅          | X      |
-| description          | ✅      | ✅  | ✅          | X      |
-| author               | ✅      | ✅  | ✅          | X      |
-| version              | ✅      | ✅  | ✅          | X      |
-| categories           | ✅      | ✅  | ✅          | X      |
-| home                 | ✅      | ✅  | ✅          | X      |
-| size                 | ✅      | ✅  | ✅          | X      |
-| fileHash             | ✅      | ✅  | ✅          | X      |
-| permissions          | ✅      | ✅  | ✅          | X      |
-| plugins              | ✅      | ✅  | ✅          | X      |
-| release_date         | ✅      | ✅  | ✅          | X      |
+| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |  
+|:-----------------------:|:-------:|:---:|:----------:|:-------:|
+| id                      | ✅       | ✅   | ✅          | X       |
+| server                  | ✅       | ✅   | ✅          | X       |
+| name                    | ✅       | ✅   | ✅          | X       |
+| short_name              | ✅       | ✅   | ✅          | X       |
+| icon                    | ✅       | ✅   | ✅          | X       |
+| downloadUrl             | ✅       | ✅   | ✅          | X       |
+| images                  | ✅       | ✅   | ✅          | X       |
+| description             | ✅       | ✅   | ✅          | X       |
+| author                  | ✅       | ✅   | ✅          | X       |  
+| version                 | ✅       | ✅   | ✅          | X       |
+| categories              | ✅       | ✅   | ✅          | X       |
+| home                    | ✅       | ✅   | ✅          | X       |
+| size                    | ✅       | ✅   | ✅          | X       |
+| fileHash                | ✅       | ✅   | ✅          | X       |
+| permissions             | ✅       | ✅   | ✅          | X       |
+| plugins                 | ✅       | ✅   | ✅          | X       |
+| release_date            | ✅       | ✅   | ✅          | X       |
 
 ## Related Links
 
 [UpdateControllerPlugin](../../plugin/update-controller/index.md)
-
-

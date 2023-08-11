@@ -1,5 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
 import zhApp from "./zh-app";
+import zhAppPlaocCli from "./zh-app-plaoc-cli";
+
 import zhPlaoc from "./zh-plaoc"
 import zhPlaocPlugin from "./zh-plaoc-plugin"
 import zhPlaocPluginBarcodeScanner from "./zh-plaoc-plugin-barcode-scanner";
@@ -44,6 +46,7 @@ import zhPlaocShimDwebServiceWorker from "./zh-plaoc-shim-dweb-service-worker";
 
 export const zhSidebar = sidebar({
   "/app/": zhApp,
+  "/app/plaoc-cli/": zhAppPlaocCli,
   "/plaoc/": zhPlaoc,
   "/plaoc/plugin/": zhPlaocPlugin,
   "/plaoc/plugin/status-bar/": zhPlaocPluginStatusBar,

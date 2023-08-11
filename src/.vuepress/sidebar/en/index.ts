@@ -1,5 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
 import enApp from "./en-app"
+import enAppPlaocCli from "./en-app-plaoc-cli";
+
 import enPlaoc from "./en-plaoc"
 import enPlaocPlugin from "./en-plaoc-plugin"
 import enPlaocPluginBarcodeScanner from "./en-plaoc-plugin-barcode-scanner";
@@ -45,6 +47,7 @@ import enPlaocShimDwebServiceWorker from "./en-plaoc-shim-dweb-service-worker";
 
 export const enSidebar = sidebar({
   "/en/app/": enApp,
+  "/en/app/plaoc-cli/": enAppPlaocCli,
   "/en/plaoc/": enPlaoc,
   "/en/plaoc/plugin/": enPlaocPlugin,
   "/en/plaoc/plugin/status-bar/": enPlaocPluginStatusBar,

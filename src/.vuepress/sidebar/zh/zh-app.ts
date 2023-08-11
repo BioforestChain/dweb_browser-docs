@@ -5,17 +5,21 @@ export default [
     link: "/"
   },
   {
-    text: "Plaoc APP",
+    text: "PlaocAPP",
     prefix: "/app/",
     link: "/app/",
     children: [
       {
-        text: "命令行打包工具",
-        link: "bundle/",
+        text: "开发工具",
+        link: "developer-tool/index.md",
       },
       {
-        text: "开发者工具",
-        link: "developer-tool/",
+        text: "@plaoc/cli",
+        link: "plaoc-cli/index.md",
+      },
+      {
+        text: "发布",
+        link: "release/index.md",
       },
     ]
   },
