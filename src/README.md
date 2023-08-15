@@ -7,11 +7,11 @@ heroText: DwebBrowser
 tagline: 一个提供分布式网络|应用附着的浏览器。
 actions:
   - text: 介绍 💡
-    link: /app/
+    link: /plaoc-app/
     type: primary
 
   - text: Plaoc
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - text: 服务端(测试中)
     link: /service/
@@ -23,37 +23,37 @@ features:
   - title: APP 链上认证
     icon: lock
     details: 为APP上链申请的DAPPID,方便对APP进行认证和溯源。
-    link: /app/bundle/
+    link: /plaoc-app/bundle/
 
   - title: APP配置
     icon: config
     details: 自由配置规则，您的后端根目录创建一个`bfs-metadata.ts`的配置文件，具体查看后端配置。
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - title: 打包配置
     icon: slides
     details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.zip`文件，然后上传到任何地方。
-    link: /app/bundle/
+    link: /plaoc-app/bundle/
 
   - title: 一次打包，多平台使用
     icon: workingDirectory
     details: 提供android,ios,desktop三端部署。
-    link: /app/bundle/
+    link: /plaoc-app/bundle/
 
   - title: 应用互联
     icon: link
     details: 本地app通过自定义dwebServiceWorker通信。
-    link: /plaoc/dweb-service-worker/
+    link: /plaoc-plugin/dweb-service-worker/
 
   - title: 遵循web开发规范
     icon: api
     details: 所有的api符合web开发人员的开发直觉，遵循web标准。
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - title: 协作共享
     icon: group
     details: 标签添加了分享声明<html is="dweb-html">那么整个html页面就被进入共享模式。
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - title: npm支持
     icon: npm
@@ -241,7 +241,7 @@ npm install -g @plaoc/cli
 
 `plaoc bundle ./dir`
 
-会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请到[plaoc lic](./app/bundle/README.md)查看详细文档。
+会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请到[plaoc lic](./plaoc-app/bundle/README.md)查看详细文档。
 
 
 - 开发者模式

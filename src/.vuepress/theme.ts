@@ -1,6 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
-import { enSidebar, zhSidebar } from "./sidebar/index.js";
+import { enSidebar, zhSidebar, createSidebar } from "./sidebar/index.js";
+import { BasePath } from "./sidebar/config/base-path"
 
 export default hopeTheme({
   hostname: "https://docs.plaoc.com/",
@@ -29,7 +30,8 @@ export default hopeTheme({
       navbar: zhNavbar,
 
       // sidebar
-      sidebar: zhSidebar,
+      // sidebar: zhSidebar,
+      sidebar: createSidebar(BasePath.zh),
 
       footer: "闽ICP备18009949号-4",
 
@@ -45,7 +47,8 @@ export default hopeTheme({
       navbar: enNavbar,
 
       // sidebar
-      sidebar: enSidebar,
+      // sidebar: enSidebar,
+      sidebar: createSidebar(BasePath.en),
 
       footer: "闽ICP备18009949号-4",
 

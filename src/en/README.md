@@ -7,11 +7,11 @@ heroText: DwebBrowser
 tagline: A browser that provides distributed network and application attachment.
 actions:
   - text: Introduction 💡
-    link: /app/
+    link: /plaoc-app/
     type: primary
 
   - text: Plaoc
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - text: Server(testing)
     link: /service/
@@ -23,37 +23,37 @@ features:
   - title: APP Chain Authentication
     icon: lock
     details: For DAPPID applied for on-chain by the app, it facilitates the authentication and traceability of the app.
-    link: /app/bundle/
+    link: /plaoc-app/bundle/
 
   - title: APP Configuration
     icon: config
     details: Configure rules freely. Create a `bfs-metadata.ts` configuration file in your backend root directory. For more details, refer to the backend configuration.
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - title: Packaging Configuration
     icon: slides
     details: After developing the application, you need to package your frontend and backend applications into a `xxxx.zip` file and upload it anywhere.
-    link: /app/bundle/
+    link: /plaoc-app/bundle/
 
   - title: One Packaging for Multiple Platform Usage
     icon: workingDirectory
     details: Support deployment on Android, iOS, and desktop platforms.
-    link: /app/bundle/
+    link: /plaoc-app/bundle/
 
   - title: Application Interconnection
     icon: link
     details: Local apps communicate through custom dwebServiceWorker.
-    link: /plaoc/dweb-service-worker/
+    link: /plaoc-plugin/dweb-service-worker/
 
   - title: Follow Web Development Standards
     icon: api
     details: All APIs conform to the development intuition of web developers and adhere to web standards.
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - title: Collaboration and Sharing
     icon: group
     details: If a tag adds a sharing declaration <html is="dweb-html">, the entire HTML page enters the sharing mode.
-    link: /plaoc/
+    link: /plaoc-plugin/
 
   - title: npm Support
     icon: npm
@@ -254,7 +254,7 @@ npm install -g @plaoc/cli
 
 `plaoc bundle ./dir`
 
-It will package the directory structure as follows and output a compressed `.zip` file and a `metadata.json`. For more details, please refer to the [plaoc lic](./app/bundle/README.md) for the detailed documentation.
+It will package the directory structure as follows and output a compressed `.zip` file and a `metadata.json`. For more details, please refer to the [plaoc lic](./plaoc-app/bundle/README.md) for the detailed documentation.
 
 - Developer mode
 

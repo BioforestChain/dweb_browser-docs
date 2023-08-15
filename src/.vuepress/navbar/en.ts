@@ -5,7 +5,7 @@ export const enNavbar = navbar([
   {
     text: "PlaocApp",
     icon: "note",
-    link: "/en/app/",
+    link: "/en/plaoc-app/",
   },
-  { text: "plaoc", icon: "discover", link: "/en/plaoc/" },
+  { text: "PlaocPlugin", icon: "discover", link: "/en/plaoc-plugin/" },
 ]);
