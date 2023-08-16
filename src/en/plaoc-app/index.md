@@ -1,4 +1,4 @@
-# Plaoc App 
+# Plaoc App
 
 ## Overview
 
@@ -36,7 +36,7 @@ Using Vue + Vite as an example:
 
   ```
   plaoc-app
-  ├── ......other project files 
+  ├── ......other project files
   └── mainifest.json
   ```
 
@@ -88,10 +88,11 @@ Using Vue + Vite as an example:
 
 - Run [developer tool app](./developer-tool/index.md) with command:
 
-  For macbook m1 example:
-
   ```bash
-  open /Users/xxxpath/dweb-browser-devtools.app --args -- --start install --url http://192.168.2.6:8096/metadata.json
+  #window
+  & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
+  #macos
+  open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
   ```
 
 - Can now download and debug plaoc-app project in [developer tool app](./developer-tool/index.md)
@@ -130,6 +131,6 @@ Using Vue + Vite as an example:
 
 [@plaoc/cli](../plaoc-cli/index.md)
 
-[Developer tool](../developer-tool/index.md) 
+[Developer tool](../developer-tool/index.md)
 
 [Release](../release/index.md)
