@@ -13,9 +13,7 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
  
 ## Properties
 
-  Here are the updates to mark required fields in [manifest.json](../../../app/index.md):
-
-  - id ❗️
+  - id 
 
     Identifier; 
     
@@ -30,19 +28,19 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
     The app's entry service file address;
     The property value is a [MainServer](../main-server/index.md) object; 
 
-  - name ❗️
+  - name 
 
     The app name
     The property value is a string;
 
 
-  - short_name ❗️
+  - short_name 
 
     The app subtitle
     The property value is a string;
     Will be displayed on the browser homepage
 
-  - icon ❗️
+  - icon 
 
     The app icon
     The property value is a string;
@@ -55,23 +53,23 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
     The property value is a string;
 
 
-  - images ❗️
+  - images 
 
     List of app screenshots;
     The property value is an Array, index values are strings;
 
-  - description ❗️
+  - description 
 
     The app description
     The property value is a string;
     Will be displayed on the download page and details page for users;
 
-  - author ❗️
+  - author 
 
     The app author;
     Developers, passed as an array, the first developer is the app copyright owner.
 
-  - version ❗️
+  - version 
 
     The app version;
     The property value is a string;
@@ -81,7 +79,7 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
     [APP Categories](https://github.com/w3c/manifest/wiki/Categories).
     The property value is an array, index values are strings;
 
-  - home ❗️
+  - home 
 
     App main domain, must be the same as the domain mounted by id
 
@@ -120,7 +118,7 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
     Used to verify the identity of the app owner;
     The property value is a string;
 
-  - new_feature ❗️
+  - new_feature 
 
     New features for each version, can be updated along with the version number on each update
 

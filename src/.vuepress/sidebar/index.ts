@@ -1,6 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
 import { BasePath } from "./config/base-path";
 import { PlaocApp } from "./routes/plaoc-app";
+import { PlaocAppManifest } from "./routes/plaoc-app-manifest"
 import { PlaocAppPlaocCli } from "./routes/plaoc-app-plaoc-cli"
 
 import { Plaoc } from "./routes/plaoc"
@@ -49,6 +50,7 @@ import { PlaocShimDwebServiceWorker } from "./routes/plaoc-shim-dweb-service-wor
 const allRoutes = {
   "/plaoc-app/": PlaocApp,
   "/plaoc-app/plaoc-cli/": PlaocAppPlaocCli,
+  "/plaoc-app/manifest/": PlaocAppManifest,
 
   "/plaoc-plugin/": Plaoc,
   "/plaoc-plugin/plugin/": PlaocPlugin,

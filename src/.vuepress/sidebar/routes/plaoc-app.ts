@@ -19,6 +19,10 @@ export class PlaocApp extends Array {
             link: "developer-tool/index.md",
           },
           {
+            text: "manifest",
+            link: "manifest/index.md",
+          },
+          {
             text: "@plaoc/cli",
             link: "plaoc-cli/index.md",
           },

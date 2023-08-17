@@ -1,6 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
-import { enSidebar, zhSidebar, createSidebar } from "./sidebar/index.js";
+import { createSidebar } from "./sidebar/index.js";
 import { BasePath } from "./sidebar/config/base-path"
 
 export default hopeTheme({

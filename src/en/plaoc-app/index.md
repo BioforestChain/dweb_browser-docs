@@ -111,7 +111,7 @@ Using Vue + Vite as an example:
 
   Follows [manifest standard](https://developer.mozilla.org/en-US/docs/Web/Manifest) from w3c. Omits some complex image configs like `icon`, so recommend using svg files directly.
 
-  This config file displays when user installs the App. See sample config file [here](../plaoc-plugin/interface/bfs-meta-data/index.md).
+  This config file displays when user installs the App. See sample config file [here](./manifest/index.md).
 
 - Create local download service
 

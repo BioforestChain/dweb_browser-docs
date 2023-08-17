@@ -118,7 +118,7 @@
 
   本配置文件遵循 w3c 的[manifest 标准](https://developer.mozilla.org/en-US/docs/Web/Manifest)。但是忽略了一些繁杂的图片配置，比如`icon`,因此建议直接传递 svg 格式的文件。
 
-  这个配置文件将在用户安装 App 的时候展示，我们直接给出配置文件的示例，[查看详情](../plaoc-plugin/interface/bfs-meta-data/index.md);
+  这个配置文件将在用户安装 App 的时候展示，我们直接给出配置文件的示例，[查看详情](./manifest/index.md);
 
   ```json
   {

@@ -12,10 +12,9 @@ app元数据接口；
 
  
 ## 属性
+  
 
-  以下字段增加 ❗️ 为[manifest.json](../../../app/index.md)文件中的必填字段。
-
-  - id ❗️
+  - id 
 
     标识符；
     
@@ -30,19 +29,19 @@ app元数据接口；
     应用的入口服务文件地址；
     属性值是一个 [MainServer](../main-server/index.md)对象；
 
-  - name ❗️
+  - name 
 
     应用的名称
     属性值是一个string;
 
 
-  - short_name ❗️
+  - short_name 
 
     应用的副标题
     属性的值是一个 string;
     将会展示到browser主页
 
-  - icon ❗️
+  - icon 
 
     应用的图标
     属性的值是一个string;
@@ -55,23 +54,23 @@ app元数据接口；
     属性的值是一个string;
 
 
-  - images ❗️
+  - images 
 
     应用的截图列表；
     属性值是一个Array, 索引值是 string;
 
-  - description ❗️
+  - description 
 
     应用的描述
     属性值是一个string;
     将会在下载页面和详情页面呈现给用户;
 
-  - author ❗️
+  - author 
 
     应用的作者；
     开发者，数组形式传递，第一个开发者为app版权所有者。
 
-  - version ❗️
+  - version 
 
     应用的版本；
     属性的值是一个string;
@@ -81,7 +80,7 @@ app元数据接口；
     [APP类别](https://github.com/w3c/manifest/wiki/Categories)。
     属性值是一个数组，索引值是 string;
 
-  - home ❗️
+  - home 
 
     app 主域名，跟 id 挂载的域名需要相同
 
@@ -120,7 +119,7 @@ app元数据接口；
     用来验证app持有者的身份;
     属性值是一个 string;
 
-  - new_feature ❗️
+  - new_feature 
 
     版本新特性，每次更新的时候，可以跟着 版本版本号同步更新
 
