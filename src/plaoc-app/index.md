@@ -126,7 +126,7 @@
     "name": "game",
     "short_name": "vue3-game",
     "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
-    "icon": "https://www.bfmeta.info/imgs/logo3.webp",
+    "logo": "https://www.bfmeta.info/imgs/logo3.webp",
     "images": [
       "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
       "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
@@ -134,7 +134,7 @@
     ],
     "author": ["bfs", "bfs@bfs.com"],
     "version": "1.0.0",
-    "new_feature": "新添加了一键弹弹弹的功能！",
+    "change_log": "新添加了一键弹弹弹的功能！",
     "home": "https://dweb.waterbang.top",
     "categories": ["games"]
     // ......

@@ -41,7 +41,7 @@ Fields marked with ❗️ are required.
 
   App description, string, displayed on download and detail pages.  
 
-- icon ❗️
+- logo ❗️
 
   App icon, string, vector image recommended.
 
@@ -128,3 +128,8 @@ Fields marked with ❗️ are required.
 - shortcuts
 
   Access shortcuts, [ShortcutItem](./shortcut-item.md) array.
+
+- languages
+
+  Describes ths language types supported by the App.
+  [Possible values](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 

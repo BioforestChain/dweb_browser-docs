@@ -47,7 +47,7 @@ PlaocApp 的 `manifest.json` 文件的配置项;
     将会在下载页面和详情页面呈现给用户;
 
 
-  - icon ❗️
+  - logo ❗️
 
     应用的图标
     属性的值是一个string;
@@ -153,3 +153,10 @@ PlaocApp 的 `manifest.json` 文件的配置项;
     
     访问关键人物列表；
     属性值是一组 [ShortcutItem](./shortcut-item.md)对象；
+
+  
+  - languages
+
+    描述 App 支持的语言类型
+    [可能的值](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 
+
