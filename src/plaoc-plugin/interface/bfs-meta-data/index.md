@@ -41,7 +41,7 @@ app元数据接口；
     属性的值是一个 string;
     将会展示到browser主页
 
-  - icon 
+  - logo 
 
     应用的图标
     属性的值是一个string;
@@ -119,9 +119,14 @@ app元数据接口；
     用来验证app持有者的身份;
     属性值是一个 string;
 
-  - new_feature 
+  - change_log 
 
-    版本新特性，每次更新的时候，可以跟着 版本版本号同步更新
+    更新的日志，每次更新的时候，可以跟着 版本版本号同步更新
+
+  - languages
+
+    描述 App 支持的语言类型
+    [可能的值](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 
 
 
 

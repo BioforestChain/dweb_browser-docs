@@ -40,7 +40,7 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
     The property value is a string;
     Will be displayed on the browser homepage
 
-  - icon 
+  - logo 
 
     The app icon
     The property value is a string;
@@ -118,9 +118,16 @@ Only the Promise returned by [UpdateController.download()](../../plugin/update-c
     Used to verify the identity of the app owner;
     The property value is a string;
 
-  - new_feature 
+  - change_log 
 
-    New features for each version, can be updated along with the version number on each update
+    Update log, can be updated along with the version number on each update
+
+  - languages
+
+    Describes ths language types supported by the App.
+    [Possible values](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 
+
+
 
 
 ## Methods
