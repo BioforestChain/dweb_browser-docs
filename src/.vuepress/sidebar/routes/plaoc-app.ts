@@ -10,27 +10,23 @@ export class PlaocApp extends Array {
         link: basePath + "/"
       },
       {
-        text: "PlaocAPP",
+        text: "Plaoc app",
         prefix: basePath + "/plaoc-app/",
         link: basePath + "/plaoc-app/",
         children: [
+          // {
+          //   text: basePath === BasePath.zh ? "开发工具" : "DeveloperTool",
+          //   link: "developer-tool/index.md",
+          // },
           {
-            text: basePath === BasePath.zh ? "开发工具" : "DeveloperTool",
-            link: "developer-tool/index.md",
-          },
-          {
-            text: "manifest",
-            link: "manifest/index.md",
-          },
-          {
-            text: "@plaoc/cli",
-            link: "plaoc-cli/index.md",
-          },
-          {
-            text: basePath === BasePath.zh ? "发布" : "Release",
+            text: basePath === BasePath.zh ? "应用商店" : "App Store",
             link: "release/index.md",
           },
         ]
+      },
+      {
+        text: "@plaoc/cli",
+        link: "plaoc-cli/index.md",
       }
     )
   }

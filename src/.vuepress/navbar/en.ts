@@ -3,9 +3,9 @@ import { navbar } from "vuepress-theme-hope";
 export const enNavbar = navbar([
   "/en/",
   {
-    text: "PlaocApp",
+    text: "Plaoc",
     icon: "note",
     link: "/en/plaoc-app/",
   },
-  { text: "PlaocPlugin", icon: "discover", link: "/en/plaoc-plugin/" },
+  { text: "Plugins", icon: "discover", link: "/en/plaoc-plugin/" },
 ]);

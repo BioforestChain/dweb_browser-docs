@@ -1,136 +1,140 @@
-# Plaoc App
+# Plaoc app 
 
 ## Overview
 
-We refer to applications that run on the `dweb_browser` browser as `Plaoc Apps`. First we need to understand how to package our app into a `.zip` file.
+We define applications running on the `dweb-browser` browser as `Plaoc App`. You can understand that `dweb_browser` is like WeChat and `plaoc app` is like the mini programs running inside it. 
 
-## Plaoc App Creation Process:
+Because `dweb-browser` currently supports mainstream platforms like Android, iOS, MacOS, Windows, Linux, your web application can rely on plaoc to directly implement multi-end publishing.
 
-Using Vue + Vite as an example:
+Plaoc is a product of web3. Applications will be relatively independent, so each plaoc application package can be published using its own application website.
 
-- Globally install @vue/cli
+Of course, your website can also be an application center, containing your application matrix, making application publishing more efficient.
 
-  ```bash
-  pnpm add -g @vue/cli
-  ```
+## Plaoc app development process
 
-- Test the installation was successful
+First you need to create a `manifest.json` file in the root directory of your application. You can think of `manifest.json` as equivalent to `PWA`'s `manifest.json`. 
 
-  ```bash
-  vue --version
-  ```
+It mainly declares some application parameters and does some display when the user installs.
 
-  Terminal output indicates successful install:
+```bash
+plaoc-app
+├── ......other project files
+└── mainifest.json
+```
 
-  ```bash
-  @vue/cli 5.0.8
-  ```
+The following sample configuration file, copy the following content and paste it into `mainifest.json` in the root directory. [Click to view field details](../plaoc-plugin/interface/bfs-meta-data/index.md)
 
-- Create Vue project
+```json
+{
+  "id": "game.dweb.waterbang.top.dweb",
+  "name": "game",
+  "short_name": "vue3-game",
+  "description": "This is an example application that contains instances of all dweb_plugins components.",
+  "logo": "https://www.bfmeta.info/imgs/logo3.webp",
+  "images": [
+    "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
+    "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
+    "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
+  ],
+  "author": ["bfs", "bfs@bfs.com"],
+  "version": "1.0.0", 
+  "change_log": "Added a new one-click bang bang bang feature!",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["application"],
+  "lang": "zh-Hans",
+  "languages": []
+}
+```
 
-  ```bash
-  vue create plaoc-app
-  ```
+Now your app has been declared as a Plaoc app.
 
-- Create manifest.json file in plaoc-app root directory
+## How to start development
 
-  ```
-  plaoc-app
-  ├── ......other project files
-  └── mainifest.json
-  ```
+### First install @plaoc/cli
 
-- Install @plaoc/cli
+> Or use npx to run without polluting the global environment
+>
+> Example: `npx plaoc bundle ./usr/www`
 
-  ```bash
-  pnpm add @plaoc/cli
-  ```
+@plaoc/cli is the development tool for plaoc that helps applications run, package, and publish. Specific command prompts can be viewed using `--help` or [documentation](../plaoc-cli/index.md).
 
-- Update package.json with command:
+- Execute the installation command:
 
-  ```json
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    // Add plaoc command
-    "plaoc:serve": "plaoc serve "
-  },
-  ```
+```bash
+npm i -g @plaoc/cli
+```
 
-- Start project in dev mode
+### Start the project
 
-  ```bash
-  pnpm serve
-  ```
+This example uses vite to start the project:
 
-  Terminal output:
+```bash
+npx vite --host 
+```
 
-  ```bash
-  App running at:
-  - Local:   http://localhost:8080/
-  - Network: http://192.168.2.6:8080/
-  ```
+The terminal outputs
 
-- In another terminal, run plaoc:serve command
+```bash
+VITE v4.4.9 ready in 88 ms
+➜ Local: http://localhost:5173/
+➜ Network: http://172.30.95.28:5173/
+```
 
-  ```bash
-  pnpm plaoc:serve http://192.168.2.6:8080/
-  ```
+### Build app data link
 
-  Terminal output:
+Use the plaoc command installed above to build:
 
-  ```bash
-  metadata:       http://127.0.0.1:8096/metadata.json
-  metadata:       http://192.168.2.6:8096/metadata.json
-  metadata:       http://198.18.0.1:8096/metadata.json
-  ```
+```bash
+plaoc serve http://172.30.95.28:5173/ 
+#or 
+npx plaoc serve http://172.30.95.28:5173/
+```
 
-- Run [developer tool app](./developer-tool/index.md) with command:
+The terminal outputs
 
-  ```bash
-  #window
-  & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
-  #macos
-  open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
-  ```
+```bash 
+metadata: http://127.0.0.1:8096/metadata.json
+metadata: http://172.30.95.28:8096/metadata.json
+```
 
-- Can now download and debug plaoc-app project in [developer tool app](./developer-tool/index.md)
+> You can use `plaoc serve --help` to see more features.
 
-- Package plaoc-app when development complete
+### Start development
 
-- Publish
+First you need to download the [dweb-browser](https://github.com/BioforestChain/dweb_browser/releases) according to your operating system. 
 
-## Key Steps Explanation
+Next, run `dweb-browser` with the command to start developer mode.
 
-- Create Vue project with [@vue/cli](https://cli.vuejs.org/guide/)
+```bash
+#window 
+"D:\\DownLoads\\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json 
 
-- Install @plaoc/cli dependency
+#macos
+open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
+```
 
-- Add `manifest.json` file
+Now you can see the development and debugging interface. You should also find that what you just downloaded is also the desktop version of dweb-browser.
 
-  Follows [manifest standard](https://developer.mozilla.org/en-US/docs/Web/Manifest) from w3c. Omits some complex image configs like `icon`, so recommend using svg files directly.
+### Package
 
-  This config file displays when user installs the App. See sample config file [here](./manifest/index.md).
+After plaoc-app development is complete, @plaoc/cli is still used to package the app. The command is as follows:
 
-- Create local download service
+```bash
+plaoc bundle ./dist
+```
 
-  - [plaoc serve xxx](./plaoc-cli/serve.md) to debug packaged Plaoc App project
+> ./dist is the output source directory for packaging
 
-  - [plaoc serve url](./ploac-cli/serve-url.md) to debug Plaoc App project in dev
+### Publish
 
-- Package Plaoc App
+Use `scp` or other commands to publish to your server. 
 
-  Use packaging tool [plaoc cli](./plaoc-cli/bundle.md) to bundle app.
+The command line support for @plaoc/cli is still under development.
 
-- Publish
+## Related links
 
-  Deploy [bundle](./plaoc-cli/bundle.md) output to official site to [publish](./release/index.md).
+[@plaoc/cli](../plaoc-cli/index.md) 
 
-## Related Links
-
-[@plaoc/cli](../plaoc-cli/index.md)
-
-[Developer tool](../developer-tool/index.md)
+[Developer tools](../developer-tool/index.md)
 
 [Release](../release/index.md)

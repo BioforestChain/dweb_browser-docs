@@ -3,11 +3,11 @@ import { navbar } from "vuepress-theme-hope";
 export const zhNavbar = navbar([
   "/",
   {
-    text: "PlaocApp",
+    text: "Plaoc",
     icon: "note",
     link: "/plaoc-app/",
   },
-  { text: "PlaocPlugin", icon: "discover", link: "/plaoc-plugin/" },
+  { text: "Plugins", icon: "discover", link: "/plaoc-plugin/" },
   // { text: "服务", icon: "discover", link: "/service/" },
   // {
   //   text: "系统APP",

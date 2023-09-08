@@ -1,61 +1,38 @@
 ---
-title: Release
-category:
+title: App Store  
+category: 
   - Service
-tag:
-  - Service  
+tag: 
+  - Service
 ---
 
-Publishing Plaoc Apps.
+Your app can be published to someone else's app store, or you can develop your own app mall, or simply place it directly on your app's official website for users to download the app by directly accessing the official website.
 
-## Publishing 
+### How to create download links
 
-- Each app needs to be published under its own domain. The domain is bound to the appId specified in `manifest.json`.
+First, your application will be packaged into two files as follows:
 
-## Example:
+```bash
+bundle
+├── xxxxx.dweb.zip
+└── mainifest.json
+```
 
-- Assume my appId is: `game.dweb.browser.org.dweb`
+Then you need to upload it to your app's official website (app store). 
 
-- Then the [bundle](../ploac-cli/bundle.md) files need to be deployed under `dweb.browser.org` root directory. That completes the deployment.
+Assume I upload it to the root directory of my app's official website:
 
-- In the dweb_browser app, just need to provide access to `https://dweb.browser.org/metadata.json` in some way. 
+```bash
+├── https://dweb.browser.org/xxxxx.dweb.zip 
+└── https://dweb.browser.org/mainifest.json
+```
 
-  - QR code with the json url for users to scan and download.
+Then the download button code on my app's official website only needs:
 
-  - Use `XMLHttpRequest` in website to request the json. User clicks on website to download. Requires website content support:
+```html
+<a href="dweb:install?url=https://dweb.browser.org/metadata.json">Click to Download</a> 
+```
 
-    Website example:
-    ```html
-    <body>
-      <div class="container">
-          <button onclick="getBfsMeta()">download click</button>
-      </div>
-      <script>
-      function getBfsMeta() {
-          fetchLocal("dweb:install?url=https://game.dweb.browser.org.dweb/metadata.json")
-        }
-        function fetchLocal(url) {
-          return new Promise(function (resolve, reject) {
-              var xhr = new XMLHttpRequest
-              xhr.onload = function () {
-                  resolve(new Response(xhr.response, { status: xhr.status }))
-              }
-              xhr.onerror = function () {
-                  reject(new TypeError('Local request failed'))
-              }
-              xhr.open('GET', url)
-              xhr.responseType = "arraybuffer";
-              xhr.send(null)
-          })
-      };
-      </script>
-    </body>
-    ```
+Establishing download channels only needs to follow one principle - use the `dweb:install?url=` this kind of `deeplink` form to build download links.
 
-## Related Links  
-
-[plaoc app](../index.md)
-
-[@plaoc/cli](./index.md) 
-
-[plaoc bundle](./bundle.md)
+This way, users only need to click this (link) button in the dweb-browser app to jump to the download page.

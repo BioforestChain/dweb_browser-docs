@@ -1,93 +1,108 @@
-# Plaoc APP
+# Plaoc app
 
 ## 概述
 
-我们定义运行于`dweb_browser`浏览器上面的应用，统一称为`Plaoc App`。
-那么首先我们需要了解如何我们的应用打包成一个`.zip`文件。
+我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`，您可以理解为`dweb_browser` 是微信 `plaoc app` 是里面运行的小程序。
 
-## 创建一个 Plaoc App 流程；
+因为`dweb-browser` 目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持，那么也就意味着您的 web 应用，可以背靠 plaoc 直接实现多端发布。
 
-以 vue + vite 为例
+plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应用打包完都可以使用自己应用网站进行发布。
+当然，您的网站也可以是一个应用中心，包含了您的应用矩阵，应用的发布将变得高效。
 
-- 全局 安装 @vue/cli
+## 开发 Plaoc app 流程；
 
-  ```bash
-    pnpm add -g @vue/cli
-  ```
+您首选需要在您的应用根目录下创建 `manifest.json` 文件，您可以认为`manifest.json`等同于 `PWA`的`manifest.json`。
+它主要声明了一些应用的参数和在用户安装的时候做一些展示。
 
-- 完成后测试看安装是否成功
+```bash
+  plaoc-app
+  ├── ......其他工程文件
+  └── mainifest.json
+```
 
-  ```bash
-    vue --version
-  ```
+以下配置文件的示例,直接复制以下内容粘贴到根目录下的`mainifest.json`，[点击查看字段详情](../plaoc-plugin/interface/bfs-meta-data/index.md);
 
-  终端输出一下内容表示安装成功；
+```json
+{
+  "id": "game.dweb.waterbang.top.dweb",
+  "name": "game",
+  "short_name": "vue3-game",
+  "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
+  "logo": "https://www.bfmeta.info/imgs/logo3.webp",
+  "images": [
+    "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
+    "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
+    "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
+  ],
+  "author": ["bfs", "bfs@bfs.com"],
+  "version": "1.0.0",
+  "change_log": "新添加了一键弹弹弹的功能！",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["application"],
+  "lang": "zh-Hans",
+  "languages": []
+}
+```
 
-  ```bash
-    @vue/cli 5.0.8
-  ```
+现在您的 app 已经声明成为 Plaoc app 了。
 
-- 创建 vue 工程
+## 如何开始开发
 
-  ```bash
-    vue create plaoc-app
-  ```
+### 首先安装@plaoc/cli
 
-- 在 plaoc-app root 目录下创建 manifest.json 文件
+> 或者不愿意污染全局环境可以使用 npx 运行
+>
+> 示例： `npx plaoc bundle ./usr/www`
 
-  ```
-    plaoc-app
-    ├── ......其他工程文件
-    └── mainifest.json
-  ```
+@plaoc/cli 是 plaoc 的开发工具，能帮助应用运行，打包，发布。
+具体的命令提示可以使用`--help`或者[文档](../plaoc-cli/index.md)查看。
 
-- 安装 @plaoc/cli
+- 执行安装命令:
 
-  ```bash
-    pnpm add @plaoc/cli
-  ```
+```bash
+  npm i -g @plaoc/cli
+```
 
-- 更新 package.json 添加指令；
+### 启动工程
 
-  ```json
-    "scripts": {
-      "serve": "vue-cli-service serve",
-      "build": "vue-cli-service build",
-      "lint": "vue-cli-service lint",
-      // 添加 plaoc 指令
-      "plaoc:serve": "plaoc serve "
-    },
-  ```
+本示例使用 vite 启动工程：
 
-- 以开发状态启动工程
+```bash
+  npx vite --host
+```
 
-  ```bash
-    pnpm serve
-  ```
+终端输出
 
-  终端输出
+```bash
+ VITE v4.4.9  ready in 88 ms
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://172.30.95.28:5173/
+```
 
-  ```bash
-      App running at:
-      - Local:   http://localhost:8080/
-      - Network: http://192.168.2.6:8080/
-  ```
+### 构建应用数据链接
 
-- 用另一个终端执行 plaoc:serve 指令
+使用上面安装的plaoc 命令构建：
 
-  ```bash
-    pnpm plaoc:serve http://192.168.2.6:8080/
-  ```
+```bash
+  plaoc serve http://172.30.95.28:5173/
+  #or
+  npx plaoc serve http://172.30.95.28:5173/
+```
 
-  终端输出
+终端输出
 
-  ```bash
-    metadata:       http://127.0.0.1:8096/metadata.json
-    metadata:       http://192.168.2.6:8096/metadata.json
-    metadata:       http://198.18.0.1:8096/metadata.json
-  ```
+```bash
+  metadata:       http://127.0.0.1:8096/metadata.json
+  metadata:       http://172.30.95.28:8096/metadata.json
+```
 
-- 使用指令运行 [开发工具 app](./developer-tool/index.md)
+> 可以使用 `plaoc serve --help` 查看更进一步的功能。
+
+### 启动开发
+
+您首先需要根据您的操作系统下载[dweb-browser](https://github.com/BioforestChain/dweb_browser/releases)。
+
+接下来使用指令运行 `dweb-browser`来启动开发者模式。
 
   ```bash
   #window
@@ -96,64 +111,21 @@
   open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
   ```
 
-- 在 [开发工具 app](./developer-tool/index.md) 就能够实现 plaoc-app 工程的下载和调试了
+现在您就能看到开发和调试界面了，您应该也发现了，您刚刚下载的也是dweb-browser的桌面版。
 
-- 开发完成后通过 打包 plaoc-app
+### 打包 plaoc-app
 
-- 发布；
-
-## 关键步骤说明
-
-- 创建 vue 工程
-
-通过[@vue/cli](https://cli.vuejs.org/zh/guide/) 创建工程；
-
-- 安装 @plaoc/cli 以来
+开发完成后也是依然是用@plaoc/cli 打包 app，命令如下：
 
 ```bash
-  pnpm add @plaoc/cli
+plaoc bundle ./dist
 ```
 
-- 添加 `manifest.json`文件
+> ./dist 为打包输出的源码目录
 
-  本配置文件遵循 w3c 的[manifest 标准](https://developer.mozilla.org/en-US/docs/Web/Manifest)。但是忽略了一些繁杂的图片配置，比如`icon`,因此建议直接传递 svg 格式的文件。
+### 发布
 
-  这个配置文件将在用户安装 App 的时候展示，我们直接给出配置文件的示例，[查看详情](./manifest/index.md);
-
-  ```json
-  {
-    "id": "game.dweb.waterbang.top.dweb",
-    "name": "game",
-    "short_name": "vue3-game",
-    "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
-    "logo": "https://www.bfmeta.info/imgs/logo3.webp",
-    "images": [
-      "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
-      "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
-      "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
-    ],
-    "author": ["bfs", "bfs@bfs.com"],
-    "version": "1.0.0",
-    "change_log": "新添加了一键弹弹弹的功能！",
-    "home": "https://dweb.waterbang.top",
-    "categories": ["games"]
-    // ......
-  }
-  ```
-
-- 创建本地下载服务
-
-  - [plaoc serve xxx](./plaoc-cli/serve.md)调试已经打包好的 Plaoc App 工程
-
-  - [plaoc serve url](./ploac-cli/serve-url.md)调试开发阶段 Plaoc App 工程；
-
-- 打包 Plaoc App
-
-我们需要借助打包工具[plaoc cli](./plaoc-cli/bundle.md)来打包我们的 App。
-
-- 发布
-
-  把[bundle](./plaoc-cli/bundle.md)打包出来的内容，部署到官网上[发布](./release/index.md)；
+使用 `scp` 或其他指令发布到您的服务器。 @plaoc/cli的命令行支持还在开发中。
 
 ## 相关链接
 

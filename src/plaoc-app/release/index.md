@@ -1,77 +1,36 @@
 ---
-title: Release
+title: 应用商店
 category:
   - Service 
 tag:
   - Service 
 ---
 
-发布 Plaoc App;
+您的应用可以发布到别人的应用商店，也可以自己开发一个应用商城，或者简单的直接放到您的app官网,让用户直接访问官网就能下载app。
 
-## 发布
+### 如何创建下载链接
 
-- 每个app都需要发布到自己的域名下面，域名跟开发填写到`manifest.json`的appId是绑定到一起的;
+首选您的应用会打包出两个文件如下：
 
-## 示例：
+```bash
+  bundle
+  ├── xxxxx.dweb.zip
+  └── mainifest.json
+```
 
+接着您需要上传到您的app官网(应用商城)中。
+假设我上传到我app官网的根目录：
 
-- 假设我的appId是:`game.dweb.browser.org.dweb`
+```bash
+├── https://dweb.browser.org/xxxxx.dweb.zip
+└── https://dweb.browser.org/mainifest.json
+```
 
-- 那么需要把[bundle](../ploac-cli/bundle.md)打包出来的文件，放到`dweb.browser.org`根目录，部署就完成了。
+那么我app官网到下载按钮代码只需要如下：
 
-- 在 dweb_browser 应用中，只需要提供任意方式访问`https://dweb.browser.org/metadata.json`就可以。
+```html
+<a href="dweb:install?url=https://dweb.browser.org/metadata.json">点击下载</a> 
+```
 
-  - 提供json地址的二维码，让用户扫码下载。
-
-  - 在官网上通过`XMLHttpRequest`方式，请求这个json,用户在官网点击下载。这个需要官网页面内容的支持；
-
-    官网示例：
-    ```html
-    <body>
-      <div class="container">
-          <button onclick="getBfsMeta()">download click</button>
-      </div>
-      <script>
-      function getBfsMeta() {
-          fetchLocal("dweb:install?url=https://game.dweb.browser.org.dweb/metadata.json")
-        }
-        function fetchLocal(url) {
-          return new Promise(function (resolve, reject) {
-              var xhr = new XMLHttpRequest
-              xhr.onload = function () {
-                  resolve(new Response(xhr.response, { status: xhr.status }))
-              }
-              xhr.onerror = function () {
-                  reject(new TypeError('Local request failed'))
-              }
-              xhr.open('GET', url)
-              xhr.responseType = "arraybuffer";
-              xhr.send(null)
-          })
-      };
-      </script>
-    </body>
-    ```
-
-## 相关链接
-
-  [plaoc app](../index.md)
-
-  [@plaoc/cli](./index.md)
-
-  [plaoc bundle](./bundle.md)
-
-
-
-
-
-
-
- <!-- 
- <ul>
-    <li><a href="https://github.com/BioforestChain/dweb_bundle">dweb_bundle</a></li>
-    <li><a href="https://github.com/BioforestChain/dweb_browser">dweb_browser</a></li>
-</ul> 
-<a href="dweb:install?url=https://dweb.waterbang.top/metadata.json">点击下载</a> 
---> 
-
+建立下载的途径只需要遵循一个原则。使用`dweb:install?url=`这种`deeplink`的形式构建下载链接。
+这样用户只需要在dweb-browser应用点击这个(链接)按钮，就可以跳转到下载界面。
