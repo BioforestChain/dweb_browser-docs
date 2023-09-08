@@ -27,6 +27,10 @@ export class PlaocApp extends Array {
       {
         text: "@plaoc/cli",
         link: "plaoc-cli/index.md",
+      },
+      {
+        text: basePath === BasePath.zh ? "重定向配置" : "redirect config",
+        link: "redirect/index.md",
       }
     )
   }

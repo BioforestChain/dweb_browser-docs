@@ -1,6 +1,11 @@
-# Plaoc app
+---
+title: Plaoc app
+category:
+  - Plaoc
+  - tag:
+  - Android、IOS、MacOS、Windows、Linux
+---
 
-## 概述
 
 我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`，您可以理解为`dweb_browser` 是微信 `plaoc app` 是里面运行的小程序。
 
