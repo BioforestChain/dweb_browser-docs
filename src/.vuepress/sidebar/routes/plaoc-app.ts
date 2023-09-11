@@ -14,14 +14,14 @@ export class PlaocApp extends Array {
         prefix: basePath + "/plaoc-app/",
         link: basePath + "/plaoc-app/",
         children: [
-          // {
-          //   text: basePath === BasePath.zh ? "开发工具" : "DeveloperTool",
-          //   link: "developer-tool/index.md",
-          // },
           {
-            text: basePath === BasePath.zh ? "应用商店" : "App Store",
-            link: "release/index.md",
+            text: basePath === BasePath.zh ? "重定向配置" : "redirect config",
+            link: "redirect/index.md",
           },
+          {
+            text: "manifest",
+            link: "manifest/index.md",
+          }
         ]
       },
       {
@@ -29,8 +29,8 @@ export class PlaocApp extends Array {
         link: "plaoc-cli/index.md",
       },
       {
-        text: basePath === BasePath.zh ? "重定向配置" : "redirect config",
-        link: "redirect/index.md",
+        text: basePath === BasePath.zh ? "应用商店" : "App Store",
+        link: "release/index.md",
       }
     )
   }

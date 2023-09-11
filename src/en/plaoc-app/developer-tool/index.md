@@ -10,7 +10,7 @@ Local development and debugging app for Plaoc Apps.
 
 ### 1. First generate `metadata.json`
 
-In terminal use [plaoc serve url](../ploac-cli/serve-url.md) command to generate metadata.json:
+In terminal use [plaoc serve url](../plaoc-cli/index.md) command to generate metadata.json:
 
 ```bash
 plaoc serve http://172.30.90.207:5173/
@@ -45,14 +45,10 @@ Command explanation:
   
 - `http://127.0.0.1:8096/metadata.json`
 
-  Address output by [plaoc serve url](../plaoc-cli/serve-url.md)
+  Address output by [plaoc serve url](../plaoc-cli/index.md)
 
 ## Related Links
 
 [plaoc app](../index.md)
 
 [@plaoc/cli](../plaoc-cli/index.md) 
-
-[plaoc serve url](../ploac-cli/serve-url.md) command
-
-[plaoc serve](../plaoc-cli/serve.md) command

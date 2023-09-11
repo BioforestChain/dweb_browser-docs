@@ -1,81 +1,130 @@
 ---
 title: "@plaoc/cli"
 category:
-  - Service 
+  - plaoc
 tag:
-  - Service 
+  - cli
 ---
 
-plaoc 前后端打包工具。
+这是 plaoc 命令行工具，负责 plaoc app 的开发，打包，发布。
+
+这个 cli 工具还兼具了发布工具和验证 app 的功能，并且可以使用`plaoc run`和服务端配合，进行快速的打包发布应用。
 
 ## 安装
 
- - 首先需要安装plaoc命令行工具。
+- 首先需要安装 plaoc 命令行工具。
 
 ```bash
 npm install -g @plaoc/cli
 ```
 
-## 使用语法
+> 也可以使用 npx plaoc 执行命令
 
-  ```bash
-  plaoc cmdName distPath --optionParamter paramaterValue
-  ```
+假设工程目录如下所示：
 
-  指令说明:
-  
-  - cmdName
+```bash
+  plaoc-app
+  ├── ......其他工程文件
+  ├── mainifest.json
+  └── plaoc.json
+```
 
-    指令的名称；
-    合法的值如下；
+## 开发模式
 
-    - [`serve`](./serve.md) 
-        
-        启动本地服务，为开发工具提供Plaoc App 的下载功能；
+开发模式主要跟`dweb_browser`桌面版配合进行动态开发，命令如下：
 
-        会在终端生成如下信息：
+```bash
+plaoc serve http://localhost:5173
+```
 
-        ```bash
-        metadata:       http://127.0.0.1:8096/metadata.json
-        metadata:       http://172.30.93.43:8096/metadata.json
-        ```
+以上命令将会打印如下：
 
-    - [`bundle`](./bundle.md) 打包 Plaoc App， 生成一个 发布文件；
+```bash
+metadata:       http://127.0.0.1:8096/metadata.json
+metadata:       http://172.30.93.43:8096/metadata.json
+```
 
-  - distPath
+这是一个纯转发的模式，plaoc将代理了您启动的 `http://localhost:5173` 开发服务。
 
-    Ploac App 工程打包后所在的目录
+### 指定启动端口
 
-  - --optionParamter
+一般用于启动多个app的情况，您可以使用 `--port` 指定开启的端口，默认的端口为 8096。
 
-    [选项参数](./option-paramter.md)
+```bash
+plaoc serve http://localhost:5173 --port 8097
+```
 
-  - paramaterValue
+### 指定`manifest.json`目录
 
-    选项参数的值；
+假设您当前不在项目根目录，您需要使用 `--dir` 来指定 `manifest.json` 的地址，以便识别app的配置信息。
 
-## 示例
+```bash
+plaoc serve http://localhost:5173  --dir ./plaoc-app1
+```
 
-  以 如下的工程目录为例：
-  - root            
-    - dist          // 工程打包后目录
-    - manifest.json // minifest 文件
+## 打包项目
 
-  ### 使用本地服务
-  ```bash
-  plaoc serve ./root/dist --dir ./root
-  ```
+正常打包命令如下：
 
+```bash
+plaoc bundle ./dist
+```
 
-  ### 打包发布文件
-  ```bash
-  plaoc bundle ./root/dist --dir ./root
-  ```
+`./dist`目录为您打包的源码目录。并且您需要确保您当前运行 plaoc 命令的文件夹跟您的`manifest.json`文件夹同级。
 
-## 相关链接
+如果不在同一目录，可以参考下面的 `--dir` 目录进行指定。
 
-  [plaoc app](../index.md)
+::: warning
+注意，不可以使用 plaoc bundle http://localhost:5173 打包一个动态服务。
+:::
 
-  [release](../release/index.md)
+### 指定`manifest.json`目录
 
-  [开发工具](../developer-tool/index.md)
+如果您的`manifest.json`跟打包的目录不在同一文件夹下，可以使用 `--dir` 指定到`manifest.json`文件夹下。
+
+假设工程目录如下所示：
+
+```bash
+  plaoc-main
+  ├── ......其他工程文件
+  ├── plaoc-app1
+    ├── ./dist  //项目打包完的源码文件
+    ├── mainifest.json
+  ├── plaoc-app2
+    ├── ./dist  //项目打包完的源码文件
+    └── mainifest.json
+```
+
+假设您目录下有多个项目，就可以像下面这样指定目录去打包。
+
+```bash
+plaoc bundle ./plaoc-app1/dist --dir ./plaoc-app1
+```
+
+> ps： 您也可以使用`plaoc bundle --help` 查看。
+
+### 指定输出打包输出的文件位置
+
+可以使用 `--out` 指定输出目录名称，默认为`bundle`。
+
+```bash
+plaoc bundle ./dist --out ./bundleDir
+```
+
+#### 指定输出的 appId
+
+可以使用 `--id` 指定 app 的 id。
+
+```bash
+plaoc bundle ./dist --id new.plaoc.org.dweb
+```
+
+注意指定的 id 需要以 `.dweb` 结尾，并且和配置的 `home` 相同域名。
+
+### 指定输出的 app 版本
+
+可以使用 `--version` 指定 app 的版本。
+
+```bash
+plaoc bundle ./dist --version 0.2.3
+```

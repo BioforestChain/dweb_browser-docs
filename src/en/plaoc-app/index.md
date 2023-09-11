@@ -60,7 +60,7 @@ Now your app has been declared as a Plaoc app.
 >
 > Example: `npx plaoc bundle ./usr/www`
 
-@plaoc/cli is the development tool for plaoc that helps applications run, package, and publish. Specific command prompts can be viewed using `--help` or [documentation](../plaoc-cli/index.md).
+@plaoc/cli is the development tool for plaoc that helps applications run, package, and publish. Specific command prompts can be viewed using `--help` or [documentation](./plaoc-cli/index.md).
 
 - Execute the installation command:
 
@@ -137,8 +137,8 @@ The command line support for @plaoc/cli is still under development.
 
 ## Related links
 
-[@plaoc/cli](../plaoc-cli/index.md) 
+[@plaoc/cli](./plaoc-cli/index.md) 
 
-[Developer tools](../developer-tool/index.md)
+[Developer tools](./developer-tool/index.md)
 
-[Release](../release/index.md)
+[Release](./release/index.md)

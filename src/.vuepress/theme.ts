@@ -1,10 +1,10 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
+import { BasePath } from "./sidebar/config/base-path";
 import { createSidebar } from "./sidebar/index.js";
-import { BasePath } from "./sidebar/config/base-path"
 
 export default hopeTheme({
-  hostname: "https://docs.plaoc.com/",
+  hostname: "https://docs.dweb-browser.org/",
   sidebar: "heading",
   author: {
     name: "BFChain",

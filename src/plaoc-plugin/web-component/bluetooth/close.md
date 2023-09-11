@@ -19,7 +19,7 @@ HTMLBluetoothElement.close()
 
 ## 返回值
 
-  返回一个Promise对象，resolve兑现一个[BluetoothCloseResponse](../../interface/bluetooth-close-response.md)对象
+  返回一个Promise对象，resolve兑现一个[BluetoothCloseResponse](../../interface/bluetooth-close-response/index.md)对象
 
 
 ## 示例

@@ -60,6 +60,5 @@ BluetoothDevice.forget()
 
 [BluetoothDevice](./index.md)
 
-[BluetoothPlugin](../../plugin/blutto/index.md);
 
 

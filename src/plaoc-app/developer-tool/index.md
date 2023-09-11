@@ -11,7 +11,7 @@ Plaoc App 本地开发调试用App；
 
 ### 1. 首先需要生成 `metadata.json`
 
-  在终端通过 [plaoc serve url](../ploac-cli/-url.md)指令生成 metadata.json
+  在终端通过 [plaoc serve url](../plaoc-cli/index.md)指令生成 metadata.json
   ```bash
   plaoc serve http://172.30.90.207:5173/
   ```
@@ -44,7 +44,7 @@ Plaoc App 本地开发调试用App；
 
   - `http://127.0.0.1:8096/metadata.json`
 
-    是[plaoc serve url](../plaoc-cli/serve-url.md)输出的地址
+    是[plaoc serve url](../plaoc-cli/index.md)输出的地址
 
 
 ## 相关链接
@@ -52,7 +52,3 @@ Plaoc App 本地开发调试用App；
   [plaoc app](../index.md)
 
   [@plaoc/cli](../plaoc-cli/index.md)
-
-  [plaoc serve url](../ploac-cli/serve-url.md)指令
-
-  [plaoc serve](../plaoc-cli/serve.md)指令；

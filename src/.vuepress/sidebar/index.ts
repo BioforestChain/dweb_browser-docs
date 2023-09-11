@@ -1,57 +1,52 @@
 import { sidebar } from "vuepress-theme-hope";
 import { BasePath } from "./config/base-path";
 import { PlaocApp } from "./routes/plaoc-app";
-import { PlaocAppManifest } from "./routes/plaoc-app-manifest"
-import { PlaocAppPlaocCli } from "./routes/plaoc-app-plaoc-cli"
 
-import { Plaoc } from "./routes/plaoc"
-import { PlaocPlugin } from "./routes/plaoc-plugin"
-import { PlaocPluginBarcodeScanner } from "./routes/plaoc-plugin-barcode-scanner"
-import { PlaocPluginBiometrics } from "./routes/plaoc-plugin-biometrics"
-import { PlaocPluginBluetooth } from "./routes/plaoc-plugin-bluetooth"
-import { PlaocPluginCamera } from "./routes/plaoc-plugin-camera"
-import { PlaocPluginClipboard } from "./routes/plaoc-plugin-clipboard"
-import { PlaocPluginConfig } from "./routes/plaoc-plugin-config"
-import { PlaocPluginDevice } from "./routes/plaoc-plugin-device"
-import { PlaocPluginDwebServiceWorker } from "./routes/plaoc-plugin-dweb-service-worker"
-import { PlaocPluginFileSystem } from "./routes/plaoc-plugin-file-system"
-import { PlaocPluginHaptics } from "./routes/plaoc-plugin-haptics"
-import { PlaocPluginMWebview } from "./routes/plaoc-plugin-m-webview"
+import { Plaoc } from "./routes/plaoc";
+import { PlaocPlugin } from "./routes/plaoc-plugin";
+import { PlaocPluginBarcodeScanner } from "./routes/plaoc-plugin-barcode-scanner";
+import { PlaocPluginBiometrics } from "./routes/plaoc-plugin-biometrics";
+import { PlaocPluginBluetooth } from "./routes/plaoc-plugin-bluetooth";
+import { PlaocPluginCamera } from "./routes/plaoc-plugin-camera";
+import { PlaocPluginClipboard } from "./routes/plaoc-plugin-clipboard";
+import { PlaocPluginConfig } from "./routes/plaoc-plugin-config";
+import { PlaocPluginDevice } from "./routes/plaoc-plugin-device";
+import { PlaocPluginDwebServiceWorker } from "./routes/plaoc-plugin-dweb-service-worker";
+import { PlaocPluginFileSystem } from "./routes/plaoc-plugin-file-system";
+import { PlaocPluginHaptics } from "./routes/plaoc-plugin-haptics";
+import { PlaocPluginMWebview } from "./routes/plaoc-plugin-m-webview";
 import { PlaocPluginNavigationBar } from "./routes/plaoc-plugin-navigation-bar";
-import { PlaocPluginNetwork } from "./routes/plaoc-plugin-network"
+import { PlaocPluginNetwork } from "./routes/plaoc-plugin-network";
 import { PlaocPluginSafeArea } from "./routes/plaoc-plugin-safe-area";
 import { PlaocPluginShare } from "./routes/plaoc-plugin-share";
-import { PlaocPluginSplashScreen } from "./routes/plaoc-plugin-splash-screen"
-import { PlaocPluginStatusBar } from "./routes/plaoc-plugin-status-bar"
-import { PlaocPluginToast } from "./routes/plaoc-plugin-toast"
-import { PlaocPluginTorch } from "./routes/plaoc-plugin-torch"
-import { PlaocPluginUpdateController } from "./routes/plaoc-plugin-update-controller"
-import { PlaocPluginVirtualKeyboard } from "./routes/plaoc-plugin-virtual-keyboard"
+import { PlaocPluginSplashScreen } from "./routes/plaoc-plugin-splash-screen";
+import { PlaocPluginStatusBar } from "./routes/plaoc-plugin-status-bar";
+import { PlaocPluginToast } from "./routes/plaoc-plugin-toast";
+import { PlaocPluginTorch } from "./routes/plaoc-plugin-torch";
+import { PlaocPluginUpdateController } from "./routes/plaoc-plugin-update-controller";
+import { PlaocPluginVirtualKeyboard } from "./routes/plaoc-plugin-virtual-keyboard";
 
 import { PlaocInterface } from "./routes/plaoc-interface";
 import { PlaocInterfaceBluetoothDevice } from "./routes/plaoc-interface-bluetooth-device";
-import { PlaocInterfaceBluetoothRemoteGattCharacteristic } from "./routes/plaoc-interface-bluetooth-remote-gatt-characteristic"
-import { PlaocInterfaceBluetoothRemoteGattDescriptor } from "./routes/plaoc-interface-bluetooth-remote-gatt-descriptor"
-import { PlaocInterfaceBluetoothRemoteGattServer } from "./routes/plaoc-interface-bluetooth-remote-gatt-server"
-import { PlaocInterfaceBluetoothRemoteGattService } from "./routes/plaoc-interface-bluetooth-remote-gatt-service"
-import { PlaocInterfaceFetchEvent } from "./routes/plaoc-interface-fetch-event"
-import { PlaocInterfaceStateObserver } from "./routes/plaoc-interface-state-observer"
-import { PlaocInterfaceWindowListenerHandle } from "./routes/plaoc-interface-window-listener-handle"
+import { PlaocInterfaceBluetoothRemoteGattCharacteristic } from "./routes/plaoc-interface-bluetooth-remote-gatt-characteristic";
+import { PlaocInterfaceBluetoothRemoteGattDescriptor } from "./routes/plaoc-interface-bluetooth-remote-gatt-descriptor";
+import { PlaocInterfaceBluetoothRemoteGattServer } from "./routes/plaoc-interface-bluetooth-remote-gatt-server";
+import { PlaocInterfaceBluetoothRemoteGattService } from "./routes/plaoc-interface-bluetooth-remote-gatt-service";
+import { PlaocInterfaceFetchEvent } from "./routes/plaoc-interface-fetch-event";
+import { PlaocInterfaceStateObserver } from "./routes/plaoc-interface-state-observer";
+import { PlaocInterfaceWindowListenerHandle } from "./routes/plaoc-interface-window-listener-handle";
 
-import { PlaocWebComponent } from "./routes/plaoc-web-component"
-import { PlaocWebComponentBarcodeScanning } from "./routes/plaoc-web-component-barcode-scanning"
-import { PlaocWebComponentBluetooth } from "./routes/plaoc-web-component-bluetooth"
+import { PlaocWebComponent } from "./routes/plaoc-web-component";
+import { PlaocWebComponentBarcodeScanning } from "./routes/plaoc-web-component-barcode-scanning";
+import { PlaocWebComponentBluetooth } from "./routes/plaoc-web-component-bluetooth";
 
 import { PlaocShim } from "./routes/plaoc-shim";
-import { PlaocShimDwebServiceWorker } from "./routes/plaoc-shim-dweb-service-worker"
+import { PlaocShimDwebServiceWorker } from "./routes/plaoc-shim-dweb-service-worker";
 
 
 
 const allRoutes = {
   "/plaoc-app/": PlaocApp,
-  "/plaoc-app/plaoc-cli/": PlaocAppPlaocCli,
-  "/plaoc-app/manifest/": PlaocAppManifest,
-
   "/plaoc-plugin/": Plaoc,
   "/plaoc-plugin/plugin/": PlaocPlugin,
   "/plaoc-plugin/plugin/barcode-scanner/": PlaocPluginBarcodeScanner,

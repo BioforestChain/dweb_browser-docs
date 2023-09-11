@@ -21,7 +21,7 @@ BluetoothPlugin.close()
 
 ## 返回值
 
-  - 一个Promise对象，resolve兑现一个[BluetoothCloseResponse](../../interface/bluetooth-close-response.md)对象；
+  - 一个Promise对象，resolve兑现一个[BluetoothCloseResponse](../../interface/bluetooth-close-response/index.md)对象；
 
 ## 示例
 

@@ -3,160 +3,157 @@ title: manifest
 category:
   - Plaoc APP
 tag:
-  - manifest.json
+  - manifest
 ---
 
-PlaocApp 的 `manifest.json` 文件的配置项;
+plaoc app 的 `manifest.json` 文件详情解释，您可以理解为是 PWA 的 `manifest.json`。
+
+这里主要提供了plaoc app 的所有的配置信息，归属性验证，和一些展示在安装界面的信息。
+
+
+```json
+{
+  "id": "plaoc.html.demo.dweb",
+  "name": "plaoc-html",
+  "short_name": "plaoc", 
+  "description": "This is a sample application that includes instances of all dweb_plugins components.", 
+  "logo": "https://dweb.waterbang.top/icon.png", 
+  "images": [
+    "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
+    "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
+    "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
+  ],
+  "author": ["bfs", "bfs@bfs.com"], 
+  "version": "1.0.0", 
+  "change_log": "Added a new feature of shooting bubbles with a single click!",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["application"] 
+}
+```
 
  
 ## 配置项
 
   以下字段增加 ❗️ 为必填字段。
 
-  - id ❗️
+### id ❗️
 
-    标识符；
-    
-    属性值是一个string；规范是 `${name}.${host}.dweb`;
-    
-    例如："game.dweb.waterbang.top.dweb"
-    
-    每个 app 都有一个唯一的 id,每个域名可以挂载多个 App。
-
-  - server
-
-    应用的入口服务文件地址；
-
-    属性值是一个 [MainServer](../../plaoc-plugin/interface/main-server/index.md)对象；
-
-  - name ❗️
-
-    应用的名称
-    属性值是一个string; 
-
-  - short_name ❗️
-    
-    应用的副标题
-    属性的值是一个 string;
-    将会展示到browser主页
-
-  - description ❗️
-
-    应用的描述
-    属性值是一个string;
-    将会在下载页面和详情页面呈现给用户;
-
-
-  - logo ❗️
-
-    应用的图标
-    属性的值是一个string;
-    app的图标，建议使用矢量图，这里简化了 pwa 声明多个不同大小的 icon;
-
-  - bundle_url
-
-    压缩包的地址；
-
-  - bundle_hash
-
-    压缩包的hash
-
-  - bundle_size
-
-    压缩包的尺寸
-
-  - release_date
-
-    发布的时间
-
-  - change_log
-    
-    更新日志；
+类型:string
   
-  - images ❗️
+  app的id；规范是 `${name}.${host}.dweb`;
+  
+  例如："game.dweb.waterbang.top.dweb"
+  
+  每个 app 都有一个唯一的 id,每个域名可以挂载多个 App。
 
-    应用的截图列表；
-    属性值是一个Array, 索引值是 string;
+### name ❗️
 
-  - author ❗️
+类型:string
 
-    应用的作者；
-    开发者，数组形式传递，第一个开发者为app版权所有者。
+应用的名称
 
-  - version ❗️
+### short_name ❗️
 
-    应用的版本；
-    属性的值是一个string;
+类型:string
 
-  - categories
+应用的副标题
+
+### description ❗️
+
+类型:string
+
+应用的描述，将会在下载页面和详情页面呈现给用户;
+
+### logo ❗️
+
+类型:string
+
+应用的图标，建议使用矢量图;
+
+### change_log
     
-    [APP类别](https://github.com/w3c/manifest/wiki/Categories)。
-    属性值是一组 string;
+类型:string
 
-  - home ❗️
+更新日志；
+  
+### images ❗️
 
-    PlaocApp 主域名，跟 id 挂载的域名需要相同
+类型:string[]
 
-  - plugins
+应用的截图列表；
 
-    应用使用的插件列表；
-    属性值是一组 string;
+### author ❗️
 
-  - permissions
+类型:string[]
 
-    应用的许可证类型；
-    属性值是一组 string;
+开发者，数组形式传递，第一个开发者为app版权所有者。
 
-  - [dir](https://w3c.github.io/manifest/#dir-member)
+### version ❗️
+
+类型:string
+
+应用的版本；
+
+### categories 
+
+类型:string[]
+
+app的类别，建议传递["application"]
+
+### home ❗️
+
+PlaocApp 主域名，跟 id 挂载的域名需要相同
+
+  <!-- - [dir](https://w3c.github.io/manifest/#dir-member)
 
     “dir”成员清单中具有方向性的成员的基本方向。
     
-    属性值是一个 [TextDirectionType](./text-direction-type.md)对象
+    属性值是一个 [TextDirectionType](./text-direction-type.md)对象 -->
 
-  - [lang](https://w3c.github.io/manifest/#lang-member)
-    
-    语言标记；
-    为清单的具有方向性的成员的值指定主要语言（因为知道语言也有助于方向性）。
+### [lang](https://w3c.github.io/manifest/#lang-member)
 
-  - [icons](https://w3c.github.io/manifest/#icons-member-0)
+语言标记；
+为清单的具有方向性的成员的值指定主要语言（因为知道语言也有助于方向性）。
 
-    
-    作为Plaoc-app的图标表示；
-    属性值是一组 [ImageResource](./image-resource.md)对象;
+### [icons](https://w3c.github.io/manifest/#icons-member-0)
 
-  - [screenshots](https://w3c.github.io/manifest/#screenshots-member)
 
-    PlaocApp 截屏图像；
-    属性值是一组 [ImageResource](./image-resource.md)对象;
+作为Plaoc-app的图标表示；
+属性值是一组 [ImageResource](./image-resource.md)对象;
 
-  - [display](https://w3c.github.io/manifest/#display-member)
+### [screenshots](https://w3c.github.io/manifest/#screenshots-member)
 
-    PlaocApp 显示模式；
-    属性值是一个 [DisplayModeType](./display-mode-type.md)对象
+PlaocApp 截屏图像；
+属性值是一组 [ImageResource](./image-resource.md)对象;
 
-  - [orientation](https://w3c.github.io/manifest/#orientation-member)
+### [display](https://w3c.github.io/manifest/#display-member)
 
-    窗口的默认方向；
-    值是一个字符串；[查看orientation合法范围](./orientation.md)
+PlaocApp 显示模式；
+属性值是一个 [DisplayModeType](./display-mode-type.md)对象
 
-  - [theme_color](https://w3c.github.io/manifest/#theme_color-member)
-    
-    PlaocApp的主题颜色；
-    属性值是一个 string;
+### [orientation](https://w3c.github.io/manifest/#orientation-member)
 
-  - [background_color](https://w3c.github.io/manifest/#background_color-member)
+窗口的默认方向；
+值是一个字符串；[查看orientation合法范围](./orientation.md)
 
-    PlaocApp背景色;
-    属性值是一个 string;
+### [theme_color](https://w3c.github.io/manifest/#theme_color-member)
 
-  - [shortcuts](https://w3c.github.io/manifest/#shortcuts-member)
-    
-    访问关键人物列表；
-    属性值是一组 [ShortcutItem](./shortcut-item.md)对象；
+PlaocApp的主题颜色；
+属性值是一个 string;
 
-  
-  - languages
+### [background_color](https://w3c.github.io/manifest/#background_color-member)
 
-    描述 App 支持的语言类型
-    [可能的值](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 
+PlaocApp背景色;
+属性值是一个 string;
+
+### [shortcuts](https://w3c.github.io/manifest/#shortcuts-member)
+
+<!-- 访问关键人物列表； -->
+<!-- 属性值是一组 [ShortcutItem](./shortcut-item.md)对象； -->
+
+
+### languages
+
+描述 App 支持的语言类型
+[可能的值](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 
 

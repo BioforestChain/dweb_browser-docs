@@ -13,24 +13,6 @@ export class PlaocAppPlaocCli extends Array {
         text: "@plaoc/cli",
         prefix: basePath + "/plaoc-app/plaoc-cli/",
         link: basePath + "/plaoc-app/plaoc-cli/",
-        children: [
-          {
-            text: "bundle",
-            link: "bundle.md",
-          },
-          {
-            text: basePath === BasePath.zh ? "指令选项参数" : "optionParamter",
-            link: "option-paramter.md",
-          },
-          {
-            text: "serve url",
-            link: "serve-url.md",
-          },
-          {
-            text: "serve",
-            link: "serve.md",
-          },
-        ]
       },
     )
   }

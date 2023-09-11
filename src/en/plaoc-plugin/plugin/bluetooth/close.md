@@ -19,7 +19,7 @@ BluetoothPlugin.close()
 
 ## Returns
 
-- A Promise that resolves to a [BluetoothCloseResponse](../../interface/bluetooth-close-response.md) object.  
+- A Promise that resolves to a [BluetoothCloseResponse](../../interface/bluetooth-close-response/index.md) object.  
 
 ## Example
 

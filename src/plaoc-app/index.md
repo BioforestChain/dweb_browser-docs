@@ -60,7 +60,7 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 > 示例： `npx plaoc bundle ./usr/www`
 
 @plaoc/cli 是 plaoc 的开发工具，能帮助应用运行，打包，发布。
-具体的命令提示可以使用`--help`或者[文档](../plaoc-cli/index.md)查看。
+具体的命令提示可以使用`--help`或者[文档](./plaoc-cli/index.md)查看。
 
 - 执行安装命令:
 
@@ -134,8 +134,8 @@ plaoc bundle ./dist
 
 ## 相关链接
 
-[@plaoc/cli](../plaoc-cli/index.md)
+[@plaoc/cli](./plaoc-cli/index.md)
 
-[开发工具](../developer-tool/index.md)
+[开发工具](./developer-tool/index.md)
 
-[release](../release/index.md)
+[release](./release/index.md)

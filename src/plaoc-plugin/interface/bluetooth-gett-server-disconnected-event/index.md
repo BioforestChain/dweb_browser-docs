@@ -29,7 +29,4 @@ GattServerDisconnectedEvent 是继承与Event接口；
 |:------------:|:-------:|:---:|:-----------:|:-------:|
 | state        | ✅      | ✅  | ✅          | X      |
 
-## 相关链接
-[BluetoothDeviceGattserverdisconnectedListener](../bluetooth-device-gattserverdisconnected-listener/index.md)
-
 

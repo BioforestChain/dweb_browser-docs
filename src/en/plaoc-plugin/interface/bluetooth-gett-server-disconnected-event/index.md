@@ -29,7 +29,4 @@ GattServerDisconnectedEvent inherits the Event interface;
 |:--------------------:|:-------:|:---:|:-----------:|:-------:|
 | state                | ✅      | ✅  | ✅          | X      |
 
-## Related Links
-[BluetoothDeviceGattserverdisconnectedListener](../bluetooth-device-gattserverdisconnected-listener/index.md)
-
 

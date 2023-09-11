@@ -254,7 +254,7 @@ npm install -g @plaoc/cli
 
 `plaoc bundle ./dir`
 
-It will package the directory structure as follows and output a compressed `.zip` file and a `metadata.json`. For more details, please refer to the [plaoc lic](./plaoc-app/bundle/README.md) for the detailed documentation.
+It will package the directory structure as follows and output a compressed `.zip` file and a `metadata.json`. For more details, please refer to the [plaoc lic](./plaoc-app/plaoc-cli/index.md) for the detailed documentation.
 
 - Developer mode
 

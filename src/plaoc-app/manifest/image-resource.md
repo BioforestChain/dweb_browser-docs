@@ -4,7 +4,6 @@ category:
   - manifest
 tag:
   - ImageResource
-  - manifest
 ---
 
 描述图片来源的对象；

@@ -1,135 +1,143 @@
 ---
 title: manifest
-category:
+category: 
   - Plaoc APP
-tag:
-  - manifest.json
-  - 
+tag: 
+  - manifest
 ---
 
-Configuration options for the `manifest.json` file of a PlaocApp.
+Details about the `manifest.json` file of plaoc app. You can understand it as the `manifest.json` of PWA. 
+
+It mainly provides all the configuration information of the plaoc app, attribute verification, and some information displayed on the installation interface.
+
+```json
+{
+  "id": "plaoc.html.demo.dweb",
+  "name": "plaoc-html",
+  "short_name": "plaoc",
+  "description": "This is a sample application that includes instances of all dweb_plugins components.",
+  "logo": "https://dweb.waterbang.top/icon.png",
+  "images": [
+    "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
+    "http://qiniu-waterbang.waterbang.top/bfm/defi.png", 
+    "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
+  ],
+  "author": ["bfs", "bfs@bfs.com"],
+  "version": "1.0.0",
+  "change_log": "Added a new feature of shooting bubbles with a single click!",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["application"] 
+}
+```
 
 ## Configuration 
 
-Fields marked with ❗️ are required.
+The fields below add ❗️ for required fields.
 
-- id ❗️
+### id ❗️
 
-  Identifier. 
-  
-  String value. Format is `${name}.${host}.dweb`.
-  
-  e.g. "game.dweb.waterbang.top.dweb"
-  
-  Each app has a unique id, each domain can mount multiple apps.
+Type: string 
 
-- server
+App id; The specification is `${name}.${host}.dweb`; For example: "game.dweb.waterbang.top.dweb"
 
-  App entry server file address. 
-  
-  [MainServer](../../plaoc-plugin/interface/main-server/index.md) object value.
-  
-- name ❗️
+Each app has a unique id, and each domain name can mount multiple Apps.
 
-  App name, string.
+### name ❗️
 
-- short_name ❗️
-  
-  App subtitle, string, will be displayed on browser homepage.
+Type: string
 
-- description ❗️
+Application name
 
-  App description, string, displayed on download and detail pages.  
+### short_name ❗️ 
 
-- logo ❗️
+Type: string 
 
-  App icon, string, vector image recommended.
+Application subtitle
 
-- bundle_url
+### description ❗️
 
-  Compressed package url.
-  
-- bundle_hash
+Type: string
 
-  Compressed package hash.
-  
-- bundle_size
+Application description, will be presented to users on the download page and details page;
 
-  Compressed package size.
+### logo ❗️
 
-- release_date
+Type: string 
 
-  Release date.
-  
-- change_log
+Application icon, vector graphics are recommended;
 
-  Update log.
+### change_log
 
-- images ❗️
+Type: string
 
-  App screenshot list, string array.
-  
-- author ❗️
+Update log;
 
-  App author, array, first is copyright owner.
+### images ❗️
 
-- version ❗️
+Type: string[]
 
-  App version, string.
+List of application screenshots; 
 
-- categories
+### author ❗️
 
-  APP categories, string array.
+Type: string[] 
 
-- home ❗️
+Developer, passed in array form, the first developer is the app copyright owner.
 
-  PlaocApp main domain, must match id domain. 
+### version ❗️
 
-- plugins
+Type: string
 
-  Plugin list used, string array.
+Application version;
 
-- permissions
+### categories
 
-  License types, string array.
+Type: string[]
 
-- dir
+App category, it is recommended to pass ["application"]
 
-  Base direction of directional members, [TextDirectionType](./text-direction-type.md).
+### home ❗️
 
-- lang
+PlaocApp main domain name, needs to be the same as the domain name mounted by id
 
-  Language tag, primary language of directional member values.
+<!-- 
+- [dir](https://w3c.github.io/manifest/#dir-member) The basic direction of members with directionality in the "dir" member manifest. The attribute value is a [TextDirectionType](./text-direction-type.md) object
+-->
 
-- icons
+### [lang](https://w3c.github.io/manifest/#lang-member)
 
-  APP icons, [ImageResource](./image-resource.md) array.
+Language tag; Specifies the primary language for the values of directional members of the manifest (knowing the language also helps with directionality).
 
-- screenshots
+### [icons](https://w3c.github.io/manifest/#icons-member-0) 
 
-  App screenshots, [ImageResource](./image-resource.md) array.
+As icon representations of Plaoc-app; The attribute value is a set of [ImageResource](./image-resource.md) objects;
 
-- display
+### [screenshots](https://w3c.github.io/manifest/#screenshots-member)
 
-  Display mode, [DisplayModeType](./display-mode-type.md).
+PlaocApp screenshot images; The attribute value is a set of [ImageResource](./image-resource.md) objects;
 
-- orientation
+### [display](https://w3c.github.io/manifest/#display-member) 
 
-  Default window orientation, string. 
+PlaocApp display mode; The attribute value is a [DisplayModeType](./display-mode-type.md) object
 
-- theme_color
+### [orientation](https://w3c.github.io/manifest/#orientation-member)
 
-  Theme color, string.
+The default orientation of the window; The value is a string; [Check the legal range of orientation](./orientation.md) 
 
-- background_color
+### [theme_color](https://w3c.github.io/manifest/#theme_color-member)
 
-  Background color, string.
+PlaocApp theme color; The attribute value is a string;
 
-- shortcuts
+### [background_color](https://w3c.github.io/manifest/#background_color-member)
 
-  Access shortcuts, [ShortcutItem](./shortcut-item.md) array.
+PlaocApp background color; The attribute value is a string; 
 
-- languages
+### [shortcuts](https://w3c.github.io/manifest/#shortcuts-member)
 
-  Describes ths language types supported by the App.
-  [Possible values](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 
+<!-- Access key character list; -->
+
+<!-- The attribute value is a set of [ShortcutItem](./shortcut-item.md) objects; -->
+
+### languages
+
+Describes the language types supported by the App [Possible values](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm)
