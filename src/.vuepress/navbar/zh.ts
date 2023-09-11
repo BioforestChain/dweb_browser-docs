@@ -7,7 +7,7 @@ export const zhNavbar = navbar([
     icon: "note",
     link: "/plaoc-app/",
   },
-  { text: "Plugins", icon: "discover", link: "/plaoc-plugin/" },
+  { text: "Plugins", icon: "discover", link: "/plaoc-plugin/plugin/index.md" },
   // { text: "服务", icon: "discover", link: "/service/" },
   // {
   //   text: "系统APP",

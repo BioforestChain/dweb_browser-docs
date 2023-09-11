@@ -2,7 +2,6 @@ import { sidebar } from "vuepress-theme-hope";
 import { BasePath } from "./config/base-path";
 import { PlaocApp } from "./routes/plaoc-app";
 
-import { Plaoc } from "./routes/plaoc";
 import { PlaocPlugin } from "./routes/plaoc-plugin";
 import { PlaocPluginBarcodeScanner } from "./routes/plaoc-plugin-barcode-scanner";
 import { PlaocPluginBiometrics } from "./routes/plaoc-plugin-biometrics";
@@ -47,7 +46,7 @@ import { PlaocShimDwebServiceWorker } from "./routes/plaoc-shim-dweb-service-wor
 
 const allRoutes = {
   "/plaoc-app/": PlaocApp,
-  "/plaoc-plugin/": Plaoc,
+  "/plaoc-plugin/": PlaocPlugin,
   "/plaoc-plugin/plugin/": PlaocPlugin,
   "/plaoc-plugin/plugin/barcode-scanner/": PlaocPluginBarcodeScanner,
   "/plaoc-plugin/plugin/biometrics/": PlaocPluginBiometrics,
