@@ -20,10 +20,10 @@ jobs:
           persist-credentials: false
 
       # 生成静态文件
-      # - name: Build
-      #   env:
-      #     NODE_OPTIONS: "--max_old_space_size=4096"
-      #   run: npm install && npm run build
+      - name: Build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+        run: npm install && npm run build
 
 
       - name: Deploy to Server
