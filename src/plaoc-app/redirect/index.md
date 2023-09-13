@@ -6,8 +6,7 @@ tag:
   - redirect
 ---
 
-plaoc 提供了类似nginx的重定向功能,使用[URLPattern](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API)来解析匹配的路径。
-
+plaoc 提供了类似 nginx 的重定向功能,使用[URLPattern](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API)来解析匹配的路径。
 
 ### 创建`plaoc.json`
 
@@ -20,7 +19,6 @@ plaoc 提供了类似nginx的重定向功能,使用[URLPattern](https://develope
   └── plaoc.json
 ```
 
-
 全部字段内容如下:
 
 ```json
@@ -30,9 +28,7 @@ plaoc 提供了类似nginx的重定向功能,使用[URLPattern](https://develope
   },
   "redirect": [
     {
-      "matchMethod": [
-        "*"
-      ],
+      "matchMethod": ["*"],
       "matchUrl": {
         "pathname": "/"
       },
@@ -41,13 +37,14 @@ plaoc 提供了类似nginx的重定向功能,使用[URLPattern](https://develope
         "appendHeaders": {},
         "removeHeaders": []
       }
-    },
+    }
   ]
 }
 ```
+
 以上的配置的规则是：
 
-允许所有类型的Method，并且当请求的pathname为`/`的时候，将会转发到配置的`to.url`。
+允许所有类型的 Method，并且当请求的 pathname 为`/`的时候，将会转发到配置的`to.url`。
 
 可以看到以上配置的重点在`/locales/{{lang}}{{pattern.pathname.input}}index.html`。
 
@@ -56,23 +53,21 @@ plaoc 提供了类似nginx的重定向功能,使用[URLPattern](https://develope
 - lang 对应着 `defaultConfig.lang` 的配置内容
 
 - pattern 是`URLPattern`解析的内容。
-结构如下示例，也可以在浏览器环境执行测试，这是比较稳妥的方法。
+  结构如下示例，也可以在浏览器环境执行测试，这是比较稳妥的方法。
 
 ![URLPattern](./URLPattern.png)
 
-
 ### appendHeaders
 
-转发的时候添加内容到请求的Header。
+转发的时候添加内容到请求的 Header。
 
 ### removeHeaders
 
-转发的时候移除请求的header
-
+转发的时候移除请求的 header
 
 ### 一些示例解释
 
-redirect的类型是数组，因此您可以定义多个redirect。
+redirect 的类型是数组，因此您可以定义多个 redirect。
 
 ```json
  "redirect": [
@@ -121,7 +116,7 @@ redirect的类型是数组，因此您可以定义多个redirect。
   ]
 ```
 
-上面的三个重定向，将匹配如下的url。
+上面的三个重定向，将匹配如下的 url。
 
 1. 规则为： `/`
 
@@ -137,14 +132,18 @@ redirect的类型是数组，因此您可以定义多个redirect。
 
 `/1234124.index.js -> /locales/zh/1234124.index.js`
 
-
 更多的转发规则可以查看[URLPattern](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API)的一些匹配规则。
-
 
 ### 隐藏用法
 
-`{{}}`里可以写js表达式。
+`{{}}`里可以写 js 表达式。
 
 ```js
-{{pattern.pathname.groups.assets === 'assets' ? '/'+pattern.pathname.input : '/locales/'+lang+pattern.pathname.input}}
+{
+  {
+    pattern.pathname.groups.assets === "assets"
+      ? "/" + pattern.pathname.input
+      : "/locales/" + lang + pattern.pathname.input;
+  }
+}
 ```

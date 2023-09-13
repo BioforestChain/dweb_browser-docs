@@ -22,7 +22,6 @@ import { PlaocPluginSplashScreen } from "./routes/plaoc-plugin-splash-screen";
 import { PlaocPluginStatusBar } from "./routes/plaoc-plugin-status-bar";
 import { PlaocPluginToast } from "./routes/plaoc-plugin-toast";
 import { PlaocPluginTorch } from "./routes/plaoc-plugin-torch";
-import { PlaocPluginUpdateController } from "./routes/plaoc-plugin-update-controller";
 import { PlaocPluginVirtualKeyboard } from "./routes/plaoc-plugin-virtual-keyboard";
 
 import { PlaocInterface } from "./routes/plaoc-interface";
@@ -39,8 +38,6 @@ import { PlaocWebComponent } from "./routes/plaoc-web-component";
 import { PlaocWebComponentBarcodeScanning } from "./routes/plaoc-web-component-barcode-scanning";
 import { PlaocWebComponentBluetooth } from "./routes/plaoc-web-component-bluetooth";
 
-import { PlaocShim } from "./routes/plaoc-shim";
-import { PlaocShimDwebServiceWorker } from "./routes/plaoc-shim-dweb-service-worker";
 
 
 
@@ -67,7 +64,6 @@ const allRoutes = {
   "/plaoc-plugin/plugin/status-bar/": PlaocPluginStatusBar,
   "/plaoc-plugin/plugin/toast/": PlaocPluginToast,
   "/plaoc-plugin/plugin/torch/": PlaocPluginTorch,
-  "/plaoc-plugin/plugin/update-controller/": PlaocPluginUpdateController,
   "/plaoc-plugin/plugin/virtual-keyboard/": PlaocPluginVirtualKeyboard,
 
   "/plaoc-plugin/interface/": PlaocInterface,
@@ -84,9 +80,6 @@ const allRoutes = {
   "/plaoc-plugin/web-component/": PlaocWebComponent,
   "/plaoc-plugin/web-component/barcode-scanning/": PlaocWebComponentBarcodeScanning,
   "/plaoc-plugin/web-component/bluetooth/": PlaocWebComponentBluetooth,
-
-  "/plaoc-plugin/shim/": PlaocShim,
-  "/plaoc-plugin/shim/dweb-service-worker/": PlaocShimDwebServiceWorker
 }
 
 export function createSidebar(basePath: BasePath) {
