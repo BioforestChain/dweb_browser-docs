@@ -19,7 +19,7 @@ dwebServiceWorker.canOpenUrl("game.text.com.dweb");
 ## 函数签名
 
 ```ts
-canOpenUrl(mmid: $MMID): Promise<$ExterResponse>
+canOpenUrl(mmid: $MMID): Promise<$DwebResult>
 ```
 
 ### 参数
@@ -32,10 +32,10 @@ app 的身份标识，必须要以 `.dweb`结尾，格式为 `${string}.dweb`。
 
 存在 app 的时候，success 为 `true`,反之则为 `false`。
 
-- $ExterResponse
+- $DwebResult
 
 ```ts
-interface $ExterResponse {
+interface $DwebResult {
   success: boolean;
   message: string;
 }

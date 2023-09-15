@@ -10,8 +10,8 @@ tag:
 在[dwebServiceWorker](../dweb-service-worker/index.md)插件中会访问UpdateControllerPlugin插件；
 
 ```js
-import { dwebServiceWorker } from "@plaoc/plugins";
-const updateControllerPlugin = dwebServiceWorker.updateController
+import { updateControllerPlugin } from "@plaoc/plugins";
+
 ```
 
 ## 属性

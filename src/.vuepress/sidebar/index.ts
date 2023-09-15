@@ -24,7 +24,6 @@ import { PlaocPluginToast } from "./routes/plaoc-plugin-toast";
 import { PlaocPluginTorch } from "./routes/plaoc-plugin-torch";
 import { PlaocPluginVirtualKeyboard } from "./routes/plaoc-plugin-virtual-keyboard";
 
-import { PlaocInterface } from "./routes/plaoc-interface";
 import { PlaocInterfaceBluetoothDevice } from "./routes/plaoc-interface-bluetooth-device";
 import { PlaocInterfaceBluetoothRemoteGattCharacteristic } from "./routes/plaoc-interface-bluetooth-remote-gatt-characteristic";
 import { PlaocInterfaceBluetoothRemoteGattDescriptor } from "./routes/plaoc-interface-bluetooth-remote-gatt-descriptor";
@@ -65,7 +64,7 @@ const allRoutes = {
   "/plaoc-plugin/plugin/torch/": PlaocPluginTorch,
   "/plaoc-plugin/plugin/virtual-keyboard/": PlaocPluginVirtualKeyboard,
 
-  "/plaoc-plugin/interface/": PlaocInterface,
+  // "/plaoc-plugin/interface/": PlaocInterface,
   "/plaoc-plugin/interface/bluetooth-device/": PlaocInterfaceBluetoothDevice,
   "/plaoc-plugin/interface/bluetooth-remote-gatt-characteristic/":
     PlaocInterfaceBluetoothRemoteGattCharacteristic,

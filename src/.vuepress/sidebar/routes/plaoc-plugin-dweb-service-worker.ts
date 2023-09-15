@@ -29,32 +29,37 @@ export class PlaocPluginDwebServiceWorker extends Array {
                   link: "restart.md",
                 },
                 {
+                  text: "canOpenUrl()",
+                  icon: "function",
+                  link: "can-open-url.md",
+                },
+                {
                   text: "externalFetch()",
                   icon: "function",
                   link: "external-fetch.md",
                 },
                 {
-                  text: "canOpenUrl()",
-                  icon: "function",
-                  link: "can-open-url.md",
-                },
-              ],
-            },
-            {
-              text: "DwebServiceWorker shim",
-              icon: "plugin",
-              prefix: "dweb-service-worker/shim/",
-              link: "dweb-service-worker/shim/",
-              children: [
-                {
-                  text: "EventFetch",
-                  icon: "function",
+                  text: "FetchEvent",
+                  icon: "mark",
                   link: "event-fetch.md",
                 },
               ],
             },
           ],
         },
+        {
+          text: "interface",
+          icon: "type",
+          prefix: "plugin/dweb-service-worker/interface",
+          link: "plugin/dweb-service-worker/interface",
+          children: [
+            {
+              text: "$JmmAppInstallManifest",
+              icon: "light",
+              link: "$JmmAppInstallManifest.md",
+            },
+          ]
+          }
       ],
     });
   }
