@@ -71,23 +71,5 @@ import { updateControllerPlugin } from "@plaoc/plugins";
     取消下载
     传递一个 Event 对象给事件监听器；
 
-## 平台兼容性
-
-| 属性/方法/事件          | Android | IOS | Desktop-Dev | Desktop |
-|:---------------------:|:-------:|:---:|:-----------:|:-------:|
-| download              | ✅      | ✅   | ✅           | X      |
-| pause                 | ✅      | ✅   | ✅           | X      |
-| resume                | ✅      | ✅   | ✅           | X      |
-| cancel                | ✅      | ✅   | ✅           | X      |
-| addEventListener      | ✅      | ✅   | ✅           | X      |
-| removeEventListener   | ✅      | ✅   | ✅           | X      |
-| event start           | ✅      | ✅   | ✅           | X      |
-| event end             | ✅      | ✅   | ✅           | X      |
-| event progress        | ✅      | ✅   | ✅           | X      |
-| event cancel          | ✅      | ✅   | ✅           | X      |
-
-## 相关链接
-
-[Plaoc](../../)
 
 
