@@ -9,14 +9,14 @@ tag:
 Inherits from [Event](https://developer.mozilla.org/en-US/docs/Web/API/Event);
 
 ```js
-import { FetchEvent } from "@plaoc/plugin";
+import { FetchEvent } from "@plaoc/plugins";
 ```
 
 ## Properties
 
   - plugin
 
-    The property value is the [DwebServiceWorkerPlugin](../../plugin/dweb-service-worker/index.md) object;
+    The property value is the [dwebServiceWorker](../../plugin/dweb-service-worker/index.md) object;
 
   - request
 
@@ -42,7 +42,7 @@ import { FetchEvent } from "@plaoc/plugin";
 
 ## Example
 ```js
-import { FetchEvent } from "@plaoc/plugin";
+import { FetchEvent } from "@plaoc/plugins";
 
 const event = new FetchEvent("fetch", {
   request: toRequest(ipcRequest),

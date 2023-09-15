@@ -23,7 +23,7 @@ NetworkPlugin.getStatus()
 
 ## 示例
 ```js
-import { networkPlugin } from "@plaoc/plugin";
+import { networkPlugin } from "@plaoc/plugins";
 const status = networkPlugin.getStatus();
 ```
 

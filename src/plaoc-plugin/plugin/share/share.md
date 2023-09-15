@@ -26,7 +26,7 @@ tag:
 
 ## 示例
 ```js
-import { sharePlugin } from "@plaoc/plugin";
+import { sharePlugin } from "@plaoc/plugins";
 ;(async() => {
   const b = await sharePlugin.canShare()
   if(!b)return;

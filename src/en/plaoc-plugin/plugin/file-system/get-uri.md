@@ -10,7 +10,7 @@ tag:
 Get URI 
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 fileSystemPlugin.getUri(options)
 ```
 
@@ -25,7 +25,7 @@ A Promise that resolves to a [GetUriResult](../../interface/get-uri-result/index
 ## Example
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 fileSystemPlugin.getUri({
   path: "/path",
   directory: "DOCUMENTS" 

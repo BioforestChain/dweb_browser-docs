@@ -26,7 +26,7 @@ The public URL.
 ## Example
 
 ```js
-import { configPlugin } from "@plaoc/plugin";
+import { configPlugin } from "@plaoc/plugins";
 
 configPlugin.setPublicUrl("http://xxx");
 ```

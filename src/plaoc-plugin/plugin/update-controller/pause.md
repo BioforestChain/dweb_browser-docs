@@ -1,16 +1,16 @@
 ---
-title: UpdateControllerPlugin.cancel()
+title: UpdateControllerPlugin.pause()
 category:
   - Plugin
 tag:
   - UpdateControllerPlugin
-  - cancel
+  - pause
 ---
 
-取消下载App
+暂停下载App
 
 ```js
-UpdateControllerPlugin.cancel()
+UpdateControllerPlugin.pause()
 ```
 
 ## 参数
@@ -23,15 +23,15 @@ UpdateControllerPlugin.cancel()
 
 ## 示例
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin"
-dwebServiceWorkerPlugin.updateController.cancel()
+import { dwebServiceWorker } from "@plaoc/plugins"
+dwebServiceWorker.updateController.pause()
 ```
 
 ## 平台兼容性
 
 | 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
 |:------------:|:-------:|:---:|:-----------:|:-------:|
-| cancel        | ✅       | ✅  | ✅          | X       |
+| pause        | ✅       | ✅  | ✅          | X       |
 
 ## 相关链接
 

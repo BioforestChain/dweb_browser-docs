@@ -25,7 +25,7 @@ A Promise that resolves to an array of supported format names.
 ## Example
 
 ```js
-import { barcodeScannerPlugin } from "@plaoc/plugin";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 
 (async () => {
   const res = await barcodeScannerPlugin.getSupportedFormats();

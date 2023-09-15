@@ -7,11 +7,11 @@ tag:
 ---
 
 更新App的控制插件;但是这个插件不能直接访问；
-在[DwebServiceWorkerPlugin](../dweb-service-worker/index.md)插件中会访问UpdateControllerPlugin插件；
+在[dwebServiceWorker](../dweb-service-worker/index.md)插件中会访问UpdateControllerPlugin插件；
 
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
-const updateControllerPlugin = dwebServiceWorkerPlugin.updateController
+import { dwebServiceWorker } from "@plaoc/plugins";
+const updateControllerPlugin = dwebServiceWorker.updateController
 ```
 
 ## 属性

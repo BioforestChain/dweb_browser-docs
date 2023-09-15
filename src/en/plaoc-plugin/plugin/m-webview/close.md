@@ -25,7 +25,7 @@ Resolves to true if destroyed successfully, false if failed.
 ## Example
 
 ```js
-import { mwebviewPlugin } from "@plaoc/plugin";
+import { mwebviewPlugin } from "@plaoc/plugins";
 
 (async () => {
   const { webview_id } = await mwebviewPlugin.open("http://xxx");

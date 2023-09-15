@@ -9,7 +9,7 @@ tag:
 相机相关插件
 
 ```js
-import { cameraPlugin } from "@plaoc/plugin";
+import { cameraPlugin } from "@plaoc/plugins";
 cameraPlugin.getPhoto()
 ```
 

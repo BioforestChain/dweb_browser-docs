@@ -9,7 +9,7 @@ tag:
 消息插件；
 
 ```js
-import { toastPlugin } from "@plaoc/plugin";
+import { toastPlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

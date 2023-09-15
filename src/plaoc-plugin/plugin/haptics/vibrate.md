@@ -26,7 +26,7 @@ HapticsPlugin.vibrate(options)
 
 ## 示例
 ```js
-import { hapticsPlugin } from "@plaoc/plugin";
+import { hapticsPlugin } from "@plaoc/plugins";
 hapticsPlugin.vibrate({duration: [1000, 100]})
 ```
 

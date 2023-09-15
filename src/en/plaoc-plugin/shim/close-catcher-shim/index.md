@@ -11,7 +11,7 @@ Inherits from [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/Eve
 
 
 ```js
-import { CloseWatcher } from "@plaoc/plugin";
+import { CloseWatcher } from "@plaoc/plugins";
 const closeWatcher = new CloseWatcher() 
 ```
 
@@ -61,7 +61,7 @@ Vue-based example:
 ```vue
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import { CloseWatcher } from "@plaoc/plugin";
+import { CloseWatcher } from "@plaoc/plugins";
 
 const title = "Close Watcher";
 const $dialogEle = ref<HTMLDialogElement>();

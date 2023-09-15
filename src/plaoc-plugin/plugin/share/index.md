@@ -9,7 +9,7 @@ tag:
 实现分享的插件
 
 ```js
-import { sharePlugin } from "@plaoc/plugin";
+import { sharePlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

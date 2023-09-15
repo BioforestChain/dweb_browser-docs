@@ -7,11 +7,11 @@ tag:
 ---
 
 The control plugin for updating the app; however, this plugin cannot be accessed directly. 
-It is accessed through the [DwebServiceWorkerPlugin](../dweb-service-worker/index.md) plugin.
+It is accessed through the [dwebServiceWorker](../dweb-service-worker/index.md) plugin.
 
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
-const updateControllerPlugin = dwebServiceWorkerPlugin.updateController
+import { dwebServiceWorker } from "@plaoc/plugins";
+const updateControllerPlugin = dwebServiceWorker.updateController
 ```
 
 ## Properties

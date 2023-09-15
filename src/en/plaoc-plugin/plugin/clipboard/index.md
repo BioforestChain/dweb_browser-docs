@@ -29,7 +29,7 @@ Clipboard plugin that provides access to the system clipboard.
 ## Example
 
 ```js
-import { clipboardPlugin } from "@plaoc/plugin";
+import { clipboardPlugin } from "@plaoc/plugins";
 clipboardPlugin.read();
 ```
 

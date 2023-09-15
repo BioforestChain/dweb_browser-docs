@@ -27,7 +27,7 @@ HapticsPlugin.impactLight(options)
 
 ## 示例
 ```js
-import { hapticsPlugin } from "@plaoc/plugin";
+import { hapticsPlugin } from "@plaoc/plugins";
 hapticsPlugin.impactLight({
   style: "HEAVY"
 })

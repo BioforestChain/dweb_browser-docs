@@ -1,16 +1,16 @@
 ---
-title: UpdateControllerPlugin.cancel()
+title: UpdateControllerPlugin.pause()
 category:
   - Plugin
 tag:
   - UpdateControllerPlugin
-  - cancel
+  - pause
 ---
 
-Cancel App Download
+pause download
 
 ```js
-UpdateControllerPlugin.cancel()
+UpdateControllerPlugin.pause()
 ```
 
 ## parameters
@@ -19,19 +19,19 @@ UpdateControllerPlugin.cancel()
 
 ## return value
 
-  Return a Promise, resolve to honor a boolean
+  Return a Promise object, resolve fulfill boolan;
 
 ## Example
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin"
-dwebServiceWorkerPlugin.updateController.cancel()
+import { dwebServiceWorker } from "@plaoc/plugins"
+dwebServiceWorker.updateController.pause()
 ```
 
 ## Platform Compatibility
 
 | Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
 |:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| cancel               | ✅       | ✅  | ✅          | X       |
+| pause                | ✅       | ✅  | ✅          | X       |
 
 ## Related Links
 

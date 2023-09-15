@@ -10,7 +10,7 @@ tag:
 获取设备的标识符
 
 ```js
-import { devicePlugin } from "@plaoc/plugin";
+import { devicePlugin } from "@plaoc/plugins";
 devicePlugin.getUUID()
 ```
 
@@ -25,7 +25,7 @@ devicePlugin.getUUID()
 ## 示例
 
 ```js
-import { devicePlugin } from "@plaoc/plugin";
+import { devicePlugin } from "@plaoc/plugins";
 devicePlugin.getUUID()
 ```
 

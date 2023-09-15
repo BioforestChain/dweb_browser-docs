@@ -9,7 +9,7 @@ tag:
 多webview插件；
 
 ```js
-import { mwebviewPlugin } from "@plaoc/plugin";
+import { mwebviewPlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

@@ -23,7 +23,7 @@ tag:
 
 ## 示例
 ```js
-import { torchPlugin } from "@plaoc/plugin";
+import { torchPlugin } from "@plaoc/plugins";
 ;(async () => {
   const b = torchPlugin.toggleTorch();
   cosole.log(b ? "打开了手电筒": "关闭了手电筒");

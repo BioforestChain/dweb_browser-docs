@@ -41,7 +41,7 @@ BluetoothRemoteGATTService是蓝牙设备的某个具体服务的接口；
 
 ## 示例
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

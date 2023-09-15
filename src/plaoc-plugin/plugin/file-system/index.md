@@ -9,7 +9,7 @@ tag:
 文件系统插件
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

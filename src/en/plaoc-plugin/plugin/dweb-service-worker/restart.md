@@ -1,16 +1,16 @@
 ---
-title: DwebServiceWorkerPlugin.restart()
+title: dwebServiceWorker.restart()
 category:
   - Plugin
 tag:
-  - DwebServiceWorkerPlugin
+  - dwebServiceWorker
   - restart  
 ---
 
 Restarts the frontend and backend of the app.
 
 ```js
-DwebServiceWorkerPlugin.restart()
+dwebServiceWorker.restart()
 ```
 
 ## Parameters
@@ -24,9 +24,9 @@ A Promise that resolves to a boolean.
 ## Example
 
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 
-dwebServiceWorkerPlugin.restart();
+dwebServiceWorker.restart();
 ```
 
 ## Platform Compatibility
@@ -36,4 +36,4 @@ dwebServiceWorkerPlugin.restart();
 | restart               | ✅      | ✅  | ✅          | X       |
 
 ## See Also
-[DwebServiceWorkerPlugin](../index.md)
+[dwebServiceWorker](../index.md)

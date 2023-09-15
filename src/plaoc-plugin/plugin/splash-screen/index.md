@@ -9,7 +9,7 @@ tag:
 启动屏插件；
 
 ```js
-import { splashScreenPlugin } from "@plaoc/plugin";
+import { splashScreenPlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

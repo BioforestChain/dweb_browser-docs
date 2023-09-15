@@ -26,7 +26,7 @@ ToastPlugin.show(options)
 
 ## Example
 ```js
-import { toastPlugin } from "@plaoc/plugin";
+import { toastPlugin } from "@plaoc/plugins";
 toastPlugin.show({text: "test"})
 ```
 

@@ -10,7 +10,7 @@ tag:
 Write content.
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 fileSystemPlugin.writeFile(options)
 ```
 
@@ -25,7 +25,7 @@ A Promise that resolves to a [WriteFileResult](../../interface/write-file-result
 ## Example
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 
 const path = "xxx";
 const data = "content";

@@ -26,7 +26,7 @@ BluetoothPlugin.requestAndConnectDevice(options)
 
 ## 示例
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

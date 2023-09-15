@@ -25,7 +25,7 @@ Resolves to true if activated successfully, false if failed.
 ## Example
 
 ```js
-import { mwebviewPlugin } from "@plaoc/plugin";
+import { mwebviewPlugin } from "@plaoc/plugins";
 
 mwebviewPlugin.activate();
 ```

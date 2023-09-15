@@ -27,7 +27,7 @@ MWebviewPlugin.close(webview_id)
 
 ## 示例
 ```js
-import { mwebviewPlugin } from "@plaoc/plugin";
+import { mwebviewPlugin } from "@plaoc/plugins";
 ;(() => {
   const { webview_id } = await mwebviewPlugin.open("http://xxx");
   const b = mwebviewPlugin.close(webview_id);

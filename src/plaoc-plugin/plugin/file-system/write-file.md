@@ -10,7 +10,7 @@ tag:
 写入内容
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 fileSystemPlugin.writeFile(options)
 ```
 
@@ -28,7 +28,7 @@ fileSystemPlugin.writeFile(options)
 
 ## 示例
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 const path = "xxx"
 const data = "内容"
 fileSystemPlugin.writeFile({

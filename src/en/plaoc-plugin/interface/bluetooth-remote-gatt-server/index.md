@@ -42,7 +42,7 @@ The BluetoothRemoteGATTServer interface is used to describe the server object pr
 
 ## Example
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

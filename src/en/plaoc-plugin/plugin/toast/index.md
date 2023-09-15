@@ -9,7 +9,7 @@ tag:
 Toast plugin;
 
 ```js
-import { toastPlugin } from "@plaoc/plugin";
+import { toastPlugin } from "@plaoc/plugins";
 ```
 
 ## Properties

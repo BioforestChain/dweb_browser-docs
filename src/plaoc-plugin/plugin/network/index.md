@@ -10,7 +10,7 @@ tag:
 接口继承与[BaseEvent](../../interface/base-event/index.md)
 
 ```js
-import { networkPlugin } from "@plaoc/plugin";
+import { networkPlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

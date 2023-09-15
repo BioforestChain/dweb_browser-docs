@@ -74,7 +74,7 @@ export class PlaocPlugin extends Array {
                 link: "update-controller/"
               },
               {
-                text: "DwebServiceWorkerPlugin",
+                text: "dwebServiceWorker",
                 icon: "plugin",
                 link: "dweb-service-worker/"
               },

@@ -36,7 +36,7 @@ The description interface of a certain service characteristic of the Bluetooth d
 
 ## Example
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

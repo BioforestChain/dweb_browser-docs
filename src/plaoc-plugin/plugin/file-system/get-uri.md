@@ -10,7 +10,7 @@ tag:
 查询地址
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 fileSystemPlugin.getUri(options)
 ```
 
@@ -27,7 +27,7 @@ fileSystemPlugin.getUri(options)
 
 ## 示例
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 fileSystemPlugin.getUri({
   path: "/path",
   directory: "DOCUMENTS"

@@ -10,7 +10,7 @@ HapticsPlugin provides physical feedback through vibrations to the user.
 On Desktop-dev it provides visual feedback through messages.
 
 ```js
-import { hapticsPlugin } from "@plaoc/plugin";
+import { hapticsPlugin } from "@plaoc/plugins";
 ```
 
 ## Properties

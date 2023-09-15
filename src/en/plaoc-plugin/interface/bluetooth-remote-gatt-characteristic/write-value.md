@@ -25,7 +25,7 @@ BluetoothRemoteGATTCharacteristic.writeValue(data)
 
 ## Example
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

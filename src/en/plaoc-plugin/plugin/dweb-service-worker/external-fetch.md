@@ -1,16 +1,16 @@
 ---
-title: DwebServiceWorkerPlugin.externalFetch()
+title: dwebServiceWorker.externalFetch()
 category:
   - Plugin
 tag:
-  - DwebServiceWorkerPlugin
+  - dwebServiceWorker
   - externalFetch
 ---
 
 Method for communicating with other apps.
 
 ```js
-DwebServiceWorkerPlugin.externalFetch(mmid, init)
+dwebServiceWorker.externalFetch(mmid, init)
 ```
 
 ## Parameters
@@ -32,9 +32,9 @@ A Promise that resolves to a Response.
 ## Example
 
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 
-dwebServiceWorkerPlugin.externalFetch(
+dwebServiceWorker.externalFetch(
   `xxx.dweb`,
   {
     pathname: "xxxx",
@@ -49,4 +49,4 @@ dwebServiceWorkerPlugin.externalFetch(
 | externalFetch         | ✅      | ✅  | ✅          | X       |
 
 ## See Also
-[DwebServiceWorkerPlugin](../index.md)
+[dwebServiceWorker](../index.md)

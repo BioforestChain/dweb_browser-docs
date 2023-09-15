@@ -10,7 +10,7 @@ tag:
 Gets the device identifier.
 
 ```js
-import { devicePlugin } from "@plaoc/plugin";
+import { devicePlugin } from "@plaoc/plugins";
 devicePlugin.getUUID() 
 ```
 
@@ -25,7 +25,7 @@ A Promise that resolves to a [ResponseUUIDData](../../interface/response-uuid-da
 ## Example
 
 ```js
-import { devicePlugin } from "@plaoc/plugin";
+import { devicePlugin } from "@plaoc/plugins";
 devicePlugin.getUUID();
 ```
 

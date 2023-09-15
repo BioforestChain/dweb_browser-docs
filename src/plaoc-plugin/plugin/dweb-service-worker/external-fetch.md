@@ -1,16 +1,16 @@
 ---
-title: DwebServiceWorkerPlugin.externalFetch()
+title: dwebServiceWorker.externalFetch()
 category:
   - Plugin
 tag:
-  - DwebServiceWorkerPlugin
+  - dwebServiceWorker
   - externalFetch
 ---
 
 同其他app通信的方法；
 
 ```js
-DwebServiceWorkerPlugin.externalFetch(mmid, init)
+dwebServiceWorker.externalFetch(mmid, init)
 ```
 
 ## 参数
@@ -32,8 +32,8 @@ DwebServiceWorkerPlugin.externalFetch(mmid, init)
 
 ## 示例
 ```js
-import  { dwebServiceWorkerPlugin } from "@plaoc/plugin";
-dwebServiceWorkerPlugin
+import  { dwebServiceWorker } from "@plaoc/plugins";
+dwebServiceWorker
 .externalFetch(
   `xxx.dweb`, 
   {
@@ -50,6 +50,6 @@ dwebServiceWorkerPlugin
 | externalFetch      | ✅       | ✅  | ✅          | X       |
 
 ## 相关链接
-[DwebServiceWorkerPlugin](../index.md)
+[dwebServiceWorker](../index.md)
 
 

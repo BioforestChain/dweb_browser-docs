@@ -26,7 +26,7 @@ CameraPlugin.getPhoto(options)
 ## Example
 
 ```js
-import { cameraPlugin } from "@plaoc/plugin";
+import { cameraPlugin } from "@plaoc/plugins";
 
 cameraPlugin.getPhoto({})
 .then(res => {

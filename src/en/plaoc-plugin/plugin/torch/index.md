@@ -9,7 +9,7 @@ tag:
 Flashlight plugin
 
 ```js
-import { torchPlugin } from "@plaoc/plugin";
+import { torchPlugin } from "@plaoc/plugins";
 ```
 
 ## Property

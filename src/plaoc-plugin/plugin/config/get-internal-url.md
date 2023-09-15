@@ -23,7 +23,7 @@ configPlugin.getInternalUrl()
 
 ## 示例
 ```js
-import { configPlugin } from "@plaoc/plugin";
+import { configPlugin } from "@plaoc/plugins";
 configPlugin.getInternalUrl()
 ```
 

@@ -26,7 +26,7 @@ SplashScreenPlugin.hide(options)
 
 ## 示例
 ```js
-import { splashScreenPlugin } from "@plaoc/plugin";
+import { splashScreenPlugin } from "@plaoc/plugins";
 ;(async () => {
   splashScreenPlugin.hide({})
 })();

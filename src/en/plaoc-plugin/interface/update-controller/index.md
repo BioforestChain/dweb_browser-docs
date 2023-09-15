@@ -13,7 +13,7 @@ It is accessed through the [DwebServiceWorker.updateController](../../shim/dweb-
 
 
 ```js
-import { dwebServiceWorker } from "@plaoc/plugin"
+import { dwebServiceWorker } from "@plaoc/plugins"
 const updateController = dwebServiceWorker.updateController
 ```
 

@@ -34,12 +34,10 @@ import { PlaocInterfaceFetchEvent } from "./routes/plaoc-interface-fetch-event";
 import { PlaocInterfaceStateObserver } from "./routes/plaoc-interface-state-observer";
 import { PlaocInterfaceWindowListenerHandle } from "./routes/plaoc-interface-window-listener-handle";
 
+import { PlaocPluginUpdateController } from "./routes/plaoc-plugin-dweb-update-controller";
 import { PlaocWebComponent } from "./routes/plaoc-web-component";
 import { PlaocWebComponentBarcodeScanning } from "./routes/plaoc-web-component-barcode-scanning";
 import { PlaocWebComponentBluetooth } from "./routes/plaoc-web-component-bluetooth";
-
-
-
 
 const allRoutes = {
   "/plaoc-app/": PlaocApp,
@@ -53,6 +51,7 @@ const allRoutes = {
   "/plaoc-plugin/plugin/config/": PlaocPluginConfig,
   "/plaoc-plugin/plugin/device/": PlaocPluginDevice,
   "/plaoc-plugin/plugin/dweb-service-worker/": PlaocPluginDwebServiceWorker,
+  "/plaoc-plugin/plugin/update-controller/": PlaocPluginUpdateController,
   "/plaoc-plugin/plugin/file-system/": PlaocPluginFileSystem,
   "/plaoc-plugin/plugin/haptics/": PlaocPluginHaptics,
   "/plaoc-plugin/plugin/m-webview/": PlaocPluginMWebview,
@@ -68,24 +67,29 @@ const allRoutes = {
 
   "/plaoc-plugin/interface/": PlaocInterface,
   "/plaoc-plugin/interface/bluetooth-device/": PlaocInterfaceBluetoothDevice,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-characteristic/": PlaocInterfaceBluetoothRemoteGattCharacteristic,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-descriptor/": PlaocInterfaceBluetoothRemoteGattDescriptor,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-server/": PlaocInterfaceBluetoothRemoteGattServer,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-service/": PlaocInterfaceBluetoothRemoteGattService,
+  "/plaoc-plugin/interface/bluetooth-remote-gatt-characteristic/":
+    PlaocInterfaceBluetoothRemoteGattCharacteristic,
+  "/plaoc-plugin/interface/bluetooth-remote-gatt-descriptor/":
+    PlaocInterfaceBluetoothRemoteGattDescriptor,
+  "/plaoc-plugin/interface/bluetooth-remote-gatt-server/":
+    PlaocInterfaceBluetoothRemoteGattServer,
+  "/plaoc-plugin/interface/bluetooth-remote-gatt-service/":
+    PlaocInterfaceBluetoothRemoteGattService,
   "/plaoc-plugin/interface/fetch-event/": PlaocInterfaceFetchEvent,
   "/plaoc-plugin/interface/state-observer/": PlaocInterfaceStateObserver,
-  "/plaoc-plugin/interface/window-listener-handle/": PlaocInterfaceWindowListenerHandle,
-
+  "/plaoc-plugin/interface/window-listener-handle/":
+    PlaocInterfaceWindowListenerHandle,
 
   "/plaoc-plugin/web-component/": PlaocWebComponent,
-  "/plaoc-plugin/web-component/barcode-scanning/": PlaocWebComponentBarcodeScanning,
+  "/plaoc-plugin/web-component/barcode-scanning/":
+    PlaocWebComponentBarcodeScanning,
   "/plaoc-plugin/web-component/bluetooth/": PlaocWebComponentBluetooth,
-}
+};
 
 export function createSidebar(basePath: BasePath) {
-  const o = {}
+  const o = {};
   for (let key in allRoutes) {
     o[basePath + key] = new allRoutes[key](basePath);
   }
-  return sidebar(o)
+  return sidebar(o);
 }

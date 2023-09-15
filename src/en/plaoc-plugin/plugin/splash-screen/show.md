@@ -28,7 +28,7 @@ SplashScreenPlugin.show(options)
 
 ## Example
 ```js
-import { splashScreenPlugin } from "@plaoc/plugin";
+import { splashScreenPlugin } from "@plaoc/plugins";
 splashScreenPlugin.show({})
 ```
 

@@ -41,7 +41,7 @@ This is a built-in interface, and this interface object cannot be created direct
 
 ## Example
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

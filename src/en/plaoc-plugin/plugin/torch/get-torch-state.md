@@ -24,7 +24,7 @@ TorchPlugin.getTorchState()
 
 ## Example
 ```js
-import { torchPlugin } from "@plaoc/plugin";
+import { torchPlugin } from "@plaoc/plugins";
 ;(async () => {
   const b = await torchPlugin.getTorchState()
   console.log(b ? "手电筒打开中" : "手电同关闭中")

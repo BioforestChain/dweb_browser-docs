@@ -9,7 +9,7 @@ tag:
 Plugin for sharing
 
 ```js
-import { sharePlugin } from "@plaoc/plugin";
+import { sharePlugin } from "@plaoc/plugins";
 ```
 
 ## Properties

@@ -9,7 +9,7 @@ tag:
 Splash screen plugin;
 
 ```js
-import { splashScreenPlugin } from "@plaoc/plugin";
+import { splashScreenPlugin } from "@plaoc/plugins";
 ```
 
 ## Properties

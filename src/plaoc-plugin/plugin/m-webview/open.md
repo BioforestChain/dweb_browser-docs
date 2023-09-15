@@ -26,7 +26,7 @@ MWebviewPlugin.open(url)
 
 ## 示例
 ```js
-import { mwebviewPlugin } from "@plaoc/plugin";
+import { mwebviewPlugin } from "@plaoc/plugins";
 mwebviewPlugin.open(`http://xxx`)
 ```
 

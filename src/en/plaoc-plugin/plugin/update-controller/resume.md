@@ -23,8 +23,8 @@ UpdateControllerPlugin.resume()
 
 ## Example
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin"
-dwebServiceWorkerPlugin.updateController.resume()
+import { dwebServiceWorker } from "@plaoc/plugins"
+dwebServiceWorker.updateController.resume()
 ```
 
 ## Platform Compatibility

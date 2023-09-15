@@ -9,14 +9,14 @@ tag:
 继承与[Event](https://developer.mozilla.org/zh-CN/docs/Web/API/Event)的对象；
 
 ```js
-import { FetchEvent } from "@plaoc/plugin";
+import { FetchEvent } from "@plaoc/plugins";
 ```
 
 ## 属性
 
   - plugin
 
-    属性值是 [DwebServiceWorkerPlugin](../../plugin/dweb-service-worker/index.md)对象；
+    属性值是 [dwebServiceWorker](../../plugin/dweb-service-worker/index.md)对象；
 
   - request
 
@@ -43,7 +43,7 @@ import { FetchEvent } from "@plaoc/plugin";
 
 ## 示例
 ```js
-import { FetchEvent } from "@plaoc/plugin";
+import { FetchEvent } from "@plaoc/plugins";
 const event = new FetchEvent("fetch", {
   request: toRequest(ipcRequest),
   clientId: ipcRequest.req_id.toString(),

@@ -50,7 +50,7 @@ BluetoothRemoteGATTCharacteristic 描述的是蓝牙设备的某一服务的接�
 
 ## 示例
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

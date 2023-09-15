@@ -23,7 +23,7 @@ Returns a Promise that resolves with a [ConnectionStatus](../../interface/connec
 
 ## Example
 ```js  
-import { networkPlugin } from "@plaoc/plugin";
+import { networkPlugin } from "@plaoc/plugins";
 const status = networkPlugin.getStatus();
 ```
 

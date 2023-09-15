@@ -9,7 +9,7 @@ tag:
 手电筒插件
 
 ```js
-import { torchPlugin } from "@plaoc/plugin";
+import { torchPlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

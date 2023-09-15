@@ -12,14 +12,14 @@ This is a purely web-based mechanism for communication between local apps that c
 Inherits from [BaseEvent](../../interface/base-event/index.md);
 
 ```js
-import { dwebServiceWorker } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 ```
 
 ## Properties
 
   - plugin
 
-    The property value is the [DwebServiceWorkerPlugin](../../plugin/dweb-service-worker/index.md) object
+    The property value is the [dwebServiceWorker](../../plugin/dweb-service-worker/index.md) object
 
   - updateContoller
 
@@ -27,7 +27,7 @@ import { dwebServiceWorker } from "@plaoc/plugin";
 
   - externalFetch
 
-    The property value is the [DwebServiceWorkerPlugin.externalFetch()](../../plugin/dweb-service-worker/external-fetch.md) method
+    The property value is the [dwebServiceWorker.externalFetch()](../../plugin/dweb-service-worker/external-fetch.md) method
 
   - update
 
@@ -35,11 +35,11 @@ import { dwebServiceWorker } from "@plaoc/plugin";
 
   - close
 
-    The property value is the [DwebServiceWorkerPlugin.close()](../../plugin/dweb-service-worker/close.md) method
+    The property value is the [dwebServiceWorker.close()](../../plugin/dweb-service-worker/close.md) method
 
   - restart
 
-    The property value is the [DwebServiceWorkerPlugin.restart()](../../plugin/dweb-service-worker/restart.md) method;  
+    The property value is the [dwebServiceWorker.restart()](../../plugin/dweb-service-worker/restart.md) method;  
 
 ## Methods  
 
@@ -76,7 +76,7 @@ import { dwebServiceWorker } from "@plaoc/plugin";
 ## Example
 
 ```js
-import { dwebServiceWorker } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 
 dwebServiceWorker.addEventListener('fetch', async (fetchEvent) => {
 

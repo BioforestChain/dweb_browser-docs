@@ -12,14 +12,14 @@ tag:
 继承与 [BaseEvent](../../interface/base-event/index.md);
 
 ```js
-import { dwebServiceWorker } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 ```
 
 ## 属性
 
   - plugin
 
-    属性值是 [DwebServiceWorkerPlugin](../../plugin/dweb-service-worker/index.md)对象
+    属性值是 [dwebServiceWorker](../../plugin/dweb-service-worker/index.md)对象
 
   - updateContoller
 
@@ -27,7 +27,7 @@ import { dwebServiceWorker } from "@plaoc/plugin";
 
   - externalFetch
 
-    属性值是 [DwebServiceWorkerPlugin.externalFetch()](../../plugin/dweb-service-worker/external-fetch.md)方法
+    属性值是 [dwebServiceWorker.externalFetch()](../../plugin/dweb-service-worker/external-fetch.md)方法
 
 
   - update
@@ -36,11 +36,11 @@ import { dwebServiceWorker } from "@plaoc/plugin";
 
   - close
 
-    属性值是 [DwebServiceWorkerPlugin.close()](../../plugin/dweb-service-worker/close.md) 方法
+    属性值是 [dwebServiceWorker.close()](../../plugin/dweb-service-worker/close.md) 方法
 
   - restart
 
-    属性值是 [DwebServiceWorkerPlugin.restart()](../../plugin/dweb-service-worker/restart.md) 方法；
+    属性值是 [dwebServiceWorker.restart()](../../plugin/dweb-service-worker/restart.md) 方法；
 
 ## 方法
 
@@ -76,7 +76,7 @@ import { dwebServiceWorker } from "@plaoc/plugin";
 
 ## 示例
 ```js
-import { dwebServiceWorker } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 dwebServiceWorker.addEventListener('fetch', async (fetchEvent) => {
   const url = new URL(event.request.url);
   if (url.pathname.endsWith("/say/hi")) {

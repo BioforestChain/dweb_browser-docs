@@ -135,7 +135,7 @@ The option object of the picture, as the parameter interface object of the Camer
 
 ## Example
 ```js
-import { cameraPlugin } from "@plaoc/plugin";
+import { cameraPlugin } from "@plaoc/plugins";
 cameraPlugin.getPhoto({})
 .then(res => {})
 ```

@@ -24,7 +24,7 @@ A Promise.
 ## Example
 
 ```js
-import { hapticsPlugin } from "@plaoc/plugin";
+import { hapticsPlugin } from "@plaoc/plugins";
 
 hapticsPlugin.vibrateHeavyClick();
 ```

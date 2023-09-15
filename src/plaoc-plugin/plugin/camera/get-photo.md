@@ -25,7 +25,7 @@ CameraPlugin.getPhoto(options)
 
 ## 示例
 ```js
-import { cameraPlugin } from "@plaoc/plugin";
+import { cameraPlugin } from "@plaoc/plugins";
 cameraPlugin.getPhoto({})
 .then(res => {})
 ```

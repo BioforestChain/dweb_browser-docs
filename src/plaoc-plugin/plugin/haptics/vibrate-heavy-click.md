@@ -24,7 +24,7 @@ HapticsPlugin.vibrateHeavyClick()
 
 ## 示例
 ```js
-import { hapticsPlugin } from "@plaoc/plugin";
+import { hapticsPlugin } from "@plaoc/plugins";
 hapticsPlugin.vibrateHeavyClick()
 ```
 

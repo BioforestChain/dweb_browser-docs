@@ -47,7 +47,7 @@ Interface used to describe Bluetooth devices;
     
 ## Example
 ```js
-  import { bluetoothPlugin } from "@plaoc/plugin";
+  import { bluetoothPlugin } from "@plaoc/plugins";
 
   bluetoothPlugin
   .open()

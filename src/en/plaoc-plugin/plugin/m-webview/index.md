@@ -9,7 +9,7 @@ tag:
 Multi webview plugin.
 
 ```js
-import { mwebviewPlugin } from "@plaoc/plugin";
+import { mwebviewPlugin } from "@plaoc/plugins";
 ```
 
 ## Properties

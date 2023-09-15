@@ -25,7 +25,7 @@ DwebServiceWorker.addEventListener('fetch', fetchEvent => {
 
 ## Example
 ```js
-import { dwebServiceWorker } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 
 dwebServiceWorker.addEventListener('fetch', async (fetchEvent) => {
 

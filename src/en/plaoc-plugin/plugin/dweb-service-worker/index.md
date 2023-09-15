@@ -1,39 +1,28 @@
 ---
-title: DwebServiceWorkerPlugin
+title: dwebServiceWorker
 category:
   - Plugin
 tag:
-  - DwebServiceWorkerPlugin
+  - dwebServiceWorker
 ---
 
 Plugin that provides app-level services.
 
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 ```
-
-## Properties
-
-- updateController
-
-  Accesses properties of the [UpdateControllerPlugin](../update-controller/index.md).
-  Its value is an [UpdateControllerPlugin](../update-controller/index.md) object.
 
 ## Methods
 
-  - [DwebServiceWorkerPlugin.update()](./update.md)
-
-    Gets the app update controller.
-  
-  - [DwebServiceWorkerPlugin.close()](./close.md)
+  - [dwebServiceWorker.close()](./close.md)
   
     Closes the frontend UI.
 
-  - [DwebServiceWorkerPlugin.restart()](./restart.md)
+  - [dwebServiceWorker.restart()](./restart.md)
 
     Restarts the frontend and backend services.
     
-  - [DwebServiceWorkerPlugin.externalFetch()](./external-fetch.md)
+  - [dwebServiceWorker.externalFetch()](./external-fetch.md)
 
     Method for communicating with other apps.
 
@@ -45,8 +34,6 @@ import { dwebServiceWorkerPlugin } from "@plaoc/plugin";
 
 | Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
 |:---------------------:|:-------:|:---:|:-----------:|:-------:|
-| updateController      | ✅      | ✅  | ✅          | X       |
-| update                | ✅      | ✅  | ✅          | X       |
 | close                 | ✅      | ✅  | ✅          | X       |
 | restart               | ✅      | ✅  | ✅          | X       |
 | externalFetch         | ✅      | ✅  | ✅          | X       |

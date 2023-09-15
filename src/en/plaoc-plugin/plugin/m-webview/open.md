@@ -24,7 +24,7 @@ A Promise that resolves to a [WebViewItem](../../interface/webview-item/index.md
 ## Example
 
 ```js
-import { mwebviewPlugin } from "@plaoc/plugin";
+import { mwebviewPlugin } from "@plaoc/plugins";
 
 mwebviewPlugin.open(`http://xxx`); 
 ```

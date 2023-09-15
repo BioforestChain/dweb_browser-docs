@@ -26,8 +26,8 @@ UpdateControllerPlugin.download(metadataUrl)
 
 ## Example
 ```js
-import { dwebServiceWorkerPlugin } from "@plaoc/plugin"
-dwebServiceWorkerPlugin.updateController.download("http://xxx")
+import { dwebServiceWorker } from "@plaoc/plugins"
+dwebServiceWorker.updateController.download("http://xxx")
 ```
 
 ## Platform Compatibility

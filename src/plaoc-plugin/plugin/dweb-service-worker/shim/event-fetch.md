@@ -25,7 +25,7 @@ DwebServiceWorker.addEventListener('fetch', fetchEvent => {
 
 ## 示例
 ```js
-import { dwebServiceWorker } from "@plaoc/plugin";
+import { dwebServiceWorker } from "@plaoc/plugins";
 dwebServiceWorker.addEventListener('fetch', async (fetchEvent) => {
   const url = new URL(event.request.url);
   if (url.pathname.endsWith("/say/hi")) {

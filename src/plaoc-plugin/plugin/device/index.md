@@ -9,7 +9,7 @@ tag:
 设备插件
 
 ```js
-import { devicePlugin } from "@plaoc/plugin";
+import { devicePlugin } from "@plaoc/plugins";
 devicePlugin.getUUID()
 ```
 

@@ -1,40 +1,41 @@
 ---
-title: DwebServiceWorkerPlugin.close()
+title: dwebServiceWorker.close()
 category:
   - Plugin
 tag:
-  - DwebServiceWorkerPlugin
+  - dwebServiceWorker
   - close
 ---
 
-关闭应用的前端
+关闭应用的前端界面。
 
-```js
-DwebServiceWorkerPlugin.close()
+## 示例
+
+```ts
+import { dwebServiceWorker } from "@plaoc/plugins";
+dwebServiceWorker.close();
+```
+
+## 函数签名
+
+```ts
+close(): Promise<boolean>
 ```
 
 ## 参数
 
-  - 无
+- 无
 
 ## 返回值
 
-  返回一个Promise,resolve兑现一个boolean;
-
-## 示例
-```js
-import  { dwebServiceWorkerPlugin } from "@plaoc/plugin";
-dwebServiceWorkerPlugin.close()
-```
-
+- boolean
 
 ## 平台兼容性
 
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| close        | ✅       | ✅  | ✅          | X       |
+| 属性/方法/事件 | Android | IOS | Desktop |
+| :------------: | :-----: | :-: | :-----: |
+|     close      |   ✅    | ✅  |   ✅    |
 
 ## 相关链接
-[DwebServiceWorkerPlugin](../index.md)
 
-
+[dwebServiceWorker](../index.md)

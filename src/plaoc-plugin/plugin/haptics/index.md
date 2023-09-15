@@ -10,7 +10,7 @@ HapticsPlugin通过触碰 向用户同震动的物理反馈；
 在 Desktop-dev环境下，通过消息在视觉上实现反馈；
 
 ```js
-import { hapticsPlugin } from "@plaoc/plugin";
+import { hapticsPlugin } from "@plaoc/plugins";
 ```
 
 ## 属性

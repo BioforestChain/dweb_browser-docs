@@ -1,16 +1,16 @@
 ---
-title: DwebServiceWorkerPlugin.restart()
+title: dwebServiceWorker.restart()
 category:
   - Plugin
 tag:
-  - DwebServiceWorkerPlugin
+  - dwebServiceWorker
   - restart
 ---
 
 重启应用的前后端；
 
 ```js
-DwebServiceWorkerPlugin.restart()
+dwebServiceWorker.restart()
 ```
 
 ## 参数
@@ -23,8 +23,8 @@ DwebServiceWorkerPlugin.restart()
 
 ## 示例
 ```js
-import  { dwebServiceWorkerPlugin } from "@plaoc/plugin";
-dwebServiceWorkerPlugin.restart()
+import  { dwebServiceWorker } from "@plaoc/plugins";
+dwebServiceWorker.restart()
 ```
 
 
@@ -35,6 +35,6 @@ dwebServiceWorkerPlugin.restart()
 | restart      | ✅       | ✅  | ✅          | X       |
 
 ## 相关链接
-[DwebServiceWorkerPlugin](../index.md)
+[dwebServiceWorker](../index.md)
 
 

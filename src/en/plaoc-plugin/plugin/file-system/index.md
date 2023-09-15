@@ -9,7 +9,7 @@ tag:
 File system plugin.
 
 ```js
-import { fileSystemPlugin } from "@plaoc/plugin";
+import { fileSystemPlugin } from "@plaoc/plugins";
 ```
 
 ## Properties

@@ -26,7 +26,7 @@ ClipboardPlugin.write(data);
 
 ## 示例
 ```js
-import { clipboardPlugin } from "@plaoc/plugin";
+import { clipboardPlugin } from "@plaoc/plugins";
 clipboardPlugin.write({string: "test"});
 ```
 

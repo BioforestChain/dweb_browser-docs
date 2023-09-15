@@ -10,7 +10,7 @@ Network related plugin;
 The interface inherits from [BaseEvent](../../interface/base-event/index.md).
 
 ```js 
-import { networkPlugin } from "@plaoc/plugin";
+import { networkPlugin } from "@plaoc/plugins";
 ```
 
 ## Properties

@@ -23,7 +23,7 @@ SharePlugin.canShare()
 
 ## Example
 ```js
-import { sharePlugin } from "@plaoc/plugin";
+import { sharePlugin } from "@plaoc/plugins";
 
 (async() => {
   const b = await sharePlugin.canShare() 
