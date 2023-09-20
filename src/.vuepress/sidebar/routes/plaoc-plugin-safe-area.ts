@@ -53,6 +53,42 @@ export class PlaocPluginSafeArea extends Array {
               },
             ]
           },
+          {
+            text: "interface",
+            icon: "type",
+            prefix: "plugin/safe-area/interface/",
+            link: "plugin/safe-area/interface/",
+            children: [
+              {
+                text: "$StateObserver",
+                icon: "interface",
+                prefix: "state-observer/",
+                link: "state-observer/",
+                children: [
+                  {
+                    icon: "function",
+                    text: "getState",
+                    link: "getState.md",
+                  },
+                  {
+                    icon: "function",
+                    text: "jsonlines",
+                    link: "jsonlines.md",
+                  },
+                  {
+                    icon: "function",
+                    text: "onChnage",
+                    link: "onChange.md",
+                  },
+                  {
+                    icon: "function",
+                    text: "stopObserve",
+                    link: "stopObserve.md",
+                  },
+                ]
+              },
+            ],
+          },
         ]
       }
     )

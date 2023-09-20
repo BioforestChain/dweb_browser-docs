@@ -58,8 +58,8 @@ export class PlaocPluginDwebServiceWorker extends Array {
               icon: "light",
               link: "$JmmAppInstallManifest.md",
             },
-          ]
-          }
+          ],
+        },
       ],
     });
   }
