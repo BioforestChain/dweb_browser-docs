@@ -3,6 +3,7 @@ title: State
 category:
   - Plugin
 tag:
+  - State
 ---
 
 The State interface is an Object; used to describe the state of the plug-in; different elements, State will have different attributes and values;

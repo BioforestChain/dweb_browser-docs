@@ -3,7 +3,7 @@ title: BiometricsResult
 category:
   - Plugin 
 tag:
-
+  - Biometrics
 ---
 
 BiometricsResult 是一个用来描述生物识别返回结果的接口；

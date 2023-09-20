@@ -3,7 +3,7 @@ title: BiometricsResult
 category:
   - Plugin 
 tag:
-
+  - Biometrics
 ---
 
 BiometricsResult is an interface used to describe the results returned by biometrics;

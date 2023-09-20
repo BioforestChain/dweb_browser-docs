@@ -3,6 +3,7 @@ title: State
 category:
   - Plugin
 tag:
+  - State
 ---
 
 State 接口是一个Object; 用来描述插件的状态；不同的元素， State 会具有不同的属性和值;

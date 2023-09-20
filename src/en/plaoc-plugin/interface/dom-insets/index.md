@@ -3,6 +3,7 @@ title: DOMInsets
 category:
   - Plugin
 tag:
+  - DOMInsets
 ---
 
 The DOMInsets interface is used to describe the position information occupied by an element in the screen device;

@@ -2,8 +2,12 @@
 title: Plaoc app
 category:
   - Plaoc
-  - tag:
-  - Android、IOS、MacOS、Windows、Linux
+tag:
+  - Android
+  - IOS
+  - MacOS
+  - Windows
+  - Linux
 ---
 
 

@@ -4,12 +4,12 @@ export class PlaocInterface extends Array {
     super();
     this.push(
       {
-        text: "Ploac",
+        text: "plaoc",
         prefix: basePath + "/plaoc-plugin/",
         link: basePath + "/plaoc-plugin/",
         children: [
           {
-            text: "Ploac Interface",
+            text: "plaoc Interface",
             prefix: "interface/",
             link: "interface/",
             children: [

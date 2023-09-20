@@ -3,6 +3,7 @@ title: AgbaColor
 category:
   - Plugin
 tag:
+  - AgbaColor
 ---
 
 The AgbaColor interface is an object used to describe color information;

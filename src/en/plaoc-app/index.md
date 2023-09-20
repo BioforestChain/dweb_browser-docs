@@ -2,8 +2,12 @@
 title: Plaoc app
 category:
   - Plaoc
-  - tag:
-  - Android、IOS、MacOS、Windows、Linux
+tag:
+  - Android
+  - IOS
+  - MacOS
+  - Windows
+  - Linux
 ---
 
 We define applications running on the `dweb-browser` browser as `Plaoc App`. You can understand that `dweb_browser` is like WeChat and `plaoc app` is like the mini programs running inside it. 

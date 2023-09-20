@@ -3,6 +3,7 @@ title: DOMInsets
 category:
   - Plugin
 tag:
+  - DOMInsets
 ---
 
 DOMInsets 接口是一个用来描述，某个元素在屏幕设备中所占据的位置信息；

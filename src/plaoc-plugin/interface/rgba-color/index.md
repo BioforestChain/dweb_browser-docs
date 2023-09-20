@@ -3,6 +3,7 @@ title: AgbaColor
 category:
   - Plugin
 tag:
+  - AgbaColor
 ---
 
 AgbaColor 接口是一个用来描述颜色信息的对象；
