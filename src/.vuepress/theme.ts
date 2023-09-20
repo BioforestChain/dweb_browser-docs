@@ -105,18 +105,16 @@ export default hopeTheme({
       echarts: true,
       flowchart: true,
       gfm: true,
-      imageSize: true,
+      imgSize: true,
       include: true,
       katex: true,
-      lazyLoad: true,
+      imgLazyload: true,
       mark: true,
       mermaid: true,
       playground: {
         presets: ["ts", "vue"],
       },
-      presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
+      presentation: ["highlight", "math", "search", "notes", "zoom"],
       stylize: [
         {
           matcher: "Recommanded",
@@ -133,7 +131,7 @@ export default hopeTheme({
       sub: true,
       sup: true,
       tabs: true,
-      vpre: true,
+      vPre: true,
       vuePlayground: true,
     },
 
