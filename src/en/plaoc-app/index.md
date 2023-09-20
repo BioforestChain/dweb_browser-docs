@@ -64,9 +64,24 @@ Now your app has been declared as a Plaoc app.
 
 - Execute the installation command:
 
+::: code-tabs#shell
+@tab:active PNPM
 ```bash
-npm i -g @plaoc/cli
+  pnpm add -g @plaoc/cli
 ```
+
+@tab YARN
+```bash
+  yarn global add @plaoc/cli
+```
+
+@tab NPM
+```bash
+  npm i -g @plaoc/cli
+```
+
+:::
+
 
 ### Start the project
 
@@ -109,13 +124,17 @@ First you need to download the [dweb-browser](https://github.com/BioforestChain/
 
 Next, run `dweb-browser` with the command to start developer mode.
 
-```bash
-#window 
-"D:\\DownLoads\\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json 
+::: code-tabs#shell
+@tab:active Windows
+  ```bash
+  & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
+  ```
 
-#macos
-open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
-```
+@tab MacOS
+  ```bash
+  open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
+  ```
+:::
 
 Now you can see the development and debugging interface. You should also find that what you just downloaded is also the desktop version of dweb-browser.
 

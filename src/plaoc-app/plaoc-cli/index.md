@@ -14,9 +14,24 @@ tag:
 
 - 首先需要安装 plaoc 命令行工具。
 
+::: code-tabs#shell
+@tab:active PNPM
 ```bash
-npm install -g @plaoc/cli
+  pnpm add -g @plaoc/cli
 ```
+
+@tab YARN
+```bash
+  yarn global add @plaoc/cli
+```
+
+@tab NPM
+```bash
+  npm i -g @plaoc/cli
+```
+
+:::
+
 
 > 也可以使用 npx plaoc 执行命令
 

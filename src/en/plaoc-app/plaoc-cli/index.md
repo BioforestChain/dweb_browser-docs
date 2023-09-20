@@ -14,9 +14,23 @@ This cli tool also has the functions of publishing tools and verifying apps. It 
 
 - First you need to install the plaoc command line tool.
 
+::: code-tabs#shell
+@tab:active PNPM
 ```bash
-npm install -g @plaoc/cli
+  pnpm add -g @plaoc/cli
 ```
+
+@tab YARN
+```bash
+  yarn global add @plaoc/cli
+```
+
+@tab NPM
+```bash
+  npm i -g @plaoc/cli
+```
+
+:::
 
 > You can also use npx plaoc to execute commands
 
