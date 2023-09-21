@@ -7,37 +7,34 @@ tag:
   - download
 ---
 
-download apps
-
-```js
-UpdateControllerPlugin.download(metadataUrl)
-```
-
-## parameters
-
-  - metadataUrl
-
-    The parameter is the address to access app metadata;
-    The type of the parameter is string;
-
-## return value
-
-  Return a Promise, resolve to fulfill the [BFSMetaData](../../interface/bfs-meta-data/index.md) object
+Responsible for downloading the app and jumping to the download interface after calling.
 
 ## Example
-```js
-import { dwebServiceWorker } from "@plaoc/plugins"
-dwebServiceWorker.updateController.download("http://xxx")
+
+```ts
+import { updateControllerPlugin } from "@plaoc/plugins";
+updateControllerPlugin.download("http://example.com/metadata.json");
 ```
 
-## Platform Compatibility
+## Function signature
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| download             | ✅       | ✅  | ✅          | X       |
+```ts
+download(medatadaUrl?: string): Promise<boolean>
+```
 
-## Related Links
+### Parameters
 
-[UpdateControllerPlugin](./index.md)
+- metadataUrl
 
+  The parameter is the address to access the app metadata.
+  The parameter type is string.
 
+### return value
+
+-boolean
+
+## Platform compatibility
+
+| Properties/Methods/Events | Android | IOS | Desktop |
+| :-----------------------: | :-----: | :-: | :-----: |
+|         download          |   ✅    | ✅  |

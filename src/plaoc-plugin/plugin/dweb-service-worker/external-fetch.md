@@ -34,7 +34,7 @@ console.log("收到回应消息 => ", await res.text());
 externalFetch(mmid: $MMID, input: RequestInfo | URL, init?: RequestInit | undefined): Promise<Response>
 ```
 
-## 参数
+### 参数
 
 - mmid
 
@@ -53,7 +53,7 @@ type RequestInfo = Request | string;
 
 `fetch` API 里的 init 对象。
 
-## 返回值
+### 返回值
 
 - [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 

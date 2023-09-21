@@ -1,7 +1,7 @@
 ---
 title: event fetch
 category:
-  - Plugin
+  - Event
 tag:
   - dwebServiceWorker
   - fetch event

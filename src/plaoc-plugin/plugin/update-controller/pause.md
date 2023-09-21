@@ -7,34 +7,39 @@ tag:
   - pause
 ---
 
-暂停下载App
+暂停下载 App,调用此 API 也会暂停下载进度更新。
 
-```js
-UpdateControllerPlugin.pause()
+::: warning
+当下载链接服务不支持断点续传的时候，会重新下载。
+:::
+
+## 示例
+
+```ts
+import { updateControllerPlugin } from "@plaoc/plugins";
+updateControllerPlugin.pause();
+```
+
+## 函数签名
+
+```ts
+pause(): Promise<boolean>
 ```
 
 ## 参数
 
-  - 无
+- 无
 
 ## 返回值
 
-  返回一个Promise,resolve兑现一个boolean
-
-## 示例
-```js
-import { dwebServiceWorker } from "@plaoc/plugins"
-dwebServiceWorker.updateController.pause()
-```
+- boolean
 
 ## 平台兼容性
 
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| pause        | ✅       | ✅  | ✅          | X       |
+| 属性/方法/事件 | Android | IOS | Desktop |
+| :------------: | :-----: | :-: | :-----: |
+|     pause      |   ✅    | ✅  |    X    |
 
 ## 相关链接
 
 [UpdateControllerPlugin](./index.md)
-
-

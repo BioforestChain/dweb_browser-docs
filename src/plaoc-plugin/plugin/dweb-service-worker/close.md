@@ -22,11 +22,11 @@ dwebServiceWorker.close();
 close(): Promise<boolean>
 ```
 
-## 参数
+### 参数
 
 - 无
 
-## 返回值
+### 返回值
 
 - boolean
 

@@ -7,34 +7,35 @@ tag:
   - cancel
 ---
 
-Cancel App Download
-
-```js
-UpdateControllerPlugin.cancel()
-```
-
-## parameters
-
-  - none
-
-## return value
-
-  Return a Promise, resolve to honor a boolean
+Cancel download app. After calling, the ongoing download will be canceled.
 
 ## Example
-```js
-import { dwebServiceWorker } from "@plaoc/plugins"
-dwebServiceWorker.updateController.cancel()
+
+```ts
+import { updateControllerPlugin } from "@plaoc/plugins";
+updateControllerPlugin.cancel();
 ```
 
-## Platform Compatibility
+## Function signature
 
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| cancel               | ✅       | ✅  | ✅          | X       |
+```ts
+cancel(): Promise<boolean>
+```
+
+### Parameters
+
+- none
+
+### return value
+
+-boolean
+
+## Platform compatibility
+
+| Properties/Methods/Events | Android | IOS | Desktop |
+| :-----------------------: | :-----: | :-: | :-----: |
+|          cancel           |   ✅    | ✅  |    X    |
 
 ## Related Links
 
 [UpdateControllerPlugin](./index.md)
-
-

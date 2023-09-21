@@ -1,91 +1,53 @@
 ---
 title: UpdateControllerPlugin
-category: 
+category:
   - Plugin
 tag:
   - UpdateControllerPlugin
 ---
 
-The control plugin for updating the app; however, this plugin cannot be accessed directly. 
-It is accessed through the [dwebServiceWorker](../dweb-service-worker/index.md) plugin.
+The app's update control plug-in is responsible for monitoring app download progress and other events.
 
-```js
-import { dwebServiceWorker } from "@plaoc/plugins";
-const updateControllerPlugin = dwebServiceWorker.updateController
+```ts
+import { updateControllerPlugin } from "@plaoc/plugins";
 ```
 
-## Properties
+## method
 
-  - None
+### [updateControllerPlugin.download()](./download.md)
 
-## Methods
+Responsible for downloading the app. After calling, it will jump to the download interface.
 
-  - [UpdateControllerPlugin.download()](./download.md)
+### [updateControllerPlugin.pause()](./pause.md)
 
-    Download the app
+Pause app download.
 
-  - [UpdateControllerPlugin.pause()](./pause.md)
+### [updateControllerPlugin.resume()](./resume.md)
 
-    Pause the download
+Resume/restart app download.
 
+### [updateControllerPlugin.cancel()](./cancel.md)
 
-  - [UpdateControllerPlugin.resume()](./resume.md)
+Cancel app download.
 
-    Resume the download
+<!-- ### [updateControllerPlugin.checkNewVersion()](./check-new-version.md)
 
-  - [UpdateControllerPlugin.cancel()](./cancel.md)
+Check if there is a new version. -->
 
-    Cancel the download
+## event
 
-  - [UpdateControllerPlugin.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+### [start](./event/start.md)
 
-    Add an event listener
+Listen for the start download event.
 
-  - [UpdateControllerPlugin.removeEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
+### [end](./event/end.md)
 
-    Remove an event listener
+Listen for the download end event.
 
-## Events
+### [progress](./event/progress.md)
 
-  Any event
+Monitor download progress updates and update the animation of the download progress bar through this event.
 
-  Predefined events include:
+### [cancel](./event/cancel.md)
 
-  - `start`
-
-    Download started
-    Pass an Event object to the event listener
-
-  - `end`  
-
-    Download ended
-    Pass an Event object to the event listener
-
-  - `progress`
-
-    Download progress updated
-    Pass a progress ratio string to the event listener
-
-  - `cancel`
-
-    Download canceled
-    Pass an Event object to the event listener
-
-## Cross-Platform Compatibility
-
-| Properties/Methods/Events | Android | iOS | Desktop-Dev | Desktop |  
-|:---------------------:|:-------:|:---:|:-----------:|:-------:|
-| download              | ✅      | ✅   | ✅           | X       |
-| pause                 | ✅      | ✅   | ✅           | X       |   
-| resume                | ✅      | ✅   | ✅           | X       |
-| cancel                | ✅      | ✅   | ✅           | X       |
-| addEventListener      | ✅      | ✅   | ✅           | X       |
-| removeEventListener   | ✅      | ✅   | ✅           | X       |
-| event start           | ✅      | ✅   | ✅           | X       |
-| event end             | ✅      | ✅   | ✅           | X       |
-| event progress        | ✅      | ✅   | ✅           | X       |  
-| event cancel          | ✅      | ✅   | ✅           | X       |
-
-## Related Links  
-
-[Plaoc](../../)
+Listen for download cancellation events.

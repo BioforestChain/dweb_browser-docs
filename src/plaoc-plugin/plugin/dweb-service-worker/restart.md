@@ -23,11 +23,11 @@ dwebServiceWorker.restart();
 restart(): Promise<$DwebResult>
 ```
 
-## 参数
+### 参数
 
 - 无
 
-## 返回值
+### 返回值
 
 这里的 success 一般都为 true，如果报错，则出现了比较严重的错误，可以提交 issuse,并且说明运行环境。
 

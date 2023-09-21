@@ -7,34 +7,39 @@ tag:
   - pause
 ---
 
-pause download
+Pause the download of the app. Calling this API will also pause the download progress update.
 
-```js
-UpdateControllerPlugin.pause()
+::: warning
+When the download link service does not support resumed downloading, it will be downloaded again.
+:::
+
+## Example
+
+```ts
+import { updateControllerPlugin } from "@plaoc/plugins";
+updateControllerPlugin.pause();
 ```
 
-## parameters
+## Function signature
 
-  - none
+```ts
+pause(): Promise<boolean>
+```
+
+## Parameters
+
+- none
 
 ## return value
 
-  Return a Promise object, resolve fulfill boolan;
+-boolean
 
-## Example
-```js
-import { dwebServiceWorker } from "@plaoc/plugins"
-dwebServiceWorker.updateController.pause()
-```
+## Platform compatibility
 
-## Platform Compatibility
-
-| Property/Method/Event| Android | IOS | Desktop-Dev | Desktop |
-|:--------------------:|:-------:|:---:|:-----------:|:-------:|
-| pause                | ✅       | ✅  | ✅          | X       |
+| Properties/Methods/Events | Android | IOS | Desktop |
+| :-----------------------: | :-----: | :-: | :-----: |
+|           pause           |   ✅    | ✅  |
 
 ## Related Links
 
 [UpdateControllerPlugin](./index.md)
-
-

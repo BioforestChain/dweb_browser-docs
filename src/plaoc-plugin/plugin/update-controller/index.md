@@ -6,70 +6,48 @@ tag:
   - UpdateControllerPlugin
 ---
 
-更新App的控制插件;但是这个插件不能直接访问；
-在[dwebServiceWorker](../dweb-service-worker/index.md)插件中会访问UpdateControllerPlugin插件；
+app 的更新控制插件，负责监听 app 下载进度和其他一些事件。
 
 ```js
 import { updateControllerPlugin } from "@plaoc/plugins";
-
 ```
-
-## 属性
-
-  - 无
 
 ## 方法
 
-  - [UpdateControllerPlugin.download()](./download.md)
+### [updateControllerPlugin.download()](./download.md)
 
-    下载App
+负责下载 app,调用后会跳转到下载界面。
 
-  - [UpdateControllerPlugin.pause()](./pause.md)
+### [updateControllerPlugin.pause()](./pause.md)
 
-    暂停下载
+暂停 app 下载。
 
+### [updateControllerPlugin.resume()](./resume.md)
 
-  - [UpdateControllerPlugin.resume()](./resume.md)
+恢复/重启 app 下载。
 
-    重起下载
+### [updateControllerPlugin.cancel()](./cancel.md)
 
-  - [UpdateControllerPlugin.cancel()](./cancel.md)
+取消 app 下载。
 
-    取消下载
+<!-- ### [updateControllerPlugin.checkNewVersion()](./check-new-version.md)
 
-  - [UpdateControllerPlugin.addEventListener()](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener)
-
-    添加事件监听器
-
-  - [UpdateControllerPlugin.removeEventListener()](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/removeEventListener)
-
-    移除事件监听器；
+检测是否有新版本。 -->
 
 ## 事件
 
-  任意事件；
+### [start](./event/start.md)
 
-  预定义事件包括：
+监听开始下载事件。
 
-  - `start`
+### [end](./event/end.md)
 
-    开始下载
-    传递一个 Event 对象给事件监听器；
+监听下载结束事件。
 
-  - `end`
+### [progress](./event/progress.md)
 
-    下载结束
-    传递一个 Event 对象给事件监听器；
+监听下载进度的更新，可以通过这个事件更新下载进度条的动画。
 
-  - `progress`
+### [cancel](./event/cancel.md)
 
-    下载的进度有更新了；
-    传递一个进度比例的字符串给事件监听器
-
-  - `cancel`
-
-    取消下载
-    传递一个 Event 对象给事件监听器；
-
-
-
+监听取消下载事件。

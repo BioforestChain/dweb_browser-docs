@@ -26,9 +26,9 @@ import { dwebServiceWorker } from "@plaoc/plugins";
 
 同其他 app 通信的方法。
 
-### [dwebServiceWorker.canOpenUrl()](./can-open-url.md)
+<!-- ### [dwebServiceWorker.canOpenUrl()](./can-open-url.md)
 
-查看应用是否已经安装，这一般在跟其他 app 通信的时候检测。
+查看应用是否已经安装，这一般在跟其他 app 通信的时候检测。 -->
 
 ## 事件
 

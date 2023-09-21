@@ -38,7 +38,27 @@ export class PlaocPluginUpdateController extends Array {
                     text: "cancel()",
                     icon: "function",
                     link: "cancel.md",
-                  }
+                  },
+                  {
+                    text: "progress",
+                    icon: "mark",
+                    link: "event/progress.md",
+                  },
+                  {
+                    text: "start",
+                    icon: "mark",
+                    link: "event/start.md",
+                  },
+                  {
+                    text: "end",
+                    icon: "mark",
+                    link: "event/end.md",
+                  },
+                  {
+                    text: "cancel",
+                    icon: "mark",
+                    link: "event/cancel.md",
+                  },
                 ]
               },
             ]
