@@ -117,7 +117,7 @@ export class PlaocPluginStatusBar extends Array {
                   },
                   {
                     icon: "function",
-                    text: "onChnage",
+                    text: "onChange",
                     link: "onChange.md",
                   },
                   {

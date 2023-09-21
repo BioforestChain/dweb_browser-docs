@@ -117,7 +117,7 @@ export class PlaocPluginNavigationBar extends Array {
                   },
                   {
                     icon: "function",
-                    text: "onChnage",
+                    text: "onChange",
                     link: "onChange.md",
                   },
                   {

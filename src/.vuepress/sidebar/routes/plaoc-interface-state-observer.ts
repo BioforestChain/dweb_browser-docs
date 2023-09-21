@@ -31,7 +31,7 @@ export class PlaocInterfaceStateObserver extends Array {
                   },
                   {
                     icon: "function",
-                    text: "onChnage",
+                    text: "onChange",
                     link: "onChange.md",
                   },
                   {

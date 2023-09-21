@@ -77,7 +77,7 @@ export class PlaocPluginSafeArea extends Array {
                   },
                   {
                     icon: "function",
-                    text: "onChnage",
+                    text: "onChange",
                     link: "onChange.md",
                   },
                   {
