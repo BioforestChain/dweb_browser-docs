@@ -10,7 +10,6 @@ tag:
   - Linux
 ---
 
-
 我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`，您可以理解为`dweb_browser` 是微信 `plaoc app` 是里面运行的小程序。
 
 因为`dweb-browser` 目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持，那么也就意味着您的 web 应用，可以背靠 plaoc 直接实现多端发布。
@@ -18,7 +17,7 @@ tag:
 plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应用打包完都可以使用自己应用网站进行发布。
 当然，您的网站也可以是一个应用中心，包含了您的应用矩阵，应用的发布将变得高效。
 
-## 开发 Plaoc app 流程；
+## 开发 Plaoc app 流程
 
 您首选需要在您的应用根目录下创建 `manifest.json` 文件，您可以认为`manifest.json`等同于 `PWA`的`manifest.json`。
 它主要声明了一些应用的参数和在用户安装的时候做一些展示。
@@ -70,16 +69,19 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 
 ::: code-tabs#shell
 @tab:active PNPM
+
 ```bash
   pnpm add -g @plaoc/cli
 ```
 
 @tab YARN
+
 ```bash
   yarn global add @plaoc/cli
 ```
 
 @tab NPM
+
 ```bash
   npm i -g @plaoc/cli
 ```
@@ -104,7 +106,7 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 
 ### 构建应用数据链接
 
-使用上面安装的plaoc 命令构建：
+使用上面安装的 plaoc 命令构建：
 
 ```bash
   plaoc serve http://172.30.95.28:5173/
@@ -123,23 +125,31 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 
 ### 启动开发
 
-您首先需要根据您的操作系统下载[dweb-browser](https://github.com/BioforestChain/dweb_browser/releases)。
+您首先需要根据您的操作系统下载[dweb-browser 桌面端](https://github.com/BioforestChain/dweb_browser/releases)。
 
 接下来使用指令运行 `dweb-browser`来启动开发者模式。
 
 ::: code-tabs#shell
 @tab:active Windows
+
 ```bash
 & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
 ```
 
 @tab MacOS
+
 ```bash
 open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
 ```
+
 :::
 
-现在您就能看到开发和调试界面了，您应该也发现了，您刚刚下载的也是dweb-browser的桌面版。
+现在您就能看到开发和调试界面了，您应该也发现了，您刚刚下载的也是 dweb-browser 的桌面版。
+
+::: warning
+注意，如果遇到 `Dweb Browser”已损坏，无法打开。 你应该将它移到废纸篓。`
+先运行命令 : `sudo xattr -d com.apple.quarantine /Applications/Dweb\ Browser.app`
+:::
 
 ### 打包 plaoc-app
 
@@ -153,12 +163,17 @@ plaoc bundle ./dist
 
 ### 发布
 
-使用 `scp` 或其他指令发布到您的服务器。 @plaoc/cli的命令行支持还在开发中。
+上传到公开的 plaoc 应用商城或者上传到您 app 的官网。有关于 app 官网如何提供下载或者应用商城如何提供下载，访问：[应用商城](./release/index.md)。
 
-## 相关链接
+您手机中如果已经安装了 Dweb Browser app，可以先将您打包完两个文件上传到同一文件夹，然后把`metadata.json`地址生成二维码。
 
-[@plaoc/cli](./plaoc-cli/index.md)
+```bash
+dweb://install?url=http://example.com/app1/metadata.json
+```
 
-[开发工具](./developer-tool/index.md)
+然后使用手机支持`deep_link`的功能进行扫描上面链接生成的二维码。扫描完成之后会跳转到下载 app 的界面。
 
-[release](./release/index.md)
+- 华为 -> 智慧视觉
+- 小米 -> 小爱视觉
+- oppo -> 使用系统浏览器扫码
+- vivo -> Jovi 扫描

@@ -1,8 +1,8 @@
 ---
-title: App Store  
-category: 
+title: App Store
+category:
   - Service
-tag: 
+tag:
   - Service
 ---
 
@@ -18,21 +18,33 @@ bundle
 └── mainifest.json
 ```
 
-Then you need to upload it to your app's official website (app store). 
+Then you need to upload it to your app's official website (app store).
 
 Assume I upload it to the root directory of my app's official website:
 
 ```bash
-├── https://dweb.browser.org/xxxxx.dweb.zip 
+├── https://dweb.browser.org/xxxxx.dweb.zip
 └── https://dweb.browser.org/mainifest.json
 ```
 
 Then the download button code on my app's official website only needs:
 
 ```html
-<a href="dweb:install?url=https://dweb.browser.org/metadata.json">Click to Download</a> 
+<a href="dweb:install?url=https://dweb.browser.org/metadata.json"
+  >Click to Download</a
+>
 ```
 
 Establishing download channels only needs to follow one principle - use the `dweb:install?url=` this kind of `deeplink` form to build download links.
 
-This way, users only need to click this (link) button in the dweb-browser app to jump to the download page.
+This way, users only need to click this (link) button in the Dweb Browser app to jump to the download page.
+
+### Use QR code
+
+You can also simply put a QR code on your official website to facilitate users who have installed the Dweb Browser app to use the scanning function that supports `deep_link` to jump to download.
+
+You only need to generate a QR code with an address similar to the one below. After the user scans, they will jump to the interface for downloading the app.
+
+```bash
+dweb://install?url=https://dweb.browser.org/metadata.json
+```
