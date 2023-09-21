@@ -259,5 +259,5 @@ metadata:       http://172.30.90.207:8096/metadata.json
 #window
  & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
 #macos
-open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
+open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
 ```

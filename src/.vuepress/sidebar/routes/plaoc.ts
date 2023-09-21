@@ -1,7 +1,7 @@
-import { BasePath } from "../config/base-path"
+import { BasePath } from "../config/base-path";
 export class Plaoc extends Array {
   constructor(basePath: BasePath) {
-    super()
+    super();
     this.push(
       // {
       //   text: "HOME",
@@ -13,12 +13,6 @@ export class Plaoc extends Array {
         prefix: basePath + "/plaoc-plugin/plugin/index.md",
         link: basePath + "/plaoc-plugin/plugin/index.md",
         // children: [
-        //   {
-        //     text: "Interface",
-        //     icon: "object",
-        //     prefix: "interface/",
-        //     link: "interface/index.md",
-        //   },
         //   {
         //     text: "Plugin",
         //     icon: "plugin",
@@ -38,7 +32,13 @@ export class Plaoc extends Array {
         //     link: "web-component/index.md",
         //   },
         // ]
+      },
+      {
+        text: "WebComponent",
+        icon: "discover",
+        prefix: "plaoc-plugin/webcomponent/",
+        link: "plaoc-plugin/web-component/index.md",
       }
-    )
+    );
   }
 }

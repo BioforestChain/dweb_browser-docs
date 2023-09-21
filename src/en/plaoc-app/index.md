@@ -140,17 +140,12 @@ Next, run `dweb-browser` with the command to start developer mode.
 @tab MacOS
 
 ```bash
-open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
+open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
 ```
 
 :::
 
 Now you can see the development and debugging interface. You should also find that what you just downloaded is also the desktop version of dweb-browser.
-
-::: warning
-Note that if you encounter `Dweb Browser' it is corrupted and cannot be opened. You should move it to the Trash.`
-Run the command first: `sudo xattr -d com.apple.quarantine /Applications/Dweb\ Browser.app`
-:::
 
 ### Package
 

@@ -139,17 +139,12 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 @tab MacOS
 
 ```bash
-open /Applications/dweb-browser-devtools.app --args install --url http://127.0.0.1:8096/metadata.json
+open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
 ```
 
 :::
 
 现在您就能看到开发和调试界面了，您应该也发现了，您刚刚下载的也是 dweb-browser 的桌面版。
-
-::: warning
-注意，如果遇到 `Dweb Browser”已损坏，无法打开。 你应该将它移到废纸篓。`
-先运行命令 : `sudo xattr -d com.apple.quarantine /Applications/Dweb\ Browser.app`
-:::
 
 ### 打包 plaoc-app
 

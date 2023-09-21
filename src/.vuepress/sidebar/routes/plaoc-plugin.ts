@@ -120,6 +120,12 @@ export class PlaocPlugin extends Array {
               },
             ]
           },
+          {
+            text: "WebComponent",
+            icon: "discover",
+            prefix: "webcomponent/",
+            link: "web-component/index.md",
+          }
         ]
       }
     )
