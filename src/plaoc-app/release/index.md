@@ -15,7 +15,7 @@ tag:
 ```bash
   bundle
   ├── xxxxx.dweb.zip
-  └── mainifest.json
+  └── metadata.json
 ```
 
 接着您需要上传到您的 app 官网(应用商城)中。
@@ -23,7 +23,7 @@ tag:
 
 ```bash
 ├── https://dweb.browser.org/xxxxx.dweb.zip
-└── https://dweb.browser.org/mainifest.json
+└── https://dweb.browser.org/metadata.json
 ```
 
 那么我 app 官网到下载按钮代码只需要如下：

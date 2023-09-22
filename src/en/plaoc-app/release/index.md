@@ -15,7 +15,7 @@ First, your application will be packaged into two files as follows:
 ```bash
 bundle
 ├── xxxxx.dweb.zip
-└── mainifest.json
+└── metadata.json
 ```
 
 Then you need to upload it to your app's official website (app store).
@@ -24,7 +24,7 @@ Assume I upload it to the root directory of my app's official website:
 
 ```bash
 ├── https://dweb.browser.org/xxxxx.dweb.zip
-└── https://dweb.browser.org/mainifest.json
+└── https://dweb.browser.org/metadata.json
 ```
 
 Then the download button code on my app's official website only needs:
