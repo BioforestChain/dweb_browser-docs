@@ -3,50 +3,29 @@ title: MWebviewPlugin
 category:
   - Plugin
 tag:
-  - MWebviewPlugin 
+  - MWebviewPlugin
 ---
 
-Multi webview plugin.
+This is a multi-window multi-component responsible for managing multi-window scenarios.
 
 ```js
 import { mwebviewPlugin } from "@plaoc/plugins";
 ```
 
-## Properties
+## method
 
-- None
+### [mwebviewPlugin.open()](./open.md)
 
-## Methods
+Open a new page within the app.
 
-  - [MWebviewPlugin.open()](./open.md)
+### [mwebviewPlugin.close()](./close.md)
 
-    Opens a new webview
+Destroy the specified page within the app.
 
-  - [MWebviewPlugin.close()](./close.md)
+### [mwebviewPlugin.activate()](./activate.md)
 
-    Destroys the specified webview
+Waking up the app window will activate the app window to the top.
 
-  - [MWebviewPlugin.activate()](./activate.md)
-  
-    Activates the webview
+### [mwebviewPlugin.closeApp()](./close-app.md)
 
-  - [MWebviewPlugin.closeApp()](./close-app.md)
-
-    Closes the entire app frontend
-
-## Events
-
-- None
-
-## Platform Compatibility  
-
-| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
-|:---------------------:|:-------:|:---:|:-----------:|:-------:|
-| open                  | ✅      | ✅  | ✅          | X       |
-| close                 | ✅      | ✅  | ✅          | X       |  
-| activate              | ✅      | ✅  | ✅          | X       |
-| closeApp              | ✅      | ✅  | ✅          | X       |
-
-## See Also
-
-[Plaoc](../../)
+Close the app's window.

@@ -6,50 +6,26 @@ tag:
   - MWebviewPlugin
 ---
 
-多webview插件；
+这是一个多窗口多组件，负责管理多窗口场景。
 
 ```js
 import { mwebviewPlugin } from "@plaoc/plugins";
 ```
 
-## 属性
-
-  - 无
-
 ## 方法
 
-  - [MWebviewPlugin.open()](./open.md)
+### [mwebviewPlugin.open()](./open.md)
 
-    打开一个新的webview
+在 app 内部打开一个新的页面。
 
+### [mwebviewPlugin.close()](./close.md)
 
-  - [MWebviewPlugin.close()](./close.md)
+销毁 app 内部指定的页面。
 
-    销毁指定的webview
+### [mwebviewPlugin.activate()](./activate.md)
 
+唤醒 app 窗口，会把 app 窗口激活到最上层。
 
-  - [MWebviewPlugin.activate()](./activate.md)
+### [mwebviewPlugin.closeApp()](./close-app.md)
 
-    激活webview
-
-
-  - [MWebviewPlugin.closeApp()](./close-app.md)
-
-    关闭整个应用，指挥关闭前端，服务不会被关闭
-
-## 事件
-
-## 平台兼容性
-
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| open         | ✅      | ✅  | ✅          | X       |
-| close        | ✅      | ✅  | ✅          | X       |
-| activate     | ✅      | ✅  | ✅          | X       |
-| closeApp     | ✅      | ✅  | ✅          | X       |
-
-## 相关链接
-
-[Plaoc](../../)
-
-
+关闭 app 的窗口。

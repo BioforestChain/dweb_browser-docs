@@ -1,41 +1,37 @@
 ---
 title: MWebviewPlugin.activate()
 category:
-  - Plugin 
+  - Plugin
 tag:
   - MWebviewPlugin
   - activate
 ---
-  
-Activates the mwebview.
 
-```js  
-MWebviewPlugin.activate()
-```
-
-## Parameters
-
-- None
-
-## Returns
-
-A Promise that resolves to a boolean.
-Resolves to true if activated successfully, false if failed.
+Waking up the app window will activate the app window to the top.
 
 ## Example
 
-```js
+```ts
 import { mwebviewPlugin } from "@plaoc/plugins";
-
 mwebviewPlugin.activate();
 ```
 
-## Platform Compatibility
+## Function signature
 
-| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
-|:---------------------:|:-------:|:---:|:-----------:|:-------:|
-| activate              | ✅      | ✅  | ✅          | X       |
+```ts
+activate(): Promise<boolean>
+```
 
-## See Also
+### Parameters
 
-[MWebviewPlugin](./index.md)
+- none
+
+## return value
+
+-boolean
+
+## Platform compatibility
+
+| Properties/Methods/Events | Android | IOS | Desktop |
+| :-----------------------: | :-----: | :-: | :-----: |
+|         activate          |   ✅    | ✅  |   ✅    |
