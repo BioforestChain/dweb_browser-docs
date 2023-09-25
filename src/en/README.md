@@ -19,81 +19,81 @@ actions:
   - text: System(testing)
     link: /systemAPP/
 
-features:
-  - title: APP Chain Authentication
-    icon: lock
-    details: For DAPPID applied for on-chain by the app, it facilitates the authentication and traceability of the app.
-    link: /plaoc-app/bundle/
+# features:
+#   - title: APP Chain Authentication
+#     icon: lock
+#     details: For DAPPID applied for on-chain by the app, it facilitates the authentication and traceability of the app.
+#     link: /plaoc-app/bundle/
 
-  - title: APP Configuration
-    icon: config
-    details: Configure rules freely. Create a `bfs-metadata.ts` configuration file in your backend root directory. For more details, refer to the backend configuration.
-    link: /plaoc-plugin/
+#   - title: APP Configuration
+#     icon: config
+#     details: Configure rules freely. Create a `bfs-metadata.ts` configuration file in your backend root directory. For more details, refer to the backend configuration.
+#     link: /plaoc-plugin/
 
-  - title: Packaging Configuration
-    icon: slides
-    details: After developing the application, you need to package your frontend and backend applications into a `xxxx.zip` file and upload it anywhere.
-    link: /plaoc-app/bundle/
+#   - title: Packaging Configuration
+#     icon: slides
+#     details: After developing the application, you need to package your frontend and backend applications into a `xxxx.zip` file and upload it anywhere.
+#     link: /plaoc-app/bundle/
 
-  - title: One Packaging for Multiple Platform Usage
-    icon: workingDirectory
-    details: Support deployment on Android, iOS, and desktop platforms.
-    link: /plaoc-app/bundle/
+#   - title: One Packaging for Multiple Platform Usage
+#     icon: workingDirectory
+#     details: Support deployment on Android, iOS, and desktop platforms.
+#     link: /plaoc-app/bundle/
 
-  - title: Application Interconnection
-    icon: link
-    details: Local apps communicate through custom dwebServiceWorker.
-    link: /plaoc-plugin/dweb-service-worker/
+#   - title: Application Interconnection
+#     icon: link
+#     details: Local apps communicate through custom dwebServiceWorker.
+#     link: /plaoc-plugin/dweb-service-worker/
 
-  - title: Follow Web Development Standards
-    icon: api
-    details: All APIs conform to the development intuition of web developers and adhere to web standards.
-    link: /plaoc-plugin/
+#   - title: Follow Web Development Standards
+#     icon: api
+#     details: All APIs conform to the development intuition of web developers and adhere to web standards.
+#     link: /plaoc-plugin/
 
-  - title: Collaboration and Sharing
-    icon: group
-    details: If a tag adds a sharing declaration <html is="dweb-html">, the entire HTML page enters the sharing mode.
-    link: /plaoc-plugin/
+#   - title: Collaboration and Sharing
+#     icon: group
+#     details: If a tag adds a sharing declaration <html is="dweb-html">, the entire HTML page enters the sharing mode.
+#     link: /plaoc-plugin/
 
-  - title: npm Support
-    icon: npm
-    details: Upload all packages to the npm platform for support.
-    link: https://www.npmjs.com/package/@plaoc/plugins
+#   - title: npm Support
+#     icon: npm
+#     details: Upload all packages to the npm platform for support.
+#     link: https://www.npmjs.com/package/@plaoc/plugins
 
-  - title: Deno API Style
-    icon: support
-    details: Provide a series of APIs based on the Deno style on the backend.
-    link: /service/
+#   - title: Deno API Style
+#     icon: support
+#     details: Provide a series of APIs based on the Deno style on the backend.
+#     link: /service/
 
-  - title: Open Source Code
-    icon: github
-    details: All code belongs to the community and is open source.
-    link: https://github.com/BioforestChain/dweb_browser
+#   - title: Open Source Code
+#     icon: github
+#     details: All code belongs to the community and is open source.
+#     link: https://github.com/BioforestChain/dweb_browser
 
-  - title: High Degree of Freedom
-    icon: strong
-    details: Both frontend and backend are programmable, providing a high degree of coding freedom.
-    link: /
+#   - title: High Degree of Freedom
+#     icon: strong
+#     details: Both frontend and backend are programmable, providing a high degree of coding freedom.
+#     link: /
 
-  - title: Distributed Network
-    icon: network
-    details: Provide the capability of a distributed network for interconnection.
-    link: /systemApp/
+#   - title: Distributed Network
+#     icon: network
+#     details: Provide the capability of a distributed network for interconnection.
+#     link: /systemApp/
 
-  - title: Storage Functionality
-    icon: storage
-    details: Provide storage functionality APIs, with data isolation between them.
-    link: /systemApp/
+#   - title: Storage Functionality
+#     icon: storage
+#     details: Provide storage functionality APIs, with data isolation between them.
+#     link: /systemApp/
 
-  - title: Version Self-Update
-    icon: async
-    details: Have a distinctive version self-update service.
-    link: /service/
+#   - title: Version Self-Update
+#     icon: async
+#     details: Have a distinctive version self-update service.
+#     link: /service/
 
-  - title: Independent Processes
-    icon: process
-    details: Backend processes are independent of each other and do not interfere with each other.
-    link: /service/
+#   - title: Independent Processes
+#     icon: process
+#     details: Backend processes are independent of each other and do not interfere with each other.
+#     link: /service/
 
 copyright: 闽ICP备18009949号-4
 footer: MIT Licensed | Copyright © 2021-present BFCHAIN
