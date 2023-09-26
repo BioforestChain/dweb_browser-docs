@@ -13,7 +13,8 @@ This event can monitor changes in the progress of app download. It is initially 
 ```ts
 import { updateControllerPlugin } from "@plaoc/plugins";
 const updateContoller = updateControllerPlugin.listen;
-updateContoller.addEventListener("progress", (progressRate: string) => {
+updateContoller.addEventListener("progress", (event) => {
+  const progressRate = event.detail.progress;
   console.log(
     "updateContoller progress =>",
     progressRate,

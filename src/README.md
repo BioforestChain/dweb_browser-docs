@@ -13,11 +13,11 @@ actions:
   - text: Plaoc
     link: /plaoc-plugin/
 
+  - text: network
+    link: /network/
+
   - text: 服务端(测试中)
     link: /service/
-
-  - text: 系统(测试中)
-    link: /systemAPP/
 
 features:
   # - title: APP 链上认证
@@ -99,6 +99,31 @@ copyright: 闽ICP备18009949号-4
 footer: MIT Licensed | Copyright © 2021-present BFCHAIN
 ---
 
+## 什么是 dweb-browser
+
+dweb-browser 是一个遵循 Dweb 标准构建起来的浏览器平台，并将浏览器的能力、以及浏览器相关的系统原生系统能力通过各种 dweb 模块暴露出来。目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持。
+它包含一下这些核心模块：
+
+- `js.browser.dweb`
+
+它是一个 javascript-runtime，使用的是 WebWorker 作为底层实现。因此 WebWorker 中的各种标准都可以开箱即用。
+
+- `jmm.browser.dweb`
+
+它是一个动态 dweb 模块管理器，基于此可以实现类似 PWA 的应用功能
+
+- `mwebview.browser.dweb`
+
+它的全称是 mutil-webview（多 web 视图）的渲染器，可以使用这个渲染器同时渲染多个 Web 视图。比如说可以用它实现一个网页浏览器。
+
+- `nativeui.browser.dweb`
+
+它是一个 dweb-browser 自己定义的窗口标准，它被集成到 mwebview 中，因此可以让 mwebview 的视图获得窗口管理的能力。
+
+- `*.sys.dweb`
+
+和浏览器相关的一些系统标准也在 dweb-browser 上被实现。
+
 ## 什么是 dweb？
 
 Dweb 是一种去中心化的 Web 共识标准。它直接体现在您的域名上，如： `example.dweb`
@@ -163,31 +188,6 @@ dweb 模块可以通过“路由标准”进行互联，那么相对应的，就
 
 可以看得出来，相比于传统的 web-api 设计，dweb 更加的自由。核心原因是因为 dweb 模块之间完全使用消息通讯，这就给 dweb 模块带来的部署带来了无限了可能。你可以使用沙盒模块来保护隐私，甚至可以使用网络的来将来其它设备的模块部署到本地使用。
 
-## 什么是 dweb-browser
-
-dweb-browser 是一个遵循 Dweb 标准构建起来的浏览器平台，并将浏览器的能力、以及浏览器相关的系统原生系统能力通过各种 dweb 模块暴露出来。目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持。
-它包含一下这些核心模块：
-
-- `js.browser.dweb`
-
-它是一个 javascript-runtime，使用的是 WebWorker 作为底层实现。因此 WebWorker 中的各种标准都可以开箱即用。
-
-- `jmm.browser.dweb`
-
-它是一个动态 dweb 模块管理器，基于此可以实现类似 PWA 的应用功能
-
-- `mwebview.browser.dweb`
-
-它的全称是 mutil-webview（多 web 视图）的渲染器，可以使用这个渲染器同时渲染多个 Web 视图。比如说可以用它实现一个网页浏览器。
-
-- `nativeui.browser.dweb`
-
-它是一个 dweb-browser 自己定义的窗口标准，它被集成到 mwebview 中，因此可以让 mwebview 的视图获得窗口管理的能力。
-
-- `*.sys.dweb`
-
-和浏览器相关的一些系统标准也在 dweb-browser 上被实现。
-
 ## 什么是 plaoc
 
 plaoc 是基于 dweb-browser 平台的一个对标 Cordova、Capacitor、Tauri 的“跨平台 Web 应用”开发工具包
@@ -228,7 +228,6 @@ bfs 是基于 dweb-browser 平台构建的一系列应用群，目的是给人�
    《分布式办公协作》共识
    1. `ark.office.bfs.dweb` 方舟
 
-
 ### cli
 
 - 安装
@@ -237,17 +236,17 @@ bfs 是基于 dweb-browser 平台构建的一系列应用群，目的是给人�
 npm install -g @plaoc/cli
 ```
 
-- 打包成app
+- 打包成 app
 
 `plaoc bundle ./dir`
 
 会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请到[plaoc lic](./plaoc-app/plaoc-cli/index.md)查看详细文档。
 
-
 - 开发者模式
 
 `plaoc preview http://localhost:1231` 或者 `plaoc preview ./dir`
 该命令会输出命令：
+
 ```bash
 metadata:       http://127.0.0.1:8096/metadata.json
 metadata:       http://172.30.90.207:8096/metadata.json

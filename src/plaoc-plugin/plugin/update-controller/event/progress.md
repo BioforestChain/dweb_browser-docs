@@ -13,7 +13,8 @@ tag:
 ```ts
 import { updateControllerPlugin } from "@plaoc/plugins";
 const updateContoller = updateControllerPlugin.listen;
-updateContoller.addEventListener("progress", (progressRate:string) => {
+updateContoller.addEventListener("progress", (event) => {
+  const progressRate = event.detail.progress;
   console.log(
     "updateContoller progress =>",
     progressRate,

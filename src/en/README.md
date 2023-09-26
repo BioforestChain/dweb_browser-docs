@@ -13,11 +13,11 @@ actions:
   - text: Plaoc
     link: /plaoc-plugin/
 
+  - text: Network
+    link: /network/
+
   - text: Server(testing)
     link: /service/
-
-  - text: System(testing)
-    link: /systemAPP/
 
 # features:
 #   - title: APP Chain Authentication
@@ -99,6 +99,30 @@ copyright: 闽ICP备18009949号-4
 footer: MIT Licensed | Copyright © 2021-present BFCHAIN
 ---
 
+## What is dweb-browser
+
+dweb-browser is a browser platform built following the Dweb standard. It exposes the capabilities of a browser and native system capabilities related to the browser through various dweb modules. Currently, we have implemented support for mainstream platforms such as Android, iOS, MacOS, Windows, and Linux. It includes the following core modules:
+
+1. `js.browser.dweb`
+
+   It is a JavaScript runtime that uses WebWorker as its underlying implementation. Therefore, various standards in WebWorker can be used out of the box.
+
+2. `jmm.browser.dweb`
+
+   It is a dynamic dweb module manager, which can be used to implement application functionalities similar to PWA (Progressive Web Apps).
+
+3. `mwebview.browser.dweb`
+
+   It stands for mutil-webview (multiple web views) renderer, which allows simultaneous rendering of multiple web views. For example, it can be used to implement a web browser.
+
+4. `nativeui.browser.dweb`
+
+   It is a window standard defined by the dweb-browser itself. It is integrated into mwebview, enabling window management capabilities for mwebview's views.
+
+5. `*.sys.dweb`
+
+   Some browser-related system standards are also implemented in dweb-browser.
+
 ## What is dweb?
 
 Dweb is a decentralized web consensus standard. It is directly reflected in your domain name, such as `example.dweb`. However, because the dweb domain does not exist on the internet, it means that it does not belong to any organization. In other words, how to interpret the `example.dweb` domain is entirely determined by your own device.
@@ -168,7 +192,7 @@ Dweb modules can connect with each other through the "Routing Standard," and con
 1. `onConnect`: Triggered when modules establish a connection. It can be someone connecting to you or you connecting to someone else. This lifecycle is triggered because modules are peer-to-peer and full-duplex.
 2. `onActivity`: Triggered when a module receives a specific message: `activity-event`. This lifecycle is
 
- commonly used to perform specific tasks, such as activating a window.
+commonly used to perform specific tasks, such as activating a window.
 
 > Additional lifecycles are defined in different platforms and scenarios, but those lifecycles belong to the upper-level application standard and are no longer part of the core dweb standard. If two applications want to know which standards the other application has implemented, they can use querying via dweb-deeplink.
 
@@ -176,34 +200,9 @@ Dweb modules can connect with each other through the "Routing Standard," and con
 
 As seen, compared to traditional web API design, dweb offers more freedom. The core reason is that dweb modules communicate entirely using message-based communication. This opens up endless possibilities for deploying dweb modules. You can use sandbox modules to protect privacy or even deploy modules from other devices using the network.
 
-## What is dweb-browser
-
-dweb-browser is a browser platform built following the Dweb standard. It exposes the capabilities of a browser and native system capabilities related to the browser through various dweb modules. Currently, we have implemented support for mainstream platforms such as Android, iOS, MacOS, Windows, and Linux. It includes the following core modules:
-
-1. `js.browser.dweb`
-
-   It is a JavaScript runtime that uses WebWorker as its underlying implementation. Therefore, various standards in WebWorker can be used out of the box.
-
-2. `jmm.browser.dweb`
-
-   It is a dynamic dweb module manager, which can be used to implement application functionalities similar to PWA (Progressive Web Apps).
-
-3. `mwebview.browser.dweb`
-
-   It stands for mutil-webview (multiple web views) renderer, which allows simultaneous rendering of multiple web views. For example, it can be used to implement a web browser.
-
-4. `nativeui.browser.dweb`
-
-   It is a window standard defined by the dweb-browser itself. It is integrated into mwebview, enabling window management capabilities for mwebview's views.
-
-5. `*.sys.dweb`
-
-   Some browser-related system standards are also implemented in dweb-browser.
-
 ## What is plaoc
 
 plaoc is a "cross-platform web application" development toolkit based on the dweb-browser platform, comparable to Cordova, Capacitor, and Tauri.
-
 
 What is BFS?
 
@@ -240,7 +239,6 @@ It includes, but is not limited to, the following consensus and applications:
 1. `office.bfs.dweb`
    Consensus for "Distributed Office Collaboration"
    1. `ark.office.bfs.dweb` Ark
-
 
 ### cli
 

@@ -8,4 +8,5 @@ export const enNavbar = navbar([
     link: "/en/plaoc-app/",
   },
   { text: "Plugins", icon: "discover", link: "/en/plaoc-plugin/plugin/index.md" },
+  { text: "Network", icon: "network", link: "/en/network/README.md" },
 ]);
