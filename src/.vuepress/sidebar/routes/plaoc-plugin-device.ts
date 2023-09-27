@@ -1,4 +1,4 @@
-import { BasePath } from "../config/base-path"
+import { BasePath } from "../config/base-path";
 
 export class PlaocPluginDevice extends Array {
   constructor(basePath: BasePath) {
@@ -9,9 +9,9 @@ export class PlaocPluginDevice extends Array {
       link: basePath + "/plaoc-plugin/",
       children: [
         {
-          text: "Plaoc Plugin",
-          prefix: "plugin/",
-          link: "plugin/",
+          text: "Plugin",
+          prefix: "system/",
+          link: "system/",
           children: [
             {
               text: "DevicePlugin",

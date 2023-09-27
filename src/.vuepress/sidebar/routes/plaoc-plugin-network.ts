@@ -9,9 +9,9 @@ export class PlaocPluginNetwork extends Array {
         link: basePath + "/plaoc-plugin/",
         children: [
           {
-            text: "Plaoc Plugin",
-            prefix: "plugin/",
-            link: "plugin/",
+            text: "Plugin",
+            prefix: "system/",
+            link: "system/",
             children: [
               {
                 text: "NetworkPlugin",

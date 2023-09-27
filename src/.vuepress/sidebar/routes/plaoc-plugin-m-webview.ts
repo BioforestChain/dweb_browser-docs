@@ -10,9 +10,9 @@ export class PlaocPluginMWebview extends Array {
         link: basePath + "/plaoc-plugin/",
         children: [
           {
-            text: "Plaoc Plugin",
-            prefix: "plugin/",
-            link: "plugin/",
+            text: "Plugin",
+            prefix: "system/",
+            link: "system/",
             children: [
               {
                 text: "MWebviewPlugin",

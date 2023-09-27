@@ -7,21 +7,10 @@ tag:
   - startScanning
 ---
 
-开始扫一扫
-
-```js
-HTMLDwebBarcodeScanningElement.startScanning()
-```
-
-## 参数
-
-  - 无
-
-## 返回值
-
-  返回一个Promise,resolve兑现一个[ScanResult]()对象；
+开始扫码，这个接口会调用摄像头，但是开发者并不用去管理权限，系统会帮助开发者去申请摄像头权限。
 
 ## 示例
+
 ```html
 <body>
   <dweb-barcode-scanning></dweb-barcode-scanning>
@@ -37,14 +26,23 @@ HTMLDwebBarcodeScanningElement.startScanning()
 </body>
 ```
 
+## 函数签名
+
+```ts
+startScanning(rotation?: number, formats?: SupportedFormat): Promise<ScanResult>
+```
+
+### 参数
+
+- rotation
+- formats
+
+### 返回值
+
+- ScanResult
+
 ## 平台兼容性
 
-| 属性/方法/事件      | Android | IOS | Desktop-Dev | Desktop |
-|:-----------------:|:-------:|:---:|:-----------:|:-------:|
-| startScanning     | ✅       | ✅  | ✅          | X       |
-
-## 相关链接
-
-[Plaoc WebComponent](../index.md)
-
-
+| 属性/方法/事件 | Android | IOS | Desktop |
+| :------------: | :-----: | :-: | :-----: |
+| startScanning  |   ✅    | ✅  |   ✅    |

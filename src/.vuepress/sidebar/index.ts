@@ -24,65 +24,56 @@ import { PlaocPluginToast } from "./routes/plaoc-plugin-toast";
 import { PlaocPluginTorch } from "./routes/plaoc-plugin-torch";
 import { PlaocPluginVirtualKeyboard } from "./routes/plaoc-plugin-virtual-keyboard";
 
-import { PlaocInterfaceBluetoothDevice } from "./routes/plaoc-interface-bluetooth-device";
-import { PlaocInterfaceBluetoothRemoteGattCharacteristic } from "./routes/plaoc-interface-bluetooth-remote-gatt-characteristic";
-import { PlaocInterfaceBluetoothRemoteGattDescriptor } from "./routes/plaoc-interface-bluetooth-remote-gatt-descriptor";
-import { PlaocInterfaceBluetoothRemoteGattServer } from "./routes/plaoc-interface-bluetooth-remote-gatt-server";
-import { PlaocInterfaceBluetoothRemoteGattService } from "./routes/plaoc-interface-bluetooth-remote-gatt-service";
-import { PlaocInterfaceFetchEvent } from "./routes/plaoc-interface-fetch-event";
-import { PlaocInterfaceStateObserver } from "./routes/plaoc-interface-state-observer";
-import { PlaocInterfaceWindowListenerHandle } from "./routes/plaoc-interface-window-listener-handle";
 
 import { PlaocPluginUpdateController } from "./routes/plaoc-plugin-dweb-update-controller";
-import { PlaocWebComponent } from "./routes/plaoc-web-component";
-import { PlaocWebComponentBarcodeScanning } from "./routes/plaoc-web-component-barcode-scanning";
-import { PlaocWebComponentBluetooth } from "./routes/plaoc-web-component-bluetooth";
 
 const allRoutes = {
   "/plaoc-app/": PlaocApp,
-  "/plaoc-plugin/": PlaocPlugin,
-  "/plaoc-plugin/plugin/": PlaocPlugin,
-  "/plaoc-plugin/plugin/barcode-scanner/": PlaocPluginBarcodeScanner,
-  "/plaoc-plugin/plugin/biometrics/": PlaocPluginBiometrics,
-  "/plaoc-plugin/plugin/bluetooth/": PlaocPluginBluetooth,
-  "/plaoc-plugin/plugin/camera/": PlaocPluginCamera,
-  "/plaoc-plugin/plugin/clipboard/": PlaocPluginClipboard,
-  "/plaoc-plugin/plugin/config/": PlaocPluginConfig,
-  "/plaoc-plugin/plugin/device/": PlaocPluginDevice,
-  "/plaoc-plugin/plugin/dweb-service-worker/": PlaocPluginDwebServiceWorker,
-  "/plaoc-plugin/plugin/update-controller/": PlaocPluginUpdateController,
-  "/plaoc-plugin/plugin/file-system/": PlaocPluginFileSystem,
-  "/plaoc-plugin/plugin/haptics/": PlaocPluginHaptics,
-  "/plaoc-plugin/plugin/m-webview/": PlaocPluginMWebview,
-  "/plaoc-plugin/plugin/navigation-bar/": PlaocPluginNavigationBar,
-  "/plaoc-plugin/plugin/network/": PlaocPluginNetwork,
-  "/plaoc-plugin/plugin/safe-area/": PlaocPluginSafeArea,
-  "/plaoc-plugin/plugin/share/": PlaocPluginShare,
-  "/plaoc-plugin/plugin/splash-screen/": PlaocPluginSplashScreen,
-  "/plaoc-plugin/plugin/status-bar/": PlaocPluginStatusBar,
-  "/plaoc-plugin/plugin/toast/": PlaocPluginToast,
-  "/plaoc-plugin/plugin/torch/": PlaocPluginTorch,
-  "/plaoc-plugin/plugin/virtual-keyboard/": PlaocPluginVirtualKeyboard,
+  "/": PlaocPlugin,
+  "/plaoc-plugin/system/barcode-scanner/": PlaocPluginBarcodeScanner,
+  "/plaoc-plugin/web-component/barcode-scanning/": PlaocPluginBarcodeScanner,
+  
+  "/plaoc-plugin/system/biometrics/": PlaocPluginBiometrics,
+  "/plaoc-plugin/system/bluetooth/": PlaocPluginBluetooth,
+  "/plaoc-plugin/system/camera/": PlaocPluginCamera,
+  "/plaoc-plugin/system/clipboard/": PlaocPluginClipboard,
+  "/plaoc-plugin/system/config/": PlaocPluginConfig,
+  "/plaoc-plugin/system/device/": PlaocPluginDevice,
+
+  "/plaoc-plugin/system/dweb-service-worker/": PlaocPluginDwebServiceWorker,
+  "/plaoc-plugin/interface/bfs-meta-data/":PlaocPluginDwebServiceWorker,
+  
+  "/plaoc-plugin/system/update-controller/": PlaocPluginUpdateController,
+  "/plaoc-plugin/system/file-system/": PlaocPluginFileSystem,
+  "/plaoc-plugin/system/haptics/": PlaocPluginHaptics,
+  "/plaoc-plugin/system/m-webview/": PlaocPluginMWebview,
+  "/plaoc-plugin/system/network/": PlaocPluginNetwork,
+  "/plaoc-plugin/system/share/": PlaocPluginShare,
+  "/plaoc-plugin/native-ui/safe-area/": PlaocPluginSafeArea,
+  "/plaoc-plugin/native-ui/splash-screen/": PlaocPluginSplashScreen,
+  "/plaoc-plugin/native-ui/status-bar/": PlaocPluginStatusBar,
+  "/plaoc-plugin/native-ui/toast/": PlaocPluginToast,
+  "/plaoc-plugin/native-ui/torch/": PlaocPluginTorch,
+  "/plaoc-plugin/native-ui/navigation-bar/": PlaocPluginNavigationBar,
+  "/plaoc-plugin/native-ui/virtual-keyboard/": PlaocPluginVirtualKeyboard,
 
   // "/plaoc-plugin/interface/": PlaocInterface,
-  "/plaoc-plugin/interface/bluetooth-device/": PlaocInterfaceBluetoothDevice,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-characteristic/":
-    PlaocInterfaceBluetoothRemoteGattCharacteristic,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-descriptor/":
-    PlaocInterfaceBluetoothRemoteGattDescriptor,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-server/":
-    PlaocInterfaceBluetoothRemoteGattServer,
-  "/plaoc-plugin/interface/bluetooth-remote-gatt-service/":
-    PlaocInterfaceBluetoothRemoteGattService,
-  "/plaoc-plugin/interface/fetch-event/": PlaocInterfaceFetchEvent,
-  "/plaoc-plugin/interface/state-observer/": PlaocInterfaceStateObserver,
-  "/plaoc-plugin/interface/window-listener-handle/":
-    PlaocInterfaceWindowListenerHandle,
+  // "/plaoc-plugin/interface/bluetooth-device/": PlaocInterfaceBluetoothDevice,
+  // "/plaoc-plugin/interface/bluetooth-remote-gatt-characteristic/":
+  //   PlaocInterfaceBluetoothRemoteGattCharacteristic,
+  // "/plaoc-plugin/interface/bluetooth-remote-gatt-descriptor/":
+  //   PlaocInterfaceBluetoothRemoteGattDescriptor,
+  // "/plaoc-plugin/interface/bluetooth-remote-gatt-server/":
+  //   PlaocInterfaceBluetoothRemoteGattServer,
+  // "/plaoc-plugin/interface/bluetooth-remote-gatt-service/":
+  //   PlaocInterfaceBluetoothRemoteGattService,
+  // "/plaoc-plugin/interface/fetch-event/": PlaocInterfaceFetchEvent,
+  // "/plaoc-plugin/interface/state-observer/": PlaocInterfaceStateObserver,
+  // "/plaoc-plugin/interface/window-listener-handle/":
+  //   PlaocInterfaceWindowListenerHandle,
 
-  "/plaoc-plugin/web-component/": PlaocWebComponent,
-  "/plaoc-plugin/web-component/barcode-scanning/":
-    PlaocWebComponentBarcodeScanning,
-  "/plaoc-plugin/web-component/bluetooth/": PlaocWebComponentBluetooth,
+  // "/plaoc-plugin/web-component/": PlaocWebComponent,
+  // "/plaoc-plugin/web-component/bluetooth/": PlaocWebComponentBluetooth,
 };
 
 export function createSidebar(basePath: BasePath) {

@@ -6,9 +6,9 @@ tag:
   - barcode-scanner
 ---
 
-BarcodeScannerPlugin 是一个实现了条码解码接口；
+这个插件提供了二维码解析的能力。
 
-```javascript
+```ts
 import { barcodeScannerPlugin } from "@plaoc/plugins";
 barcodeScannerPlugin.process(blob);
 ```
@@ -17,15 +17,11 @@ barcodeScannerPlugin.process(blob);
 
 ### [barcodeScannerPlugin.process()](./process.md)
 
-  解析条码的方法；
+解析二维码。
 
 ### [barcodeScannerPlugin.stop()](./stop.md)
 
-  停止解析条码；
-
-## 事件 Event
-
-- 无
+停止解析二维码。
 
 ## 平台兼容性
 
@@ -34,4 +30,3 @@ barcodeScannerPlugin.process(blob);
 |       process       |   ✅    | ✅  |   ✅    |
 |        stop         |   ✅    | ✅  |   ✅    |
 | getSupportedFormats |   ✅    | ✅  |   ✅    |
-

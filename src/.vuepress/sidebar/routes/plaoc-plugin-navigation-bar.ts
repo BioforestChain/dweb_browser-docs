@@ -9,9 +9,9 @@ export class PlaocPluginNavigationBar extends Array {
         link: basePath + "/plaoc-plugin/",
         children: [
           {
-            text: "Plaoc Plugin",
-            prefix: "plugin/",
-            link: "plugin/",
+            text: "Plugin",
+            prefix: "netive-ui/",
+            link: "netive-ui/",
             children: [
               {
                 text: "NavigationBarPlugin",

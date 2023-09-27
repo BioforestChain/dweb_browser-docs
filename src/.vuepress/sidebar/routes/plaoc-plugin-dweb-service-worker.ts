@@ -8,9 +8,9 @@ export class PlaocPluginDwebServiceWorker extends Array {
       link: basePath + "/plaoc-plugin/",
       children: [
         {
-          text: "Plaoc Plugin",
-          prefix: "plugin/",
-          link: "plugin/",
+          text: "Plugin",
+          prefix: "system/",
+          link: "system/",
           children: [
             {
               text: "dwebServiceWorker",
@@ -50,8 +50,8 @@ export class PlaocPluginDwebServiceWorker extends Array {
         {
           text: "interface",
           icon: "type",
-          prefix: "plugin/dweb-service-worker/interface",
-          link: "plugin/dweb-service-worker/interface",
+          prefix: "interface/bfs-meta-data/",
+          link: "interface/bfs-meta-data/",
           children: [
             {
               text: "$JmmAppInstallManifest",

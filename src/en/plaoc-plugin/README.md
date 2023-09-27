@@ -1,4 +1,6 @@
-# DwebBrowser Plaoc Development Doc
+# Plaoc
+
+plaoc is a "cross-platform web application" development toolkit based on the dweb-browser platform that benchmarks Cordova, Capacitor, and Tauri. It is a front-end plug-in that provides cross-platform access to system functions.
 
 ## Getting Started
 
@@ -13,7 +15,7 @@ npm install @plaoc/plugins
 ```typescript
 import { barcodeScannerPlugin } from "@plaoc/plugins";
 // Call barcode scanning
-const taskPhoto = async () => {
+const startScanning = async () => {
   await barcodeScannerPlugin.startScanning();
 };
 ```
@@ -23,15 +25,15 @@ const taskPhoto = async () => {
 ```html
 <body>
   <dweb-barcode-scanning></dweb-barcode-scanning>
-  <button @click="taskPhoto()">scanner</button>
+  <button @click="startScanning()">scanner</button>
 <script type="module">
 import "@plaoc/plugins"
 const barcodeScanner = document.querySelector("dweb-barcode-scanning")!
 // Call barcode scanning
-async function taskPhoto() {
+async function startScanning() {
   await barcodeScanner.startScanning();
 }
-Object.assign(globalThis,{ taskPhoto })
+Object.assign(globalThis,{ startScanning })
 </script>
 </body>
 ```

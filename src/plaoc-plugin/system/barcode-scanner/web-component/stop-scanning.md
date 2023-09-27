@@ -4,24 +4,13 @@ category:
   - WebComponent
 tag:
   - HTMLDwebBarcodeScanningElement
-  - stopScanning 
+  - stopScanning
 ---
 
-停止扫描；
-
-```js
-HTMLDwebBarcodeScanningElement.stopScanning()
-```
-
-## 参数
-
-  - 无
-
-## 返回值
-
-  void;
+停止正在进行的扫码。
 
 ## 示例
+
 ```html
 <body>
   <dweb-barcode-scanning></dweb-barcode-scanning>
@@ -37,13 +26,23 @@ HTMLDwebBarcodeScanningElement.stopScanning()
 </body>
 ```
 
+
+## 函数签名
+
+```ts
+stopScanning(): void
+```
+
+### 参数
+
+- 无
+
+### 返回值
+
+- void
+
 ## 平台兼容性
 
-| 属性/方法/事件     | Android | IOS | Desktop-Dev | Desktop |
-|:----------------:|:-------:|:---:|:-----------:|:-------:|
-| stopScanning     | ✅       | ✅  | ✅          | X       |
-
-## 相关链接
-[Plaoc WebComponent](../index.md)
-
-
+| 属性/方法/事件 | Android | IOS | Desktop |
+| :------------: | :-----: | :-: | :-----: |
+|  stopScanning  |   ✅    | ✅  |   ✅    |

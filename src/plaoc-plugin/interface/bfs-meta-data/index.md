@@ -128,39 +128,3 @@ app元数据接口；
     描述 App 支持的语言类型
     [可能的值](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) 
 
-
-
-## 方法
-
-  - 无
-
-## 事件
-
-  - 无
-
-## 平台兼容性
-
-| 属性/方法/事件 | Android | IOS | Desktop-Dev | Desktop |
-|:------------:|:-------:|:---:|:-----------:|:-------:|
-| id           | ✅      | ✅  | ✅          | X      |
-| server       | ✅      | ✅  | ✅          | X      |
-| name         | ✅      | ✅  | ✅          | X      |
-| short_name   | ✅      | ✅  | ✅          | X      |
-| icon         | ✅      | ✅  | ✅          | X      |
-| downloadUrl  | ✅      | ✅  | ✅          | X      |
-| images       | ✅      | ✅  | ✅          | X      |
-| description  | ✅      | ✅  | ✅          | X      |
-| author       | ✅      | ✅  | ✅          | X      |
-| version      | ✅      | ✅  | ✅          | X      |
-| categories   | ✅      | ✅  | ✅          | X      |
-| home         | ✅      | ✅  | ✅          | X      |
-| size         | ✅      | ✅  | ✅          | X      |
-| fileHash     | ✅      | ✅  | ✅          | X      |
-| permissions  | ✅      | ✅  | ✅          | X      |
-| plugins      | ✅      | ✅  | ✅          | X      |
-| release_date | ✅      | ✅  | ✅          | X      |
-
-## 相关链接
-
-[UpdateControllerPlugin](../../plugin/update-controller/index.md)
-
