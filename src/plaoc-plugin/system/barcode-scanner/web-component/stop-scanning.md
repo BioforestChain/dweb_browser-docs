@@ -1,5 +1,5 @@
 ---
-title: HTMLDwebBarcodeScanningElement.stopScanning()
+title: stopScanning()
 category:
   - WebComponent
 tag:
@@ -7,7 +7,7 @@ tag:
   - stopScanning
 ---
 
-停止正在进行的扫码。
+停止正在进行的扫码，会立即退出正在进行扫描的摄像头。
 
 ## 示例
 

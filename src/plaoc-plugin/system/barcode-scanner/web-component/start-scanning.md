@@ -1,5 +1,5 @@
 ---
-title: HTMLDwebBarcodeScanningElement.startScanning()
+title: startScanning()
 category:
   - WebComponent
 tag:
@@ -8,6 +8,8 @@ tag:
 ---
 
 开始扫码，这个接口会调用摄像头，但是开发者并不用去管理权限，系统会帮助开发者去申请摄像头权限。
+
+关于权限，开发者只需要处理用户拒绝权限时应该逻辑如何处理。
 
 ## 示例
 
@@ -35,7 +37,12 @@ startScanning(rotation?: number, formats?: SupportedFormat): Promise<ScanResult>
 ### 参数
 
 - rotation
+
+表示图片的旋转角度，一般为0。
+
 - formats
+
+
 
 ### 返回值
 

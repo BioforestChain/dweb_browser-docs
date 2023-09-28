@@ -1,27 +1,16 @@
 ---
-title: HTMLDwebBarcodeScanningElement
+title: dweb-barcode-scanning
 category:
   - WebComponent
 tag:
   - HTMLDwebBarcodeScanningElement
 ---
 
-HTMLDwebBarcodeScanningElement 是一个实现扫码功能的 WebComponent 元素；
-继承与 [HTMLElement](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement);
+HTMLDwebBarcodeScanningElement 是一个实现扫码功能的 WebComponent。
 
-```html
-<dweb-barcode-scanning></dweb-barcode-scanning>
-```
+他的基本原理是使用 `navigator.mediaDevices` 调用摄像头，然后绘制到 canvas 上转换为 blob 数据，接着调用接口进行识别。
 
-## 方法
-
-- [HTMLDwebBarcodeScanningElement.startScanning()](./start-scanning.md)
-
-  启动扫码程序
-
-- [HTMLDwebBarcodeScanningElement.stopScanning()](./stop-scanning.md)
-
-  停止扫码程序；
+因此您也可以使用类似思路定制自己的二维码识别插件。
 
 ## 示例
 
@@ -40,17 +29,13 @@ HTMLDwebBarcodeScanningElement 是一个实现扫码功能的 WebComponent 元�
 </body>
 ```
 
-## 平台兼容性
+## 方法
 
-|   属性/方法/事件    | Android | IOS | Desktop |
-| :-----------------: | :-----: | :-: | :-----: |
-|       getView       |   ✅    | ✅  |   ✅    |
-|       process       |   ✅    | ✅  |   ✅    |
-|        stop         |   ✅    | ✅  |   ✅    |
-|    startScanning    |   ✅    | ✅  |   ✅    |
-|    stopScanning     |   ✅    | ✅  |   ✅    |
-| getSupportedFormats |   ✅    | ✅  |   ✅    |
+### [startScanning()](./start-scanning.md)
 
-## 相关链接
+启动扫码程序，会开启摄像头，开始进行扫描。
 
-[Plaoc WebComponent](../index.md)
+### [stopScanning()](./stop-scanning.md)
+
+停止正在进行的扫码，会退出摄像头拍摄。
+

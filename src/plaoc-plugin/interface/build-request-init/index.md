@@ -142,38 +142,3 @@ tag:
     用于接触关联的window;
     属性值只能够null;
 
-
-## 方法
-
-  - 无
-
- 
-
-## 事件
-
-  -  无
-
-## 平台兼容性
-
-| 属性/方法/事件   | Android | IOS | Desktop-Dev | Desktop |
-|:--------------:|:-------:|:---:|:-----------:|:-------:|
-| base           | ✅      | ✅  | ✅           | X       |
-| search         | ✅      | ✅  | ✅           | X       |
-| body           | ✅      | ✅  | ✅           | X       |
-| cache          | ✅      | ✅  | ✅           | X       |
-| credentials    | ✅      | ✅  | ✅           | X       |
-| headers        | ✅      | ✅  | ✅           | X       |
-| integrity      | ✅      | ✅  | ✅           | X       |
-| keepalive      | ✅      | ✅  | ✅           | X       |
-| method         | ✅      | ✅  | ✅           | X       |
-| mode           | ✅      | ✅  | ✅           | X       |
-| referrer       | ✅      | ✅  | ✅           | X       |
-| referrerPolicy | ✅      | ✅  | ✅           | X       |
-| signal         | ✅      | ✅  | ✅           | X       |
-| widow          | ✅      | ✅  | ✅           | X       |
-
-## 相关链接
-
-[]()
-
-

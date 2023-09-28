@@ -33,7 +33,7 @@ export class PlaocPluginBarcodeScanner extends Array {
           ],
         },
         {
-          text: "HTMLDwebBarcodeScanningElement",
+          text: "WebComponent",
           prefix: "system/barcode-scanner/web-component/",
           link: "system/barcode-scanner/web-component/",
           children: [
