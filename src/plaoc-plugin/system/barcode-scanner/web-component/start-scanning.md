@@ -40,13 +40,16 @@ startScanning(rotation?: number, formats?: SupportedFormat): Promise<ScanResult>
 
 表示图片的旋转角度，一般为0。
 
-- formats
+- [formats](../interface/supported-format.md)
 
+支持的解码类型，一般默认为`QR_CODE`。
 
 
 ### 返回值
 
-- ScanResult
+- [ScanResult](../interface/scan-result.md)
+
+扫描结果的返回值，包含结果和用户是否授权了摄像头。
 
 ## 平台兼容性
 
