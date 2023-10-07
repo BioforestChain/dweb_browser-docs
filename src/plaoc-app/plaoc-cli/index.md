@@ -40,7 +40,7 @@ tag:
 ```bash
   plaoc-app
   ├── ......其他工程文件
-  ├── mainifest.json
+  ├── manifest.json
   └── plaoc.json
 ```
 
@@ -104,10 +104,10 @@ plaoc bundle ./dist
   ├── ......其他工程文件
   ├── plaoc-app1
     ├── ./dist  //项目打包完的源码文件
-    ├── mainifest.json
+    ├── manifest.json
   ├── plaoc-app2
     ├── ./dist  //项目打包完的源码文件
-    └── mainifest.json
+    └── manifest.json
 ```
 
 假设您目录下有多个项目，就可以像下面这样指定目录去打包。

@@ -15,7 +15,7 @@ plaoc 提供了类似 nginx 的重定向功能,使用[URLPattern](https://develo
 ```bash
   plaoc-app
   ├── ......其他工程文件
-  ├── mainifest.json
+  ├── manifest.json
   └── plaoc.json
 ```
 

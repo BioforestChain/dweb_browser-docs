@@ -15,7 +15,7 @@ First create `plaoc.json` in your project root directory, path as follows:
 ```bash
 plaoc-app
 ├── ......other project files
-├── mainifest.json
+├── manifest.json
 └── plaoc.json
 ```
 

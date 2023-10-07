@@ -39,7 +39,7 @@ Assuming the project directory is as follows:
 ```bash
 plaoc-app
 ├── ......other project files  
-├── mainifest.json
+├── manifest.json
 └── plaoc.json
 ```
 
@@ -103,10 +103,10 @@ plaoc-main
 ├── ......other project files
 ├── plaoc-app1
    ├── ./dist //Project packaged source code files  
-   ├── mainifest.json
+   ├── manifest.json
 ├── plaoc-app2
    ├── ./dist //Project packaged source code files
-   └── mainifest.json
+   └── manifest.json
 ```
 
 If you have multiple projects under your directory, you can specify the directory to package them like below.

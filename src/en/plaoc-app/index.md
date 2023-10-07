@@ -27,10 +27,10 @@ It mainly declares some application parameters and does some display when the us
 ```bash
 plaoc-app
 ├── ......other project files
-└── mainifest.json
+└── manifest.json
 ```
 
-The following sample configuration file, copy the following content and paste it into `mainifest.json` in the root directory. [Click to view field details](../plaoc-plugin/interface/bfs-meta-data/index.md)
+The following sample configuration file, copy the following content and paste it into `manifest.json` in the root directory. [Click to view field details](../plaoc-plugin/interface/bfs-meta-data/index.md)
 
 ```json
 {
