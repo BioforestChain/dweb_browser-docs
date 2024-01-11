@@ -1,0 +1,60 @@
+---
+title: NavigationBarPlugin.state
+category:
+  - Plugin
+tag: 
+  - plugin
+  - StateObserve
+  - state
+---
+
+The state object of the system navigation bar;
+The value is an object implementing the [StateObserver](../../interface/state-observer/index.md) interface.
+
+## Properties
+
+  - state.currentState
+
+    The current state object; 
+    The value is an object implementing part of the [State](../../interface/state/index.md) interface;
+    currentState can be used to get and set state; \[Generally do not manually set the value of currentState, it will update automatically\]
+    The value is undefined before the initial update completes; 
+    Valid currentState properties include: 
+    \["overlay","visible","style","color", "insets"\]
+
+## Methods  
+
+  - [state.*jsonlines()](../../interface/state-observer/jsonlines.md)
+
+    A Generator function;
+    Implements reading and listening of plugin state changes;
+    The listener set via StateObserver.onChange() will be triggered on state changes.
+
+  - [state.stopObserve()](../../interface/state-observer/stopObserve.md)
+
+    Stop observing state changes
+
+  - [state.onChange(listener)](../../interface/state-observer/onChange.md)
+
+    Add a listener; multiple listeners can be added via multiple calls
+  
+  - [state.getState([force_update])](../../interface/state-observer/getState.md)
+
+    Get the current state value
+
+## Events
+
+  - None
+
+## Platform Support  
+
+| Property/Method/Event | Android | iOS | Desktop-Dev | Desktop |
+|:------------:|:-------:|:---:|:-----------:|:-------:|
+| currentState | ✅      | ✅  | ✅          | X       |
+| jsonlines    | ✅      | ✅  | ✅          | X       |
+| stopObserve  | ✅      | ✅  | ✅          | X       |
+| onChange     | ✅      | ✅  | ✅          | X       |
+| getState     | ✅      | ✅  | ✅          | X       |
+  
+## Related Links
+[NavigationBarPlugin](./index.md)
