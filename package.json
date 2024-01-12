@@ -3,8 +3,10 @@
   "version": "2.0.0",
   "description": "dweb-browser",
   "devDependencies": {
+    "@plaoc/plugins": "^0.6.0",
     "@types/node": "^20.11.0",
     "markdown-it-shikiji": "^0.9.18",
+    "shikiji": "^0.9.18",
     "shikiji-twoslash": "^0.9.18",
     "vitepress": "1.0.0-rc.36",
     "vitepress-plugin-twoslash": "^0.9.18"

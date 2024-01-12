@@ -30,7 +30,7 @@ plaoc-app
 └── manifest.json
 ```
 
-The following sample configuration file, copy the following content and paste it into `manifest.json` in the root directory. [Click to view field details](../plugin/interface/bfs-meta-data/index.md)
+The following sample configuration file, copy the following content and paste it into `manifest.json` in the root directory. [Click to view field details](../plugins/interface/metadata-template.md)
 
 ```json
 {

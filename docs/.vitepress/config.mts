@@ -29,6 +29,7 @@ export default defineConfig({
             // Remove member access
             .replace(/^[a-zA-Z0-9_]*(\<[^\>]*\>)?\./, '')
         },
+        explicitTrigger: true
       }),
       {
         // Render custom themes with codeblocks

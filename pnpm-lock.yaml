@@ -5,10 +5,16 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@plaoc/plugins':
+    specifier: ^0.6.0
+    version: 0.6.0
   '@types/node':
     specifier: ^20.11.0
     version: 20.11.0
   markdown-it-shikiji:
+    specifier: ^0.9.18
+    version: 0.9.18
+  shikiji:
     specifier: ^0.9.18
     version: 0.9.18
   shikiji-twoslash:
@@ -452,6 +458,12 @@ packages:
 
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+    dev: true
+
+  /@plaoc/plugins@0.6.0:
+    resolution: {integrity: sha512-U+hHXtobtUntfcyg82367dtb5eqJqiQMqqLgV9WolN4HCKvI6So+a/AtkucJxtlBNgJaZq+jFBHA2smAH/xE9w==}
+    dependencies:
+      tslib: 2.6.2
     dev: true
 
   /@rollup/rollup-android-arm-eabi@4.9.4:
@@ -1415,6 +1427,10 @@ packages:
 
   /trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
+    dev: true
+
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
   /typescript@5.3.3:
