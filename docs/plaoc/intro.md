@@ -67,22 +67,16 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 
 - 执行安装命令:
 
-::: code-tabs#shell
-@tab:active PNPM
-
-```bash
+::: code-group
+```bash [PNPM]
   pnpm add -g @plaoc/cli
 ```
 
-@tab YARN
-
-```bash
+```bash [YARN]
   yarn global add @plaoc/cli
 ```
 
-@tab NPM
-
-```bash
+```bash [NPM]
   npm i -g @plaoc/cli
 ```
 
@@ -129,16 +123,13 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 
 接下来使用指令运行 `dweb-browser`来启动开发者模式。
 
-::: code-tabs#shell
-@tab:active Windows
+::: code-group
 
-```bash
+```bash [Windows]
 & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
 ```
 
-@tab MacOS
-
-```bash
+```bash [MacOS]
 open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
 ```
 

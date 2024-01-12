@@ -14,19 +14,16 @@ tag:
 
 - 首先需要安装 plaoc 命令行工具。
 
-::: code-tabs#shell
-@tab:active PNPM
-```bash
+::: code-group
+```bash [PNPM]
   pnpm add -g @plaoc/cli
 ```
 
-@tab YARN
-```bash
+```bash [YARN]
   yarn global add @plaoc/cli
 ```
 
-@tab NPM
-```bash
+```bash [NPM]
   npm i -g @plaoc/cli
 ```
 

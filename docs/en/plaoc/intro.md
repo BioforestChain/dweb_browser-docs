@@ -68,22 +68,16 @@ Now your app has been declared as a Plaoc app.
 
 - Execute the installation command:
 
-::: code-tabs#shell
-@tab:active PNPM
-
-```bash
+::: code-group
+```bash [PNPM]
   pnpm add -g @plaoc/cli
 ```
 
-@tab YARN
-
-```bash
+```bash [YARN]
   yarn global add @plaoc/cli
 ```
 
-@tab NPM
-
-```bash
+```bash [NPM]
   npm i -g @plaoc/cli
 ```
 
@@ -130,16 +124,13 @@ First you need to download the [dweb-browser desktop](https://github.com/Biofore
 
 Next, run `dweb-browser` with the command to start developer mode.
 
-::: code-tabs#shell
-@tab:active Windows
+::: code-group
 
-```bash
+```bash [Windows]
 & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
 ```
 
-@tab MacOS
-
-```bash
+```bash [MacOS]
 open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
 ```
 

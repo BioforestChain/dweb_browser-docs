@@ -37,7 +37,7 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '/en/plugins/'
     },
     {
-      text: "2.0.0",
+      text: "2.x.x",
       items: [
         {
           text: 'Monthly',
