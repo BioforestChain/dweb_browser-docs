@@ -53,7 +53,7 @@ function nav(): DefaultTheme.NavItem[] {
     {
       text: 'Plaoc',
       link: '/plaoc/intro',
-      activeMatch: '/plaoc/'
+      activeMatch: '/plaoc/intro'
     },
     {
       text: 'Plugins',

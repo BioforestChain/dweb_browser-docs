@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Intro
-      link: /en/plaoc/intro
+      link: /en/intro
     - theme: alt
       text: View on GitHub
       link: https://github.com/BioforestChain/dweb_browser
