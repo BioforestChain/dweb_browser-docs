@@ -2,7 +2,7 @@ import { defineConfig, type DefaultTheme } from 'vitepress'
 
 export const zh = defineConfig({
   lang: 'zh-Hans',
-  description: '一个提供分布式网络|应用附着的浏览器。',
+  description: '一个提供分布式网络 | 应用附着的浏览器。',
 
   themeConfig: {
     nav: nav(),
@@ -62,7 +62,16 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: "2.0.0",
-      link: "https://github.com/BioforestChain/dweb_browser"
+      items: [
+        {
+          text: 'Monthly',
+          link: 'https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md'
+        },
+        {
+          text: 'Get Start for Developer',
+          link: 'https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md'
+        }
+      ]
     }
   ]
 }
