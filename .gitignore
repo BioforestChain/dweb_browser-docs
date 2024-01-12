@@ -8,5 +8,5 @@ dist
 
 .DS_Store
 
-.vitepress/cache
-.vitepress/dist
+docs/.vitepress/cache
+docs/.vitepress/dist
