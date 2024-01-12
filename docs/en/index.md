@@ -6,6 +6,9 @@ hero:
   name: "DwebBrowser"
   text: ""
   tagline: A browser that provides distributed network and application attachment.。
+  image:
+    src: /logo.svg
+    alt: dweb
   actions:
     - theme: brand
       text: Intro
@@ -13,9 +16,6 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/BioforestChain/dweb_browser
-  image:
-    src: /logo.svg
-    alt: dweb
 
 # features:
 #   - title: Feature A
