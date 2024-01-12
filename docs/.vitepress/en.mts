@@ -9,7 +9,7 @@ export const en = defineConfig({
 
     sidebar: {
       '/en/plaoc/': { base: '/en/plaoc/', items: sidebarPlaoc() },
-      '/en/plugins/': { base: '/en/plugins/', items: sidebarPlugins() }
+      // '/en/plugins/': { base: '/en/plugins/', items: sidebarPlugins() }
     },
 
     editLink: {
@@ -28,12 +28,12 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: 'Plaoc',
-      link: '/en/plaoc/intro',
+      link: '/en/plaoc/index',
       activeMatch: '/en/plaoc/'
     },
     {
       text: 'Plugins',
-      link: '/en/plugins/intro',
+      link: '/en/plugins/index',
       activeMatch: '/en/plugins/'
     },
     {
@@ -58,8 +58,8 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
       text: 'Plaoc app',
       collapsed: false,
       items: [
-        { text: 'redirect-config', link: '/redirect-config/intro' },
-        { text: 'manifest', link: '/manifest/intro' }
+        { text: 'redirect-config', link: '/redirect-config/index' },
+        { text: 'manifest', link: '/manifest/index' }
       ]
     },
     {
@@ -70,7 +70,7 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
       text: 'Application Store',
       link: "/app-store"
     },
-    { text: 'plugins', base: '/en/plugins/', link: 'intro' }
+    { text: 'plugins', base: '/en/plugins/', link: 'index' }
   ]
 }
 
@@ -79,38 +79,38 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
     {
       text: 'plugins',
       items: [
-        { text: 'CloseWatcher', link: 'close-watcher/intro' },
+        { text: 'CloseWatcher', link: 'close-watcher/index' },
         {
           text: 'System',
           base: '/en/plugins/system/',
           items: [
-            { text: 'BarcodeScannerPlugin', link: 'barcode-scanner/intro' },
-            { text: 'BiometricsPlugin', link: 'biometrics/intro' },
-            { text: 'BluetoothPlugin', link: 'bluetooth/intro' },
-            { text: 'CameraPlugin', link: 'camera/intro' },
-            { text: 'ClipboardPlugin', link: 'clipboard/intro' },
-            { text: 'ConfigPlugin', link: 'config/intro' },
-            { text: 'DevicePlugin', link: 'device/intro' },
-            { text: 'UpdateControllerPlugin', link: 'update-controller/intro' },
-            { text: 'dwebServiceWorker', link: 'dweb-service-worker/intro' },
-            { text: 'FileSystemPlugin', link: 'file-system/intro' },
-            { text: 'HapticsPlugin', link: 'haptics/intro' },
-            { text: 'MWebviewPlugin', link: 'm-webview/intro' },
-            { text: 'NetworkPlugin', link: 'network/intro' },
-            { text: 'SharePlugin', link: 'share/intro' },
+            { text: 'BarcodeScannerPlugin', link: 'barcode-scanner/index' },
+            { text: 'BiometricsPlugin', link: 'biometrics/index' },
+            { text: 'BluetoothPlugin', link: 'bluetooth/index' },
+            { text: 'CameraPlugin', link: 'camera/index' },
+            { text: 'ClipboardPlugin', link: 'clipboard/index' },
+            { text: 'ConfigPlugin', link: 'config/index' },
+            { text: 'DevicePlugin', link: 'device/index' },
+            { text: 'UpdateControllerPlugin', link: 'update-controller/index' },
+            { text: 'dwebServiceWorker', link: 'dweb-service-worker/index' },
+            { text: 'FileSystemPlugin', link: 'file-system/index' },
+            { text: 'HapticsPlugin', link: 'haptics/index' },
+            { text: 'MWebviewPlugin', link: 'm-webview/index' },
+            { text: 'NetworkPlugin', link: 'network/index' },
+            { text: 'SharePlugin', link: 'share/index' },
           ]
         },
         {
           text: 'Native-UI',
           base: '/en/plugins/native-ui/',
           items: [
-            { text: 'StatusBarPlugin', link: 'status-bar/intro' },
-            { text: 'NavigationBarPlugin', link: 'navigation-bar/intro' },
-            { text: 'SafeAreaPlugin', link: 'safe-area/intro' },
-            { text: 'VirtualKeyboardPlugin', link: 'virtual-keyboard/intro' },
-            { text: 'SplashScreenPlugin', link: 'splash-screen/intro' },
-            { text: 'ToastPlugin', link: 'toast/intro' },
-            { text: 'TorchPlugin', link: 'torch/intro' },
+            { text: 'StatusBarPlugin', link: 'status-bar/index' },
+            { text: 'NavigationBarPlugin', link: 'navigation-bar/index' },
+            { text: 'SafeAreaPlugin', link: 'safe-area/index' },
+            { text: 'VirtualKeyboardPlugin', link: 'virtual-keyboard/index' },
+            { text: 'SplashScreenPlugin', link: 'splash-screen/index' },
+            { text: 'ToastPlugin', link: 'toast/index' },
+            { text: 'TorchPlugin', link: 'torch/index' },
           ]
         }
       ]

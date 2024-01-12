@@ -87,7 +87,7 @@ plaoc bundle ./dist
 如果不在同一目录，可以参考下面的 `--dir` 目录进行指定。
 
 ::: warning
-注意，不可以使用 plaoc bundle http://localhost:5173 打包一个动态服务。
+注意，不可以使用 plaoc bundle `http://localhost:5173` 打包一个动态服务。
 :::
 
 ### 指定`manifest.json`目录

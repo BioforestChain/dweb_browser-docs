@@ -86,7 +86,7 @@ The `./dist` directory is the source code directory for your packaging. And you 
 If not in the same directory, you can refer to the `--dir` directory below for specification.
 
 ::: warning 
-Note that plaoc bundle http://localhost:5173 cannot be used to package a dynamic service.
+Note that plaoc bundle `http://localhost:5173` cannot be used to package a dynamic service.
 :::
 
 ### Specify `manifest.json` directory
