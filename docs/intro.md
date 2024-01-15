@@ -139,7 +139,7 @@ npm install -g @plaoc/cli
 
 `plaoc bundle ./dir`
 
-会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请到[plaoc lic](./plaoc/cli.md)查看详细文档。
+会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请到[plaoc lic](./plaoc/cli)查看详细文档。
 
 - 开发者模式
 

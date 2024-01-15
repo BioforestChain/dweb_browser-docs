@@ -119,22 +119,22 @@ PlaocApp 主域名，跟 id 挂载的域名需要相同
 
 
 作为Plaoc-app的图标表示；
-属性值是一组 [ImageResource](./image-resource.md)对象;
+属性值是一组 [ImageResource](./image-resource)对象;
 
 ### [screenshots](https://w3c.github.io/manifest/#screenshots-member)
 
 PlaocApp 截屏图像；
-属性值是一组 [ImageResource](./image-resource.md)对象;
+属性值是一组 [ImageResource](./image-resource)对象;
 
 ### [display](https://w3c.github.io/manifest/#display-member)
 
 PlaocApp 显示模式；
-属性值是一个 [DisplayModeType](./display-mode-type.md)对象
+属性值是一个 [DisplayModeType](./display-mode-type)对象
 
 ### [orientation](https://w3c.github.io/manifest/#orientation-member)
 
 窗口的默认方向；
-值是一个字符串；[查看orientation合法范围](./orientation.md)
+值是一个字符串；[查看orientation合法范围](./orientation)
 
 ### [theme_color](https://w3c.github.io/manifest/#theme_color-member)
 

@@ -110,19 +110,19 @@ Language tag; Specifies the primary language for the values of directional membe
 
 ### [icons](https://w3c.github.io/manifest/#icons-member-0) 
 
-As icon representations of Plaoc-app; The attribute value is a set of [ImageResource](./image-resource.md) objects;
+As icon representations of Plaoc-app; The attribute value is a set of [ImageResource](./image-resource) objects;
 
 ### [screenshots](https://w3c.github.io/manifest/#screenshots-member)
 
-PlaocApp screenshot images; The attribute value is a set of [ImageResource](./image-resource.md) objects;
+PlaocApp screenshot images; The attribute value is a set of [ImageResource](./image-resource) objects;
 
 ### [display](https://w3c.github.io/manifest/#display-member) 
 
-PlaocApp display mode; The attribute value is a [DisplayModeType](./display-mode-type.md) object
+PlaocApp display mode; The attribute value is a [DisplayModeType](./display-mode-type) object
 
 ### [orientation](https://w3c.github.io/manifest/#orientation-member)
 
-The default orientation of the window; The value is a string; [Check the legal range of orientation](./orientation.md) 
+The default orientation of the window; The value is a string; [Check the legal range of orientation](./orientation) 
 
 ### [theme_color](https://w3c.github.io/manifest/#theme_color-member)
 

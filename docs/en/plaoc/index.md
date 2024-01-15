@@ -30,7 +30,7 @@ plaoc-app
 └── manifest.json
 ```
 
-The following sample configuration file, copy the following content and paste it into `manifest.json` in the root directory. [Click to view field details](../plugins/interface/metadata-template.md)
+The following sample configuration file, copy the following content and paste it into `manifest.json` in the root directory. [Click to view field details](../plugins/interface/metadata-template)
 
 ```json
 {
@@ -64,7 +64,7 @@ Now your app has been declared as a Plaoc app.
 >
 > Example: `npx plaoc bundle ./usr/www`
 
-@plaoc/cli is the development tool for plaoc that helps applications run, package, and publish. Specific command prompts can be viewed using `--help` or [documentation](./cli.md).
+@plaoc/cli is the development tool for plaoc that helps applications run, package, and publish. Specific command prompts can be viewed using `--help` or [documentation](./cli).
 
 - Execute the installation command:
 
@@ -150,7 +150,7 @@ plaoc bundle ./dist
 
 ### Publish
 
-Upload to the public plaoc app store or upload to your app's official website. For information about how to provide downloads from the official app website or how to provide downloads from the app store, visit: [App Store](./app-store.md).
+Upload to the public plaoc app store or upload to your app's official website. For information about how to provide downloads from the official app website or how to provide downloads from the app store, visit: [App Store](./app-store).
 
 If you have installed the Dweb Browser app on your phone, you can first upload the two files you packaged to the same folder, and then generate the QR code from the `metadata.json` address.
 
