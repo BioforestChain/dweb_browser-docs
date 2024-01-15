@@ -79,9 +79,10 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: 'Plaoc app',
+      text: 'Plaoc App',
       collapsed: false,
       items: [
+        { text: '开发流程', link: '/index' },
         { text: '重定向配置', link: '/redirect-config/index' },
         { text: '配置清单', link: '/manifest/index' }
       ]

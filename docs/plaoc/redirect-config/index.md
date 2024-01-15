@@ -1,10 +1,4 @@
----
-title: 重定向
-category:
-  - Plaoc
-tag:
-  - redirect
----
+# 重定向配置
 
 plaoc 提供了类似 nginx 的重定向功能,使用[URLPattern](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API)来解析匹配的路径。
 
