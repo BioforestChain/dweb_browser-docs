@@ -2,7 +2,8 @@ import { defineConfig } from 'vitepress'
 import { en } from './en.mjs'
 import { zh, search as zhSearch } from './zh.mjs'
 import { transformerTwoslash } from 'vitepress-plugin-twoslash'
-import { bundledThemes } from 'shikiji'
+// import { bundledThemes } from 'shikiji'
+import vite from './vite.config.mjs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -15,11 +16,11 @@ export default defineConfig({
       light: 'vitesse-light',
       dark: 'vitesse-dark',
     },
-    async shikijiSetup(shikiji) {
-      await Promise.all(Object.keys(bundledThemes).map(async (theme) => {
-        await shikiji.loadTheme(theme as any)
-      }))
-    },
+    // async shikijiSetup(shikiji) {
+    //   await Promise.all(Object.keys(bundledThemes).map(async (theme) => {
+    //     await shikiji.loadTheme(theme as any)
+    //   }))
+    // },
     codeTransformers: [transformerTwoslash()]
   },
   head: [
@@ -44,10 +45,5 @@ export default defineConfig({
     root: { label: '简体中文', ...zh },
     en: { label: 'English', ...en }
   },
-  vite: {
-    ssr: {
-      // issue: https://github.com/antfu/shikiji/issues/86
-      noExternal: ['shikiji-twoslash', 'vitepress-plugin-twoslash']
-    }
-  }
+  vite
 })

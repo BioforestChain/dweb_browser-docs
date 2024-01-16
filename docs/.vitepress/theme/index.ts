@@ -7,6 +7,6 @@ import type { EnhanceAppContext, Theme } from 'vitepress'
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }: EnhanceAppContext) {
-    app.use(TwoSlashFloatingVue)
+    app.use(TwoSlashFloatingVue as any)
   },
 } satisfies Theme

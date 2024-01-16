@@ -9,7 +9,7 @@ export const zh = defineConfig({
 
     sidebar: {
       "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
-      // '/plugins/': { base: '/plugins/', items: sidebarPlugins() }
+      '/plugins/': { base: '/plugins/', items: sidebarPlugins() }
     },
 
     editLink: {
@@ -55,11 +55,11 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: "/plaoc/",
       link: "/plaoc/flow"
     },
-    // {
-    //   text: "Plugins",
-    //   link: "/plugins/index",
-    //   activeMatch: "/plugins/",
-    // },
+    {
+      text: "Plugins",
+      activeMatch: "/plugins/",
+      link: "/plugins/web-components",
+    },
     {
       text: "2.x.x",
       items: [
@@ -89,15 +89,7 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
         { text: "应用商店", link: "app-store" },
       ],
     },
-    // {
-    //   text: "@plaoc/cli",
-    //   link: "/cli",
-    // },
-    // {
-    //   text: "应用商店",
-    //   link: "/app-store",
-    // },
-    { text: "插件系统", base: "/plugins/", link: "index" },
+    { text: "插件系统", base: "/plugins/", link: "web-components" },
   ];
 }
 
@@ -108,40 +100,41 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
     {
       text: "插件系统",
       items: [
-        { text: "CloseWatcher", link: "close-watcher/index" },
+        { text: "简介", link: "web-components" },
+        // { text: "CloseWatcher", link: "close-watcher/index" },
         {
-          text: "System",
-          base: "/plugins/system/",
+          text: "Web Components",
+          // base: "/plugins/system/",
           items: [
-            { text: "BarcodeScannerPlugin", link: "barcode-scanner/index" },
-            { text: "BiometricsPlugin", link: "biometrics/index" },
-            { text: "BluetoothPlugin", link: "bluetooth/index" },
-            { text: "CameraPlugin", link: "camera/index" },
-            { text: "ClipboardPlugin", link: "clipboard/index" },
-            { text: "ConfigPlugin", link: "config/index" },
-            { text: "DevicePlugin", link: "device/index" },
-            { text: "UpdateControllerPlugin", link: "update-controller/index" },
-            { text: "dwebServiceWorker", link: "dweb-service-worker/index" },
-            { text: "FileSystemPlugin", link: "file-system/index" },
-            { text: "HapticsPlugin", link: "haptics/index" },
-            { text: "MWebviewPlugin", link: "m-webview/index" },
-            { text: "NetworkPlugin", link: "network/index" },
-            { text: "SharePlugin", link: "share/index" },
+            { text: "BarcodeScannerPlugin", link: "barcode-scanner" },
+            // { text: "BiometricsPlugin", link: "biometrics/index" },
+            // { text: "BluetoothPlugin", link: "bluetooth/index" },
+            // { text: "CameraPlugin", link: "camera/index" },
+            // { text: "ClipboardPlugin", link: "clipboard/index" },
+            // { text: "ConfigPlugin", link: "config/index" },
+            // { text: "DevicePlugin", link: "device/index" },
+            // { text: "UpdateControllerPlugin", link: "update-controller/index" },
+            // { text: "dwebServiceWorker", link: "dweb-service-worker/index" },
+            // { text: "FileSystemPlugin", link: "file-system/index" },
+            // { text: "HapticsPlugin", link: "haptics/index" },
+            // { text: "MWebviewPlugin", link: "m-webview/index" },
+            // { text: "NetworkPlugin", link: "network/index" },
+            // { text: "SharePlugin", link: "share/index" },
           ],
         },
-        {
-          text: "Native-UI",
-          base: "/plugins/native-ui/",
-          items: [
-            { text: "StatusBarPlugin", link: "status-bar/index" },
-            { text: "NavigationBarPlugin", link: "navigation-bar/index" },
-            { text: "SafeAreaPlugin", link: "safe-area/index" },
-            { text: "VirtualKeyboardPlugin", link: "virtual-keyboard/index" },
-            { text: "SplashScreenPlugin", link: "splash-screen/index" },
-            { text: "ToastPlugin", link: "toast/index" },
-            { text: "TorchPlugin", link: "torch/index" },
-          ],
-        },
+        // {
+        //   text: "Native-UI",
+        //   base: "/plugins/native-ui/",
+        //   items: [
+        //     { text: "StatusBarPlugin", link: "status-bar/index" },
+        //     { text: "NavigationBarPlugin", link: "navigation-bar/index" },
+        //     { text: "SafeAreaPlugin", link: "safe-area/index" },
+        //     { text: "VirtualKeyboardPlugin", link: "virtual-keyboard/index" },
+        //     { text: "SplashScreenPlugin", link: "splash-screen/index" },
+        //     { text: "ToastPlugin", link: "toast/index" },
+        //     { text: "TorchPlugin", link: "torch/index" },
+        //   ],
+        // },
       ],
     },
   ];
