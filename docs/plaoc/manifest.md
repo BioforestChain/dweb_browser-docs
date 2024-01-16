@@ -31,11 +31,10 @@ interface MainServer {
 
 - `name`：__*string*__。应用显示的名字。同`W3C`的`WebApp`标准的[name](https://w3c.github.io/manifest/#dfn-name)。
 - `short_name`：__*string*__。应用显示的简短名字。同`W3C`的`WebApp`标准的[short_name](https://w3c.github.io/manifest/#dfn-short_name)。
-- `description`：__*string*__。应用显示的简短名字。同`W3C`的`WebApp`标准的[description](https://w3c.github.io/manifest/#description-member)。
+- `description`：__*string*__。应用简介。同`W3C`的`WebApp`标准的[description](https://w3c.github.io/manifest/#description-member)。
 - `dir`：__*string?*__。用于文本对齐方式。同`W3C`的`WebApp`标准的[dir](https://w3c.github.io/manifest/#dir-member)。
 - `lang`：__*string?*__。为清单的具有方向性的成员的值指定主要语言（因为知道语言也有助于方向性）。同`W3C`的`WebApp`标准的[lang](https://w3c.github.io/manifest/#lang-member)。
-- `icons`：__*string*__。应用显示的简短名字。同`W3C`的`WebApp`标准的[icons](https://w3c.github.io/manifest/#icons-member)。
-- `description`：__*string*__。应用显示的简短名字。同`W3C`的`WebApp`标准的[description](https://w3c.github.io/manifest/#description-member)。
+- `icons`：__*string*__。icon图标集。同`W3C`的`WebApp`标准的[icons](https://w3c.github.io/manifest/#icons-member)。
 <!-- - `description`：string。应用显示的简短名字。同`W3C`的`WebApp`标准的[description](https://w3c.github.io/manifest/#description-member)。
 - `description`：string。应用显示的简短名字。同`W3C`的`WebApp`标准的[description](https://w3c.github.io/manifest/#description-member)。
 - `description`：string。应用显示的简短名字。同`W3C`的`WebApp`标准的[description](https://w3c.github.io/manifest/#description-member)。
@@ -44,13 +43,13 @@ interface MainServer {
 - `homepage_url`：__*string*__。应用官网首页地址。同`Chrome`的`manifest`标准的[homepage_url](https://developer.chrome.com/docs/extensions/mv3/manifest/homepage_url/)。
 
 - `bundle_*`：__*string*__。使用`@plaoc/cli`工具自动生成的打包地址及安全相关校验信息等。
-- `public_key_url`：__*string*__。该链接必须使用和`id`同域名的网站链接。
+- `public_key_url`：__*string?*__。该链接必须使用和`id`同域名的网站链接。
 ::: info 说明：请求回来是一个“算法+公钥地址”的格式 `{algorithm}:hex;{publicKey}`
  比如说 `rsa-sha256:hex;2...1`
 :::
 
 - `languages`：__*string[]?*__。支持的语言。[语言代码](http://www.lingoes.net/zh/translator/langcode.htm)。
-- `images`：__*string[]*__。安装应用时的展示图。
+- `images`：__*string[]?*__。安装应用时的展示图。
 - `change_log`：__*string*__。安装应用时展示的更新日志。
 - `author`：__*string[]*__。安装应用时展示的作者信息。
 - `release_date`：__*string*__。安装应用时展示的发布日期。
@@ -58,7 +57,7 @@ interface MainServer {
 - `categories`：__*string[]*__。当前推荐使用`["application"]`，后续会开放更多。
 - `display`：__*"fullscreen" | "standalone" | "minimal-ui" | "browser" | undefined*__。应用的显示模式。
 - `orientation`：__*"any" | "landscape" | "landscape-primary" | "landscape-secondary" | "natural" | "portrait" | "portrait-primary" | "portrait-secondary" | undefined*__。应用的窗口的默认方向。
-- __......还有一些字段暂未启用__
+- __......还有一些字段暂未启用。__
 
 ## Example
 ```json
