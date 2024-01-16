@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # @plaoc/cli
 
 这是 plaoc 命令行工具，负责 plaoc app 的开发，打包，发布。
