@@ -35,7 +35,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.SERVER_IP }}
           REMOTE_USER: dwebuser
           REMOTE_PORT: 18879
-          SOURCE:  src/.vuepress/dist/  # VuePress 生成的静态文件目录
+          SOURCE:  src/.vitepress/dist/  # VitePress 生成的静态文件目录
           TARGET: /data/Web/dweb-browser  # 服务器上的目标目录
 
       # - name: 📂Deploy to Server
