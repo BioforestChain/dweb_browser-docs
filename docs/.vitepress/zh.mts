@@ -122,7 +122,10 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
           text: "Native UI",
           collapsed: false,
           items: [
-            { text: "StatusBarPlugin", link: "status-bar" }
+            { text: "StatusBarPlugin", link: "status-bar" },
+            { text: "NavigationBarPlugin", link: "navigation-bar" },
+            { text: "VirtualKeyboardPlugin", link: "virtual-keyboard" },
+            { text: "TorchPlugin", link: "torch" },
           ]
         },
         {
@@ -130,6 +133,8 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
           collapsed: false,
           items: [
             { text: "CloseWatcher", link: "close-watcher" },
+            { text: "DwebServiceWorker", link: "dweb-service-worker" },
+            { text: "DwebUpdateController", link: "dweb-update-controller" },
           ],
         },
       ],
