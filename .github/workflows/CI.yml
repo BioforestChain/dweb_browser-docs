@@ -23,7 +23,7 @@ jobs:
       - name: Build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
-        run: npm install && npm run build
+        run: npm install && npm run docs:build
 
 
       - name: Deploy to Server
