@@ -101,40 +101,37 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
       text: "插件系统",
       items: [
         { text: "简介", link: "web-components" },
-        // { text: "CloseWatcher", link: "close-watcher/index" },
         {
           text: "Web Components",
-          // base: "/plugins/system/",
+          collapsed: false,
           items: [
             { text: "BarcodeScannerPlugin", link: "barcode-scanner" },
-            // { text: "BiometricsPlugin", link: "biometrics/index" },
-            // { text: "BluetoothPlugin", link: "bluetooth/index" },
-            // { text: "CameraPlugin", link: "camera/index" },
-            // { text: "ClipboardPlugin", link: "clipboard/index" },
-            // { text: "ConfigPlugin", link: "config/index" },
-            // { text: "DevicePlugin", link: "device/index" },
-            // { text: "UpdateControllerPlugin", link: "update-controller/index" },
-            // { text: "dwebServiceWorker", link: "dweb-service-worker/index" },
-            // { text: "FileSystemPlugin", link: "file-system/index" },
-            // { text: "HapticsPlugin", link: "haptics/index" },
-            // { text: "MWebviewPlugin", link: "m-webview/index" },
-            // { text: "NetworkPlugin", link: "network/index" },
-            // { text: "SharePlugin", link: "share/index" },
+            { text: "BiometricsPlugin", link: "biometrics" },
+            { text: "ClipboardPlugin", link: "clipboard" },
+            { text: "ConfigPlugin", link: "config" },
+            { text: "DevicePlugin", link: "device" },
+            { text: "GeolocationPlugin", link: "geolocation" },
+            { text: "HapticsPlugin", link: "haptics" },
+            { text: "MediaPlugin", link: "media" },
+            { text: "MotionSensorsPlugin", link: "motion-sensors" },
+            { text: "NetworkPlugin", link: "network" },
+            { text: "SharePlugin", link: "share" },
           ],
         },
-        // {
-        //   text: "Native-UI",
-        //   base: "/plugins/native-ui/",
-        //   items: [
-        //     { text: "StatusBarPlugin", link: "status-bar/index" },
-        //     { text: "NavigationBarPlugin", link: "navigation-bar/index" },
-        //     { text: "SafeAreaPlugin", link: "safe-area/index" },
-        //     { text: "VirtualKeyboardPlugin", link: "virtual-keyboard/index" },
-        //     { text: "SplashScreenPlugin", link: "splash-screen/index" },
-        //     { text: "ToastPlugin", link: "toast/index" },
-        //     { text: "TorchPlugin", link: "torch/index" },
-        //   ],
-        // },
+        {
+          text: "Native UI",
+          collapsed: false,
+          items: [
+            { text: "StatusBarPlugin", link: "status-bar" }
+          ]
+        },
+        {
+          text: "API",
+          collapsed: false,
+          items: [
+            { text: "CloseWatcher", link: "close-watcher" },
+          ],
+        },
       ],
     },
   ];

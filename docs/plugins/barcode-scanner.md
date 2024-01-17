@@ -10,6 +10,7 @@ outline: deep
 
 - [Reference](#reference)
   - [Method](#method)
+  - [Parameter](#parameter)
 - [Usage](#usage)
 
 ## Reference
@@ -22,8 +23,10 @@ outline: deep
 
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
-await barcodeScannerPlugin.createProcesser(SupportedFormat.QR_CODE);
-//                          ^?
+const controller = await barcodeScannerPlugin.createProcesser(SupportedFormat.QR_CODE);
+//                                            ^?
+controller.process(new Uint8Array());
+//         ^|
 ```
 
 - `process`
@@ -32,11 +35,9 @@ await barcodeScannerPlugin.createProcesser(SupportedFormat.QR_CODE);
 
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
-const controller = await barcodeScannerPlugin.createProcesser(
-  SupportedFormat.QR_CODE
-);
-controller.process(new Uint8Array());
-//          ^?
+
+await barcodeScannerPlugin.process(new Uint8Array());
+//                         ^?
 ```
 
 - `stop`
@@ -45,11 +46,19 @@ controller.process(new Uint8Array());
 
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
-const controller = await barcodeScannerPlugin.createProcesser(
-  SupportedFormat.QR_CODE
-);
-controller.stop();
-//         ^?
+await barcodeScannerPlugin.stop();
+//                         ^?
+```
+
+#### Parameter
+- SupportedFormat
+
+  **_支持的码类型_**
+
+```ts twoslash
+import { SupportedFormat } from "@plaoc/plugins";
+SupportedFormat.QR_CODE
+//              ^|
 ```
 
 ## Usage
