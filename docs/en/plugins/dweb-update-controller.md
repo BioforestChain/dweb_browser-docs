@@ -4,6 +4,8 @@ outline: deep
 
 # dweb-update-controller
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 dweb download controller plugin
 :::

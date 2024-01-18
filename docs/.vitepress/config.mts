@@ -17,7 +17,7 @@ export default defineConfig({
       dark: 'vitesse-dark',
     },
     // async shikijiSetup(shikiji) {
-    //   await Promise.all(Object.keys(bundledThemes).map(async (theme) => {
+    //   await Promise.all(Object.keys("vitesse-dark" | "").map(async (theme) => {
     //     await shikiji.loadTheme(theme as any)
     //   }))
     // },

@@ -4,6 +4,8 @@ outline: deep
 
 # config
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 配置插件，可用于设置`Plaoc App`的当前语言。
 :::

@@ -4,6 +4,8 @@ outline: deep
 
 # dweb-service-worker
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 dweb service worker plugin
 :::

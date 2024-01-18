@@ -4,6 +4,8 @@ outline: deep
 
 # network
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 网络状态插件  
 :::

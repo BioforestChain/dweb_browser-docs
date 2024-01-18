@@ -4,6 +4,8 @@ outline: deep
 
 # geolocation
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Geolocation plugin
 :::

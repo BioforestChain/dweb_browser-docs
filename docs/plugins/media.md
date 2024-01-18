@@ -4,6 +4,8 @@ outline: deep
 
 # media
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 媒体插件  
 :::

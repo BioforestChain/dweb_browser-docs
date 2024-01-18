@@ -4,6 +4,8 @@ outline: deep
 
 # virtual-keyboard
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Virtual keyboard plugin  
 :::

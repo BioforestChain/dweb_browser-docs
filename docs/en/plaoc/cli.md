@@ -4,6 +4,8 @@ outline: deep
 
 # @plaoc/cli
 
+<Badges name="@plaoc/cli" />
+
 This is the plaoc command line tool, responsible for the development, packaging, and release of plaoc apps.
 
 This cli tool also has the functions of publishing tool and app verification, and can use `plaoc run` to cooperate with the server to quickly package and release the application.

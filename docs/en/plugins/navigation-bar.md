@@ -4,6 +4,8 @@ outline: deep
 
 # navigation-bar
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Navigation bar plugin 
 :::

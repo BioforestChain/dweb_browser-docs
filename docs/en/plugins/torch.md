@@ -4,6 +4,8 @@ outline: deep
 
 # torch
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Torch plugin 
 :::

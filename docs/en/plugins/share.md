@@ -4,6 +4,8 @@ outline: deep
 
 # share
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Share plugin
 :::

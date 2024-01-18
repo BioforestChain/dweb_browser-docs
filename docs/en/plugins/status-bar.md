@@ -4,6 +4,8 @@ outline: deep
 
 # status-bar
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Status bar plugin 
 :::

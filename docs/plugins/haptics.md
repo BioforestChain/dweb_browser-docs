@@ -4,6 +4,8 @@ outline: deep
 
 # haptics
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 振动插件  
 :::

@@ -4,6 +4,8 @@ outline: deep
 
 # network
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Network status plugin
 :::

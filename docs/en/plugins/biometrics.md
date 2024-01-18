@@ -4,6 +4,8 @@ outline: deep
 
 # biometrics
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 biometrics plugin 
 :::

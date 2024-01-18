@@ -4,6 +4,8 @@ outline: deep
 
 # close-watcher
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Listening for closing requests [Reference WICG close-watcher](https://github.com/WICG/close-watcher)
 :::

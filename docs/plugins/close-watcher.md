@@ -4,6 +4,8 @@ outline: deep
 
 # close-watcher
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 用于关闭请求的监听 [参考WICG close-watcher](https://github.com/WICG/close-watcher)
 :::

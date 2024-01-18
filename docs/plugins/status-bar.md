@@ -4,6 +4,8 @@ outline: deep
 
 # status-bar
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 状态栏插件  
 :::

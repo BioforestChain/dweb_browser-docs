@@ -4,6 +4,8 @@ outline: deep
 
 # device
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 设备信息插件
 :::

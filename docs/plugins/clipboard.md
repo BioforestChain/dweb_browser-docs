@@ -4,6 +4,8 @@ outline: deep
 
 # clipboard
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 剪切板插件  
 :::

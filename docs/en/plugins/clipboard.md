@@ -4,6 +4,8 @@ outline: deep
 
 # clipboard
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 clipboard plugin
 :::

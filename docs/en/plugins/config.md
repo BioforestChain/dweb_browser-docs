@@ -4,6 +4,8 @@ outline: deep
 
 # config
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Configuration plugin that can be used to set the current language of `Plaoc App`.
 :::

@@ -4,6 +4,8 @@ outline: deep
 
 # device
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Device Info plugin
 :::

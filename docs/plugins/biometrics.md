@@ -4,6 +4,8 @@ outline: deep
 
 # biometrics
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 生物识别插件  
 :::

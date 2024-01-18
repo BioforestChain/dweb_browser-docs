@@ -4,6 +4,8 @@ outline: deep
 
 # @plaoc/cli
 
+<Badges name="@plaoc/cli" />
+
 这是 plaoc 命令行工具，负责 plaoc app 的开发，打包，发布。
 
 这个 cli 工具还兼具了发布工具和验证 app 的功能，并且可以使用`plaoc run`和服务端配合，进行快速的打包发布应用。

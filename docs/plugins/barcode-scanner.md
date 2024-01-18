@@ -4,6 +4,8 @@ outline: deep
 
 # bacode-scanner
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 扫码插件  
 :::

@@ -4,6 +4,8 @@ outline: deep
 
 # dweb-update-controller
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 dweb 下载控制插件
 :::

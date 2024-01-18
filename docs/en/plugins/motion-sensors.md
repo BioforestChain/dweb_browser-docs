@@ -4,6 +4,8 @@ outline: deep
 
 # motion-sensors
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Motion sensors plugin 
 :::

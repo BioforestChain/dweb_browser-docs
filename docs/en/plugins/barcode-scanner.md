@@ -4,6 +4,8 @@ outline: deep
 
 # bacode-scanner
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip intro:
 Scan code plugin
 :::

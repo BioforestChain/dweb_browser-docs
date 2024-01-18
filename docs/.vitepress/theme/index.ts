@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import TwoSlashFloatingVue from 'vitepress-plugin-twoslash/client'
 import 'vitepress-plugin-twoslash/style.css' 
 import type { EnhanceAppContext, Theme } from 'vitepress'
+import "uno.css"
 
 export default {
   extends: DefaultTheme,

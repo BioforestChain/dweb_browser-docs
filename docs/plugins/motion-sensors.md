@@ -4,6 +4,8 @@ outline: deep
 
 # motion-sensors
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 运动传感器插件  
 :::

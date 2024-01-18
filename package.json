@@ -5,13 +5,15 @@
   "devDependencies": {
     "@plaoc/plugins": "^0.6.0",
     "@types/node": "^20.11.0",
-    "shikiji": "^0.10.0-beta.4",
-    "shikiji-transformers": "^0.10.0-beta.4",
-    "shikiji-twoslash": "^0.10.0-beta.4",
+    "shikiji": "^0.10.0-beta.7",
+    "shikiji-transformers": "^0.10.0-beta.7",
+    "shikiji-twoslash": "^0.10.0-beta.7",
     "vite": "^5.0.11",
     "vitepress": "^1.0.0-rc.39",
-    "vitepress-plugin-twoslash": "^0.10.0-beta.4",
-    "vue": "^3.4.14"
+    "vitepress-plugin-twoslash": "^0.10.0-beta.7",
+    "vue": "^3.4.14",
+    "unocss": "^0.58.3",
+    "unplugin-vue-components": "^0.26.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",

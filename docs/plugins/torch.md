@@ -4,6 +4,8 @@ outline: deep
 
 # torch
 
+<Badges name="@plaoc/plugins" />
+
 ::: tip 介绍：
 手电筒插件  
 :::
