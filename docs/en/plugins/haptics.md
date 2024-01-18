@@ -4,8 +4,8 @@ outline: deep
 
 # haptics
 
-::: tip 介绍：
-振动插件  
+::: tip intro:
+Haptics plugin 
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `impactLight`
 
-  **_触碰轻质量物体_**
+  **_Touching lightweight objects_**
 
 ```ts twoslash
 import { hapticsPlugin, ImpactStyle } from "@plaoc/plugins";
@@ -29,7 +29,7 @@ await hapticsPlugin.impactLight({ style: ImpactStyle.Heavy });
 
 - `notification`
 
-  **_振动通知_**
+  **_Vibration notification_**
 
 ```ts twoslash
 import { hapticsPlugin, NotificationType } from "@plaoc/plugins";
@@ -40,7 +40,7 @@ await hapticsPlugin.notification({ type: NotificationType.Success });
 
 - `vibrateClick`
 
-  **_单击手势的反馈振动_**
+  **_Feedback vibration for click gestures_**
 
 ```ts twoslash
 import { hapticsPlugin } from "@plaoc/plugins";
@@ -50,7 +50,7 @@ await hapticsPlugin.vibrateClick();
 
 - `vibrateDisabled`
 
-  **_禁用手势的反馈振动_**
+  **_Disable feedback vibration for gestures_**
 
 ```ts twoslash
 import { hapticsPlugin } from "@plaoc/plugins";
@@ -60,7 +60,7 @@ await hapticsPlugin.vibrateDisabled();
 
 - `vibrateDoubleClick`
 
-  **_双击手势的反馈振动_**
+  **_Feedback vibration for double tap gesture_**
 
 ```ts twoslash
 import { hapticsPlugin } from "@plaoc/plugins";
@@ -70,7 +70,7 @@ await hapticsPlugin.vibrateDoubleClick();
 
 - `vibrateHeavyClick`
 
-  **_重击手势的反馈振动, 比如菜单键/惨案/3Dtouch_**
+  **_Feedback vibration for heavy tap gestures, such as menu key/tragedy/3Dtouch_**
 
 ```ts twoslash
 import { hapticsPlugin } from "@plaoc/plugins";
@@ -80,7 +80,7 @@ await hapticsPlugin.vibrateHeavyClick();
 
 - `vibrateTick`
 
-  **_滴答_**
+  **_tick_**
 
 ```ts twoslash
 import { hapticsPlugin } from "@plaoc/plugins";
@@ -90,7 +90,7 @@ await hapticsPlugin.vibrateTick();
 
 - `vibrate`
 
-  **_自定义效果_**
+  **_Custom effects_**
 
 ```ts twoslash
 import { hapticsPlugin, VibrateOptions } from "@plaoc/plugins";
@@ -102,7 +102,7 @@ await hapticsPlugin.vibrate({ duration: [100, 200, 300] });
 
 - `ImpactStyle`
 
-  **_触碰反馈强度_**
+  **_Touch feedback intensity_**
 
 ```ts twoslash
 import { ImpactStyle } from "@plaoc/plugins";
@@ -112,7 +112,7 @@ ImpactStyle.Heavy;
 
 - `NotificationType`
 
-  **_通知类型_**
+  **_notification type_**
 
 ```ts twoslash
 import { NotificationType } from "@plaoc/plugins";
@@ -122,7 +122,7 @@ NotificationType.Success;
 
 - `VibrateOptions`
 
-  **_振动频率_**
+  **_Vibration frequency_**
 
 ```ts twoslash
 import { VibrateOptions } from "@plaoc/plugins";

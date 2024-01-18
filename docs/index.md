@@ -11,10 +11,10 @@ hero:
     alt: dweb
   actions:
     - theme: brand
-      text: Intro
+      text: 介绍
       link: /intro
     - theme: alt
-      text: View on GitHub
+      text: GitHub上查看
       link: https://github.com/BioforestChain/dweb_browser
 
 features:

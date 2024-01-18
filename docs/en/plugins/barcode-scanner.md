@@ -4,8 +4,8 @@ outline: deep
 
 # bacode-scanner
 
-::: tip 介绍：
-扫码插件  
+::: tip intro:
+Scan code plugin
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `createProcesser`
   
-  **_识码_**
+  **_scan code_**
 
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
@@ -31,7 +31,7 @@ controller.process(new Uint8Array());
 
 - `process`
 
-  **_解析码，需要将图片转化为 blob 数据，再传递给函数进行识别。_**
+  **_To parse the code, you need to convert the image into blob data and then pass it to the function for identification._**
 
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
@@ -42,7 +42,7 @@ await barcodeScannerPlugin.process(new Uint8Array());
 
 - `stop`
 
-  **_停止解析条码数据的方法_**
+  **_How to stop parsing barcode data_**
 
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
@@ -53,7 +53,7 @@ await barcodeScannerPlugin.stop();
 #### Parameter
 - `SupportedFormat`
 
-  **_支持的码类型_**
+  **_Supported code types_**
 
 ```ts twoslash
 import { SupportedFormat } from "@plaoc/plugins";

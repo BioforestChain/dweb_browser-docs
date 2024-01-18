@@ -4,8 +4,8 @@ outline: deep
 
 # media
 
-::: tip 介绍：
-媒体插件  
+::: tip intro:
+Media plugin 
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `savePictures`
 
-  **_保存图片到相册_**
+  **_Save picture to photo album_**
 
 ```ts twoslash
 import { mediaPlugin } from "@plaoc/plugins";
@@ -32,7 +32,7 @@ await mediaPlugin.savePictures({ file: File, saveLocation: "dwebbrowser") });
 
 - `MediaOption`
 
-  **_媒体参数_**
+  **_media option_**
 
 ```ts twoslash
 import type { MediaOption } from "@plaoc/plugins";

@@ -4,8 +4,8 @@ outline: deep
 
 # share
 
-::: tip 介绍：
-分享插件  
+::: tip intro:
+Share plugin
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `canShare`
   
-  **_是否可以分享_**
+  **_can share_**
 
 ```ts twoslash
 import { sharePlugin } from "@plaoc/plugins";
@@ -29,7 +29,7 @@ await sharePlugin.canShare();
 
 - `share`
 
-  **_调用系统分享_**
+  **_share_**
 
 ```ts twoslash
 import { sharePlugin, type ShareOptions } from "@plaoc/plugins";
@@ -41,7 +41,7 @@ await sharePlugin.share(options: ShareOptions);
 #### Parameter
 - `ShareOptions`
 
-  **_分享参数_**
+  **_share option_**
 
 ```ts twoslash
 import type { ShareOptions, ImageBlobOptions } from "@plaoc/plugins";
@@ -68,8 +68,8 @@ import { reactive } from "vue";
 import type { HTMLDwebShareElement } from "@plaoc/plugins";
 
 const shareData = reactive({
-  title: "分享标题🍉",
-  text: "分享文字分享文字",
+  title: "share title 🍉",
+  text: "share text share text",
   url: "https://gpt.waterbang.top",
   files: null as FileList | null,
 });

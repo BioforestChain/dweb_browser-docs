@@ -4,8 +4,8 @@ outline: deep
 
 # status-bar
 
-::: tip 介绍：
-状态栏插件  
+::: tip intro:
+Status bar plugin 
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `setState`
 
-  **_设置状态_**
+  **_set state_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -29,7 +29,7 @@ statusBarPlugin.setState({ color: "#ff00ff" });
 
 - `getState`
 
-  **_获取当前状态_**
+  **_get current state_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -39,7 +39,7 @@ statusBarPlugin.getState();
 
 - `setColor`
 
-  **_设置颜色_**
+  **_set color_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -49,7 +49,7 @@ statusBarPlugin.setColor("#ff00ff");
 
 - `getColor`
 
-  **_获取当前颜色_**
+  **_get current color_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -59,7 +59,7 @@ statusBarPlugin.getColor();
 
 - `setStyle`
 
-  **_设置模式，如：暗黑模式_**
+  **_set style, such as dark mode_**
 
 ```ts twoslash
 import { statusBarPlugin, STATUS_BAR_STYLE } from "@plaoc/plugins";
@@ -69,7 +69,7 @@ statusBarPlugin.setStyle(STATUS_BAR_STYLE.Dark);
 
 - `getStyle`
 
-  **_获取当前模式_**
+  **_get current style_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -79,7 +79,7 @@ statusBarPlugin.getStyle();
 
 - `setOverlay`
 
-  **_设置覆盖_**
+  **_set overlay_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -89,7 +89,7 @@ statusBarPlugin.setOverlay(true);
 
 - `getOverlay`
 
-  **_获取覆盖状态_**
+  **_get current overlay_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -99,7 +99,7 @@ statusBarPlugin.getOverlay();
 
 <!-- - `setVisible`
 
-  **_设置显示隐藏_**
+  **_set visible_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -109,7 +109,7 @@ statusBarPlugin.setVisible(true);
 
 - `getVisible`
 
-  **_获取当前显示隐藏状态_**
+  **_get current visible_**
 
 ```ts twoslash
 import { statusBarPlugin } from "@plaoc/plugins";
@@ -121,7 +121,7 @@ statusBarPlugin.getVisible();
 
 - `STATUS_BAR_STYLE`
 
-  **_状态栏模式_**
+  **_status bar style_**
 
 ```ts twoslash
 import { STATUS_BAR_STYLE } from "@plaoc/plugins";
@@ -131,7 +131,7 @@ STATUS_BAR_STYLE.Dark;
 
 - `$StatusBarWritableState`
 
-  **_状态栏状态值_**
+  **_status bar state_**
 
 ```ts twoslash
 import { STATUS_BAR_STYLE, type $StatusBarWritableState } from "@plaoc/plugins";

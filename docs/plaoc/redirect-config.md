@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # 重定向配置
 
 plaoc 提供了类似 nginx 的重定向功能,使用[URLPattern](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API)来解析匹配的路径。
@@ -52,7 +56,7 @@ plaoc 提供了类似 nginx 的重定向功能,使用[URLPattern](https://develo
 - pattern 是`URLPattern`解析的内容。
   结构如下示例，也可以在浏览器环境执行测试，这是比较稳妥的方法。
 
-![URLPattern](./redirect-config/URLPattern.png)
+![URLPattern](/URLPattern.png)
 
 ### appendHeaders
 

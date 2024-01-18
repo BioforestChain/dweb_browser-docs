@@ -4,8 +4,8 @@ outline: deep
 
 # clipboard
 
-::: tip 介绍：
-剪切板插件  
+::: tip intro:
+clipboard plugin
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `read`
 
-  **_读取剪切板_**
+  **_read clipboard_**
 
 ```ts twoslash
 import { clipboardPlugin } from "@plaoc/plugins";
@@ -29,7 +29,7 @@ const res = await clipboardPlugin.read();
 
 - `write`
 
-  **_写入剪切板_**
+  **_write to clipboard_**
 
 ```ts twoslash
 import { clipboardPlugin, ClipboardWriteOptions } from "@plaoc/plugins";
@@ -42,7 +42,7 @@ await clipboardPlugin.write({ string: "test" });
 
 - `ClipboardWriteOptions`
 
-  **_支持的码类型_**
+  **_support code type_**
 
 ```ts twoslash
 import { clipboardPlugin, ClipboardWriteOptions } from "@plaoc/plugins";

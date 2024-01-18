@@ -4,8 +4,8 @@ outline: deep
 
 # motion-sensors
 
-::: tip 介绍：
-运动传感器插件  
+::: tip intro:
+Motion sensors plugin 
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `startAccelerometer`
 
-  **_启动加速计传感器_**
+  **_Start accelerometer sensor_**
 
 ```ts twoslash
 import { motionSensorsPlugin } from "@plaoc/plugins";
@@ -29,7 +29,7 @@ await motionSensorsPlugin.startAccelerometer(3);
 
 - `startGyroscope`
 
-  **_启动陀螺仪传感器_**
+  **_Start the gyro sensor_**
 
 ```ts twoslash
 import { motionSensorsPlugin } from "@plaoc/plugins";
@@ -42,7 +42,7 @@ await motionSensorsPlugin.startGyroscope(2);
 
 - `fps`
 
-  **_每秒帧率_**
+  **_frames per second_**
 
 ## Usage
 
@@ -57,7 +57,7 @@ function startAccelerometer() {
   motionSensors.startAccelerometer(1);
   motionSensors.addEventListener("readAccelerometer", (event: Event) => {
     const e = event as CustomEvent<$Axis>;
-    console.log("加速计: ", e.detail);
+    console.log("Accelerometer: ", e.detail);
   });
 }
 
@@ -65,7 +65,7 @@ function startGyroscope() {
   motionSensors.startGyroscope(1);
   motionSensors.addEventListener("readGyroscope", (event: Event) => {
     const e = event as CustomEvent<$Axis>;
-    console.log("陀螺仪: ", e.detail);
+    console.log("Gyroscope: ", e.detail);
   });
 }
 </script>

@@ -1,45 +1,39 @@
 ---
-title: App Store
-category:
-  - Service
-tag:
-  - Service
+outline: deep
 ---
 
-Your app can be published to someone else's app store, or you can develop your own app mall, or simply place it directly on your app's official website for users to download the app by directly accessing the official website.
+# App Store
 
-### How to create download links
+Your app can be published to other people's app stores, or you can develop your own app store, or simply put it directly on your app's official website, allowing users to download the app directly by visiting the official website.
 
-First, your application will be packaged into two files as follows:
+## How to create a download link
+
+It is preferred that your application will package two files as follows:
 
 ```bash
-bundle
-├── xxxxx.dweb.zip
-└── metadata.json
+  bundle
+  ├── xxxxx.dweb.zip
+  └── metadata.json
 ```
 
-Then you need to upload it to your app's official website (app store).
-
-Assume I upload it to the root directory of my app's official website:
+Then you need to upload it to your app official website (app store).
+Suppose I upload to the root directory of my app official website:
 
 ```bash
 ├── https://dweb.browser.org/xxxxx.dweb.zip
 └── https://dweb.browser.org/metadata.json
 ```
 
-Then the download button code on my app's official website only needs:
+Then I only need the following code from the official app website to the download button:
 
 ```html
-<a href="dweb:install?url=https://dweb.browser.org/metadata.json"
-  >Click to Download</a
->
+<a href="dweb://install?url=https://dweb.browser.org/metadata.json">click download</a>
 ```
 
-Establishing download channels only needs to follow one principle - use the `dweb:install?url=` this kind of `deeplink` form to build download links.
+There is only one principle to follow when establishing a download path. Use `dweb:install?url=` to build a download link in the form of `deeplink`.
+In this way, users only need to click this (link) button in the Dweb Browser app to jump to the download interface.
 
-This way, users only need to click this (link) button in the Dweb Browser app to jump to the download page.
-
-### Use QR code
+## Use QR code
 
 You can also simply put a QR code on your official website to facilitate users who have installed the Dweb Browser app to use the scanning function that supports `deep_link` to jump to download.
 

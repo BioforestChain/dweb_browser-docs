@@ -1,16 +1,14 @@
 ---
-title: "@plaoc/cli"
-category: 
-  - plaoc
-tag: 
-  - cli 
+outline: deep
 ---
 
-This is the plaoc command line tool, responsible for the development, packaging and publishing of plaoc apps.
+# @plaoc/cli
 
-This cli tool also has the functions of publishing tools and verifying apps. It can also use `plaoc run` to cooperate with the server for quick packaging and publishing of applications.
+This is the plaoc command line tool, responsible for the development, packaging, and release of plaoc apps.
 
-## Installation
+This cli tool also has the functions of publishing tool and app verification, and can use `plaoc run` to cooperate with the server to quickly package and release the application.
+
+## Install
 
 - First you need to install the plaoc command line tool.
 
@@ -29,112 +27,113 @@ This cli tool also has the functions of publishing tools and verifying apps. It 
 
 :::
 
+
 > You can also use npx plaoc to execute commands
 
-Assuming the project directory is as follows:
+Assume that the project directory looks like this:
 
 ```bash
-plaoc-app
-├── ......other project files  
-├── manifest.json
-└── plaoc.json
+  plaoc-app
+  ├── ......Other project files
+  ├── manifest.json
+  └── plaoc.json
 ```
 
-## Development mode
+## Development Mode
 
-Development mode mainly cooperates with `dweb_browser` desktop version for dynamic development. The command is as follows:
+The development mode mainly cooperates with the `dweb_browser` desktop version for dynamic development. The command is as follows:
 
 ```bash
 plaoc serve http://localhost:5173
 ```
 
-The above command will print as follows:
+The above command will print the following:
 
 ```bash
-metadata: http://127.0.0.1:8096/metadata.json
-metadata: http://172.30.93.43:8096/metadata.json
+metadata:       http://127.0.0.1:8096/metadata.json
+metadata:       http://172.30.93.43:8096/metadata.json
 ```
 
-This is a pure forwarding mode. Plaoc will proxy the `http://localhost:5173` development service you started.
+This is a pure forwarding mode, plaoc will proxy the `http://localhost:5173` development service you started.
 
 ### Specify startup port
 
-Generally used when starting multiple apps. You can use `--port` to specify the port to open. The default port is 8096.
+Generally used to start multiple apps. You can use `--port` to specify the port to open. The default port is 8096.
 
-```bash 
+```bash
 plaoc serve http://localhost:5173 --port 8097
 ```
 
-### Specify `manifest.json` directory
+### Specify the `manifest.json` directory
 
-If you are not currently in the project root directory, you need to use `--dir` to specify the address of `manifest.json` to identify the app configuration information.
+Assuming that you are not currently in the project root directory, you need to use `--dir` to specify the address of `manifest.json` in order to identify the app's configuration information.
 
 ```bash
-plaoc serve http://localhost:5173 --dir ./plaoc-app1
+plaoc serve http://localhost:5173  --dir ./plaoc-app1
 ```
 
 ## Package project
 
-Normal packaging command is as follows:
+The normal packaging command is as follows:
 
 ```bash
 plaoc bundle ./dist
 ```
 
-The `./dist` directory is the source code directory for your packaging. And you need to make sure that the folder where you run the plaoc command is at the same level as your `manifest.json` folder. 
+The `./dist` directory is your packaged source code directory. And you need to make sure that the folder where you are currently running the plaoc command is at the same level as your `manifest.json` folder.
 
-If not in the same directory, you can refer to the `--dir` directory below for specification.
+If it is not in the same directory, you can refer to the `--dir` directory below to specify it.
 
-::: warning 
+::: warning
 Note that plaoc bundle `http://localhost:5173` cannot be used to package a dynamic service.
 :::
 
-### Specify `manifest.json` directory
+### Specify the `manifest.json` directory
 
-If your `manifest.json` is not in the same folder as the packaging directory, you can use `--dir` to specify the `manifest.json` folder.
+If your `manifest.json` is not in the same folder as the packaged directory, you can use `--dir` to specify the `manifest.json` folder.
 
-Assuming the project directory is as follows:
+Assume that the project directory looks like this:
 
 ```bash
-plaoc-main
-├── ......other project files
-├── plaoc-app1
-   ├── ./dist //Project packaged source code files  
-   ├── manifest.json
-├── plaoc-app2
-   ├── ./dist //Project packaged source code files
-   └── manifest.json
+  plaoc-main
+  ├── ......Other project files
+  ├── plaoc-app1
+    ├── ./dist  //Project packaged source code files
+    ├── manifest.json
+  ├── plaoc-app2
+    ├── ./dist  //Project packaged source code files
+    └── manifest.json
 ```
 
-If you have multiple projects under your directory, you can specify the directory to package them like below.
+Assuming you have multiple projects in your directory, you can specify the directory for packaging as follows.
 
 ```bash
 plaoc bundle ./plaoc-app1/dist --dir ./plaoc-app1
 ```
 
-> ps: You can also use `plaoc bundle --help` to check.
+> ps: You can also use `plaoc bundle --help` to view.
 
-### Specify output package output file location
+### Specify the file location for output packaged output
 
-Use `--out` to specify output directory name. The default is `bundle`.
+You can use `--out` to specify the output directory name, which defaults to `bundle`.
 
 ```bash
 plaoc bundle ./dist --out ./bundleDir
 ```
 
-#### Specify output appId 
+#### Specify the appId of the output
 
-Use `--id` to specify the app id.
+You can use `--id` to specify the id of the app.
 
-```bash 
+```bash
 plaoc bundle ./dist --id new.plaoc.org.dweb
 ```
 
-Note that the specified id must end with `.dweb` and have the same domain name as the configured `home`.
+Note that the specified id needs to end with `.dweb` and have the same domain name as the configured `home`.
 
-### Specify output app version
+### Specify the output app version
 
-Use `--version` to specify the app version.
+You can use `--version` to specify the app version.
 
 ```bash
 plaoc bundle ./dist --version 0.2.3

@@ -9,7 +9,7 @@ export const en = defineConfig({
 
     sidebar: {
       '/en/plaoc/': { base: '/en/plaoc/', items: sidebarPlaoc() },
-      // '/en/plugins/': { base: '/en/plugins/', items: sidebarPlugins() }
+      '/en/plugins/': { base: '/en/plugins/', items: sidebarPlugins() }
     },
 
     editLink: {
@@ -27,93 +27,91 @@ export const en = defineConfig({
 function nav(): DefaultTheme.NavItem[] {
   return [
     {
-      text: 'Plaoc',
-      link: '/en/plaoc/index',
-      activeMatch: '/en/plaoc/'
+      text: "Plaoc",
+      activeMatch: "/en/plaoc/",
+      link: "/en/plaoc/flow"
     },
     {
-      text: 'Plugins',
-      link: '/en/plugins/index',
-      activeMatch: '/en/plugins/'
+      text: "Plugins",
+      activeMatch: "/en/plugins/",
+      link: "/en/plugins/web-components",
     },
     {
       text: "2.x.x",
       items: [
         {
-          text: 'Monthly',
-          link: 'https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md'
+          text: "Monthly",
+          link: "https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md",
         },
         {
-          text: 'Get Start for Developer',
-          link: 'https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md'
-        }
-      ]
-    }
-  ]
+          text: "Get Start for Developer",
+          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
+        },
+      ],
+    },
+  ];
 }
 
 function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: 'Plaoc app',
+      text: "Plaoc App",
       collapsed: false,
       items: [
-        { text: 'redirect-config', link: '/redirect-config/index' },
-        { text: 'manifest', link: '/manifest/index' }
-      ]
+        { text: "Develop flow", link: "flow" },
+        { text: "Redirect config", link: "redirect-config" },
+        { text: "Manifest", link: "manifest" },
+        { text: "@plaoc/cli", link: "cli" },
+        { text: "App Store", link: "app-store" },
+      ],
     },
-    {
-      text: '@plaoc/cli',
-      link: "/cli"
-    },
-    {
-      text: 'Application Store',
-      link: "/app-store"
-    },
-    { text: 'plugins', base: '/en/plugins/', link: 'index' }
-  ]
+    { text: "Plugin System", base: "/en/plugins/", link: "web-components" },
+  ];
 }
 
 function sidebarPlugins(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: 'plugins',
+      text: "Plugin System",
       items: [
-        { text: 'CloseWatcher', link: 'close-watcher/index' },
+        { text: "Intro", link: "web-components" },
         {
-          text: 'System',
-          base: '/en/plugins/system/',
+          text: "Web Components",
+          collapsed: false,
           items: [
-            { text: 'BarcodeScannerPlugin', link: 'barcode-scanner/index' },
-            { text: 'BiometricsPlugin', link: 'biometrics/index' },
-            { text: 'BluetoothPlugin', link: 'bluetooth/index' },
-            { text: 'CameraPlugin', link: 'camera/index' },
-            { text: 'ClipboardPlugin', link: 'clipboard/index' },
-            { text: 'ConfigPlugin', link: 'config/index' },
-            { text: 'DevicePlugin', link: 'device/index' },
-            { text: 'UpdateControllerPlugin', link: 'update-controller/index' },
-            { text: 'dwebServiceWorker', link: 'dweb-service-worker/index' },
-            { text: 'FileSystemPlugin', link: 'file-system/index' },
-            { text: 'HapticsPlugin', link: 'haptics/index' },
-            { text: 'MWebviewPlugin', link: 'm-webview/index' },
-            { text: 'NetworkPlugin', link: 'network/index' },
-            { text: 'SharePlugin', link: 'share/index' },
+            { text: "BarcodeScannerPlugin", link: "barcode-scanner" },
+            { text: "BiometricsPlugin", link: "biometrics" },
+            { text: "ClipboardPlugin", link: "clipboard" },
+            { text: "ConfigPlugin", link: "config" },
+            { text: "DevicePlugin", link: "device" },
+            { text: "GeolocationPlugin", link: "geolocation" },
+            { text: "HapticsPlugin", link: "haptics" },
+            { text: "MediaPlugin", link: "media" },
+            { text: "MotionSensorsPlugin", link: "motion-sensors" },
+            { text: "NetworkPlugin", link: "network" },
+            { text: "SharePlugin", link: "share" },
+          ],
+        },
+        {
+          text: "Native UI",
+          collapsed: false,
+          items: [
+            { text: "StatusBarPlugin", link: "status-bar" },
+            { text: "NavigationBarPlugin", link: "navigation-bar" },
+            { text: "VirtualKeyboardPlugin", link: "virtual-keyboard" },
+            { text: "TorchPlugin", link: "torch" },
           ]
         },
         {
-          text: 'Native-UI',
-          base: '/en/plugins/native-ui/',
+          text: "API",
+          collapsed: false,
           items: [
-            { text: 'StatusBarPlugin', link: 'status-bar/index' },
-            { text: 'NavigationBarPlugin', link: 'navigation-bar/index' },
-            { text: 'SafeAreaPlugin', link: 'safe-area/index' },
-            { text: 'VirtualKeyboardPlugin', link: 'virtual-keyboard/index' },
-            { text: 'SplashScreenPlugin', link: 'splash-screen/index' },
-            { text: 'ToastPlugin', link: 'toast/index' },
-            { text: 'TorchPlugin', link: 'torch/index' },
-          ]
-        }
-      ]
-    }
-  ]
+            { text: "CloseWatcher", link: "close-watcher" },
+            { text: "DwebServiceWorker", link: "dweb-service-worker" },
+            { text: "DwebUpdateController", link: "dweb-update-controller" },
+          ],
+        },
+      ],
+    },
+  ];
 }

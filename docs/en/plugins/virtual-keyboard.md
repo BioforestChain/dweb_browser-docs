@@ -4,8 +4,8 @@ outline: deep
 
 # virtual-keyboard
 
-::: tip 介绍：
-虚拟键盘插件  
+::: tip intro:
+Virtual keyboard plugin  
 :::
 
 - [Reference](#reference)
@@ -19,7 +19,7 @@ outline: deep
 
 - `setState`
 
-  **_设置状态_**
+  **_set state_**
 
 ```ts twoslash
 import { virtualKeyboardPlugin } from "@plaoc/plugins";
@@ -29,7 +29,7 @@ virtualKeyboardPlugin.setState({ overlay: false });
 
 - `getState`
 
-  **_获取当前状态_**
+  **_get current state_**
 
 ```ts twoslash
 import { virtualKeyboardPlugin } from "@plaoc/plugins";
@@ -39,7 +39,7 @@ virtualKeyboardPlugin.getState();
 
 - `setOverlay`
 
-  **_设置覆盖_**
+  **_set overlay_**
 
 ```ts twoslash
 import { virtualKeyboardPlugin } from "@plaoc/plugins";
@@ -49,7 +49,7 @@ virtualKeyboardPlugin.setOverlay(true);
 
 - `getOverlay`
 
-  **_获取覆盖状态_**
+  **_get current overlay_**
 
 ```ts twoslash
 import { virtualKeyboardPlugin } from "@plaoc/plugins";
@@ -61,7 +61,7 @@ virtualKeyboardPlugin.getOverlay();
 
 - `$VirtualKeyboardWritableState`
 
-  **_虚拟键盘状态值_**
+  **_virtual keyboard state_**
 
 ```ts twoslash
 import type { $VirtualKeyboardWritableState } from "@plaoc/plugins";

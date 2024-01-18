@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Manifest
 
 plaoc app 的 `manifest.json` 文件详情解释，您可以理解为是 PWA 的 `manifest.json`。
@@ -5,16 +9,17 @@ plaoc app 的 `manifest.json` 文件详情解释，您可以理解为是 PWA 的
 这里主要提供了plaoc app 的所有的配置信息，归属性验证，和一些展示在安装界面的信息。
 
 - [Reference](#reference)
+  - [Parameter](#parameter)
 - [Example](#example)
 
  
 ## Reference
 
-#### Parameters
+#### Parameter
 
 - `id`：__*string*__。规范是：`${name}.${host}.dweb`。每个`app`都有一个唯一的`id`，每个域名可以挂载多个`app`。示例: `"game.dweb.waterbang.top.dweb"`。
 - `version`：__*string*__。应用的版本号。
-- `baseURI`：__*string?*__。__*如果没有设置，默认使用`metadata.json`链接的`baseURI`*__。
+- `baseURI`：__*string?*__。如果没有设置，默认使用`metadata.json`链接的`baseURI`。
 
 
 
