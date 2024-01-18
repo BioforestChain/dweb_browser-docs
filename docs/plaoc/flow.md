@@ -25,7 +25,25 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 以下配置文件的示例,直接复制以下内容粘贴到根目录下的`manifest.json`，[点击查看字段详情](./manifest.md);
 
 ```json
-This is an example application that contains examples of all components of dweb_plugins.
+{
+  "id": "game.dweb.waterbang.top.dweb",
+  "name": "game",
+  "short_name": "vue3-game",
+  "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
+  "logo": "https://www.bfmeta.info/imgs/logo3.webp",
+  "images": [
+    "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
+    "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
+    "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
+  ],
+  "author": ["bfs", "bfs@bfs.com"],
+  "version": "1.0.0",
+  "change_log": "changelog",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["application"],
+  "lang": "zh-Hans",
+  "languages": []
+}
 ```
 
 现在您的 app 已经声明成为 Plaoc app 了。
