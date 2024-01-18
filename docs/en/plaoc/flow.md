@@ -29,51 +29,22 @@ The following sample configuration file, copy the following content and paste it
 ```json
 {
   "id": "game.dweb.waterbang.top.dweb",
-  "server": {
-    "root": "/usr",
-    "entry": "/server/plaoc.server.js"
-  },
-  "minTarget": 2,
-  "maxTarget": 2,
-  "name": "vue3-game",
-  "short_name": "game",
-  "description": "This is an example application that contains examples of all components of dweb_plugins.",
+  "name": "game",
+  "short_name": "vue3-game",
+  "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
   "logo": "https://www.bfmeta.info/imgs/logo3.webp",
-  "bundle_url": "./game.dweb.waterbang.top.dweb-1.3.0.zip",
-  "bundle_hash": "sha256:56e8a7569519364d03c04bd11147b16693db107878b4f27b827617e5f4dfb650",
-  "bundle_size": 3112387,
-  "bundle_signature": "",
-  "public_key_url": "",
-  "release_date": "Fri Jan 12 2024 14:54:14 GMT+0800 (Central Standard Time)",
-  "change_log": "changelog",
   "images": [
     "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
     "http://qiniu-waterbang.waterbang.top/bfm/defi.png",
     "http://qiniu-waterbang.waterbang.top/bfm/nft.png"
   ],
-  "author": [
-    "bfs",
-    "bfs@bfs.com"
-  ],
-  "version": "1.3.0",
-  "categories": [
-    "application",
-    "kids-games"
-  ],
-  "languages": [],
-  "homepage_url": "https://dweb.waterbang.top",
-  "plugins": [],
-  "permissions": [],
-  "dir": "ltr",
-  "lang": "",
-  "icons": [],
-  "screenshots": [],
-  "display": "fullscreen",
-  "orientation": "any",
-  "theme_color": "",
-  "background_color": "",
-  "shortcuts": [],
-  "dweb_protocols": []
+  "author": ["bfs", "bfs@bfs.com"],
+  "version": "1.0.0",
+  "change_log": "changelog",
+  "home": "https://dweb.waterbang.top",
+  "categories": ["application"],
+  "lang": "zh-Hans",
+  "languages": []
 }
 ```
 
