@@ -1,4 +1,4 @@
-## What is dweb-browser
+# What is dweb-browser
 
 dweb-browser is a browser platform built following the Dweb standard. It exposes the capabilities of a browser and native system capabilities related to the browser through various dweb modules. Currently, we have implemented support for mainstream platforms such as Android, iOS, MacOS, Windows, and Linux. It includes the following core modules:
 
