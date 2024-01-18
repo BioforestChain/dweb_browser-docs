@@ -49,7 +49,7 @@ interface MainServer {
  example is: `rsa-sha256:hex;2...1`
 :::
 
-- `languages`: __*string[]?*__.Supported languages.[语言代码](http://www.lingoes.net/zh/translator/langcode.htm).
+- `languages`: __*string[]?*__.Supported languages.[lang code](http://www.lingoes.net/zh/translator/langcode.htm).
 - `images`: __*string[]?*__.Display image when installing the application.
 - `change_log`: __*string*__.The update log displayed when installing the app.
 - `author`: __*string[]*__.Author information displayed when installing the app.

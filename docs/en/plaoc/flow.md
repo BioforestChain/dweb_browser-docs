@@ -24,7 +24,7 @@ It mainly declares some application parameters and does some display when the us
   └── manifest.json
 ```
 
-The following sample configuration file, copy the following content and paste it into manifest.json in the root directory.[点击查看字段详情](./manifest.md);
+The following sample configuration file, copy the following content and paste it into manifest.json in the root directory.[Click to view field details](./manifest.md);
 
 ```json
 {
