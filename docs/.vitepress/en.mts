@@ -28,13 +28,13 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: "Plaoc",
-      activeMatch: "/en/plaoc/",
-      link: "/en/plaoc/flow"
+      activeMatch: "/plaoc/",
+      items: navPlaoc(),
     },
     {
       text: "Plugins",
-      activeMatch: "/en/plugins/",
-      link: "/en/plugins/web-components",
+      activeMatch: "/plugins/",
+      items: navPlugins()
     },
     {
       text: "2.x.x",
@@ -57,6 +57,7 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
     {
       text: "Plaoc App",
       collapsed: false,
+      base: "/en/plaoc/",
       items: [
         { text: "Develop flow", link: "flow" },
         { text: "Redirect config", link: "redirect-config" },
@@ -69,10 +70,35 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
   ];
 }
 
+function navPlaoc(): (
+  | DefaultTheme.NavItemChildren
+  | DefaultTheme.NavItemWithLink
+)[] {
+  let navItems: (
+    | DefaultTheme.NavItemChildren
+    | DefaultTheme.NavItemWithLink
+  )[] = [];
+
+  const plaoc = sidebarPlaoc();
+  for (let [_, item] of plaoc.entries()) {
+    const base = item.base ?? "";
+    if (Array.isArray(item.items)) {
+      navItems = navItems.concat(
+        item.items.map((it) => {
+          return { text: it.text!, link: base + it.link! };
+        })
+      );
+    }
+  }
+
+  return navItems;
+}
+
 function sidebarPlugins(): DefaultTheme.SidebarItem[] {
   return [
     {
       text: "Plugin System",
+      base: "/en/plugins/",
       items: [
         { text: "Intro", link: "web-components" },
         {
@@ -114,4 +140,39 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
       ],
     },
   ];
+}
+
+function navPlugins(): (
+  | DefaultTheme.NavItemChildren
+  | DefaultTheme.NavItemWithLink
+)[] {
+  let navItems: (
+    | DefaultTheme.NavItemChildren
+    | DefaultTheme.NavItemWithLink
+  )[] = [];
+
+  const plugins = sidebarPlugins();
+  for (let [_, item] of plugins.entries()) {
+    const base = item.base ?? "";
+    if (Array.isArray(item.items)) {
+      navItems = navItems.concat(
+        item.items.map((it) => {
+          if (Array.isArray(it.items)) {
+            return {
+              text: it.text!,
+              items: it.items.map((child) => {
+                return { text: child.text!, link: base + child.link! };
+              }),
+            };
+          } else {
+            return { text: it.text!, link: base + it.link! };
+          }
+        })
+      );
+    } else {
+      navItems.push({ text: item.text!, link: base + item.link! });
+    }
+  }
+
+  return navItems;
 }

@@ -9,11 +9,12 @@ export const zh = defineConfig({
 
     sidebar: {
       "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
-      '/plugins/': { base: '/plugins/', items: sidebarPlugins() }
+      "/plugins/": { base: "/plugins/", items: sidebarPlugins() },
     },
 
     editLink: {
-      pattern: "https://github.com/BioforestChain/dweb_browser-docs/edit/main/docs/:path",
+      pattern:
+        "https://github.com/BioforestChain/dweb_browser-docs/edit/main/docs/:path",
       text: "在 GitHub 上编辑此页面",
     },
 
@@ -53,12 +54,12 @@ function nav(): DefaultTheme.NavItem[] {
     {
       text: "Plaoc",
       activeMatch: "/plaoc/",
-      link: "/plaoc/flow"
+      items: navPlaoc(),
     },
     {
       text: "Plugins",
       activeMatch: "/plugins/",
-      link: "/plugins/web-components",
+      items: navPlugins()
     },
     {
       text: "2.x.x",
@@ -81,6 +82,7 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
     {
       text: "Plaoc App",
       collapsed: false,
+      base: "/plaoc/",
       items: [
         { text: "开发流程", link: "flow" },
         { text: "重定向配置", link: "redirect-config" },
@@ -93,12 +95,35 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
   ];
 }
 
+function navPlaoc(): (
+  | DefaultTheme.NavItemChildren
+  | DefaultTheme.NavItemWithLink
+)[] {
+  let navItems: (
+    | DefaultTheme.NavItemChildren
+    | DefaultTheme.NavItemWithLink
+  )[] = [];
 
+  const plaoc = sidebarPlaoc();
+  for (let [_, item] of plaoc.entries()) {
+    const base = item.base ?? "";
+    if (Array.isArray(item.items)) {
+      navItems = navItems.concat(
+        item.items.map((it) => {
+          return { text: it.text!, link: base + it.link! };
+        })
+      );
+    }
+  }
+
+  return navItems;
+}
 
 function sidebarPlugins(): DefaultTheme.SidebarItem[] {
   return [
     {
       text: "插件系统",
+      base: "/plugins/",
       items: [
         { text: "简介", link: "web-components" },
         {
@@ -126,7 +151,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "NavigationBarPlugin", link: "navigation-bar" },
             { text: "VirtualKeyboardPlugin", link: "virtual-keyboard" },
             { text: "TorchPlugin", link: "torch" },
-          ]
+          ],
         },
         {
           text: "API",
@@ -140,6 +165,41 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
       ],
     },
   ];
+}
+
+function navPlugins(): (
+  | DefaultTheme.NavItemChildren
+  | DefaultTheme.NavItemWithLink
+)[] {
+  let navItems: (
+    | DefaultTheme.NavItemChildren
+    | DefaultTheme.NavItemWithLink
+  )[] = [];
+
+  const plugins = sidebarPlugins();
+  for (let [_, item] of plugins.entries()) {
+    const base = item.base ?? "";
+    if (Array.isArray(item.items)) {
+      navItems = navItems.concat(
+        item.items.map((it) => {
+          if (Array.isArray(it.items)) {
+            return {
+              text: it.text!,
+              items: it.items.map((child) => {
+                return { text: child.text!, link: base + child.link! };
+              }),
+            };
+          } else {
+            return { text: it.text!, link: base + it.link! };
+          }
+        })
+      );
+    } else {
+      navItems.push({ text: item.text!, link: base + item.link! });
+    }
+  }
+
+  return navItems;
 }
 
 export const search: DefaultTheme.AlgoliaSearchOptions["locales"] = {
