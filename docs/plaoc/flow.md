@@ -4,7 +4,7 @@ outline: deep
 
 # Plaoc App
 
-我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`，您可以理解为`dweb_browser` 是微信 `plaoc app` 是里面运行的小程序。
+我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`。plaoc 遵循web规范，提供一系列的插件，来控制节点硬件。并且基于网络模块，可以实现节点内和节点之间app的相互通信。
 
 因为`dweb-browser` 目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持，那么也就意味着您的 web 应用，可以背靠 plaoc 直接实现多端发布。
 

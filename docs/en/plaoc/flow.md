@@ -4,7 +4,7 @@ outline: deep
 
 # Plaoc App
 
-We define applications running on the dweb-browser browser as Plaoc App. You can understand that dweb_browser is like WeChat and plaoc app is like the mini programs running inside it.
+We define applications that run on the `dweb-browser` browser and are collectively called `Plaoc App`. plaoc follows web specifications and provides a series of plug-ins to control node hardware. And based on the network module, mutual communication of apps within nodes and between nodes can be realized.
 
 Because dweb-browser currently supports mainstream platforms like Android, iOS, MacOS, Windows, Linux, your web application can rely on plaoc to directly implement multi-end publishing.
 
