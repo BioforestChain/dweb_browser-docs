@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "DwebBrowser"
-  text: "bfchain"
-  tagline: 移动区块链基础设施
+  name: "Dweb Browser"
+  text: "在你的本地设备上部署自己的 .dweb 域名"
+  tagline: 我们协助鼓励开发者打造开放 Web应用，通过开放标准，应用之间可以实现互操作，这将开启一种全新的互联网体验，并为世界带来无尽的可能性。
   image:
     src: /logo.svg
     alt: dweb
@@ -18,22 +18,16 @@ hero:
       link: https://github.com/BioforestChain/dweb_browser
 
 features:
-  - title: 应用互联
-    icon: 🔗
-    details: 每个设备都是一个节点，可通过网络模块通信
-  - title: 遵循web开发规范
-    icon: 💻
-    details: 所有的api符合web开发人员的开发直觉，遵循web标准
-  - title: 可编程后端
-    icon: 🐉
-    details: 提供后端可编程模式，中间件插件开发，全面增强节点能力
-  - title: 面向角色编程
-    icon: 🧘‍♂️
-    details: 模块是完全独立的，以一个硬件一个模块的理念去看待模块
-  - title: 打包配置
-    icon: 👾
-    details: 在开发完应用的时候需要将您的前后端应用打包成`xxxx.zip`文件，然后上传到任何地方
-  - title: 一次打包，多平台使用
-    icon: 📦
-    details: 支持 Android、iOS、HarmonyOS、Desktop
+  - title: 轻松体验跨平台应用
+    icon: 🌍
+    details: DwebBrowser支持所有主流操作系统平台，无论您是使用移动设备还是桌面设备，我们都能提供无缝的跨平台体验。通过使用统一的窗口视图标准，我们为用户带来了一致且方便的使用体验。
+  - title: 隐私保护至上
+    icon: 🛡
+    details: 保护用户隐私是我们的核心任务。通过在终端设备上提供部署完整服务的支持，用户可以最大程度上获得极速的本地服务体验，在实现离线可用的同时，也保护了用户数据的私密性。
+  - title: 无限互联的可能性
+    icon: 🌐
+    details: 无论是移动设备、桌面设备、云端服务器，还是IoT设备，每种设备都可以轻松实现dweb模块化地互联。这意味着使用更低的开发成本，实现超越设备本身性能的无限可能。
+  - title: 开源与自由
+    icon: 🎁
+    details: Dweb团队完全开源代码，我们将与社区共同推动标准的建立、并为全世界提供免费的基础设施平台的建设技术。我们致力于打造一个更好的多方共赢的互联网世界
 ---
