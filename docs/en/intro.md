@@ -1,143 +1,78 @@
 # What is dweb-browser
 
-dweb-browser is a browser platform built following the Dweb standard. It exposes the capabilities of a browser and native system capabilities related to the browser through various dweb modules. Currently, we have implemented support for mainstream platforms such as Android, iOS, MacOS, Windows, and Linux. It includes the following core modules:
+dweb-browser is a browser platform built in compliance with Dweb standards, and exposes browser capabilities and browser-related system native system capabilities through various dweb modules. At present, we have implemented support for mainstream platforms such as Android, IOS, MacOS, Windows, and Linux.
 
-1. `js.browser.dweb`
+We modularize the various functions of the operating system and then interconnect them using unified communication standards to assemble a new platform. Note that the assembly here is not only for one device, but for all devices trusted by the user. Then when users install their devices on DwebBrowser, the capabilities of each device will be modularized, thus providing users with Serve. What will be reassembled will be a more powerful platform. For example, I can run my AIGC program on a PC, but use it on the mobile terminal. The developer does not need to intervene in the whole process of how the devices here should be interconnected. The developer can treat the whole process as developing a program locally. It's just an application, and the provider behind the final service can be a local device or a cloud service.
 
-   It is a JavaScript runtime that uses WebWorker as its underlying implementation. Therefore, various standards in WebWorker can be used out of the box.
+We love promoting the development of web technology, and we have deployed a JsRuntime locally. For developers, it is a well-known JsRuntime similar to Nodejs or Deno, except that the latter always runs on a cloud server. We are bringing these capabilities to mobile devices. Developers can use the thinking technology of traditional server-side development to deploy and run their sites locally on users. All this happens locally, which also means that developers and users do not need to pay any deployment costs. We have moved the server-side technology to local mobile devices, which is a huge innovation.
 
-2. `jmm.browser.dweb`
+Applications are deployed using local server-side technology. Unlike traditional WebApps, they require a large amount of memory, and the longer they run, the higher the memory usage will inevitably be. We have a backend-first concept, so we can deploy SSR technology locally, which is more advanced than SSG, has a faster first-screen loading experience, and saves more memory.
 
-   It is a dynamic dweb module manager, which can be used to implement application functionalities similar to PWA (Progressive Web Apps).
+In this way, user privacy can be better protected under this programming model. And because the service is deployed locally, developers can more easily solve offline availability issues.
 
-3. `mwebview.browser.dweb`
+We make everything open source, we do not have any monopoly, we just return Web technology to users, and users can freely deploy their programs.
 
-   It stands for mutil-webview (multiple web views) renderer, which allows simultaneous rendering of multiple web views. For example, it can be used to implement a web browser.
+In order to achieve cross-platform programming, we provide a cross-platform windowed window view standard, and also use multi-window technology uniformly on mobile devices. This is a core point of our commitment to cross-platform. Without multi-window technology, it would be difficult for us to allow users and developers to reach a unified programming interface on multiple platforms.
 
-4. `nativeui.browser.dweb`
+We will also make more efforts for user privacy. In the future, we will add functions such as "ID Card Pack" so that users can more conveniently manage their account passwords and personal information in applications and web pages. The community can provide a better experience for users around the standardized infrastructure provided by these dwebs.
 
-   It is a window standard defined by the dweb-browser itself. It is integrated into mwebview, enabling window management capabilities for mwebview's views.
+We hope developers will open their applications to each other through standards. The current Internet world is like an island of information. This is due to interests. We do not want to deny these objective phenomena, but hope to launch a series of new technical specifications to give users a better Web environment. , making it better and truly "the Internet".
 
-5. `*.sys.dweb`
+Just imagine, you can play chess with your friends. In this process, you don't even need to connect to the chess server. Instead, you just connect with your friends through a certain chat software, and then you can play chess with your friends. And all this does not require chess software developers to purchase any servers, nor does chat software developers need to develop any chess functions. They can be interconnected through open standards.
 
-   Some browser-related system standards are also implemented in dweb-browser.
+At the same time, the chat server does not even need to be purchased. Under the technical standard framework of dweb, all nodes are servers. The premise of this openness is the protection of user equipment. Of course, users can choose operators they trust for their own openness. To bring protection, this operator may be the desktop device in the user's own home. Therefore, users do not need to worry about selling any of their data to operators.
 
 ## What is dweb?
 
-Dweb is a decentralized web consensus standard. It is directly reflected in your domain name, such as `example.dweb`. However, because the dweb domain does not exist on the internet, it means that it does not belong to any organization. In other words, how to interpret the `example.dweb` domain is entirely determined by your own device.
-
-The dweb consensus standard is composed of several parts:
+Dweb is a decentralized web consensus standard. It is reflected directly on your domain name, such as: `example.dweb`
+However, it is precisely because the domain name dweb does not really exist on the Internet, which means that it does not belong to any organization. In other words, how to interpret the domain name `example.dweb` is entirely up to you (your device) to make the decision .
+The dweb consensus standard is composed of several parts combined:
 
 ### Communication Standard
 
-Inspired by the HTTP protocol, we use JSON and CBOR as web data formats to define the communication standard for two modules. We refer to these modules that follow the message-based communication as "dweb micro-modules." The URL for these modules is defined using the `file:` protocol header along with the `.dweb` domain. For example: `file://dns.sys.dweb/`.
+Drawing on the http protocol, we use web data formats such as JSON and CBOR to define the communication standards of the two modules. The module that follows this message-based communication is called dweb-micro-module (Chinese: "dweb module").
+For this communication standard, we use the `file:` protocol header with `.dweb` and the domain name to define its URL, for example: `file://dns.std.dweb/`.
 
-### Routing Standard
+### Common Standard
 
-`dns.sys.dweb` is the core part of the dweb consensus standard. It defines the interconnection, registration, and querying functions of two dweb modules. It serves as the standard for dweb module integration into the dweb world.
+- `dns.std.dweb` is the core part of dweb's consensus standard. It defines the interconnection, registration, query and other functions of two dweb modules. It is the core technology required for the interconnection of dweb modules.
+- `http.std.dweb` is the standard for http services, through which any module can obtain its own `.dweb` domain name to interoperate with Web technology
+- `file.std.dweb` is a file service standard. It is based on modules. Each module has an independent file service. They do not interfere with each other but can collaborate with each other safely.
+- `permission.std.dweb` permission management standard. The data belongs to the user, including the data managed by the module. Therefore, the module can be registered through permissions to ensure that the data service is authorized by the user.
 
 ### System Standard
 
 This encompasses the standards for common operating system modules, including platform-specific standards and unified abstract standards:
 
 - `file.sys.dweb`
-- `os.sys.dweb`
-- `network.sys.dweb`
-- `geolocation.sys.dweb`
 - `camera.sys.dweb`
+  - `camera.harmonyos-sys.dweb`
+  - `camera.android-sys.dweb`
+  - `camera.ios-sys.dweb`
+  - `camera.windows-sys.dweb`
+- `status-bar.sys.dweb`
+  - `status-bar.android-sys.dweb`
+  - `status-bar.ios-sys.dweb`
 - `toast.sys.dweb`
 - `share.sys.dweb`
-- `http.sys.dweb`
-- `https.sys.dweb`
-- `http3.sys.dweb`
-- `permission.sys.dweb`
-- `usb.sys.dweb`
-- `nn.sys.dweb`
-- `gpu.sys.dweb`
-- `xr.sys.dweb`
-- `alarms.sys.dweb`
-- `locks.sys.dweb`
-- `screen.sys.dweb`
-- `bluetooth.sys.dweb`
-- `hid.sys.dweb`
-- `serial.sys.dweb`
-- `ink.sys.dweb`
-- `keyboard.sys.dweb`
-- `virtual-keyboard.sys.dweb`
-- `system-bar.sys.dweb`
-  > Different platforms and different devices have different designs and definitions for a set of interfaces. At this time, you can call targeted platform interfaces for targeted development
-  - `system-bar.harmonyos-sys.dweb`
-  - `system-bar.android-sys.dweb`
-  - `system-bar.ios-sys.dweb`
-  - `system-bar.windows-sys.dweb`
-  - `system-bar.linux-sys.dweb`
-  - `system-bar.macos-sys.dweb`
+- `process.sys.dweb`
+- `account.sys.dweb`
 - _and more_
 
 These `*sys.dweb` standards represent industry consensus. We do not modify them but rather keep them up-to-date with updates to native systems. Therefore, they are long-term stable and serve as standard libraries for application development.
 
 ### Deep Linking Standard
 
-`dweb-deeplink` is a type of link format with the structure `dweb:{domain}/pathname?search`. It provides a platform for defining consensus among dweb modules. Modules can rely on consensus rather than specific dweb modules. For example, for implementing a sharing feature, I can bind it to my share button as `dweb:share?title=hello_world&files=http...`. The dweb kernel will then look for the module that declares the implementation of `dweb:share` and route the request to that module. If multiple modules implement the consensus, preference selection will be done through platform-specific interactions on different platforms.
+`dweb-deeplink` is a link in the format of `dweb://action?params`. It provides a platform for defining consensus between dweb modules. For example, modules can rely on consensus rather than actual dweb module.
+To give a specific example, for example, to implement the sharing function: I can bind: `dweb:share?title=hello_world&files=http...` in my share button, then the dweb kernel will look for which module declares the Implementation of `dweb:share` and routes requests to this module. If consensus is implemented by multiple modules at the same time, preference selection will be made on different platforms through the interaction of platform standards.
 
-In a command-line environment, `dweb-deeplink` can also be accessed via the command line. `dweb-browser install app --url=xx` would be parsed as `dweb:install/app?url=xx`.
+In an environment with a command line, `dweb-deeplink` can also be accessed through the command line: `dweb-browser install app --url=xx` will be parsed into: `dweb:install/app?url=xx`
 
-> Note: `dweb-browser` here is just one implementation of a software that follows the dweb protocol. There may be other implementations in the community.
-
-### Lifecycle Standard
-
-Dweb modules can connect with each other through the "Routing Standard," and consequently, there are two basic lifecycles:
-
-1. `onConnect`: Triggered when modules establish a connection. It can be someone connecting to you or you connecting to someone else. This lifecycle is triggered because modules are peer-to-peer and full-duplex.
-2. `onActivity`: Triggered when a module receives a specific message: `activity-event`. This lifecycle is
-
-commonly used to perform specific tasks, such as activating a window.
-
-> Additional lifecycles are defined in different platforms and scenarios, but those lifecycles belong to the upper-level application standard and are no longer part of the core dweb standard. If two applications want to know which standards the other application has implemented, they can use querying via dweb-deeplink.
-
-### Summary
-
-As seen, compared to traditional web API design, dweb offers more freedom. The core reason is that dweb modules communicate entirely using message-based communication. This opens up endless possibilities for deploying dweb modules. You can use sandbox modules to protect privacy or even deploy modules from other devices using the network.
+> Note: The `dweb-browser` here is just a software that implements the dweb protocol. There may be other implementations in the community, or in the future we will also launch dweb-cloud, a cloud-facing runtime service.
 
 ## What is plaoc
 
 plaoc is a "cross-platform web application" development toolkit based on the dweb-browser platform, comparable to Cordova, Capacitor, and Tauri.
-
-What is BFS?
-
-BFS stands for "Basic File System." It is a series of applications built on the dweb-browser platform, aimed at providing tools for element flow between individuals.
-It is based on the principles of distributed, open-source, and open platforms, ensuring that your data is not bound to any particular platform.
-Based on consensus, you can deploy privately all the software related to dweb, which will work on your device accordingly.
-
-It includes, but is not limited to, the following consensus and applications:
-
-1. `authn.bfs.dweb`
-   Consensus for "Authentication"
-1. `chain.bfs.dweb`
-   Consensus for "Biological Chain Forest"
-   1. `bfm.chain.bfs.dweb`
-   1. `ccc.chain.bfs.dweb`
-   1. `bft.chain.bfs.dweb`
-1. `matrix.bfs.dweb`
-   Consensus for "Decentralized Network Services"
-1. `cloud.bfs.dweb`
-   Consensus for "Decentralized Storage Services"
-1. `pay.bfs.dweb`
-   Consensus for "Peer-to-Peer Transfer"
-1. `wallet.bfs.dweb`
-   Consensus for "Wallet Connecting Web3 and Biological Chain Forest"
-   1. `cot.wallet.bfs.dweb` COT Wallet
-1. `dp.bfs.dweb`
-   Consensus for "Peer-to-Peer Digital Product Trading"
-1. `blog.bfs.dweb`
-   Consensus for "Distributed Graphic and Text Media"
-1. `chat.bfs.dweb`
-   Consensus for "Distributed Real-time Communication"
-1. `finance.bfs.dweb`
-   Consensus for "Distributed Finance"
-1. `office.bfs.dweb`
-   Consensus for "Distributed Office Collaboration"
-   1. `ark.office.bfs.dweb` Ark
 
 ### cli
 
