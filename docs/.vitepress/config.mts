@@ -2,7 +2,6 @@ import { defineConfig } from 'vitepress'
 import { en } from './en.mjs'
 import { zh, search as zhSearch } from './zh.mjs'
 import { transformerTwoslash } from 'vitepress-plugin-twoslash'
-// import { bundledThemes } from 'shikiji'
 import vite from './vite.config.mjs'
 
 // https://vitepress.dev/reference/site-config
@@ -16,11 +15,6 @@ export default defineConfig({
       light: 'vitesse-light',
       dark: 'vitesse-dark',
     },
-    // async shikijiSetup(shikiji) {
-    //   await Promise.all(Object.keys("vitesse-dark" | "").map(async (theme) => {
-    //     await shikiji.loadTheme(theme as any)
-    //   }))
-    // },
     codeTransformers: [transformerTwoslash()]
   },
   head: [

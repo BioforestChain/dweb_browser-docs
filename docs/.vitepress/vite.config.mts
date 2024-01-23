@@ -16,9 +16,5 @@ export default defineConfig({
     UnoCSS(
       fileURLToPath(new URL('./uno.config.ts', import.meta.url)),
     ),
-  ],
-  ssr: {
-    // issue: https://github.com/antfu/shikiji/issues/86
-    noExternal: ['shikiji-twoslash', 'vitepress-plugin-twoslash']
-  }
+  ]
 })
