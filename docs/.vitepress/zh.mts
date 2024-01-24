@@ -1,82 +1,5 @@
 import { defineConfig, type DefaultTheme } from "vitepress";
 
-export const zh = defineConfig({
-  lang: "zh-Hans",
-  description: "一个提供分布式网络 | 应用附着的浏览器。",
-
-  themeConfig: {
-    nav: nav(),
-
-    sidebar: {
-      "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
-      "/plugins/": { base: "/plugins/", items: sidebarPlugins() },
-    },
-
-    editLink: {
-      pattern:
-        "https://github.com/BioforestChain/dweb_browser-docs/edit/main/docs/:path",
-      text: "在 GitHub 上编辑此页面",
-    },
-
-    footer: {
-      message: "基于 MIT 许可发布",
-      copyright: `版权所有 © 2021-${new Date().getFullYear()} BFChain`,
-    },
-
-    docFooter: {
-      prev: "上一页",
-      next: "下一页",
-    },
-
-    outline: {
-      label: "页面导航",
-    },
-
-    lastUpdated: {
-      text: "最后更新于",
-      formatOptions: {
-        dateStyle: "short",
-        timeStyle: "medium",
-      },
-    },
-
-    langMenuLabel: "多语言",
-    returnToTopLabel: "回到顶部",
-    sidebarMenuLabel: "菜单",
-    darkModeSwitchLabel: "主题",
-    lightModeSwitchTitle: "切换到浅色模式",
-    darkModeSwitchTitle: "切换到深色模式",
-  },
-});
-
-function nav(): DefaultTheme.NavItem[] {
-  return [
-    {
-      text: "Plaoc",
-      activeMatch: "/plaoc/",
-      items: navPlaoc(),
-    },
-    {
-      text: "Plugins",
-      activeMatch: "/plugins/",
-      items: navPlugins()
-    },
-    {
-      text: "2.x.x",
-      items: [
-        {
-          text: "Monthly",
-          link: "https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md",
-        },
-        {
-          text: "Get Start for Developer",
-          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
-        },
-      ],
-    },
-  ];
-}
-
 function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
   return [
     {
@@ -201,6 +124,83 @@ function navPlugins(): (
 
   return navItems;
 }
+
+function nav(): DefaultTheme.NavItem[] {
+  return [
+    {
+      text: "Plaoc",
+      activeMatch: "/plaoc/",
+      items: navPlaoc(),
+    },
+    {
+      text: "Plugins",
+      activeMatch: "/plugins/",
+      items: navPlugins()
+    },
+    {
+      text: "2.x.x",
+      items: [
+        {
+          text: "Monthly",
+          link: "https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md",
+        },
+        {
+          text: "Get Start for Developer",
+          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
+        },
+      ],
+    },
+  ];
+}
+
+export const zh = defineConfig({
+  lang: "zh-Hans",
+  description: "一个提供分布式网络 | 应用附着的浏览器。",
+
+  themeConfig: {
+    nav: nav(),
+
+    sidebar: {
+      "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
+      "/plugins/": { base: "/plugins/", items: sidebarPlugins() },
+    },
+
+    editLink: {
+      pattern:
+        "https://github.com/BioforestChain/dweb_browser-docs/edit/main/docs/:path",
+      text: "在 GitHub 上编辑此页面",
+    },
+
+    footer: {
+      message: "基于 MIT 许可发布",
+      copyright: `版权所有 © 2021-${new Date().getFullYear()} BFChain`,
+    },
+
+    docFooter: {
+      prev: "上一页",
+      next: "下一页",
+    },
+
+    outline: {
+      label: "页面导航",
+    },
+
+    lastUpdated: {
+      text: "最后更新于",
+      formatOptions: {
+        dateStyle: "short",
+        timeStyle: "medium",
+      },
+    },
+
+    langMenuLabel: "多语言",
+    returnToTopLabel: "回到顶部",
+    sidebarMenuLabel: "菜单",
+    darkModeSwitchLabel: "主题",
+    lightModeSwitchTitle: "切换到浅色模式",
+    darkModeSwitchTitle: "切换到深色模式",
+  },
+});
 
 export const search: DefaultTheme.AlgoliaSearchOptions["locales"] = {
   zh: {
