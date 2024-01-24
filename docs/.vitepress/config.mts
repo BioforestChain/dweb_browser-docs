@@ -9,7 +9,7 @@ export default defineConfig({
   title: "DwebBrowser",
   description: "一个提供分布式网络 | 应用附着的浏览器。",
   lastUpdated: true,
-  cleanUrls: true,
+  cleanUrls: false,
   markdown: {
     theme: {
       light: 'vitesse-light',
