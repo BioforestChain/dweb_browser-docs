@@ -135,7 +135,7 @@ function nav(): DefaultTheme.NavItem[] {
     {
       text: "Plugins",
       activeMatch: "/plugins/",
-      items: navPlugins()
+      items: navPlugins(),
     },
     {
       text: "2.x.x",
@@ -160,10 +160,23 @@ export const zh = defineConfig({
   themeConfig: {
     nav: nav(),
 
-    sidebar: {
-      "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
-      "/plugins/": { base: "/plugins/", items: sidebarPlugins() },
-    },
+    sidebar: Object.assign(
+      {},
+      {
+        "/": [
+          {
+            text: "Plaoc",
+            base: "/plaoc/",
+            items: sidebarPlaoc(),
+          },
+          {
+            text: "Plugins",
+            base: "/plugins/",
+            items: sidebarPlugins(),
+          },
+        ],
+      }
+    ),
 
     editLink: {
       pattern:
