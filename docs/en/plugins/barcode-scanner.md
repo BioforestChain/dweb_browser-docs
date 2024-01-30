@@ -10,14 +10,17 @@ outline: deep
 Scan code plugin
 :::
 
-- [Reference](#reference)
-  - [Method](#method)
-  - [Parameter](#parameter)
-- [Usage](#usage)
+- [bacode-scanner](#bacode-scanner)
+  - [Reference](#reference)
+    - [Method](#method)
+      - [Parameter](#parameter)
+  - [Usage Plugin](#usage-plugin)
+  - [Usage WebComponent](#usage-webcomponent)
+      - [Parameter](#parameter-1)
 
 ## Reference
 
-#### Method
+### Method
 
 - `createProcesser`
   
@@ -26,9 +29,11 @@ Scan code plugin
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
 const controller = await barcodeScannerPlugin.createProcesser(SupportedFormat.QR_CODE);
-//                                            ^?
+// To parse the code
 controller.process(new Uint8Array());
-//         ^|
+// stop parsing
+controller.stop()
+
 ```
 
 - `process`
@@ -47,9 +52,8 @@ await barcodeScannerPlugin.process(new Uint8Array());
   **_How to stop parsing barcode data_**
 
 ```ts twoslash
-import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 await barcodeScannerPlugin.stop();
-//                         ^?
 ```
 
 #### Parameter
@@ -60,26 +64,90 @@ await barcodeScannerPlugin.stop();
 ```ts twoslash
 import { SupportedFormat } from "@plaoc/plugins";
 SupportedFormat.QR_CODE
-//              ^|
 ```
 
-## Usage
+## Usage Plugin
 
-```vue {5,9}
+```vue twoslash
 <script setup lang="ts">
-import { barcodeScannerPlugin } from "@plaoc/plugins";
+import { onMounted } from 'vue'
+import { barcodeScannerPlugin,ScannerProcesser } from "@plaoc/plugins";
 
+let controller: ScannerProcesser;
+onMounted(async()=> {
+  // get controller
+  controller = await barcodeScannerPlugin.createProcesser();
+})
 async function onFileChanged($event: Event) {
-  const scannerServer = await barcodeScannerPlugin.createProcesser();
   const target = $event.target as HTMLInputElement;
   if (target && target.files?.[0]) {
     const img = target.files[0];
-    const res = await scannerServer.process(img);
+    const res = await controller.process(img);
   }
 }
 </script>
 <template>
-  <dweb-barcode-scanning></dweb-barcode-scanning>
   <input type="file" @change="onFileChanged($event)" accept="image/*" capture />
 </template>
 ```
+## Usage WebComponent
+
+```vue
+<script setup>
+import { onMounted, ref } from 'vue'
+import { HTMLDwebBarcodeScanningElement } from "@plaoc/plugins";
+
+const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
+let barcodeScanner: HTMLDwebBarcodeScanningElement;
+
+onMounted(async () => {
+  barcodeScanner = $barcodeScannerPlugin.value!
+});
+
+const startScanning = async () => {
+  return await barcodeScanner.startScanning()
+}
+
+const stop = async () => {
+  return await barcodeScanner.stop()
+}
+</script>
+<template>
+   <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
+</template>
+```
+
+#### Parameter
+- `ScanOptions?`
+
+   **_Scan code delivery options_**
+
+```ts twoslash
+import { CameraDirection,SupportedFormat } from "@plaoc/plugins";
+export interface ScanOptions {
+   /**
+    *Picture deflection angle
+    * @since 2.0.0
+    */
+   rotation?: number;
+   /**
+    * Select front and rear cameras
+    * @since 2.0.0
+    */
+   direction?: CameraDirection;
+   /**
+    * video display width
+    * @since 2.0.0
+    */
+   width?: number;
+   /**
+    * video display height
+    * @since 2.0.0
+    */
+   height?: number;
+   /**
+    * Image recognition type
+    * @since 2.0.0
+    */
+   formats?: SupportedFormat;
+}

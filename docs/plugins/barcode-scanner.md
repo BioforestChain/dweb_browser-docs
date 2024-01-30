@@ -10,25 +10,29 @@ outline: deep
 扫码插件  
 :::
 
-- [Reference](#reference)
-  - [Method](#method)
-  - [Parameter](#parameter)
-- [Usage](#usage)
+- [bacode-scanner](#bacode-scanner)
+  - [Reference](#reference)
+    - [Method](#method)
+      - [Parameter](#parameter)
+  - [Usage Plugin](#usage-plugin)
+  - [Usage WebComponent](#usage-webcomponent)
+      - [Parameter](#parameter-1)
 
 ## Reference
 
-#### Method
+### Method
 
 - `createProcesser`
   
-  **_识码_**
+  **_创建控制句柄_**
 
 ```ts twoslash
-import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
-const controller = await barcodeScannerPlugin.createProcesser(SupportedFormat.QR_CODE);
-//                                            ^?
+import {  barcodeScannerPlugin } from "@plaoc/plugins";
+const controller = await barcodeScannerPlugin.createProcesser();
+// 解析码，需要将图片转化为 blob 数据，再传递给函数进行识别。支持Uint8Array,Blob
 controller.process(new Uint8Array());
-//         ^|
+// 停止解析条码数据的方法
+controller.stop()
 ```
 
 - `process`
@@ -36,7 +40,7 @@ controller.process(new Uint8Array());
   **_解析码，需要将图片转化为 blob 数据，再传递给函数进行识别。_**
 
 ```ts twoslash
-import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 
 await barcodeScannerPlugin.process(new Uint8Array());
 //                         ^?
@@ -60,26 +64,93 @@ await barcodeScannerPlugin.stop();
 ```ts twoslash
 import { SupportedFormat } from "@plaoc/plugins";
 SupportedFormat.QR_CODE
-//              ^|
 ```
 
-## Usage
+## Usage Plugin
 
-```vue {5,9}
+```vue twoslash
 <script setup lang="ts">
-import { barcodeScannerPlugin } from "@plaoc/plugins";
+import { onMounted } from 'vue'
+import { barcodeScannerPlugin,ScannerProcesser } from "@plaoc/plugins";
 
+let controller: ScannerProcesser;
+onMounted(async()=> {
+  // 获取控制器
+  controller = await barcodeScannerPlugin.createProcesser();
+})
 async function onFileChanged($event: Event) {
-  const scannerServer = await barcodeScannerPlugin.createProcesser();
   const target = $event.target as HTMLInputElement;
   if (target && target.files?.[0]) {
     const img = target.files[0];
-    const res = await scannerServer.process(img);
+    const res = await controller.process(img);
   }
 }
 </script>
 <template>
-  <dweb-barcode-scanning></dweb-barcode-scanning>
   <input type="file" @change="onFileChanged($event)" accept="image/*" capture />
 </template>
 ```
+## Usage WebComponent
+
+```vue
+<script setup>
+import { onMounted, ref } from 'vue'
+import { HTMLDwebBarcodeScanningElement } from "@plaoc/plugins";
+
+const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
+let barcodeScanner: HTMLDwebBarcodeScanningElement;
+
+onMounted(async () => {
+  barcodeScanner = $barcodeScannerPlugin.value!
+});
+
+const startScanning = async () => {
+  return await barcodeScanner.startScanning()
+}
+
+const stop = async () => {
+  return await barcodeScanner.stop()
+}
+</script>
+<template>
+   <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
+</template>
+```
+
+#### Parameter
+- `ScanOptions?`
+
+  **_扫码传递的选项_**
+
+```ts twoslash
+import { CameraDirection,SupportedFormat } from "@plaoc/plugins";
+export interface ScanOptions {
+  /**
+   * 图片偏转角度
+   * @since 2.0.0
+   */
+  rotation?: number;
+  /**
+   * 选择前后摄像头
+   * @since 2.0.0
+   */
+  direction?: CameraDirection;
+  /**
+   * video显示宽度
+   * @since 2.0.0
+   */
+  width?: number;
+  /**
+   * video显示高度
+   * @since 2.0.0
+   */
+  height?: number;
+  /**
+   * 图片识别类型
+   * @since 2.0.0
+   */
+  formats?: SupportedFormat;
+}
+```
+
+
