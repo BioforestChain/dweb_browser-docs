@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "dweb-browser",
   "devDependencies": {
-    "@plaoc/plugins": "^0.6.1",
+    "@plaoc/plugins": "^0.6.2",
     "@types/node": "^20.11.0",
     "shikiji": "0.10.1",
     "shikiji-transformers": "0.10.1",
