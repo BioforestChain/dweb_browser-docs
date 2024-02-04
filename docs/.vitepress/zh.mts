@@ -59,7 +59,7 @@ function nav(): DefaultTheme.NavItem[] {
     {
       text: "Plugins",
       activeMatch: "/plugins/",
-      items: navPlugins()
+      items: navPlugins(),
     },
     {
       text: "2.x.x",
@@ -141,6 +141,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "MotionSensorsPlugin", link: "motion-sensors" },
             { text: "NetworkPlugin", link: "network" },
             { text: "SharePlugin", link: "share" },
+            { text: "ShortcutPlugin", link: "shortcut" },
           ],
         },
         {

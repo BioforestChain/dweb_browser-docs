@@ -1,28 +1,30 @@
-import { defineConfig, type DefaultTheme } from 'vitepress'
+import { defineConfig, type DefaultTheme } from "vitepress";
 
 export const en = defineConfig({
-  lang: 'en-US',
-  description: 'A browser that provides distributed network and application attachment.',
+  lang: "en-US",
+  description:
+    "A browser that provides distributed network and application attachment.",
 
   themeConfig: {
     nav: nav(),
 
     sidebar: {
-      '/en/plaoc/': { base: '/en/plaoc/', items: sidebarPlaoc() },
-      '/en/plugins/': { base: '/en/plugins/', items: sidebarPlugins() }
+      "/en/plaoc/": { base: "/en/plaoc/", items: sidebarPlaoc() },
+      "/en/plugins/": { base: "/en/plugins/", items: sidebarPlugins() },
     },
 
     editLink: {
-      pattern: 'https://github.com/BioforestChain/dweb_browser-docs/edit/main/docs/:path',
-      text: 'Edit this page on GitHub'
+      pattern:
+        "https://github.com/BioforestChain/dweb_browser-docs/edit/main/docs/:path",
+      text: "Edit this page on GitHub",
     },
 
     footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2021-present BFChain'
-    }
-  }
-})
+      message: "Released under the MIT License.",
+      copyright: "Copyright © 2021-present BFChain",
+    },
+  },
+});
 
 function nav(): DefaultTheme.NavItem[] {
   return [
@@ -34,7 +36,7 @@ function nav(): DefaultTheme.NavItem[] {
     {
       text: "Plugins",
       activeMatch: "/plugins/",
-      items: navPlugins()
+      items: navPlugins(),
     },
     {
       text: "2.x.x",
@@ -116,6 +118,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "MotionSensorsPlugin", link: "motion-sensors" },
             { text: "NetworkPlugin", link: "network" },
             { text: "SharePlugin", link: "share" },
+            { text: "ShortcutPlugin", link: "shortcut" },
           ],
         },
         {
@@ -126,7 +129,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "NavigationBarPlugin", link: "navigation-bar" },
             { text: "VirtualKeyboardPlugin", link: "virtual-keyboard" },
             { text: "TorchPlugin", link: "torch" },
-          ]
+          ],
         },
         {
           text: "API",
