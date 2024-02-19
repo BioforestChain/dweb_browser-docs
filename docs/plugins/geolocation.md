@@ -10,9 +10,12 @@ outline: deep
 地理位置插件
 :::
 
-- [Reference](#reference)
-  - [Method](#method)
-- [Usage](#usage)
+- [geolocation](#geolocation)
+  - [Reference](#reference)
+    - [Method](#method)
+    - [Parameter](#parameter)
+  - [Usage Plugins](#usage-plugins)
+  - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
@@ -23,14 +26,60 @@ outline: deep
   **_获取当前位置_**
 
 ```ts twoslash
-import { geolocationPlugin, $GeolocationPosition } from "@plaoc/plugins";
+import { geolocationPlugin } from "@plaoc/plugins";
 await geolocationPlugin.getLocation();
-//                      ^?
+//                       ^?
 ```
 
-## Usage
+- `createLocation`
 
-```vue {5}
+  **_创建获取当前位置的监听控制器_**
+
+<!-- ```ts twoslash
+import { geolocationPlugin } from "@plaoc/plugins";
+const contoller = await geolocationPlugin.createLocation();
+contoller.onLocation((res) => {
+  console.log("location", res.state.message);
+  const coords = res.coords;
+  console.log(
+    `经度：${coords.longitude}纬度：${coords.latitude}海拔：${coords.altitude}`
+  );
+});
+// contoller.
+``` -->
+
+#### Parameter
+
+- `ClipboardWriteOptions`
+
+  **_位置获取得到的结果_**
+
+```ts twoslash
+export interface $GeolocationPosition {
+  /**当前状态 */
+  state: $GeolocationPositionState;
+  /**地理位置坐标包含经纬度 */
+  coords: GeolocationCoordinates;
+  /**时间戳 */
+  timestamp: number;
+}
+export interface $GeolocationPositionState {
+  code: $GeolocationCode;
+  message: string | null;
+}
+export enum $GeolocationCode {
+  success = 0,
+  permission_denied = 1,
+  position_unavailable = 2,
+  timeout = 3,
+}
+```
+
+- [GeolocationCoordinates](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates)
+
+## Usage Plugins
+
+```vue twoslash
 <script setup lang="ts">
 import { geolocationPlugin } from "@plaoc/plugins";
 
@@ -38,7 +87,27 @@ async function getLocation() {
   const res = await geolocationPlugin.getLocation();
 }
 </script>
+```
+
+## Usage WebComponent
+
+```vue
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+import { HTMLGeolocationElement } from "@plaoc/plugins";
+
+const $geolocationPlugin = ref<HTMLGeolocationElement>();
+let geolocation: HTMLGeolocationElement;
+
+onMounted(async () => {
+  geolocation = $geolocationPlugin.value!;
+});
+
+async function getLocation() {
+  const res = await geolocation.getLocation();
+}
+</script>
 <template>
-  <dweb-geolocation></dweb-geolocation>
+  <dweb-geolocation ref="$geolocationPlugin"></dweb-geolocation>
 </template>
 ```
