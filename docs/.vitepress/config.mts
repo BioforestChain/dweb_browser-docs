@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { en } from './en.mjs'
 import { zh, search as zhSearch } from './zh.mjs'
-import { transformerTwoslash } from 'vitepress-plugin-twoslash'
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import vite from './vite.config.mjs'
 
 // https://vitepress.dev/reference/site-config

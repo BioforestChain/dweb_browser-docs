@@ -5,12 +5,12 @@
   "devDependencies": {
     "@plaoc/plugins": "0.6.3",
     "@types/node": "^20.11.0",
-    "shikiji": "0.10.1",
-    "shikiji-transformers": "0.10.1",
-    "shikiji-twoslash": "0.10.1",
+    "shiki": "^1.1.6",
+    "@shikijs/transformers": "^1.1.6",
+    "@shikijs/twoslash": "^1.1.6",
     "vite": "^5.0.11",
-    "vitepress": "^1.0.0-rc.40",
-    "vitepress-plugin-twoslash": "0.10.1",
+    "vitepress": "^1.0.0-rc.44",
+    "@shikijs/vitepress-twoslash": "^1.1.6",
     "vue": "^3.4.14",
     "unocss": "^0.58.3",
     "unplugin-vue-components": "^0.26.0"
