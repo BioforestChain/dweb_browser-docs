@@ -13,7 +13,8 @@ outline: deep
 - [Reference](#reference)
   - [Method](#method)
     - [Parameter](#parameter)
-- [Usage](#usage)
+  - [Usage Plugins](#usage-plugins)
+  - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
@@ -43,9 +44,9 @@ const options: MediaOption = { file: File, saveLocation: "" };
 //                                         ^?
 ```
 
-## Usage
+## Usage Plugins
 
-```vue {7}
+```vue twoslash
 <script setup lang="ts">
 import { mediaPlugin } from "@plaoc/plugins";
 
@@ -57,7 +58,34 @@ const fileChange = ($event: Event) => {
 };
 </script>
 <template>
-  <dweb-media></dweb-media>
+  <input type="file" accept="image/*" @change="fileChange($event)" />
+</template>
+```
+
+## Usage WebComponent
+
+```vue twoslash
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+// @noErrors
+import { HTMLDwebMediaElement } from "@plaoc/plugins";
+
+const $mediaPlugin = ref<HTMLDwebMediaElement>();
+let media: HTMLDwebMediaElement;
+
+onMounted(async () => {
+  media = $mediaPlugin.value!;
+});
+
+const fileChange = ($event: Event) => {
+  const target = $event.target as HTMLInputElement;
+  if (target && target.files?.[0]) {
+    mediaPlugin.savePictures({ file: target.files[0] });
+  }
+};
+</script>
+<template>
+  <dweb-media ref="$mediaPlugin"></dweb-media>
   <input type="file" accept="image/*" @change="fileChange($event)" />
 </template>
 ```

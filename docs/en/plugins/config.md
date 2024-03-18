@@ -66,9 +66,10 @@ async function getLang() {
 
 ## Usage WebComponent
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+// @noErrors
 import { HTMLDwebConfigElement } from "@plaoc/plugins";
 
 const $configPlugin = ref<HTMLDwebConfigElement>();

@@ -36,12 +36,12 @@ await geolocationPlugin.getLocation();
   **_Watch location_**
 
 ```ts twoslash
-import type { $LocationOptions, $GeolocationContoller } from "@plaoc/plugins";
+import type { $LocationOptions, $GeolocationController } from "@plaoc/plugins";
 import { geolocationPlugin } from "@plaoc/plugins";
 const options: $LocationOptions = {};
-const controller: $GeolocationContoller =
+const controller: $GeolocationController =
   await geolocationPlugin.createLocation(options);
-contoller.listen((res) => {
+controller.listen((res) => {
   const coords = res.coords;
   console.log(
     `longitude：${coords.longitude} latitude：${coords.latitude} altitude：${coords.altitude}`
@@ -92,9 +92,10 @@ async function getLocation() {
 
 ## Usage WebComponent
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+// @noErrors
 import { HTMLGeolocationElement } from "@plaoc/plugins";
 
 const $geolocationPlugin = ref<HTMLGeolocationElement>();

@@ -7,17 +7,18 @@ outline: deep
 <Badges name="@plaoc/plugins" />
 
 ::: tip intro:
-Motion sensors plugin 
+Motion sensors plugin
 :::
 
 - [Reference](#reference)
   - [Method](#method)
-  - [Parameter](#parameter)
-- [Usage](#usage)
+    - [Parameter](#parameter)
+  - [Usage Plugins](#usage-plugins)
+  - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `startAccelerometer`
 
@@ -46,15 +47,37 @@ await motionSensorsPlugin.startGyroscope(2);
 
   **_frames per second_**
 
-## Usage
+## Usage Plugins
 
-```vue {5,8,9,10,16,17,18}
+```vue twoslash
+<script setup lang="ts">
+import { motionSensorsPlugin, $Axis } from "@plaoc/plugins";
+
+async function startAccelerometer() {
+  const controller = await motionSensorsPlugin.startAccelerometer(1);
+  controller.listen((axis) => {
+    console.log(`x: ${axis.x} y: ${axis.y} z: ${axis.y}`);
+  });
+
+  setTimeout(() => controller.stop(), 3000);
+}
+</script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
 <script setup lang="ts">
 import { ref } from "vue";
-import type { HTMLDwebMotionSensorsElement, $Axis } from "@plaoc/plugins";
+// @noErrors
+import { HTMLDwebMotionSensorsElement, $Axis } from "@plaoc/plugins";
 
 const $motionSensorsPlugin = ref<HTMLDwebMotionSensorsElement>();
-const motionSensors = $motionSensorsPlugin.value!;
+let motionSensors: HTMLDwebMotionSensorsElement;
+
+onMounted(async () => {
+  motionSensors = $motionSensorsPlugin.value!;
+});
 function startAccelerometer() {
   motionSensors.startAccelerometer(1);
   motionSensors.addEventListener("readAccelerometer", (event: Event) => {

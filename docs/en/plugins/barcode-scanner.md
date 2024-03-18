@@ -29,10 +29,8 @@ Scan code plugin
   **_scan code_**
 
 ```ts twoslash
-import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
-const controller = await barcodeScannerPlugin.createProcesser(
-  SupportedFormat.QR_CODE
-);
+import { barcodeScannerPlugin } from "@plaoc/plugins";
+const controller = await barcodeScannerPlugin.createProcesser();
 // To parse the code
 controller.process(new Uint8Array());
 // stop parsing
@@ -44,7 +42,7 @@ controller.stop();
   **_To parse the code, you need to convert the image into blob data and then pass it to the function for identification._**
 
 ```ts twoslash
-import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 
 await barcodeScannerPlugin.process(new Uint8Array());
 //                         ^?
@@ -125,9 +123,10 @@ const options: ScanOptions = {
 
 ### Usage WebComponent
 
-```vue
-<script setup>
+```vue twoslash
+<script setup lang="ts">
 import { onMounted, ref } from 'vue'
+// @noErrors
 import { HTMLDwebBarcodeScanningElement } from "@plaoc/plugins";
 
 const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();

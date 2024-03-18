@@ -12,8 +12,9 @@ outline: deep
 
 - [Reference](#reference)
   - [Method](#method)
-  - [Parameter](#parameter)
-- [Usage](#usage)
+    - [Parameter](#parameter)
+  - [Usage Plugins](#usage-plugins)
+  - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
@@ -46,20 +47,42 @@ await motionSensorsPlugin.startGyroscope(2);
 
   **_每秒帧率_**
 
-## Usage
+## Usage Plugins
 
-```vue {5,8,9,10,16,17,18}
+```vue twoslash
+<script setup lang="ts">
+import { motionSensorsPlugin, $Axis } from "@plaoc/plugins";
+
+async function startAccelerometer() {
+  const controller = await motionSensorsPlugin.startAccelerometer(1);
+  controller.listen((axis) => {
+    console.log(`x: ${axis.x} y: ${axis.y} z: ${axis.y}`);
+  });
+
+  setTimeout(() => controller.stop(), 3000);
+}
+</script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
 <script setup lang="ts">
 import { ref } from "vue";
-import type { HTMLDwebMotionSensorsElement, $Axis } from "@plaoc/plugins";
+// @noErrors
+import { HTMLDwebMotionSensorsElement, $Axis } from "@plaoc/plugins";
 
 const $motionSensorsPlugin = ref<HTMLDwebMotionSensorsElement>();
-const motionSensors = $motionSensorsPlugin.value!;
+let motionSensors: HTMLDwebMotionSensorsElement;
+
+onMounted(async () => {
+  motionSensors = $motionSensorsPlugin.value!;
+});
 function startAccelerometer() {
   motionSensors.startAccelerometer(1);
   motionSensors.addEventListener("readAccelerometer", (event: Event) => {
     const e = event as CustomEvent<$Axis>;
-    console.log("加速计: ", e.detail);
+    console.log("Accelerometer: ", e.detail);
   });
 }
 
@@ -67,7 +90,7 @@ function startGyroscope() {
   motionSensors.startGyroscope(1);
   motionSensors.addEventListener("readGyroscope", (event: Event) => {
     const e = event as CustomEvent<$Axis>;
-    console.log("陀螺仪: ", e.detail);
+    console.log("Gyroscope: ", e.detail);
   });
 }
 </script>

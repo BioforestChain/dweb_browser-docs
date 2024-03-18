@@ -13,7 +13,8 @@ outline: deep
 - [Reference](#reference)
   - [Method](#method)
     - [Parameter](#parameter)
-- [Usage](#usage)
+  - [Usage Plugins](#usage-plugins)
+  - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
@@ -133,16 +134,33 @@ const options: VibrateOptions = { duration: [100, 1, 200] };
 //                                ^?
 ```
 
-## Usage
+## Usage Plugins
 
-```vue {5,8}
+```vue twoslash
+<script setup lang="ts">
+import { hapticsPlugin } from "@plaoc/plugins";
+
+async function customVibrate() {
+  await hapticsPlugin.vibrate({ duration: [10, 2, 100, 3, 10] });
+}
+</script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
 <script setup lang="ts">
 import { ref } from "vue";
-import type { HTMLDwebHapticsElement } from "@plaoc/plugins";
+// @noErrors
+import { HTMLDwebHapticsElement } from "@plaoc/plugins";
 
 const $hapticsPlugin = ref<HTMLDwebHapticsElement>();
+let haptics: HTMLDwebHapticsElement;
+
+onMounted(async () => {
+  haptics = $hapticsPlugin.value!;
+});
 async function customVibrate() {
-  const haptics = $hapticsPlugin.value!;
   haptics.vibrate({ duration: [10, 2, 100, 3, 10] });
 }
 </script>

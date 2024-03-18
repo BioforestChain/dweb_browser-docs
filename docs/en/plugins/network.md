@@ -12,14 +12,15 @@ Network status plugin
 
 - [Reference](#reference)
   - [Method](#method)
-- [Usage](#usage)
+- [Usage Plugins](#usage-plugins)
+- [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
 #### Method
 
 - `onLine`
-  
+
   **_Check if the network is online_**
 
 ```ts twoslash
@@ -39,9 +40,9 @@ await networkPlugin.getStatus();
 //                  ^?
 ```
 
-## Usage
+## Usage Plugins
 
-```vue {5,6}
+```vue twoslash
 <script setup lang="ts">
 import { networkPlugin } from "@plaoc/plugins";
 
@@ -50,7 +51,29 @@ async function getNetworkState() {
   const status = networkPlugin.getStatus();
 }
 </script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+// @noErrors
+import { HTMLDwebNetworkElement } from "@plaoc/plugins";
+
+let $networkPlugin = ref<HTMLDwebNetworkElement>();
+let network: HTMLDwebNetworkElement;
+
+onMounted(() => {
+  network = $networkPlugin.value!;
+});
+
+async function getNetworkState() {
+  const state = network.onLine();
+  const status = network.getStatus();
+}
+</script>
 <template>
-  <dweb-network></dweb-network>
+  <dweb-network ref="$networkPlugin"></dweb-network>
 </template>
 ```

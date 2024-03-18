@@ -12,7 +12,8 @@ Torch plugin
 
 - [Reference](#reference)
   - [Method](#method)
-- [Usage](#usage)
+- [Usage Plugins](#usage-plugins)
+- [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
@@ -39,9 +40,9 @@ await torchPlugin.getTorchState();
 //                ^?
 ```
 
-## Usage
+## Usage Plugins
 
-```vue {5,8}
+```vue twoslash
 <script setup lang="ts">
 import { torchPlugin } from "@plaoc/plugins";
 
@@ -53,7 +54,32 @@ async function getTorchState() {
 }
 
 </script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+// @noErrors
+import { HTMLDwebTorchElement } from "@plaoc/plugins";
+
+const $torchPlugin = ref<HTMLDwebTorchElement>();
+let torch: HTMLDwebTorchElement;
+
+onMounted(() => {
+  torch = $torchPlugin.value!;
+});
+
+async function toggleTorch() {
+  await torch.toggleTorch();
+}
+async function getTorchState() {
+  await torch.getTorchState();
+}
+
+</script>
 <template>
-  <dweb-torch></dweb-torch>
+  <dweb-torch ref="$torchPlugin"></dweb-torch>
 </template>
 ```

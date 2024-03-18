@@ -53,7 +53,7 @@ await barcodeScannerPlugin.process(new Uint8Array());
   **_停止解析条码数据的方法_**
 
 ```ts twoslash
-import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 await barcodeScannerPlugin.stop();
 //                         ^?
 ```
@@ -124,9 +124,10 @@ const options: ScanOptions = {
 
 ### Usage WebComponent
 
-```vue
-<script setup>
+```vue twoslash
+<script setup lang="ts">
 import { onMounted, ref } from 'vue'
+// @noErrors
 import { HTMLDwebBarcodeScanningElement } from "@plaoc/plugins";
 
 const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();

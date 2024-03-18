@@ -100,24 +100,25 @@ async function biometrics() {
 
 ## Usage WebComponent
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+// @noErrors
 import { HTMLDwebBiometricsElement } from "@plaoc/plugins";
 
 const $biometricsPlugin = ref<HTMLDwebBiometricsElement>();
-let biometrics: HTMLDwebBiometricsElement;
+let biometricsPlugin: HTMLDwebBiometricsElement;
 
-onMounted(async () => {
-  biometrics = $biometricsPlugin.value!;
+onMounted(() => {
+  biometricsPlugin = $biometricsPlugin.value!;
 });
 
 async function check() {
-  return await biometrics.check();
+  return await biometricsPlugin.check();
 }
 
 async function biometrics() {
-  return await biometrics.biometrics();
+  return await biometricsPlugin.biometrics();
 }
 </script>
 <template>

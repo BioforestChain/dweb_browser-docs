@@ -13,7 +13,8 @@ Share plugin
 - [Reference](#reference)
   - [Method](#method)
   - [Parameter](#parameter)
-- [Usage](#usage)
+- [Usage Plugins](#usage-plugins)
+- [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
@@ -62,16 +63,36 @@ const options: ShareOptions = {
 };
 ```
 
-## Usage
+## Usage Plugins
 
-```vue {12,23}
+```vue twoslash
 <script setup lang="ts">
-import { reactive } from "vue";
-import type { HTMLDwebShareElement } from "@plaoc/plugins";
+import { sharePlugin, type ShareOptions } from "@plaoc/plugins";
+
+const shareData: ShareOptions = {
+  title: "分享标题🍉",
+  text: "分享文字分享文字",
+  url: "https://gpt.waterbang.top",
+  files: undefined,
+};
+
+async function shareHandle() {
+  const result = await sharePlugin.share(shareData);
+}
+</script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
+<script setup lang="ts">
+import { reactive, ref } from "vue";
+// @noErrors
+import { HTMLDwebShareElement } from "@plaoc/plugins";
 
 const shareData = reactive({
-  title: "share title 🍉",
-  text: "share text share text",
+  title: "分享标题🍉",
+  text: "分享文字分享文字",
   url: "https://gpt.waterbang.top",
   files: null as FileList | null,
 });

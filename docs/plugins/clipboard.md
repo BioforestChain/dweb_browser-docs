@@ -78,9 +78,10 @@ async function write() {
 
 ## Usage WebComponent
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+// @noErrors
 import { HTMLDwebClipboardElement } from "@plaoc/plugins";
 
 const $clipboardPlugin = ref<HTMLDwebClipboardElement>();

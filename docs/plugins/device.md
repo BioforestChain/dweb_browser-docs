@@ -46,9 +46,10 @@ async function getUUID() {
 
 ## Usage WebComponent
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+// @noErrors
 import { HTMLDeviceElement } from "@plaoc/plugins";
 
 const $devicePlugin = ref<HTMLDeviceElement>();
