@@ -14,11 +14,9 @@ outline: deep
 
 ## Usage
 
-```ts twoslash
-import { CloseWatcher } from "@plaoc/plugins";
+```ts
 const closeWatcher = new CloseWatcher();
 closeWatcher.addEventListener("close", (event) => {
   closeWatcher.close();
-//             ^?
 });
 ```

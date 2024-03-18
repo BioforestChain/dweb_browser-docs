@@ -30,7 +30,7 @@ await updateControllerPlugin.download("http://game.www.bfchain.org/metadata.json
 
 ## Usage
 
-```vue {5}
+```vue twoslash
 <script setup lang="ts">
 import { updateControllerPlugin } from "@plaoc/plugins";
 

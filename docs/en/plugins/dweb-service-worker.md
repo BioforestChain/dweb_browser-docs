@@ -98,7 +98,7 @@ await dwebServiceWorker.externalFetch("game.www.bfchain.org.dweb", input: Reques
 
 ## Usage
 
-```vue {10,17}
+```vue twoslash
 <script setup lang="ts">
 import { ref } from "vue";
 import { dwebServiceWorker } from "@plaoc/plugins";

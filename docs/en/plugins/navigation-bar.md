@@ -12,12 +12,13 @@ Navigation bar plugin
 
 - [Reference](#reference)
   - [Method](#method)
-  - [Parameter](#parameter)
-- [Usage](#usage)
+    - [Parameter](#parameter)
+- [Usage Plugins](#usage-plugins)
+- [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `setState`
 
@@ -145,11 +146,26 @@ const state: Partial<$NavigationBarWritableState> = {
 };
 ```
 
-## Usage
+## Usage Plugins
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { ref } from "vue";
+import { navigationBarPlugin } from "@plaoc/plugins";
+
+async function getState() {
+  const state = navigationBarPlugin.getState();
+}
+
+</script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
+<script setup lang="ts">
+import { ref } from "vue";
+// @noErrors
 import { HTMLDwebNavigationBarElement } from "@plaoc/plugins";
 
 const $navigationBarPlugin = ref<HTMLDwebNavigationBarElement>();

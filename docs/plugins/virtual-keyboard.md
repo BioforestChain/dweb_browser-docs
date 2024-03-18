@@ -12,12 +12,13 @@ outline: deep
 
 - [Reference](#reference)
   - [Method](#method)
-  - [Parameter](#parameter)
-- [Usage](#usage)
+    - [Parameter](#parameter)
+- [Usage Plugins](#usage-plugins)
+- [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `setState`
 
@@ -72,11 +73,25 @@ const state: Partial<$VirtualKeyboardWritableState> = {
 };
 ```
 
-## Usage
+## Usage Plugins
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { ref } from "vue";
+import { virtualKeyboardPlugin } from "@plaoc/plugins";
+
+async function getState() {
+  const state = virtualKeyboardPlugin.getState();
+}
+</script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
+<script setup lang="ts">
+import { ref } from "vue";
+// @noErrors
 import { HTMLDwebVirtualKeyboardElement } from "@plaoc/plugins";
 
 const $virtualKeyboardPlugin = ref<HTMLDwebVirtualKeyboardElement>();

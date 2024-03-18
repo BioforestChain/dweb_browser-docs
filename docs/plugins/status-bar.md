@@ -12,12 +12,13 @@ outline: deep
 
 - [Reference](#reference)
   - [Method](#method)
-  - [Parameter](#parameter)
-- [Usage](#usage)
+    - [Parameter](#parameter)
+- [Usage Plugins](#usage-plugins)
+- [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `setState`
 
@@ -145,11 +146,25 @@ const state: Partial<$StatusBarWritableState> = {
 };
 ```
 
-## Usage
+## Usage Plugins
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { ref } from "vue";
+import { statusBarPlugin } from "@plaoc/plugins";
+
+async function getState() {
+  const state = statusBarPlugin.getState();
+}
+</script>
+```
+
+## Usage WebComponent
+
+```vue twoslash
+<script setup lang="ts">
+import { ref } from "vue";
+// @noErrors
 import { HTMLDwebStatusBarElement } from "@plaoc/plugins";
 
 const $statusBarPlugin = ref<HTMLDwebStatusBarElement>();
@@ -158,7 +173,6 @@ async function getState() {
   const statusBar = $statusBarPlugin.value!;
   const state = statusBar.getState();
 }
-
 </script>
 <template>
   <dweb-status-bar ref="$statusBarPlugin"></dweb-status-bar>
