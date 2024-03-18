@@ -13,13 +13,13 @@ outline: deep
 - [geolocation](#geolocation)
   - [Reference](#reference)
     - [Method](#method)
-    - [Parameter](#parameter)
+      - [Parameter](#parameter)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `getLocation`
 
@@ -35,22 +35,23 @@ await geolocationPlugin.getLocation();
 
   **_创建获取当前位置的监听控制器_**
 
-<!-- ```ts twoslash
+```ts twoslash
+import type { $LocationOptions, $GeolocationContoller } from "@plaoc/plugins";
 import { geolocationPlugin } from "@plaoc/plugins";
-const contoller = await geolocationPlugin.createLocation();
-contoller.onLocation((res) => {
-  console.log("location", res.state.message);
+const options: $LocationOptions = {};
+const controller: $GeolocationContoller =
+  await geolocationPlugin.createLocation(options);
+contoller.listen((res) => {
   const coords = res.coords;
   console.log(
-    `经度：${coords.longitude}纬度：${coords.latitude}海拔：${coords.altitude}`
+    `经度：${coords.longitude} 纬度：${coords.latitude} 海拔：${coords.altitude}`
   );
 });
-// contoller.
-``` -->
+```
 
 #### Parameter
 
-- `ClipboardWriteOptions`
+- `$LocationOptions`
 
   **_位置获取得到的结果_**
 

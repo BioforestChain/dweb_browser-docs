@@ -12,12 +12,12 @@ Haptics plugin
 
 - [Reference](#reference)
   - [Method](#method)
-  - [Parameter](#parameter)
+    - [Parameter](#parameter)
 - [Usage](#usage)
 
 ## Reference
 
-#### Method
+### Method
 
 - `impactLight`
 

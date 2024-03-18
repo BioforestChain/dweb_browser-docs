@@ -14,25 +14,27 @@ outline: deep
   - [Reference](#reference)
     - [Method](#method)
       - [Parameter](#parameter)
-  - [Usage Plugin](#usage-plugin)
-  - [Usage WebComponent](#usage-webcomponent)
+    - [Usage Plugin](#usage-plugin)
+    ***
+    - [Method](#method-1)
       - [Parameter](#parameter-1)
+    - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
 ### Method
 
 - `createProcesser`
-  
+
   **_创建控制句柄_**
 
 ```ts twoslash
-import {  barcodeScannerPlugin } from "@plaoc/plugins";
+import { barcodeScannerPlugin } from "@plaoc/plugins";
 const controller = await barcodeScannerPlugin.createProcesser();
 // 解析码，需要将图片转化为 blob 数据，再传递给函数进行识别。支持Uint8Array,Blob
 controller.process(new Uint8Array());
 // 停止解析条码数据的方法
-controller.stop()
+controller.stop();
 ```
 
 - `process`
@@ -57,27 +59,28 @@ await barcodeScannerPlugin.stop();
 ```
 
 #### Parameter
+
 - `SupportedFormat`
 
   **_支持的码类型_**
 
 ```ts twoslash
 import { SupportedFormat } from "@plaoc/plugins";
-SupportedFormat.QR_CODE
+SupportedFormat.QR_CODE;
 ```
 
 ## Usage Plugin
 
 ```vue twoslash
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { barcodeScannerPlugin,ScannerProcesser } from "@plaoc/plugins";
+import { onMounted } from "vue";
+import { barcodeScannerPlugin, ScannerProcesser } from "@plaoc/plugins";
 
 let controller: ScannerProcesser;
-onMounted(async()=> {
+onMounted(async () => {
   // 获取控制器
   controller = await barcodeScannerPlugin.createProcesser();
-})
+});
 async function onFileChanged($event: Event) {
   const target = $event.target as HTMLInputElement;
   if (target && target.files?.[0]) {
@@ -90,7 +93,36 @@ async function onFileChanged($event: Event) {
   <input type="file" @change="onFileChanged($event)" accept="image/*" capture />
 </template>
 ```
-## Usage WebComponent
+
+---
+
+### Method
+
+- `startScanning`
+
+**_开始扫码_**
+
+#### Parameter
+
+- `ScanOptions?`
+
+  **_扫码传递的选项_**
+
+```ts twoslash
+import type { ScanOptions } from "@plaoc/plugins";
+import { CameraDirection, SupportedFormat } from "@plaoc/plugins";
+const options: ScanOptions = {
+  rotation: 0,
+  direction: CameraDirection.FRONT,
+  //                         ^|
+  width: 0,
+  height: 0,
+  formats: SupportedFormat.QR_CODE,
+  //                       ^|
+};
+```
+
+### Usage WebComponent
 
 ```vue
 <script setup>
@@ -113,44 +145,6 @@ const stop = async () => {
 }
 </script>
 <template>
-   <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
+  <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
 </template>
 ```
-
-#### Parameter
-- `ScanOptions?`
-
-  **_扫码传递的选项_**
-
-```ts twoslash
-import { CameraDirection,SupportedFormat } from "@plaoc/plugins";
-export interface ScanOptions {
-  /**
-   * 图片偏转角度
-   * @since 2.0.0
-   */
-  rotation?: number;
-  /**
-   * 选择前后摄像头
-   * @since 2.0.0
-   */
-  direction?: CameraDirection;
-  /**
-   * video显示宽度
-   * @since 2.0.0
-   */
-  width?: number;
-  /**
-   * video显示高度
-   * @since 2.0.0
-   */
-  height?: number;
-  /**
-   * 图片识别类型
-   * @since 2.0.0
-   */
-  formats?: SupportedFormat;
-}
-```
-
-

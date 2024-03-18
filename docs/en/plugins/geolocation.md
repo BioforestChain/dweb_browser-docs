@@ -13,13 +13,13 @@ Geolocation plugin
 - [geolocation](#geolocation)
   - [Reference](#reference)
     - [Method](#method)
-    - [Parameter](#parameter)
+      - [Parameter](#parameter)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `getLocation`
 
@@ -31,9 +31,27 @@ await geolocationPlugin.getLocation();
 //                      ^?
 ```
 
+- `createLocation`
+
+  **_Watch location_**
+
+```ts twoslash
+import type { $LocationOptions, $GeolocationContoller } from "@plaoc/plugins";
+import { geolocationPlugin } from "@plaoc/plugins";
+const options: $LocationOptions = {};
+const controller: $GeolocationContoller =
+  await geolocationPlugin.createLocation(options);
+contoller.listen((res) => {
+  const coords = res.coords;
+  console.log(
+    `longitude：${coords.longitude} latitude：${coords.latitude} altitude：${coords.altitude}`
+  );
+});
+```
+
 #### Parameter
 
-- `ClipboardWriteOptions`
+- `$LocationOptions`
 
   **_Results obtained by location acquisition_**
 

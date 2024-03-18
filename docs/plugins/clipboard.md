@@ -13,13 +13,13 @@ outline: deep
 - [clipboard](#clipboard)
   - [Reference](#reference)
     - [Method](#method)
-    - [Parameter](#parameter)
+      - [Parameter](#parameter)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `read`
 
@@ -78,7 +78,7 @@ async function write() {
 
 ## Usage WebComponent
 
-```vue {4,7}
+```vue
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { HTMLDwebClipboardElement } from "@plaoc/plugins";

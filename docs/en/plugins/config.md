@@ -51,7 +51,7 @@ await configPlugin.getLang();
 
 ## Usage Plugins
 
-```vue
+```vue twoslash
 <script setup lang="ts">
 import { configPlugin } from "@plaoc/plugins";
 

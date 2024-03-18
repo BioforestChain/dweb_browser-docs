@@ -14,26 +14,29 @@ Scan code plugin
   - [Reference](#reference)
     - [Method](#method)
       - [Parameter](#parameter)
-  - [Usage Plugin](#usage-plugin)
-  - [Usage WebComponent](#usage-webcomponent)
+    - [Usage Plugin](#usage-plugin)
+    ***
+    - [Method](#method-1)
       - [Parameter](#parameter-1)
+    - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
 ### Method
 
 - `createProcesser`
-  
+
   **_scan code_**
 
 ```ts twoslash
 import { SupportedFormat, barcodeScannerPlugin } from "@plaoc/plugins";
-const controller = await barcodeScannerPlugin.createProcesser(SupportedFormat.QR_CODE);
+const controller = await barcodeScannerPlugin.createProcesser(
+  SupportedFormat.QR_CODE
+);
 // To parse the code
 controller.process(new Uint8Array());
 // stop parsing
-controller.stop()
-
+controller.stop();
 ```
 
 - `process`
@@ -57,27 +60,28 @@ await barcodeScannerPlugin.stop();
 ```
 
 #### Parameter
+
 - `SupportedFormat`
 
   **_Supported code types_**
 
 ```ts twoslash
 import { SupportedFormat } from "@plaoc/plugins";
-SupportedFormat.QR_CODE
+SupportedFormat.QR_CODE;
 ```
 
-## Usage Plugin
+### Usage Plugin
 
 ```vue twoslash
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { barcodeScannerPlugin,ScannerProcesser } from "@plaoc/plugins";
+import { onMounted } from "vue";
+import { barcodeScannerPlugin, ScannerProcesser } from "@plaoc/plugins";
 
 let controller: ScannerProcesser;
-onMounted(async()=> {
+onMounted(async () => {
   // get controller
   controller = await barcodeScannerPlugin.createProcesser();
-})
+});
 async function onFileChanged($event: Event) {
   const target = $event.target as HTMLInputElement;
   if (target && target.files?.[0]) {
@@ -90,7 +94,36 @@ async function onFileChanged($event: Event) {
   <input type="file" @change="onFileChanged($event)" accept="image/*" capture />
 </template>
 ```
-## Usage WebComponent
+
+---
+
+### Method
+
+- `startScanning`
+
+**_start scan_**
+
+#### Parameter
+
+- `ScanOptions?`
+
+  **_Scan code delivery options_**
+
+```ts twoslash
+import type { ScanOptions } from "@plaoc/plugins";
+import { CameraDirection, SupportedFormat } from "@plaoc/plugins";
+const options: ScanOptions = {
+  rotation: 0,
+  direction: CameraDirection.FRONT,
+  //                         ^|
+  width: 0,
+  height: 0,
+  formats: SupportedFormat.QR_CODE,
+  //                       ^|
+};
+```
+
+### Usage WebComponent
 
 ```vue
 <script setup>
@@ -113,41 +146,6 @@ const stop = async () => {
 }
 </script>
 <template>
-   <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
+  <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>
 </template>
 ```
-
-#### Parameter
-- `ScanOptions?`
-
-   **_Scan code delivery options_**
-
-```ts twoslash
-import { CameraDirection,SupportedFormat } from "@plaoc/plugins";
-export interface ScanOptions {
-   /**
-    *Picture deflection angle
-    * @since 2.0.0
-    */
-   rotation?: number;
-   /**
-    * Select front and rear cameras
-    * @since 2.0.0
-    */
-   direction?: CameraDirection;
-   /**
-    * video display width
-    * @since 2.0.0
-    */
-   width?: number;
-   /**
-    * video display height
-    * @since 2.0.0
-    */
-   height?: number;
-   /**
-    * Image recognition type
-    * @since 2.0.0
-    */
-   formats?: SupportedFormat;
-}

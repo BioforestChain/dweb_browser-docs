@@ -12,14 +12,14 @@ outline: deep
 
 - [biometrics](#biometrics)
   - [Reference](#reference)
-      - [Method](#method)
+    - [Method](#method)
       - [Parameter](#parameter)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
 ## Reference
 
-#### Method
+### Method
 
 - `check`
 
@@ -43,12 +43,13 @@ await biometricsPlugin.biometrics();
 ```
 
 #### Parameter
+
 - `BioetricsCheckResult?`
 
   **_检测生物识别返回的结果_**
 
 ::: tip
-iOS环境的dwebBrowser最低版本为17以上，因此都是支持人脸识别的。
+iOS 环境的 dwebBrowser 最低版本为 17 以上，因此都是支持人脸识别的。
 :::
 
 ```ts twoslash
@@ -88,7 +89,7 @@ export interface BaseResult {
 import { biometricsPlugin } from "@plaoc/plugins";
 
 async function check() {
- return await biometricsPlugin.check()
+  return await biometricsPlugin.check();
 }
 
 async function biometrics() {
@@ -99,9 +100,9 @@ async function biometrics() {
 
 ## Usage WebComponent
 
-```vue {5,6}
+```vue
 <script setup lang="ts">
-import { onMounted,ref } from 'vue'
+import { onMounted, ref } from "vue";
 import { HTMLDwebBiometricsElement } from "@plaoc/plugins";
 
 const $biometricsPlugin = ref<HTMLDwebBiometricsElement>();
@@ -112,7 +113,7 @@ onMounted(async () => {
 });
 
 async function check() {
- return await biometrics.check()
+  return await biometrics.check();
 }
 
 async function biometrics() {
