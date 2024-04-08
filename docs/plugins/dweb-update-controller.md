@@ -5,6 +5,7 @@ outline: deep
 # dweb-update-controller
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip 介绍：
 dweb 下载控制插件

@@ -2,9 +2,10 @@
 outline: deep
 ---
 
-# config
+# config <Badge type="warning">Unstable</Badge>
 
-<Badges name="@plaoc/plugins" /> <Badge type="warning">Unstable</Badge>
+<Badges name="@plaoc/plugins" /> 
+<Platform supports="iOS,Android" />
 
 ::: tip introduction:
 Configuration plug-in can be used to set the current language of `Plaoc App`, or to switch the entrance.

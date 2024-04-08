@@ -5,6 +5,7 @@ outline: deep
 # motion-sensors
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip intro:
 Motion sensors plugin

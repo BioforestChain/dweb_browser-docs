@@ -8,5 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Badges: typeof import('./.vitepress/components/Badges.vue')['default']
+    Platform: typeof import('./.vitepress/components/Platform.vue')['default']
   }
 }

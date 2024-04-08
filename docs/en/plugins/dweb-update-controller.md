@@ -5,6 +5,7 @@ outline: deep
 # dweb-update-controller
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip intro:
 dweb download controller plugin

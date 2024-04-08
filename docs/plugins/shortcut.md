@@ -5,6 +5,7 @@ outline: deep
 # shortcut
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip 介绍：
 shortcut 插件，即长按 app 出现的捷径操作。

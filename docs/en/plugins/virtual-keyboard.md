@@ -5,6 +5,7 @@ outline: deep
 # virtual-keyboard
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip intro:
 Virtual keyboard plugin  

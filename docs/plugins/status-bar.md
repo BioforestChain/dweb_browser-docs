@@ -5,6 +5,7 @@ outline: deep
 # status-bar
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip 介绍：
 状态栏插件  

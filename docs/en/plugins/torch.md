@@ -5,6 +5,7 @@ outline: deep
 # torch
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip intro:
 Torch plugin 

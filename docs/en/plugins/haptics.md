@@ -5,6 +5,7 @@ outline: deep
 # haptics
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip intro:
 Haptics plugin

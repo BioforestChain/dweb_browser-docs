@@ -5,6 +5,7 @@ outline: deep
 # torch
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip 介绍：
 手电筒插件  

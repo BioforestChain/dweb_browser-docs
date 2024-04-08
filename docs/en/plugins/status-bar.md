@@ -5,6 +5,7 @@ outline: deep
 # status-bar
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip intro:
 Status bar plugin

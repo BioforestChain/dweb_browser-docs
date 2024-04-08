@@ -5,6 +5,7 @@ outline: deep
 # motion-sensors
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip 介绍：
 运动传感器插件  

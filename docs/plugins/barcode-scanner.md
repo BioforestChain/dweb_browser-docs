@@ -5,6 +5,7 @@ outline: deep
 # bacode-scanner
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip 介绍：
 扫码插件  

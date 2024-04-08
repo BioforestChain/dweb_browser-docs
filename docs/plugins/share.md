@@ -5,6 +5,7 @@ outline: deep
 # share
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip 介绍：
 分享插件  

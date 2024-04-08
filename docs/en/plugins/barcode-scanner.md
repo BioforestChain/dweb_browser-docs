@@ -5,6 +5,7 @@ outline: deep
 # bacode-scanner
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip intro:
 Scan code plugin

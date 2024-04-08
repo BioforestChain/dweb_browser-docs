@@ -5,6 +5,7 @@ outline: deep
 # clipboard
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip intro:
 clipboard plugin

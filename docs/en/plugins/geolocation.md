@@ -5,6 +5,7 @@ outline: deep
 # geolocation
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip intro:
 Geolocation plugin

@@ -5,6 +5,7 @@ outline: deep
 # dweb-service-worker
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip intro:
 dweb service worker plugin

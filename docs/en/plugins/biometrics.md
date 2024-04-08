@@ -5,6 +5,7 @@ outline: deep
 # biometrics
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip intro:
 biometrics plugin

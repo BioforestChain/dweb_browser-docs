@@ -5,6 +5,7 @@ outline: deep
 # device
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip 介绍：
 设备信息插件

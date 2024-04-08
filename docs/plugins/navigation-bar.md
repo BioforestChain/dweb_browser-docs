@@ -5,6 +5,7 @@ outline: deep
 # navigation-bar
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip 介绍：
 导航栏插件  

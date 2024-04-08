@@ -5,6 +5,7 @@ outline: deep
 # biometrics
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip 介绍：
 生物识别插件  

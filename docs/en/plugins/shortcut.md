@@ -5,6 +5,7 @@ outline: deep
 # shortcut
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android" />
 
 ::: tip introduction:
 The shortcut plug-in is a shortcut operation that appears when you long press the app.

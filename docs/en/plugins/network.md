@@ -5,6 +5,7 @@ outline: deep
 # network
 
 <Badges name="@plaoc/plugins" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip intro:
 Network status plugin
