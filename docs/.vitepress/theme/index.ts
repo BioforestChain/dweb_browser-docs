@@ -1,13 +1,13 @@
 // https://vitepress.dev/guide/custom-theme
-import Theme from 'vitepress/theme'
-import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
-import '@shikijs/vitepress-twoslash/style.css'
-import type { EnhanceAppContext } from 'vitepress'
-import "uno.css"
+import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
+import "@shikijs/vitepress-twoslash/style.css";
+import "uno.css";
+import type { EnhanceAppContext } from "vitepress";
+import Theme from "vitepress/theme";
 
 export default {
   extends: Theme,
   enhanceApp({ app }: EnhanceAppContext) {
-    app.use(TwoslashFloatingVue as any)
+    app.use(TwoslashFloatingVue);
   },
-}
+};

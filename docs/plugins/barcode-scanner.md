@@ -29,7 +29,7 @@ outline: deep
 
   **_创建控制句柄_**
 
-```ts twoslash
+```typescript twoslash
 import { barcodeScannerPlugin } from "@plaoc/plugins";
 const controller = await barcodeScannerPlugin.createProcesser();
 // 解析码，需要将图片转化为 blob 数据，再传递给函数进行识别。支持Uint8Array,Blob
@@ -115,11 +115,9 @@ import { CameraDirection, SupportedFormat } from "@plaoc/plugins";
 const options: ScanOptions = {
   rotation: 0,
   direction: CameraDirection.FRONT,
-  //                         ^|
   width: 0,
   height: 0,
   formats: SupportedFormat.QR_CODE,
-  //                       ^|
 };
 ```
 
@@ -127,7 +125,7 @@ const options: ScanOptions = {
 
 ```vue twoslash
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from "vue";
 // @noErrors
 import { HTMLDwebBarcodeScanningElement } from "@plaoc/plugins";
 
@@ -135,16 +133,16 @@ const $barcodeScannerPlugin = ref<HTMLDwebBarcodeScanningElement>();
 let barcodeScanner: HTMLDwebBarcodeScanningElement;
 
 onMounted(async () => {
-  barcodeScanner = $barcodeScannerPlugin.value!
+  barcodeScanner = $barcodeScannerPlugin.value!;
 });
 
 const startScanning = async () => {
-  return await barcodeScanner.startScanning()
-}
+  return await barcodeScanner.startScanning();
+};
 
 const stop = async () => {
-  return await barcodeScanner.stop()
-}
+  return await barcodeScanner.stop();
+};
 </script>
 <template>
   <dweb-barcode-scanning ref="$barcodeScannerPlugin"></dweb-barcode-scanning>

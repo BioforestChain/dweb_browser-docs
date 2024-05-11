@@ -160,7 +160,6 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
           items: [
             { text: "CloseWatcher", link: "close-watcher" },
             { text: "DwebServiceWorker", link: "dweb-service-worker" },
-            { text: "DwebUpdateController", link: "dweb-update-controller" },
           ],
         },
       ],
