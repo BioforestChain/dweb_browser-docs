@@ -1,4 +1,4 @@
-# Dweb-browser-docs
+# dweb_browser_docs
 
 Dweb-browser 前后端开发文档,构建符合开发者直觉的 API。
 
@@ -7,20 +7,24 @@ Dweb-browser 前后端开发文档,构建符合开发者直觉的 API。
 ## 快速启动
 
 ```bash
-yarn
+npm i
 
-yarn dev
+npm run dev
 ```
 
 ## 生成静态文件
 
 ```bash
-yarn build
+npm run build
 ```
 
-::: warning
+> 中文修改完，需要同步英文文档。
+
+> 提交更新只需要推送到主分支
+
+<!-- ::: warning
 中文修改完，需要同步英文文档。
-:::
+::: -->
 
 <!--
 ::: tip
@@ -37,7 +41,7 @@ yarn build
 这是一个 details 标签
 ::: -->
 
-<!-- 
+<!--
 检查 README.md 的关键步骤
 
 1：格式相关
@@ -53,7 +57,7 @@ yarn build
     ### plugin 具体的fangfa
     ## Interfaces
     ### 具体的 interface
-  
+
 2: 内容标准
   a: WebComponent 只写第一个层级的方法
   b: Plugin 只写第一个层级的方法
