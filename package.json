@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "dweb-browser",
   "devDependencies": {
-    "@plaoc/plugins": "^0.8.7",
+    "@plaoc/plugins": "^0.9.0",
     "@shikijs/twoslash": "^1.5.1",
     "@shikijs/vitepress-twoslash": "^1.5.1",
     "@types/node": "^20.11.0",

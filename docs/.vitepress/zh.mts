@@ -62,7 +62,7 @@ function nav(): DefaultTheme.NavItem[] {
       items: navPlugins(),
     },
     {
-      text: "2.x.x",
+      text: "3.x.x",
       items: [
         {
           text: "Monthly",
@@ -127,6 +127,14 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
       items: [
         { text: "简介", link: "web-components" },
         {
+          text: "API",
+          collapsed: false,
+          items: [
+            { text: "CloseWatcher", link: "close-watcher" },
+            { text: "DwebServiceWorker", link: "dweb-service-worker" },
+          ],
+        },
+        {
           text: "Web Components",
           collapsed: false,
           items: [
@@ -152,14 +160,6 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "NavigationBarPlugin", link: "navigation-bar" },
             { text: "VirtualKeyboardPlugin", link: "virtual-keyboard" },
             { text: "TorchPlugin", link: "torch" },
-          ],
-        },
-        {
-          text: "API",
-          collapsed: false,
-          items: [
-            { text: "CloseWatcher", link: "close-watcher" },
-            { text: "DwebServiceWorker", link: "dweb-service-worker" },
           ],
         },
       ],

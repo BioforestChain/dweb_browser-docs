@@ -7,12 +7,11 @@ outline: deep
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android,MacOS,Windows" />
 
-::: tip intro:
-dweb service worker plugin
+::: tip introduction:
+dweb service plug-in
 :::
 
-- [Reference](#reference)
-  - [Method](#method)
+- [Reference](#reference) -[Method](#method)
 - [Usage](#usage)
 
 ## Reference
@@ -21,7 +20,7 @@ dweb service worker plugin
 
 - `close`
 
-  **_close plaoc app frontend_**
+  **_Close the front end, which can be understood as closing the app_**
 
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
@@ -31,41 +30,49 @@ await dwebServiceWorker.close();
 
 - `restart`
 
-  **_restart plaoc app frontend and backend_**
+  **_Restart front-end and back-end_**
 
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
 await dwebServiceWorker.restart();
-//                      ^?
+//                       ^?
 ```
 
-- `canOpenUrl`
+- `has`
 
-  **_Check if the app is installed_**
+  **_Check whether the application is installed_**
+
+What needs to be passed here is the ID of the app.
 
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
 await dwebServiceWorker.has("game.www.bfchain.org.dweb");
-//                      ^?
+//                       ^?
 ```
 
-- `externalFetch`
+- `fetch`
 
   **_Communicate with external apps_**
 
+The second parameter is similar to the `ReuqestInit` parameter of fetch, and can carry the parameter of whether to activate the other page.
+
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
-await dwebServiceWorker.fetch(`file://xxxx/say/hi?message="xxx"`);
-//                       ^?
+await dwebServiceWorker.fetch(`file://my.test.dweb/say/hi?message="xxx"`, {
+  activate: false, // Whether to activate the other party's application interface
+  search: {
+    data: "mydata", // Carrying messages can also be carried in the URL
+  },
+});
 ```
 
 - `addEventListener`
 
-  **_event listening_**
+  **_Event Monitoring_**
 
   - `fetch`
 
-    **_receive external messages_**
+    **_Receive external messages_**
 
     ```ts twoslash
     import { dwebServiceWorker } from "@plaoc/plugins";
@@ -74,6 +81,18 @@ await dwebServiceWorker.fetch(`file://xxxx/say/hi?message="xxx"`);
     });
     ```
 
+  - `ServiceWorkerFetchEvent`
+
+    **_Event object that receives the message_**
+
+    - `async getRemoteManifest(): Promise<$MicroModuleManifest>`
+
+      **_Get the sender’s configuration information_**
+
+    - `async respondWith(body?: BodyInit | null, init?: ResponseInit)`
+
+      **_Reply message to sender_**
+
 ## Usage
 
 ```vue twoslash
@@ -81,36 +100,36 @@ await dwebServiceWorker.fetch(`file://xxxx/say/hi?message="xxx"`);
 import { ref } from "vue";
 import { dwebServiceWorker } from "@plaoc/plugins";
 
-const message = ref("Received messages are displayed here");
-const input = ref("Write here the message sent");
-
-//send message to desktop.dweb.waterbang.top.dweb
+const message = ref("The received message is displayed here");
+const send = ref("Write the message to be sent here");
+//Send message to desktop.dweb.waterbang.top.dweb
 const sayHi = async () => {
   const response = await dwebServiceWorker.fetch(
-    `file://plaoc.html.demo.dweb/say/hi?message=${input.value}`,
+    `file://plaoc.html.demo.dweb/say/hi?message=${send.value}`,
     {
       search: {
-        哈哈哈: "xx",
+        data: "xx",
       },
       method: "POST",
-      body: new Blob([`{"xxx":${input.value}}`], { type: "application/json" }),
+      body: new Blob([`{"xxx":${send.value}}`], { type: "application/json" }),
     }
   );
   message.value = await response.text();
   console.log("sayHi return => ", message.value);
 };
+//Receive message
 dwebServiceWorker.addEventListener("fetch", async (event) => {
   console.log("Dweb Service Worker fetch!", event);
   console.log("xxxx=>", await event.getRemoteManifest());
   const url = new URL(event.request.url);
   if (url.pathname.endsWith("/say/hi")) {
     const hiMessage = url.searchParams.get("message");
-    console.log(`get:${hiMessage}`);
+    console.log(`received:${hiMessage}`);
     if (hiMessage) {
       message.value = hiMessage;
     }
-    // Send message back
-    return event.respondWith(`Eat, and another two catties of Erguotou。`);
+    //Send message back
+    return event.respondWith(`Eat, two more pounds of Erguotou.`);
   }
   return event.respondWith(`Not match any routes:${url.pathname}`);
 });

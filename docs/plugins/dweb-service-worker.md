@@ -21,7 +21,7 @@ dweb 服务插件
 
 - `close`
 
-  **_关闭前端_**
+  **_关闭前端，可以理解为关闭 app_**
 
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
@@ -43,6 +43,8 @@ await dwebServiceWorker.restart();
 
   **_查看应用是否安装_**
 
+这里需要传递的是 app 的 ID。
+
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
 await dwebServiceWorker.has("game.www.bfchain.org.dweb");
@@ -53,10 +55,16 @@ await dwebServiceWorker.has("game.www.bfchain.org.dweb");
 
   **_跟外部 app 通信_**
 
+第二个参数跟 fetch 的`ReuqestInit` 参数类似，并且可以携带是否激活对方页面的参数。
+
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
-await dwebServiceWorker.fetch(`file://xxx/say/hi?message="xxx"`);
-//                      ^?
+await dwebServiceWorker.fetch(`file://my.test.dweb/say/hi?message="xxx"`, {
+  activate: false, // 是否激活对方应用界面
+  search: {
+    data: "mydata", // 携带消息，也可以在url中携带
+  },
+});
 ```
 
 - `addEventListener`
@@ -73,6 +81,18 @@ await dwebServiceWorker.fetch(`file://xxx/say/hi?message="xxx"`);
       console.log("app fetch", event);
     });
     ```
+
+  - `ServiceWorkerFetchEvent`
+
+    **_接收消息的 event 对象_**
+
+    - `async getRemoteManifest(): Promise<$MicroModuleManifest>`
+
+      **_获取发送者的配置信息_**
+
+    - `async respondWith(body?: BodyInit | null, init?: ResponseInit)`
+
+      **_回复消息给发送者_**
 
 ## Usage
 
@@ -98,6 +118,7 @@ const sayHi = async () => {
   message.value = await response.text();
   console.log("sayHi return => ", message.value);
 };
+// 接收消息
 dwebServiceWorker.addEventListener("fetch", async (event) => {
   console.log("Dweb Service Worker fetch!", event);
   console.log("xxxx=>", await event.getRemoteManifest());
