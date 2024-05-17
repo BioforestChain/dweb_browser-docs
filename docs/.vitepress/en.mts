@@ -133,6 +133,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
           text: "Native UI",
           collapsed: false,
           items: [
+            { text: "WindowPlugin", link: "window" },
             { text: "StatusBarPlugin", link: "status-bar" },
             { text: "NavigationBarPlugin", link: "navigation-bar" },
             { text: "VirtualKeyboardPlugin", link: "virtual-keyboard" },

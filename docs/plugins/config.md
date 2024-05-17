@@ -5,7 +5,7 @@ outline: deep
 # config <Badge type="warning">不稳定</Badge>
 
 <Badges name="@plaoc/plugins" />
-<Platform supports="iOS,Android" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip 介绍：
 配置插件，可用于设置`Plaoc App`的当前语言,或者用于切换入口。
