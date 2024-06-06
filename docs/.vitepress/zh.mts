@@ -74,6 +74,10 @@ function nav(): DefaultTheme.NavItem[] {
         },
       ],
     },
+    {
+      text: "Downloads",
+      link: "/downloads"
+    }
   ];
 }
 
