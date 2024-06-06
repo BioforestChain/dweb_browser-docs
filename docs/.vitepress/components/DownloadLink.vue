@@ -56,17 +56,17 @@ const githubSpeedUp = "https://mirror.ghproxy.com/?q=";
 const githubReleaseUrl =
   "https://github.com/BioforestChain/dweb_browser/releases";
 const android_link = `${githubSpeedUp}https://github.com/BioforestChain/dweb_browser/releases/download/android-release-3.240606.2/DwebBrowser_release_v3.240606.2.apk`;
-let windows_link = `${githubSpeedUp}`;
-let mac_link = `${githubSpeedUp}`;
+let windows_link = ref<string>(githubSpeedUp);
+let mac_link = ref<string>(githubSpeedUp);
 onMounted(async () => {
   const arch = (await detectPlatformArch()) ?? "";
 
   if (arch.length > 0) {
-    windows_link = `${windows_link}https://github.com/BioforestChain/dweb_browser/releases/download/desktop-release-3.240606.2/DwebBrowser_release_3.6.0600${arch}.msi`;
-    mac_link = `${mac_link}https://github.com/BioforestChain/dweb_browser/releases/download/desktop-release-3.240606.2/DwebBrowser_release_3.6.0600${arch}.dmg`;
+    windows_link.value = `${windows_link.value}https://github.com/BioforestChain/dweb_browser/releases/download/desktop-release-3.6.0600/DwebBrowser-3.6.0600${arch}.msi`;
+    mac_link.value = `${mac_link.value}https://github.com/BioforestChain/dweb_browser/releases/download/desktop-release-3.6.0600/DwebBrowser-3.6.0600${arch}.dmg`;
   } else {
-    windows_link = githubReleaseUrl;
-    mac_link = githubReleaseUrl;
+    windows_link.value = githubReleaseUrl;
+    mac_link.value = githubReleaseUrl;
   }
 });
 </script>
