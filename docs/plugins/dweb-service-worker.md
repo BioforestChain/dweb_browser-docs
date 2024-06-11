@@ -1,27 +1,29 @@
----
-outline: deep
----
-
 # dweb-service-worker
 
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip 介绍：
-dweb 服务插件
+app 通信插件，复制 app 消息的发送和接收。并且可以控制应用重启和关闭。
 :::
 
-- [Reference](#reference)
+- [dweb-service-worker](#dweb-service-worker)
   - [Method](#method)
-- [Usage](#usage)
+    - [`close`](#close)
+    - [`restart`](#restart)
+    - [`has`](#has)
+  - [`应用间通信`](#应用间通信)
+    - [发送消息](#发送消息)
+    - [`接收消息`](#接收消息)
+      - [`getRemoteManifest`](#getremotemanifest)
+      - [respondWith](#respondwith)
+  - [Usage](#usage)
 
-## Reference
+## Method
 
-#### Method
+### `close`
 
-- `close`
-
-  **_关闭前端，可以理解为关闭 app_**
+**_关闭 app_**
 
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
@@ -29,9 +31,9 @@ await dwebServiceWorker.close();
 //                      ^?
 ```
 
-- `restart`
+### `restart`
 
-  **_重启前后端_**
+**_重启 app_**
 
 ```ts twoslash
 import { dwebServiceWorker } from "@plaoc/plugins";
@@ -39,9 +41,9 @@ await dwebServiceWorker.restart();
 //                      ^?
 ```
 
-- `has`
+### `has`
 
-  **_查看应用是否安装_**
+**_查看应用是否安装_**
 
 这里需要传递的是 app 的 ID。
 
@@ -51,9 +53,11 @@ await dwebServiceWorker.has("game.www.bfchain.org.dweb");
 //                      ^?
 ```
 
-- `fetch`
+## `应用间通信`
 
-  **_跟外部 app 通信_**
+### 发送消息
+
+**_发送 request 请求跟其他 app 进行互相通信_**
 
 第二个参数跟 fetch 的`ReuqestInit` 参数类似，并且可以携带是否激活对方页面的参数。
 
@@ -67,32 +71,42 @@ await dwebServiceWorker.fetch(`file://my.test.dweb/say/hi?message="xxx"`, {
 });
 ```
 
-- `addEventListener`
+- `activate`
 
-  **_事件监听_**
+是否激活对方 app 页面页面。
 
-  - `fetch`
+- `search`
 
-    **_接收外部消息_**
+封装的一个`searchParams` 包装对象，可以更清楚的传递参数。
 
-    ```ts twoslash
-    import { dwebServiceWorker } from "@plaoc/plugins";
-    dwebServiceWorker.addEventListener("fetch", (event) => {
-      console.log("app fetch", event);
-    });
-    ```
+### `接收消息`
 
-  - `ServiceWorkerFetchEvent`
+`fetch`事件将接收所有发向自己的外部消息，事件的格式为`ServiceWorkerFetchEvent`。
 
-    **_接收消息的 event 对象_**
+```ts twoslash
+import { dwebServiceWorker } from "@plaoc/plugins";
+dwebServiceWorker.addEventListener("fetch", async (event) => {
+  console.log("app fetch", event);
+  console.log("谁叫我？=>", await event.getRemoteManifest());
+  return event.respondWith(`12345678`); // 回复给对方消息
+});
+```
 
-    - `async getRemoteManifest(): Promise<$MicroModuleManifest>`
+#### `getRemoteManifest`
 
-      **_获取发送者的配置信息_**
+**_获取发送者的配置信息_**
 
-    - `async respondWith(body?: BodyInit | null, init?: ResponseInit)`
+```ts
+async getRemoteManifest(): Promise<$MicroModuleManifest>
+```
 
-      **_回复消息给发送者_**
+#### respondWith
+
+**_回复消息给发送者_**
+
+```ts
+async respondWith(body?: BodyInit | null, init?: ResponseInit)
+```
 
 ## Usage
 
