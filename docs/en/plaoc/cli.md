@@ -15,6 +15,7 @@ This cli tool also has the functions of publishing tool and app verification, an
 - First you need to install the plaoc command line tool.
 
 ::: code-group
+
 ```bash [PNPM]
   pnpm add -g @plaoc/cli
 ```
@@ -28,7 +29,6 @@ This cli tool also has the functions of publishing tool and app verification, an
 ```
 
 :::
-
 
 > You can also use npx plaoc to execute commands
 
@@ -52,8 +52,9 @@ plaoc serve http://localhost:5173
 The above command will print the following:
 
 ```bash
-metadata:       http://127.0.0.1:8096/metadata.json
-metadata:       http://172.30.93.43:8096/metadata.json
+using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
+metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
+metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
 ```
 
 This is a pure forwarding mode, plaoc will proxy the `http://localhost:5173` development service you started.

@@ -4,7 +4,7 @@ outline: deep
 
 # Plaoc App
 
-我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`。plaoc 遵循web规范，提供一系列的插件，来控制节点硬件。并且基于网络模块，可以实现节点内和节点之间app的相互通信。
+我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`。plaoc 遵循 web 规范，提供一系列的插件，来控制节点硬件。并且基于网络模块，可以实现节点内和节点之间 app 的相互通信。
 
 因为`dweb-browser` 目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持，那么也就意味着您的 web 应用，可以背靠 plaoc 直接实现多端发布。
 
@@ -62,6 +62,7 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 - 执行安装命令:
 
 ::: code-group
+
 ```bash [PNPM]
   pnpm add -g @plaoc/cli
 ```
@@ -105,31 +106,19 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 终端输出
 
 ```bash
-  metadata:       http://127.0.0.1:8096/metadata.json
-  metadata:       http://172.30.95.28:8096/metadata.json
+using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
+metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
+metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
 ```
 
 > 可以使用 `plaoc serve --help` 查看更进一步的功能。
 
 ### 启动开发
 
-您首先需要根据您的操作系统下载[dweb-browser 桌面端](https://github.com/BioforestChain/dweb_browser/releases)。
+您首先需要根据您的操作系统下载[dweb-browser 桌面端](https://github.com/BioforestChain/dweb_browser/releases)，
+或者到各大移动应用商城搜索 [DwebBrowser](../downloads.md) 下载安装。
 
-接下来使用指令运行 `dweb-browser`来启动开发者模式。
-
-::: code-group
-
-```bash [Windows]
-& "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
-```
-
-```bash [MacOS]
-open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
-```
-
-:::
-
-现在您就能看到开发和调试界面了，您应该也发现了，您刚刚下载的也是 dweb-browser 的桌面版。
+接下来只需要将上面输出的 metadata 的 deeplink 地址粘贴到任意平台的浏览器就可以进行开发了。
 
 ### 打包 plaoc-app
 

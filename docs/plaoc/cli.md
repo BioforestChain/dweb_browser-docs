@@ -15,6 +15,7 @@ outline: deep
 - 首先需要安装 plaoc 命令行工具。
 
 ::: code-group
+
 ```bash [PNPM]
   pnpm add -g @plaoc/cli
 ```
@@ -28,7 +29,6 @@ outline: deep
 ```
 
 :::
-
 
 > 也可以使用 npx plaoc 执行命令
 
@@ -52,15 +52,16 @@ plaoc serve http://localhost:5173
 以上命令将会打印如下：
 
 ```bash
-metadata:       http://127.0.0.1:8096/metadata.json
-metadata:       http://172.30.93.43:8096/metadata.json
+using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
+metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
+metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
 ```
 
-这是一个纯转发的模式，plaoc将代理了您启动的 `http://localhost:5173` 开发服务。
+这是一个纯转发的模式，plaoc 将代理了您启动的 `http://localhost:5173` 开发服务。
 
 ### 指定启动端口
 
-一般用于启动多个app的情况，您可以使用 `--port` 指定开启的端口，默认的端口为 8096。
+一般用于启动多个 app 的情况，您可以使用 `--port` 指定开启的端口，默认的端口为 8096。
 
 ```bash
 plaoc serve http://localhost:5173 --port 8097
@@ -68,7 +69,7 @@ plaoc serve http://localhost:5173 --port 8097
 
 ### 指定`manifest.json`目录
 
-假设您当前不在项目根目录，您需要使用 `--dir` 来指定 `manifest.json` 的地址，以便识别app的配置信息。
+假设您当前不在项目根目录，您需要使用 `--dir` 来指定 `manifest.json` 的地址，以便识别 app 的配置信息。
 
 ```bash
 plaoc serve http://localhost:5173  --dir ./plaoc-app1

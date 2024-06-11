@@ -1,6 +1,10 @@
 # dweb_browser_docs
 
-Dweb-browser 前后端开发文档,构建符合开发者直觉的 API。
+<img align="right" src="./docs/public/logo.svg" height="150px" alt="跨平台分布式应用浏览器">
+
+DwebBrowser 应用开发文档,简单的调用即可使用系统能力，提供了分布式的应用通信方案，并且不必糟心于权限的管理。
+
+DwebBrowser 支持所有主流操作系统平台，无论您是使用移动设备还是桌面设备，我们都能提供无缝的跨平台体验。通过使用统一的窗口视图标准，我们为用户带来了一致且方便的使用体验。
 
 文档站点：[docs.dweb-browser.org](https://docs.dweb-browser.org)
 
