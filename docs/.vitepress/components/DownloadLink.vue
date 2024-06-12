@@ -25,8 +25,9 @@ const getSupportsForQuery = async (defaultValue: {
   const result = [
     defaultValue,
     {
-      architecture:
-        defaultValue.architecture === "arm" ? "x86" : defaultValue.architecture,
+      architecture: (defaultValue.architecture === "arm"
+        ? "x86"
+        : "arm") as $Architecture,
       platform: defaultValue.platform,
     },
   ];
