@@ -22,9 +22,19 @@ npm run dev
 npm run build
 ```
 
-> 中文修改完，需要同步英文文档。
-
 > 提交更新只需要推送到主分支
+
+## 多语言翻译
+
+多语言翻译基于[Auto-i18n](https://github.com/linyuxuanlin/Auto-i18n) 修改。
+
+1. 安装依赖 `pip install -r requirements.txt`
+
+2. 下载 ollama 并且保持运行。
+
+3. 执行命令 `python auto-translater.py` 运行程序。
+
+4. 它将会自动处理测试目录 `docs/zh` 下的所有 Markdown 文件，批量翻译为英语、西班牙语、阿拉伯语。
 
 <!-- ::: warning
 中文修改完，需要同步英文文档。

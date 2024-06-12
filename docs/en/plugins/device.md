@@ -2,18 +2,18 @@
 outline: deep
 ---
 
-# device
+# Device
 
 <Badges name="@plaoc/plugins" />
-<Platform supports="iOS,Android,MacOS,Windows" />
+<Platform supports="iOS, Android, MacOS, Windows" />
 
-::: tip intro:
-Device Info plugin
+::: tip Introduction:
+Device Information Plugin
 :::
 
-- [device](#device)
+- [Device](#device)
   - [Reference](#reference)
-    - [Method](#method)
+      - [Method](#method)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
@@ -23,14 +23,14 @@ Device Info plugin
 
 - `getUUID`
 
-  **_Get the unique identifier of the device UUID_**
+  **_Get Device Unique Identifier (UUID)_**
 
-Deleting the app will not change it.
+Deleting the application will not change it.
 
 ```ts twoslash
 import { devicePlugin } from "@plaoc/plugins";
 await devicePlugin.getUUID();
-//                 ^?
+//                  ^?
 ```
 
 ## Usage Plugins

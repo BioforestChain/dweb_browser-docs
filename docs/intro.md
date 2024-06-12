@@ -70,41 +70,65 @@ dweb 共识标准由几个部分联合组成：
 
 > 注意：这里的 `dweb-browser` 只是一个实现 dweb 协议的软件，社区中可能会有其它实现，或者未来我们也会推出 dweb-cloud 这种面对云端的运行时服务
 
+# Plaoc
 
-## 什么是 plaoc
+plaoc 是基于 dweb-browser 平台的一个对标 Cordova、Capacitor、Tauri 的“跨平台 Web 应用”开发工具包，包含打包工具`@plaoc/cli`，前端插件`@plaoc/plguins`。
 
-plaoc 是基于 dweb-browser 平台的一个对标 Cordova、Capacitor、Tauri 的“跨平台 Web 应用”开发工具包
+## cli
 
+[@plaoc/cli](https://www.npmjs.com/package/@plaoc/cli) 是 plaoc 开发并打包应用到 dweb_browser 的命令行工具。
 
-### cli
-
-- 安装
-
-```bash
-npm install -g @plaoc/cli
-```
-
-- 打包成 app
-
-`plaoc bundle ./dir`
-
-会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`,详情请到[plaoc cli](./plaoc/cli)查看详细文档。
-
-- 开发者模式
-
-`plaoc preview http://localhost:1231` 或者 `plaoc preview ./dir`
-该命令会输出命令：
+### 安装打包工具。
 
 ```bash
-metadata:       http://127.0.0.1:8096/metadata.json
-metadata:       http://172.30.90.207:8096/metadata.json
+npm i -g @plaoc/cli
 ```
 
-- 使用开发者工具进行开发
+开发 app 的时候运行` plaoc serve`。
+
+- 第一种方式可以指定您前端工程输出的地址，这样在您代码更新的时候，app 内部的代码也会跟着您的更新而更新。
 
 ```bash
-#window
- & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
-#macos
-open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
+plaoc serve http://localhost:8000
 ```
+
+- 第二种是直接指定编译完的源码目录，这种方式相当于直接安装 app，适用您前端工程断开的时候也能访问。
+
+```bash
+plaoc serve ./dist
+```
+
+上面的两个命令会输出如下几行：
+
+```bash
+using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
+metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
+metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
+```
+
+第一行的 `using metadata file`将指定您的 app 配置文件目录，方便直接知晓是哪个 app。
+
+第二行和第三行的`metadata`为 `deeplink` 的形式，在桌面端可以直接粘贴到 dweb-browser 中进行安装。
+而移动端可以使用转成二维码，使用扫码的形式进行安装应用。
+
+### 打包成可部署的 app 包
+
+直接使用 `plaoc bundle` 指定源码目录进行打包，命令如下：
+
+```bash
+plaoc bundle ./dir
+```
+
+会打包并输出一个包含 app ID 和日期组合而成的压缩文件 `.zip` 和一个 `metadata.json`。
+
+这两个文件使用任意的`(http/https)` 服务部署成链接的形式，放于同一文件夹中并且指向`metadata.json` 文件。组成如下形式链接，就可以在的 dweb-browser 中进行安装。
+
+```bash
+dweb://install?url=http://app.dweb.中国/metadata.json
+```
+
+## plugins
+
+[@plaoc/plugins](https://www.npmjs.com/package/@plaoc/plugins) 能赋予 web 开发者,直接调用各个平台系统 API 的能力。
+
+具体文档查看：[plugins 文档](https://docs.dweb-browser.org/plugins/web-components.html)
