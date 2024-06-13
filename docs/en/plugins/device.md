@@ -12,18 +12,16 @@ Device Information Plugin
 :::
 
 - [Device](#device)
-  - [Reference](#reference)
-      - [Method](#method)
+  - [Method](#method)
+    - [`getUUID`](#getuuid)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
-## Reference
+## Method
 
-#### Method
+### `getUUID`
 
-- `getUUID`
-
-  **_Get Device Unique Identifier (UUID)_**
+**_Get Device Unique Identifier (UUID)_**
 
 Deleting the application will not change it.
 

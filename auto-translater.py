@@ -11,7 +11,7 @@ max_length = 1800
 # 设置翻译的路径
 dir_to_translate = "docs"
 excluded_dirs = ["en", "es", "ar"]  # 替换为你要排除的目录名
-translates = ['en'] # 需要翻译成什么语言
+translates = ['en'] # 需要翻译成什么语言 当前的模型比较垃圾，没有办法翻译 es 和 ar
 
 # 不进行翻译的文件列表
 exclude_list = ["Contact-and-Subscribe.md", "WeChat.md"]
@@ -137,10 +137,10 @@ def translate_text(text, lang):
         "es": "Spanish",
         "ar": "Arabic"
     }[lang]
-    completion = ollama.chat(model="phi3:medium",
+    completion = ollama.chat(model="qwen2",
     messages=[
         {"role": "system", "content": "As a professional translation engine, translate the following content into colloquial, professional, elegant, and fluent English, avoiding any subtle machine translation nuances. Strictly maintain the original markdown format, do not translate any English, code or any html tag. Focus solely on translating the Chinese text without any additional explanation."},
-        {"role": "user", "content": f"Translate all the Chinese into {target_lang}:\n\n{text}\n"},
+        {"role": "user", "content": f"Translate all Chinese into {target_lang},Do not translate any of the following English content:\n\n{text}\n"},
     ])
     # 获取翻译结果
     output_text = completion['message']['content']

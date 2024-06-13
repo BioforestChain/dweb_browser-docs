@@ -1,5 +1,4 @@
 downloads.md
-
 intro.md
 index.md
 app-store.md
@@ -11,7 +10,6 @@ barcode-scanner.md
 biometrics.md
 clipboard.md
 close-watcher.md
-
 dweb-service-worker.md
 geolocation.md
 haptics.md
@@ -27,3 +25,5 @@ virtual-keyboard.md
 web-components.md
 window.md
 device.md
+deeplink.md
+is-dweb.md
