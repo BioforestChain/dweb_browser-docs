@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # device
 
 <Badges name="@plaoc/plugins" />
@@ -12,18 +8,16 @@ outline: deep
 :::
 
 - [device](#device)
-  - [Reference](#reference)
-    - [Method](#method)
+  - [Method](#method)
+    - [`getUUID`](#getuuid)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
-## Reference
+## Method
 
-#### Method
+### `getUUID`
 
-- `getUUID`
-
-  **_获取设备唯一标识 UUID_**
+**_获取设备唯一标识 UUID_**
 
 删除应用不会改变。
 

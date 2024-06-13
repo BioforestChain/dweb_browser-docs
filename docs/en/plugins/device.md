@@ -1,37 +1,33 @@
----
-outline: deep
----
-
-# Device
+# device
 
 <Badges name="@plaoc/plugins" />
-<Platform supports="iOS, Android, MacOS, Windows" />
+<Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip Introduction:
 Device Information Plugin
 :::
 
-- [Device](#device)
+- [device](#device)
   - [Method](#method)
     - [`getUUID`](#getuuid)
-  - [Usage Plugins](#usage-plugins)
-  - [Usage WebComponent](#usage-webcomponent)
+  - [Plugin Usage](#plugin-usage)
+  - [WebComponent Usage](#webcomponent-usage)
 
 ## Method
 
 ### `getUUID`
 
-**_Get Device Unique Identifier (UUID)_**
+**_Obtain the unique device identifier UUID_**
 
-Deleting the application will not change it.
+The application deletion will not change it.
 
 ```ts twoslash
 import { devicePlugin } from "@plaoc/plugins";
 await devicePlugin.getUUID();
-//                  ^?
+//                 ^?
 ```
 
-## Usage Plugins
+## Plugin Usage
 
 ```vue twoslash
 <script setup lang="ts">
@@ -43,7 +39,7 @@ async function getUUID() {
 </script>
 ```
 
-## Usage WebComponent
+## WebComponent Usage
 
 ```vue twoslash
 <script setup lang="ts">
