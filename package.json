@@ -1,9 +1,10 @@
 {
   "name": "dweb-browser",
   "version": "3.0.0",
-  "description": "dweb-browser",
+  "description": "dweb-browser开发者文档",
   "devDependencies": {
-    "@plaoc/plugins": "^0.9.0",
+    "@plaoc/plugins": "^0.9.9",
+    "@plaoc/is-dweb": "^0.1.2",
     "@shikijs/twoslash": "^1.5.1",
     "@shikijs/vitepress-twoslash": "^1.5.1",
     "@types/node": "^20.11.0",

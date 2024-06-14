@@ -1,8 +1,10 @@
-import { defineConfig } from 'vitepress'
-import { en } from './en.mjs'
-import { zh, search as zhSearch } from './zh.mjs'
-import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import vite from './vite.config.mjs'
+import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
+import { defineConfig } from "vitepress";
+// import { ar, arSearch } from "./ar.mjs";
+import { en, enSearch } from "./en.mjs";
+// import { es, esSearch } from "./es.mjs";
+import vite from "./vite.config.mjs";
+import { zh, zhSearch } from "./zh.mjs";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,32 +14,37 @@ export default defineConfig({
   cleanUrls: false,
   markdown: {
     theme: {
-      light: 'vitesse-light',
-      dark: 'vitesse-dark',
+      light: "vitesse-light",
+      dark: "vitesse-dark",
     },
-    codeTransformers: [transformerTwoslash()]
+    codeTransformers: [transformerTwoslash()],
   },
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
+    ["link", { rel: "icon", type: "image/png", href: "/logo.png" }],
   ],
   themeConfig: {
     logo: "/logo.svg",
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/BioforestChain/dweb_browser' }
+      {
+        icon: "github",
+        link: "https://github.com/BioforestChain/dweb_browser",
+      },
     ],
 
     search: {
       provider: "local",
       options: {
-        locales: { ...zhSearch }
-      }
-    }
+        locales: { ...zhSearch, ...enSearch }, // ...arSearch, ...esSearch
+      },
+    },
   },
   locales: {
-    root: { label: '简体中文', ...zh },
-    en: { label: 'English', ...en }
+    root: { label: "简体中文", ...zh },
+    en: { label: "English", ...en },
+    // es: { label: "Spanish", ...es },
+    // ar: { label: "Arabic", ...ar },
   },
-  vite
-})
+  vite,
+});

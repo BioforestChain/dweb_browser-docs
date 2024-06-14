@@ -1,52 +1,52 @@
 import { defineConfig, type DefaultTheme } from "vitepress";
 import { navPlugins } from "./navPlugins";
 
-export const zh = defineConfig({
-  lang: "zh-Hans",
-  description: "一个提供分布式网络 | 应用附着的浏览器。",
+export const ar = defineConfig({
+  lang: "ar",
+  description: "متصفح يقدم شبكة موزعة | تطبيق مرفق.",
 
   themeConfig: {
     nav: nav(),
 
     sidebar: {
-      "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
-      "/plugins/": { base: "/plugins/", items: sidebarPlugins() },
+      "/ar/plaoc/": { base: "/ar/plaoc/", items: sidebarPlaoc() },
+      "/ar/plugins/": { base: "/ar/plugins/", items: sidebarPlugins() },
     },
 
     editLink: {
       pattern:
         "https://github.com/BioforestChain/dweb_browser-docs/edit/main/docs/:path",
-      text: "在 GitHub 上编辑此页面",
+      text: "حرر هذه الصفحة على GitHub",
     },
 
     footer: {
-      message: "基于 MIT 许可发布",
-      copyright: `版权所有 © 2021-${new Date().getFullYear()} BFChain`,
+      message: "نشر بموجب رخصة MIT",
+      copyright: `حقوق النشر © 2021-${new Date().getFullYear()} BFChain`,
     },
 
     docFooter: {
-      prev: "上一页",
-      next: "下一页",
+      prev: "الصفحة السابقة",
+      next: "الصفحة التالية",
     },
 
     outline: {
-      label: "页面导航",
+      label: "ملاحة الصفحة",
     },
 
     lastUpdated: {
-      text: "最后更新于",
+      text: "آخر تحديث",
       formatOptions: {
         dateStyle: "short",
         timeStyle: "medium",
       },
     },
 
-    langMenuLabel: "多语言",
-    returnToTopLabel: "回到顶部",
-    sidebarMenuLabel: "菜单",
-    darkModeSwitchLabel: "主题",
-    lightModeSwitchTitle: "切换到浅色模式",
-    darkModeSwitchTitle: "切换到深色模式",
+    langMenuLabel: "تعدد اللغات",
+    returnToTopLabel: "العودة إلى الأعلى",
+    sidebarMenuLabel: "القائمة",
+    darkModeSwitchLabel: "الوضع",
+    lightModeSwitchTitle: "التبديل إلى الوضع الفاتح",
+    darkModeSwitchTitle: "التبديل إلى الوضع الداكن",
   },
 });
 
@@ -77,7 +77,7 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: "Downloads",
-      link: "/downloads",
+      link: "/ar/downloads",
     },
   ];
 }
@@ -85,20 +85,22 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "Plaoc App",
+      text: "تطبيق Plaoc",
       collapsed: false,
-      base: "/plaoc/",
+      base: "/ar/plaoc/",
       items: [
-        { text: "开发流程", link: "flow" },
-        { text: "重定向配置", link: "redirect-config" },
-        { text: "配置清单", link: "manifest" },
+        { text: "عملية التطوير", link: "flow" },
+        { text: "تكوين إعادة التوجيه", link: "redirect-config" },
+        { text: "بيان التكوين", link: "manifest" },
         { text: "@plaoc/cli", link: "cli" },
-        { text: "@plaoc/is-dweb", link: "is-dweb" },
-        { text: "应用商店", link: "app-store" },
-        { text: "deeplink", link: "deeplink" },
+        { text: "متجر التطبيقات", link: "app-store" },
       ],
     },
-    { text: "插件系统", base: "/plugins/", link: "web-components" },
+    {
+      text: "نظام المكونات الإضافية",
+      base: "/ar/plugins/",
+      link: "web-components",
+    },
   ];
 }
 
@@ -129,10 +131,10 @@ function navPlaoc(): (
 function sidebarPlugins(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "插件",
-      base: "/plugins/",
+      text: "مكونات إضافية",
+      base: "/ar/plugins/",
       items: [
-        { text: "简介", link: "web-components" },
+        { text: "مقدمة", link: "web-components" },
         {
           text: "API",
           collapsed: false,
@@ -142,7 +144,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
           ],
         },
         {
-          text: "Web Components",
+          text: "المكونات الشبكية",
           collapsed: false,
           items: [
             { text: "BarcodeScannerPlugin", link: "barcode-scanner" },
@@ -160,7 +162,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
           ],
         },
         {
-          text: "Native UI",
+          text: "واجهة المستخدم الأصلية",
           collapsed: false,
           items: [
             { text: "WindowPlugin", link: "window" },
@@ -175,44 +177,44 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
   ];
 }
 
-export const zhSearch: DefaultTheme.AlgoliaSearchOptions["locales"] = {
-  zh: {
-    placeholder: "搜索文档",
+export const arSearch: DefaultTheme.AlgoliaSearchOptions["locales"] = {
+  ar: {
+    placeholder: "بحث في الوثائق",
     translations: {
       button: {
-        buttonText: "搜索文档",
-        buttonAriaLabel: "搜索文档",
+        buttonText: "بحث في الوثائق",
+        buttonAriaLabel: "بحث في الوثائق",
       },
       modal: {
         searchBox: {
-          resetButtonTitle: "清除查询条件",
-          resetButtonAriaLabel: "清除查询条件",
-          cancelButtonText: "取消",
-          cancelButtonAriaLabel: "取消",
+          resetButtonTitle: "محو المعايير",
+          resetButtonAriaLabel: "محو المعايير",
+          cancelButtonText: "إلغاء",
+          cancelButtonAriaLabel: "إلغاء",
         },
         startScreen: {
-          recentSearchesTitle: "搜索历史",
-          noRecentSearchesText: "没有搜索历史",
-          saveRecentSearchButtonTitle: "保存至搜索历史",
-          removeRecentSearchButtonTitle: "从搜索历史中移除",
-          favoriteSearchesTitle: "收藏",
-          removeFavoriteSearchButtonTitle: "从收藏中移除",
+          recentSearchesTitle: "تاريخ البحث",
+          noRecentSearchesText: "لا يوجد تاريخ للبحث",
+          saveRecentSearchButtonTitle: "حفظ إلى تاريخ البحث",
+          removeRecentSearchButtonTitle: "إزالة من تاريخ البحث",
+          favoriteSearchesTitle: "المفضلة",
+          removeFavoriteSearchButtonTitle: "إزالة من المفضلة",
         },
         errorScreen: {
-          titleText: "无法获取结果",
-          helpText: "你可能需要检查你的网络连接",
+          titleText: "لا يمكن الحصول على نتائج",
+          helpText: "قد تحتاج إلى التحقق من اتصالك بالشبكة",
         },
         footer: {
-          selectText: "选择",
-          navigateText: "切换",
-          closeText: "关闭",
-          searchByText: "搜索提供者",
+          selectText: "تحديد",
+          navigateText: "تنقل",
+          closeText: "إغلاق",
+          searchByText: "مقدم البحث",
         },
         noResultsScreen: {
-          noResultsText: "无法找到相关结果",
-          suggestedQueryText: "你可以尝试查询",
-          reportMissingResultsText: "你认为该查询应该有结果？",
-          reportMissingResultsLinkText: "点击反馈",
+          noResultsText: "لا توجد نتائج ذات صلة",
+          suggestedQueryText: "يمكنك محاولة البحث",
+          reportMissingResultsText: "هل تعتقد أن هناك نتائج مفقودة؟",
+          reportMissingResultsLinkText: "انقر لتقديم ملاحظات",
         },
       },
     },

@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # shortcut
 
 <Badges name="@plaoc/plugins" />
@@ -12,21 +8,21 @@ The shortcut plug-in is a shortcut operation that appears when you long press th
 :::
 
 - [shortcut](#shortcut)
-  - [Reference](#reference)
-    - [Method](#method)
-      - [Parameter](#parameter)
+  - [Method](#method)
+    - [`registry`](#registry)
+    - [`Receive quick messages`](#receive-quick-messages)
+  - [Parameter](#parameter)
+    - [`ShortcutOption`](#shortcutoption)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 
-## Reference
+## Method
 
-### Method
+### `registry`
 
-- `registry`
+**_Quick registration operation_**
 
-  **_Quick registration operation_**
-
-  If the icon is not passed, the Android platform uses the app icon by default. iOS currently does not support passing the icon when registering dynamic shortcuts.
+If the icon is not passed, the Android platform uses the app icon by default. iOS currently does not support passing the icon when registering dynamic shortcuts.
 
 ```ts twoslash
 import { shortcutPlugin, ShortcutOption } from "@plaoc/plugins";
@@ -39,7 +35,7 @@ const res = await shortcutPlugin.registry(option);
 //                                 ^?
 ```
 
-- `Receive quick messages`
+### `Receive quick messages`
 
 Register shortcut event listener to receive messages.
 
@@ -51,11 +47,11 @@ dwebServiceWorker.addEventListener("shortcut", (event) => {
 });
 ```
 
-#### Parameter
+## Parameter
 
-- `ShortcutOption`
+### `ShortcutOption`
 
-  **_Parameters for registration shortcut_**
+**_Parameters for registration shortcut_**
 
 ```ts twoslash
 export interface ShortcutOption {

@@ -1,4 +1,5 @@
 import { defineConfig, type DefaultTheme } from "vitepress";
+import { navPlugins } from "./navPlugins";
 
 export const en = defineConfig({
   lang: "en-US",
@@ -36,7 +37,7 @@ function nav(): DefaultTheme.NavItem[] {
     {
       text: "Plugins",
       activeMatch: "/plugins/",
-      items: navPlugins(),
+      items: navPlugins(sidebarPlugins()),
     },
     {
       text: "3.x.x",
@@ -53,8 +54,8 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: "Downloads",
-      link: "/downloads"
-    }
+      link: "/en/downloads",
+    },
   ];
 }
 
@@ -69,7 +70,9 @@ function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
         { text: "Redirect config", link: "redirect-config" },
         { text: "Manifest", link: "manifest" },
         { text: "@plaoc/cli", link: "cli" },
+        { text: "@plaoc/is-dweb", link: "is-dweb" },
         { text: "App Store", link: "app-store" },
+        { text: "deeplink", link: "deeplink" },
       ],
     },
     { text: "Plugin System", base: "/en/plugins/", link: "web-components" },
@@ -103,7 +106,7 @@ function navPlaoc(): (
 function sidebarPlugins(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "Plugin System",
+      text: "Plugins",
       base: "/en/plugins/",
       items: [
         { text: "Intro", link: "web-components" },
@@ -149,37 +152,47 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
   ];
 }
 
-function navPlugins(): (
-  | DefaultTheme.NavItemChildren
-  | DefaultTheme.NavItemWithLink
-)[] {
-  let navItems: (
-    | DefaultTheme.NavItemChildren
-    | DefaultTheme.NavItemWithLink
-  )[] = [];
-
-  const plugins = sidebarPlugins();
-  for (let [_, item] of plugins.entries()) {
-    const base = item.base ?? "";
-    if (Array.isArray(item.items)) {
-      navItems = navItems.concat(
-        item.items.map((it) => {
-          if (Array.isArray(it.items)) {
-            return {
-              text: it.text!,
-              items: it.items.map((child) => {
-                return { text: child.text!, link: base + child.link! };
-              }),
-            };
-          } else {
-            return { text: it.text!, link: base + it.link! };
-          }
-        })
-      );
-    } else {
-      navItems.push({ text: item.text!, link: base + item.link! });
-    }
-  }
-
-  return navItems;
-}
+export const enSearch: DefaultTheme.AlgoliaSearchOptions["locales"] = {
+  en: {
+    placeholder: "Search for documents",
+    translations: {
+      button: {
+        buttonText: "Search for documents",
+        buttonAriaLabel: "Search for documents",
+      },
+      modal: {
+        searchBox: {
+          resetButtonTitle: "Clear search criteria",
+          resetButtonAriaLabel: "Clear search criteria",
+          cancelButtonText: "Cancel",
+          cancelButtonAriaLabel: "Cancel",
+        },
+        startScreen: {
+          recentSearchesTitle: "Search history",
+          noRecentSearchesText: "No search history",
+          saveRecentSearchButtonTitle: "Save to search history",
+          removeRecentSearchButtonTitle: "Remove from search history",
+          favoriteSearchesTitle: "Favorite",
+          removeFavoriteSearchButtonTitle: "Remove from favorites",
+        },
+        errorScreen: {
+          titleText: "Unable to retrieve results",
+          helpText: "You may need to check your network connection",
+        },
+        footer: {
+          selectText: "Select",
+          navigateText: "Toggle",
+          closeText: "Close",
+          searchByText: "Search provider",
+        },
+        noResultsScreen: {
+          noResultsText: "No relevant results found",
+          suggestedQueryText: "You can try a query",
+          reportMissingResultsText:
+            "Do you think this query should have results?",
+          reportMissingResultsLinkText: "Click for feedback",
+        },
+      },
+    },
+  },
+};
