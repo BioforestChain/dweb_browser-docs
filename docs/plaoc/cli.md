@@ -52,9 +52,9 @@ plaoc serve http://localhost:5173
 以上命令将会打印如下：
 
 ```bash
-using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
+using metadata file: /../manifest.json
 metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
-metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
+metadata: 	dweb://install?url=http://192.168.0.100:8097/metadata.json
 ```
 
 这是一个纯转发的模式，plaoc 将代理了您启动的 `http://localhost:5173` 开发服务。

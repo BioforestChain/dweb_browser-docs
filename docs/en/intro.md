@@ -68,7 +68,7 @@ To give a specific example, for example, to implement the sharing function: I ca
 
 In an environment with a command line, `dweb-deeplink` can also be accessed through the command line: `dweb-browser install app --url=xx` will be parsed into: `dweb:install/app?url=xx`
 
-> Note: The `dweb-browser` here is just a software that implements the dweb protocol. There may be other implementations in the community, or in the future we will also launch dweb-cloud, a cloud-facing runtime service.
+> Note: The DwebBrowser here is just a software that implements the dweb protocol. There may be other implementations in the community, or in the future we will also launch dweb-cloud, a cloud-facing runtime service.
 
 ## What is plaoc
 
@@ -96,14 +96,14 @@ This command will output the following commands:
 
 ```bash
 metadata:       http://127.0.0.1:8096/metadata.json
-metadata:       http://172.30.90.207:8096/metadata.json
+metadata:       http://192.168.0.100:8096/metadata.json
 ```
 
 - Development using developer tools
 
 ```bash
 #window
- & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
+ & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://192.168.0.100:8096/metadata.json
 #macos
 open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
 ```

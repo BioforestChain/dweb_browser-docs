@@ -4,7 +4,7 @@ outline: deep
 
 # Plaoc App
 
-We define applications that run on the `dweb-browser` browser and are collectively called `Plaoc App`. plaoc follows web specifications and provides a series of plug-ins to control node hardware. And based on the network module, mutual communication of apps within nodes and between nodes can be realized.
+We define applications that run on the DwebBrowser browser and are collectively called `Plaoc App`. plaoc follows web specifications and provides a series of plug-ins to control node hardware. And based on the network module, mutual communication of apps within nodes and between nodes can be realized.
 
 Because dweb-browser currently supports mainstream platforms like Android, iOS, MacOS, Windows, Linux, your web application can rely on plaoc to directly implement multi-end publishing.
 
@@ -90,7 +90,7 @@ The terminal outputs
 ```bash
  VITE v4.4.9  ready in 88 ms
   ➜  Local:   http://localhost:5173/
-  ➜  Network: http://172.30.95.28:5173/
+  ➜  Network: http://192.168.0.100:5173/
 ```
 
 ### Build app data link
@@ -98,16 +98,16 @@ The terminal outputs
 Use the plaoc command installed above to build:
 
 ```bash
-  plaoc serve http://172.30.95.28:5173/
+  plaoc serve http://192.168.0.100:5173/
   #or
-  npx plaoc serve http://172.30.95.28:5173/
+  npx plaoc serve http://192.168.0.100:5173/
 ```
 
 The terminal outputs
 
 ```bash
   metadata:       http://127.0.0.1:8096/metadata.json
-  metadata:       http://172.30.95.28:8096/metadata.json
+  metadata:       http://192.168.0.100:8096/metadata.json
 ```
 
 > You can use plaoc serve --help to see more features.
@@ -121,7 +121,7 @@ Next, run dweb-browser with the command to start developer mode.
 ::: code-group
 
 ```bash [Windows]
-& "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
+& "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://192.168.0.100:8096/metadata.json
 ```
 
 ```bash [MacOS]

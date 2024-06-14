@@ -52,9 +52,9 @@ plaoc serve http://localhost:5173
 The above command will print the following:
 
 ```bash
-using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
-metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
-metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
+using metadata file: */manifest.json
+metadata: 	dweb://install?url=http://127.0.0.1:8096/metadata.json
+metadata: 	dweb://install?url=http://192.168.0.100:8096/metadata.json
 ```
 
 This is a pure forwarding mode, plaoc will proxy the `http://localhost:5173` development service you started.

@@ -4,12 +4,16 @@ outline: deep
 
 # Plaoc App
 
-我们定义运行于`dweb-browser`浏览器上面的应用，统一称为`Plaoc App`。plaoc 遵循 web 规范，提供一系列的插件，来控制节点硬件。并且基于网络模块，可以实现节点内和节点之间 app 的相互通信。
+DwebBrowser 提供了一种应用开发标准，我们统一称为 DwebApp，但是并不是所有人都需要直接接触这个标准来开发自己的。
 
-因为`dweb-browser` 目前我们实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持，那么也就意味着您的 web 应用，可以背靠 plaoc 直接实现多端发布。
+因此我们提供了 plaoc 这个工具，来帮助前端开发者将他们的 WebApp 打包成 DwebApp。
+未来我们会提供更多的工具，来帮助其它领域的开发者迁移他们的应用到 Dweb 平台上。
 
-plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应用打包完都可以使用自己应用网站进行发布。
-当然，您的网站也可以是一个应用中心，包含了您的应用矩阵，应用的发布将变得高效。
+plaoc 遵循 web 规范，提供一系列的 Api/WebComponent，来满足应用开发所需要的常见需求。
+包括应用之间的相互通信。
+
+基于 DwebBrowser 已经实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持。
+那么也就意味着您的 Web 应用，可以背靠 plaoc 直接实现多端发布。
 
 ## 开发 Plaoc app 流程
 
@@ -90,7 +94,7 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 ```bash
  VITE v4.4.9  ready in 88 ms
   ➜  Local:   http://localhost:5173/
-  ➜  Network: http://172.30.95.28:5173/
+  ➜  Network: http://192.168.0.100:5173/
 ```
 
 ### 构建应用数据链接
@@ -98,27 +102,35 @@ plaoc 是 web3 的产物，应用都会相对独立，因此，每个 plaoc 应�
 使用上面安装的 plaoc 命令构建：
 
 ```bash
-  plaoc serve http://172.30.95.28:5173/
+  # 选取您的设备可以访问的地址
+  plaoc serve http://192.168.0.100:5173/
   #or
-  npx plaoc serve http://172.30.95.28:5173/
+  npx plaoc serve http://192.168.0.100:5173/
 ```
 
 终端输出
 
 ```bash
-using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
-metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
-metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
+using metadata file: /../manifest.json
+metadata: 	dweb://install?url=http://127.0.0.1:8096/metadata.json
+metadata: 	dweb://install?url=http://192.168.0.100:8096/metadata.json
 ```
 
 > 可以使用 `plaoc serve --help` 查看更进一步的功能。
 
 ### 启动开发
 
-您首先需要根据您的操作系统下载[dweb-browser 桌面端](https://github.com/BioforestChain/dweb_browser/releases)，
-或者到各大移动应用商城搜索 [DwebBrowser](../downloads.md) 下载安装。
+您首先需要根据您的操作系统下载 [DwebBrowser 桌面版](https://github.com/BioforestChain/dweb_browser/releases)。
 
-接下来只需要将上面输出的 metadata 的 deeplink 地址粘贴到任意平台的浏览器就可以进行开发了。
+接下来使用指令运行 DwebBrowser 来启动开发者模式。
+
+```bash
+open dweb://install?url=http://192.168.0.100:8096/metadata.json
+```
+
+:::
+
+现在您就能看到开发和调试界面了，您应该也发现了，您刚刚下载的也是 dweb-browser 的桌面版。
 
 ### 打包 plaoc-app
 

@@ -68,7 +68,7 @@ dweb 共识标准由几个部分联合组成：
 
 在有命令行的环境里，`dweb-deeplink` 还可以通过命令行来进行访问：`dweb-browser install app --url=xx`会被解析成：`dweb:install/app?url=xx`
 
-> 注意：这里的 `dweb-browser` 只是一个实现 dweb 协议的软件，社区中可能会有其它实现，或者未来我们也会推出 dweb-cloud 这种面对云端的运行时服务
+> 注意：这里的 DwebBrowser 只是一个实现 dweb 协议的软件，社区中可能会有其它实现，或者未来我们也会推出 dweb-cloud 这种面对云端的运行时服务
 
 
 ## 什么是 plaoc
@@ -97,14 +97,14 @@ npm install -g @plaoc/cli
 
 ```bash
 metadata:       http://127.0.0.1:8096/metadata.json
-metadata:       http://172.30.90.207:8096/metadata.json
+metadata:       http://192.168.0.100:8096/metadata.json
 ```
 
 - 使用开发者工具进行开发
 
 ```bash
 #window
- & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://172.30.93.43:8096/metadata.json
+ & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://192.168.0.100:8096/metadata.json
 #macos
 open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
 ```
