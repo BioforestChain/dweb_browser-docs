@@ -1,6 +1,10 @@
 /// 参考链接： https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues
 
-import { tmp_android_1, tmp_dekstop_1 } from "./release-assets-tmp";
+import {
+  tmp_android_1,
+  tmp_android_2,
+  tmp_dekstop_1,
+} from "./release-assets-tmp";
 
 export type $Platform = "Android" | "Windows" | "macOS" | "iOS" | "Linux";
 export type $Architecture = "x86" | "arm";
@@ -33,6 +37,8 @@ export const githubReleaseUrl =
  */
 export const allReleaseAssets = (): $ReleaseAsset[] => {
   const assets: $ReleaseAsset[] = [];
+  /// android 3.240622.0
+  assets.push(...tmp_android_2("3.240622.0"));
   /// android 3.240606.2
   assets.push(...tmp_android_1("3.240606.2"));
   /// desktop 3.6.1200
