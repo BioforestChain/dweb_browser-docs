@@ -7,6 +7,7 @@ import {
   findReleaseAssets,
   githubReleaseUrl,
   $ReleaseAsset,
+  latestReleaseAssets,
 } from "./release-assets";
 // function isAppleSilicon() {
 //   const canvas = document.createElement("canvas");
@@ -51,8 +52,8 @@ const query = new URLSearchParams(location.search);
 const findQuery = (key: string) => {
   return (query.get(key) ?? query.get(key.toLowerCase())) || undefined;
 };
-const releaseAssets = allReleaseAssets();
-console.log("releaseAssets", releaseAssets);
+const releaseAssets = latestReleaseAssets();
+console.log("latestReleaseAssets", releaseAssets);
 
 const download_channels = [
   { name: "原始", transfer: (url: string) => url },
