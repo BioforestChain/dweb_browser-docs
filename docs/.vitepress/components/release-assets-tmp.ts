@@ -14,12 +14,12 @@ export function tmp_android_2(version: string) {
   const result: $ReleaseAsset[] = [
     {
       version,
-      link: `${githubReleaseUrl}/download/android-release-${version}/DwebBrowser_arm64_v${version}.apk`,
+      link: `${githubReleaseUrl}/download/android-${version}/DwebBrowser_arm64_v${version}.apk`,
       supports: [baseSupport],
     },
     {
       version,
-      link: `${githubReleaseUrl}/download/android-release-${version}/DwebBrowser_all_v${version}.apk`,
+      link: `${githubReleaseUrl}/download/android-${version}/DwebBrowser_all_v${version}.apk`,
       supports: (["64", "32"] as const)
         .map((bitness) => {
           return (["x86", "arm"] as const).map((architecture) => {
@@ -49,12 +49,12 @@ export function tmp_android_1(version: string) {
   const result: $ReleaseAsset[] = [
     {
       version,
-      link: `${githubReleaseUrl}/download/android-release-${version}/DwebBrowser_release_v${version}.apk`,
+      link: `${githubReleaseUrl}/download/android-${version}/DwebBrowser_release_v${version}.apk`,
       supports: [baseSupport],
     },
     {
       version,
-      link: `${githubReleaseUrl}/download/android-release-${version}/DwebBrowser_arm32_v${version}.apk`,
+      link: `${githubReleaseUrl}/download/android-${version}/DwebBrowser_arm32_v${version}.apk`,
       supports: (["64", "32"] as const).map((bitness) => {
         return {
           ...baseSupport,
@@ -64,7 +64,7 @@ export function tmp_android_1(version: string) {
     },
     {
       version,
-      link: `${githubReleaseUrl}/download/android-release-${version}/DwebBrowser_x86_v${version}.apk`,
+      link: `${githubReleaseUrl}/download/android-${version}/DwebBrowser_x86_v${version}.apk`,
       supports: (["x86", "arm"] as const).map((architecture) => {
         return {
           ...baseSupport,
