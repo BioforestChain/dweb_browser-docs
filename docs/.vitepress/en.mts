@@ -12,6 +12,7 @@ export const en = defineConfig({
     sidebar: {
       "/en/plaoc/": { base: "/en/plaoc/", items: sidebarPlaoc() },
       "/en/plugins/": { base: "/en/plugins/", items: sidebarPlugins() },
+      "/en/server": { base: "/en/server/", items: sidebarPlaocServer() },
     },
 
     editLink: {
@@ -38,6 +39,11 @@ function nav(): DefaultTheme.NavItem[] {
       text: "Plugins",
       activeMatch: "/plugins/",
       items: navPlugins(sidebarPlugins()),
+    },
+    {
+      text: "Server",
+      activeMatch: "/server/",
+      items: navPlugins(sidebarPlaocServer()),
     },
     {
       text: "3.x.x",
@@ -147,6 +153,19 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "TorchPlugin", link: "torch" },
           ],
         },
+      ],
+    },
+  ];
+}
+
+function sidebarPlaocServer(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "Server",
+      base: "/server/",
+      items: [
+        { text: "Intro", link: "index" },
+        { text: "Middleware", link: "middleware" },
       ],
     },
   ];

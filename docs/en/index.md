@@ -3,32 +3,53 @@
 layout: home
 
 hero:
-  name: "DwebBrowser"
-  text: "Deploy your own .dweb domain name on your local device"
-  tagline: We help encourage developers to create open web applications. Through open standards, applications can interoperate with each other, which will open up a new Internet experience and bring endless possibilities to the world.
+  name: Dweb Browser
+  text: Deploy your own `.dweb` domain on your local device
+  tagline:
+    "Translate all Chinese into English, avoiding any translation of the following
+    English content:We assist developers in building Dweb applications that prioritize offline access
+    and local area network use. By utilizing open and secure standards, we enable
+    real-time collaboration on a suite of locally hosted apps, thereby fundamentally
+    returning data ownership to users. This is one of several revolutionary infrastructures
+    designed for the next generation of internet inhabitants."
   image:
     src: /logo.svg
     alt: dweb
   actions:
     - theme: brand
-      text: Intro
+      text: Introduction
       link: /en/intro
     - theme: alt
       text: View on GitHub
       link: https://github.com/BioforestChain/dweb_browser
 
 features:
-  - title: Easily experience cross-platform applications
+  - title: Experience seamless integration across platforms
     icon: 🌍
-    details: DwebBrowser supports all major operating system platforms, whether you are using a mobile device or a desktop device, we can provide a seamless cross-platform experience. By using a unified window view standard, we provide users with a consistent and convenient experience.
-  - title: Privacy protection comes first
+    details:
+      DwebBrowser supports all major operating system platforms, catering to
+      users on both mobile and desktop devices with an uninterrupted cross-platform
+      experience. By employing a unified window view standard, we deliver a cohesive
+      and user-friendly interface for seamless use across various platforms.
+  - title: Privacy protection is paramount
     icon: 🛡
-    details: Protecting user privacy is our core mission. By providing support for deploying complete services on terminal devices, users can obtain an extremely fast local service experience to the greatest extent, making it available offline while also protecting the privacy of user data.
-  - title: Infinite Internet Possibilities
+    details:
+      Protecting user privacy is at the heart of our mission. By offering comprehensive
+      service support on the end-user's device, users can enjoy the fastest local service
+      experience possible, all while ensuring their data remains private and secure
+      even when offline.
+  - title: Unlimited possibilities of interconnectedness
     icon: 🌐
-    details: Whether it is a mobile device, desktop device, cloud server, or IoT device, every device can be easily interconnected in a dweb modular manner. This means lower development costs and unlimited possibilities beyond the capabilities of the device itself.
-  - title: Open source and freedom
+    details:
+      Whether it's mobile devices, desktop computers, cloud servers, or IoT gadgets,
+      each can be easily integrated into the dWeb in a modular way. This means you can
+      connect these devices with lower development costs and unlock capabilities far
+      beyond what they're capable of on their own.
+  - title: Open Source & Freedom
     icon: 🎁
-    details: The Dweb team is completely open source. We will work with the community to promote the establishment of standards and provide free infrastructure platform construction technology to the world. We are committed to building a better Internet world that is win-win for all parties.
+    details:
+      "Dweb team openly sources its code and commits to partnering with the community
+      for the development of standards, while providing free infrastructure technology
+      platforms for global use. Our mission is to build a more equitable multi-winner
+      internet world."
 ---
-

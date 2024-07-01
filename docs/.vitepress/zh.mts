@@ -11,6 +11,7 @@ export const zh = defineConfig({
     sidebar: {
       "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
       "/plugins/": { base: "/plugins/", items: sidebarPlugins() },
+      "/server": { base: "/server/", items: sidebarPlaocServer() },
     },
 
     editLink: {
@@ -61,6 +62,11 @@ function nav(): DefaultTheme.NavItem[] {
       text: "Plugins",
       activeMatch: "/plugins/",
       items: navPlugins(sidebarPlugins()),
+    },
+    {
+      text: "Server",
+      activeMatch: "/server/",
+      items: navPlugins(sidebarPlaocServer()),
     },
     {
       text: "3.x.x",
@@ -170,6 +176,19 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "TorchPlugin", link: "torch" },
           ],
         },
+      ],
+    },
+  ];
+}
+
+function sidebarPlaocServer(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "Server",
+      base: "/server/",
+      items: [
+        { text: "简介", link: "index" },
+        { text: "中间件", link: "middleware" },
       ],
     },
   ];

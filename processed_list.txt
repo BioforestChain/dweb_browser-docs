@@ -1,6 +1,5 @@
 downloads.md
 intro.md
-index.md
 app-store.md
 cli.md
 flow.md
@@ -27,3 +26,5 @@ window.md
 device.md
 deeplink.md
 is-dweb.md
+index.md
+middleware.md

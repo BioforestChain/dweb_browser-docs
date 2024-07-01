@@ -34,7 +34,8 @@ npm run build
 
 3. 执行命令 `python auto-translater.py` 运行程序。
 
-4. 它将会自动处理测试目录 `docs/zh` 下的所有 Markdown 文件，批量翻译为英语、西班牙语、阿拉伯语。
+4. 它将会自动处理测试目录 `docs/` 下的所有中文 Markdown 文件，批量翻译为英语、西班牙语、阿拉伯语。
+   处理过的文件将在 `processed_list.txt` 中罗列出来，需要重新翻译可以删除相关的文件。
 
 <!-- ::: warning
 中文修改完，需要同步英文文档。
