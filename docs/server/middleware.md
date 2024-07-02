@@ -13,7 +13,7 @@
 
 比如我现在需要代理一些路由的接口做转发给二维码识别模块。
 
-```ts
+```ts twoslash
 import { Router, jsProcess } from "@plaoc/server/middlewares";
 
 const app = new Router();

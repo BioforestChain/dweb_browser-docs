@@ -48,7 +48,8 @@ const getSupportsForQuery = async (defaultValue: {
   }
   return result;
 };
-const query = new URLSearchParams(location.search);
+
+const query = new URLSearchParams(globalThis?.location?.search ?? "");
 const findQuery = (key: string) => {
   return (query.get(key) ?? query.get(key.toLowerCase())) || undefined;
 };

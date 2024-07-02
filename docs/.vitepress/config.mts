@@ -17,7 +17,17 @@ export default defineConfig({
       light: "vitesse-light",
       dark: "vitesse-dark",
     },
-    codeTransformers: [transformerTwoslash()],
+    codeTransformers: [
+      transformerTwoslash({
+        twoslashOptions: {
+          compilerOptions: {
+            target: 99,
+            moduleResolution: 99,
+            module: 199,
+          },
+        },
+      }),
+    ],
   },
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
