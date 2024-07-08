@@ -137,7 +137,7 @@ More forwarding rules can be found in [URLPattern](https://developer.mozilla.org
 
 ### Hidden usage
 
-JS expressions can be written in `{{}}`.
+JS expressions can be written in `{ { } }`.
 
 ```js
 {

@@ -80,9 +80,21 @@ plaoc 是基于 dweb-browser 平台的一个对标 Cordova、Capacitor、Tauri �
 
 ### 安装打包工具。
 
-```bash
-npm i -g @plaoc/cli
+::: code-group
+
+```bash [PNPM]
+  pnpm add -g @plaoc/cli
 ```
+
+```bash [YARN]
+  yarn global add @plaoc/cli
+```
+
+```bash [NPM]
+  npm i -g @plaoc/cli
+```
+
+:::
 
 开发 app 的时候运行` plaoc serve`。
 
@@ -124,7 +136,7 @@ plaoc bundle ./dir
 这两个文件使用任意的`(http/https)` 服务部署成链接的形式，放于同一文件夹中并且指向`metadata.json` 文件。组成如下形式链接，就可以在的 dweb-browser 中进行安装。
 
 ```bash
-dweb://install?url=http://app.dweb.中国/metadata.json
+dweb://install?url=http://<domain>/metadata.json
 ```
 
 ## plugins

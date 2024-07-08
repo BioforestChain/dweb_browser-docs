@@ -24,25 +24,24 @@ At the same time, the chat server does not even need to be purchased. Under the 
 
 ## What is dweb?
 
-Dweb is a decentralized web consensus standard. It is reflected directly on your domain name, such as: `example.dweb`
-However, it is precisely because the domain name dweb does not really exist on the Internet, which means that it does not belong to any organization. In other words, how to interpret the domain name `example.dweb` is entirely up to you (your device) to make the decision .
-The dweb consensus standard is composed of several parts combined:
+Dweb is a decentralized web consensus standard. It is directly reflected in your domain name, such as `example.dweb`. 
+Because the dweb domain does not actually exist on the internet, it means it does not belong to any organization. Therefore, how to interpret the example.dweb domain is entirely up to you (your device) to decide. 
+The dweb consensus standard consists of several parts:
 
 ### Communication Standard
 
-Drawing on the http protocol, we use web data formats such as JSON and CBOR to define the communication standards of the two modules. The module that follows this message-based communication is called dweb-micro-module (Chinese: "dweb module").
-For this communication standard, we use the `file:` protocol header with `.dweb` and the domain name to define its URL, for example: `file://dns.std.dweb/`.
+Drawing inspiration from the HTTP protocol, we define the communication standards for two modules using JSON and CBOR web data formats. Modules that follow this message-based communication are called dweb micro-modules. These communication standards are defined using the `file:` protocol header along with the `.dweb` domain, such as `file://dns.std.dweb/`.
 
 ### Common Standard
 
-- `dns.std.dweb` is the core part of dweb's consensus standard. It defines the interconnection, registration, query and other functions of two dweb modules. It is the core technology required for the interconnection of dweb modules.
-- `http.std.dweb` is the standard for http services, through which any module can obtain its own `.dweb` domain name to interoperate with Web technology
-- `file.std.dweb` is a file service standard. It is based on modules. Each module has an independent file service. They do not interfere with each other but can collaborate with each other safely.
-- `permission.std.dweb` permission management standard. The data belongs to the user, including the data managed by the module. Therefore, the module can be registered through permissions to ensure that the data service is authorized by the user.
+- `dns.std.dweb`  is the core part of the dweb consensus standard, defining functions like interconnection, registration, and querying of dweb modules, which are essential for dweb module interconnection.
+- `http.std.dweb` is the HTTP service standard, allowing any module to obtain a dedicated .dweb domain name, thereby interoperating with web technologies.
+- `file.std.dweb` is the file service standard, where each module has an independent file service that does not interfere with one another but can securely collaborate.
+- `permission.std.dweb` is the permission management standard. Data belongs to the user, including data managed by the modules. Therefore, modules can ensure that data services are user-authorized through permission registration.
 
 ### System Standard
 
-This encompasses the standards for common operating system modules, including platform-specific standards and unified abstract standards:
+This includes some common system module standards, encompassing both platform-specific standards and unified abstract standards:
 
 - `file.sys.dweb`
 - `camera.sys.dweb`
@@ -59,51 +58,87 @@ This encompasses the standards for common operating system modules, including pl
 - `account.sys.dweb`
 - _and more_
 
-These `*sys.dweb` standards represent industry consensus. We do not modify them but rather keep them up-to-date with updates to native systems. Therefore, they are long-term stable and serve as standard libraries for application development.
+These `*sys.dweb` standards encapsulate standard interfaces of operating systems. We will not alter them but will follow updates of native systems, ensuring long-term stability, making them standard libraries for application development.
 
 ### Deep Linking Standard
 
-`dweb-deeplink` is a link in the format of `dweb://action?params`. It provides a platform for defining consensus between dweb modules. For example, modules can rely on consensus rather than actual dweb module.
-To give a specific example, for example, to implement the sharing function: I can bind: `dweb:share?title=hello_world&files=http...` in my share button, then the dweb kernel will look for which module declares the Implementation of `dweb:share` and routes requests to this module. If consensus is implemented by multiple modules at the same time, preference selection will be made on different platforms through the interaction of platform standards.
+`dweb-deeplink` is a type of link formatted as `dweb://action?params`, providing a consensus platform among dweb modules. 
+Modules can rely on consensus rather than actual dweb modules. For example, for a sharing function, I can bind my share button to: `dweb:share?title=hello_world&files=http....` Then, the dweb kernel will find the module that declares the implementation of `dweb:share` and route the request to it. If multiple modules implement the consensus, preference will be handled through platform-standard interactions on different platforms.
 
-In an environment with a command line, `dweb-deeplink` can also be accessed through the command line: `dweb-browser install app --url=xx` will be parsed into: `dweb:install/app?url=xx`
+In command-line environments, `dweb-deeplink` can also be accessed through the command line: `dweb-browser install app --url=xx` will be parsed as: `dweb:install/app?url=xx`.
 
-> Note: The DwebBrowser here is just a software that implements the dweb protocol. There may be other implementations in the community, or in the future we will also launch dweb-cloud, a cloud-facing runtime service.
+> Note: DwebBrowser is just one implementation of the dweb protocol; there might be other implementations from the community, or we might release dweb-cloud as a runtime service for the cloud in the future.
 
-## What is plaoc
+# Plaoc
 
-plaoc is a "cross-platform web application" development toolkit based on the dweb-browser platform, comparable to Cordova, Capacitor, and Tauri.
+Plaoc is a "cross-platform web application" development toolkit based on the dweb-browser platform, akin to Cordova, Capacitor, and Tauri. It includes packaging tools `@plaoc/cli` and frontend plugins `@plaoc/plugins`.
 
-### cli
+## cli
 
-- Installation
+[@plaoc/cli](https://www.npmjs.com/package/@plaoc/cli) is the command-line tool for developing and packaging applications to the dweb_browser.
 
-```bash
-npm install -g @plaoc/cli
+### Install the packaging tool.
+
+::: code-group
+
+```bash [PNPM]
+  pnpm add -g @plaoc/cli
 ```
 
-- Packaging as an app
-
-`plaoc bundle ./dir`
-
-It will package the directory structure as follows and output a compressed `.zip` file and a `metadata.json`. For more details, please refer to the [plaoc cli](./plaoc/cli) for the detailed documentation.
-
-- Developer mode
-
-`plaoc preview http://localhost:1231` or `plaoc preview ./dir`
-
-This command will output the following commands:
-
-```bash
-metadata:       http://127.0.0.1:8096/metadata.json
-metadata:       http://192.168.0.100:8096/metadata.json
+```bash [YARN]
+  yarn global add @plaoc/cli
 ```
 
-- Development using developer tools
+```bash [NPM]
+  npm i -g @plaoc/cli
+```
+
+:::
+
+When developing an app, run plaoc serve.
+
+- The first method allows you to specify the output address of your frontend project, so the app's internal code will update as your code updates.
 
 ```bash
-#window
- & "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://192.168.0.100:8096/metadata.json
-#macos
-open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
+plaoc serve http://localhost:8000
 ```
+
+- The second method directly specifies the compiled source directory, which is equivalent to directly installing the app, suitable for when your frontend project is disconnected.
+
+```bash
+plaoc serve ./dist
+```
+
+The above commands will output the following lines:
+
+```bash
+using metadata file: /Volumes/developer/waterbang/deno/dweb_browser/npm/@plaoc__examples/html-demo/manifest.json
+metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
+metadata: 	dweb://install?url=http://172.30.95.93:8097/metadata.json
+```
+
+The first line `using metadata file` specifies your app configuration file directory, helping to easily identify which app it is.
+
+The second and third lines `metadata` are in `deeplink` form; you can paste it into dweb-browser on desktop to install. For mobile devices, you can convert it into a QR code and scan to install the app.
+
+### Packaging the app into a deployable package
+
+Directly use `plaoc bundle` to specify the source directory for packaging. The command is as follows:
+
+```bash
+plaoc bundle ./dir
+```
+
+It will package and generate a compressed file `.zip` combining the app ID and date, along with a `metadata.json`.
+
+Deploy these two files as links using any `(http/https)` service, place them in the same folder pointing to the `metadata.json` file. Form a link in the following format, and you can install it in the dweb-browser.
+
+```bash
+dweb://install?url=http://<domain>/metadata.json
+```
+
+## plugins
+
+[@plaoc/plugins](https://www.npmjs.com/package/@plaoc/plugins) empowers web developers to directly invoke system APIs on various platforms.
+
+For detailed documentation, see: [plugins 文档](https://docs.dweb-browser.org/plugins/web-components.html)
