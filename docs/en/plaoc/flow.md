@@ -4,34 +4,26 @@ outline: deep
 
 # Plaoc App
 
-We define applications that run on the DwebBrowser browser and are collectively called `Plaoc App`. plaoc follows web specifications and provides a series of plug-ins to control node hardware. And based on the network module, mutual communication of apps within nodes and between nodes can be realized.
+DwebBrowser offers a development standard called DwebApp, which is unified for application development but doesn't require direct interaction with the standard by everyone.
 
-Because dweb-browser currently supports mainstream platforms like Android, iOS, MacOS, Windows, Linux, your web application can rely on plaoc to directly implement multi-end publishing.
+To facilitate this process, we provide plaoc as an auxiliary tool to help frontend developers package their WebApps into DwebApps. In the future, we'll offer more tools to assist other developers in migrating their applications to the Dweb platform.
 
-Plaoc is a product of web3. Applications will be relatively independent, so each plaoc application package can be published using its own application website.
+Plaoc adheres to web standards and provides a suite of APIs/WebComponents that meet common needs for app development, including intercommunication between applications.
 
-Of course, your website can also be an application center, containing your application matrix, making application publishing more efficient.
+Since DwebBrowser already supports mainstream platforms like Android, iOS, MacOS, Windows, and Linux, your Web application can benefit from plaoc for multi-platform release without additional effort.
 
-## Plaoc app development process
+## Developing Plaoc Apps
 
-First you need to create a manifest.json file in the root directory of your application. You can think of manifest.json as equivalent to PWA's manifest.json.
+Firstly, create a `manifest.json` file in your application's root directory. This file is akin to the `manifest.json` used with PWA, where you declare app parameters and perform some display during user installation.
 
-It mainly declares some application parameters and does some display when the user installs.
-
-```bash
-  plaoc-app
-  ├── ......Other project files
-  └── manifest.json
-```
-
-The following sample configuration file, copy the following content and paste it into manifest.json in the root directory.[Click to view field details](./manifest.md);
+Here is an example configuration for `manifest.json`. You can directly copy and paste this content into the root directory of your project for more details on field information:[View Field Details](./manifest.md);
 
 ```json
 {
   "id": "game.dweb.waterbang.top.dweb",
   "name": "game",
   "short_name": "vue3-game",
-  "description": "这是一个实例应用，包含了dweb_plugins全部组件的实例。",
+  "description": "This is an instance application that includes the full suite of dweb_plugins components.",
   "logo": "https://www.bfmeta.info/imgs/logo3.webp",
   "images": [
     "http://qiniu-waterbang.waterbang.top/bfm/cot-home_2058.webp",
@@ -48,21 +40,24 @@ The following sample configuration file, copy the following content and paste it
 }
 ```
 
-Now your app has been declared as a Plaoc app.
+Your app is now officially declared as a Plaoc app.
 
-## How to start development
+## Getting Started
 
-### First install @plaoc/cli
+### Installing the @plaoc/cli Tool
 
-> Or use npx to run without polluting the global environment
->
-> Example: `npx plaoc bundle ./usr/www`
+Alternatively, you can run without polluting your global environment using npx:
 
-@plaoc/cli is the development tool for plaoc that helps applications run, package, and publish. Specific command prompts can be viewed using --help or [Documentation](./cli.md).
+```bash
+npx plaoc bundle ./usr/www
+```
+
+@plaoc/cli is a development tool for plaoc, enabling application runtime, bundling, and distribution. Use `--help` or [the documentation](./cli.md) to view specific command prompts.
 
 - Execute the installation command:
 
 ::: code-group
+
 ```bash [PNPM]
   pnpm add -g @plaoc/cli
 ```
@@ -77,84 +72,80 @@ Now your app has been declared as a Plaoc app.
 
 :::
 
-### Start the project
+### Starting Your Project
 
-This example uses vite to start the project:
+In this example, we use Vite to start your project:
 
 ```bash
-  npx vite --host
+npx vite --host
 ```
 
-The terminal outputs
+Terminal output:
 
 ```bash
- VITE v4.4.9  ready in 88 ms
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: http://192.168.0.100:5173/
+VITE v4.4.9 ready in 88 ms
+  ➜ Local:   http://localhost:5173/
+  ➜ Network: http://192.168.0.100:5173/
 ```
 
-### Build app data link
+### Building Application Data Links
 
-Use the plaoc command installed above to build:
+**Use the `plaoc` command installed above to build:**
 
 ```bash
+# Choose an address that your device can access
   plaoc serve http://192.168.0.100:5173/
-  #or
+  # or
   npx plaoc serve http://192.168.0.100:5173/
 ```
 
-The terminal outputs
+**Terminal Output**
 
 ```bash
-  metadata:       http://127.0.0.1:8096/metadata.json
-  metadata:       http://192.168.0.100:8096/metadata.json
+Using metadata file: /../manifest.json
+metadata: dweb://install?url=http://127.0.0.1:8096/metadata.json
+metadata: dweb://install?url=http://192.168.0.100:8096/metadata.json
 ```
 
-> You can use plaoc serve --help to see more features.
+> You can explore further functionalities by running `plaoc serve --help`.
 
-### Start development
+### Starting Development
 
-First you need to download the [dweb-browser desktop](https://github.com/BioforestChain/dweb_browser/releases) according to your operating system.
+First, download the [DwebBrowser Desktop version](https://github.com/BioforestChain/dweb_browser/releases) according to your operating system.
 
-Next, run dweb-browser with the command to start developer mode.
+Next, simply open `DwebBrowser` and paste the following `deeplink` into the search bar to install the app:
 
-::: code-group
-
-```bash [Windows]
-& "D:\DownLoads\Dweb Browser-x.x.x.exe" install --url http://192.168.0.100:8096/metadata.json
+```bash
+dweb://install?url=http://192.168.0.100:8096/metadata.json
 ```
 
-```bash [MacOS]
-open /Applications/Dweb\ Browser.app --args install --url http://127.0.0.1:8096/metadata.json
-```
+Once installed, if you need to view the debugging interface, right-click on the app and open the debugging panel.
 
-:::
+### Bundling plaoc-app
 
-Now you can see the development and debugging interface. You should also find that what you just downloaded is also the desktop version of dweb-browser.
-
-### Package
-
-After plaoc-app development is complete, @plaoc/cli is still used to package the app. The command is as follows:
+After development is complete, still use `@plaoc/cli` to bundle the app. The command looks like this:
 
 ```bash
 plaoc bundle ./dist
 ```
 
-> ./dist is the output source directory for packaging
+> Note: `./dist` is the source code directory for bundling output.
 
-### Publish
+### Publishing
 
-Upload to the public plaoc app store or upload to your app's official website. For information about how to provide downloads from the official app website or how to provide downloads from the app store, visit: [App Store](./app-store.md).
+Upload your app to a public plaoc app marketplace or directly to your app's official website. For information on how apps are provided via download or through the marketplace, visit: [App Marketplace](./app-store.md).
 
-If you have installed the Dweb Browser app on your phone, you can first upload the two files you packaged to the same folder, and then generate the QR code from the metadata.json address.
+If you have already installed the Dweb Browser app on your mobile device, upload both files for the packaged app into the same folder and generate a QR code with the `metadata.json` URL.
 
 ```bash
 dweb://install?url=http://example.com/app1/metadata.json
 ```
 
-Then use your phone's deep_link function to scan the QR code generated by the link above. After the scan is completed, you will jump to the interface for downloading the app.
+Use your phone's deep link feature to scan the generated QR code. Upon scanning, you will be directed to an app download page:
 
 - Huawei -> Smart Vision
-- Xiaomi -> Xiaoai Vision
-- oppo -> Use the system browser to scan the code
-- vivo -> Jovi scan
+- Xiaomi -> Xiao Ai Vision
+- OPPO -> Scan with System Browser
+- Vivo -> Jovi Scanning
+
+Please adapt these instructions to fit your specific device and operating system requirements for optimal results.

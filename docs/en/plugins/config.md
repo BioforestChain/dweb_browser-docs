@@ -13,11 +13,11 @@ Configuration plug-in can be used to set the current language of `Plaoc App`, or
 This plug-in works with `defaultConfig.lang` in `plaoc.json` to switch the entire basic file routing.
 :::
 
-- [config](#config)
+- [config Unstable](#config-unstable)
   - [Reference](#reference)
-    - [Method](#method)
-  - [Usage Plugins](#usage-plugins)
-  - [Usage WebComponent](#usage-webcomponent)
+      - [Method](#method)
+  - [Plugin Usage](#plugin-usage)
+  - [WebComponent Usage](#webcomponent-usage)
 
 ## Reference
 
@@ -25,23 +25,23 @@ This plug-in works with `defaultConfig.lang` in `plaoc.json` to switch the entir
 
 - `setLang`
 
-  **_Switch current language (entry)_**
+  **Switching current language (entry)**
 
-Assume that you currently have two language portals. You can switch portals after configuring `plaoc.json`.
+Assuming you have two language entry points, after configuring in `plaoc.json`, you can switch between them.
 
 ```ts twoslash
 import { configPlugin } from "@plaoc/plugins";
 await configPlugin.setLang("en", true);
-//                    ^?
+//                   ^?
 
 // my-app
 // ├── en
-// └── en
+// └── zh
 ```
 
 - `getLang`
 
-  **_Get the current language (entry)_**
+  **Retrieving current language (entry)**
 
 ```ts twoslash
 import { configPlugin } from "@plaoc/plugins";
@@ -50,7 +50,7 @@ await configPlugin.getLang();
 //                   ^?
 ```
 
-## Usage Plugins
+## Plugin Usage
 
 ```vue twoslash
 <script setup lang="ts">
@@ -65,7 +65,7 @@ async function getLang() {
 </script>
 ```
 
-## Usage WebComponent
+## WebComponent Usage
 
 ```vue twoslash
 <script setup lang="ts">

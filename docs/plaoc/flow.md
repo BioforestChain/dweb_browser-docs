@@ -122,15 +122,13 @@ metadata: 	dweb://install?url=http://192.168.0.100:8096/metadata.json
 
 您首先需要根据您的操作系统下载 [DwebBrowser 桌面版](https://github.com/BioforestChain/dweb_browser/releases)。
 
-接下来使用指令运行 DwebBrowser 来启动开发者模式。
+接下来只需打开`DwebBrowser` 把下面的`deeplink` 粘贴到搜索框，就能安装 app 了。
 
 ```bash
-open dweb://install?url=http://192.168.0.100:8096/metadata.json
+dweb://install?url=http://192.168.0.100:8096/metadata.json
 ```
 
-:::
-
-现在您就能看到开发和调试界面了，您应该也发现了，您刚刚下载的也是 dweb-browser 的桌面版。
+安装完成之后，如果需要查看调试界面，可以右击 app，点击打开调试界面就可以了。
 
 ### 打包 plaoc-app
 

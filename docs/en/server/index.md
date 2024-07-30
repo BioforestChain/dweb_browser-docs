@@ -1,16 +1,21 @@
 # Plaoc Worker
 
 ::: warning
-The programmable backend is in its infancy and could face significant changes.
+The programmable backend is still in its early stages and might undergo significant changes.
 :::
 
-In order to implement the design concept of open security and local data first, the 'Plaoc Worker' service is designed to completely control the data in the hands of users,
-No longer dependent on the server. This will also help to further strengthen the cooperation between applications.
+To uphold the principles of open security and prioritizing local data, we have developed `Plaoc Worker` services. The goal is to enable users to fully control their data without depending on servers, thus fostering greater collaboration between applications.
 
-Each 'Plaoc App' will carry a programmable backend of'Plaoc Worker', which can help you build serverless applications and immediately follow the APP deployment.
-You can provide a series of services based on this 'Plaoc Worker', such:
+Each `Plaoc App` comes with a programmable backend `Plaoc Worker`, which allows you to build serverless apps that immediately follow the app's deployment process. You can leverage this `Plaoc Worker` to offer various services such as:
 
-- [Middleware service](./middleware.md), do some protection for some API, or secondary processing.
-- Forwarding service, providing forwarding service between apps and connecting each other.
-- Used as a local backend to perform some time-consuming data processing or computing tasks.
-- Firewall, for some requests to do filtering.
+- **Middleware Services** ([details](./middleware.md)): Implement protection or secondary processing for APIs.
+- **Forwarding Services**: Facilitate connections between apps by acting as a relay service.
+- **Local Backend**: Execute time-consuming data processing or computational tasks locally.
+- **Firewall**: Filter requests to secure your app.
+
+## Debugging Your Backend
+
+Just click the status bar icon, and you'll be able to access the backend console.
+
+> - On Mac, the status bar icon is located at the top right corner of the screen.
+> - For Windows users, the status bar can be found at the bottom right corner of the screen.

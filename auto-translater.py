@@ -196,8 +196,8 @@ def split_text(text, max_length):
     return output_text
 
 # 定义翻译文件的函数
-def translate_file(input_file, filename, lang):
-    print(f"Translating into {lang}: {filename}")
+def translate_file(input_file, lang):
+    print(f"Translating into {lang}: {input_file}")
     sys.stdout.flush()
 
     # 定义输出文件
@@ -297,9 +297,9 @@ def translate_file(input_file, filename, lang):
         f.write(output_text)
 
 
-def process_file(input_file, filename):
+def process_file(fullPath):
     # 读取 Markdown 文件的内容
-    with open(input_file, "r", encoding="utf-8") as f:
+    with open(fullPath, "r", encoding="utf-8") as f:
         md_content = f.read()
 
     # 读取processed_list内容
@@ -308,34 +308,34 @@ def process_file(input_file, filename):
 
     if marker_force_translate in md_content:  # 如果有强制翻译的标识，则执行这部分的代码
         if marker_written_in_en in md_content:  # 翻译为除英文之外的语言
-            print("Pass the en-en translation: ", filename)
+            print("Pass the en-en translation: ", fullPath)
             sys.stdout.flush()
-            translate_file(input_file, filename, "es")
-            translate_file(input_file, filename, "ar")
+            translate_file(fullPath, "es")
+            translate_file(fullPath, "ar")
         else:  # 翻译为所有语言
             for lang in translates:
-                translate_file(input_file, filename, lang)
-    elif filename in exclude_list:  # 不进行翻译
-        print(f"Pass the post in exclude_list: {filename}")
+                translate_file(fullPath, lang)
+    elif fullPath in exclude_list:  # 不进行翻译
+        print(f"Pass the post in exclude_list: {fullPath}")
         sys.stdout.flush()
-    elif filename in processed_list_content:  # 不进行翻译
-        print(f"Pass the post in processed_list: {filename}")
+    elif fullPath in processed_list_content:  # 不进行翻译
+        print(f"Pass the post in processed_list: {fullPath}")
         sys.stdout.flush()
     elif marker_written_in_en in md_content:  # 翻译为除英文之外的语言
-        print(f"Pass the en-en translation: {filename}")
+        print(f"Pass the en-en translation: {fullPath}")
         sys.stdout.flush()
         for lang in ["es", "ar"]:
-            translate_file(input_file, filename, lang)
+            translate_file(fullPath, lang)
     else:  # 翻译为所有语言
         for lang in translates:
-            translate_file(input_file, filename, lang)
+            translate_file(fullPath, lang)
 
     # 将处理完成的文件名加到列表，下次跳过不处理
-    if filename not in processed_list_content:
-        print(f"Added into processed_list: {filename}")
+    if fullPath not in processed_list_content:
+        print(f"Added into processed_list: {fullPath}")
         with open(processed_list, "a", encoding="utf-8") as f:
             f.write("\n")
-            f.write(filename)
+            f.write(fullPath)
 
     # 强制将缓冲区中的数据刷新到终端中，使用 GitHub Action 时方便实时查看过程
     sys.stdout.flush()
@@ -353,7 +353,7 @@ def recursive_process_dir(dir_to_translate):
             recursive_process_dir(full_path)
         elif filename.endswith(".md"):
             try:
-                process_file(full_path, filename)
+                process_file(full_path)
             except Exception as e:
                 # 捕获异常并输出错误信息
                 print(f"An error has occurred while processing file {full_path}: {e}")
