@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import "./wallpaper-canvas.ts";
 
 const wallpaper = ref<HTMLCanvasElement | null>(null);
-onMounted(() => {
+onMounted(async () => {
+  await import("./wallpaper-canvas.ts");
   Object.assign(window, { wallpaper });
   window.addEventListener("click", () => {
     wallpaper.value.replay({ duration: 1000, startPlaybackRate: 2 });

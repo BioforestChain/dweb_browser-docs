@@ -8,10 +8,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Badges: typeof import('./.vitepress/components/Badges.vue')['default']
-    Components: typeof import('./.vitepress/components/index.vue')['default']
     DownloadLink: typeof import('./.vitepress/components/DownloadLink.vue')['default']
     IndexBackground: typeof import('./.vitepress/components/IndexBackground.vue')['default']
     Platform: typeof import('./.vitepress/components/Platform.vue')['default']
-    WallpaperCanvas: typeof import('./.vitepress/components/WallpaperCanvas.vue')['default']
   }
 }
