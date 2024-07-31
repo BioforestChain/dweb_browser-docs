@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-const wallpaper = ref<HTMLCanvasElement | null>(null);
+const wallpaper = ref<HTMLElement>();
 onMounted(async () => {
-  await import("./wallpaper-canvas.ts");
+  const { DwebWallpaperElement } = await import("./wallpaper-canvas.ts");
   Object.assign(window, { wallpaper });
   window.addEventListener("click", () => {
-    wallpaper.value.replay({ duration: 1000, startPlaybackRate: 2 });
+    (wallpaper.value as InstanceType<typeof DwebWallpaperElement>).replay({ duration: 1000, startPlaybackRate: 2 });
   });
 });
 </script>
@@ -45,7 +45,7 @@ onMounted(async () => {
 
 <style>
 dweb-wallpaper {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -55,5 +55,9 @@ dweb-wallpaper {
 }
 dweb-wallpaper pre {
   display: none;
+}
+body footer {
+  background-color: transparent !important;
+  border-top: 0 !important;
 }
 </style>
