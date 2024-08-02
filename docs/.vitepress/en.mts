@@ -140,6 +140,7 @@ function sidebarPlugins(): DefaultTheme.SidebarItem[] {
             { text: "NetworkPlugin", link: "network" },
             { text: "SharePlugin", link: "share" },
             { text: "ShortcutPlugin", link: "shortcut" },
+            { text: "KeychainPlugin", link: "keychain" },
           ],
         },
         {

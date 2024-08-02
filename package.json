@@ -5,7 +5,7 @@
   "type": "module",
   "devDependencies": {
     "@plaoc/is-dweb": "^0.1.2",
-    "@plaoc/plugins": "^1.0.5",
+    "@plaoc/plugins": "^1.1.0",
     "@plaoc/server": "^0.3.7",
     "@shikijs/twoslash": "^1.9.1",
     "@shikijs/vitepress-twoslash": "^1.9.1",
