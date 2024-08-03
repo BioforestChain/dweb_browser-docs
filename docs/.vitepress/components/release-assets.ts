@@ -37,6 +37,8 @@ export const githubReleaseUrl =
  */
 export const allReleaseAssets = (): $ReleaseAsset[] => {
   const assets: $ReleaseAsset[] = [];
+  /// android 3.240803.0
+  assets.push(...tmp_android_2("3.240803.0"));
   /// android 3.240622.0
   assets.push(...tmp_android_2("3.240622.0"));
   /// android 3.240606.2
@@ -49,8 +51,8 @@ export const allReleaseAssets = (): $ReleaseAsset[] => {
 
 export const latestReleaseAssets = (): $ReleaseAsset[] => {
   const assets: $ReleaseAsset[] = [];
-  /// android 3.240622.0
-  assets.push(...tmp_android_2("3.240622.0"));
+  /// android 3.240803.0
+  assets.push(...tmp_android_2("3.240803.0"));
   /// desktop 3.6.1200
   assets.push(...tmp_dekstop_1("3.6.1200"));
 
