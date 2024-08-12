@@ -92,7 +92,7 @@ export function tmp_dekstop_1(version: string) {
     },
     {
       version,
-      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-aarch64.msi`,
+      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-arm64.msi`,
       supports: [{ ...baseSupport, platform: "Windows", architecture: "arm" }],
     },
     {
@@ -102,7 +102,7 @@ export function tmp_dekstop_1(version: string) {
     },
     {
       version,
-      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-aarch64.dmg`,
+      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-arm64.dmg`,
       supports: [{ ...baseSupport, platform: "macOS", architecture: "arm" }],
     },
   ];

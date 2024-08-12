@@ -43,8 +43,8 @@ export const allReleaseAssets = (): $ReleaseAsset[] => {
   assets.push(...tmp_android_2("3.240622.0"));
   /// android 3.240606.2
   assets.push(...tmp_android_1("3.240606.2"));
-  /// desktop 3.6.1200
-  assets.push(...tmp_dekstop_1("3.6.1200"));
+  /// desktop 3.8.1200
+  assets.push(...tmp_dekstop_1("3.8.1200"));
 
   return assets;
 };
@@ -53,8 +53,8 @@ export const latestReleaseAssets = (): $ReleaseAsset[] => {
   const assets: $ReleaseAsset[] = [];
   /// android 3.240803.0
   assets.push(...tmp_android_2("3.240803.0"));
-  /// desktop 3.6.1200
-  assets.push(...tmp_dekstop_1("3.6.1200"));
+  /// desktop 3.8.1200
+  assets.push(...tmp_dekstop_1("3.8.1200"));
 
   return assets;
 };
