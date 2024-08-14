@@ -23,6 +23,13 @@ export default defineConfig({
     },
     codeTransformers: [
       transformerTwoslash({
+        twoslashOptions: {
+          compilerOptions: {
+            target: 99,
+            moduleResolution: 99,
+            module: 199,
+          }
+        },
         // errorRendering: 'hover',
         processHoverInfo(info) {
           return defaultHoverInfoProcessor(info)
