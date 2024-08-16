@@ -87,7 +87,7 @@ export function tmp_dekstop_1(version: string) {
   const result: $ReleaseAsset[] = [
     {
       version,
-      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-x86-64.msi`,
+      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-x86_64.msi`,
       supports: [{ ...baseSupport, platform: "Windows", architecture: "x86" }],
     },
     {
@@ -97,7 +97,7 @@ export function tmp_dekstop_1(version: string) {
     },
     {
       version,
-      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-x86-64.dmg`,
+      link: `${githubReleaseUrl}/download/desktop-release-${version}/DwebBrowser-${version}-x86_64.dmg`,
       supports: [{ ...baseSupport, platform: "macOS", architecture: "x86" }],
     },
     {
