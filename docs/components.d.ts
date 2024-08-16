@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Badges: typeof import('./.vitepress/components/Badges.vue')['default']
     DownloadLink: typeof import('./.vitepress/components/DownloadLink.vue')['default']
+    HeroActions: typeof import('./.vitepress/components/HeroActions.vue')['default']
     IndexBackground: typeof import('./.vitepress/components/IndexBackground.vue')['default']
     Platform: typeof import('./.vitepress/components/Platform.vue')['default']
   }

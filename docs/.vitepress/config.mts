@@ -6,7 +6,6 @@ import { en, enSearch } from "./en.mjs";
 // import { es, esSearch } from "./es.mjs";
 import vite from "./vite.config.mjs";
 import { zh, zhSearch } from "./zh.mjs";
-import { currentActions, HeroAction } from "./components/current-download";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -39,18 +38,6 @@ export default defineConfig({
         },
       }),
     ],
-  },
-  transformPageData(pageData, { siteConfig }) {
-    if(pageData.frontmatter.layout === "home") {
-      const originActions: HeroAction[] = pageData.frontmatter.hero.actions
-      pageData.frontmatter = {
-        ...pageData.frontmatter,
-        hero: {
-          ...pageData.frontmatter.hero,
-          actions: currentActions(originActions)
-        }
-      }
-    }
   },
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],

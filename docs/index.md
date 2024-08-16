@@ -9,13 +9,6 @@ hero:
   image:
     src: /logo.svg
     alt: dweb
-  actions:
-    - theme: brand
-      text: 介绍
-      link: /intro
-    - theme: alt
-      text: Download
-      link: https://github.com/BioforestChain/dweb_browser
 
 features:
   - title: 轻松体验跨平台应用

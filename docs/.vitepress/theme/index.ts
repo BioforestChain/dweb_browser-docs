@@ -7,6 +7,7 @@ import type { EnhanceAppContext } from "vitepress";
 import { default as DefaultTheme, default as Theme } from "vitepress/theme";
 import { h } from "vue";
 import IndexBackground from "../components/IndexBackground.vue";
+import HeroActions from "../components/HeroActions.vue";
 import "./style/var.css";
 
 export default {
@@ -18,6 +19,7 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       "home-hero-before": () => h(IndexBackground),
+      "home-hero-actions-after": () => h(HeroActions),
     });
   },
 };
