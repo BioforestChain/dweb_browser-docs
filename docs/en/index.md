@@ -20,7 +20,7 @@ hero:
       text: Introduction
       link: /en/intro
     - theme: alt
-      text: View on GitHub
+      text: Download
       link: https://github.com/BioforestChain/dweb_browser
 
 features:

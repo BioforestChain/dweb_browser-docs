@@ -14,7 +14,7 @@ hero:
       text: 介绍
       link: /intro
     - theme: alt
-      text: GitHub上查看
+      text: Download
       link: https://github.com/BioforestChain/dweb_browser
 
 features:
