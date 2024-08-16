@@ -23,7 +23,7 @@ function isAppleSilicon() {
 }
 
 async function detectArchByUserAgentData(): Promise<string | null> {
-  if ("userAgentData" in navigator) {
+  if (typeof navigator !== "undefined" && "userAgentData" in navigator) {
     const userAgentData = await navigator.userAgentData.getHighEntropyValues([
       "architecture",
       "platform",
