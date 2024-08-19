@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
 import { VPButton } from "vitepress/theme";
 import { useData } from "vitepress";
 import { currentActions2 } from "./current-download";
@@ -12,11 +12,16 @@ interface HeroAction {
   rel?: string;
 }
 
-const { lang } = useData();
+const { lang, page } = useData();
 const actionsRef = ref<HeroAction[]>([]);
-watchEffect(async() => {
-  console.log("qaq lang", lang.value);
-  const actions :HeroAction[] = []
+watchEffect(async () => {
+  const actions: HeroAction[] = [];
+
+  if (!page.value.filePath.endsWith("index.md")) {
+    actionsRef.value = actions;
+    return;
+  }
+
   switch (lang.value) {
     case "en-US":
       actions.push({ theme: "brand", text: "Intro", link: "/en/intro" });
@@ -27,9 +32,8 @@ watchEffect(async() => {
   }
 
   actions.push(await currentActions2(lang.value));
-  actionsRef.value = actions
+  actionsRef.value = actions;
 });
-
 </script>
 
 <template>
