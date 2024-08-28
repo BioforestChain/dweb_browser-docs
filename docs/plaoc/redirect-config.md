@@ -11,7 +11,7 @@ plaoc 提供了类似 nginx 的重定向功能,使用[URLPattern](https://develo
 首选在您的项目根目录下创建`plaoc.json`,路径如下:
 
 ```bash
-  plaoc-app
+  dweb-app
   ├── ......其他工程文件
   ├── manifest.json
   └── plaoc.json
@@ -45,7 +45,8 @@ plaoc 提供了类似 nginx 的重定向功能,使用[URLPattern](https://develo
 允许所有类型的 Method，并且当请求的 pathname 为`/`的时候，将会转发到配置的`to.url`。
 
 可以看到以上配置的重点在
-```javascript 
+
+```javascript
 /locales/{{lang}}{{pattern.pathname.input}}index.html
 ```
 

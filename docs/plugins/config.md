@@ -8,14 +8,14 @@ outline: deep
 <Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip 介绍：
-配置插件，可用于设置`Plaoc App`的当前语言,或者用于切换入口。
+配置插件，可用于设置`Dweb App`的当前语言,或者用于切换入口。
 
 该插件与`plaoc.json`里的 `defaultConfig.lang`配合，用来切换整个基本的文件路由。
 :::
 
-- [config](#config)
+- [config 不稳定](#config-不稳定)
   - [Reference](#reference)
-    - [Method](#method)
+      - [Method](#method)
   - [Usage Plugins](#usage-plugins)
   - [Usage WebComponent](#usage-webcomponent)
 

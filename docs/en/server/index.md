@@ -6,7 +6,7 @@ The programmable backend is still in its early stages and might undergo signific
 
 To uphold the principles of open security and prioritizing local data, we have developed `Plaoc Worker` services. The goal is to enable users to fully control their data without depending on servers, thus fostering greater collaboration between applications.
 
-Each `Plaoc App` comes with a programmable backend `Plaoc Worker`, which allows you to build serverless apps that immediately follow the app's deployment process. You can leverage this `Plaoc Worker` to offer various services such as:
+Each `Dweb App` comes with a programmable backend `Plaoc Worker`, which allows you to build serverless apps that immediately follow the app's deployment process. You can leverage this `Plaoc Worker` to offer various services such as:
 
 - **Middleware Services** ([details](./middleware.md)): Implement protection or secondary processing for APIs.
 - **Forwarding Services**: Facilitate connections between apps by acting as a relay service.

@@ -31,7 +31,7 @@ export const en = defineConfig({
 function nav(): DefaultTheme.NavItem[] {
   return [
     {
-      text: "Plaoc",
+      text: "Dweb",
       activeMatch: "/plaoc/",
       items: navPlaoc(),
     },
@@ -68,7 +68,7 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarPlaoc(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "Plaoc App",
+      text: "Dweb App",
       collapsed: false,
       base: "/en/plaoc/",
       items: [

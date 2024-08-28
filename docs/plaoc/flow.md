@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Plaoc App
+# Dweb App
 
 DwebBrowser 提供了一种应用开发标准，我们统一称为 DwebApp，但是并不是所有人都需要直接接触这个标准来开发自己的。
 
@@ -15,13 +15,15 @@ plaoc 遵循 web 规范，提供一系列的 Api/WebComponent，来满足应用�
 基于 DwebBrowser 已经实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持。
 那么也就意味着您的 Web 应用，可以背靠 plaoc 直接实现多端发布。
 
-## 开发 Plaoc app 流程
+## 开发 Dweb app 流程
 
 您首选需要在您的应用根目录下创建 `manifest.json` 文件，您可以认为`manifest.json`等同于 `PWA`的`manifest.json`。
 它主要声明了一些应用的参数和在用户安装的时候做一些展示。
 
+文件结构如下：
+
 ```bash
-  plaoc-app
+  dweb-app
   ├── ......其他工程文件
   └── manifest.json
 ```
@@ -50,7 +52,7 @@ plaoc 遵循 web 规范，提供一系列的 Api/WebComponent，来满足应用�
 }
 ```
 
-现在您的 app 已经声明成为 Plaoc app 了。
+现在您的 app 已经声明成为 Dweb app 了。
 
 ## 如何开始开发
 
@@ -58,7 +60,7 @@ plaoc 遵循 web 规范，提供一系列的 Api/WebComponent，来满足应用�
 
 > 或者不愿意污染全局环境可以使用 npx 运行
 >
-> 示例： `npx plaoc bundle ./usr/www`
+> 示例打包项目： `npx plaoc bundle ./dist`
 
 @plaoc/cli 是 plaoc 的开发工具，能帮助应用运行，打包，发布。
 具体的命令提示可以使用`--help`或者[文档](./cli.md)查看。
@@ -130,7 +132,7 @@ dweb://install?url=http://192.168.0.100:8096/metadata.json
 
 安装完成之后，如果需要查看调试界面，可以右击 app，点击打开调试界面就可以了。
 
-### 打包 plaoc-app
+### 打包 dweb-app
 
 开发完成后也是依然是用@plaoc/cli 打包 app，命令如下：
 

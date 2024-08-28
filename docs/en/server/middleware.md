@@ -3,7 +3,7 @@
 <Badges name="@plaoc/server" />
 <Platform supports="iOS,Android,MacOS,Windows" />
 
-Utilize middleware services in the `Plaoc APP`. Currently, middleware management is provided for three services of the app:
+Utilize middleware services in the `Dweb App`. Currently, middleware management is provided for three services of the app:
 
 - **`api`** data service interface.
 - **`www`** all source file service interfaces within the application.
@@ -67,5 +67,5 @@ plaoc server ./dist -s ./serverDist
 
 For reference, check out the following projects:
 
-- **[plaoc-App](https://github.com/BioforestChain/dweb_browser/tree/main/toolkit/plaoc/examples/plugin-demo)**
+- **[dweb-app](https://github.com/BioforestChain/dweb_browser/tree/main/toolkit/plaoc/examples/plugin-demo)**
 - **[middleware-server](https://github.com/BioforestChain/dweb_browser/tree/main/toolkit/plaoc/examples/plaoc-server)**

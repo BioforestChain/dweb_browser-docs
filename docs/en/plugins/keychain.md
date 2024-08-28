@@ -2,20 +2,20 @@
 outline: deep
 ---
 
-# keychain
+# Keychain
 
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android,MacOS,Windows" />
 
-::: tip intro:
-keychain plugin 
+::: tip Introduction:
+Keychain plugin  
 :::
 
-- [keychain](#keychain)
+- [Keychain](#keychain)
   - [Reference](#reference)
     - [Method](#method)
-  - [Usage Plugins](#usage-plugins)
-  - [Usage WebComponent](#usage-webcomponent)
+  - [Plugin Usage](#plugin-usage)
+  - [WebComponent Usage](#webcomponent-usage)
 
 ## Reference
 
@@ -23,7 +23,7 @@ keychain plugin
 
 - `keys`
 
-  **_Returns a String Array of all keys in this keychain._**
+  **Retrieve all key-value pairs in the keychain**
 
 ```ts twoslash
 import { keychainPlugin } from "@plaoc/plugins";
@@ -33,7 +33,7 @@ const res = await keychainPlugin.keys();
 
 - `get`
 
-  **_Returns the value at the specified key in the keychain._**
+  **Return the value associated with a given key in the keychain**
 
 ```ts twoslash
 import { keychainPlugin } from "@plaoc/plugins";
@@ -44,7 +44,7 @@ await keychainPlugin.get("test");
 
 - `set`
 
-  **_Set the specified key and value to this keychain._**
+  **Bind a specified key-value pair to the keychain**
 
 ```ts twoslash
 import { keychainPlugin } from "@plaoc/plugins";
@@ -55,7 +55,7 @@ await keychainPlugin.set("test", "xxx");
 
 - `delete`
 
-  **_Delete the specified key and its corresponding value from this keychain._**
+  **Remove the value associated with a given key from the keychain**
 
 ```ts twoslash
 import { keychainPlugin } from "@plaoc/plugins";
@@ -66,7 +66,7 @@ await keychainPlugin.delete("test");
 
 - `has`
 
-  **_Checks if the specified key is contained in this keychain._**
+  **Check if there is a value associated with a specified key in the keychain**
 
 ```ts twoslash
 import { keychainPlugin } from "@plaoc/plugins";
@@ -75,7 +75,7 @@ await keychainPlugin.has("test");
 //                   ^?
 ```
 
-## Usage Plugins
+## Plugin Usage
 
 ```vue twoslash
 <script setup lang="ts">
@@ -99,7 +99,7 @@ async function has() {
 </script>
 ```
 
-## Usage WebComponent
+## WebComponent Usage
 
 ```vue twoslash
 <script setup lang="ts">

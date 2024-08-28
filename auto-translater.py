@@ -19,8 +19,7 @@ exclude_list = ["Contact-and-Subscribe.md", "WeChat.md"]
 processed_list = "processed_list.txt"
 
 
-# 文章使用英文撰写的提示，避免本身为英文的文章被重复翻译为英文
-marker_written_in_en = "\n> This post was originally written in English.\n"
+
 # 即使在已处理的列表中，仍需要重新翻译的标记
 marker_force_translate = "\n[translate]\n"
 
@@ -139,8 +138,8 @@ def translate_text(text, lang):
     }[lang]
     completion = ollama.chat(model="qwen2",
     messages=[
-        {"role": "system", "content": "As a professional translation engine, translate the following content into colloquial, professional, elegant, and fluent English, avoiding any subtle machine translation nuances. Strictly maintain the original markdown format, do not translate any English, code or any html tag. Focus solely on translating the Chinese text without any additional explanation."},
-        {"role": "user", "content": f"Translate all Chinese into {target_lang},Do not translate any of the following English content:\n\n{text}\n"},
+        {"role": "system", "content": "You are a translation expert proficient in various languages, focusing solely on translating text without interpretation. You accurately understand the meanings of proper nouns, idioms, metaphors, allusions, and other obscure words in sentences, translating them appropriately based on the context and language environment. The translation should be natural and fluent. Only return the translated text, without including redundant quotes or additional notes."},
+        {"role": "user", "content": f"Translate the following  Simplified-Chinese text into {target_lang}  text: {text}"},
     ])
     # 获取翻译结果
     output_text = completion['message']['content']
@@ -224,9 +223,6 @@ def translate_file(input_file, lang):
     # 删除译文中指示强制翻译的 marker
     input_text = input_text.replace(marker_force_translate, "")
 
-    # 删除其他出英文外其他语言译文中的 marker_written_in_en
-    if lang != "en":
-        input_text = input_text.replace(marker_written_in_en, "")
 
     # 使用正则表达式来匹配 Front Matter
     front_matter_match = re.search(r'---\n(.*?)\n---', input_text, re.DOTALL)
@@ -307,13 +303,7 @@ def process_file(fullPath):
         processed_list_content = f.read()
 
     if marker_force_translate in md_content:  # 如果有强制翻译的标识，则执行这部分的代码
-        if marker_written_in_en in md_content:  # 翻译为除英文之外的语言
-            print("Pass the en-en translation: ", fullPath)
-            sys.stdout.flush()
-            translate_file(fullPath, "es")
-            translate_file(fullPath, "ar")
-        else:  # 翻译为所有语言
-            for lang in translates:
+        for lang in translates:
                 translate_file(fullPath, lang)
     elif fullPath in exclude_list:  # 不进行翻译
         print(f"Pass the post in exclude_list: {fullPath}")
@@ -321,11 +311,6 @@ def process_file(fullPath):
     elif fullPath in processed_list_content:  # 不进行翻译
         print(f"Pass the post in processed_list: {fullPath}")
         sys.stdout.flush()
-    elif marker_written_in_en in md_content:  # 翻译为除英文之外的语言
-        print(f"Pass the en-en translation: {fullPath}")
-        sys.stdout.flush()
-        for lang in ["es", "ar"]:
-            translate_file(fullPath, lang)
     else:  # 翻译为所有语言
         for lang in translates:
             translate_file(fullPath, lang)

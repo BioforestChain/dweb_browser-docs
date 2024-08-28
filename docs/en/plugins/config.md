@@ -8,7 +8,7 @@ outline: deep
 <Platform supports="iOS,Android,MacOS,Windows" />
 
 ::: tip introduction:
-Configuration plug-in can be used to set the current language of `Plaoc App`, or to switch the entrance.
+Configuration plug-in can be used to set the current language of `Dweb App`, or to switch the entrance.
 
 This plug-in works with `defaultConfig.lang` in `plaoc.json` to switch the entire basic file routing.
 :::

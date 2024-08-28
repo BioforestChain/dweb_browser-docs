@@ -3,7 +3,7 @@
 <Badges name="@plaoc/server" />
 <Platform supports="iOS,Android,MacOS,Windows" />
 
-在 `Plaoc APP` 使用中间件服务。目前对 APP 的三个服务提供了中间件管理。
+在 `Dweb App` 使用中间件服务。目前对 APP 的三个服务提供了中间件管理。
 
 - `api` 数据服务接口。
 - `www` 应用中的所有源文件服务接口。
@@ -67,5 +67,5 @@ plaoc server ./dist  -s ./serverDist
 
 示例项目地址：
 
-- [plaoc-App](https://github.com/BioforestChain/dweb_browser/tree/main/toolkit/plaoc/examples/plugin-demo)
+- [dweb-App](https://github.com/BioforestChain/dweb_browser/tree/main/toolkit/plaoc/examples/plugin-demo)
 - [middleware-server](https://github.com/BioforestChain/dweb_browser/tree/main/toolkit/plaoc/examples/plaoc-server)

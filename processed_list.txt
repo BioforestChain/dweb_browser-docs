@@ -2,7 +2,6 @@ docs/downloads.md
 docs/intro.md
 docs/index.md
 docs/plaoc/app-store.md
-docs/plaoc/cli.md
 
 docs/plaoc/manifest.md
 docs/plaoc/redirect-config.md
@@ -31,3 +30,5 @@ docs/server/middleware.md
 docs/plugins/config.md
 docs/server/index.md
 docs/plaoc/flow.md
+docs/plaoc/cli.md
+docs/plugins/keychain.md

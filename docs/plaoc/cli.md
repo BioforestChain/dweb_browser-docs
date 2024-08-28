@@ -1,18 +1,14 @@
----
-outline: deep
----
-
 # @plaoc/cli
 
 <Badges name="@plaoc/cli" />
 
-这是 plaoc 命令行工具，负责 plaoc app 的开发，打包，发布。
+这是 plaoc 命令行工具，负责 `dweb app` 的开发，打包，发布，通过此工具打包后，app 就能在任意平台的 `Dweb Browser` 中安装中。
 
 这个 cli 工具还兼具了发布工具和验证 app 的功能，并且可以使用`plaoc run`和服务端配合，进行快速的打包发布应用。
 
 ## 安装
 
-- 首先需要安装 plaoc 命令行工具。
+首先需要安装 plaoc 命令行工具。
 
 ::: code-group
 
@@ -35,49 +31,107 @@ outline: deep
 假设工程目录如下所示：
 
 ```bash
-  plaoc-app
+  dweb-app
+  ├── dist // 工程化编译完的源码目录
   ├── ......其他工程文件
   ├── manifest.json
   └── plaoc.json
 ```
 
-## 开发模式
-
-开发模式主要跟`dweb_browser`桌面版配合进行动态开发，命令如下：
+## 开发模式：监听源码变更
 
 ```bash
-plaoc serve http://localhost:5173
+plaoc live ./dist
 ```
 
-以上命令将会打印如下：
+此命令将在指定的文件夹中启动 http 服务，并且根据生成的 http 地址生成`dweb app`的安装地址。
+由于绑定的是 http 服务地址，因此 app 安装的时候仅仅是提供转发，并不会将源代码安装到`dweb_browser`中。
+
+简单来说就是在源码文件更新的时候，不用重新安装`dweb app`源代码也跟着更新。
+
+### 选项
+
+- `--port`或 `-p`: 用来指定启动的服务端口。默认为 8096 端口。
+- `--config-dir` 或 `-c`: 动态指定配置文件目录，即指定您创建`manifest.json`的根目录。默认使用当前目录。
+- `--web-server` 或 `-s`:用来指定 `dweb app` 后端地址。
+- `--static-port` 或 `-p2`: 指定静态服务地址。
+
+### 示例
+
+注意，必须指定源码文件夹。
 
 ```bash
-using metadata file: /../manifest.json
-metadata: 	dweb://install?url=http://127.0.0.1:8097/metadata.json
-metadata: 	dweb://install?url=http://192.168.0.100:8097/metadata.json
+plaoc live  ./dist
 ```
 
-这是一个纯转发的模式，plaoc 将代理了您启动的 `http://localhost:5173` 开发服务。
-
-### 指定启动端口
-
-一般用于启动多个 app 的情况，您可以使用 `--port` 指定开启的端口，默认的端口为 8096。
+输出类似如下：
 
 ```bash
-plaoc serve http://localhost:5173 --port 8097
+0: dweb://install?url=http://127.0.0.1:8096/metadata.json
+1: dweb://install?url=http://172.30.95.105:8096/metadata.json
+? Enter the corresponding number to generate a QR code. (0) › 1
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▀▀ ███▄█▀█▀▄ ██  █ ▄▄▄▄▄ █
+█ █   █ █▄▀██▀▀▄▄█▄▄█▀██  █ █   █ █
+█ █▄▄▄█ █ ▄ █ ██▀█  ▀ █▄▄ █ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀▄█▄▀ █▄▀ █ █▄▄▄▄▄▄▄█
+█  ▀ ▀█▄▄▀▀█  ▀▄▄ ███▄▄▄█▄█ ▄▄▀ ▄▀█
+█ ▄███▄▄█▄▀▀   ▄█ █▀   ▄▀▀█ ▄ ██ ▄█
+█▀█▀▄▄ ▄▀▀▀▄ █▀ ▄▄ █ █ ▄▄▄   ▀█▀█ █
+█▀ ▄█▀█▄█ ▄▄ █▄▄██ ▀██  ▄▄▀▀█ ▀█▄██
+█▄ ▀▄█ ▄▄██▀█  ▀█ ▄▀█▀ ▀ █▀▄█▄▀▀▀▄█
+█▄▀▄█▀▀▄ ▄ ▀▄ █ █ ▀██▀▀ ▀▄▄██▄▄█  █
+█▄ ▀▄ █▄▀▄█▀▀██▀▄ ▀██▄▄▄▄▀█▀██ ▀▄▀█
+█▄ ▀█  ▄▄ █ ███▀█▀█    ▄█ █▀ █ ▄▀ █
+█▄████▄▄█▀▀█▀ ██▄  █▀█▄▄█ ▄▄▄ █▀▄ █
+█ ▄▄▄▄▄ █▄▄▀█ ▀▀▀█ █▀▄▀ █ █▄█ ▄█ ▀█
+█ █   █ █▀▀█▄█▄▄█▀▄█▄▀ ▀█▄▄   ▄█▄██
+█ █▄▄▄█ █▀ █▀█ █▀▄▀ ▀ ▀█▄ █▀  ▄██▄█
+█▄▄▄▄▄▄▄█▄▄█▄▄█▄████▄█▄▄█▄██▄▄██▄██
 ```
 
-### 指定`manifest.json`目录
+生成的二维码可以在`Dweb Browser`移动端使用扫码模块进行扫码安装。
 
-假设您当前不在项目根目录，您需要使用 `--dir` 来指定 `manifest.json` 的地址，以便识别 app 的配置信息。
+## 开发模式：监听服务
+
+`plaoc serve` 提供两种模式，可以从静态源码中创建静态服务。也可以指定动态启动的 http 地址来创建安装服务。
+
+### 指定动态地址
+
+比如使用 `vite --host` 创建的动态服务，这种方式的好处是每次修改代码不用重新安装 app。
+但是需要保证设备间能访问到对方，所以如果不是本地可以尽量使用私有地址。
 
 ```bash
-plaoc serve http://localhost:5173  --dir ./plaoc-app1
+plaoc serve http://172.30.95.105:5173/
 ```
 
-## 打包项目
+输出内容更上面一样。
 
-正常打包命令如下：
+### 指定静态源码
+
+指定静态源码安装后，相当于已经安装到`Dweb Browser` 中，不需要安装服务一直启动，但是如果代码发生修改需要重新安装。
+
+```bash
+plaoc serve ./dist
+```
+
+输出内容更上面一样。
+
+#### 选项
+
+- `--port`或 `-p`: 用来指定启动的服务端口。默认为 8096 端口。
+- `--config-dir` 或 `-c`: 动态指定配置文件目录，即指定您创建`manifest.json`的根目录。默认使用当前目录。
+- `--web-server` 或 `-s`:用来指定 `dweb app` 后端地址。
+
+## 打包 `dweb app`
+
+`plaoc bundle` 是用来发布 `dweb app` 的时候使用，会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`。
+
+    |- bundle
+      |- appId.version.zip
+      |- metadata.json
+
+这里还是指定源码文件夹。
 
 ```bash
 plaoc bundle ./dist
@@ -85,15 +139,11 @@ plaoc bundle ./dist
 
 `./dist`目录为您打包的源码目录。并且您需要确保您当前运行 plaoc 命令的文件夹跟您的`manifest.json`文件夹同级。
 
-如果不在同一目录，可以参考下面的 `--dir` 目录进行指定。
-
-::: warning
-注意，不可以使用 plaoc bundle `http://localhost:5173` 打包一个动态服务。
-:::
+如果不在同一目录，可以参考下面的 `-c` 目录进行指定。
 
 ### 指定`manifest.json`目录
 
-如果您的`manifest.json`跟打包的目录不在同一文件夹下，可以使用 `--dir` 指定到`manifest.json`文件夹下。
+如果您的`manifest.json`跟打包的目录不在同一文件夹下，可以使用 `-c` 指定到`manifest.json`文件夹下。
 
 假设工程目录如下所示：
 
@@ -111,7 +161,7 @@ plaoc bundle ./dist
 假设您目录下有多个项目，就可以像下面这样指定目录去打包。
 
 ```bash
-plaoc bundle ./plaoc-app1/dist --dir ./plaoc-app1
+plaoc bundle ./plaoc-app1/dist -c ./plaoc-app1
 ```
 
 > ps： 您也可以使用`plaoc bundle --help` 查看。
@@ -141,3 +191,19 @@ plaoc bundle ./dist --id new.plaoc.org.dweb
 ```bash
 plaoc bundle ./dist --version 0.2.3
 ```
+
+### 选项
+
+- `-o` 或 `--out`: 指定打包完的目录名称，默认名称为`bundle`。
+- `-v` 或 `--version`: 指定 app 的版本，能覆盖`manifest.json`里面的配置。
+- `--id`: 指定 app 的 id，能覆盖`manifest.json`里面的配置。
+- `-c ` 或 `--config-dir`：用来指定开发目录，即指定您创建`manifest.json`的根目录。
+- `--clear`: 是否清空编译的文件夹，默认清空。
+
+### 示例
+
+```bash
+plaoc bundle  ./dist --dir ./plaoc/demo --version 0.0.2
+```
+
+打包完成可以部署到任意可访问的位置，就可以在任意平台的`Dweb Browser`中，访问`metadata.json`文件，就能进行安装了。

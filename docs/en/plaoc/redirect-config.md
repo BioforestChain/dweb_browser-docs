@@ -11,7 +11,7 @@ Plaoc provides redirect functionality similar to nginx, using [URLPattern](https
 First create `plaoc.json` in your project root directory, path as follows:
 
 ```bash
-  plaoc-app
+  dweb-app
   ├── ......Other project files
   ├── manifest.json
   └── plaoc.json
@@ -44,8 +44,9 @@ The above configuration rule is:
 
 Allow all types of Method, and when the requested pathname is `/`, it will be forwarded to the configured `to.url`.
 
-You can see the focus of the above configuration is on 
-```javascript 
+You can see the focus of the above configuration is on
+
+```javascript
 /locales/{{lang}}{{pattern.pathname.input}}index.html
 ```
 

@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Plaoc App
+# Dweb App
 
 DwebBrowser offers a development standard called DwebApp, which is unified for application development but doesn't require direct interaction with the standard by everyone.
 
@@ -12,9 +12,17 @@ Plaoc adheres to web standards and provides a suite of APIs/WebComponents that m
 
 Since DwebBrowser already supports mainstream platforms like Android, iOS, MacOS, Windows, and Linux, your Web application can benefit from plaoc for multi-platform release without additional effort.
 
-## Developing Plaoc Apps
+## Developing Dweb Apps
 
 Firstly, create a `manifest.json` file in your application's root directory. This file is akin to the `manifest.json` used with PWA, where you declare app parameters and perform some display during user installation.
+
+The file structure is as follows:
+
+```bash
+  dweb-app
+  ├── ......other
+  └── manifest.json
+```
 
 Here is an example configuration for `manifest.json`. You can directly copy and paste this content into the root directory of your project for more details on field information:[View Field Details](./manifest.md);
 
@@ -40,7 +48,7 @@ Here is an example configuration for `manifest.json`. You can directly copy and 
 }
 ```
 
-Your app is now officially declared as a Plaoc app.
+Your app is now officially declared as a Dweb app.
 
 ## Getting Started
 
@@ -121,7 +129,7 @@ dweb://install?url=http://192.168.0.100:8096/metadata.json
 
 Once installed, if you need to view the debugging interface, right-click on the app and open the debugging panel.
 
-### Bundling plaoc-app
+### Bundling dweb-app
 
 After development is complete, still use `@plaoc/cli` to bundle the app. The command looks like this:
 
@@ -133,7 +141,7 @@ plaoc bundle ./dist
 
 ### Publishing
 
-Upload your app to a public plaoc app marketplace or directly to your app's official website. For information on how apps are provided via download or through the marketplace, visit: [App Marketplace](./app-store.md).
+Upload your app to a public dweb app marketplace or directly to your app's official website. For information on how apps are provided via download or through the marketplace, visit: [App Marketplace](./app-store.md).
 
 If you have already installed the Dweb Browser app on your mobile device, upload both files for the packaged app into the same folder and generate a QR code with the `metadata.json` URL.
 

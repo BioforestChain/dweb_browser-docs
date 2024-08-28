@@ -1,18 +1,14 @@
----
-outline: deep
----
-
 # @plaoc/cli
 
 <Badges name="@plaoc/cli" />
 
-This is the plaoc command line tool, responsible for the development, packaging, and release of plaoc apps.
+This is the plaoc command-line tool, tasked with developing, packaging, and distributing `dweb app`s. After using this CLI to package your app, it can be installed on any platform's `Dweb Browser`.
 
-This cli tool also has the functions of publishing tool and app verification, and can use `plaoc run` to cooperate with the server to quickly package and release the application.
+The cli tool also includes publishing tools and functionalities for validating apps, allowing you to use `plaoc run` alongside the server-side to quickly package and publish applications.
 
-## Install
+## Installation
 
-- First you need to install the plaoc command line tool.
+First, you need to install the plaoc command-line tool.
 
 ::: code-group
 
@@ -30,114 +26,180 @@ This cli tool also has the functions of publishing tool and app verification, an
 
 :::
 
-> You can also use npx plaoc to execute commands
+> **Alternative**: You can also execute commands using `npx plaoc`.
 
-Assume that the project directory looks like this:
+Assume your project directory looks like this:
 
 ```bash
-  plaoc-app
-  ├── ......Other project files
+  dweb-app
+  ├── dist // The compiled source code directory for engineering
+  ├── ... Other project files
   ├── manifest.json
   └── plaoc.json
 ```
 
-## Development Mode
-
-The development mode mainly cooperates with the `dweb_browser` desktop version for dynamic development. The command is as follows:
+## Development Mode: Listening to Source Code Changes
 
 ```bash
-plaoc serve http://localhost:5173
+plaoc live ./dist
 ```
 
-The above command will print the following:
+This command starts an HTTP service in the specified folder and generates a `dweb app` installation address based on the generated HTTP address. Since it's bound to the HTTP service URL, the app is installed by providing redirection only, without actually installing the source code into the `Dweb Browser`.
+
+In essence, when your code files are updated, you don't need to reinstall the `dweb app` as its source changes.
+
+### Options
+
+- **`--port`** or `-p`: Specifies the service port for startup. Defaults to 8096.
+- **`--config-dir`** or `-c`: Dynamically specifies the configuration file directory, that is, the root directory where you created `manifest.json`. The default uses the current directory.
+- **`--web-server`** or `-s`: Specifies the backend address for `dweb app`.
+- **`--static-port`** or `-p2`: Specifies the static service address.
+
+### Example
+
+Ensure to specify the source code folder:
 
 ```bash
-using metadata file: */manifest.json
-metadata: 	dweb://install?url=http://127.0.0.1:8096/metadata.json
-metadata: 	dweb://install?url=http://192.168.0.100:8096/metadata.json
+plaoc live ./dist
 ```
 
-This is a pure forwarding mode, plaoc will proxy the `http://localhost:5173` development service you started.
-
-### Specify startup port
-
-Generally used to start multiple apps. You can use `--port` to specify the port to open. The default port is 8096.
+Output typically appears as:
 
 ```bash
-plaoc serve http://localhost:5173 --port 8097
+0: dweb://install?url=http://127.0.0.1:8096/metadata.json
+1: dweb://install?url=http://172.30.95.105:8096/metadata.json
+? Enter the corresponding number to generate a QR code. (0) › 1
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▀▀ ███▄█▀█▀▄ ██  █ ▄▄▄▄▄ █
+█ █   █ █▄▀██▀▀▄▄█▄▄█▀██  █ █   █ █
+█ █▄▄▄█ █ ▄ █ ██▀█  ▀ █▄▄ █ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀▄█▄▀ █▄▀ █ █▄▄▄▄▄▄▄█
+█  ▀ ▀█▄▄▀▀█  ▀▄▄ ███▄▄▄█▄█ ▄▄▀ ▄▀█
+█ ▄███▄▄█▄▀▀   ▄█ █▀   ▄▀▀█ ▄ ██ ▄█
+█▀█▀▄▄ ▄▀▀▀▄ █▀ ▄▄ █ █ ▄▄▄   ▀█▀█ █
+█▀ ▄█▀█▄█ ▄▄ █▄▄██ ▀██  ▄▄▀▀█ ▀█▄██
+█▄ ▀▄█ ▄▄██▀█  ▀█ ▄▀█▀ ▀ █▀▄█▄▀▀▀▄█
+█▄▀▄█▀▀▄ ▄ ▀▄ █ █ ▀██▀▀ ▀▄▄██▄▄█  █
+█▄ ▀▄ █▄▀▄█▀▀██▀▄ ▀██▄▄▄▄▀█▀██ ▀▄▀█
+█▄ ▀█  ▄▄ █ ███▀█▀█    ▄█ █▀ █ ▄▀ █
+█▄████▄▄█▀▀█▀ ██▄  █▀█▄▄█ ▄▄▄ █▀▄ █
+█ ▄▄▄▄▄ █▄▄▀█ ▀▀▀█ █▀▄▀ █ █▄█ ▄█ ▀█
+█ █   █ █▀▀█▄█▄▄█▀▄█▄▀ ▀█▄▄   ▄█▄██
+█ █▄▄▄█ █▀ █▀█ █▀▄▀ ▀ ▀█▄ █▀  ▄██▄█
+█▄▄▄▄▄▄▄█▄▄█▄▄█▄████▄█▄▄█▄██▄▄██▄██
 ```
 
-### Specify the `manifest.json` directory
+The generated QR code can be scanned and installed using the scanning module in the `Dweb Browser` on mobile devices.
 
-Assuming that you are not currently in the project root directory, you need to use `--dir` to specify the address of `manifest.json` in order to identify the app's configuration information.
+## Development Mode: Monitoring Service
+
+The `plaoc serve` command offers two modes for creating static services from static source code. It also allows specifying a dynamic starting HTTP address to create an installation service.
+
+### Specifying Dynamic Address
+
+For instance, using `vite --host` creates a dynamic service. The advantage of this method is that you don't need to reinstall the app every time your code changes. However, it requires ensuring that devices can access each other, so if not local, try using private addresses.
 
 ```bash
-plaoc serve http://localhost:5173  --dir ./plaoc-app1
+plaoc serve http://172.30.95.105:5173/
 ```
 
-## Package project
+The output will be as above.
 
-The normal packaging command is as follows:
+### Specifying Static Source Code
+
+When specifying static source code for installation, it's equivalent to installing into the `Dweb Browser`, and you don't need a service running continuously. However, if your code changes, you'll need to reinstall.
+
+```bash
+plaoc serve ./dist
+```
+
+The output will be as above.
+
+#### Options:
+
+- `--port` or `-p`: Used to specify the port for starting the service. The default is 8096.
+- `--config-dir` or `-c`: Dynamically specifies the configuration file directory, which means specifying the root directory where you created the `manifest.json`. By default, it uses the current directory.
+- `--web-server` or `-s`: Used to specify the backend address for `dweb app`.
+
+## Packaging `dweb app`
+
+`plaoc bundle` is used when publishing a `dweb app`, it will package into the following folder structure and output a compressed file `.zip` and a `metadata.json`.
+
+    |- bundle
+      |- appId.version.zip
+      |- metadata.json
+
+Here, the source code folder is still specified.
 
 ```bash
 plaoc bundle ./dist
 ```
 
-The `./dist` directory is your packaged source code directory. And you need to make sure that the folder where you are currently running the plaoc command is at the same level as your `manifest.json` folder.
+The `./dist` directory is the source code directory you want to package. Also, make sure that the folder where you run the plaoc command is at the same level as your `manifest.json` file.
 
-If it is not in the same directory, you can refer to the `--dir` directory below to specify it.
+If not in the same directory, you can refer to the `-c` directory for specification.
 
-::: warning
-Note that plaoc bundle `http://localhost:5173` cannot be used to package a dynamic service.
-:::
+### Specifying the `manifest.json` directory
 
-### Specify the `manifest.json` directory
+If your `manifest.json` is not in the same folder as the packaging directory, you can use the `-c` option to specify the folder where `manifest.json` is located.
 
-If your `manifest.json` is not in the same folder as the packaged directory, you can use `--dir` to specify the `manifest.json` folder.
-
-Assume that the project directory looks like this:
+Assuming the project directory is as follows:
 
 ```bash
-  plaoc-main
-  ├── ......Other project files
-  ├── plaoc-app1
-    ├── ./dist  //Project packaged source code files
-    ├── manifest.json
-  ├── plaoc-app2
-    ├── ./dist  //Project packaged source code files
+plaoc-main
+├── other-engine-files
+└── plaoc-app1
+    ├── ./dist  # location of packaged project code files
+    └── manifest.json
+
+└── plaoc-app2
+    ├── ./dist  # location of packaged project code files
     └── manifest.json
 ```
 
-Assuming you have multiple projects in your directory, you can specify the directory for packaging as follows.
+With multiple projects in your folder, you can bundle them by specifying the directory like this:
 
 ```bash
-plaoc bundle ./plaoc-app1/dist --dir ./plaoc-app1
+plaoc bundle ./plaoc-app1/dist -c ./plaoc-app1
 ```
 
-> ps: You can also use `plaoc bundle --help` to view.
+_Note: You can also get more details using `plaoc bundle --help`._
 
-### Specify the file location for output packaged output
+## Specifying the Output Directory for Bundled Files
 
-You can use `--out` to specify the output directory name, which defaults to `bundle`.
+You have an option to use `--out` to designate the output directory, with the default being `bundle`.
 
 ```bash
 plaoc bundle ./dist --out ./bundleDir
 ```
 
-#### Specify the appId of the output
+### Naming Your App ID
 
-You can use `--id` to specify the id of the app.
+You can also specify your app's id using `--id`. Remember that for it to work correctly:
 
-```bash
-plaoc bundle ./dist --id new.plaoc.org.dweb
-```
+- The id should end in `.dweb`.
+- It must match the domain specified in your `home` configuration.
 
-Note that the specified id needs to end with `.dweb` and have the same domain name as the configured `home`.
+## Setting an App Version
 
-### Specify the output app version
-
-You can use `--version` to specify the app version.
+Use the `--version` flag to define your app version. This overrides any version information from your `manifest.json`.
 
 ```bash
 plaoc bundle ./dist --version 0.2.3
 ```
+
+### Command Options Explained
+
+- `-o` or `--out`: Specifies the target folder for packaged files, with a default of `bundle`.
+- `-v` or `--version`: Sets the app version, which takes precedence over the one in `manifest.json`.
+- `--id`: Assigns your app's id, overriding the `manifest.json` configuration.
+- `-c ` (or `--config-dir`): Points to your development directory, where you created the `manifest.json`.
+- `--clear`: Determines if the compiled folder should be cleared (`true` by default).
+
+### Example Usage
+
+```bash
+plaoc bundle  ./dist --dir ./plaoc/demo --version 0.0.2
+```
+
+After bundling is complete and your files are ready, you can deploy them to any accessible location. To install these on the `Dweb Browser`, simply navigate to `metadata.json` from any platform.
