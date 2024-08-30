@@ -38,7 +38,9 @@ Assume your project directory looks like this:
   └── plaoc.json
 ```
 
-## Development Mode: Listening to Source Code Changes
+## Development Mode
+
+### Listening to Source Code Changes
 
 ```bash
 plaoc live ./dist
@@ -91,11 +93,11 @@ Output typically appears as:
 
 The generated QR code can be scanned and installed using the scanning module in the `Dweb Browser` on mobile devices.
 
-## Development Mode: Monitoring Service
+### Monitoring Service
 
 The `plaoc serve` command offers two modes for creating static services from static source code. It also allows specifying a dynamic starting HTTP address to create an installation service.
 
-### Specifying Dynamic Address
+#### Specifying Dynamic Address
 
 For instance, using `vite --host` creates a dynamic service. The advantage of this method is that you don't need to reinstall the app every time your code changes. However, it requires ensuring that devices can access each other, so if not local, try using private addresses.
 
@@ -105,7 +107,7 @@ plaoc serve http://172.30.95.105:5173/
 
 The output will be as above.
 
-### Specifying Static Source Code
+#### Specifying Static Source Code
 
 When specifying static source code for installation, it's equivalent to installing into the `Dweb Browser`, and you don't need a service running continuously. However, if your code changes, you'll need to reinstall.
 
@@ -115,7 +117,7 @@ plaoc serve ./dist
 
 The output will be as above.
 
-#### Options:
+##### Options:
 
 - `--port` or `-p`: Used to specify the port for starting the service. The default is 8096.
 - `--config-dir` or `-c`: Dynamically specifies the configuration file directory, which means specifying the root directory where you created the `manifest.json`. By default, it uses the current directory.
