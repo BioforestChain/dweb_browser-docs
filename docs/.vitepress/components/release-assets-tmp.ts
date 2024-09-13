@@ -14,12 +14,12 @@ export function tmp_android_2(version: string) {
   const result: $ReleaseAsset[] = [
     {
       version,
-      link: `${githubReleaseUrl}/download/android-${version}/DwebBrowser_arm64_v${version}.apk`,
+      link: `${githubReleaseUrl}/download/android-${version}-stable/DwebBrowser_arm64_v${version}.apk`,
       supports: [baseSupport],
     },
     {
       version,
-      link: `${githubReleaseUrl}/download/android-${version}/DwebBrowser_all_v${version}.apk`,
+      link: `${githubReleaseUrl}/download/android-${version}-stable/DwebBrowser_all_v${version}.apk`,
       supports: (["64", "32"] as const)
         .map((bitness) => {
           return (["x86", "arm"] as const).map((architecture) => {
