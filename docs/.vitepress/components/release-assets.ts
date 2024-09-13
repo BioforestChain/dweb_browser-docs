@@ -52,7 +52,7 @@ export const allReleaseAssets = (): $ReleaseAsset[] => {
 export const latestReleaseAssets = (): $ReleaseAsset[] => {
   const assets: $ReleaseAsset[] = [];
   /// android 3.240803.0
-  assets.push(...tmp_android_2("3.240803.0"));
+  assets.push(...tmp_android_2("3.240913.0"));
   /// desktop 3.8.1200
   assets.push(...tmp_dekstop_1("3.8.1200"));
 
