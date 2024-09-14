@@ -64,14 +64,30 @@ const installFor = (lang: string, os: string) => {
   }
 };
 
-export async function currentActions2(lang: string): Promise<HeroAction> {
-  const userAgent = navigator.userAgent;
+/// 模糊检测下载链接是否可用，不可用使用代理切换
+const checkDownloadLink = async (link: string): Promise<string> => {
+  if (link.length > 0) {
+    try {
+      const _ = await fetch(link, { method: "HEAD", mode: "no-cors" });
+      return link;
+    } catch {
+      return `https://mirror.ghproxy.com/?q=${link}`;
+    }
+  }
 
+  return link;
+};
+
+export async function currentActions2(lang: string): Promise<HeroAction> {
   let action: HeroAction = {
     theme: "alt",
     text: "",
-    link: "",
+    link: "javascript:void(0);",
   };
+
+  if (typeof navigator === "undefined") return action;
+
+  const userAgent = navigator.userAgent;
   if (/Win/i.test(navigator.platform)) {
     action.text = downloadFor(lang, "Windows");
     const arch = await detectPlatformArch();
@@ -135,6 +151,8 @@ export async function currentActions2(lang: string): Promise<HeroAction> {
       })[0].link;
     }
   }
+
+  action.link = await checkDownloadLink(action.link);
 
   return action;
 }

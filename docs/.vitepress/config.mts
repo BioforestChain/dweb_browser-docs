@@ -67,4 +67,11 @@ export default defineConfig({
     // ar: { label: "Arabic", ...ar },
   },
   vite,
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag === "dweb-wallpaper"
+      }
+    }
+  }
 });
