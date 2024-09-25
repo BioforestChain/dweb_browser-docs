@@ -54,7 +54,7 @@ function nav(): DefaultTheme.NavItem[] {
         },
         {
           text: "Get Start for Developer",
-          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
+          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.en.md",
         },
       ],
     },

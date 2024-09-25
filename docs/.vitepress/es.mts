@@ -71,7 +71,7 @@ function nav(): DefaultTheme.NavItem[] {
         },
         {
           text: "Comenzar para el desarrollador",
-          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
+          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.en.md",
         },
       ],
     },
