@@ -1,11 +1,11 @@
 import { defaultHoverInfoProcessor, transformerTwoslash } from "@shikijs/vitepress-twoslash";
-import { groupIconPlugin } from "vitepress-plugin-group-icons";
+import { groupIconMdPlugin ,groupIconVitePlugin} from "vitepress-plugin-group-icons";
 import { defineConfig } from "vitepress";
-// import { ar, arSearch } from "./ar.mjs";
-import { en, enSearch } from "./en.mjs";
-// import { es, esSearch } from "./es.mjs";
-import vite from "./vite.config.mjs";
-import { zh, zhSearch } from "./zh.mjs";
+// import { ar, arSearch } from "./ar.mts";
+import { en, enSearch } from "./en.mts";
+// import { es, esSearch } from "./es.mts";
+import vite from "./vite.config.mts";
+import { zh, zhSearch } from "./zh.mts";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -19,7 +19,7 @@ export default defineConfig({
       dark: "vitesse-dark",
     },
     config(md) {
-      md.use(groupIconPlugin)
+      md.use(groupIconMdPlugin)
     },
     codeTransformers: [
       transformerTwoslash({
@@ -73,5 +73,5 @@ export default defineConfig({
         isCustomElement: (tag) => tag === "dweb-wallpaper"
       }
     }
-  }
+  },
 });

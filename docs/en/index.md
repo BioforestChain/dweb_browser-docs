@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: Dweb Browser
-  text: Deploy your own `.dweb` domain on your local device
+  text: Deploy your own <code>.dweb</code> domain on your local device
   tagline:
     "Translate all Chinese into English, avoiding any translation of the following
     English content:We assist developers in building Dweb applications that prioritize offline access

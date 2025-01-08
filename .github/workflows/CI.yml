@@ -19,24 +19,30 @@ jobs:
         with:
           persist-credentials: false
 
+      # 准备环境
+      - name: use pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       # 生成静态文件
       - name: Build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
-        run: npm install && npm run build
-
+        run: pnpm install && pnpm build
 
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DWEBUSER_SSHKEY }}
         with:
-          SSH_PRIVATE_KEY:  ${{ secrets.DWEBUSER_SSHKEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.DWEBUSER_SSHKEY }}
           REMOTE_HOST: ${{ secrets.SERVER_IP }}
           REMOTE_USER: dwebuser
           REMOTE_PORT: 18879
-          SOURCE:  docs/.vitepress/dist/  # VitePress 生成的静态文件目录
-          TARGET: /data/Web/dweb-browser  # 服务器上的目标目录
+          SOURCE: docs/.vitepress/dist/ # VitePress 生成的静态文件目录
+          TARGET: /data/Web/dweb-browser # 服务器上的目标目录
+
 
       # - name: 📂Deploy to Server
       #   uses: easingthemes/ssh-deploy@v2
@@ -47,7 +53,7 @@ jobs:
       #     local-dir: src/.vuepress/dist/
       #     port: 21
 
-          # 部署到 GitHub Pages
+      # 部署到 GitHub Pages
       # - name: Deploy GitHub Pages
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
       #   with:

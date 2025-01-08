@@ -12,3 +12,6 @@ docs/.vitepress/cache
 docs/.vitepress/dist
 
 __pycache__
+
+package-lock.json
+pnpm-lock.yaml

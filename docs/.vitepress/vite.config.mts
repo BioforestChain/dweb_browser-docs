@@ -2,6 +2,7 @@ import { fileURLToPath } from "node:url";
 import UnoCSS from "unocss/vite";
 import Components from "unplugin-vue-components/vite";
 import { defineConfig } from "vite";
+import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 
 export default defineConfig({
   plugins: [
@@ -12,5 +13,6 @@ export default defineConfig({
       extensions: ["vue", "md"],
     }),
     UnoCSS(fileURLToPath(new URL("./uno.config.ts", import.meta.url))),
+    groupIconVitePlugin(),
   ],
 });

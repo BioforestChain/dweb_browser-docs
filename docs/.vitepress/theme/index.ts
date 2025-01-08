@@ -1,6 +1,6 @@
 // https://vitepress.dev/guide/custom-theme
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
-import { GroupIconComponent } from 'vitepress-plugin-group-icons/client'
+import 'virtual:group-icons.css'
 import "@shikijs/vitepress-twoslash/style.css";
 import "uno.css";
 import type { EnhanceAppContext } from "vitepress";
@@ -14,7 +14,6 @@ export default {
   extends: Theme,
   enhanceApp({ app }: EnhanceAppContext) {
     app.use(TwoslashFloatingVue);
-    app.use(GroupIconComponent);
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {

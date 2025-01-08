@@ -10,7 +10,7 @@ max_length = 1800
 
 # 设置翻译的路径
 dir_to_translate = "docs"
-excluded_dirs = ["en", "es", "ar"]  # 替换为你要排除的目录名
+excluded_dirs = ["en"]  # 替换为你要排除的目录名
 translates = ['en'] # 需要翻译成什么语言 当前的模型比较垃圾，没有办法翻译 es 和 ar
 
 # 不进行翻译的文件列表

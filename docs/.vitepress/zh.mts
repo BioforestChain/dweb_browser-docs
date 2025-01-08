@@ -12,6 +12,7 @@ export const zh = defineConfig({
       "/plaoc/": { base: "/plaoc/", items: sidebarPlaoc() },
       "/plugins/": { base: "/plugins/", items: sidebarPlugins() },
       "/server": { base: "/server/", items: sidebarPlaocServer() },
+      "/help": { base: "/help/", items: sidebarHelpServer() },
     },
 
     editLink: {
@@ -69,20 +70,25 @@ function nav(): DefaultTheme.NavItem[] {
       items: navPlugins(sidebarPlaocServer()),
     },
     {
-      text: "3.x.x",
+      text: "帮助中心",
+      activeMatch: "/help/",
+      items: navPlugins(sidebarHelpServer()),
+    },
+    {
+      text: "核心维护者文档",
       items: [
         {
-          text: "Monthly",
+          text: "开发日志",
           link: "https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md",
         },
         {
-          text: "Get Start for Developer",
+          text: "入门核心开发者",
           link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
         },
       ],
     },
     {
-      text: "Downloads",
+      text: "下载",
       link: "/downloads",
     },
   ];
@@ -190,6 +196,19 @@ function sidebarPlaocServer(): DefaultTheme.SidebarItem[] {
       items: [
         { text: "简介", link: "index" },
         { text: "中间件", link: "middleware" },
+      ],
+    },
+  ];
+}
+
+function sidebarHelpServer(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "帮助中心",
+      base: "/help/",
+      items: [
+        { text: "常见问题", link: "q&a" },
+        { text: "隐私政策", link: "privacy_policy" },
       ],
     },
   ];

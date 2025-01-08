@@ -45,15 +45,20 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: "/server/",
       items: navPlugins(sidebarPlaocServer()),
     },
+    // {
+    //   text: "Help Center",
+    //   activeMatch: "/help/",
+    //   items: navPlugins(sidebarHelpServer()),
+    // },
     {
-      text: "3.x.x",
+      text: "Contributor",
       items: [
         {
-          text: "Monthly",
+          text: "Monthly Dev Log",
           link: "https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md",
         },
         {
-          text: "Get Start for Developer",
+          text: "Get Start for Contributor",
           link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.en.md",
         },
       ],
@@ -167,6 +172,18 @@ function sidebarPlaocServer(): DefaultTheme.SidebarItem[] {
       items: [
         { text: "Intro", link: "index" },
         { text: "Middleware", link: "middleware" },
+      ],
+    },
+  ];
+}
+function sidebarHelpServer(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "Help Center",
+      base: "/help/",
+      items: [
+        { text: "Q & A", link: "q&a" },
+        { text: "Privacy Policy", link: "privacy_policy" },
       ],
     },
   ];
