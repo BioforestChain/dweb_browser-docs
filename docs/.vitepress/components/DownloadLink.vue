@@ -3,7 +3,6 @@ import { onMounted, ref } from "vue";
 import {
   $Architecture,
   $Platform,
-  allReleaseAssets,
   findReleaseAssets,
   githubReleaseUrl,
   $ReleaseAsset,

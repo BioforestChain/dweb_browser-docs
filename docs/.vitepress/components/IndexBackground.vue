@@ -51,7 +51,7 @@ dweb-wallpaper {
   z-index: 0;
   pointer-events: none;
   top: 0;
-  filter: blur(5px);
+  opacity: 0.1;
 }
 dweb-wallpaper pre {
   display: none;
