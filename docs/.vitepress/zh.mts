@@ -1,6 +1,7 @@
-import { defineConfig, type DefaultTheme } from "vitepress";
+import { type DefaultTheme, defineConfig } from "vitepress";
 import { navPlugins } from "./navPlugins";
 
+const html = String.raw;
 export const zh = defineConfig({
   lang: "zh-Hans",
   description: "一个提供分布式网络 | 应用附着的浏览器。",
@@ -23,7 +24,11 @@ export const zh = defineConfig({
 
     footer: {
       message: "基于 MIT 许可发布",
-      copyright: `版权所有 © 2021-${new Date().getFullYear()} BFChain`,
+      copyright: html`
+      <a id="beian" href="https://beian.miit.gov.cn/#/Integrated/recordQuery"></a>
+      版权所有 © 2021-${
+        new Date().getFullYear()
+      } <a href="https://github.com/BioforestChain/dweb_browser">BioforestChain</a>`,
     },
 
     docFooter: {
@@ -79,11 +84,13 @@ function nav(): DefaultTheme.NavItem[] {
       items: [
         {
           text: "开发日志",
-          link: "https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md",
+          link:
+            "https://github.com/BioforestChain/dweb_browser/blob/main/monthly.md",
         },
         {
           text: "入门核心开发者",
-          link: "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
+          link:
+            "https://github.com/BioforestChain/dweb_browser/blob/main/GET_START_FOR_DEVELOPER.md",
         },
       ],
     },
@@ -130,7 +137,7 @@ function navPlaoc(): (
       navItems = navItems.concat(
         item.items.map((it) => {
           return { text: it.text!, link: base + it.link! };
-        })
+        }),
       );
     }
   }

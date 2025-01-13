@@ -1,0 +1,15 @@
+[
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "info.bagen.dwebbrowser",
+        "sha256_cert_fingerprints": [
+          "6F:9A:45:84:95:07:36:1A:93:D5:E1:05:AE:79:FE:EB:AE:8B:8A:D0:58:74:14:B0:3C:30:E2:64:27:F6:26:C5"
+        ]
+      }
+    }
+  ]
+  

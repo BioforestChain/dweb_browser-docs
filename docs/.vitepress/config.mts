@@ -1,5 +1,11 @@
-import { defaultHoverInfoProcessor, transformerTwoslash } from "@shikijs/vitepress-twoslash";
-import { groupIconMdPlugin ,groupIconVitePlugin} from "vitepress-plugin-group-icons";
+import {
+  defaultHoverInfoProcessor,
+  transformerTwoslash,
+} from "@shikijs/vitepress-twoslash";
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from "vitepress-plugin-group-icons";
 import { defineConfig } from "vitepress";
 // import { ar, arSearch } from "./ar.mts";
 import { en, enSearch } from "./en.mts";
@@ -7,6 +13,7 @@ import { en, enSearch } from "./en.mts";
 import vite from "./vite.config.mts";
 import { zh, zhSearch } from "./zh.mts";
 
+const js = String.raw;
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "DwebBrowser",
@@ -19,7 +26,7 @@ export default defineConfig({
       dark: "vitesse-dark",
     },
     config(md) {
-      md.use(groupIconMdPlugin)
+      md.use(groupIconMdPlugin);
     },
     codeTransformers: [
       transformerTwoslash({
@@ -28,13 +35,13 @@ export default defineConfig({
             target: 99,
             moduleResolution: 99,
             module: 199,
-          }
+          },
         },
         // errorRendering: 'hover',
         processHoverInfo(info) {
           return defaultHoverInfoProcessor(info)
             // Remove shiki_core namespace
-            .replace(/_shikijs_core\w*\./g, '')
+            .replace(/_shikijs_core\w*\./g, "");
         },
       }),
     ],
@@ -70,8 +77,8 @@ export default defineConfig({
   vue: {
     template: {
       compilerOptions: {
-        isCustomElement: (tag) => tag === "dweb-wallpaper"
-      }
-    }
+        isCustomElement: (tag) => tag === "dweb-wallpaper",
+      },
+    },
   },
 });

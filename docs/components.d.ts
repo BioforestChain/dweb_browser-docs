@@ -10,6 +10,8 @@ declare module 'vue' {
     Badges: typeof import('./.vitepress/components/Badges.vue')['default']
     DownloadLink: typeof import('./.vitepress/components/DownloadLink.vue')['default']
     HeroActions: typeof import('./.vitepress/components/HeroActions.vue')['default']
+    IncFooter: typeof import('./.vitepress/components/IncFooter.vue')['default']
+    IncFooterScript: typeof import('./.vitepress/components/IncFooterScript.vue')['default']
     IndexBackground: typeof import('./.vitepress/components/IndexBackground.vue')['default']
     Platform: typeof import('./.vitepress/components/Platform.vue')['default']
   }
