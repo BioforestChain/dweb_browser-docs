@@ -2,7 +2,7 @@
 
 <Badges name="@plaoc/cli" />
 
-这是 plaoc 命令行工具，负责 `dweb app` 的开发，打包，发布，通过此工具打包后，app 就能在任意平台的 `Dweb Browser` 中安装中。
+这是 plaoc 命令行工具，负责  Dwebapp  的开发，打包，发布，通过此工具打包后，app 就能在任意平台的 `Dweb Browser` 中安装中。
 
 这个 cli 工具还兼具了发布工具和验证 app 的功能，并且可以使用`plaoc run`和服务端配合，进行快速的打包发布应用。
 
@@ -12,16 +12,16 @@
 
 ::: code-group
 
-```bash [PNPM]
-  pnpm add -g @plaoc/cli
+```bash [NPM]
+npm i -g @plaoc/cli
 ```
 
 ```bash [YARN]
-  yarn global add @plaoc/cli
+yarn global add @plaoc/cli
 ```
 
-```bash [NPM]
-  npm i -g @plaoc/cli
+```bash [PNPM]
+pnpm add -g @plaoc/cli
 ```
 
 :::
@@ -46,16 +46,16 @@
 plaoc live ./dist
 ```
 
-此命令将在指定的文件夹中启动 http 服务，并且根据生成的 http 地址生成`dweb app`的安装地址。
+此命令将在指定的文件夹中启动 http 服务，并且根据生成的 http 地址生成 Dwebapp 的安装地址。
 由于绑定的是 http 服务地址，因此 app 安装的时候仅仅是提供转发，并不会将源代码安装到`dweb_browser`中。
 
-简单来说就是在源码文件更新的时候，不用重新安装`dweb app`源代码也跟着更新。
+简单来说就是在源码文件更新的时候，不用重新安装 Dwebapp 源代码也跟着更新。
 
 ### 选项
 
 - `--port`或 `-p`: 用来指定启动的服务端口。默认为 8096 端口。
 - `--config-dir` 或 `-c`: 动态指定配置文件目录，即指定您创建`manifest.json`的根目录。默认使用当前目录。
-- `--web-server` 或 `-s`:用来指定 `dweb app` 后端地址。
+- `--web-server` 或 `-s`:用来指定  Dwebapp  后端地址。
 - `--static-port` 或 `-p2`: 指定静态服务地址。
 
 ### 示例
@@ -123,11 +123,11 @@ plaoc serve ./dist
 
 - `--port`或 `-p`: 用来指定启动的服务端口。默认为 8096 端口。
 - `--config-dir` 或 `-c`: 动态指定配置文件目录，即指定您创建`manifest.json`的根目录。默认使用当前目录。
-- `--web-server` 或 `-s`:用来指定 `dweb app` 后端地址。
+- `--web-server` 或 `-s`:用来指定  Dwebapp  后端地址。
 
-## 打包 `dweb app`
+## 打包  Dwebapp 
 
-`plaoc bundle` 是用来发布 `dweb app` 的时候使用，会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`。
+`plaoc bundle` 是用来发布  Dwebapp  的时候使用，会打包成以下的文件夹结构，并输出压缩文件 `.zip` 和一个 `metadata.json`。
 
     |- bundle
       |- appId.version.zip

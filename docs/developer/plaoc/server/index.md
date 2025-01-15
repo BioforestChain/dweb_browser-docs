@@ -1,4 +1,4 @@
-# Plaoc Worker
+# @plaoc/server
 
 ::: warning
 可编程后端处于起步阶段，可能面临重大更改。

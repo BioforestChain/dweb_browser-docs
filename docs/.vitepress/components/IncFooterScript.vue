@@ -1,5 +1,6 @@
 <script lang="ts">
-export function getBeianCode(hostname = location.hostname) {
+const location_hostname = typeof location!=='undefined'?location.hostname:''
+export function getBeianCode(hostname = location_hostname) {
   if (
     hostname === "dweb-browser.com" ||
     hostname.endsWith("dweb-browser.com")
@@ -14,18 +15,19 @@ export function getBeianCode(hostname = location.hostname) {
 }
 </script>
 <script setup lang="ts">
-const hook = () => {
-  const beian = document.getElementById("beian");
-  if (beian) {
-    beian.innerHTML = getBeianCode();
-    return true;
+if (typeof document !== "undefined") {
+  const hook = () => {
+    const beian = document.getElementById("beian");
+    if (beian) {
+      beian.innerHTML = getBeianCode();
+      return true;
+    }
+    return false;
+  };
+  document.addEventListener("DOMContentLoaded", hook);
+  if (!hook()) {
+    requestAnimationFrame(hook);
   }
-  return false;
-};
-document.addEventListener("DOMContentLoaded", hook);
-if (!hook()) {
-  requestAnimationFrame(hook);
 }
 </script>
 <template></template>
-<style lang="css"></style>

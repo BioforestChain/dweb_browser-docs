@@ -53,7 +53,7 @@ const findQuery = (key: string) => {
   return (query.get(key) ?? query.get(key.toLowerCase())) || undefined;
 };
 const releaseAssets = latestReleaseAssets();
-console.log("latestReleaseAssets", releaseAssets);
+// console.log("latestReleaseAssets", releaseAssets);
 
 const download_channels = [
   { name: "原始", transfer: (url: string) => url },

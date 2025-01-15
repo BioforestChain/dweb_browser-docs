@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Dweb App
+# DwebApp
 
 DwebBrowser 提供了一种应用开发标准，我们统一称为 DwebApp，但是并不是所有人都需要直接接触这个标准来开发自己的。
 
@@ -63,7 +63,7 @@ plaoc 遵循 web 规范，提供一系列的 Api/WebComponent，来满足应用�
 > 示例打包项目： `npx plaoc bundle ./dist`
 
 @plaoc/cli 是 plaoc 的开发工具，能帮助应用运行，打包，发布。
-具体的命令提示可以使用`--help`或者[文档](./cli.md)查看。
+具体的命令提示可以使用`--help`或者[文档](../plaoc/cli/index.md)查看。
 
 - 执行安装命令:
 

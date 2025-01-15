@@ -10,7 +10,7 @@ const beian = getBeianCode();
     <a href="https://github.com/BioforestChain/dweb_browser">BioforestChain</a>
   </footer>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 footer {
   margin-top: 8em;
   font-size: 12px;
