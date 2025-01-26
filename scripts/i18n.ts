@@ -1,20 +1,11 @@
 import OpenAI from "openai";
 import { str_trim_indent } from "@gaubee/util";
-import "dotenv/config";
 import { z } from "zod";
 import { parseArgs } from "@std/cli/parse-args";
 import { import_meta_ponyfill } from "import-meta-ponyfill";
 import fs from "node:fs";
 import path from "node:path";
-
-const openai = new OpenAI({
-  baseURL: z
-    .string({ required_error: "required env.AI_GATEWAY_ENDPOINT" })
-    .parse(process.env.AI_GATEWAY_ENDPOINT),
-  apiKey: z
-    .string({ required_error: "required env.OPENAI_API_KEY" })
-    .parse(process.env.OPENAI_API_KEY),
-});
+import { config } from "dotenv";
 
 const zTranslateOptions = z.object({
   file: z.string().array().nonempty(),
@@ -50,7 +41,7 @@ const zModes = {
       outputs: zFile.array(),
     }),
     /** 返回参数：翻译好的文件内容 */
-    output: zFileWithContent.array(),
+    output: z.object({ outputs: zFileWithContent.array() }),
   },
   increment: {
     input: z.object({
@@ -62,7 +53,7 @@ const zModes = {
       outputs: zFile.array(),
     }),
     /** 返回参数：翻译好的文件内容 */
-    output: zGitPatch,
+    output: z.object({ patch: zGitPatch }),
   },
 };
 async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
@@ -100,10 +91,10 @@ async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
       files: files,
       outputs: outputs,
     };
-    const result = zModes.full.output.parse(
-      await getOutput(JSON.stringify(input))
+    const output = zModes.full.output.parse(
+      await getOpenaiOutput(JSON.stringify(input))
     );
-    result.forEach((file) => {
+    output.outputs.forEach((file) => {
       fs.mkdirSync(path.dirname(file.filepath), { recursive: true });
       fs.writeFileSync(file.filepath, file.content);
     });
@@ -112,7 +103,16 @@ async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
   }
 }
 
-const getOutput = async (user_content: string) => {
+const getOpenaiOutput = async (user_content: string) => {
+  const openai = new OpenAI({
+    baseURL: z
+      .string({ required_error: "required env.AI_GATEWAY_ENDPOINT" })
+      .parse(process.env.AI_GATEWAY_ENDPOINT),
+    apiKey: z
+      .string({ required_error: "required env.OPENAI_API_KEY" })
+      .parse(process.env.OPENAI_API_KEY),
+  });
+
   const completion = await openai.chat.completions.create({
     messages: [
       {
@@ -132,27 +132,33 @@ const getOutput = async (user_content: string) => {
       
           ## 输入输出规范
           输入格式（JSON Schema）：
+          \`\`\`json
           {
             "mode": "full",
             "files": [{
-              "filepath": "docs/zh-CN/guide.md",
-              "language": "zh-CN",
-              "content": "文件内容"
+              "filepath": "<输入路径>",
+              "language": "<输入语言>",
+              "content": "<文件内容>"
             }],
             "outputs": [{
-              "filepath": "docs/en/guide.md",
-              "language": "en"
+              "filepath": "<目标路径>",
+              "language": "<目标语言>"
             }]
           }
+          \`\`\`
       
-          输出格式（严格遵循）：
-          [
-            {
-              "filepath": "输出路径",
-              "language": "目标语言",
-              "content": "翻译后的完整内容"
-            }
-          ]
+          输出格式（JSON Schema）：
+          \`\`\`json
+          {
+            "outputs": [
+              {
+                "filepath": "docs/en/guide.md",
+                "language": "en",
+                "content": "<翻译后的完整内容>"
+              }
+            ]
+          }
+          \`\`\`
       
           ## 翻译规则
           1. 结构保留：
@@ -194,13 +200,14 @@ const getOutput = async (user_content: string) => {
       type: "json_object",
     },
   });
+  console.log(completion.choices[0].message.content);
   return JSON.parse(completion.choices[0].message.content!);
 };
 
 if (import_meta_ponyfill(import.meta).main) {
   const args = parseArgs(process.argv.slice(2), {
     string: ["mode"],
-    collect: ["file", "language"],
+    collect: ["file", "language", "env-file"],
     alias: {
       m: "mode",
       f: "file",
@@ -208,10 +215,13 @@ if (import_meta_ponyfill(import.meta).main) {
     },
     default: {
       mode: "full",
+      "env-file": [".env.local"],
     },
   });
 
   console.log("args", args);
+
+  config({ path: [".env", ...(args["env-file"] as string[])], override: true });
 
   translate(zTranslateOptions.parse(args));
 }
