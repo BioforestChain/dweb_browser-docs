@@ -15,7 +15,7 @@ plaoc 遵循 web 规范，提供一系列的 Api/WebComponent，来满足应用�
 基于 DwebBrowser 已经实现了 Android、IOS、MacOS、Windows、Linux 这些主流平台的支持。
 那么也就意味着您的 Web 应用，可以背靠 plaoc 直接实现多端发布。
 
-## 开发 Dweb app 流程
+## 开发 Dwebapp 流程
 
 您首选需要在您的应用根目录下创建 `manifest.json` 文件，您可以认为`manifest.json`等同于 `PWA`的`manifest.json`。
 它主要声明了一些应用的参数和在用户安装的时候做一些展示。
