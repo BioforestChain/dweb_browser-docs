@@ -46,7 +46,7 @@ export default defineConfig({
           );
         },
       }),
-    ] as any,
+    ] ,
   },
   head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
   themeConfig: {
