@@ -1,0 +1,67 @@
+{
+  "label": "English",
+  "description": "A browser that provides distributed network | application attachment.",
+  "editLink": "Edit this page on GitHub",
+  "footer": {
+    "message": "Released under the MIT License",
+    "copyright": "Copyright © 2021-2025"
+  },
+  "docFooter": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "lastUpdated": "Last updated",
+  "outline": {
+    "label": "Page Navigation"
+  },
+  "langMenuLabel": "Languages",
+  "returnToTopLabel": "Back to top",
+  "sidebarMenuLabel": "Menu",
+  "darkModeSwitchLabel": "Theme",
+  "lightModeSwitchTitle": "Switch to light mode",
+  "darkModeSwitchTitle": "Switch to dark mode",
+  "nav": {
+    "maintainerDoc": "Core Maintainer Documentation",
+    "developmentLog": "Development Log",
+    "gettingStartedMaintainer": "Getting Started for Core Developers",
+    "downloads": "Downloads"
+  },
+  "search": {
+    "placeholder": "Search documentation",
+    "translations": {
+      "button": { "buttonText": "Search documentation", "buttonAriaLabel": "Search documentation" },
+      "modal": {
+        "searchBox": {
+          "resetButtonTitle": "Clear search criteria",
+          "resetButtonAriaLabel": "Clear search criteria",
+          "cancelButtonText": "Cancel",
+          "cancelButtonAriaLabel": "Cancel"
+        },
+        "startScreen": {
+          "recentSearchesTitle": "Search history",
+          "noRecentSearchesText": "No search history",
+          "saveRecentSearchButtonTitle": "Save to search history",
+          "removeRecentSearchButtonTitle": "Remove from search history",
+          "favoriteSearchesTitle": "Favorites",
+          "removeFavoriteSearchButtonTitle": "Remove from favorites"
+        },
+        "errorScreen": {
+          "titleText": "Unable to fetch results",
+          "helpText": "You may need to check your network connection"
+        },
+        "footer": {
+          "selectText": "Select",
+          "navigateText": "Navigate",
+          "closeText": "Close",
+          "searchByText": "Search provider"
+        },
+        "noResultsScreen": {
+          "noResultsText": "No relevant results found",
+          "suggestedQueryText": "You can try searching for",
+          "reportMissingResultsText": "Do you think this query should have results?",
+          "reportMissingResultsLinkText": "Click to feedback"
+        }
+      }
+    }
+  }
+}

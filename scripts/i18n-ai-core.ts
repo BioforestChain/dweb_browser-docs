@@ -38,10 +38,14 @@ export const getOpenaiOutput = async <T>(
   });
 
   let res = "";
+  const verbose =
+    process.argv.includes("--verbose") || process.argv.includes("-V");
   for await (const chunk of stream) {
     const part = chunk.choices[0].delta.content ?? "";
     res += part;
-    process.stdout.write(part);
+    if (verbose) {
+      process.stdout.write(part);
+    }
   }
   return schema.parse(JSON.parse(res));
 };

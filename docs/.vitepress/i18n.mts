@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { type DefaultTheme, LocaleConfig } from "vitepress";
 import { dirToSilderItem } from "./navPlugins";
+import { formatWithOptions } from "node:util";
 
 const html = String.raw;
 
@@ -23,16 +24,24 @@ export const getAllLocaleConfig = () => {
 };
 export const i18n = (
   lang: string,
-  m: LangConfig
+  m: LangConfig,
+  dirBase = lang === rootLang ? "/" : `/${lang}/`,
+  urlBase = dirBase
 ): LocaleConfig<DefaultTheme.Config>[string] => {
-  const isRoot = lang === rootLang;
-  const base = isRoot ? "/" : `/${lang}/`;
   const developerSlidbar = dirToSilderItem(
-    path.join(import.meta.dirname, `..${base}developer`, base)
+    path.join(import.meta.dirname, `..${dirBase}developer`),
+    urlBase
   );
   const helpSlidbar = dirToSilderItem(
-    path.join(import.meta.dirname, `..${base}help`, base)
+    path.join(import.meta.dirname, `..${dirBase}help`),
+    urlBase
   );
+  if (urlBase !== "/") {
+    console.log(
+      "developerSlidbar",
+      formatWithOptions({ depth: Infinity, colors: true }, developerSlidbar)
+    );
+  }
   return {
     label: m.label,
     lang,
@@ -42,11 +51,11 @@ export const i18n = (
       nav: [
         {
           text: developerSlidbar.text,
-          link: "/developer/",
+          link: `${urlBase}developer/`,
         },
         {
           text: helpSlidbar.text,
-          link: "/help/",
+          link: `${urlBase}help/`,
         },
         {
           text: m.nav.maintainerDoc,
@@ -63,17 +72,17 @@ export const i18n = (
         },
         {
           text: m.nav.downloads,
-          link: "/downloads",
+          link: `${urlBase}downloads`,
         },
       ],
 
       sidebar: {
-        dev: {
+        [`${urlBase}dev`]: {
           base: "",
           items: [],
           ...developerSlidbar,
         },
-        help: {
+        [`${urlBase}help`]: {
           base: "",
           items: [],
           ...helpSlidbar,

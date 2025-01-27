@@ -8,12 +8,14 @@ import { config } from "dotenv";
 import { execSync } from "node:child_process";
 import { Diff, type ParsedDiff, applyPatch, formatPatch } from "diff";
 import { getAiOutput, getOpenaiOutput } from "./i18n-ai-core.ts";
-import { deepseek, google } from "./ai-model.ts";
+import * as models from "./ai-model.ts";
 
-const zTranslateOptions = z.object({
-  file: z.string().array().nonempty(),
-  language: z.string().array().nonempty(),
+export type TranslateOptions = z.TypeOf<typeof zTranslateOptions>
+export const zTranslateOptions = z.object({
+  file: z.string().array().min(2),
+  language: z.string().array().min(2),
   mode: z.enum(["full", "increment"]),
+  model: z.enum(["google", "deepseek"]).optional(),
   commit: z.string().optional(),
 });
 /**定义一个源文件 */
@@ -60,8 +62,9 @@ const zModes = {
     output: z.object({ files: zFileWithContent.array() }),
   },
 };
-async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
+export async function translate(args: TranslateOptions) {
   const cwd = process.cwd();
+  const model = models[args.model ?? "deepseek"];
   if (args.mode === "full") {
     type InputType = z.TypeOf<typeof zModes.full.input>;
     const files: InputType["files"] = [];
@@ -96,9 +99,10 @@ async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
       outputs: outputs,
     };
     /// 发送给AI，获得输出
-    const output = await getOpenaiOutput(
-      JSON.stringify(input),
-      zModes.full.output
+    const output = await getAiOutput(
+      await model(),
+      zModes.full.output,
+      JSON.stringify(input)
     );
     /// 处理输出
     output.outputs.forEach((file) => {
@@ -151,8 +155,7 @@ async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
 
     /// 发送给AI，获得输出
     const output = await getAiOutput(
-      await deepseek(),
-      //   await google(),
+      await model(),
       zModes.increment.output,
       JSON.stringify(input)
     );

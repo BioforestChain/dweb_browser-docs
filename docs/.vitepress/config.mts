@@ -46,7 +46,7 @@ export default defineConfig({
           );
         },
       }),
-    ] ,
+    ],
   },
   head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
   themeConfig: {
@@ -71,8 +71,17 @@ export default defineConfig({
         }
       : undefined,
   },
+  rewrites(id) {
+    return id.replace(/^i18n\//, "");
+  },
   locales: Object.keys(all).reduce((locales, key) => {
-    locales[key === rootLang ? "root" : key] = i18n(key, all[key]);
+    const isRoot = key === rootLang;
+    locales[isRoot ? "root" : key] = i18n(
+      key,
+      all[key],
+      isRoot ? "/" : `/i18n/${key}/`,
+      isRoot ? "/" : `/${key}/`
+    );
     return locales;
   }, {}),
   vite: vite as any,
