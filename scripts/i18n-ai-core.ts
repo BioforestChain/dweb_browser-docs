@@ -3,7 +3,7 @@ import { z } from "zod";
 import fs from "node:fs";
 import path from "node:path";
 const system_prompt = fs.readFileSync(
-  path.resolve(import.meta.dirname, "system-prompt.en.md"),
+  path.resolve(import.meta.dirname, "system-prompt.zh.md"),
   "utf-8"
 );
 export const getOpenaiOutput = async <T>(
