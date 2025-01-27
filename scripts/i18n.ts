@@ -1,4 +1,3 @@
-import OpenAI from "openai";
 import { func_remember, str_trim_indent } from "@gaubee/util";
 import { z } from "zod";
 import { parseArgs } from "@std/cli/parse-args";
@@ -7,6 +6,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { config } from "dotenv";
 import { execSync } from "node:child_process";
+import { Diff, type ParsedDiff, applyPatch, formatPatch } from "diff";
+import { getAiOutput, getOpenaiOutput } from "./i18n-ai-core.ts";
+import { deepseek, google } from "./ai-model.ts";
 
 const zTranslateOptions = z.object({
   file: z.string().array().nonempty(),
@@ -29,10 +31,6 @@ const zFileWithContentAndDiff = zFileWithContent.merge(
     diff: z.string(),
   })
 );
-/** 差异信息，一种基于git-diff的内容 */
-const zGitDiff = z.string();
-/** 补丁信息，一种基于git-patch的内容 */
-const zGitPatch = z.string();
 /**
  * 两种模式的输入输出
  */
@@ -98,8 +96,9 @@ async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
       outputs: outputs,
     };
     /// 发送给AI，获得输出
-    const output = zModes.full.output.parse(
-      await getOpenaiOutput(JSON.stringify(input))
+    const output = await getOpenaiOutput(
+      JSON.stringify(input),
+      zModes.full.output
     );
     /// 处理输出
     output.outputs.forEach((file) => {
@@ -151,170 +150,39 @@ async function translate(args: z.TypeOf<typeof zTranslateOptions>) {
     // console.log("input", input);
 
     /// 发送给AI，获得输出
-    const output = zModes.increment.output.parse(
-      await getOpenaiOutput(JSON.stringify(input))
+    const output = await getAiOutput(
+      await deepseek(),
+      //   await google(),
+      zModes.increment.output,
+      JSON.stringify(input)
     );
     /// 处理输出
     output.files.forEach((file) => {
       fs.mkdirSync(path.dirname(file.filepath), { recursive: true });
-      fs.writeFileSync(file.filepath, file.content);
+      const suffix = ".patch.json";
+      if (file.filepath.endsWith(suffix)) {
+        const targetFilepath = file.filepath.slice(0, -suffix.length);
+        const parsedDiff = (JSON.parse(file.content) as ParsedDiff[])[0];
+        parsedDiff.hunks.forEach((hunk) => {
+          hunk.lines = hunk.lines.map((line) => {
+            return line[0] === "=" ? " " + line.slice(1) : line;
+          });
+        });
+        const result = applyPatch(
+          fs.readFileSync(targetFilepath, "utf-8"),
+          parsedDiff
+        );
+        if (result === false) {
+          console.error("fail to apply patch", parsedDiff);
+          return;
+        }
+        fs.writeFileSync(targetFilepath, result);
+      } else {
+        fs.writeFileSync(file.filepath, file.content);
+      }
     });
   }
 }
-
-const getOpenaiOutput = async (user_content: string) => {
-  const openai = new OpenAI({
-    baseURL: z
-      .string({ required_error: "required env.AI_GATEWAY_ENDPOINT" })
-      .parse(process.env.AI_GATEWAY_ENDPOINT),
-    apiKey: z
-      .string({ required_error: "required env.OPENAI_API_KEY" })
-      .parse(process.env.OPENAI_API_KEY),
-  });
-
-  const stream = await openai.chat.completions.create({
-    messages: [
-      {
-        role: "system",
-        content: str_trim_indent(
-          `
-                You are a sophisticated translation engine with expertise in GitHub content,
-                capable of translating texts accurately into the specified target language, 
-                preserving technical terms, code snippets, markdown formatting, and platform-specific language.
-                Do not add any explanations or annotations to the translated text.`
-        ),
-      },
-      {
-        role: "system",
-        content: str_trim_indent(`
-          ## 全量翻译的输入输出规范
-          输入格式（JSON Schema）：
-          \`\`\`json
-          {
-            "mode": "full",
-            "files": [{
-              "filepath": "<输入路径>",
-              "language": "<输入语言>",
-              "content": "<文件内容>"
-            }],
-            "outputs": [{
-              "filepath": "<目标路径>",
-              "language": "<目标语言>"
-            }]
-          }
-          \`\`\`
-      
-          输出格式（JSON Schema）：
-          \`\`\`json
-          {
-            "outputs": [
-              {
-                "filepath": "<目标路径>",
-                "language": "<目标语言>",
-                "content": "<翻译后的完整内容>"
-              }
-            ]
-          }
-          \`\`\`
-
-          ## 增量翻译的输入输出规范
-          输入格式（JSON Schema）：
-          \`\`\`json
-          {
-            "mode": "full",
-            // 这些是有过变更的文件内容
-            "changes": [{
-              "filepath": "<输入路径>",
-              "language": "<输入语言>",
-              "content": "<输入文件内容>",
-              "diff": "<输入文件的变更信息>"
-            }],
-            // 这些是没有变更的文件内容
-            "files": [{
-              "filepath": "<目标路径>",
-              "language": "<目标语言>",
-              "content": "<目标文件内容（可能是空的；也有可能是上一次翻译的内容；也可能是翻译到中途断掉的）>"
-            }]
-          }
-          \`\`\`
-          输出格式（JSON Schema）：
-          \`\`\`json
-          {
-            "files": [
-              {
-                "filepath": "<目标路径> or <目标路径.patch>",
-                "language": "en",
-                "content": "<翻译后的完整内容> or <git apply 格式的内容>"
-              }
-            ]
-          }
-          \`\`\`
-      
-          ## 翻译规则
-          1. 结构保留：
-          - Markdown：保留标题层级、代码块、列表结构、链接锚点
-          - JSON：保持键名不变，仅翻译值（含转义字符处理）
-          - 注释标记：保留 <!-- i18n-ignore --> 等标记的原始位置
-      
-          2. 标记处理：
-          • 忽略区块：
-          <!-- i18n-ignore-start -->...<!-- i18n-ignore-end --> → 保持原样
-      
-          • 本土化标记：
-          <!-- i11n-start: {提示} -->...<!-- i11n-end --> → 
-          - 根据提示进行创意改编（如：中文成语 → 等效英文谚语）
-          - 在翻译后添加 <!-- i11n-reason: 改编说明 -->
-      
-          3. JSON特殊字段：
-          "//key": ["i18n-ignore"] → 跳过对应键值的翻译
-          "//key": ["i11n: 提示"] → 按提示本地化翻译，保留原始键
-      
-          4. 混合内容处理：
-          [中文]（原文） → [英文]（翻译） // 保留注释
-          "key": "值" // 保留行尾注释
-          
-          5. 对于增量翻译模式，需要理解参数和返回值的含义：
-          - 首先是changes参数，它是指某一个文件的变更记录，使用\`git diff\`获得的差异信息
-          - 然后是files参数，是指其它没有变更的文件。
-          - 最后关于返回值files，会有两种格式：
-          - 第一种是翻译完成的目标文件，包含了全量的内容；
-          - 第二种是 patch 文件后缀，它是可以通过\`git apply\`作用到目标文件的补丁文件，因为如果变更不多，只是几行，那么返回第一种全量内容就没太大意义，所以使用patch格式，可以获得更快的输出结果；
-          -
-          - 关于changes参数的变更内容，主要关注这两种可能：
-          - 第一种是只修改了一种语言，这种情况下，输出的files和输入的files是一一对应的。
-          - 第二种是同时修改了多种语言，这就意味着，变更者是知道多语言的，只不过根据顺序，排在前面的文件，作为源文件的优先级更高。这时候要注意的是，有可能changes[0]改动了第二行，然后changes[1]改动了第10行，那么最终输出的files中，也应该包含这两个changes文件，因为需要将changes[0]改动的第3行翻译给changes[1]，同时也要讲changes[1]改动的第10行翻译给changes[0]。
-          - 
-          - 关于files参数的内容，要关注这有三种可能：
-          - 第一种是，它是一个空文件，那么此时要参考changes[0]的完整内容，做完整的翻译
-          - 第二种是，它是一个翻译到一半就断开的内容，可能是人为的翻译不完整，也有可能是上一次翻译输出不完整，不论如何，仍然是优先参考changes[0]的完整内容，然后参照现有的内容，对剩余没有翻译的部分做补全，通常会返回补丁，但是如果补丁的内容长度已经接近甚至超过翻译后的原文，这时候直接返回原文即可。
-          - 第三种是，它是一个完整的翻译后的内容，这时候主要参考changes[0]的diff内容，来返回补丁内容。
-
-          ## 质量要求
-          • 术语一致性：保持相同上下文术语统一
-          • 格式对齐：译文长度与原文段落结构匹配
-          • 动态内容：{variable} 占位符保持原样
-          • 文化适配：日期格式、度量单位自动转换
-        `),
-      },
-      {
-        role: "user",
-        content: user_content,
-      },
-    ],
-    model: "deepseek-chat",
-    response_format: {
-      type: "json_object",
-    },
-    stream: true,
-  });
-  let res = "";
-  for await (const chunk of stream) {
-    const part = chunk.choices[0].delta.content ?? "";
-    res += part;
-    process.stdout.write(part);
-  }
-  return JSON.parse(res);
-};
 
 interface GeneratePatchOptions {
   /** 目标文件路径（绝对或相对路径） */
@@ -375,7 +243,7 @@ export async function generateFilePatch(
 
 if (import_meta_ponyfill(import.meta).main) {
   const args = parseArgs(process.argv.slice(2), {
-    string: ["mode", "commit"],
+    string: ["mode", "commit", "model"],
     collect: ["file", "language", "env-file"],
     alias: {
       m: "mode",
