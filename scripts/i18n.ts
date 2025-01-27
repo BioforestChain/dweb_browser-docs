@@ -269,6 +269,6 @@ if (import_meta_ponyfill(import.meta).main) {
 
 /**
  * eg:
- * `node .\scripts\i18n.ts -f .\docs\intro.md -f .\docs\en\intro.md -l zh-Hans -l en`
- * `node .\scripts\i18n.ts --mode increment -f .\docs\intro.md -f .\docs\en\intro.md -l zh-Hans -l en`
+ * `node ./scripts/i18n.ts -f ./docs/intro.md -f ./docs/en/intro.md -l zh-Hans -l en`
+ * `node ./scripts/i18n.ts --mode increment -f ./docs/intro.md -f ./docs/en/intro.md -l zh-Hans -l en`
  */

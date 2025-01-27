@@ -129,3 +129,8 @@ if (importMeta.main) {
 
   translateAll(zTranslateAllOptions.parse(args));
 }
+
+/**
+ * eg:
+ * `node ./scripts/i18n-all.ts -l zh-Hans -l en`
+ */

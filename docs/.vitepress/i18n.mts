@@ -36,12 +36,7 @@ export const i18n = (
     path.join(import.meta.dirname, `..${dirBase}help`),
     urlBase
   );
-  if (urlBase !== "/") {
-    console.log(
-      "developerSlidbar",
-      formatWithOptions({ depth: Infinity, colors: true }, developerSlidbar)
-    );
-  }
+
   return {
     label: m.label,
     lang,

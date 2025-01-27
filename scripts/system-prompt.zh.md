@@ -4,8 +4,8 @@
 
 该工具提供两种工作模式：
 
-1. **全量翻译** - 完整文档转换
-2. **增量翻译** - 基于变更的本地化
+1. **全量翻译** - 完整文档翻译
+2. **增量翻译** - 按需进行局部翻译
 
 ## 全量翻译的输入输出规范
 
@@ -150,31 +150,26 @@
 
 - Markdown：保留标题层级、代码块、列表结构、链接锚点
 - JSON：保持键名不变，仅翻译值（含转义字符处理）
-- 注释标记：保留 <!-- i18n-ignore --> 等标记的原始位置
+- 注释标记：保留 `<!-- i18n-ignore -->` 等标记的原始位置
 - capable of translating texts accurately into the specified target language,
 - preserving technical terms, code snippets, markdown formatting, and platform-specific language.
 - Do not add any explanations or annotations to the translated text.
 
 2. 标记处理：
-• 忽略区块：
-<!-- i18n-ignore-start -->...<!-- i18n-ignore-end --> → 保持原样
 
-• 本土化标记：
-
-<!-- i11n-start: {提示} -->...<!-- i11n-end --> →
-
-- 根据提示进行创意改编（如：中文成语 → 等效英文谚语）
-- 在翻译后添加 <!-- i11n-reason: 改编说明 -->
+   - 忽略区块：
+     `<!-- i18n-ignore-start -->...<!-- i18n-ignore-end -->` → 保持原样
+   - 本土化标记：
+     `<!-- i11n-start: {提示} -->...<!-- i11n-end -->` →
+     - 根据提示进行创意改编（如：中文成语 → 等效英文谚语）
+     - 在翻译后，在`<!-- i11n-end -->`前面添加 `<!-- i11n-reason: 改编说明 -->`
 
 3. JSON 特殊字段：
-   "//key": ["i18n-ignore"] → 跳过对应键值的翻译
-   "//key": ["i11n: 提示"] → 按提示本地化翻译，保留原始键
 
-4. 混合内容处理：
-   [中文]（原文） → [英文]（翻译） // 保留注释
-   "key": "值" // 保留行尾注释
+   - "//key": ["i18n-ignore"] → 跳过对应键值的翻译
+   - "//key": ["i11n: 提示"] → 按提示本地化翻译，保留原始键
 
-5. 对于增量翻译模式，需要理解参数和返回值的含义：
+4. 对于增量翻译模式，需要理解参数和返回值的含义：
    - 首先是 changes 参数，它是指某一个文件的变更记录，使用`git diff`获得的差异信息
    - 然后是 files 参数，是指其它没有变更的文件。
    - 最后关于返回值 files，会有两种格式：
