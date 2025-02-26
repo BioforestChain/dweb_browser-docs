@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Haptics
+# haptics
 
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android" />

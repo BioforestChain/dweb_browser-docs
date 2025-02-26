@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Torch
+# torch
 
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android" />

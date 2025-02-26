@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Barcode Scanner
+# bacode-scanner
 
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android" />

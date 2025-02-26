@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Keychain
+# keychain
 
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android,MacOS,Windows" />

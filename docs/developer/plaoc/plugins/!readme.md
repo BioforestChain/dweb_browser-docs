@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# @plaoc/plugins
+# 介绍
 
 <Badges name="@plaoc/plugins" />
 <Platform supports="iOS,Android,MacOS,Windows" />
