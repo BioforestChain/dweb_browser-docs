@@ -98,26 +98,48 @@ onMounted(async () => {
     }),
   });
   macos_selected_link.value = macos_links.value[0];
-
-  // 判断是否为微信浏览器
-  function isWeChatBrowser() {
-    const userAgent = navigator.userAgent.toLowerCase();
-    return userAgent.toLowerCase().includes("micromessenger");
-  }
-
-  // 获取 <a> 标签并动态修改行为
-  document.addEventListener("DOMContentLoaded", () => {
-    const link = document.getElementById("app-store-link");
-
-    if (isWeChatBrowser()) {
-      // 如果是微信浏览器，阻止默认跳转行为
-      link?.addEventListener("click", (event) => {
-        event.preventDefault(); // 阻止默认跳转
-        window.location.href = "https://apps.apple.com/cn/app/6443558874"; // 可选：尝试强制跳转
-      });
-    }
-  });
 });
+// 判断是否为微信浏览器
+const isWeChatBrowser = () => {
+  return /MicroMessenger/i.test(navigator.userAgent);
+};
+const handleAppStoreClick = (event: MouseEvent) => {
+  if (isWeChatBrowser()) {
+    event.preventDefault();
+    // 创建引导遮罩层
+    const mask = document.createElement("div");
+    mask.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `;
+
+    const text = document.createElement("div");
+    text.style.cssText = `
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      padding: 20px;
+    `;
+    text.innerHTML =
+      '请点击右上角<br/>选择"在浏览器中打开"<br/>以访问 App Store';
+
+    mask.appendChild(text);
+    document.body.appendChild(mask);
+
+    // 点击遮罩层移除
+    mask.addEventListener("click", () => {
+      document.body.removeChild(mask);
+    });
+  }
+};
 </script>
 
 <template>
@@ -180,6 +202,7 @@ onMounted(async () => {
               id="app-store-link"
               href="https://apps.apple.com/cn/app/6443558874"
               target="_blank"
+              @click="handleAppStoreClick"
             >
               App Store @Dweb Browser
             </a>
