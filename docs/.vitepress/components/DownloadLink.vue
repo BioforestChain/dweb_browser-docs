@@ -102,7 +102,7 @@ onMounted(async () => {
   // 判断是否为微信浏览器
   function isWeChatBrowser() {
     const userAgent = navigator.userAgent.toLowerCase();
-    return userAgent.includes("micromessenger");
+    return userAgent.toLowerCase().includes("micromessenger");
   }
 
   // 获取 <a> 标签并动态修改行为
