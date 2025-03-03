@@ -98,6 +98,25 @@ onMounted(async () => {
     }),
   });
   macos_selected_link.value = macos_links.value[0];
+
+  // 判断是否为微信浏览器
+  function isWeChatBrowser() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return userAgent.includes("micromessenger");
+  }
+
+  // 获取 <a> 标签并动态修改行为
+  document.addEventListener("DOMContentLoaded", () => {
+    const link = document.getElementById("app-store-link");
+
+    if (isWeChatBrowser()) {
+      // 如果是微信浏览器，阻止默认跳转行为
+      link?.addEventListener("click", (event) => {
+        event.preventDefault(); // 阻止默认跳转
+        window.location.href = "https://apps.apple.com/cn/app/6443558874"; // 可选：尝试强制跳转
+      });
+    }
+  });
 });
 </script>
 
@@ -157,7 +176,11 @@ onMounted(async () => {
             <span class="platform-label">iOS</span>
           </div>
           <div class="download-btn">
-            <a href="https://apps.apple.com/cn/app/6443558874" target="_blank">
+            <a
+              id="app-store-link"
+              href="https://apps.apple.com/cn/app/6443558874"
+              target="_blank"
+            >
               App Store @Dweb Browser
             </a>
           </div>
