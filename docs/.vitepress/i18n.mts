@@ -38,6 +38,7 @@ export const i18n = (
   );
 
   return {
+    title: m.title,
     label: m.label,
     lang,
     description: m.description,

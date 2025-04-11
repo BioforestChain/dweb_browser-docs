@@ -17,7 +17,7 @@ const enableSearch = process.env.npm_lifecycle_event === "build";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "DwebBrowser",
+  title: "Dweb Browser",
   lastUpdated: true,
   cleanUrls: false,
   markdown: {
