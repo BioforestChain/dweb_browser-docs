@@ -2,7 +2,6 @@
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
 import "virtual:group-icons.css";
 import "@shikijs/vitepress-twoslash/style.css";
-import "uno.css";
 import type { EnhanceAppContext } from "vitepress";
 import { default as DefaultTheme, default as Theme } from "vitepress/theme";
 import { h } from "vue";

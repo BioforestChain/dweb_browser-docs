@@ -99,16 +99,16 @@ export const dirToSilderItem = (dir: string, parent_base = "/") => {
   return result;
 };
 
-import matter from "gray-matter";
+import matter from "front-matter";
 
 const getMarkdownMatadata = <T = {}>(
   content: string | Buffer,
   defaultMetadata?: T
 ) => {
-  const res = matter(content);
+  const res = matter<T>(content as string);
   return {
-    metadata: { ...defaultMetadata, ...res.data } as T,
-    content: res.content,
+    metadata: { ...defaultMetadata, ...res.attributes } as T,
+    content: res.body,
   };
 };
 
